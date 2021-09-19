@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Blog"
-description: [List를 보고싶다면](https://beenpow.github.io/blog/android-sundry-info/)
+description: [List를 보고싶다면](july-recent-article-i-read/index.md)
 main: true
 project-header: true
 header-img: img/about.jpg
