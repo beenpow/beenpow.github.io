@@ -1,0 +1,55 @@
+---
+layout: default
+work: true
+main: true
+title: Problem Solving
+description: 정리하며 ps하기
+project-header: true
+header-img: "img/project_bg.jpg"
+---
+
+삼성 코딩 테스트 대비
+<li>
+ <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
+    Advanced (A형)
+ </a><div style = "DISPLAY : none">
+   <ul>
+    <li><a href = "">알고리즘 문제 해결 전략 (구종만 지음)</a></li>
+    <li><a href = "">코딩 테스트 대비 실수 모음집</a></li>
+   </ul>
+ </div>
+ 
+ <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
+    Professional (B형)
+ </a><div style = "DISPLAY : none">
+   <ul>
+    <li><a href = "">기본적인 자료 구조</a></li>
+    <li><a href = "">Usaco Silver 풀이</a></li>
+    <li><a href = "">실력증대 실수 모음</a></li>
+    <li><a href = "">Lesson's learned</a></li>
+   </ul>
+ </div>
+</li>
+
+<li>
+ <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
+    Happy PS
+ </a><div style = "DISPLAY : none">
+   <ul>
+    <li><a href = ""Codeforce round</a></li>
+    <li><a href = ""Codeforce 1000-1400</a></li>
+   </ul>
+ </div>
+</li>
+
+
+<div class="catalogue">
+{% assign sorted = site.pages | sort: 'order' | reverse %}
+{% for page in sorted %}
+{% if page.projects == true %}
+
+     {% include post-list.html %}
+
+{% endif %}
+{% endfor %}
+</div>
