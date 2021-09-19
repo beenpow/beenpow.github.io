@@ -36,8 +36,8 @@ header-img: "img/project_bg.jpg"
     Happy PS
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = ""Codeforce round</a></li>
-    <li><a href = ""Codeforce 1000-1400</a></li>
+    <li><a href = "">Codeforce round</a></li>
+    <li><a href = "">Codeforce 1000-1400</a></li>
    </ul>
  </div>
 </li>
