@@ -3,7 +3,7 @@ permalink:      /:year-:month-:day/:title
 
 # Setup
 title:          beenpow
-baseurl:        "https://beenpow.github.io"
+baseurl:        "https://beenpow.github.io/"
 url:            "https://beenpow.github.io/"
 
 # Assets
