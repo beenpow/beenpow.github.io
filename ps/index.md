@@ -48,7 +48,7 @@ Happy PS
 
 
 <div class="catalogue">
-{% assign sorted = site.pages | sort: 'order' | reverse %}
+{% assign sorted = site.pages | sort: 'name' | reverse %}
 {% for page in sorted %}
 {% if page.ps == true %}
 
