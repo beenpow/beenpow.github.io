@@ -1,8 +1,7 @@
 ---
 layout: default
 title: "Blog"
-description: 오 이렇게도되나<br>
-	    TEST
+description: 오 이렇게도되나<br>test
 main: true
 project-header: true
 header-img: img/about.jpg
