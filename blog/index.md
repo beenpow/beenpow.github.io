@@ -1,13 +1,14 @@
 ---
 layout: default
 title: "Blog"
-description: 오 이렇게도되나<br><a href="https://beenpow.github.io/book/" target="_top">wgat</a>
+description: 오 이렇게도되나
 main: true
 project-header: true
 header-img: img/about.jpg
 ---
 
-- TEST
+<a href="https://beenpow.github.io/book/" target="_top">goto book</a>
+
 <ul class="catalogue">
 {% assign sorted = site.pages | sort: 'order' | reverse %}
 {% for page in sorted %}
