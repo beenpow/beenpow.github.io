@@ -3,8 +3,8 @@ permalink:      /:year-:month-:day/:title
 
 # Setup
 title:          beenpow
-baseurl:        "https://beenpow.github.io/"
-url:            "https://beenpow.github.io/"
+baseurl:        ""
+url:            "https://beenpow.github.io"
 
 # Assets
 sass:
@@ -18,7 +18,7 @@ markdown:       kramdown
 author:
   name:         beenpow
   url:          https://beenpow.github.io/
-  email:        beenpow@gmail.com  
+  email:        beenpow@gmail.com
   github:       beenpow
   twitter:      
 
