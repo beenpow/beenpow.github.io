@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Blog"
-description: List link[List를 보고싶다면](https://beenpow.github.io/blog/)
+description: [List를 보고싶다면](https://beenpow.github.io/blog/)
 main: true
 project-header: true
 header-img: img/about.jpg
