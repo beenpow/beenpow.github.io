@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Blog"
-description: 오 이렇게도되나<br><a href="https://www.google.com/" target="_blank">Google</a>
+description: 오 이렇게도되나<br><a href="https://beenpow.github.io/book/" target="_blank">Google</a>
 main: true
 project-header: true
 header-img: img/about.jpg
