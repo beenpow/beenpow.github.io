@@ -2,9 +2,9 @@
 permalink:      /:year-:month-:day/:title
 
 # Setup
-title:          Jihye Leee
+title:          beenpow
 baseurl:        ""
-url:            "https://www.jihyeleee.com"
+url:            "https://beenpow.github.io/"
 
 # Assets
 sass:
@@ -16,13 +16,13 @@ markdown:       kramdown
 
 # About
 author:
-  name:         Jihye Leee
-  url:          https://jihyeleee.com/
-  email:        iam.leejihye@gmail.com  
-  github:       iamleejihye
-  twitter:      hitchhikerj
+  name:         beenpow
+  url:          https://beenpow.github.io/
+  email:        beenpow@gmail.com  
+  github:       beenpow
+  twitter:      
 
 # Custom vars
 version:        3.4.1
 github:
-  repo:         https://github.com/iamleejihye/iamleejihye.github.io
+  repo:         https://github.com/beenpow/beenpow.github.io
