@@ -18,7 +18,8 @@ header-img: "img/project_bg.jpg"
     <li><a href = "">  - 코딩 테스트 대비 실수 모음집</a></li>
    </ul>
  </div>
- 
+</li>
+<li>
  <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
     Professional (B형)
  </a><div style = "DISPLAY : none">
@@ -31,9 +32,10 @@ header-img: "img/project_bg.jpg"
  </div>
 </li>
 
+Happy PS
 <li>
  <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
-    Happy PS
+    Codeforce
  </a><div style = "DISPLAY : none">
    <ul>
     <li><a href = "">  - Codeforce round</a></li>
