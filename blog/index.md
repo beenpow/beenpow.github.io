@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Blog"
-description: 오 이렇게도되나<br>test
+description: 오 이렇게도되나<br>[Link](https://beenpow.github.io/book/)
 main: true
 project-header: true
 header-img: img/about.jpg
