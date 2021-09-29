@@ -48,12 +48,10 @@ Happy PS
 
 
 <div class="catalogue">
-{% assign sorted = site.pages | sort: 'name' | reverse %}
+{% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
 {% if page.ps == true %}
-
-     {% include post-list.html %}
-
+{% include post-list.html %}
 {% endif %}
 {% endfor %}
 </div>
