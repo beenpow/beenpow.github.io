@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 4
+title: Problem Solving 5
 description: 정리하며 ps하기
 work: true
 main: true
@@ -24,8 +24,8 @@ header-img: "img/project_bg.jpg"
     Professional (B형)
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "">&nbsp;기본적인 자료 구조</a></li>
-    <li><a href = "">&nbsp;Usaco Silver 풀이</a></li>
+    <li><a href = "https://beenpow.github.io/ps/PRO/">&nbsp;기본적인 자료 구조</a></li>
+    <li><a href = "https://beenpow.github.io/ps/USACO/">&nbsp;Usaco Silver 풀이</a></li>
     <li><a href = "">&nbsp;실력증대 실수 모음</a></li>
     <li><a href = "">&nbsp;Lesson's learned</a></li>
    </ul>
