@@ -1,7 +1,7 @@
 ---
 layout: post
-author: "Jihye Leee"
-title:  "1  "
+author: "beenpow"
+title:  "2"
 subtitle: "오랫동안 홈에 존재해 온 문제들을 해결하기 위한 프로젝트"
 type: "RIDIBOOKS"
 projects: true
