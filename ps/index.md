@@ -14,7 +14,7 @@ header-img: "img/project_bg.jpg"
     Advanced (A형)
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "">&nbsp;알고리즘 문제 해결 전략 (구종만 지음)</a></li>
+    <li><a href = "https://beenpow.github.io/ps/JONGMAN/">&nbsp;알고리즘 문제 해결 전략 (구종만 지음)</a></li>
     <li><a href = "">&nbsp;코딩 테스트 대비 실수 모음집</a></li>
    </ul>
  </div>
