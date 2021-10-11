@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 10
+title: Problem Solving
 description: 정리하며 ps하기
 work: true
 main: true
@@ -59,6 +59,9 @@ header-img: "img/project_bg.jpg"
 </li>
 <li><a href = "https://beenpow.github.io/ps/BOJ/">BOJ</a></li>
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 <ul class="catalogue">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
