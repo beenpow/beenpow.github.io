@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 3
+title: Problem Solving 4
 description: 정리하며 ps하기
 work: true
 main: true
@@ -40,8 +40,8 @@ Happy PS
     Codeforce
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "https://beenpow.github.io/ps/coforound/">&nbsp;Codeforce round</a></li>
-    <li><a href = "https://beenpow.github.io/ps/cofoeach/">&nbsp;Codeforce 1000-1400</a></li>
+    <li><a href = "https://beenpow.github.io/ps/COFO/coforound/">&nbsp;Codeforce round</a></li>
+    <li><a href = "https://beenpow.github.io/ps/COFO/cofoeach/">&nbsp;Codeforce 1000-1400</a></li>
    </ul>
  </div>
 </li>
