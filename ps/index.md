@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 6
+title: Problem Solving 7
 description: 정리하며 ps하기
 work: true
 main: true
@@ -10,12 +10,11 @@ header-img: "img/project_bg.jpg"
 
 <p class="second-label">
    <span class="label-emoji">
-      &#x1F64B;
+      &#128187;
    </span>
-   &nbsp; I've worked for
+   &nbsp; 삼성 코딩 테스트 대비 quick link
 </p>
 
-삼성 코딩 테스트 대비
 <li>
  <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
     Advanced (A형)
@@ -41,7 +40,15 @@ header-img: "img/project_bg.jpg"
 
 &nbsp;
 &nbsp;
-Happy PS
+
+<p class="second-label">
+   <span class="label-emoji">
+      &#128123;
+   </span>
+   &nbsp; Happy PS quick link 
+</p>
+
+
 <li>
  <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
     Codeforce
