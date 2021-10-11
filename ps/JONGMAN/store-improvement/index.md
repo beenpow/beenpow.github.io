@@ -1,23 +1,16 @@
 ---
 layout: post
-author: "beenpow"
-title:  "3"
-subtitle: "오랫동안 홈에 존재해 온 문제들을 해결하기 위한 프로젝트"
-type: "RIDIBOOKS"
-projects: true
+title : "Ch. 2 문제 해결 개관"
+subtitle: "종만북"
+type: "알고리즘 문제해결 전략"
+ps: true
 jongman: true
 text: true
-ridi: true
-portfolio: true
+author: "beenpow"
 post-header: true
 header-img: "img/1.jpg"
-main-img: "img/store_improvement.jpg"
-role-title: "프로덕트 디자이너"
-role-specific: "User Flows, Sketching, Wireframing, Visual Design, Interaction, Prototyping"
-team: "프로덕트 디자이너 1명, PM 1명, 엔지니어 4-5명"
-platforms: "Web"
-date: 2019-11-24
-order: 2
+order: 1
+date: "Dec 2018 - Mar 2019"
 ---
 
 # Overview
