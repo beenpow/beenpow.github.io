@@ -1,12 +1,19 @@
 ---
 layout: default
-title: Problem Solving 5
+title: Problem Solving 6
 description: 정리하며 ps하기
 work: true
 main: true
 project-header: true
 header-img: "img/project_bg.jpg"
 ---
+
+<p class="second-label">
+   <span class="label-emoji">
+      &#x1F64B;
+   </span>
+   &nbsp; I've worked for
+</p>
 
 삼성 코딩 테스트 대비
 <li>
@@ -50,7 +57,7 @@ Happy PS
 <ul class="catalogue">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
-{% if page.programmers == true %}
+{% if page.ps == true %}
 {% include post-list.html %}
 {% endif %}
 {% endfor %}
