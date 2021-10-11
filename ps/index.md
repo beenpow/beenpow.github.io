@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 9
+title: Problem Solving 10
 description: 정리하며 ps하기
 work: true
 main: true
@@ -20,8 +20,8 @@ header-img: "img/project_bg.jpg"
     Advanced (A형)
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "https://beenpow.github.io/ps/JONGMAN/">&nbsp;알고리즘 문제 해결 전략 (구종만 지음)</a></li>
-    <li><a href = "">&nbsp;코딩 테스트 대비 실수 모음집</a></li>
+    <li><a href = "https://beenpow.github.io/ps/JONGMAN/">&nbsp;&nbsp;&nbsp; - 알고리즘 문제 해결 전략 (구종만 지음)</a></li>
+    <li><a href = "">&nbsp;&nbsp;&nbsp; - 코딩 테스트 대비 실수 모음집</a></li>
    </ul>
  </div>
 </li>
@@ -30,10 +30,10 @@ header-img: "img/project_bg.jpg"
     Professional (B형)
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "https://beenpow.github.io/ps/PRO/">&nbsp;기본적인 자료 구조</a></li>
-    <li><a href = "https://beenpow.github.io/ps/USACO/">&nbsp;Usaco Silver 풀이</a></li>
-    <li><a href = "">&nbsp;실력증대 실수 모음</a></li>
-    <li><a href = "">&nbsp;Lesson's learned</a></li>
+    <li><a href = "https://beenpow.github.io/ps/PRO/">&nbsp;&nbsp;&nbsp; - 기본적인 자료 구조</a></li>
+    <li><a href = "https://beenpow.github.io/ps/USACO/">&nbsp;&nbsp;&nbsp; - Usaco Silver 풀이</a></li>
+    <li><a href = "">&nbsp;&nbsp;&nbsp; - 실력증대 실수 모음</a></li>
+    <li><a href = "">&nbsp;&nbsp;&nbsp; - Lesson's learned</a></li>
    </ul>
  </div>
 </li>
@@ -52,12 +52,12 @@ header-img: "img/project_bg.jpg"
     Codeforce
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "https://beenpow.github.io/ps/COFO/coforound/">&nbsp;Codeforce round</a></li>
-    <li><a href = "https://beenpow.github.io/ps/COFO/cofoeach/">&nbsp;Codeforce 1000-1400</a></li>
+    <li><a href = "https://beenpow.github.io/ps/COFO/coforound/">&nbsp;&nbsp;&nbsp; - Codeforce round</a></li>
+    <li><a href = "https://beenpow.github.io/ps/COFO/cofoeach/">&nbsp;&nbsp;&nbsp; - Codeforce 1000-1400</a></li>
    </ul>
  </div>
 </li>
-<li><a href = "https://beenpow.github.io/ps/BOJ/">&nbsp;BOJ</a></li>
+<li><a href = "https://beenpow.github.io/ps/BOJ/">BOJ</a></li>
 
 
 <ul class="catalogue">
