@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "Ch. 2 문제 해결 개관"
+title : "Ch. 2 문제 해결 개관 2 "
 subtitle: "종만북"
 type: "알고리즘 문제해결 전략"
 ps: true
@@ -10,7 +10,7 @@ author: "beenpow"
 post-header: true
 header-img: "img/1.jpg"
 order: 1
-date: "Dec 2018 - Mar 2019"
+date: "2019-11-24"
 ---
 
 # Overview
