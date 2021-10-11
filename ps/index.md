@@ -50,7 +50,7 @@ Happy PS
 <ul class="catalogue">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
-{% if page.jongman == true %}
+{% if page.boj == true %}
 {% include post-list.html %}
 {% endif %}
 {% endfor %}
