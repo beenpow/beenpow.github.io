@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving
+title: Problem Solving 2
 description: 정리하며 ps하기
 work: true
 main: true
