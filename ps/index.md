@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 7
+title: Problem Solving 8
 description: 정리하며 ps하기
 work: true
 main: true
@@ -10,9 +10,9 @@ header-img: "img/project_bg.jpg"
 
 <p class="second-label">
    <span class="label-emoji">
-      &#128187;
+      &#128054;
    </span>
-   &nbsp; 삼성 코딩 테스트 대비 quick link
+   &nbsp; 삼성 코딩 테스트 대비 (quick link)
 </p>
 
 <li>
@@ -45,7 +45,7 @@ header-img: "img/project_bg.jpg"
    <span class="label-emoji">
       &#128123;
    </span>
-   &nbsp; Happy PS quick link 
+   &nbsp; Happy PS (quick link)
 </p>
 
 
