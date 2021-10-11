@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "beenpow"
-title:  "2"
+title:  "3"
 subtitle: "오랫동안 홈에 존재해 온 문제들을 해결하기 위한 프로젝트"
 type: "RIDIBOOKS"
 projects: true
@@ -16,7 +16,7 @@ role-title: "프로덕트 디자이너"
 role-specific: "User Flows, Sketching, Wireframing, Visual Design, Interaction, Prototyping"
 team: "프로덕트 디자이너 1명, PM 1명, 엔지니어 4-5명"
 platforms: "Web"
-date: "Dec 2018 - Mar 2019"
+date: 2019-11-24
 order: 2
 ---
 
