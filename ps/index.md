@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Problem Solving 8
+title: Problem Solving 9
 description: 정리하며 ps하기
 work: true
 main: true
@@ -39,8 +39,6 @@ header-img: "img/project_bg.jpg"
 </li>
 
 &nbsp;
-&nbsp;
-
 <p class="second-label">
    <span class="label-emoji">
       &#128123;
@@ -59,6 +57,7 @@ header-img: "img/project_bg.jpg"
    </ul>
  </div>
 </li>
+<li><a href = "https://beenpow.github.io/ps/BOJ/">&nbsp;BOJ</a></li>
 
 
 <ul class="catalogue">
