@@ -8,7 +8,13 @@ project-header: true
 header-img: "img/project_bg.jpg"
 ---
 
-
+<p class="second-label">
+   <span class="label-emoji">
+      &#128073;
+   </span>
+   &nbsp; 실수 모음 (quick link)
+   <a href="https://beenpow.github.io/ps/FAILNOTE/2020-03-21-mistake/" target="_top">goto 실수모음</a>
+</p>
 
 <ul class="catalogue">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
