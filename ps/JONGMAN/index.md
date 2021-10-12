@@ -8,6 +8,13 @@ project-header: true
 header-img: "img/project_bg.jpg"
 ---
 
+<p class="second-label">
+   <span class="label-emoji">
+      &#128073;
+   </span>
+   &nbsp; 목차 (quick link)
+   <a href="https://beenpow.github.io/ps/JONGMAN/2019-11-23-Jongman-list/" target="_top">goto 목차</a>
+</p>
 
 
 <ul class="catalogue">
