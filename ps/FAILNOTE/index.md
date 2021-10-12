@@ -13,7 +13,7 @@ header-img: "img/project_bg.jpg"
       &#128073;
    </span>
    &nbsp; 실수 모음 (quick link)
-   <a href="https://beenpow.github.io/ps/FAILNOTE/2020-03-21-mistake/" target="_top">goto 실수모음</a>
+   <a href="https://beenpow.github.io/ps/FAILNOTE/2020-03-21-mistake/2020-03-21-mistake/" target="_top">click</a>
 </p>
 
 <ul class="catalogue">
