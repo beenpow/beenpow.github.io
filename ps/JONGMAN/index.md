@@ -12,7 +12,7 @@ header-img: "img/project_bg.jpg"
    <span class="label-emoji">
       &#128073;
    </span>
-   &nbsp; 목차 (quick link)
+   &nbsp; 목차
    <a href="https://beenpow.github.io/ps/JONGMAN/2019-11-23-Jongman-list/2019-11-23-Jongman-list" target="_top">click</a>
 </p>
 
