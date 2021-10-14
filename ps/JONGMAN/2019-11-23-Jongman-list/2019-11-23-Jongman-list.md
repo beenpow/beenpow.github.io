@@ -27,7 +27,7 @@ date: "2019-11-23"
 |1.6| 더 읽을 거리 | o|
 
 ## 2장 문제 해결 개관
-<https://beenpow.github.io/jongman/2019/11/24/Jongman1/>
+[link](https://beenpow.github.io/ps/JONGMAN/2019-11-24-Jongman-ch2/2019-11-24-Jongman-ch2)
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
@@ -81,12 +81,12 @@ date: "2019-11-23"
 |-----|---------------|----|
 |6.1| 도입 |o|
 |6.2| 재귀 호출과 완전 탐색 |o|
-|6.3| 문제: 소풍 (난이도: 하, 문제 ID: PICNIC)|<https://beenpow.github.io/jongman/2019/11/27/Jongman-ch6-1/>|
+|6.3| 문제: 소풍 (난이도: 하, 문제 ID: PICNIC)|[link](https://beenpow.github.io/ps/JONGMAN/2019-11-27-Jongman-ch6-1/2019-11-27-Jongman-ch6-1)|
 |6.4| 풀이: 소풍 |o|
-|6.5| 문제: 게임판 덮기 (난이도: 하, 문제 ID: BOARDCOVER)|<https://beenpow.github.io/jongman/2019/11/27/Jongman-ch6-2/>|
+|6.5| 문제: 게임판 덮기 (난이도: 하, 문제 ID: BOARDCOVER)|[link](https://beenpow.github.io/ps/JONGMAN/2019-11-27-Jongman-ch6-2/2019-11-27-Jongman-ch6-2)|
 |6.6| 풀이: 게임판 덮기 |o|
 |6.7| 최적화 문제 |o|
-|6.8| 문제: 시계 맞추기 (난이도: 중, 문제 ID: CLOCKSYNC) |<https://beenpow.github.io/jongman/2019/11/28/ch6-3/>|
+|6.8| 문제: 시계 맞추기 (난이도: 중, 문제 ID: CLOCKSYNC) |[link](https://beenpow.github.io/ps/JONGMAN/2019-11-28-Jongman-ch6-3/2019-11-28-Jongman-ch6-3)|
 |6.9| 풀이: 시계 맞추기 |o|
 |6.10| 많이 등장하는 완전 탐색 유형 |o|
 
@@ -95,33 +95,33 @@ date: "2019-11-23"
 |Ch   | Description   |Done|
 |-----|---------------|----|
 |7.1| 도입 |o|
-|7.2| 문제: 쿼드 트리 뒤집기 (문제 ID: QUADTREE, 난이도: 하) |<https://beenpow.github.io/jongman/2019/12/02/ch7-3/>|
+|7.2| 문제: 쿼드 트리 뒤집기 (문제 ID: QUADTREE, 난이도: 하) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-02-Jongman-ch7-3/2019-12-02-Jongman-ch7-3)|
 |7.3| 풀이: 쿼드 트리 뒤집기 |o|
-|7.4| 문제: 울타리 잘라내기 (문제 ID: FENCE, 난이도: 중) |<https://beenpow.github.io/jongman/2019/12/03/Jongman-ch7-4/>|
+|7.4| 문제: 울타리 잘라내기 (문제 ID: FENCE, 난이도: 중) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-03-Jongman-ch7-4/2019-12-03-Jongman-ch7-4)|
 |7.5| 풀이: 울타리 잘라내기 |o|
-|7.6| 문제: 팬 미팅 (문제 ID: FANMEETING, 난이도: 상) |<https://beenpow.github.io/jongman/2019/12/03/Jongman-ch7-6/>|
+|7.6| 문제: 팬 미팅 (문제 ID: FANMEETING, 난이도: 상) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-03-Jongman-ch7-6/2019-12-03-Jongman-ch7-6)|
 |7.7| 풀이: 팬 미팅 |o|
 
 ## 8장 동적 계획법 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|8.1| 도입|<https://beenpow.github.io/jongman/2019/12/04/Jongman-ch8-1/>| 
-|8.2| 문제: 와일드카드 (문제 ID: WILDCARD, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/07/Jongman-ch8-2/>|
+|8.1| 도입|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-04-Jongman-ch8-1/2019-12-04-Jongman-ch8-1)| 
+|8.2| 문제: 와일드카드 (문제 ID: WILDCARD, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-2/2019-12-07-Jongman-ch8-2)|
 |8.3| 풀이: 와일드카드|o|
-|8.4| 전통적 최적화 문제들|TRIANGLEPATH : <https://beenpow.github.io/jongman/2019/12/07/Jongman-ch8-4-1/><br>LIS : <https://beenpow.github.io/jongman/2019/12/07/Jongman-ch8-4-2/>|
-|8.5| 문제: 합친 LIS (문제 ID: JLIS, 난이도: 하) |<https://beenpow.github.io/jongman/2019/12/07/Jongman-ch8-5/>|
+|8.4| 전통적 최적화 문제들|TRIANGLEPATH : [link](https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-4-1/2019-12-07-Jongman-ch8-4-1)<br>LIS : [link](https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-4-2/2019-12-07-Jongman-ch8-4-2)|
+|8.5| 문제: 합친 LIS (문제 ID: JLIS, 난이도: 하) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-5/2019-12-07-Jongman-ch8-5)|
 |8.6| 풀이: 합친 LIS |o|
-|8.7| 문제: 원주율 외우기 (문제 ID: PI, 난이도: 하)|<https://beenpow.github.io/jongman/2019/12/08/Jongman-ch8-7/>|
+|8.7| 문제: 원주율 외우기 (문제 ID: PI, 난이도: 하)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-08-Jongman-ch8-7/2019-12-08-Jongman-ch8-7)|
 |8.8| 풀이: 원주율 외우기 |o|
-|8.9| 문제: Quantization (문제 ID: QUANTIZE, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/08/Jongman-ch8-9/>|
+|8.9| 문제: Quantization (문제 ID: QUANTIZE, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-08-Jongman-ch8-9/2019-12-08-Jongman-ch8-9)|
 |8.10| 풀이: Quantization |o|
-|8.11| 경우의 수와 확률 |TILING2 : <https://beenpow.github.io/jongman/2019/12/09/Jongman-ch8-11-1/><br>TRIPATHCNT : <https://beenpow.github.io/jongman/2019/12/09/Jongman-ch8-11-2/><br>우물을 기어오르는 달팽이 : <https://beenpow.github.io/jongman/2019/12/09/Jongman-ch8-11-3/> |
-|8.12| 문제: 비대칭 타일링 (문제 ID: ASYMTILING, 난이도: 하) |<https://beenpow.github.io/jongman/2019/12/10/Jongman-ch8-12/>|
+|8.11| 경우의 수와 확률 |TILING2 : [link](https://beenpow.github.io/ps/JONGMAN/2019-12-09-Jongman-ch8-11-1/2019-12-09-Jongman-ch8-11-1)<br>TRIPATHCNT : [link](https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-4-1/2019-12-07-Jongman-ch8-4-1)<br>우물을 기어오르는 달팽이 : [link](https://beenpow.github.io/ps/JONGMAN/2019-12-09-Jongman-ch8-11-3/2019-12-09-Jongman-ch8-11-3) |
+|8.12| 문제: 비대칭 타일링 (문제 ID: ASYMTILING, 난이도: 하) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-10-Jongman-ch8-12/2019-12-10-Jongman-ch8-12)|
 |8.13| 풀이: 비대칭 타일링 |o|
-|8.14| 문제: 폴리오미노 (문제 ID: POLY, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/10/Jongman-ch8-14/>|
+|8.14| 문제: 폴리오미노 (문제 ID: POLY, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-10-Jongman-ch8-14/2019-12-10-Jongman-ch8-14)|
 |8.15| 풀이: 폴리오미노 |o|
-|8.16| 문제: 두니발 박사의 탈옥 (문제 ID: NUMB3RS, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/10/Jongman-ch8-16/>|
+|8.16| 문제: 두니발 박사의 탈옥 (문제 ID: NUMB3RS, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-10-Jongman-ch8-16/2019-12-10-Jongman-ch8-16)|
 |8.17| 풀이: 두니발 박사의 탈옥 |o|
 
 ## 9장 동적 계획법 테크닉 
@@ -159,12 +159,12 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|10.1| 도입 |<https://beenpow.github.io/jongman/2019/12/11/Jongman-ch10-1/>|
-|10.2| 문제: 도시락 데우기 (문제 ID: LUNCHBOX, 난이도: 하)|<https://beenpow.github.io/jongman/2019/12/12/Jongman-ch10-2/>|
+|10.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-11-Jongman-ch10-1/2019-12-11-Jongman-ch10-1)|
+|10.2| 문제: 도시락 데우기 (문제 ID: LUNCHBOX, 난이도: 하|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-12-Jongman-ch10-2/2019-12-12-Jongman-ch10-2)|
 |10.3| 풀이: 도시락 데우기 |o|
-|10.4| 문제: 문자열 합치기 (문제 ID: STRJOIN, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/14/Jongman-ch10-4/>|
+|10.4| 문제: 문자열 합치기 (문제 ID: STRJOIN, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch10-4/2019-12-14-Jongman-ch10-4)|
 |10.5| 풀이: 문자열 합치기 |o|
-|10.6| 문제: 미나스 아노르 (문제 ID: MINASTIRITH, 난이도: 상)|<https://beenpow.github.io/jongman/2019/12/14/Jongman-ch10-6/>|
+|10.6| 문제: 미나스 아노르 (문제 ID: MINASTIRITH, 난이도: 상)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch10-6/2019-12-14-Jongman-ch10-6)|
 |10.7| 풀이: 미나스 아노르 |o|
 
 ## 11장 조합 탐색 
@@ -213,13 +213,13 @@ date: "2019-11-23"
 |Ch   | Description   |Done|
 |-----|---------------|----|
 |14.1| 도입|o|
-|14.2| 소수| <https://beenpow.github.io/jongman/2019/12/14/Jongman-ch14-2/>|
-|14.3| 문제: 비밀번호 486 (문제 ID: PASS486, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/14/Jongman-ch14-3/>|
+|14.2| 소수| [link](https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch14-2/2019-12-14-Jongman-ch14-2)|
+|14.3| 문제: 비밀번호 486 (문제 ID: PASS486, 난이도: 중|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch14-3/2019-12-14-Jongman-ch14-3)|
 |14.4| 풀이: 비밀번호 486 |o|
-|14.5| 유클리드 알고리즘|<https://beenpow.github.io/jongman/2019/12/14/Jongman-ch14-5/>|
-|14.6| 문제: 마법의 약 (문제 ID: POTION, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/15/Jongman-ch14-6/>|
+|14.5| 유클리드 알고리즘|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch14-5/2019-12-14-Jongman-ch14-5)|
+|14.6| 문제: 마법의 약 (문제 ID: POTION, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-15-Jongman-ch14-6/2019-12-15-Jongman-ch14-6)|
 |14.7| 풀이: 마법의 약 |o|
-|14.8| 모듈라 연산|<https://beenpow.github.io/jongman/2019/12/15/Jongman-ch14-8/>|
+|14.8| 모듈라 연산|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-15-Jongman-ch14-8/2019-12-15-Jongman-ch14-8)|
 |14.9| 더 읽을거리(optional) |o|
 
 ## 15장 계산 기하 
@@ -247,10 +247,10 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|16.1| 도입 |<https://beenpow.github.io/jongman/2019/12/16/Jongman-ch16-1/>|
-|16.2| 비트마스크를 이용한 집합의 구현|<https://beenpow.github.io/jongman/2019/12/16/Jongman-ch16-2/>|
-|16.3| 비트마스크의 응용 예제 |<https://beenpow.github.io/jongman/2019/12/16/Jongman-ch16-3/>|
-|16.4| 문제: 졸업 학기 (문제 ID: GRADUATION, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/16/Jongman-ch16-4/>|
+|16.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-1/2019-12-16-Jongman-ch16-1)|
+|16.2| 비트마스크를 이용한 집합의 구현|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-2/2019-12-16-Jongman-ch16-2)|
+|16.3| 비트마스크의 응용 예제 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-3/2019-12-16-Jongman-ch16-3)|
+|16.4| 문제: 졸업 학기 (문제 ID: GRADUATION, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-4/2019-12-16-Jongman-ch16-4)|
 |16.5| 풀이: 졸업 학기|o|
 |16.6| 더 읽을거리 |o|
 
@@ -258,8 +258,8 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|17.1| 도입 |<https://beenpow.github.io/jongman/2019/12/21/Jongman-ch17-1/>|
-|17.2| 문제: 크리스마스 인형 (문제 ID: CHRISTMAS, 난이도: 중) | <https://beenpow.github.io/jongman/2019/12/21/Jongman-ch17-2/>|
+|17.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch17-1/2019-12-21-Jongman-ch17-1)|
+|17.2| 문제: 크리스마스 인형 (문제 ID: CHRISTMAS, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch17-2/2019-12-21-Jongman-ch17-2)|
 |17.3| 풀이: 크리스마스 인형 |o|
 |17.4| 더 공부할 거리 |o|
 
@@ -267,11 +267,11 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|18.1| 도입 |<https://beenpow.github.io/jongman/2019/12/21/Jongman-ch18-1/>|
+|18.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch18-1/2019-12-21-Jongman-ch18-1)|
 |18.2| 동적 배열 |o|
 |18.3| 연결 리스트 |o|
 |18.4| 동적 배열과 연결 리스트의 비교 |o|
-|18.5| 문제: 조세푸스 문제 (문제 ID: JOSEPHUS, 난이도: 하)|<https://beenpow.github.io/jongman/2019/12/21/Jongman-ch18-5/>|
+|18.5| 문제: 조세푸스 문제 (문제 ID: JOSEPHUS, 난이도: 하)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch18-5/2019-12-21-Jongman-ch18-5)|
 |18.6| 풀이: 조세푸스 문제 |o|
 |18.7| 더 읽을 거리 |o|
 
@@ -279,12 +279,12 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|19.1| 도입|<https://beenpow.github.io/jongman/2019/12/22/Jongman-ch19-1/>|
+|19.1| 도입|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-22-Jongman-ch19-1/2019-12-22-Jongman-ch19-1)|
 |19.2| 큐와 스택, 데크의 구현 |o|
 |19.3| 스택과 큐의 활용 |o|
-|19.4| 문제: 짝이 맞지 않는 괄호 (문제 ID: BRACKETS2, 난이도:하)|<https://beenpow.github.io/jongman/2019/12/22/Jongman-ch19-4/>|
+|19.4| 문제: 짝이 맞지 않는 괄호 (문제 ID: BRACKETS2, 난이도:하)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-22-Jongman-ch19-4/2019-12-22-Jongman-ch19-4)|
 |19.5| 풀이: 짝이 맞지 않는 괄호 |o|
-|19.6| 문제: 외계 신호 분석 (문제 ID: ITES, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/22/Jongman-ch19-6/>|
+|19.6| 문제: 외계 신호 분석 (문제 ID: ITES, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-22-Jongman-ch19-6/2019-12-22-Jongman-ch19-6)|
 |19.7|풀이: 외계 신호 분석 |o|
 
 ## 20장 문자열 
@@ -306,62 +306,62 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|21.1| 도입 |<https://beenpow.github.io/jongman/2019/12/26/Jongman-ch21-1/>|
+|21.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch21-1/2019-12-26-Jongman-ch21-1)|
 |21.2| 트리의 순회 |o|
-|21.3| 문제: 트리 순회 순서 변경 (문제 ID: TRAVERSAL, 난이도: 하)|<https://beenpow.github.io/jongman/2019/12/26/Jongman-ch21-3/>|
+|21.3| 문제: 트리 순회 순서 변경 (문제 ID: TRAVERSAL, 난이도: 하)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch21-3/2019-12-26-Jongman-ch21-3)|
 |21.4| 풀이: 트리 순회 순서 변경|o|
-|21.5| 문제: 요새 (문제 ID: FORTRESS, 난이도: 중) |<https://beenpow.github.io/jongman/2019/12/26/Jongman-ch21-5/>|
+|21.5| 문제: 요새 (문제 ID: FORTRESS, 난이도: 중) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch21-5/2019-12-26-Jongman-ch21-5)|
 |21.6| 풀이: 요새 |o|
 
 ## 22장 이진 검색 트리 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|22.1| 도입 |<https://beenpow.github.io/jongman/2019/12/26/Jongman-ch22-1/>|
+|22.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch22-1/2019-12-26-Jongman-ch22-1)|
 |22.2| 이진 검색 트리의 정의와 조작 |o|
 |22.3 |시간 복잡도 분석과 균형 잡힌 이진 검색 트리 |o|
-|22.4 |문제: 너드인가, 너드가 아닌가? 2 (문제 ID: NERD2, 난이도: 중) |<https://beenpow.github.io/jongman/2019/12/26/Jongman-ch22-4/>|
+|22.4 |문제: 너드인가, 너드가 아닌가? 2 (문제 ID: NERD2, 난이도: 중) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch22-4/2019-12-26-Jongman-ch22-4)|
 |22.5 |풀이: 너드인가, 너드가 아닌가? 2 |o|
-|22.6 |균형 잡힌 이진 검색 트리 직접 구현하기: 트립 |<https://beenpow.github.io/jongman/2019/12/27/Jongman-ch22-6/>|
-|22.7 |문제: 삽입 정렬 뒤집기 (문제 ID: INSERTION, 난이도: 중) |<https://beenpow.github.io/jongman/2019/12/28/Jongman-ch22-7/>|
+|22.6 |균형 잡힌 이진 검색 트리 직접 구현하기: 트립 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-27-Jongman-ch22-6/2019-12-27-Jongman-ch22-6)|
+|22.7 |문제: 삽입 정렬 뒤집기 (문제 ID: INSERTION, 난이도: 중) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-28-Jongman-ch22-7/2019-12-28-Jongman-ch22-7)|
 |22.8 |풀이: 삽입 정렬 뒤집기 |o|
 
 ## 23장 우선순위 큐와 힙 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|23.1| 도입 |<https://beenpow.github.io/jongman/2019/12/29/Jongman-23-1/>|
+|23.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-29-Jongman-ch23-1/2019-12-29-Jongman-ch23-1)|
 |23.2| 힙의 정의와 구현 |o|
-|23.3| 문제: 변화하는 중간 값 (문제 ID: RUNNINGMEDIAN, 난이도: 하) |<https://beenpow.github.io/jongman/2019/12/29/Jongman-23-3/>|
+|23.3| 문제: 변화하는 중간 값 (문제 ID: RUNNINGMEDIAN, 난이도: 하) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-29-Jongman-ch23-3/2019-12-29-Jongman-ch23-3)|
 |23.4| 풀이: 변화하는 중간 값 |o|
 
 ## 24장 구간 트리 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|24.1 |구간 트리: 구간에 대한 질문 대답하기 |<https://beenpow.github.io/jongman/2019/12/30/Jongman-ch24-1/>|
-|24.2 |문제: 등산로 (문제 ID: MORDOR, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/30/Jongman-ch24-2/>|
+|24.1 |구간 트리: 구간에 대한 질문 대답하기 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-1/2019-12-30-Jongman-ch24-1)|
+|24.2 |문제: 등산로 (문제 ID: MORDOR, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-2/2019-12-30-Jongman-ch24-2)|
 |24.3 |풀이: 등산로 |o|
-|24.4 |문제: 족보 탐험 (문제 ID: FAMILYTREE, 난이도: 상) |<https://beenpow.github.io/jongman/2019/12/30/Jongman-ch24-4/>|
+|24.4 |문제: 족보 탐험 (문제 ID: FAMILYTREE, 난이도: 상) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-4/2019-12-30-Jongman-ch24-4)|
 |24.5 |풀이: 족보 탐험 |o|
-|24.6 |펜윅 트리: 빠르고 간단한 구간 합 |<https://beenpow.github.io/jongman/2019/12/30/Jongman-ch24-6/>|
-|24.7 |문제: 삽입 정렬 시간 재기 (문제 ID: MEASURETIME, 난이도: 중) |<https://beenpow.github.io/jongman/2019/12/30/Jongman-ch24-7/>|
+|24.6 |펜윅 트리: 빠르고 간단한 구간 합 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-6/2019-12-30-Jongman-ch24-6)|
+|24.7 |문제: 삽입 정렬 시간 재기 (문제 ID: MEASURETIME, 난이도: 중) |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-7/2019-12-30-Jongman-ch24-7)|
 |24.8 |풀이: 삽입 정렬 시간 재기 |o|
 
 ## 25장 상호 배타적 집합 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|25.1 |도입|<https://beenpow.github.io/jongman/2019/12/31/Jongman-ch25-1/>|
-|25.2 |문제: 에디터 전쟁 (문제 ID: EDITORWARS, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/31/Jongman-ch25-2/>|
+|25.1 |도입|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch25-1/2019-12-31-Jongman-ch25-1)|
+|25.2 |문제: 에디터 전쟁 (문제 ID: EDITORWARS, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch25-2/2019-12-31-Jongman-ch25-2)|
 |25.3 |풀이: 에디터 전쟁|o|
 
 ## 26장 트라이 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|26.1 |도입 |<https://beenpow.github.io/jongman/2019/12/31/Jongman-ch26-1/>|
-|26.2 |문제: 안녕히, 그리고 물고기는 고마웠어요! (문제 ID: SOLONG, 난이도: 중)|<https://beenpow.github.io/jongman/2019/12/31/Jongman-ch26-2/>|
+|26.1 |도입 |[link](https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch26-1/2019-12-31-Jongman-ch26-1)|
+|26.2 |문제: 안녕히, 그리고 물고기는 고마웠어요! (문제 ID: SOLONG, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch26-2/2019-12-31-Jongman-ch26-2)|
 |26.3 |풀이: 안녕히, 그리고 물고기는 고마웠어요! |o|
 |26.4 |트라이를 이용한 다중 문자열 검색 
 |26.5 |문제: 보안종결자 (문제 ID: NH, 난이도: 상) 
@@ -373,7 +373,7 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|27.1 |도입 |<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch27-1/>|
+|27.1 |도입 |[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch27-1/2020-01-01-Jongman-ch27-1)|
 |27.2 |그래프의 사용 예 |o|
 |27.3 |암시적 그래프 구조들 |o|
 |27.4 |그래프의 표현 방법 |o|
@@ -382,30 +382,30 @@ date: "2019-11-23"
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|28.1 |도입 |<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-1/>|
-|28.2 |문제: 고대어 사전 (문제 ID: DICTIONARY, 난이도: 하)|<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-2/>|
+|28.1 |도입 |[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-1/2020-01-01-Jongman-ch28-1)|
+|28.2 |문제: 고대어 사전 (문제 ID: DICTIONARY, 난이도: 하)|[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-2/2020-01-01-Jongman-ch28-2)|
 |28.3 |풀이: 고대어 사전 |o|
-|28.4 |오일러 서킷 |<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-4/>|
-|28.5 |문제: 단어 제한 끝말잇기 (문제 ID: WORDCHAIN, 난이도: 하)|<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-5/>|
+|28.4 |오일러 서킷 |[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-4/2020-01-01-Jongman-ch28-4)|
+|28.5 |문제: 단어 제한 끝말잇기 (문제 ID: WORDCHAIN, 난이도: 하)|[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-5/2020-01-01-Jongman-ch28-5)|
 |28.6 |풀이: 단어 제한 끝말잇기 |o|
-|28.7 |이론적 배경과 응용|<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-7/>|
-|28.8 |문제: 감시 카메라 설치 (문제 ID: GALLERY, 난이도: 중) |<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-8/>|
+|28.7 |이론적 배경과 응용|[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-7/2020-01-01-Jongman-ch28-7)|
+|28.8 |문제: 감시 카메라 설치 (문제 ID: GALLERY, 난이도: 중) |[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-8/2020-01-01-Jongman-ch28-8)|
 |28.9 |풀이: 감시 카메라 설치 |o|
-|28.10| 문제: 회의실 배정 (문제 ID: MEETINGROOM, 난이도: 상)|<https://beenpow.github.io/jongman/2020/01/01/Jongman-ch28-10/>|
+|28.10| 문제: 회의실 배정 (문제 ID: MEETINGROOM, 난이도: 상)|[link](https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-10/2020-01-01-Jongman-ch28-10)|
 |28.11 |풀이: 회의실 배정 |o|
 
 ## 29장 그래프의 너비 우선 탐색 
 
 |Ch   | Description   |Done|
 |-----|---------------|----|
-|29.1| 도입 
-|29.2| 문제: Sorting Game (문제 ID: SORTGAME, 난이도: 중) 
-|29.3| 풀이: Sorting Game 
-|29.4| 문제: 어린이날 (문제 ID: CHILDRENDAY, 난이도: 상) 
-|29.5| 풀이: 어린이날 
-|29.6| 최단 경로 전략 
-|29.7| 문제: 하노이의 탑 (문제 ID: HANOI4B, 난이도: 중) 
-|29.8| 풀이: 하노이의 탑 
+|29.1| 도입 |[link](https://beenpow.github.io/ps/JONGMAN/2020-01-20-Jongman-ch29-1/2020-01-20-Jongman-ch29-1)|
+|29.2| 문제: Sorting Game (문제 ID: SORTGAME, 난이도: 중)|[link](https://beenpow.github.io/ps/JONGMAN/2020-01-20-Jongman-ch29-2/2020-01-20-Jongman-ch29-2)|
+|29.3| 풀이: Sorting Game | |
+|29.4| 문제: 어린이날 (문제 ID: CHILDRENDAY, 난이도: 상)|[link](https://beenpow.github.io/ps/JONGMAN/2020-01-21-Jongman-ch29-4/2020-01-21-Jongman-ch29-4)|
+|29.5| 풀이: 어린이날 | |
+|29.6| 최단 경로 전략 | |
+|29.7| 문제: 하노이의 탑 (문제 ID: HANOI4B, 난이도: 중) | |
+|29.8| 풀이: 하노이의 탑 | |
 
 ## 30장 최단 경로 알고리즘 
 
