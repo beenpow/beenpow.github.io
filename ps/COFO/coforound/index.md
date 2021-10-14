@@ -12,7 +12,7 @@ header-img: "img/project_bg.jpg"
    <span class="label-emoji">
       &#128293;
    </span>
-   &nbsp; Round 진행 Progress
+   &nbsp; Round Progress
    <a href="https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-list/2020-04-07-cofo-list" target="_top">click</a>
 </p>
 
