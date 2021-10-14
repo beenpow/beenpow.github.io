@@ -13,7 +13,7 @@ header-img: "img/project_bg.jpg"
       &#128293;
    </span>
    &nbsp; Round 진행 Progress
-   <a href="https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-list" target="_top">click</a>
+   <a href="https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-list/2020-04-07-cofo-list" target="_top">click</a>
 </p>
 
 <ul class="catalogue">
