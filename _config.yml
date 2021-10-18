@@ -27,3 +27,9 @@ version:        3.4.1
 github:
   repo:         https://github.com/beenpow/beenpow.github.io
 
+
+# Google Analytics 추가
+analytics:
+  provider: google
+  google:
+    tracking_id: UA-152943248-1
