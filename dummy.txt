@@ -1,0 +1,7 @@
+- emoji
+    https://unicode-table.com/en/blocks/miscellaneous-symbols-and-pictographs/
+- google analytics
+    https://search.google.com/search-console?resource_id=https%3A%2F%2Fbeenpow.github.io%2F
+- naver파일과 google파일은 해당 검색엔진에서 검색되도록 함
+- sitemap.xml, robots.txt를 통해 구글이 내 블로그의 페이지들을 읽어들임
+ou google ad
