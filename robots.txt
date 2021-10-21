@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beenpow.github.io/sitemap.xml
+Sitemap: http://www.beenpow.github.io/sitemap.xml
