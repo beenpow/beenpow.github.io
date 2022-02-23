@@ -1,0 +1,84 @@
+---
+layout: post
+author: "Jihye Leee"
+title:  "이미지로 멋지게 형광펜 공유하기 5 portofolio changed"
+subtitle: "마음에 드는 전자책 속 문장을 멋지게 공유하는 방법"
+type: "RIDIBOOKS"
+projects: true
+text: true
+ridi: true
+portfolio: true
+post-header: true
+header-img: "img/card.jpg"
+main-img: "img/ridi-highlight.jpg"
+role-title: "프로덕트 디자이너"
+role-specific: "User flows, Sketching, Wireframing, Visual Design, Interaction, Prototyping"
+team: "프로덕트 디자이너 1명, 엔지니어 1명"
+platforms: "iOS & Android"
+date: "Sep 2016 - Dec 2016"
+order: 1
+---
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+</script>
+<script src="http://code.highcharts.com/highcharts.js">
+</script>
+<script src="http://code.highcharts.com/modules/exporting.js">
+</script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+<script type="text/javascript">
+
+
+$('#container').highcharts({
+            title: {
+                text: 'Monthly Average Temperature',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Source: WorldClimate.com',
+                x: -20
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Temperature (°C)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Tokyo',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            }, {
+                name: 'New York',
+                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+            }, {
+                name: 'Berlin',
+                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+            }, {
+                name: 'London',
+                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            }]
+        });
+
+
+</script>
