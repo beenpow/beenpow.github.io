@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "Jihye Leee"
-title:  "이미지로 멋지게 형광펜 공유하기 5 portofolio changed"
+title:  "이미지로 멋지게 형광펜 공유하기 1"
 subtitle: "마음에 드는 전자책 속 문장을 멋지게 공유하는 방법"
 type: "RIDIBOOKS"
 projects: true
@@ -33,7 +33,8 @@ order: 1
 <script type="text/javascript">
 
 
-$('#container').highcharts({
+$(function () {
+        $('#container').highcharts({
             title: {
                 text: 'Monthly Average Temperature',
                 x: -20 //center
@@ -79,6 +80,6 @@ $('#container').highcharts({
                 data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
             }]
         });
-
+    });
 
 </script>
