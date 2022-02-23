@@ -1,13 +1,13 @@
 ---
 layout: post
 author: "Jihye Leee"
-title:  "이미지로 멋지게 형광펜 공유하기 3"
+title:  "이미지로 멋지게 형광펜 공유하기 4"
 subtitle: "마음에 드는 전자책 속 문장을 멋지게 공유하는 방법"
 type: "RIDIBOOKS"
 projects: true
 text: true
-ridi: false
-portfolio: true
+ridi: true
+portfolio: false
 post-header: true
 header-img: "img/card.jpg"
 main-img: "img/ridi-highlight.jpg"
