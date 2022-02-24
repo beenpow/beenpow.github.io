@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "Jihye Leee"
-title:  "이미지로 멋지게 형광펜 공유하기 3"
+title:  "이미지로 멋지게 형광펜 공유하기 4"
 subtitle: "마음에 드는 전자책 속 문장을 멋지게 공유하는 방법"
 type: "RIDIBOOKS"
 projects: true
@@ -19,6 +19,4 @@ date: "Sep 2016 - Dec 2016"
 order: 1
 ---
 
-
-{% include highcharts.html %}
 
