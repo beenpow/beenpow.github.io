@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "COFO progress 2"
+title : "COFO progress 3"
 subtitle: "cofo problem"
 type: "codeforce"
 projects: true
@@ -23,3 +23,5 @@ you could be a bloody world-beater"
 ```
 
 {% include cofo-progress.html %}
+
+<img src="{{ page.main-img }}" class="catalogue-img"/>
