@@ -7,6 +7,7 @@ projects: true
 ps: true
 cofo: true
 cofoeach: true
+list-img: true
 text: true
 author: "beenpow"
 post-header: true
@@ -24,4 +25,3 @@ you could be a bloody world-beater"
 
 {% include cofo-progress.html %}
 
-<img src="{{ page.main-img }}" class="catalogue-img"/>

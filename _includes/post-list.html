@@ -3,6 +3,9 @@
         {% if page.portfolio == true %}
         <img src="{{ page.main-img }}" class="catalogue-img"/>
         {% endif %}
+	{% if page.list-img == true%}
+	<img src="{{ page.main-img }}" class="catalogue-img"/>
+	{% endif %}
         {% if page.draft == true %}
         <span class="catalogue-tag">
             Coming Soon
