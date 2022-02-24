@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "COFO progress 4"
+title : "COFO progress "
 subtitle: "cofo problem"
 type: "codeforce"
 projects: true
