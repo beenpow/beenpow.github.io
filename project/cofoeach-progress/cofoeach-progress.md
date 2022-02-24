@@ -3,7 +3,7 @@ layout: post
 title : "COFO progress"
 subtitle: "cofo problem"
 type: "codeforce"
-project: true
+projects: true
 ps: true
 cofo: true
 cofoeach: true

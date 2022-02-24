@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "Jihye Leee"
-title:  "이미지로 멋지게 형광펜 공유하기 2"
+title:  "이미지로 멋지게 형광펜 공유하기 3"
 subtitle: "마음에 드는 전자책 속 문장을 멋지게 공유하는 방법"
 type: "RIDIBOOKS"
 projects: true
