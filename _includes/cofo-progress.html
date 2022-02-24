@@ -18,7 +18,7 @@
 
             var chart = new Highcharts.Chart(option);
 
-            var data = [{"data": [200, 199, 180, 179, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2], "type": "line", "name": "Series 1"}, {"data": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], "type": "line", "marker": {"states": {"hover": {"enabled": true, "fillColor": "white", "lineColor": "red", "lineWidth": 2}}}, "events": {"click": function (event) { alert(this.name + ' clicked\n' + 'Alt: ' + event.altKey + '\n' +                  'Control: ' + event.ctrlKey + '\n' + 'Shift: ' + event.shiftKey + '\n');}}, "name": "Series 2", "dashStyle": "ShortDash"}];
+            var data = [{"data": [30, 199, 180, 179, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2], "type": "line", "name": "Series 1"}, {"data": [200, 199, 180, 179, 16, 15, 14, 13, 12, 11, 110, 19, 38,47, 6, 5, 4, 3, 2], "type": "line", "name": "Series 3"}, {"data": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19], "type": "line", "marker": {"states": {"hover": {"enabled": true, "fillColor": "white", "lineColor": "red", "lineWidth": 2}}}, "events": {"click": function (event) { alert(this.name + ' clicked\n' + 'Alt: ' + event.altKey + '\n' +                  'Control: ' + event.ctrlKey + '\n' + 'Shift: ' + event.shiftKey + '\n');}}, "name": "Series 2", "dashStyle": "ShortDash"}];
             var dataLen = data.length;
             for (var ix = 0; ix < dataLen; ix++) {
                 chart.addSeries(data[ix]);
