@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "COFO progress "
+title : "COFO progress 2"
 subtitle: "cofo problem"
 type: "codeforce"
 projects: true
@@ -23,5 +23,8 @@ see if you can learn to tell the truth, concentrate on something for a year or t
 you could be a bloody world-beater"
 ```
 
-{% include cofo-progress.html %}
-
+{% include test1.html %}
+{% include test2.html %}
+{% include test3.html %}
+{% include test4.html %}
+{% include test5.html %}
