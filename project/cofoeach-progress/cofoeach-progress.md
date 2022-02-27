@@ -23,5 +23,9 @@ see if you can learn to tell the truth, concentrate on something for a year or t
 you could be a bloody world-beater"
 ```
 
-{% include cofo-progress.html %}
-
+{% include cofo-progress-1300.html %}
+{% include cofo-progress-1400.html %}
+{% include cofo-progress-1500.html %}
+{% include cofo-progress-1600.html %}
+{% include cofo-progress-1700.html %}
+{% include cofo-progress-1800.html %}
