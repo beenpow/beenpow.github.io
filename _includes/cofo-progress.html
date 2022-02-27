@@ -24,12 +24,10 @@
                 chart.addSeries(data[ix]);
             }       
     });
- 	</script>
 
-     <script>
          $(function(){
              Highcharts.setOptions({"global": {}, "lang": {}});
-             var option = {"chart": {"renderTo": "container", "resetZoomButton": {"relativeTo": "chart", "position": {"x": 10, "y": -30}}, "style": {"fontFamily": "Lucida Grande, sans-serif", "fontfontSize    ": "22px"}}, "colors": {}, "credits": {"enabled": false}, "drilldown": {}, "exporting": {}, "labels": {}, "legend": {}, "loading": {}, "navigation": {}, "pane": {}, "plotOptions": {}, "series": {}, "subti    tle": {}, "title": {"text": "A New Highchart 2"}, "tooltip": {"formatter": function () { return'<b>'+ this.series.name + '</b>: ' + this.y; }}, "xAxis": {"events": {"afterBreaks": function(e){return}, "poin    tBreak": function(e){return}}, "plotBands": [{"color": "#FCFFC5", "from": 2, "to": 4}, {"color": "#FCFFC5", "from": 6, "to": 8}, {"color": "#FCFFC5", "from": 10, "to": 12}]}, "yAxis": {}};
+             var option2 = {"chart": {"renderTo": "container", "resetZoomButton": {"relativeTo": "chart", "position": {"x": 10, "y": -30}}, "style": {"fontFamily": "Lucida Grande, sans-serif", "fontfontSize    ": "22px"}}, "colors": {}, "credits": {"enabled": false}, "drilldown": {}, "exporting": {}, "labels": {}, "legend": {}, "loading": {}, "navigation": {}, "pane": {}, "plotOptions": {}, "series": {}, "subti    tle": {}, "title": {"text": "A New Highchart 2"}, "tooltip": {"formatter": function () { return'<b>'+ this.series.name + '</b>: ' + this.y; }}, "xAxis": {"events": {"afterBreaks": function(e){return}, "poin    tBreak": function(e){return}}, "plotBands": [{"color": "#FCFFC5", "from": 2, "to": 4}, {"color": "#FCFFC5", "from": 6, "to": 8}, {"color": "#FCFFC5", "from": 10, "to": 12}]}, "yAxis": {}};
 
              var chart2 = new Highcharts.Chart(option);
 
