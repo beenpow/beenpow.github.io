@@ -4,7 +4,7 @@
 
             var chart = new Highcharts.Chart('container1800', option);
 
-var data = [{"data": [10, 100], "type" : "line", "name":"understand"}, {"data": [30, 200], "type" : "line", "name":"algorithm"}, {"data": [40, 300], "type" : "line", "name":"code"}, {"data": [50, 400], "type" : "line", "name":"debug"}, {"data": [-20, -500], "type" : "line", "name":"editorial"}, {"data": [130, 1000], "type" : "line", "name":"total"}];
+var data = [{"data": [10, 100, 0], "type" : "line", "name":"understand"}, {"data": [30, 200, 120], "type" : "line", "name":"algorithm"}, {"data": [40, 300, 0], "type" : "line", "name":"code"}, {"data": [50, 400, 0], "type" : "line", "name":"debug"}, {"data": [-20, -500, -100], "type" : "line", "name":"editorial"}, {"data": [130, 1000, 0], "type" : "line", "name":"total"}];
             var dataLen = data.length;
             for (var ix = 0; ix < dataLen; ix++) {
                 chart.addSeries(data[ix]);
