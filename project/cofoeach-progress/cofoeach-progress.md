@@ -23,9 +23,21 @@ see if you can learn to tell the truth, concentrate on something for a year or t
 you could be a bloody world-beater"
 ```
 
+
+
 > cofo 난이도별, 각 문제 푸는 동안 사용된 시간에 대한 차트
-> 이를 통해, 문제이해(understand), 생각을 코드로 바꾸는 것(algorithm), 디버그(debug), 답지를 이해하는 것(editorial), 총 소모 시간(total)
-> 과 같이 시간 소모 그래프를 그렸고, 이를 통해 전반적인 시간 변화를 체크할 수 있을 것으로 예상됨
+- understand : 문제를 이해하는데 소모한 시간
+- algorithm : 알고리즘을 떠올리는데 소모한 시간
+- code : 알고리즘을 코드로 바꾸는데 소모한 시간
+- debug : 디버깅에 사용된 시간
+- editorial : editorial을 읽고 이해하는데 소모한 시간
+- total : 위 시간에서 editorial을 제외한 시간의 총합
+
+> 특이사항
+- editorial에 소모된 시간은 차트 아래편에 그리기 위해 편의상 (-) 값을 붙여서 그렸음
+- 각 문제당 TIME_LIMIT이 있으며, 위에 표현된 각 구간에서 120분을 넘게 소모한 경우에 해당되며,
+- 이때는 {u, a, c, d}중 가장 오래 걸린 곳에 TIME_LIMIT 값이 찍히며 나머지 값은 0에 찍힘
+
 
 {% include cofo-progress-start.html %}
 {% include cofo-progress-1300.html %}
