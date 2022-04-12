@@ -4,7 +4,7 @@
 
             var chart = new Highcharts.Chart('container1400', option);
 
-var data = [{"data": [5, 5, 5, 10, 0, 15, 0, 5, 0, 5, 0], "type" : "line", "name":"understand"}, {"data": [60, 60, 120, 40, 0, 15, 120, 10, 120, 15, 120], "type" : "line", "name":"algorithm"}, {"data": [5, 10, 0, 10, 0, 3, 0, 10, 0, 5, 0], "type" : "line", "name":"code"}, {"data": [20, 0, 0, 3, 120, 10, 0, 3, 0, 0, 0], "type" : "line", "name":"debug"}, {"data": [-10, -5, -15, -1, -5, -1, -5, -1, -5, -30, -25], "type" : "line", "name":"editorial"}, {"data": [90, 75, 125, 63, 0, 43, 0, 28, 0, 25, 0], "type" : "line", "name":"total"}];
+var data = [{"data": [5, 5, 5, 10, 0, 15, 0, 5, 0, 5, 0, 5], "type" : "line", "name":"understand"}, {"data": [60, 60, 120, 40, 0, 15, 120, 10, 120, 15, 120, 10], "type" : "line", "name":"algorithm"}, {"data": [5, 10, 0, 10, 0, 3, 0, 10, 0, 5, 0, 10], "type" : "line", "name":"code"}, {"data": [20, 0, 0, 3, 120, 10, 0, 3, 0, 0, 0, 20], "type" : "line", "name":"debug"}, {"data": [-10, -5, -15, -1, -5, -1, -5, -1, -5, -30, -25, 0], "type" : "line", "name":"editorial"}, {"data": [90, 75, 125, 63, 0, 43, 0, 28, 0, 25, 0, 45], "type" : "line", "name":"total"}];
             var dataLen = data.length;
             for (var ix = 0; ix < dataLen; ix++) {
                 chart.addSeries(data[ix]);
