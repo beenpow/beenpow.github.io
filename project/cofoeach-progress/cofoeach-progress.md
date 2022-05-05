@@ -26,12 +26,15 @@ you could be a bloody world-beater"
 
 
 > cofo 난이도별, 각 문제 푸는 동안 사용된 시간에 대한 차트
-- understand : 문제를 이해하는데 소모한 시간
-- algorithm : 알고리즘을 떠올리는데 소모한 시간
-- code : 알고리즘을 코드로 바꾸는데 소모한 시간
-- debug : 디버깅에 사용된 시간
-- editorial : editorial을 읽고 이해하는데 소모한 시간
-- total : 위 시간에서 editorial을 제외한 시간의 총합
+> eng: Thiis is all about spending time while solving problems, and seeing the progress
+- understand : time to understand the problem
+- algorithm : time to make it as algorithm
+- code : time to make it as code
+- debug : time to debug
+- editorial : time to understand editorial
+- total : understand + algorithm + code + debug
+
+
 
 > 특이사항
 - editorial에 소모된 시간은 차트 아래편에 그리기 위해 편의상 (-) 값을 붙여서 그렸음
