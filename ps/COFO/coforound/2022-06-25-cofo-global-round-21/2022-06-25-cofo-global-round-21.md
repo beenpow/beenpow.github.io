@@ -26,7 +26,7 @@ date: "2022-06-25"
 
 ## Problem A : NIT orz!
 
-- level : not decided
+- level : 800
 - tag : bitmasks, greedy
 
 ### point
@@ -82,7 +82,7 @@ int main(){
 
 ## Problem B : NIT Destroys the Universe
 
-- level : not decided
+- level : 900
 - tag : greedy
 
 ### Point
@@ -169,7 +169,7 @@ int main(){
 
 ## Problem C : Fishingprince Plays With Array
 
-- level : not decided
+- level : 1400
 - tag : constructive algorithms, greedy, implementation
 
 ### Point
@@ -291,7 +291,7 @@ int main(){
 ```
 
 ## Problem D : Permutation Graph
-- level : not decided
+- level : 1900
 - tag : binary search, constructive algorithms, data structures, divide and conquer, greedy, shortest paths
 
 ### Point
