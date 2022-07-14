@@ -1,8 +1,8 @@
 ---
 layout: post
-title : "COFO::Global Round 21"
+title : "COFO::Cofo Round 801"
 subtitle: "cofo round"
-type: "codeforce div all"
+type: "codeforce div 2"
 ps: true
 cofo: true
 round: true
@@ -14,8 +14,8 @@ order: 1
 date: "2022-06-25"
 ---
 
-# COFO::Global Round #21
-- [Link : COFO::Global round 21)](https://codeforces.com/contest/1696)
+# COFO::Cofo Round #801
+- [Link : COFO::Cofo round 801)](https://codeforces.com/contest/1696)
 - solved : 
   - A : 
   - B : 
