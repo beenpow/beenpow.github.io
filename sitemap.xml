@@ -1,2222 +1,2505 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://beenpow.github.io/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://beenpow.github.io/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://beenpow.github.io/ps</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/aosp/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://beenpow.github.io/aosp</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/book/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://beenpow.github.io/book</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/project/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://beenpow.github.io/project</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/JONGMAN/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-10-14-cofo-list/2021-10-14-cofo-list</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-09-02-cofo-1363B/2021-09-02-cofo-1363B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/project/cofoeach-progress/cofoeach-progress</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-09-01-cofo-1374D/2021-09-01-cofo-1374D</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-10-14-cofo-list/2021-10-14-cofo-list</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-31-cofo-1375C/2021-08-31-cofo-1375C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-23-cofo-1481C/2022-09-23-cofo-1481C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-28-cofo-1415C/2021-08-28-cofo-1415C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-17-cofo-1530D/2022-09-17-cofo-1530D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-27-cofo-1380A/2021-08-27-cofo-1380A</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-15-cofo-1512E/2022-09-15-cofo-1512E</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-26-cofo-1380B/2021-08-26-cofo-1380B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-13-cofo-1288C/2022-09-13-cofo-1288C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-11-cofo-1421C/2021-08-11-cofo-1421C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-06-cofo-1582D/2022-09-06-cofo-1582D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-21-cofo-1422B/2021-07-21-cofo-1422B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-06-cofo-1527C/2022-09-06-cofo-1527C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-20-cofo-1424G/2021-07-20-cofo-1424G</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-09-05-cofo-1707A/2022-09-05-cofo-1707A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-19-cofo-1425A/2021-07-19-cofo-1425A</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-23-cofo-1503A/2022-08-23-cofo-1503A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-16-cofo-1425F/2021-07-16-cofo-1425F</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-22-cofo-1511D/2022-08-22-cofo-1511D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-15-cofo-1426C/2021-07-15-cofo-1426C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-21-cofo-1513C/2022-08-21-cofo-1513C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-13-cofo-1427B/2021-07-13-cofo-1427B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-18-cofo-1514C/2022-08-18-cofo-1514C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-09-cofo-1425H/2021-07-09-cofo-1425H</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-08-17-cofo-round-814/2022-08-17-cofo-round-814</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-07-cofo-1431B/2021-07-07-cofo-1431B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-15-cofo-1523C/2022-08-15-cofo-1523C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-07-cofo-1428B/2021-07-07-cofo-1428B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-15-cofo-1519D/2022-08-15-cofo-1519D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-06-cofo-1433E/2021-07-06-cofo-1433E</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-11-cofo-1528A/2022-08-11-cofo-1528A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-02-cofo-1437B/2021-07-02-cofo-1437B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-09-cofo-1542C/2022-08-09-cofo-1542C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-06-30-cofo-1443B/2021-06-30-cofo-1443B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-09-cofo-1539D/2022-08-09-cofo-1539D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-06-29-cofo-1443C/2021-06-29-cofo-1443C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-08-cofo-1567C/2022-08-08-cofo-1567C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-06-14-cofo-round-1480/2021-06-14-cofo-round-1480</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-08-cofo-1555D/2022-08-08-cofo-1555D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-06-02-cofo-round-1526/2021-06-02-cofo-round-1526</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-03-cofo-1593E/2022-08-03-cofo-1593E</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-05-28-cofo-round-1527/2021-05-28-cofo-round-1527</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-08-02-cofo-1603B/2022-08-02-cofo-1603B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-05-19-cofo-round-1497/2021-05-19-cofo-round-1497</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-08-01-cofo-round-811/2022-08-01-cofo-round-811</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-03-14-cofo-round-1501/2021-03-14-cofo-round-1501</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-31-cofo-1623C/2022-07-31-cofo-1623C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-03-10-cofo-round-1496/2021-03-10-cofo-round-1496</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-31-cofo-1622C/2022-07-31-cofo-1622C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-02-28-cofo-round-1486/2021-02-28-cofo-round-1486</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-31-cofo-1610C/2022-07-31-cofo-1610C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-02-24-cofo-round-1492/2021-02-24-cofo-round-1492</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-30-cofo-1660D/2022-07-30-cofo-1660D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2021-02-22-cofo-round-1420/2021-02-22-cofo-round-1420</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-30-cofo-1632C/2022-07-30-cofo-1632C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2021-02-06-swea-pro/2021-02-06-swea-pro</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-29-cofo-1687A/2022-07-29-cofo-1687A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2021-01-23-swea-pro/2021-01-23-swea-pro</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-29-cofo-1680C/2022-07-29-cofo-1680C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2021-01-16-swea-pro/2021-01-16-swea-pro</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-28-cofo-780C/2022-07-28-cofo-780C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2021-01-09-swea-pro/2021-01-09-swea-pro</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-07-25-cofo-round-810/2022-07-25-cofo-round-810</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-19-pro-paremtricSearch/2020-12-19-pro-paremtricSearch</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-07-21-cofo-edu-round-132/2022-07-21-cofo-edu-round-132</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-19-pro-convexHull/2020-12-19-pro-convexHull</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-21-cofo-788A/2022-07-21-cofo-788A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-19-pro-RabinKarp_RollingHash/2020-12-19-pro-RabinKarp_RollingHash</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-19-cofo-1251C/2022-07-19-cofo-1251C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-14-pro-LCS/2020-12-14-pro-LCS</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-19-cofo-1217B/2022-07-19-cofo-1217B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-14-pro-KMP/2020-12-14-pro-KMP</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-15-cofo-1633D/2022-07-15-cofo-1633D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-vector/2020-12-13-pro-vector</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-07-13-cofo-round-806/2022-07-13-cofo-round-806</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-technique/2020-12-13-pro-technique</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-07-10-cofo-1689C/2022-07-10-cofo-1689C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-stack/2020-12-13-pro-stack</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-07-04-cofo-round-804/2022-07-04-cofo-round-804</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-sort/2020-12-13-pro-sort</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-06-28-cofo-round-803/2022-06-28-cofo-round-803</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-set/2020-12-13-pro-set</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/template/COFO_round/2022-06-25-cofo-global-round-21</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-section-press/2020-12-13-pro-section-press</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-06-25-cofo-global-round-21/2022-06-25-cofo-global-round-21</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-queue/2020-12-13-pro-queue</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-23-cofo-1351C/2022-06-23-cofo-1351C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-map/2020-12-13-pro-map</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-23-cofo-1338A/2022-06-23-cofo-1338A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-lowerbound/2020-12-13-pro-lowerbound</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-21-cofo-1320A/2022-06-21-cofo-1320A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-linkedlist/2020-12-13-pro-linkedlist</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-21-cofo-1316B/2022-06-21-cofo-1316B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-find/2020-12-13-pro-find</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-21-cofo-1304C/2022-06-21-cofo-1304C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-Chapters/2020-12-13-pro-Chapters</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-20-cofo-1330B/2022-06-20-cofo-1330B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-12-10-BOJ-1786/2020-12-10-BOJ-1786</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-06-19-cofo-1322A/2022-06-19-cofo-1322A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-12-09-BOJ-9251/2020-12-09-BOJ-9251</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-18-cofo-1324D/2022-05-18-cofo-1324D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-12-09-BOJ-1793/2020-12-09-BOJ-1793</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2022-05-14-cofo-round-1697/2022-05-14-cofo-round-1697</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-10-26-cofo-round-1339/2020-10-26-cofo-round-1339</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-14-cofo-1272D/2022-05-14-cofo-1272D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-10-21-cofo-round-1433/2020-10-21-cofo-round-1433</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-14-cofo-1189C/2022-05-14-cofo-1189C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-10-19-cofo-1260C/2020-10-19-cofo-1260C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-10-cofo-1278B/2022-05-10-cofo-1278B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-10-15-cofo-1359C/2020-10-15-cofo-1359C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-09-cofo-1307B/2022-05-09-cofo-1307B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-10-12-cofo-1138B/2020-10-12-cofo-1138B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-09-cofo-1256D/2022-05-09-cofo-1256D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-10-07-BOJ-10504/2020-10-07-BOJ-10504</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-09-cofo-1250L/2022-05-09-cofo-1250L</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-24-cofo-1141E/2020-09-24-cofo-1141E</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-08-cofo-1299A/2022-05-08-cofo-1299A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-23-cofo-1152C/2020-09-23-cofo-1152C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-08-cofo-1296D/2022-05-08-cofo-1296D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-19-cofo-round-1419/2020-09-19-cofo-round-1419</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-08-cofo-1296C/2022-05-08-cofo-1296C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-18-cofo-1250B/2020-09-18-cofo-1250B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-08-cofo-1283C/2022-05-08-cofo-1283C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-15-cofo-round-1418/2020-09-15-cofo-round-1418</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-07-cofo-1301B/2022-05-07-cofo-1301B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-14-cofo-1295B/2020-09-14-cofo-1295B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-07-cofo-1307C/2022-05-07-cofo-1307C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-14-cofo-1228C/2020-09-14-cofo-1228C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-04-cofo-1183C/2022-05-04-cofo-1183C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-14-cofo-1037D/2020-09-14-cofo-1037D</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-04-cofo-1167C/2022-05-04-cofo-1167C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-11-cofo-486C/2020-09-11-cofo-486C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-03-cofo-1203C/2022-05-03-cofo-1203C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-11-cofo-339D/2020-09-11-cofo-339D</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-03-cofo-1178B/2022-05-03-cofo-1178B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-10-cofo-977F/2020-09-10-cofo-977F</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-03-cofo-1176C/2022-05-03-cofo-1176C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-10-cofo-466C/2020-09-10-cofo-466C</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-05-02-cofo-1174C/2022-05-02-cofo-1174C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-09-cofo-round-1407/2020-09-09-cofo-round-1407</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-28-cofo-1236C/2022-04-28-cofo-1236C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-08-cofo-round-1365/2020-09-08-cofo-round-1365</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-28-cofo-1195C/2022-04-28-cofo-1195C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-07-cofo-round-1405/2020-09-07-cofo-round-1405</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-28-cofo-1190A/2022-04-28-cofo-1190A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-07-cofo-559B/2020-09-07-cofo-559B</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-27-cofo-1194C/2022-04-27-cofo-1194C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-03-cofo-round-1372/2020-09-03-cofo-round-1372</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-26-cofo-1311C/2022-04-26-cofo-1311C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-02-cofo-round-1379/2020-09-02-cofo-round-1379</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-26-cofo-1197C/2022-04-26-cofo-1197C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-01-cofo-round-1384/2020-09-01-cofo-round-1384</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-25-cofo-1214A/2022-04-25-cofo-1214A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-31-cofo-round-1397/2020-08-31-cofo-round-1397</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-25-cofo-1209B/2022-04-25-cofo-1209B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-27-cofo-round-1388/2020-08-27-cofo-round-1388</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-25-cofo-1201C/2022-04-25-cofo-1201C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-25-usaco-boj-17197/2020-08-25-usaco-boj-17197</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-25-cofo-1200C/2022-04-25-cofo-1200C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-25-usaco-boj-17196/2020-08-25-usaco-boj-17196</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-19-cofo-1228B/2022-04-19-cofo-1228B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-25-usaco-boj-17195/2020-08-25-usaco-boj-17195</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-19-cofo-1220B/2022-04-19-cofo-1220B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-25-cofo-round-1400/2020-08-25-cofo-round-1400</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-18-cofo-1234B2/2022-04-18-cofo-1234B2</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-22-cofo-round-1401/2020-08-22-cofo-round-1401</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-17-cofo-1251B/2022-04-17-cofo-1251B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-21-cofo-round-1391/2020-08-21-cofo-round-1391</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-17-cofo-1250A/2022-04-17-cofo-1250A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-20-usaco-boj-17026/2020-08-20-usaco-boj-17026</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-17-cofo-1245C/2022-04-17-cofo-1245C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-20-usaco-boj-17025/2020-08-20-usaco-boj-17025</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-17-cofo-1238B/2022-04-17-cofo-1238B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-20-usaco-boj-17024/2020-08-20-usaco-boj-17024</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-17-cofo-1237B/2022-04-17-cofo-1237B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-19-cofo-round-1393/2020-08-19-cofo-round-1393</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-14-cofo-1279C/2022-04-14-cofo-1279C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-15-cofo-round-1398/2020-08-15-cofo-round-1398</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-13-cofo-1270C/2022-04-13-cofo-1270C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-17038/2020-08-14-usaco-boj-17038</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-12-cofo-1303B/2022-04-12-cofo-1303B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-17037/2020-08-14-usaco-boj-17037</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-12-cofo-1260B/2022-04-12-cofo-1260B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-17036/2020-08-14-usaco-boj-17036</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-12-cofo-1256B/2022-04-12-cofo-1256B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-16768/2020-08-14-usaco-boj-16768</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-11-cofo-1285B/2022-04-11-cofo-1285B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-16767/2020-08-14-usaco-boj-16767</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-10-cofo-1284B/2022-04-10-cofo-1284B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-16766/2020-08-14-usaco-boj-16766</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-09-cofo-1279B/2022-04-09-cofo-1279B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-12-cofo-round-1395/2020-08-12-cofo-round-1395</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-07-cofo-1291B/2022-04-07-cofo-1291B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-12-cofo-round-1287/2020-08-12-cofo-round-1287</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-06-cofo-1294C/2022-04-06-cofo-1294C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-05-cofo-round-1399/2020-08-05-cofo-round-1399</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-06-cofo-1285C/2022-04-06-cofo-1285C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-21-usaco-boj-18879/2020-07-21-usaco-boj-18879</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-05-cofo-1373C/2022-04-05-cofo-1373C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-21-usaco-boj-18878/2020-07-21-usaco-boj-18878</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-05-cofo-1292A/2022-04-05-cofo-1292A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-21-usaco-boj-18877/2020-07-21-usaco-boj-18877</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-04-cofo-1468C/2022-04-04-cofo-1468C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-21-cofo-round-1382/2020-07-21-cofo-round-1382</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-04-cofo-1446A/2022-04-04-cofo-1446A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-20-usaco-boj-18321/2020-07-20-usaco-boj-18321</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-03-cofo-1473C/2022-04-03-cofo-1473C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-20-usaco-boj-18320/2020-07-20-usaco-boj-18320</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-04-02-cofo-1475C/2022-04-02-cofo-1475C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-20-usaco-boj-18319/2020-07-20-usaco-boj-18319</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-31-cofo-1470A/2022-03-31-cofo-1470A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-16-cofo-round-1364/2020-07-16-cofo-round-1364</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-31-cofo-1389C/2022-03-31-cofo-1389C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-14-usaco-boj-18785/2020-07-14-usaco-boj-18785</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-30-cofo-1408B/2022-03-30-cofo-1408B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-14-usaco-boj-18784/2020-07-14-usaco-boj-18784</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-29-cofo-1451C/2022-03-29-cofo-1451C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-14-usaco-boj-18783/2020-07-14-usaco-boj-18783</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-27-cofo-1453B/2022-03-27-cofo-1453B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-list/2020-07-13-usaco-list</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-26-cofo-1454D/2022-03-26-cofo-1454D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-boj-18267/2020-07-13-usaco-boj-18267</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-24-cofo-1461B/2022-03-24-cofo-1461B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-boj-18266/2020-07-13-usaco-boj-18266</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-24-cofo-1452B/2022-03-24-cofo-1452B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-boj-18265/2020-07-13-usaco-boj-18265</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-21-cofo-1459B/2022-03-22-cofo-1459B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-09-cofo-round-1370/2020-07-09-cofo-round-1370</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-08-cofo-1462D/2022-03-08-cofo-1462D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-05-cofo-round-1369/2020-07-05-cofo-round-1369</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-03-07-cofo-1466C/2022-03-07-cofo-1466C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-01-cofo-round-1371/2020-07-01-cofo-round-1371</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-02-28-cofo-1463B/2022-02-28-cofo-1463B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2020-06-07-swea-certi/2020-06-07-swea-certi</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-02-22-cofo-1461C/2022-02-22-cofo-1461C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-06-01-BOJ-16918/2020-06-01-BOJ-16918</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-02-21-cofo-1466E/2022-02-21-cofo-1466E</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-29-swea-2383/2020-05-29-swea-2383</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2022-02-19-cofo-1467B/2022-02-19-cofo-1467B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-5658/2020-05-28-swea-5658</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-09-02-cofo-1363B/2021-09-02-cofo-1363B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-4014/2020-05-28-swea-4014</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-09-01-cofo-1374D/2021-09-01-cofo-1374D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-4013/2020-05-28-swea-4013</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-31-cofo-1375C/2021-08-31-cofo-1375C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-2477/2020-05-28-swea-2477</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-28-cofo-1415C/2021-08-28-cofo-1415C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-20-cofo-round-1282/2020-05-20-cofo-round-1282</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-27-cofo-1380A/2021-08-27-cofo-1380A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-19-swea-5656/2020-05-19-swea-5656</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-26-cofo-1380B/2021-08-26-cofo-1380B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-05-18-swea-5648/2020-05-18-swea-5648</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-08-11-cofo-1421C/2021-08-11-cofo-1421C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-17-BOJ-15684/2020-05-17-BOJ-15684</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-21-cofo-1422B/2021-07-21-cofo-1422B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-15-cofo-round-1353/2020-05-15-cofo-round-1353</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-20-cofo-1424G/2021-07-20-cofo-1424G</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-14-BOJ-1395/2020-05-14-BOJ-1395</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-19-cofo-1425A/2021-07-19-cofo-1425A</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-12-cofo-round-1350/2020-05-12-cofo-round-1350</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-16-cofo-1425F/2021-07-16-cofo-1425F</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-11-BOJ-2230/2020-05-11-BOJ-2230</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-15-cofo-1426C/2021-07-15-cofo-1426C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-10-BOJ-2096/2020-05-10-BOJ-2096</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-13-cofo-1427B/2021-07-13-cofo-1427B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-10-BOJ-2003/2020-05-10-BOJ-2003</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-09-cofo-1425H/2021-07-09-cofo-1425H</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-09-cofo-round-1352/2020-05-09-cofo-round-1352</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-07-cofo-1431B/2021-07-07-cofo-1431B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-08-BOJ-16118/2020-05-08-BOJ-16118</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-07-cofo-1428B/2021-07-07-cofo-1428B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-06-cofo-round-1345/2020-05-06-cofo-round-1345</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-06-cofo-1433E/2021-07-06-cofo-1433E</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-06-BOJ-2985/2020-05-06-BOJ-2985</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-07-02-cofo-1437B/2021-07-02-cofo-1437B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-06-BOJ-14867/2020-05-06-BOJ-14867</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-06-30-cofo-1443B/2021-06-30-cofo-1443B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-06-BOJ-14461/2020-05-06-BOJ-14461</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2021-06-29-cofo-1443C/2021-06-29-cofo-1443C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-05-cofo-round-1269/2020-05-05-cofo-round-1269</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-06-14-cofo-round-1480/2021-06-14-cofo-round-1480</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-2174/2020-05-05-BOJ-2174</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-06-02-cofo-round-1526/2021-06-02-cofo-round-1526</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-16637/2020-05-05-BOJ-16637</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-05-28-cofo-round-1527/2021-05-28-cofo-round-1527</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-15683/2020-05-05-BOJ-15683</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-05-19-cofo-round-1497/2021-05-19-cofo-round-1497</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-11559/2020-05-05-BOJ-11559</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-03-14-cofo-round-1501/2021-03-14-cofo-round-1501</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-2133/2020-05-03-BOJ-2133</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-03-10-cofo-round-1496/2021-03-10-cofo-round-1496</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-17144/2020-05-03-BOJ-17144</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-02-28-cofo-round-1486/2021-02-28-cofo-round-1486</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-14503/2020-05-03-BOJ-14503</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-02-24-cofo-round-1492/2021-02-24-cofo-round-1492</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-1011/2020-05-03-BOJ-1011</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2021-02-22-cofo-round-1420/2021-02-22-cofo-round-1420</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-02-cofo-round-1348/2020-05-02-cofo-round-1348</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2021-02-06-swea-pro/2021-02-06-swea-pro</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-02-BOJ-3954/2020-05-02-BOJ-3954</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2021-01-23-swea-pro/2021-01-23-swea-pro</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-02-BOJ-17140/2020-05-02-BOJ-17140</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2021-01-16-swea-pro/2021-01-16-swea-pro</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-02-BOJ-16940/2020-05-02-BOJ-16940</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2021-01-09-swea-pro/2021-01-09-swea-pro</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-2967/2020-05-01-BOJ-2967</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-19-pro-paremtricSearch/2020-12-19-pro-paremtricSearch</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-16987/2020-05-01-BOJ-16987</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-19-pro-convexHull/2020-12-19-pro-convexHull</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-16957/2020-05-01-BOJ-16957</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-19-pro-RabinKarp_RollingHash/2020-12-19-pro-RabinKarp_RollingHash</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-1400/2020-05-01-BOJ-1400</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-14-pro-LCS/2020-12-14-pro-LCS</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-10875/2020-05-01-BOJ-10875</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-14-pro-KMP/2020-12-14-pro-KMP</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-1035/2020-05-01-BOJ-1035</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-vector/2020-12-13-pro-vector</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-30-BOJ-17069/2020-04-30-BOJ-17069</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-technique/2020-12-13-pro-technique</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-29-BOJ-16959/2020-04-29-BOJ-16959</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-stack/2020-12-13-pro-stack</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-28-cofo-round-1271/2020-04-28-cofo-round-1271</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-sort/2020-12-13-pro-sort</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-2931/2020-04-27-BOJ-2931</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-set/2020-12-13-pro-set</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-17780/2020-04-27-BOJ-17780</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-section-press/2020-12-13-pro-section-press</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-17081/2020-04-27-BOJ-17081</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-queue/2020-12-13-pro-queue</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-16988/2020-04-27-BOJ-16988</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-map/2020-12-13-pro-map</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-12094/2020-04-27-BOJ-12094</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-lowerbound/2020-12-13-pro-lowerbound</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-9328/2020-04-25-BOJ-9328</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-linkedlist/2020-12-13-pro-linkedlist</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-2638/2020-04-25-BOJ-2638</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-find/2020-12-13-pro-find</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-2636/2020-04-25-BOJ-2636</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PRO/2020-12-13-pro-Chapters/2020-12-13-pro-Chapters</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-1600/2020-04-25-BOJ-1600</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-12-10-BOJ-1786/2020-12-10-BOJ-1786</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-24-cofo-round-1281/2020-04-24-cofo-round-1281</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-12-09-BOJ-9251/2020-12-09-BOJ-9251</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-9019/2020-04-23-BOJ-9019</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-12-09-BOJ-1793/2020-12-09-BOJ-1793</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-6087/2020-04-23-BOJ-6087</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-10-26-cofo-round-1339/2020-10-26-cofo-round-1339</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-2151/2020-04-23-BOJ-2151</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-10-21-cofo-round-1433/2020-10-21-cofo-round-1433</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-1938/2020-04-23-BOJ-1938</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-10-19-cofo-1260C/2020-10-19-cofo-1260C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-22-cofo-round-1316/2020-04-22-cofo-round-1316</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-10-15-cofo-1359C/2020-10-15-cofo-1359C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-22-BOJ-2357/2020-04-22-BOJ-2357</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-10-12-cofo-1138B/2020-10-12-cofo-1138B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-21-cofo-beta-round-29/2020-04-21-cofo-beta-round-29</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-10-07-BOJ-10504/2020-10-07-BOJ-10504</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-20-1965/2020-04-20-1965</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-24-cofo-1141E/2020-09-24-cofo-1141E</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-19-cofo-round-1277/2020-04-19-cofo-round-1277</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-23-cofo-1152C/2020-09-23-cofo-1152C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-19-BOJ-2846/2020-04-19-BOJ-2846</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-19-cofo-round-1419/2020-09-19-cofo-round-1419</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-18-BOJ-17492/2020-04-18-BOJ-17492</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-18-cofo-1250B/2020-09-18-cofo-1250B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-18-2407/2020-04-18-2407</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-15-cofo-round-1418/2020-09-15-cofo-round-1418</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-18-16234/2020-04-18-16234</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-14-cofo-1295B/2020-09-14-cofo-1295B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-15-cofo-round-1337/2020-04-15-cofo-round-1337</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-14-cofo-1228C/2020-09-14-cofo-1228C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-15-cofo-round-1265/2020-04-15-cofo-round-1265</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-14-cofo-1037D/2020-09-14-cofo-1037D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-15-BOJ-2294/2020-04-15-BOJ-2294</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-11-cofo-486C/2020-09-11-cofo-486C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-15-BOJ-2293/2020-04-15-BOJ-2293</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-11-cofo-339D/2020-09-11-cofo-339D</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-13-cofo-round-1263/2020-04-13-cofo-round-1263</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-10-cofo-977F/2020-09-10-cofo-977F</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-04-12-swea-5653/2020-04-12-swea-5653</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-10-cofo-466C/2020-09-10-cofo-466C</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-11-cofo-round-1262/2020-04-11-cofo-round-1262</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-09-cofo-round-1407/2020-09-09-cofo-round-1407</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-10-cofo-round-1255/2020-04-10-cofo-round-1255</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-08-cofo-round-1365/2020-09-08-cofo-round-1365</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-round-1253/2020-04-07-cofo-round-1253</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-07-cofo-round-1405/2020-09-07-cofo-round-1405</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-list/2020-04-07-cofo-list</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/cofoeach/2020-09-07-cofo-559B/2020-09-07-cofo-559B</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-05-BOJ-2917/2020-04-05-BOJ-2917</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-03-cofo-round-1372/2020-09-03-cofo-round-1372</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-05-BOJ-18188/2020-04-05-BOJ-18188</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-02-cofo-round-1379/2020-09-02-cofo-round-1379</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-04-BOJ-9944/2020-04-04-BOJ-9944</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-09-01-cofo-round-1384/2020-09-01-cofo-round-1384</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-04-04-BOJ-2169/2020-04-04-BOJ-2169</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-31-cofo-round-1397/2020-08-31-cofo-round-1397</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PROGRAMMERS/2020-04-03-programmers-2019-winter-internship/2020-04-03-programmers-2019-winter-internship</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-27-cofo-round-1388/2020-08-27-cofo-round-1388</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-01-cofo-round-1332/2020-04-01-cofo-round-1332</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-25-usaco-boj-17197/2020-08-25-usaco-boj-17197</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-31-BOJ-18312/2020-03-31-BOJ-18312</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-25-usaco-boj-17196/2020-08-25-usaco-boj-17196</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-03-28-cofo-round-1328/2020-03-28-cofo-round-1328</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-25-usaco-boj-17195/2020-08-25-usaco-boj-17195</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-27-BOJ-14584/2020-03-27-BOJ-14584</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-25-cofo-round-1400/2020-08-25-cofo-round-1400</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-26-BOJ-16462/2020-03-26-BOJ-16462</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-22-cofo-round-1401/2020-08-22-cofo-round-1401</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-03-24-cofo-round-1327/2020-03-24-cofo-round-1327</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-21-cofo-round-1391/2020-08-21-cofo-round-1391</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-24-BOJ-5363/2020-03-24-BOJ-5363</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-20-usaco-boj-17026/2020-08-20-usaco-boj-17026</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-18809/2020-03-23-BOJ-18809</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-20-usaco-boj-17025/2020-08-20-usaco-boj-17025</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-18808/2020-03-23-BOJ-18808</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-20-usaco-boj-17024/2020-08-20-usaco-boj-17024</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-17090/2020-03-23-BOJ-17090</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-19-cofo-round-1393/2020-08-19-cofo-round-1393</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-16437/2020-03-23-BOJ-16437</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-15-cofo-round-1398/2020-08-15-cofo-round-1398</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-22-BOJ-6316/2020-03-22-BOJ-6316</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-17038/2020-08-14-usaco-boj-17038</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-22-BOJ-16920/2020-03-22-BOJ-16920</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-17037/2020-08-14-usaco-boj-17037</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-22-BOJ-1175/2020-03-22-BOJ-1175</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-17036/2020-08-14-usaco-boj-17036</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2020-03-21-mistake/2020-03-21-mistake</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-16768/2020-08-14-usaco-boj-16768</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-21-BOJ-1414/2020-03-21-BOJ-1414</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-16767/2020-08-14-usaco-boj-16767</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-20-BOJ-2948/2020-03-20-BOJ-2948</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-08-14-usaco-boj-16766/2020-08-14-usaco-boj-16766</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-20-BOJ-2909/2020-03-20-BOJ-2909</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-12-cofo-round-1395/2020-08-12-cofo-round-1395</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-17-BOJ-10423/2020-03-17-BOJ-10423</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-12-cofo-round-1287/2020-08-12-cofo-round-1287</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-16-BOJ-15559/2020-03-16-BOJ-15559</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-08-05-cofo-round-1399/2020-08-05-cofo-round-1399</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-15-BOJ-6416/2020-03-15-BOJ-6416</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-21-usaco-boj-18879/2020-07-21-usaco-boj-18879</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-15-BOJ-4358/2020-03-15-BOJ-4358</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-21-usaco-boj-18878/2020-07-21-usaco-boj-18878</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-15-BOJ-3584/2020-03-15-BOJ-3584</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-21-usaco-boj-18877/2020-07-21-usaco-boj-18877</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-14-BOJ-15792/2020-03-14-BOJ-15792</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-21-cofo-round-1382/2020-07-21-cofo-round-1382</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-13-BOJ-9366/2020-03-13-BOJ-9366</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-20-usaco-boj-18321/2020-07-20-usaco-boj-18321</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-13-BOJ-6976/2020-03-13-BOJ-6976</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-20-usaco-boj-18320/2020-07-20-usaco-boj-18320</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-12-BOJ-1333/2020-03-12-BOJ-1333</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-20-usaco-boj-18319/2020-07-20-usaco-boj-18319</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-10-BOJ-1874/2020-03-10-BOJ-1874</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-16-cofo-round-1364/2020-07-16-cofo-round-1364</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-08-BOJ-1967/2020-03-08-BOJ-1967</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-14-usaco-boj-18785/2020-07-14-usaco-boj-18785</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-08-BOJ-18224/2020-03-08-BOJ-18224</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-14-usaco-boj-18784/2020-07-14-usaco-boj-18784</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-08-BOJ-14675/2020-03-08-BOJ-14675</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-14-usaco-boj-18783/2020-07-14-usaco-boj-18783</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-03-07-cofo-round-1323/2020-03-07-cofo-round-1323</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-list/2020-07-13-usaco-list</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-07-BOJ-6987/2020-03-07-BOJ-6987</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-boj-18267/2020-07-13-usaco-boj-18267</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-07-BOJ-15971/2020-03-07-BOJ-15971</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-boj-18266/2020-07-13-usaco-boj-18266</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-2869/2020-03-06-BOJ-2869</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/USACO/2020-07-13-usaco-boj-18265/2020-07-13-usaco-boj-18265</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-2231/2020-03-06-BOJ-2231</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-09-cofo-round-1370/2020-07-09-cofo-round-1370</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-1712/2020-03-06-BOJ-1712</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-05-cofo-round-1369/2020-07-05-cofo-round-1369</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-1010/2020-03-06-BOJ-1010</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-07-01-cofo-round-1371/2020-07-01-cofo-round-1371</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-05-BOJ-12738/2020-03-05-BOJ-12738</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2020-06-07-swea-certi/2020-06-07-swea-certi</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-04-BOJ-1149/2020-03-04-BOJ-1149</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-06-01-BOJ-16918/2020-06-01-BOJ-16918</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-04-BOJ-10172/2020-03-04-BOJ-10172</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-29-swea-2383/2020-05-29-swea-2383</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-04-BOJ-1008/2020-03-04-BOJ-1008</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-5658/2020-05-28-swea-5658</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-02-BOJ-3197/2020-03-02-BOJ-3197</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-4014/2020-05-28-swea-4014</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-02-BOJ-3019/2020-03-02-BOJ-3019</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-4013/2020-05-28-swea-4013</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-02-BOJ-16198/2020-03-02-BOJ-16198</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-28-swea-2477/2020-05-28-swea-2477</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-01-BOJ-3568/2020-03-01-BOJ-3568</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-20-cofo-round-1282/2020-05-20-cofo-round-1282</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-01-BOJ-2933/2020-03-01-BOJ-2933</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-19-swea-5656/2020-05-19-swea-5656</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-03-01-BOJ-2290/2020-03-01-BOJ-2290</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-05-18-swea-5648/2020-05-18-swea-5648</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-29-BOJ-5214/2020-02-29-BOJ-5214</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-17-BOJ-15684/2020-05-17-BOJ-15684</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-29-BOJ-4531/2020-02-29-BOJ-4531</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-15-cofo-round-1353/2020-05-15-cofo-round-1353</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-29-BOJ-2115/2020-02-29-BOJ-2115</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-14-BOJ-1395/2020-05-14-BOJ-1395</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-28-BOJ-10836/2020-02-28-BOJ-10836</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-12-cofo-round-1350/2020-05-12-cofo-round-1350</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-02-27-swea-5644/2020-02-27-swea-5644</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-11-BOJ-2230/2020-05-11-BOJ-2230</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-27-BOJ-16722/2020-02-27-BOJ-16722</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-10-BOJ-2096/2020-05-10-BOJ-2096</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-02-26-swea-1953/2020-02-26-swea-1953</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-10-BOJ-2003/2020-05-10-BOJ-2003</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-26-BOJ-1184/2020-02-26-BOJ-1184</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-09-cofo-round-1352/2020-05-09-cofo-round-1352</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-24-BOJ-14868/2020-02-24-BOJ-14868</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-08-BOJ-16118/2020-05-08-BOJ-16118</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-17394/2020-02-23-BOJ-17394</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-06-cofo-round-1345/2020-05-06-cofo-round-1345</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-1719/2020-02-23-BOJ-1719</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-06-BOJ-2985/2020-05-06-BOJ-2985</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-14451/2020-02-23-BOJ-14451</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-06-BOJ-14867/2020-05-06-BOJ-14867</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-11451/2020-02-23-BOJ-11451</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-06-BOJ-14461/2020-05-06-BOJ-14461</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-22-BOJ-2042/2020-02-22-BOJ-2042</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-05-cofo-round-1269/2020-05-05-cofo-round-1269</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-22-BOJ-17130/2020-02-22-BOJ-17130</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-2174/2020-05-05-BOJ-2174</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-22-BOJ-1275/2020-02-22-BOJ-1275</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-16637/2020-05-05-BOJ-16637</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-20-BOJ-16023/2020-02-20-BOJ-16023</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-15683/2020-05-05-BOJ-15683</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-20-BOJ-11085/2020-02-20-BOJ-11085</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-05-BOJ-11559/2020-05-05-BOJ-11559</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-19-BOJ-10776/2020-02-19-BOJ-10776</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-2133/2020-05-03-BOJ-2133</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-18-BOJ-2819/2020-02-18-BOJ-2819</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-17144/2020-05-03-BOJ-17144</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-17-BOJ-1113/2020-02-17-BOJ-1113</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-14503/2020-05-03-BOJ-14503</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-16-BOJ-9376/2020-02-16-BOJ-9376</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-03-BOJ-1011/2020-05-03-BOJ-1011</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-16-BOJ-2598/2020-02-16-BOJ-2598</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-05-02-cofo-round-1348/2020-05-02-cofo-round-1348</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-14-BOJ-17500/2020-02-14-BOJ-17500</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-02-BOJ-3954/2020-05-02-BOJ-3954</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-14-BOJ-15949/2020-02-14-BOJ-15949</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-02-BOJ-17140/2020-05-02-BOJ-17140</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-13-BOJ-14927/2020-02-13-BOJ-14927</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-02-BOJ-16940/2020-05-02-BOJ-16940</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-02-12-cofo-round-500/2020-02-12-cofo-round-500</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-2967/2020-05-01-BOJ-2967</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-02-11-swea-2382/2020-02-11-swea-2382</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-16987/2020-05-01-BOJ-16987</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-02-10-swea-2117/2020-02-10-swea-2117</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-16957/2020-05-01-BOJ-16957</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-02-10-swea-2105/2020-02-10-swea-2105</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-1400/2020-05-01-BOJ-1400</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-09-BOJ-1647/2020-02-09-BOJ-1647</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-10875/2020-05-01-BOJ-10875</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-09-BOJ-1506/2020-02-09-BOJ-1506</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-05-01-BOJ-1035/2020-05-01-BOJ-1035</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-09-BOJ-11097/2020-02-09-BOJ-11097</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-30-BOJ-17069/2020-04-30-BOJ-17069</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-08-BOJ-4577/2020-02-08-BOJ-4577</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-29-BOJ-16959/2020-04-29-BOJ-16959</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-08-BOJ-16236/2020-02-08-BOJ-16236</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-28-cofo-round-1271/2020-04-28-cofo-round-1271</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-08-BOJ-16235/2020-02-08-BOJ-16235</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-2931/2020-04-27-BOJ-2931</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-07-BOJ-17143/2020-02-07-BOJ-17143</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-17780/2020-04-27-BOJ-17780</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-06-BOJ-17142/2020-02-06-BOJ-17142</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-17081/2020-04-27-BOJ-17081</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-06-BOJ-17070/2020-02-06-BOJ-17070</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-16988/2020-04-27-BOJ-16988</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-06-BOJ-15898/2020-02-06-BOJ-15898</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-27-BOJ-12094/2020-04-27-BOJ-12094</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-05-BOJ-17822/2020-02-05-BOJ-17822</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-9328/2020-04-25-BOJ-9328</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-04-BOJ-17825/2020-02-04-BOJ-17825</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-2638/2020-04-25-BOJ-2638</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-04-BOJ-17136/2020-02-04-BOJ-17136</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-2636/2020-04-25-BOJ-2636</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-04-BOJ-17135/2020-02-04-BOJ-17135</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-25-BOJ-1600/2020-04-25-BOJ-1600</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17837/2020-02-03-BOJ-17837</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-24-cofo-round-1281/2020-04-24-cofo-round-1281</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17780/2020-02-03-BOJ-17780</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-9019/2020-04-23-BOJ-9019</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17406/2020-02-03-BOJ-17406</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-6087/2020-04-23-BOJ-6087</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17281/2020-02-03-BOJ-17281</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-2151/2020-04-23-BOJ-2151</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-16434/2020-02-03-BOJ-16434</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-23-BOJ-1938/2020-04-23-BOJ-1938</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-17472/2020-02-02-BOJ-17472</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-22-cofo-round-1316/2020-04-22-cofo-round-1316</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-17471/2020-02-02-BOJ-17471</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-22-BOJ-2357/2020-04-22-BOJ-2357</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-15644/2020-02-02-BOJ-15644</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-21-cofo-beta-round-29/2020-04-21-cofo-beta-round-29</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-14620/2020-02-02-BOJ-14620</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-20-1965/2020-04-20-1965</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-01-BOJ-2064/2020-02-01-BOJ-2064</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-19-cofo-round-1277/2020-04-19-cofo-round-1277</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-01-BOJ-17141/2020-02-01-BOJ-17141</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-19-BOJ-2846/2020-04-19-BOJ-2846</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-02-01-BOJ-16933/2020-02-01-BOJ-16933</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-18-BOJ-17492/2020-04-18-BOJ-17492</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-31-BOJ-3108/2020-01-31-BOJ-3108</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-18-2407/2020-04-18-2407</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-30-BOJ-8972/2020-01-30-BOJ-8972</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-18-16234/2020-04-18-16234</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-4256/2020-01-29-BOJ-4256</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-15-cofo-round-1337/2020-04-15-cofo-round-1337</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-2606/2020-01-29-BOJ-2606</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-15-cofo-round-1265/2020-04-15-cofo-round-1265</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-16196/2020-01-29-BOJ-16196</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-15-BOJ-2294/2020-04-15-BOJ-2294</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-12764/2020-01-29-BOJ-12764</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-15-BOJ-2293/2020-04-15-BOJ-2293</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-1197/2020-01-29-BOJ-1197</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-13-cofo-round-1263/2020-04-13-cofo-round-1263</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-8982/2020-01-28-BOJ-8982</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-04-12-swea-5653/2020-04-12-swea-5653</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-1939/2020-01-28-BOJ-1939</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-11-cofo-round-1262/2020-04-11-cofo-round-1262</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-17836/2020-01-28-BOJ-17836</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-10-cofo-round-1255/2020-04-10-cofo-round-1255</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-17779/2020-01-28-BOJ-17779</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-round-1253/2020-04-07-cofo-round-1253</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-3980/2020-01-27-BOJ-3980</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-list/2020-04-07-cofo-list</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-2252/2020-01-27-BOJ-2252</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-05-BOJ-2917/2020-04-05-BOJ-2917</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-2056/2020-01-27-BOJ-2056</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-05-BOJ-18188/2020-04-05-BOJ-18188</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-1766/2020-01-27-BOJ-1766</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-04-BOJ-9944/2020-04-04-BOJ-9944</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-1516/2020-01-27-BOJ-1516</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-04-04-BOJ-2169/2020-04-04-BOJ-2169</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-14699/2020-01-27-BOJ-14699</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/PROGRAMMERS/2020-04-03-programmers-2019-winter-internship/2020-04-03-programmers-2019-winter-internship</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-14567/2020-01-27-BOJ-14567</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-04-01-cofo-round-1332/2020-04-01-cofo-round-1332</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-14502/2020-01-27-BOJ-14502</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-31-BOJ-18312/2020-03-31-BOJ-18312</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-26-BOJ-6536/2020-01-26-BOJ-6536</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-03-28-cofo-round-1328/2020-03-28-cofo-round-1328</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-26-BOJ-5980/2020-01-26-BOJ-5980</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-27-BOJ-14584/2020-03-27-BOJ-14584</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-24-BOJ-1062/2020-01-24-BOJ-1062</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-26-BOJ-16462/2020-03-26-BOJ-16462</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-23-BOJ-1613/2020-01-23-BOJ-1613</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-03-24-cofo-round-1327/2020-03-24-cofo-round-1327</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-23-BOJ-1325/2020-01-23-BOJ-1325</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-24-BOJ-5363/2020-03-24-BOJ-5363</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-23-BOJ-1068/2020-01-23-BOJ-1068</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-18809/2020-03-23-BOJ-18809</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-22-BOJ-9205/2020-01-22-BOJ-9205</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-18808/2020-03-23-BOJ-18808</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-22-BOJ-2251/2020-01-22-BOJ-2251</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-17090/2020-03-23-BOJ-17090</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-21-Jongman-ch29-4/2020-01-21-Jongman-ch29-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-23-BOJ-16437/2020-03-23-BOJ-16437</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-20-Jongman-ch29-2/2020-01-20-Jongman-ch29-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-22-BOJ-6316/2020-03-22-BOJ-6316</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-20-Jongman-ch29-1/2020-01-20-Jongman-ch29-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-22-BOJ-16920/2020-03-22-BOJ-16920</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2020-01-18-swea-pro/2020-01-18-swea-pro</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-22-BOJ-1175/2020-03-22-BOJ-1175</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-16-BOJ-1525/2020-01-16-BOJ-1525</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2020-03-21-mistake/2020-03-21-mistake</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-01-15-cofo-round-750/2020-01-15-cofo-round-750</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-21-BOJ-1414/2020-03-21-BOJ-1414</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/COFO/coforound/2020-01-14-cofo-round-4/2020-01-14-cofo-round-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-20-BOJ-2948/2020-03-20-BOJ-2948</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-12-BOJ-2504/2020-01-12-BOJ-2504</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-20-BOJ-2909/2020-03-20-BOJ-2909</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-11-BOJ-5373/2020-01-11-BOJ-5373</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-17-BOJ-10423/2020-03-17-BOJ-10423</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-11-BOJ-12867/2020-01-11-BOJ-12867</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-16-BOJ-15559/2020-03-16-BOJ-15559</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2020-01-09-swea-5110/2020-01-09-swea-5110</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-15-BOJ-6416/2020-03-15-BOJ-6416</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-09-BOJ-2512/2020-01-09-BOJ-2512</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-15-BOJ-4358/2020-03-15-BOJ-4358</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-09-BOJ-14864/2020-01-09-BOJ-14864</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-15-BOJ-3584/2020-03-15-BOJ-3584</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-07-BOJ-3425/2020-01-07-BOJ-3425</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-14-BOJ-15792/2020-03-14-BOJ-15792</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-05-BOJ-1920/2020-01-05-BOJ-1920</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-13-BOJ-9366/2020-03-13-BOJ-9366</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-05-BOJ-14670/2020-01-05-BOJ-14670</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-13-BOJ-6976/2020-03-13-BOJ-6976</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-05-BOJ-1158/2020-01-05-BOJ-1158</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-12-BOJ-1333/2020-03-12-BOJ-1333</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-04-BOJ-5052/2020-01-04-BOJ-5052</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-10-BOJ-1874/2020-03-10-BOJ-1874</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/BOJ/2020-01-03-BOJ-2866/2020-01-03-BOJ-2866</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-08-BOJ-1967/2020-03-08-BOJ-1967</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-8/2020-01-01-Jongman-ch28-8</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-08-BOJ-18224/2020-03-08-BOJ-18224</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-7/2020-01-01-Jongman-ch28-7</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-08-BOJ-14675/2020-03-08-BOJ-14675</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-5/2020-01-01-Jongman-ch28-5</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-03-07-cofo-round-1323/2020-03-07-cofo-round-1323</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-4/2020-01-01-Jongman-ch28-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-07-BOJ-6987/2020-03-07-BOJ-6987</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-2/2020-01-01-Jongman-ch28-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-07-BOJ-15971/2020-03-07-BOJ-15971</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-10/2020-01-01-Jongman-ch28-10</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-2869/2020-03-06-BOJ-2869</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-1/2020-01-01-Jongman-ch28-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-2231/2020-03-06-BOJ-2231</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch27-1/2020-01-01-Jongman-ch27-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-1712/2020-03-06-BOJ-1712</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch26-2/2019-12-31-Jongman-ch26-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-06-BOJ-1010/2020-03-06-BOJ-1010</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch26-1/2019-12-31-Jongman-ch26-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-05-BOJ-12738/2020-03-05-BOJ-12738</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch25-2/2019-12-31-Jongman-ch25-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-04-BOJ-1149/2020-03-04-BOJ-1149</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch25-1/2019-12-31-Jongman-ch25-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-04-BOJ-10172/2020-03-04-BOJ-10172</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-7/2019-12-30-Jongman-ch24-7</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-04-BOJ-1008/2020-03-04-BOJ-1008</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-6/2019-12-30-Jongman-ch24-6</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-02-BOJ-3197/2020-03-02-BOJ-3197</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-4/2019-12-30-Jongman-ch24-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-02-BOJ-3019/2020-03-02-BOJ-3019</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-2/2019-12-30-Jongman-ch24-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-02-BOJ-16198/2020-03-02-BOJ-16198</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-1/2019-12-30-Jongman-ch24-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-01-BOJ-3568/2020-03-01-BOJ-3568</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-29-Jongman-ch23-3/2019-12-29-Jongman-ch23-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-01-BOJ-2933/2020-03-01-BOJ-2933</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-29-Jongman-ch23-1/2019-12-29-Jongman-ch23-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-03-01-BOJ-2290/2020-03-01-BOJ-2290</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-28-Jongman-ch22-7/2019-12-28-Jongman-ch22-7</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-29-BOJ-5214/2020-02-29-BOJ-5214</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-27-Jongman-ch22-6/2019-12-27-Jongman-ch22-6</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-29-BOJ-4531/2020-02-29-BOJ-4531</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2019-12-26-swea-1768/2019-12-26-swea-1768</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-29-BOJ-2115/2020-02-29-BOJ-2115</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch22-4/2019-12-26-Jongman-ch22-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-28-BOJ-10836/2020-02-28-BOJ-10836</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch22-1/2019-12-26-Jongman-ch22-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-02-27-swea-5644/2020-02-27-swea-5644</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch21-5/2019-12-26-Jongman-ch21-5</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-27-BOJ-16722/2020-02-27-BOJ-16722</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch21-3/2019-12-26-Jongman-ch21-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-02-26-swea-1953/2020-02-26-swea-1953</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-26-Jongman-ch21-1/2019-12-26-Jongman-ch21-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-26-BOJ-1184/2020-02-26-BOJ-1184</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/SWEA/2019-12-23-swea-1770/2019-12-23-swea-1770</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-24-BOJ-14868/2020-02-24-BOJ-14868</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-22-Jongman-ch19-6/2019-12-22-Jongman-ch19-6</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-17394/2020-02-23-BOJ-17394</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-22-Jongman-ch19-4/2019-12-22-Jongman-ch19-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-1719/2020-02-23-BOJ-1719</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-22-Jongman-ch19-1/2019-12-22-Jongman-ch19-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-14451/2020-02-23-BOJ-14451</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch18-5/2019-12-21-Jongman-ch18-5</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-23-BOJ-11451/2020-02-23-BOJ-11451</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch18-1/2019-12-21-Jongman-ch18-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-22-BOJ-2042/2020-02-22-BOJ-2042</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch17-2/2019-12-21-Jongman-ch17-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-22-BOJ-17130/2020-02-22-BOJ-17130</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-21-Jongman-ch17-1/2019-12-21-Jongman-ch17-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-22-BOJ-1275/2020-02-22-BOJ-1275</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/PRO/2019-12-18-pro-hash/2019-12-18-pro-hash</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-20-BOJ-16023/2020-02-20-BOJ-16023</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-4/2019-12-16-Jongman-ch16-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-20-BOJ-11085/2020-02-20-BOJ-11085</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-3/2019-12-16-Jongman-ch16-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-19-BOJ-10776/2020-02-19-BOJ-10776</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-2/2019-12-16-Jongman-ch16-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-18-BOJ-2819/2020-02-18-BOJ-2819</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-16-Jongman-ch16-1/2019-12-16-Jongman-ch16-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-17-BOJ-1113/2020-02-17-BOJ-1113</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-15-Jongman-ch14-8/2019-12-15-Jongman-ch14-8</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-16-BOJ-9376/2020-02-16-BOJ-9376</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-15-Jongman-ch14-6/2019-12-15-Jongman-ch14-6</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-16-BOJ-2598/2020-02-16-BOJ-2598</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch14-5/2019-12-14-Jongman-ch14-5</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-14-BOJ-17500/2020-02-14-BOJ-17500</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch14-3/2019-12-14-Jongman-ch14-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-14-BOJ-15949/2020-02-14-BOJ-15949</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch14-2/2019-12-14-Jongman-ch14-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-13-BOJ-14927/2020-02-13-BOJ-14927</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch10-6/2019-12-14-Jongman-ch10-6</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-02-12-cofo-round-500/2020-02-12-cofo-round-500</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.2</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-14-Jongman-ch10-4/2019-12-14-Jongman-ch10-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-02-11-swea-2382/2020-02-11-swea-2382</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-12-Jongman-ch10-2/2019-12-12-Jongman-ch10-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-02-10-swea-2117/2020-02-10-swea-2117</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-11-Jongman-ch10-1/2019-12-11-Jongman-ch10-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-02-10-swea-2105/2020-02-10-swea-2105</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-10-Jongman-ch8-16/2019-12-10-Jongman-ch8-16</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-09-BOJ-1647/2020-02-09-BOJ-1647</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-10-Jongman-ch8-14/2019-12-10-Jongman-ch8-14</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-09-BOJ-1506/2020-02-09-BOJ-1506</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-10-Jongman-ch8-12/2019-12-10-Jongman-ch8-12</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-09-BOJ-11097/2020-02-09-BOJ-11097</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-09-Jongman-ch8-11-3/2019-12-09-Jongman-ch8-11-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-08-BOJ-4577/2020-02-08-BOJ-4577</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-09-Jongman-ch8-11-2/2019-12-09-Jongman-ch8-11-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-08-BOJ-16236/2020-02-08-BOJ-16236</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-09-Jongman-ch8-11-1/2019-12-09-Jongman-ch8-11-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-08-BOJ-16235/2020-02-08-BOJ-16235</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-08-Jongman-ch8-9/2019-12-08-Jongman-ch8-9</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-07-BOJ-17143/2020-02-07-BOJ-17143</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-08-Jongman-ch8-7/2019-12-08-Jongman-ch8-7</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-06-BOJ-17142/2020-02-06-BOJ-17142</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-5/2019-12-07-Jongman-ch8-5</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-06-BOJ-17070/2020-02-06-BOJ-17070</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-4-2/2019-12-07-Jongman-ch8-4-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-06-BOJ-15898/2020-02-06-BOJ-15898</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-4-1/2019-12-07-Jongman-ch8-4-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-05-BOJ-17822/2020-02-05-BOJ-17822</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-07-Jongman-ch8-2/2019-12-07-Jongman-ch8-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-04-BOJ-17825/2020-02-04-BOJ-17825</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-04-Jongman-ch8-1/2019-12-04-Jongman-ch8-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-04-BOJ-17136/2020-02-04-BOJ-17136</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-03-Jongman-ch7-6/2019-12-03-Jongman-ch7-6</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-04-BOJ-17135/2020-02-04-BOJ-17135</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-03-Jongman-ch7-4/2019-12-03-Jongman-ch7-4</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17837/2020-02-03-BOJ-17837</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-12-02-Jongman-ch7-3/2019-12-02-Jongman-ch7-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17780/2020-02-03-BOJ-17780</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-11-28-Jongman-ch6-3/2019-11-28-Jongman-ch6-3</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17406/2020-02-03-BOJ-17406</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-11-27-Jongman-ch6-2/2019-11-27-Jongman-ch6-2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-17281/2020-02-03-BOJ-17281</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-11-27-Jongman-ch6-1/2019-11-27-Jongman-ch6-1</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-03-BOJ-16434/2020-02-03-BOJ-16434</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-11-24-Jongman-ch2/2019-11-24-Jongman-ch2</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-17472/2020-02-02-BOJ-17472</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/JONGMAN/2019-11-23-Jongman-list/2019-11-23-Jongman-list</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-17471/2020-02-02-BOJ-17471</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2019-11-06-swea-advanced/2019-11-06-swea-advanced</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-15644/2020-02-02-BOJ-15644</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2019-10-20-swea-certi/2019-10-20-swea-certi</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-02-BOJ-14620/2020-02-02-BOJ-14620</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/ps/FAILNOTE/2019-09-07-swea-advanced/2019-09-07-swea-advanced</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-01-BOJ-2064/2020-02-01-BOJ-2064</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/book/2019-books-i-read/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-01-BOJ-17141/2020-02-01-BOJ-17141</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/book/recently-ridiselect-mar-2019/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-02-01-BOJ-16933/2020-02-01-BOJ-16933</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/book/digital-product-designer/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-31-BOJ-3108/2020-01-31-BOJ-3108</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/project/store-improvement/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-30-BOJ-8972/2020-01-30-BOJ-8972</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://beenpow.github.io/project/highlight-img-share/</loc>
-  <lastmod>2022-02-14T12:04:38+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-4256/2020-01-29-BOJ-4256</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
-
-
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-2606/2020-01-29-BOJ-2606</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-16196/2020-01-29-BOJ-16196</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-12764/2020-01-29-BOJ-12764</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-29-BOJ-1197/2020-01-29-BOJ-1197</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-8982/2020-01-28-BOJ-8982</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-1939/2020-01-28-BOJ-1939</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-17836/2020-01-28-BOJ-17836</loc>
+	<lastmod>2022-09-23T13:57:24+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-28-BOJ-17779/2020-01-28-BOJ-17779</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-3980/2020-01-27-BOJ-3980</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-2252/2020-01-27-BOJ-2252</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-2056/2020-01-27-BOJ-2056</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-1766/2020-01-27-BOJ-1766</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-1516/2020-01-27-BOJ-1516</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-14699/2020-01-27-BOJ-14699</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-14567/2020-01-27-BOJ-14567</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-27-BOJ-14502/2020-01-27-BOJ-14502</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-26-BOJ-6536/2020-01-26-BOJ-6536</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-26-BOJ-5980/2020-01-26-BOJ-5980</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-24-BOJ-1062/2020-01-24-BOJ-1062</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-23-BOJ-1613/2020-01-23-BOJ-1613</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-23-BOJ-1325/2020-01-23-BOJ-1325</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-23-BOJ-1068/2020-01-23-BOJ-1068</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-22-BOJ-9205/2020-01-22-BOJ-9205</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-22-BOJ-2251/2020-01-22-BOJ-2251</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-21-Jongman-ch29-4/2020-01-21-Jongman-ch29-4</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-20-Jongman-ch29-2/2020-01-20-Jongman-ch29-2</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-20-Jongman-ch29-1/2020-01-20-Jongman-ch29-1</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/FAILNOTE/2020-01-18-swea-pro/2020-01-18-swea-pro</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-16-BOJ-1525/2020-01-16-BOJ-1525</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-01-15-cofo-round-750/2020-01-15-cofo-round-750</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/COFO/coforound/2020-01-14-cofo-round-4/2020-01-14-cofo-round-4</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-12-BOJ-2504/2020-01-12-BOJ-2504</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-11-BOJ-5373/2020-01-11-BOJ-5373</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-11-BOJ-12867/2020-01-11-BOJ-12867</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/SWEA/2020-01-09-swea-5110/2020-01-09-swea-5110</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-09-BOJ-2512/2020-01-09-BOJ-2512</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-09-BOJ-14864/2020-01-09-BOJ-14864</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-07-BOJ-3425/2020-01-07-BOJ-3425</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-05-BOJ-1920/2020-01-05-BOJ-1920</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-05-BOJ-14670/2020-01-05-BOJ-14670</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-05-BOJ-1158/2020-01-05-BOJ-1158</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-04-BOJ-5052/2020-01-04-BOJ-5052</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/BOJ/2020-01-03-BOJ-2866/2020-01-03-BOJ-2866</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-8/2020-01-01-Jongman-ch28-8</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-7/2020-01-01-Jongman-ch28-7</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-5/2020-01-01-Jongman-ch28-5</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-4/2020-01-01-Jongman-ch28-4</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-2/2020-01-01-Jongman-ch28-2</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-10/2020-01-01-Jongman-ch28-10</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch28-1/2020-01-01-Jongman-ch28-1</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2020-01-01-Jongman-ch27-1/2020-01-01-Jongman-ch27-1</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch26-2/2019-12-31-Jongman-ch26-2</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch26-1/2019-12-31-Jongman-ch26-1</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch25-2/2019-12-31-Jongman-ch25-2</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-31-Jongman-ch25-1/2019-12-31-Jongman-ch25-1</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-7/2019-12-30-Jongman-ch24-7</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-6/2019-12-30-Jongman-ch24-6</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://beenpow.github.io/ps/JONGMAN/2019-12-30-Jongman-ch24-4/2019-12-30-Jongman-ch24-4</loc>
+	<lastmod>2022-09-23T13:57:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
 </urlset>
+
