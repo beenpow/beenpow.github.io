@@ -49,4 +49,5 @@ you could be a bloody world-beater"
 {% include cofo-progress-1600.html %}
 {% include cofo-progress-1700.html %}
 {% include cofo-progress-1800.html %}
+{% include cofo-progress-1900.html %}
 {% include cofo-progress-end.html %}
