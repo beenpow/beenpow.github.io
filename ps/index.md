@@ -58,6 +58,17 @@ header-img: "img/project_bg.jpg"
 <li><a href = "https://beenpow.github.io/ps/BOJ/">BOJ</a></li>
 
 &nbsp;
+<p class="second-label">
+   <span class="label-emoji">
+      &#128123;
+   </span>
+   &nbsp; Leet Code (quick link)
+</p>
+<li><a href = "https://beenpow.github.io/ps/LEETCODE/">easy</a></li>
+<li><a href = "https://beenpow.github.io/ps/LEETCODE/">medium</a></li>
+<li><a href = "https://beenpow.github.io/ps/LEETCODE/">hard</a></li>
+
+&nbsp;
 &nbsp;
 &nbsp;
 
