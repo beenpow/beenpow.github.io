@@ -64,9 +64,9 @@ header-img: "img/project_bg.jpg"
    </span>
    &nbsp; Leet Code (quick link)
 </p>
-<li><a href = "https://beenpow.github.io/ps/LEETCODE/">easy</a></li>
-<li><a href = "https://beenpow.github.io/ps/LEETCODE/">medium</a></li>
-<li><a href = "https://beenpow.github.io/ps/LEETCODE/">hard</a></li>
+<li><a href = "https://beenpow.github.io/ps/LEETCODE/EASY/">easy</a></li>
+<li><a href = "https://beenpow.github.io/ps/LEETCODE/MEDIUM/">medium</a></li>
+<li><a href = "https://beenpow.github.io/ps/LEETCODE/HARD/">hard</a></li>
 
 &nbsp;
 &nbsp;
