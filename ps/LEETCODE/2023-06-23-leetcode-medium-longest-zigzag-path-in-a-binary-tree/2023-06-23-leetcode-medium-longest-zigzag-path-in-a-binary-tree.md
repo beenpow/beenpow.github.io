@@ -2,6 +2,7 @@
 layout: post
 title : "Leetcode::problem(1372) Longest ZigZag Path in a Binary Tree"
 subtitle: "Leetcode ps medium"
+type: "Leetcode medium"
 level: "medium"
 ps: true
 leetcode: true
