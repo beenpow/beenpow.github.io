@@ -1,9 +1,9 @@
 ---
 layout: post
 title : "Leetcode::problem(1372) Longest"
-subtitle: "Leetcode ps hard"
-type: "Leetcod hard"
-hard: true
+subtitle: "Leetcode ps easy"
+type: "Leetcode easy"
+easy: true
 ps: true
 leetcode: true
 text: true
