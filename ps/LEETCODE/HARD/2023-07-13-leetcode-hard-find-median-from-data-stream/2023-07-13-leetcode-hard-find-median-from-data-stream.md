@@ -94,3 +94,53 @@ public:
  * double param_2 = obj->findMedian();
  */
 ```
+
+## With approach 4
+
+```cpp
+class MedianFinder {
+public:
+    multiset<int> data;
+    multiset<int>::iterator lo_median, hi_median;
+
+    MedianFinder() {
+
+    }
+    
+    void addNum(int num) {
+        int n = data.size();
+        data.insert(num);
+        if (n == 0) {
+            lo_median = hi_median = data.begin();
+        }
+        // odd -> even
+        else if (n & 1) {
+            if (num < *lo_median)
+                lo_median--;
+            else
+                hi_median++;
+        }
+        // even -> odd
+        else {
+            if (num <= *lo_median)
+                lo_median = --hi_median;
+            else if (*lo_median < num && num < *hi_median)
+                lo_median++, hi_median--;
+            else
+                lo_median++;
+        }
+    }
+    
+    double findMedian() {
+        if (data.size() & 1) return (double)*lo_median;
+        else return (double)(*lo_median + *hi_median) / 2;
+    }
+};
+
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * MedianFinder* obj = new MedianFinder();
+ * obj->addNum(num);
+ * double param_2 = obj->findMedian();
+ */
+```
