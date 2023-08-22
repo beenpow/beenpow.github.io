@@ -27,7 +27,6 @@ date: "2023-08-21"
 - Since we are able to walk on the boundary, we can find any land by doing bfs from here
 - Then we cound the lands that we couldn't reach
 
-
 # Big O(time)
 - O(NM)
 
