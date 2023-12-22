@@ -34,4 +34,5 @@ analytics:
   google:
     tracking_id: UA-152943248-1
 
-
+plugins:
+	- jekyll-seo-tag
