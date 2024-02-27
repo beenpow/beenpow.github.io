@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: "https://quotefancy.com/media/wallpaper/3840x2160/7728849-Jordan-B-Peterson-Quote-To-straddle-that-fundamental-duality-is-to.jpg"
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2024-01-01"
 ---

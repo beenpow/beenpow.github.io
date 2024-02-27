@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: "https://www.asics.com/dw/image/v2/BCRJ_PRD/on/demandware.static/-/Sites-asics-au-Library/default/dw6eebafa4/firstspirit/media/new_folder/new_folder_99/proper-running-form-desktop.png"
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2023-11-21"
 ---

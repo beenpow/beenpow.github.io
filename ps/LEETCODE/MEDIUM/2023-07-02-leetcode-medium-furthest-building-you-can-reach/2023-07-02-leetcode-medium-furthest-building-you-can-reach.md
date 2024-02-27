@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: ""https://i.ytimg.com/vi/3EXe5cx5S-0/maxresdefault.jpg
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2023-07-02"
 ---

@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: "https://www.yourhealth.net.au/wp-content/uploads/2017/09/athlete-getting-ready-for-weight-lifting-training.jpg"
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2024-02-27"
 ---

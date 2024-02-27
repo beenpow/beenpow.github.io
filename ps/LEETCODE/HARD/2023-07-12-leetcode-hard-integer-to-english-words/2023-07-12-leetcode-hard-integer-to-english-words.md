@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: ""https://www.newtraderu.com/wp-content/uploads/2022/11/Holly_you_g_businessman_climbing_the_mountain_44c5c7df-98cd-4365-955c-cff427b9a52e.jpg
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2023-07-12"
 ---

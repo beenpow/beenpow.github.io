@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: "https://cdn.autonomous.ai/static/upload/images/common/upload/20211024/Ways-to-Create-and-Stick-to-a-Daily-Schedule_32e5f69d50c.jpg"
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2023-07-19"
 ---

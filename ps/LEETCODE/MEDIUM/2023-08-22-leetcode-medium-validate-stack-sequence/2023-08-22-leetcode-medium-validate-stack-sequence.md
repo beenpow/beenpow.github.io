@@ -9,7 +9,7 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: "https://ca-times.brightspotcdn.com/dims4/default/9239f3a/2147483647/strip/true/crop/3362x2180+0+0/resize/1200x778!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ffc%2Fc5%2Fcf78d17a42f9b691e4dadd76a29d%2Fcloudy.jpeg"
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 order: 1
 date: "2023-08-22"
 ---

@@ -5,7 +5,7 @@ main: true
 title: Book recommendation
 description: books
 project-header: true
-header-img: "img/project_bg.jpg"
+header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
 ---
 
 
