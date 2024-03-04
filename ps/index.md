@@ -5,7 +5,7 @@ description: 정리하며 ps하기
 work: true
 main: true
 project-header: true
-header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
+header-img: ""
 ---
 
 <p class="second-label">

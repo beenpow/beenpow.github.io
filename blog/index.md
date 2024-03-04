@@ -4,7 +4,7 @@ title: "Blog"
 description: 오 이렇게도되나 2
 main: true
 project-header: true
-header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
+header-img: ""
 ---
 
 <a href="https://beenpow.github.io/book/" target="_top">goto book</a>
