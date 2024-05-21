@@ -5,3 +5,5 @@
 - name: Dealing embedded system
 - name: c/c++/java/python
 - name: web crawling
+- name: Debugging
+- name: Data structure
