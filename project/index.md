@@ -2,8 +2,8 @@
 layout: default
 work: true
 main: true
-title: Selected Projects
-description: 지금까지 작업한 프로젝트
+title: Progress
+description: codeforce problem solving history
 project-header: true
 header-img: ""
 ---
