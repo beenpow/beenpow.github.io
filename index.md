@@ -8,11 +8,12 @@ description: beenpow, who is a Programmer in Suwon, South Korea. | 'beenpow' 프
 <div class="intro-animation">
 <section class="explanation">
     <h1 class="intro">
-    I'm beenpow,
+    I'm beenpow.
     </h1>
-    <h1 class="intro">a progmrammer who loves to learn things
-    </h1>
-    <h2 class="intro">배움을 좋아하는 개발자입니다.</h2>
+    <h2 class="intro">"You can't connect the dots looking forward.
+    </h2>
+    <h2 class="intro">You can only connect them looking backwards.</h2>
+		<h2 class="intro">So you have to trust that the dots will somehow connect in your future."</h2>
 </section>
 </div>
 {% include resume.html %}
