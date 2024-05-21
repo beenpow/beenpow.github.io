@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Problem Solving
-description: 정리하며 ps하기
+description: Looking back
 work: true
 main: true
 project-header: true
@@ -12,26 +12,26 @@ header-img: ""
    <span class="label-emoji">
       &#128054;
    </span>
-   &nbsp; 삼성 코딩 테스트 대비 (quick link)
+   &nbsp; Samsung Coding Test (quick link)
 </p>
 
 <li>
  <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
-    Advanced (A형)
+    Advanced (Type A)
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "https://beenpow.github.io/ps/JONGMAN/">&nbsp;&nbsp;&nbsp; - 알고리즘 문제 해결 전략 (구종만 지음)</a></li>
-    <li><a href = "https://beenpow.github.io/ps/FAILNOTE/">&nbsp;&nbsp;&nbsp; - 삼성 Fail Note with 실수모음집</a></li>
+    <li><a href = "https://beenpow.github.io/ps/JONGMAN/">&nbsp;&nbsp;&nbsp; - Book:알고리즘 문제 해결 전략 (구종만 지음)</a></li>
+    <li><a href = "https://beenpow.github.io/ps/FAILNOTE/">&nbsp;&nbsp;&nbsp; - Fail Note with mistakes</a></li>
    </ul>
  </div>
 </li>
 <li>
  <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
-    Professional (B형)
+    Professional (Type B)
  </a><div style = "DISPLAY : none">
    <ul>
-    <li><a href = "https://beenpow.github.io/ps/PRO/">&nbsp;&nbsp;&nbsp; - 기본적인 자료 구조</a></li>
-    <li><a href = "https://beenpow.github.io/ps/USACO/">&nbsp;&nbsp;&nbsp; - Usaco Silver 풀이</a></li>
+    <li><a href = "https://beenpow.github.io/ps/PRO/">&nbsp;&nbsp;&nbsp; - Basic Data Structure</a></li>
+    <li><a href = "https://beenpow.github.io/ps/USACO/">&nbsp;&nbsp;&nbsp; - Usaco Silver</a></li>
    </ul>
  </div>
 </li>
