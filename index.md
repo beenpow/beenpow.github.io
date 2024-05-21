@@ -8,12 +8,12 @@ description: beenpow, who is a Programmer in Suwon, South Korea. | 'beenpow' 프
 <div class="intro-animation">
 <section class="explanation">
     <h1 class="intro">
-    I'm beenpow.
+    I'm beenpow,
     </h1>
-    <h2 class="intro">"You can't connect the dots looking forward.
-    </h2>
-    <h2 class="intro">You can only connect them looking backwards.</h2>
-		<h2 class="intro">So you have to trust that the dots will somehow connect in your future."</h2>
+    <h1 class="intro">, an avid runner and explorer who thrives on new experience.
+    </h1>
+    <h2 class="intro">Whether it's pounding the pavement during a sunrise jog or </h2>
+		<h2 class="intro"> discovering hidden trails in the wilderness, I find joy in every stride.</h2>
 </section>
 </div>
 {% include resume.html %}
