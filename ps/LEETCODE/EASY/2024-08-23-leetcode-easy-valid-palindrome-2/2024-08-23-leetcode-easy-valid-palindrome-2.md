@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "Leetcode::problem(1372) Longest"
+title : "Leetcode::problem(680) Valid Palindrome 2"
 subtitle: "Leetcode ps easy"
 type: "Leetcode easy"
 easy: true
@@ -9,25 +9,51 @@ leetcode: true
 text: true
 author: "beenpow"
 post-header: true
-header-img: "https://www.spotebi.com/wp-content/uploads/2019/01/one-day-day-one-workout-motivation-spotebi.jpg"
+header-img: ""
 order: 1
-date: "2023-06-23"
+date: "2024-08-23"
 ---
 
-# Leetcode::Longe
-- [Link : Leetcode::Long](https://leetcode.com/problems/lcy)
+# Leetcode::Valid Palindrome 2
+- [Link : Leetcode::Valid Palindrome 2](https://leetcode.com/problems/valid-palindrome-ii/)
 
-- level : medium
+- level : easy
+- took 10 mins to solve
 
 # point
+- Given a string s, return true if the s can be palindrome after deleting at most one character from it.
 
 # Design
+- Since we have one chance to delete a character, we use this when we encounter any difference while iterating to check if the given string is palindrome.
+- If we found a different position, we skip either of the different indices and move forward.
 
 
 # Big O(time)
+- TIME : O(N)
+- SPACE : constant
 
 # Code
 
 ```cpp
-
+class Solution {
+public:
+    bool IsPalindrome(string s, int lo, int hi) {
+        while(lo < hi) if (s[lo++] != s[hi--]) return false;
+        return true;
+    }
+    bool validPalindrome(string s) {
+        bool ans = true;
+        int lo = 0, hi = s.size() - 1;
+        while(lo < hi) {
+            if (s[lo] != s[hi]) {
+                ans = false;
+                ans |= IsPalindrome(s, lo+1, hi);
+                ans |= IsPalindrome(s, lo, hi-1);
+                break;
+            }
+            lo++, hi--;
+        }
+        return ans;
+    }
+};
 ```
