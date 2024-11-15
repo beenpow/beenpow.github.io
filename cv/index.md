@@ -12,7 +12,7 @@ header-img: ""
 &nbsp;
 
 
-THIS IS CV4
+THIS IS CV5
 
 <script
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -24,7 +24,7 @@ followed by a display style equation:
 
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 
-```tex
+```latex
 \documentclass[margin]{res} 
 \usepackage{helvet}
 \usepackage{hyperref}
