@@ -12,7 +12,7 @@ header-img: ""
 &nbsp;
 
 
-THIS IS CV6
+THIS IS CV7
 
 <script
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -45,12 +45,5 @@ $$
 
 
 <div class="catalogue">
-{% assign sorted = site.pages | sort: 'order' | reverse %}
-{% for page in sorted %}
-{% if page.book == true %}
-
-     {% include post-list.html %}
-
-{% endif %}
-{% endfor %}
+     {% include main.html %}
 </div>
