@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 work: true
 main: true
 title: CV
@@ -12,26 +12,30 @@ header-img: ""
 &nbsp;
 
 
-THIS IS CV10
+THIS IS CV11
 
 # EDUCATION
-## My name is
-### Czamwd
-#### Doyou want
-* TEST
-	* TEST B
-> TESTIS Done?
-- My name is
-	- Your name
-		- WTF
+__JEONBUK NATIONAL UNIVERSITY__ (Mar 2011 - Feb 2018)
+Bachelor of Sceince in Eletronics Engineering
+* Major: Convergence in Information Technology Engineering
+* Total GPA: 4.07 / 4.5 (3.75 / 4.0)
+* Class Rank at Graduation: 2 / 70
 
 # PATENTS
-- HELOOW
-	- IDK
+- Electronic device and method for compiling packages on basis of order obtained by
+interaction
+- Electronic device for compiling files on basis of designated events, and method
+therefor
+- Electronic device for obtaining information used to compile application, and method
+thereof
 
 # AWARDS
+* Academic Excellence Scholarship, Jeonbuk National University (2011 - 2016)
+* National Science Scholarship, Jeonbuk National University (2011 - 2016)
 
 # EXPERIENCE
+__Samsung Electronics__ (Sep 2020 - Current)
+* a
 
 # ACADEMIC ACTIVITIES
 
@@ -41,9 +45,3 @@ THIS IS CV10
 
 # INTERESTS
 
-
-
-
-<div class="catalogue">
-     {% include main.html %}
-</div>
