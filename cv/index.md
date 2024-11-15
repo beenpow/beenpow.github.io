@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 work: true
 main: true
 title: CV
