@@ -12,10 +12,11 @@ header-img: ""
 &nbsp;
 
 
-THIS IS CV11
+THIS IS CV12
 
 # EDUCATION
-> __JEONBUK NATIONAL UNIVERSITY__ (Mar 2011 - Feb 2018)
+> __JEONBUK NATIONAL UNIVERSITY__ (Mar 2011 - Feb 2018)  
+
 	- Bachelor of Sceince in Eletronics Engineering
 	- Major: Convergence in Information Technology Engineering
 	- Total GPA: 4.07 / 4.5 (3.75 / 4.0)
