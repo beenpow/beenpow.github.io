@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 work: true
 main: true
 title: CV
@@ -12,7 +12,7 @@ header-img: ""
 &nbsp;
 
 
-THIS IS CV8
+THIS IS CV9
 
 # EDUCATION
 ## My name is
