@@ -15,9 +15,11 @@ header-img: ""
 THIS IS CV8
 
 # EDUCATION
-- A
-  - B
-	  - C
+## A
+### B
+#### C
+* TEST
+	* TEST B
 
 # PATENTS
 
