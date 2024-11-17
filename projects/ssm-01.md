@@ -9,6 +9,7 @@ text: true
 author: "beenpow"
 post-header: true
 header-img: ""
+main-img:"https://images.ctfassets.net/2htm8llflwdx/1LEJIT9KGRC4nwTJ5vuS6H/a912e31c468fd32986f2818816135cc4/OnlineLearning_SouthAsia_Learning_Indoor_GettyImages-1071652068.jpg"
 order: 1
 date: "2014-10-01"
 ---
