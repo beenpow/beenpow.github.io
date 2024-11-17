@@ -9,7 +9,7 @@ text: true
 author: "beenpow"
 post-header: true
 header-img: ""
-main-img:"https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg?cs=srgb&dl=pexels-hiteshchoudhary-693859.jpg&fm=jpg"
+main-img: "https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg?cs=srgb&dl=pexels-hiteshchoudhary-693859.jpg&fm=jpg"
 order: 1
 date: "2016-03-06"
 ---
