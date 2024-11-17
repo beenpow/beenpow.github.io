@@ -4,6 +4,7 @@ title : "Wireless USB Adapter for Wired Devices"
 subtitle: "Samsung Software Membership"
 type: "PROJECTS"
 projects: true
+undergrad: true
 text: true
 author: "beenpow"
 post-header: true
@@ -17,16 +18,18 @@ date: "2014-10-01"
 - Samsung Software Membership
 
 # Wireless USB Adapter for Wired Devices
+## 1. Project Duration
+2014.10 ~ 2015.03
 
-## 1. Background
+## 2. Background
 
 With the rapid development of communication technologies today, we can easily access and share information anytime and anywhere. This rapid change means that the way we adapt can lead to vastly different outcomes. As part of this technological evolution, we are transitioning from wired to wireless communication. Despite the prevalence of wired communication, this transition phase is essential. Thus, for users of existing wired input devices, I conceived an idea to replace these wired input devices with wireless communication.
 
-## 2. Development Purpose
+## 3. Development Purpose
 
 Before the advent of wireless communication, wired communication was the standard. As a result, wired mice and keyboards became widely used. However, these wired devices have limitations due to cable length, restricting movement and placement. Wireless devices can overcome these limitations. Recently, as wireless modules become smaller and cheaper, many devices that were once wired are now available wirelessly. This trend extends to input devices, with wireless keyboards and mice becoming more common. However, using wireless devices incurs additional costs. Therefore, this project aims to develop a device that can be attached between existing wired devices and a computer to enable Zigbee communication, making them function like wireless keyboards and mice.
 
-## 3. Technology Trends
+## 4. Technology Trends
 
 ### 1) Zigbee
 
@@ -49,7 +52,7 @@ Qt is a cross-platform framework widely used in computer programming for develop
 
 Qt uses its own painting engine and controls, adhering to the appearance of the executing platform. It was designed with minimal platform-dependent code, making it easy to port to different platforms. However, this approach required replicating the look of each platform. Recent Qt versions use native platform APIs to render controls, eliminating this issue. Other toolkits, like wxWidgets, use platform-dependent functions and have their design styles.
 
-## 4. Development Goals
+## 5. Development Goals
 
 ### System Architecture
 
@@ -58,7 +61,7 @@ Qt uses its own painting engine and controls, adhering to the appearance of the 
 - The input device driver processes data from the hardware and executes the desired actions through the input event device driver.
 - The Key Setting Interface, created using the Qt platform, allows users to set events for shortcut keys with the input event device driver.
 
-## 5. Development Content
+## 6. Development Content
 
 ### 1) Hardware
 
@@ -103,9 +106,7 @@ Click the desired function keys to create a combination. Each click displays the
 Select the desired program from the list to run with the combination key.
 Clicking the Exchange and Reset button clears the text view and registers the function keys and commands into the system, enabling immediate use.
 
-Click the Close button to exit the program.
-
-## 6. Development Environment
+## 7. Development Environment
 
 1) OS
 - Linux Ubuntu 14.04 LTS
@@ -119,9 +120,9 @@ Click the Close button to exit the program.
 - GCC
 - AVR Studio
 
-## 7. Development Budget
+## 8. Development Budget
 
 | No | Part Name         | Purpose            | Price (KRW) | Quantity | Total (KRW) |
 |----|-------------------|--------------------|-------------|----------|-------------|
 | 1  | FZ755AC           | Data Transmission  | 44,000      | 4        | 172,000     |
-| 2  | VNC1L Board       | USB HOST           | 38,000      | 2        |
+| 2  | VNC1L Board       | USB HOST           | 38,000      | 2        |  76,000     |

@@ -26,9 +26,9 @@ THIS IS projects
 {% assign sorted = site.pages | sort: 'order' | reverse %}
 {% for page in sorted %}
 {% if page.projects == true %}
-
-     {% include post-list.html %}
-
+     {% if page.undergrad == true %}
+          {% include post-list.html %}
+{% endif %}
 {% endif %}
 {% endfor %}
 </div>
