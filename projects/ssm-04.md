@@ -76,8 +76,9 @@ The software architecture includes:
 - **Homepage:** Offering membership and web services, and acting as a bridge between WPF and the Android Application using JavaScript. Laundry facility owners can register their facilities through the homepage.
 
 ### Quantitative Goals
-| Goal                                | Description                                                                                                                                          | Weight |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
+
+| Goal | Description | Weight |
+|------|-------------|--------|
 | Bubble Count, Bubble Power, Bubble Camera | Ensuring smooth operation and no malfunctions among the three devices, with data integrity during server or Bluetooth communication.                   | 20     |
 | Server, Web                         | Transmitting processed data to PC APP and Android, providing a comprehensive overview, and allowing manager settings via Web.                           | 30     |
 | PC APP                              | Executing user fingerprint recognition, bill acceptor information, and communicating with Server and Bubble Count for device control.                 | 30     |
