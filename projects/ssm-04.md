@@ -5,6 +5,7 @@ subtitle: "Samsung Software Membership"
 type: "PROJECTS"
 projects: true
 undergrad: true
+list-img: true
 text: true
 author: "beenpow"
 post-header: true
