@@ -9,6 +9,7 @@ text: true
 author: "beenpow"
 post-header: true
 header-img: ""
+main-img:"https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg?cs=srgb&dl=pexels-hiteshchoudhary-693859.jpg&fm=jpg"
 order: 1
 date: "2016-03-06"
 ---
@@ -50,7 +51,7 @@ In the past 20 years, the number of single-person households has quadrupled. In 
 
 Since its inception in 2013, the unmanned laundry service has continuously developed more user-friendly and efficient laundry and dryer functionalities. It has garnered attention both domestically and internationally, being invited to international laundry exhibitions like Texcare Asia. This project aims to provide a smart service using IoT to enhance the convenience for both shop owners and users.
 
-Smart Bubble will encompass three main services:
+Automated Laundry Management System will encompass three main services:
 - An internal service for unmanned laundry facilities
 - An application for user convenience
 - A web service for recruiting new entrepreneurs

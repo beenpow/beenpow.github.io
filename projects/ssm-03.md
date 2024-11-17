@@ -9,6 +9,7 @@ text: true
 author: "beenpow"
 post-header: true
 header-img: ""
+main-img:"https://nietm.in/wp-content/uploads/2022/12/AI.jpg"
 order: 1
 date: "2015-10-09"
 ---
