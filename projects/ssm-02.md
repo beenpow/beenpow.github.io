@@ -55,6 +55,7 @@ Each text block is called a Tile, and a document composed of Tiles is called a M
 (Description of Tile architecture)
 
 ## 8. Quantitative Goals
+
 | Goal                                        | Description                                                                                       | Weight |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------|--------|
 | Cross-platform implementation of Tile       | Running equally on various platforms (Desktop, Mobile)                                            | 20     |
@@ -96,6 +97,7 @@ RECO Beacons emit signals with strength inversely proportional to distance. The 
 - **Operating Systems:** Mac OS, Windows 7
 
 ## 12. Glossary
+
 | Term                     | Description                                                                                  |
 |--------------------------|----------------------------------------------------------------------------------------------|
 | WPF                      | Windows Presentation Foundation for UI with DirectX graphics and XAML for interface design   |
