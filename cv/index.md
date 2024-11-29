@@ -3,16 +3,13 @@ layout: post
 work: true
 main: true
 title: CV
-description: cv
+description: ""
 project-header: true
 header-img: ""
 ---
 
 
 &nbsp;
-Uploading..
-
-
 # EDUCATION
 
 - __JEONBUK NATIONAL UNIVERSITY__ (Mar 2011 - Feb 2018)
