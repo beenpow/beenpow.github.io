@@ -10,6 +10,7 @@ header-img: ""
 
 
 &nbsp;
+Uploading..
 
 
 # EDUCATION
