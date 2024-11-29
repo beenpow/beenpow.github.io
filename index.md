@@ -8,7 +8,7 @@ description: beenpow, who is a Programmer in Suwon, South Korea. | 'beenpow' 프
 <div class="intro-animation">
 <section class="explanation">
     <h1 class="intro">
-    I'm beenpow,
+    I'm Chanbin Lim,
     </h1>
     <h1 class="intro">an avid runner and explorer who thrives on new experience.
     </h1>

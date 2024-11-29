@@ -12,16 +12,6 @@ header-img: ""
 &nbsp;
 
 
-THIS IS projects
-
-# TEST
-- AAE
-     - ASD
-
-
-
-
-
 <div class="catalogue">
 {% assign sorted = site.pages | sort: 'order' | reverse %}
 {% for page in sorted %}

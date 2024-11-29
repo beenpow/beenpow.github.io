@@ -22,39 +22,33 @@ date: "2015-10-09"
 
 # Gesture-Based Control
 
-## Project Duration
+## 1. Project Duration
 2015.10.09 - 2016.01.12
 
-## Purpose and Motivation
+## 2. Purpose and Motivation
 This project provides an IoT platform service based on audio recognition using Fast Fourier Transform (FFT). The goal is to include many products in the Internet of Things by connecting switch buttons attached to general products to the network and providing detachable hardware and platform APIs to users.
 
-## Development Environment
+## 3. Development Environment
 - **IDE:** Android Studio, Visual Studio
 
-## Development Schedule
+## 4. Development Schedule
 - **2015.10.09 - 2015.11.08:** Program planning and environment setup
 - **2015.11.09 - 2015.12.08:** Core functionality implementation and UI design
 - **2015.12.09 - 2016.01.09:** Program integration and debugging
 
-## Innovation and Excellence
-This project enables IoT services based on voice recognition, allowing control of products without touching or seeing them. It provides detachable hardware that can be applied in daily life without modifying existing products controlled by switch buttons, and offers APIs applicable to Android and Windows systems.
-
-## Applicability and Business Potential
-By using motors to control switch buttons, products can be connected to the network without modification. Unlike traditional IoT systems, there is no need to set up new systems, saving costs. The project is distributed as open source for Android and Windows systems, making it easy to apply to many systems.
-
-## Background
+## 5. Background
 
 The Internet of Things (IoT) is the concept of giving objects the ability to identify themselves, communicate, and be controlled over a network. IoT has applications in personal, industrial, and public sectors. Examples include Smart Cars that connect vehicles to the internet for safe and convenient driving, and Smart Homes that connect household appliances to the internet. In the industrial sector, IoT enhances productivity and safety by integrating IoT technology into production, processing, and distribution. In the public sector, IoT information from CCTV, GPS for the elderly, etc., is used to prevent disasters.
 
 FingerSnap aims to provide an IoT platform by connecting many objects to the network through switch buttons, enabling control without physical contact using audio recognition and making it applicable to many systems through open source.
 
-## Development Purpose
-
+## 6. Development Purpose
+![img1](/img/ssm-03_img1.png)
 This project provides an IoT platform based on audio recognition using FFT. By controlling switch buttons, many objects can be connected to the network without modification and controlled without touch using audio recognition. It aims to provide open-source APIs applicable to many systems, allowing control through FingerSnap.
 
 The goal is to enable a platform where many objects focus on the user, connect to the network, and communicate with each other.
 
-## Technology Trends
+## 7. Technology Trends
 
 ### 1) IoT (Internet of Things)
 
@@ -75,6 +69,7 @@ A Smart Home supports automation and may include various automatic control techn
 The convergence of automotive and IT technologies has accelerated the emergence of Smart Cars. These vehicles integrate LTE networks, app stores, and entertainment, information, and productivity features for a futuristic driving experience. Smart Cars aim to enhance safety and convenience by integrating mobile and telecommunication technologies. IT and automotive companies are collaborating to create new ecosystems. At CES 2014, several companies showcased their automotive technologies, highlighting the trends of connectivity, wearable devices, eco-friendly vehicles, autonomous driving, smartphone apps, and proprietary app stores, indicating the growing overlap between automobiles and consumer electronics.
 
 ## Development Goals
+![img2](/img/ssm-03_img2.png)
 
 ### 1) Architecture
 The architecture is divided into Core, Server, Android, Windows, and Hardware components.
@@ -87,24 +82,60 @@ The architecture is divided into Core, Server, Android, Windows, and Hardware co
 ## Development Content
 
 ### 1) Server
-The server facilitates OAuth services, allowing application developers to easily integrate OAuth using the open-source API provided by the project. It manages user authentication for unique hardware modules and delegates group management to other users.
+![img3](/img/ssm-03_img3.png)
+- It serves as a server to provide OAuth services. Application developers can easily integrate OAuth by applying the open-source API from this project.
+- Users can manage user authentication for unique hardware modules and delegate permissions to other users for grouping purposes, using the database and server management.
+![img4](/img/ssm-03_img4.png)
+![img5](/img/ssm-03_img5.png)
+
+- An official website will be developed and provided to introduce the open-source and services for crowdfunding, as well as to offer a demo application.
 
 ### 2) Core
-The core module uses FFT for audio recognition to detect FingerSnap patterns. This module enables remote control of the project’s products. FingerSnap patterns involve distinct sounds made by the thumb and middle finger (first), middle finger and palm (second), and thumb and index finger (third), which are unique to humans. An audio sensing algorithm is developed to detect these patterns using smartphones. The project plans to upgrade the detection algorithm to distinguish FingerSnap patterns among individuals.
+![img6](/img/ssm-03_img6.png)
+- Using audio recognition with Fast Fourier Transform, FingerSnap patterns are recognized. This is a key module that enables remote control of the product in this project.
+
+![img7](/img/ssm-03_img7.png)
+![img8](/img/ssm-03_img8.png)
+- FingerSnap produces three distinct snapping sounds: thumb and middle finger (first), middle finger and palm (second), and thumb and index finger (third). This pattern, which occurs in a short time, is unique to humans. An audio sensing algorithm was developed to detect this pattern using a smartphone. Although it currently detects simple captures, the plan is to upgrade the detection algorithm through crowdfunding to distinguish FingerSnap patterns between individuals.
+
+![img9](/img/ssm-03_img9.png)
+- Additionally, users can not only provide OAuth to many systems but also customize the core to fit their system through open source.
 
 ### 3) Android
-The Android app recognizes audio sensors and controls hardware modules. The main screen resembles a music player with flip-style content. Users can trigger macros by touching images or snapping fingers (FingerSnap).
+![img10](/img/ssm-03_img10.png)
+- The Android app recognizes audio sensors and controls hardware modules.
+
+![img11](/img/ssm-03_img11.png)
+- The main screen allows you to view the contents of each macro in a flip format, similar to a music player. To execute a macro, you can either touch the image or snap your fingers.
+
+![img12](/img/ssm-03_img12.png)
+- You can view all macros in a list format and set lock screen mode and button execution mode for macros in the settings.
+
+![img13](/img/ssm-03_img13.png)
+- To register each macro, you can select the product type and register the product, whether it is PC hardware or other types. You can also delegate permissions to others using only the user's phone number.
+
+
 
 ### 4) WPF
-**Main Features:**
-- **Windows Lock Screen:** Secure lock screen activated by FingerSnap or a pre-set password.
-- **PPT Auto-Slide:** Automatically advances slides during presentations with FingerSnap.
-- **Auto Login:** Automatically logs into websites like Naver with FingerSnap.
-- **Auto Webtoon Scroll:** Scrolls webtoons with FingerSnap.
-- **User Macro Settings:** Allows users to set and execute macros with FingerSnap.
+- 1) **Main Screen:**
+    - ![img14](/img/ssm-03_img14.png)
+    - The features in WPF include Windows lock screen, automatic PPT click, automatic web login system, automatic webtoon scroll, and user macro settings. Users can access these features by clicking the respective icons on the main screen.
+- 2) **Windows Lock Screen:** Secure lock screen activated by FingerSnap or a pre-set password.
+  - ![img15](/img/ssm-03_img15.png)
+- 3) **PPT Auto-Slide:** Automatically advances slides during presentations with FingerSnap.
+  - - ![img16](/img/ssm-03_img16.png)
+- 4) **Auto Login:** Automatically logs into websites like Naver with FingerSnap.
+  - ![img17](/img/ssm-03_img17.png)
+- 5) **Auto Webtoon Scroll:** Scrolls webtoons with FingerSnap.
+  - ![img18](/img/ssm-03_img18.png)
+- 6) **User Macro Settings:** Allows users to set and execute macros with FingerSnap.
+  - ![img19](/img/ssm-03_img19.png)
 
 ### 5) Hardware
+![img20](/img/ssm-03_img20.png)
 Hardware communicates with Android via Bluetooth and allows users to control home devices like lights and door locks using FingerSnap. The system includes a motor for each switch button, an MCU, and a battery. The setup connects to Android via Bluetooth and allows control using predefined protocols.
+![img21](/img/ssm-03_img21.png)
+![img22](/img/ssm-03_img22.png)
 
 ## Development Budget
 

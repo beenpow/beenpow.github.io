@@ -58,6 +58,8 @@ Qt uses its own painting engine and controls, adhering to the appearance of the 
 
 ### System Architecture
 
+![img1](/img/ssm-01_img1.png)
+
 - Each input hardware has an MCU (Microcontroller Unit).
 - The MCU transmits data from wired input devices to the computer via Zigbee communication.
 - The input device driver processes data from the hardware and executes the desired actions through the input event device driver.
@@ -66,6 +68,8 @@ Qt uses its own painting engine and controls, adhering to the appearance of the 
 ## 6. Development Content
 
 ### 1) Hardware
+
+![img2](/img/ssm-01_img2.png)
 
 #### (1) Configuration
 
@@ -79,19 +83,19 @@ Qt uses its own painting engine and controls, adhering to the appearance of the 
 #### (2) Detailed Development Content
 
 ##### (i) PC Dongle
-
+![img3](/img/ssm-01_img3.png)
 - The Atmega128 acts as a USB device to the PC. Firmware utilizes open-source V-USB and two Bluetooth chips to receive data from mouse and keyboard dongles.
 - Connecting this device to the PC recognizes one HID keyboard and mouse each. Data from the keyboard and mouse is delivered to the PC driver.
 
 - The dongle's external case is made using CATIA and a 3D printer.
 
 ##### (ii) Mouse Dongle
-
+![img4](/img/ssm-01_img4.png)
 - USB devices require a host to send data. Thus, the VNC1L chip from FTDI is used to receive data from the USB mouse and transmit it to the PC dongle via UART communication and Bluetooth module.
 - The external case of the mouse & keyboard dongles is also made using CATIA and a 3D printer.
 
 ##### (iii) Keyboard Dongle
-
+![img5](/img/ssm-01_img5.png)
 - Like the mouse, the keyboard also receives data using the VNC1L chip. However, due to the firmware characteristics of VNC1L, AT commands must be set externally via UART to enable the monitor mode for data reception. An additional MCU is included to input these commands.
 
 ### 2) Software
@@ -99,14 +103,31 @@ Qt uses its own painting engine and controls, adhering to the appearance of the 
 #### (1) User Setting Interface
 
 - A GUI interface created using the Qt platform.
-Click the executable file on the desktop to run the program.
-The program window shows virtual keyboard and mouse buttons at the top. Each key and mouse button is represented as a clickable button.
-When creating key combinations by clicking the virtual keyboard and mouse buttons, the corresponding text is displayed in a highlighted text window.
-Select executable programs corresponding to key combinations. The list includes programs currently in Linux. New programs can be added to the list to create new combination keys.
-The Exchange and ResetText button registers function keys and their associated programs to the system, and resets the text view for the next combination.
-Click the desired function keys to create a combination. Each click displays the text of the combination key in the text view.
-Select the desired program from the list to run with the combination key.
-Clicking the Exchange and Reset button clears the text view and registers the function keys and commands into the system, enabling immediate use.
+![img6](/img/ssm-01_img6.png)
+
+- Click the executable file on the desktop to run the program.
+![img7](/img/ssm-01_img7.png)
+
+- The program window shows virtual keyboard and mouse buttons at the top. Each key and mouse button is represented as a clickable button.
+![img8](/img/ssm-01_img8.png)
+
+- When creating key combinations by clicking the virtual keyboard and mouse buttons, the corresponding text is displayed in a highlighted text window.
+![img9](/img/ssm-01_img9.png)
+
+- Select executable programs corresponding to key combinations. The list includes programs currently in Linux. New programs can be added to the list to create new combination keys.
+![img10](/img/ssm-01_img10.png)
+
+- The Exchange and ResetText button registers function keys and their associated programs to the system, and resets the text view for the next combination.
+![img11](/img/ssm-01_img11.png)
+
+- Click the desired function keys to create a combination. Each click displays the text of the combination key in the text view.
+![img12](/img/ssm-01_img12.png)
+
+- Select the desired program from the list to run with the combination key.
+![img13](/img/ssm-01_img13.png)
+
+- Clicking the Exchange and Reset button clears the text view and registers the function keys and commands into the system, enabling immediate use.
+![img14](/img/ssm-01_img14.png)
 
 ## 7. Development Environment
 
