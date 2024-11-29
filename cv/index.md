@@ -2,7 +2,7 @@
 layout: post
 work: true
 main: true
-title: CV
+title: ""
 description: ""
 project-header: true
 header-img: ""
