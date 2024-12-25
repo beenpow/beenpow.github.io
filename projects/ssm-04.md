@@ -21,45 +21,35 @@ date: "2016-03-06"
 
 # Automated Laundry Management System
 
-## Project Duration
+## 1. Project Duration
 2016.03.06 - 2016.05.06
 
-## Purpose and Motivation
+## 2. Purpose and Motivation
 In the past 20 years, the number of single-person households has quadrupled, and it is projected to reach 7.09 million households by 2030. Due to this increase, the demand for unmanned laundry services is also growing. However, the current services are somewhat inconvenient for users and shop owners. This project aims to identify the causes of these inconveniences and create a more user-friendly service for business owners, users, and entrepreneurs.
 
-## Development Environment and Schedule
-
-### Development Environment
+## 3. Development Environment
 - **Operating Systems:** Windows 7, Linux
 - **Development Tools:** Visual Studio, Arduino, Android, Web
 
-### Development Schedule
+## 4. Development Schedule
 - **2016.03.09:** Kick-off Seminar
 - **2016.04.20:** Mid-term Seminar
 - **2016.05.11:** Completion Seminar
 - **2016.05.12:** Final Submission and Completion
 
-## Innovation and Excellence
-This project focuses on providing a smart service using the Internet of Things (IoT) for both shop owners and users. By implementing membership management, bill acceptors, and web services, the project aims to improve convenience for business owners, users, and entrepreneurs.
+## 5. Background
+- In the past 20 years, the number of single-person households has quadrupled. In 1990, there were 1.01 million single-person households, which increased to 2.26 million by 2000, and further to 4.15 million by 2010. This trend is expected to continue, with projections indicating 5.87 million households by 2020 and 7.09 million by 2030. This rapid growth has led to the expansion of related markets, such as unmanned laundry services. The demand for unmanned laundry services is increasing due to the rise in single-person households and has been recognized as a viable business opportunity.
 
-## Applicability and Business Potential
-1. Participation in various competitions through the project
-2. Providing a service that integrates IT technology for business owners, users, and customers
+- Since its inception in 2013, the unmanned laundry service has continuously developed more user-friendly and efficient laundry and dryer functionalities. It has garnered attention both domestically and internationally, being invited to international laundry exhibitions like Texcare Asia. This project aims to provide a smart service using IoT to enhance the convenience for both shop owners and users.
 
-## Background
+- Automated Laundry Management System will encompass three main services:
+    - An internal service for unmanned laundry facilities
+    - An application for user convenience
+    - A web service for recruiting new entrepreneurs
 
-In the past 20 years, the number of single-person households has quadrupled. In 1990, there were 1.01 million single-person households, which increased to 2.26 million by 2000, and further to 4.15 million by 2010. This trend is expected to continue, with projections indicating 5.87 million households by 2020 and 7.09 million by 2030. This rapid growth has led to the expansion of related markets, such as unmanned laundry services. The demand for unmanned laundry services is increasing due to the rise in single-person households and has been recognized as a viable business opportunity.
-
-Since its inception in 2013, the unmanned laundry service has continuously developed more user-friendly and efficient laundry and dryer functionalities. It has garnered attention both domestically and internationally, being invited to international laundry exhibitions like Texcare Asia. This project aims to provide a smart service using IoT to enhance the convenience for both shop owners and users.
-
-Automated Laundry Management System will encompass three main services:
-- An internal service for unmanned laundry facilities
-- An application for user convenience
-- A web service for recruiting new entrepreneurs
-
-## Development Purpose
-
+## 6. Development Purpose
 ### Overview
+![img1](/img/ssm-04_img1.png)
 The project aims to implement Bubble Count, Bubble Power, and Bubble Camera as solutions for managing unmanned laundry services in a PC environment. Each device will operate independently but will be interconnected via wireless communication to function as a single service.
 
 The primary goal is to optimize the unmanned laundry service. Bubble Count will handle customer membership registration and account recharges. Bubble Power will control the power of the laundry machines based on information from Bubble Count. Bubble Camera will use Raspberry Pi 2 and Pi Cam to take real-time photos of the remaining laundry time and send them to the server.
@@ -67,11 +57,12 @@ The primary goal is to optimize the unmanned laundry service. Bubble Count will 
 The PC App will be implemented on a touchscreen monitor within the laundry facility, providing fingerprint recognition, coin counting, and server communication to facilitate easy use for customers. The integrated service will enhance the management and utilization of laundry facilities, increasing their value through the convergence of hardware and software.
 
 ## Development Goals
-
 ### Hardware Architecture
+![img2](/img/ssm-04_img2.png)
 Bubble Count will use Arduino to control bill acceptors and fingerprint readers and transmit the recognized values via Bluetooth Serial communication. Bubble Count and Bubble Power will connect via Bluetooth to receive the number of available laundry machines and control their power. Bubble Camera will use TCP/IP communication and Open CV to capture the remaining laundry time from the webcam and transmit it to the server in real-time. Future plans include obtaining PCB boards from laundry machine manufacturers to measure the remaining laundry time without Bubble Camera.
 
 ### Software Architecture
+![img3](/img/ssm-04_img3.png)
 The software architecture includes:
 - **PC Application:** Implementing a Working Dashboard through WPF to display the current status of the unmanned laundry facility and facilitate customer registration via web service. It will also control the laundry machine power and functions via Bluetooth Serial communication.
 - **Android Application:** Providing a convenient view of the Working Dashboard and real-time updates on laundry completion through Push Alarms. User information will be encrypted and stored using SQLite.
