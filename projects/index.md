@@ -12,19 +12,13 @@ header-img: ""
 &nbsp;
 
 
-THIS IS projects
-
-
-
-
-
 <div class="catalogue">
 {% assign sorted = site.pages | sort: 'order' | reverse %}
 {% for page in sorted %}
-{% if page.book == true %}
-
-     {% include post-list.html %}
-
+{% if page.projects == true %}
+     {% if page.undergrad == true %}
+          {% include post-list.html %}
+{% endif %}
 {% endif %}
 {% endfor %}
 </div>
