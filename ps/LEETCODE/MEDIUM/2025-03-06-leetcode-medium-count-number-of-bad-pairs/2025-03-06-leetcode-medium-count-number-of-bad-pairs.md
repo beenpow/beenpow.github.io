@@ -1,6 +1,6 @@
 ---
 layout: post
-title : "Leetcode::problem max consecutive ones"
+title : "Leetcode::problem count number of bad pairs"
 subtitle: "Leetcode ps medium"
 type: "Leetcode medium"
 medium: true
@@ -11,12 +11,12 @@ author: "beenpow"
 post-header: true
 header-img: ""
 order: 1
-date: "2025-03-05"
+date: "2025-03-06"
 ---
 
-# Leetcode::max consecutive ones
-- [Link : Leetcode:max consecutive ones]()
-- Solved, 1 1 1 0 0
+# Leetcode::count number of bad pairs
+- [Link : Leetcode:count number of bad pairs]()
+- Solved, algorithm 30
 - level : medium
 # point
 
