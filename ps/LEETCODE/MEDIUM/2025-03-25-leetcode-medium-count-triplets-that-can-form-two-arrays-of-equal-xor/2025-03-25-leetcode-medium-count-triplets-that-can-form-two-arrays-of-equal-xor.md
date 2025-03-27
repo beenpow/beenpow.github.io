@@ -50,8 +50,10 @@ date: "2025-03-25"
 - On totalMap, we add current index for prefix result.
 - Then we calculate like,
   - cnt += countMap[prefix] * i - totalMap[prefix];
-  - 
-
+  - It means that,,
+    - For each prefix, we add the range from prefix to i.
+    - We calculate this backwards.
+    - Specifically, we assume that each prefix ends at 'i' at this point of time.
 
 # Big O(time)
 - using prefix
