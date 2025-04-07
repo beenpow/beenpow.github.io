@@ -25,6 +25,7 @@ date: "2025-04-07"
 # Design
 - I've solved with 'Mathmatic way 1', here's how.
 - I have found a pattern like below.
+
 ```cpp
 0-9
 0 (0) 1(0 + 1) 2(0) 3(0) ... 
