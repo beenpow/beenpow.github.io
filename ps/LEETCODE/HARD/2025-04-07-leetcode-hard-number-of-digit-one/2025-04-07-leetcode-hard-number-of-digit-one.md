@@ -49,23 +49,24 @@ date: "2025-04-07"
 
 0-9x6
 0 1 2 3 ...
-- sum = 50000x10 + 100000 = 60'000'0
+- sum = 50000x10 + 100000 = 600000
 
 0-9x7
 0 1 2 3 ...
-- sum = 600000x10 + 1'000'000' = 70'000'00
+- sum = 600000x10 + 1000000 = 7000000
 
 0-9x8
 0 1 2 3 ...
-- sum = 70'000'00x10 + 1'000'000'0 = 80'000'000'
+- sum = 7000000x10 + 10000000 = 80000000
 
 0-9x9
 0 1 2 3 ...
-- sum = 80'000'000'x10 + 1'000'000'00 = 90000'000'0
+- sum = 80000000x10 + 100000000 = 900000000
 
 vector<int> each =   {0,  1,  20,  300,  4000,   50000, 60'000'0,  70'000'00,  80'000'000, 90'000'000'0};
 vector<int> forOne = {1, 10, 100, 1000, 10000, 100'000, 1000'000, 1000'000'0, 1000'000'00, 1000'000'000};
 ```
+
 - So for each number on 10^x position, I add 'each' with the number on the position.
 - Then if the number on the position exceeds '1', we add forOne value too.
 - Also, Editorial suggests another clever way which seems very interesting.
