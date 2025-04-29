@@ -24,6 +24,7 @@ date: "2025-04-28"
     - Valid cut
         - A straight line that touches two pointers on the edge of the circle and passes through its center.
         - A straight line that touches one point on the edge of the circle and its center.
+
 # Design
 - For making n slices,
     - When n is an even number, we only need (n+1)/2 straight lines, since each line divide one piece to two.
