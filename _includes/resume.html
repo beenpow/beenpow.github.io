@@ -1,20 +1,27 @@
 <style>
-    /* "I've worked for" 밑 회색 라인 제거 */
-    section.resume:first-of-type {
-      border-top: none !important;
+    /* 1) 섹션 제목 아래 어떤 종류의 라인도 제거 */
+    section.resume .resume-info,
+    section.resume .second-label {
       border-bottom: none !important;
     }
+    section.resume .resume-info::after,
+    section.resume .second-label::after {
+      content: none !important;
+    }
     
-    /* 제목과 리스트 간격 조정 */
-    section.resume .resume-info + ul {
+    /* 2) 제목 바로 다음 ul 자체에 걸린 border-top 제거 */
+    section.resume > ul:first-of-type {
+      border-top: none !important;
       margin-top: 6px;
     }
     
-    /* 첫 항목 위쪽 보더 제거 */
-    section.resume ul > li.workplace:first-of-type {
+    /* 3) 혹시 li에 보더가 걸려 있다면 첫 항목만 제거 */
+    section.resume > ul:first-of-type > li:first-child,
+    section.resume > ul:first-of-type > li.workplace:first-child {
       border-top: none !important;
     }
-</style>
+    </style>
+    
     
 
 <div class="loading-animation">
