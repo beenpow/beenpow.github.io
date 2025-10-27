@@ -103,24 +103,23 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 ---
 
 ## Technical notes
-<details>
-  <summary><strong>WPF, IoT, Arduino, OpenCV, Bluetooth, PHP</strong></summary>
-  <div markdown="1">
+<details markdown="1">
+<summary><strong>WPF, IoT, Arduino, OpenCV, Bluetooth, PHP</strong></summary>
 
-- **WPF:** XAML and data binding for a real-time dashboard  
-- **IoT and BLE:** Single master design for stability within 10 m conditions  
-- **OpenCV:** Pre-processing with morphology and threshold, fixed ROI for robust reading  
-- **Bluetooth:** Sequence and CRC for packet checks, retry and reconnect logic  
-- **PHP:** Server bridge that exposes device and facility status to clients
-  </div>
+- **WPF:** XAML과 데이터 바인딩으로 실시간 대시보드
+- **IoT & BLE:** 10m 환경 단일 마스터 설계
+- **OpenCV:** morphology/threshold + 고정 ROI, N-vote
+- **Bluetooth:** 시퀀스/CRC + 재시도·재연결(backoff)
+- **PHP:** 기기/시설 상태 브리지 서버
+
 </details>
+
 
 ---
 
 ## Extras
-<details>
-  <summary><strong>Project duration and schedule</strong></summary>
-  <div markdown="1">
+<details markdown="1">
+<summary><strong>Project duration and schedule</strong></summary>
 
 - **Duration:** 2016.03.06 – 2016.05.06
 - **Milestones:**
@@ -129,12 +128,11 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
   - Completion: 2016.05.11
   - Final submission: 2016.05.12
 
-  </div>
 </details>
 
 
 <details>
-  <summary><strong>Images: environment, roles, timeline</strong></summary>
+  <summary><strong>Images: environment, equipment</strong></summary>
   <div class="img-grid">
     <img src="/img/ssm-04_img1.png" alt="Development environment summary" loading="lazy">
     <img src="/img/ssm-04_img2.png" alt="Role distribution chart" loading="lazy">
