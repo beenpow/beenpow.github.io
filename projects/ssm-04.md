@@ -105,12 +105,14 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 ## Technical notes
 <details>
   <summary><strong>WPF, IoT, Arduino, OpenCV, Bluetooth, PHP</strong></summary>
+  <div markdown="1">
 
 - **WPF:** XAML and data binding for a real-time dashboard  
 - **IoT and BLE:** Single master design for stability within 10 m conditions  
 - **OpenCV:** Pre-processing with morphology and threshold, fixed ROI for robust reading  
 - **Bluetooth:** Sequence and CRC for packet checks, retry and reconnect logic  
 - **PHP:** Server bridge that exposes device and facility status to clients
+  </div>
 </details>
 
 ---
@@ -118,19 +120,26 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 ## Extras
 <details>
   <summary><strong>Project duration and schedule</strong></summary>
+  <div markdown="1">
 
-- 2016.03.06 - 2016.05.06  
-- Kick-off 2016.03.09, Mid-term 2016.04.20, Completion 2016.05.11, Final submission 2016.05.12
+- **Duration:** 2016.03.06 – 2016.05.06
+- **Milestones:**
+  - Kick-off: 2016.03.09
+  - Mid-term: 2016.04.20
+  - Completion: 2016.05.11
+  - Final submission: 2016.05.12
 
+  </div>
 </details>
+
 
 <details>
   <summary><strong>Images: environment, roles, timeline</strong></summary>
-
-<img src="path/to/image12.png" alt="Development environment summary" loading="lazy">
-<img src="path/to/image13.png" alt="Role distribution chart" loading="lazy">
-<img src="path/to/image14.png" alt="Development schedule timeline" loading="lazy">
-
+  <div class="img-grid">
+    <img src="/img/ssm-04_img1.png" alt="Development environment summary" loading="lazy">
+    <img src="/img/ssm-04_img2.png" alt="Role distribution chart" loading="lazy">
+    <img src="/img/ssm-04_img3.png" alt="Development schedule timeline" loading="lazy">
+  </div>
 </details>
 
 ---
@@ -150,7 +159,33 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
   padding: 6px 10px;
   white-space: nowrap;
 }
+
+/* 새로 추가되는 부분 */
+details {
+  margin: 14px 0;
+}
+details > summary {
+  cursor: pointer;
+}
+details > div[markdown="1"] {
+  margin-top: 8px;
+}
+
+/* 이미지 3열 그리드 */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+.img-grid img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
 </style>
+
 
 ## Résumé bullets
 - Built end-to-end unmanned laundry system across PC, Arduino, and Android. Integrated payment, membership, power control, and live remaining-time.  
