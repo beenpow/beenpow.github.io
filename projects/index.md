@@ -3,8 +3,7 @@ layout: default
 work: true
 main: true
 title: PROJECTSs
-description: A showcase of software projects that highlight my technical interests,
-problem-solving mindset, and engineering approach.
+description: A showcase of software projects that highlight my technical interests, problem-solving mindset, and engineering approach.
 project-header: true
 header-img: ""
 ---

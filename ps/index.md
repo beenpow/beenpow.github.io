@@ -38,6 +38,39 @@ header-img: ""
 .ps-list li { margin:4px 0; }
 </style>
 
+
+/* 하위 링크들을 버튼처럼 */
+.ps-list {
+  margin: 8px 0 14px 0;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ps-list li { list-style: none; margin: 0; }
+.ps-list a {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #111827;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.ps-list a:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+/* 카테고리별 색감(상위 버튼 팔레트와 맞춤) */
+.ps-list.ps-samsung a { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
+.ps-list.ps-happy   a { background:#ecfdf5; color:#059669; border-color:#bbf7d0; }
+.ps-list.ps-leet    a { background:#f5f3ff; color:#7c3aed; border-color:#e9d5ff; }
+
+
 <!-- Samsung -->
 <p class="ps-label"><span class="ps-emoji">🐶</span> Samsung Coding Test</p>
 <details class="ps-acc">
