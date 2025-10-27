@@ -57,10 +57,10 @@
   <div class="work-info">
     <p>{{ second.role }}</p>
     <p class="work-sub-info">{{ second.date }}</p>
+    {% if second.coursework %}
+      <p class="work-sub-info">Coursework: {{ second.coursework }}</p>
+    {% endif %}
   </div>
-  {% if second.coursework %}
-    <div class="work-sub-info">Coursework: {{ second.coursework }}</div>
-  {% endif %}
   {% endfor %}
 </li>
 
@@ -70,10 +70,10 @@
   <div class="work-info">
     <p>{{ first.role }}</p>
     <p class="work-sub-info">{{ first.date }}</p>
-  </div>
-  {% if first.coursework %}
-    <div class="work-sub-info">Coursework: {{ first.coursework }}</div>
-  {% endif %}
+    {% if first.coursework %}
+      <p class="work-sub-info">Coursework: {{ first.coursework }}</p>
+    {% endif %}
+  </div>  
   {% endfor %}
 </li>
 {% endif %}
