@@ -85,7 +85,7 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 <details>
   <summary><strong>View full budget table</strong></summary>
 
-<div style="overflow-x:auto;">
+<div class="table-scroll" markdown="1">
 
 | No | Part Name                              | Purpose                  | Price (KRW) | Quantity | Total (KRW) |
 |----|----------------------------------------|--------------------------|-------------|----------|-------------|
@@ -134,6 +134,23 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 </details>
 
 ---
+
+<style>
+.table-scroll {
+  overflow-x: auto;
+  margin-top: 6px;
+}
+.table-scroll table {
+  border-collapse: collapse;
+  min-width: 720px;
+  width: 100%;
+}
+.table-scroll th, .table-scroll td {
+  border: 1px solid #e5e7eb;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+</style>
 
 ## Résumé bullets
 - Built end-to-end unmanned laundry system across PC, Arduino, and Android. Integrated payment, membership, power control, and live remaining-time.  
