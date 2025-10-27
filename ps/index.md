@@ -1,76 +1,80 @@
 ---
 layout: default
 title: Problem Solving
-description: Looking back
+description: A collection of algorithm challenges and coding tests I’ve solved, reflecting my approach to logic, efficiency, and problem-solving as a software engineer.
 work: true
 main: true
 project-header: true
 header-img: ""
 ---
 
-<p class="second-label">
-   <span class="label-emoji">
-      &#128054;
-   </span>
-   &nbsp; Samsung Coding Test (quick link)
-</p>
+<style>
+/* 버튼(요약) 공통 스타일 */
+.ps-btn {
+  display:inline-block; padding:10px 14px; border-radius:12px;
+  font-weight:600; text-decoration:none; cursor:pointer;
+  background:#f5f3ff; color:#6b21a8; border:1px solid #e9d5ff;
+  transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.ps-btn:hover { background:#ede9fe; transform:translateY(-1px); box-shadow:0 2px 8px rgba(0,0,0,.06); }
+.ps-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 18px; }
 
-<li>
- <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
-    Advanced (Type A)
- </a><div style = "DISPLAY : none">
-   <ul>
-    <li><a href = "https://beenpow.github.io/ps/JONGMAN/">&nbsp;&nbsp;&nbsp; - Book:알고리즘 문제 해결 전략 (구종만 지음)</a></li>
-    <li><a href = "https://beenpow.github.io/ps/FAILNOTE/">&nbsp;&nbsp;&nbsp; - Fail Note with mistakes</a></li>
-   </ul>
- </div>
-</li>
-<li>
- <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
-    Professional (Type B)
- </a><div style = "DISPLAY : none">
-   <ul>
-    <li><a href = "https://beenpow.github.io/ps/PRO/">&nbsp;&nbsp;&nbsp; - Basic Data Structure</a></li>
-    <li><a href = "https://beenpow.github.io/ps/USACO/">&nbsp;&nbsp;&nbsp; - Usaco Silver</a></li>
-   </ul>
- </div>
-</li>
+/* 섹션 라벨 */
+.ps-label { font-size:1.05rem; font-weight:700; margin:24px 0 8px; display:flex; align-items:center; gap:8px; }
+.ps-emoji { font-size:1.2rem; }
 
-&nbsp;
-<p class="second-label">
-   <span class="label-emoji">
-      &#128123;
-   </span>
-   &nbsp; Happy PS (quick link)
-</p>
+/* 색상 변형(원하면 조절 가능) */
+.ps-samsung { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
+.ps-happy   { background:#ecfdf5; color:#059669; border-color:#bbf7d0; }
+.ps-leet    { background:#f5f3ff; color:#7c3aed; border-color:#e9d5ff; }
 
+/* details 기본 스타일 */
+.ps-acc { margin:8px 0 4px; }
+.ps-acc > summary { list-style:none; }
+.ps-acc > summary::-webkit-details-marker { display:none; }
 
-<li>
- <a onclick = "this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href = "javascript:void(0)">
-    Codeforce
- </a><div style = "DISPLAY : none">
-   <ul>
-    <li><a href = "https://beenpow.github.io/ps/COFO/coforound/">&nbsp;&nbsp;&nbsp; - Codeforce round</a></li>
-    <li><a href = "https://beenpow.github.io/ps/COFO/cofoeach/">&nbsp;&nbsp;&nbsp; - Codeforce 1000-1400</a></li>
-   </ul>
- </div>
-</li>
-<li><a href = "https://beenpow.github.io/ps/BOJ/">BOJ</a></li>
+/* 리스트 정돈 */
+.ps-list { margin:6px 0 14px 18px; }
+.ps-list li { margin:4px 0; }
+</style>
 
-&nbsp;
-<p class="second-label">
-   <span class="label-emoji">
-      &#128123;
-   </span>
-   &nbsp; Leet Code (quick link)
-</p>
-<li><a href = "https://beenpow.github.io/ps/LEETCODE/EASY/">easy</a></li>
-<li><a href = "https://beenpow.github.io/ps/LEETCODE/MEDIUM/">medium</a></li>
-<li><a href = "https://beenpow.github.io/ps/LEETCODE/HARD/">hard</a></li>
+<!-- Samsung -->
+<p class="ps-label"><span class="ps-emoji">🐶</span> Samsung Coding Test</p>
+<details class="ps-acc">
+  <summary class="ps-btn ps-samsung">Advanced (Type A)</summary>
+  <ul class="ps-list">
+    <li><a href="https://beenpow.github.io/ps/JONGMAN/">Book: 알고리즘 문제 해결 전략 (구종만)</a></li>
+    <li><a href="https://beenpow.github.io/ps/FAILNOTE/">Fail Note with mistakes</a></li>
+  </ul>
+</details>
+<details class="ps-acc">
+  <summary class="ps-btn ps-samsung">Professional (Type B)</summary>
+  <ul class="ps-list">
+    <li><a href="https://beenpow.github.io/ps/PRO/">Basic Data Structure</a></li>
+    <li><a href="https://beenpow.github.io/ps/USACO/">USACO Silver</a></li>
+  </ul>
+</details>
 
-&nbsp;
-&nbsp;
-&nbsp;
+<!-- Happy PS -->
+<p class="ps-label"><span class="ps-emoji">👻</span> Happy PS</p>
+<details class="ps-acc">
+  <summary class="ps-btn ps-happy">Codeforces</summary>
+  <ul class="ps-list">
+    <li><a href="https://beenpow.github.io/ps/COFO/coforound/">Codeforces Round</a></li>
+    <li><a href="https://beenpow.github.io/ps/COFO/cofoeach/">Codeforces 1000–1400</a></li>
+  </ul>
+</details>
+<div class="ps-row">
+  <a class="ps-btn ps-happy" href="https://beenpow.github.io/ps/BOJ/">BOJ</a>
+</div>
+
+<!-- LeetCode -->
+<p class="ps-label"><span class="ps-emoji">👻</span> LeetCode</p>
+<div class="ps-row">
+  <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/EASY/">Easy</a>
+  <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/MEDIUM/">Medium</a>
+  <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/HARD/">Hard</a>
+</div>
 
 <ul class="catalogue">
 {% assign sorted = site.pages | sort: 'date' | reverse %}

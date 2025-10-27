@@ -1,24 +1,19 @@
-fifth-place:
+fourth-place:
 - name: Samsung Electronics
   role: Working as a system software engineer
-  date: SEP. 2020. - Current
-
-fourth-place:
-- name: Continental Automotive
-  role: Worked as a software engineer
-  date: JAN. 2018. - JUL. 2020.
+  date: 09/2020 - 06/2025
 
 third-place:
-- name: HappyTel
-  role: Worked as a mobile repair technician at Australia
-  date: JUL. 2017. - JUN. 2018.
+- name: Continental Automotive
+  role: Worked as a software engineer
+  date: 01/2018 - 07/2020
 
 second-place:
-- name: Samsung Software Membership
-  role: Completed semesterly projects
-  date: JUN. 2014. - JUN. 2017.
+- name: HappyTel
+  role: Worked as a mobile repair technician at Australia
+  date: 07/2017 - 06/2018
 
 first-place:
-- name: Jeonbuk National University
-  role: Majored in electronics
-  date: MAR. 2011. - MAR. 2018.
+- name: Samsung Software Membership
+  role: Completed semesterly projects
+  date: 06/2014 - 06/2017

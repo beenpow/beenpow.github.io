@@ -11,6 +11,9 @@ header-img: ""
 
 &nbsp;
 # EDUCATION
+- __University of Southern California__ (Aug 2025 - Expected Graduation: May 2027)
+  - Master of Science in Computer Science
+  - Coursework: Database Systems, Analysis of Algorithms
 
 - __JEONBUK NATIONAL UNIVERSITY__ (Mar 2011 - Feb 2018)
   - Bachelor of Sceince in Eletronic Engineering
@@ -32,17 +35,16 @@ header-img: ""
 
 # EXPERIENCE
 - __Samsung Electronics__ _Software Engineer_ (Sep 2020 - Current)
-  - Contributed code to Samsung’s mobile, tablet, and watch projects focused on Android OS/framework.
-  - Co-authored and published three patents related to compilation.
-  - Analyzed and improved performance aspects, including sluggishness, stops, resets, and booting, enhancing app launch times with Ahead of Time (AOT) compilation techniques.
-  - Collaborated globally with colleagues and engineers from the US, India, China, Vietnam, Google, and Qualcomm to solve complex issues.
+  - Engineered performance improvements in Android Runtime (ART) and compilation pipeline, reducing app launch times by 15% through prelaunch execution, prioritized compilation, and artifact recovery.
+  - Developed automated boot performance tracing and regression testing infrastructure, leveraging systrace to capture process-level (PID) activity and identify bottlenecks across OS versions and device models.
+  - Automated Android Runtime and boot-time testing with Python and shell scripts to collect multi-run averages and improve result reliability, enabling faster root-cause analysis in performance investigations.
+  - Enhanced Android system stability by extending monitoring mechanisms and analyzing inter-process communication usage, preventing stalls and ensuring responsiveness of critical services.
+  - Collaborated with Google Android and Qualcomm engineers to reproduce and diagnose OS-level issues across Pixel and Galaxy devices, driving upstream fixes and accelerating integration into Samsung products.
 
 - __Continental Automotive Electronics__ _Software Engineer_ (Jan 2018 - July 2020)
-  - Developed car dashboard solutions for Hyundai’s GV70, GV80, and G80 models
-  using the Ethernet protocol.
-  - Collaborated with international teams from Singapore and Germany, particularly
-  from the Research Center.
-  - Maintained project integrity through continuous integration and resolved performance issues via a robust testing environment and driving tests.
+  - Developed real-time in-vehicle communication systems using Ethernet-based digital dashboards for Hyundai vehicles, ensuring low-latency and robust performance.
+  - Integrated software modules on ARM-based cores within an AUTOSAR RTOS, handling scheduling, process priorities, and debugging with hardware tools.
+  - Collaborated with global R&D teams (Singapore, Germany) using CI pipelines, hardware-in-the-loop validation, and real-world testing.
 
 - __HappyTel__ _Technician_ (Jul 2016 - May 2017)
   - Provided repair services for Samsung Galaxy, Apple iPhone, and iPad devices while managing accessory sales.
@@ -67,16 +69,8 @@ header-img: ""
   - _Self-Balancing Two-Wheel Robot_: Developed a two-wheeled balancing robot using sensors and a complementary filter to maintain stability.
 
 # COMPUTER SKILLS
-- __Languages__: Python, C++, C, Java, Rust, HTML.
-- __OS__: Android, Linux, Windows, macOS, AUTOSAR.
-- __Software as tool__: Vim, Git, Perforce, Sourcetree, Jira, MATLAB, TRACE32, GDB, LLDB, Systrace, Memory Analyzer Tool(Eclipse).
-- __Protocol__: CAN, Ethernet.
-- __Others__: Arduino, Raspberry Pi, Arm, Reading bug reports, Unit Test.
-
-# SERVICES
-- __Military Service at ROK Army__ (Feb 2011 - Nov 2012)
-  - Fulfilled the mandatory military service in the ROK Army, gaining hands-on experience with advanced communication and information technology systems.
-  - Managed and maintained communication devices and technologies, ensuring secure and reliable communication lines.
-
-# INTERESTS
-- Artificial Intelligence, Operating System, Compiler.
+- __Languages__: Python, C++, C, Java, Rust, HTML, SQL, JavaScript.
+- __Systems & Frameworks__: Linux, Android internals (ART, IPC, Init, APEX), Embedded RTOS (AUTOSAR).
+- __Collaboration & Tools__: Vim, Git, Perforce, Sourcetree, Jira, MATLAB, TRACE32, GDB, LLDB, Systrace, Memory Analyzer Tool(Eclipse), systrace, dumpstate, bugreport, logcat, Docker, Jenkins.
+- __Training & Certifications__: Samsung AI/ML training (PyTorch, Pandas, NumPy) and Data Science certification.
+- __Automation__: Python & Shell scripting for test pipelines (Android Runtime / boot-time regression tests).
