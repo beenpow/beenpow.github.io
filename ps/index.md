@@ -36,7 +36,7 @@ header-img: ""
 /* 리스트 정돈 */
 .ps-list { margin:6px 0 14px 18px; }
 .ps-list li { margin:4px 0; }
-</style>
+
 
 
 /* 하위 링크들을 버튼처럼 */
@@ -69,6 +69,11 @@ header-img: ""
 .ps-list.ps-samsung a { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
 .ps-list.ps-happy   a { background:#ecfdf5; color:#059669; border-color:#bbf7d0; }
 .ps-list.ps-leet    a { background:#f5f3ff; color:#7c3aed; border-color:#e9d5ff; }
+
+</style>
+
+
+
 
 
 <!-- Samsung -->
