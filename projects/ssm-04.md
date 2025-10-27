@@ -39,7 +39,7 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 
 ## Solution Highlights
 1) **Reliable Bluetooth serial**  
-   Backoff based reconnect, sequence id with CRC, and idempotent commands for safe retries
+   Backoff-based reconnect, sequence id with CRC, and idempotent commands for safe retries
 
 2) **Stable timer reading**  
    Fixed ROI and pre-processing with morphology and threshold, N-vote consensus for ±5 s accuracy
@@ -85,15 +85,19 @@ Users cannot see accurate status, owners cannot control machines reliably, and d
 <details>
   <summary><strong>View full budget table</strong></summary>
 
+<div style="overflow-x:auto;">
+
 | No | Part Name                              | Purpose                  | Price (KRW) | Quantity | Total (KRW) |
 |----|----------------------------------------|--------------------------|-------------|----------|-------------|
-| 1  | SSR (Solid State Relay 240VAC 15A with housing) | Washing machine on and off | 1,000       | 1        | 1,000       |
-| 2  | O-ring terminal                        | Power outlet             | 1,700       | 1        | 1,700       |
-| 3  | Grounding outlet                       | Power outlet             | 1,000       | 1        | 1,000       |
-| 4  | Arduino Nano                           | Hardware MCU             | 33,664      | 2        | 67,328      |
-| 5  | Fingerprint reader                     | Membership management    | 79,000      | 1        | 79,000      |
-| 6  | Bill acceptor                          | Membership coin handling | 79,000      | 1        | 79,000      |
+| 1  | SSR (Solid State Relay 240VAC 15A with housing) | Washing machine on and off | 1,000 | 1 | 1,000 |
+| 2  | O-ring terminal                        | Power outlet             | 1,700 | 1 | 1,700 |
+| 3  | Grounding outlet                       | Power outlet             | 1,000 | 1 | 1,000 |
+| 4  | Arduino Nano                           | Hardware MCU             | 33,664 | 2 | 67,328 |
+| 5  | Fingerprint reader                     | Membership management    | 79,000 | 1 | 79,000 |
+| 6  | Bill acceptor                          | Membership coin handling | 79,000 | 1 | 79,000 |
 | **Total** |                                  |                          |             |          | **229,028** |
+
+</div>
 </details>
 
 ---
