@@ -1,0 +1,16 @@
+worked_for:
+  - name: Samsung Electronics
+    logo: /img/samsung_logo.svg
+    url: https://www.samsung.com/us/
+    summary: Android OS platform software; performance, reliability, and large-scale system components.
+  - name: Continental
+    logo: /img/continental_logo.svg
+    url: https://www.continental.com/en/
+    summary: Automotive software for in-vehicle platforms; embedded/system components and cross-team collaboration.
+
+  # - name: USC
+  #   logo: /img/usc_logo.svg
+  #   url: https://www.usc.edu/
+  # - name: SSM
+  #   logo: /img/ssm_logo.svg
+  #   url: https://infossm.github.io/
