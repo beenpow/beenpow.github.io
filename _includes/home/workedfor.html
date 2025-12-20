@@ -1,0 +1,27 @@
+<section class="home-section workedfor">
+    <div class="section-header">
+      <p class="section-title">
+        <span class="label-emoji">🧑‍💻</span>
+        &nbsp; Professional Experience
+      </p>
+    </div>
+  
+    <div class="workedfor-grid">
+        {% for org in site.data.home.worked_for %}
+          <a class="workedfor-item" href="{{ org.url }}" target="_blank" rel="noopener">
+            <div class="workedfor-card">
+              <div class="workedfor-left">
+                <img class="workedfor-logo" src="{{ org.logo | relative_url }}" alt="{{ org.name }} logo" loading="lazy">
+              </div>
+      
+              <div class="workedfor-right">
+                <div class="workedfor-company">{{ org.name }}</div>
+                <div class="workedfor-summary">{{ org.summary }}</div>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      
+  </section>
+  
