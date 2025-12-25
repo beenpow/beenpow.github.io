@@ -4,3 +4,9 @@ _site/
 .jekyll-metadata
 .jekyll-cache
 .jekyll
+
+# Ruby / Bundler
+vendor/bundle/
+
+# misc
+.DS_Store
