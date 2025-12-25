@@ -1,27 +1,53 @@
-<section class="home-section workedfor">
-    <div class="section-header">
-      <p class="section-title">
-        <span class="label-emoji">🧑‍💻</span>
-        &nbsp; Professional Experience
-      </p>
+<section class="home-experience">
+  <h2 class="section-title">Experience</h2>
+
+  <div class="workedfor-grid">
+
+<!-- Samsung Electronics -->
+<div class="workedfor-card">
+  <div class="workedfor-left">
+    <div class="workedfor-company">Samsung Electronics</div>
+  </div>
+
+  <div class="workedfor-right">
+    <div class="workedfor-role">
+      System Software Engineer
+      <span class="workedfor-period">(2017 – 2025)</span>
     </div>
-  
-    <div class="workedfor-grid">
-        {% for org in site.data.home.worked_for %}
-          <a class="workedfor-item" href="{{ org.url }}" target="_blank" rel="noopener">
-            <div class="workedfor-card">
-              <div class="workedfor-left">
-                <img class="workedfor-logo" src="{{ org.logo | relative_url }}" alt="{{ org.name }} logo" loading="lazy">
-              </div>
-      
-              <div class="workedfor-right">
-                <div class="workedfor-company">{{ org.name }}</div>
-                <div class="workedfor-summary">{{ org.summary }}</div>
-              </div>
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-      
-  </section>
-  
+
+    <p class="workedfor-summary">
+      Worked on Android framework-level systems for millions of Galaxy devices,
+      focusing on system resets, recovery mechanisms, and large-scale debugging
+      across application, framework, and Linux layers.
+    </p>
+
+    <p class="workedfor-patents">
+      <strong>Patents:</strong> Co-inventor on multiple system-related patents filed during my time at Samsung.
+    </p>
+  </div>
+</div>
+
+
+<!-- Continental -->
+<div class="workedfor-card">
+  <div class="workedfor-left">
+    <div class="workedfor-company">Continental</div>
+  </div>
+
+  <div class="workedfor-right">
+    <div class="workedfor-role">
+      Software Engineer
+      <span class="workedfor-period">(2018 – 2020)</span>
+    </div>
+
+    <p class="workedfor-summary">
+      Built embedded platform components for ARM-based automotive systems,
+      contributing to in-vehicle dashboard platforms used in production vehicles,
+      with a focus on performance-critical and resource-constrained environments.
+    </p>    
+  </div>
+</div>
+
+
+  </div>
+</section>

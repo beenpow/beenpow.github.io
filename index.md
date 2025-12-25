@@ -6,6 +6,15 @@ subtitle: programmer beenpow
 description: beenpow, who is a Programmer in Suwon, South Korea. | 'beenpow' 프로그래머입니다.
 ---
 {% include home/hero.html %}
-{% include home/education.html %}
+{% include home/about.html %}
 {% include home/links.html %}
+
+{% include home/section-divider.html %}
+
+{% include home/projects.html %}
+{% include home/section-divider.html %}
+
+{% include home/education.html %}
+{% include home/section-divider.html %}
+
 {% include home/workedfor.html %}

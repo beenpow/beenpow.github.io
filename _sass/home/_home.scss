@@ -40,139 +40,274 @@
     border: 1px solid rgba(0,0,0,0.08);
     color: #6b7280; /* softer */
   }
-  
-/* Home – Education strip */
-.home-education {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 22px;
-    margin-bottom: 26px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(0,0,0,0.06); /* keywords와 분리 */
-  }
-  
-  .edu-icon {
-    font-size: 16px;
-    opacity: 0.85;
-  }
-  
-  .edu-text {
+
+// Home - about
+  .home-about .about-text {
     font-size: 14px;
     color: #374151;
+    line-height: 1.6;
+    max-width: 720px;
+    margin-top: 10px;
   }
   
-  .edu-period {
-    color: #6b7280;
+  .home-about .hero-keywords {
+    margin-top: 12px;
   }
   
+  
+/* 05. Home – Education strip */
+.home-education {
+  margin-top: 18px;
+}
+
+
+.edu-icon {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.edu-text {
+  font-size: 14px;
+  color: #374151;
+}
+
+.edu-period {
+  color: #6b7280;
+}
+.education-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
   
   
 /* =========================
-   Home – Worked For section
+   06. Home – Worked For section
    ========================= */
 /* ===== Workedfor (Professional Experience) – Vertical List ===== */
-
+/* Experience (Workedfor) */
+/* Experience (Workedfor) - minimal */
 .workedfor-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 14px;
-    max-width: 860px; /* 너무 넓게 퍼지는 느낌 방지 */
-  }
-  
-  .workedfor-item {
-    text-decoration: none;
-    color: inherit;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+  max-width: 860px;
+}
+
+.workedfor-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  align-items: start;
+
+  padding: 18px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.workedfor-left {
+  padding-top: 2px;
+}
+
+.workedfor-company {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.workedfor-right {
+  min-width: 0;
+}
+
+.workedfor-role {
+  font-size: 15px;
+  font-weight: 650;
+  color: #111827;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.workedfor-period {
+  font-weight: 500;
+  color: #6b7280;
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+.workedfor-summary {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7280;
+  margin: 0;
+  max-width: 720px;
+}
+
+/* hover는 아주 약하게만 (선택) */
+.workedfor-card:hover {
+  border-color: rgba(0, 0, 0, 0.10);
+}
+.workedfor-patents {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+
+/* 모바일 */
+@media (max-width: 640px) {
   .workedfor-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  
-    padding: 14px 16px;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 12px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
-  .workedfor-item:hover .workedfor-card {
-    transform: translateY(-1px);
-  }
-  
-  .workedfor-left {
-    flex: 0 0 auto;
-    min-width: 120px; /* 로고 영역 고정 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .workedfor-logo {
-    height: 28px;
-    width: auto;
-    display: block;
-    opacity: 0.95;
-    max-width: 160px;
-  }
-  
-  .workedfor-right {
-    min-width: 0;
-  }
-  
-  .workedfor-company {
-    font-size: 14px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 4px;
-  }
-  
-  .workedfor-summary {
-    font-size: 13px;
-    line-height: 1.35;
-    color: #6b7280;
-  
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* 2줄이면 충분 */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  
+}
+
     
 
-  /* Home – Links / CTA */
-.home-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 22px;
-    margin-bottom: 28px;
-  }
+/* 03. Home – Links / CTA */
+.home-links-wrap {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  padding: 10px 14px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #fff;
+  color: #111827;
+  text-decoration: none;
+
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.link-pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.link-pill:visited {
+  color: #111827;
+}
+
+.link-pill:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.link-pill.primary {
+  background: #111827;
+  border-color: #111827;
+  color: #fff;
+}
+
+/* icon inside button */
+.link-pill .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* LinkedIn: text stays black (icon has its own color) */
+.link-pill.linkedin {
+  color: #111827;
+}
+
+// 04. Projects
+.home-projects {
+  margin-top: 36px;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 860px;
+}
+
+.project-card {
+  padding: 14px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.project-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b7280;
+  margin-bottom: 8px;
+  max-width: 720px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-tags li {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #6b7280;
+}
+
+.project-card.placeholder {
+  opacity: 0.7;
+}
+.project-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+
   
-  .home-link {
-    font-size: 14px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: 1px solid rgba(0,0,0,0.12);
-    color: #374151;
-    text-decoration: none;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
-  }
-  
-  .home-link:hover {
-    background-color: rgba(0,0,0,0.03);
-  }
-  
-  .home-link.primary {
-    border-color: #111827;
-    color: #111827;
-    font-weight: 600;
-  }
   
 
   /* Home – Experience */
 .home-experience {
     margin-top: 36px;
+  }
+  .home-experience {
+    margin-bottom: 64px;
   }
   
   .section-title {
@@ -209,3 +344,43 @@
     max-width: 720px;
   }
   
+/* =========================
+   Section Divider
+   ========================= */
+   .section-divider {
+    width: min(900px, 92%);
+    margin: 26px auto; /* 섹션 사이 breathing room */
+  }
+  
+  .section-divider span {
+    display: block;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Global section rhythm (home) */
+.home-hero,
+.home-about,
+.home-links-wrap,
+.home-projects,
+.home-education,
+.home-experience {
+  margin-top: 18px;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.about-text,
+.project-desc,
+.workedfor-summary {
+  margin-top: 0;
+}
+
+
+// Footer.html
+.footer_wrap {
+  margin-top: 56px; /* 핵심 */
+}
