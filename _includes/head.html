@@ -8,12 +8,14 @@
 <!-- Post info -->
 
   <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="article:author" content="Chanbin Lim">
+  <meta name="author" content="Chanbin Lim">
 
     <meta property="fb:app_id"          content="1607605225977118" />
     <meta property="og:type"            content="article" /> 
     <meta property="og:url"             content="{{ site.url }}{{ page.url }}" />
     
-    <meta property="og:image" content="{% if page.post-header == true or page.project-header == true %}{{ site.url }}{{ page.url }}{{ page.header-img }}{% else %}{{ site.url }}{{ '/img/share-img.jpg'}}{% endif %}">
+    <meta property="og:image" content="{% if page.post-header == true or page.project-header == true %}{{ site.url }}{{ page.url }}{{ page.header-img }}{% else %}{{ site.url }}{{ '/img/share-img.png'}}{% endif %}">
 
     <meta name="twitter:card" content="summary_large_image"> 
     
