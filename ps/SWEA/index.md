@@ -10,11 +10,11 @@ header-img: ""
 
 
 
-<ul class="catalogue">
+<div class="ps-gallery">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
 {% if page.swea == true %}
-{% include post-list.html %}
+{% include post-list-ps-gallery.html %}
 {% endif %}
 {% endfor %}
-</ul>
+</div>

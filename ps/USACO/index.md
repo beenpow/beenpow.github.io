@@ -1,6 +1,6 @@
 ---
 layout: default
-title: USACO 문제풀이
+title: USACO problem solving
 description: quality matters
 work: true
 main: true
@@ -10,11 +10,11 @@ header-img: ""
 
 
 
-<ul class="catalogue">
+<div class="ps-gallery">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
 {% if page.usaco == true %}
-{% include post-list.html %}
+{% include post-list-ps-gallery.html %}
 {% endif %}
 {% endfor %}
-</ul>
+</div>

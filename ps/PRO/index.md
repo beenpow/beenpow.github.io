@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 삼성 B형(pro) 대비하기
-description: 알고리즘 쌓아가기
+title: Preparing for Samsung Type B (pro)
+description: Building algorithms
 work: true
 main: true
 project-header: true
@@ -10,11 +10,11 @@ header-img: ""
 
 
 
-<ul class="catalogue">
+<div class="ps-gallery">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
 {% if page.pro == true %}
-{% include post-list.html %}
+{% include post-list-ps-gallery.html %}
 {% endif %}
 {% endfor %}
-</ul>
+</div>

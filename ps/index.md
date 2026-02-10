@@ -9,107 +9,72 @@ header-img: ""
 ---
 
 <style>
-/* 버튼(요약) 공통 스타일 */
-.ps-btn {
-  display:inline-block; padding:10px 14px; border-radius:12px;
-  font-weight:600; text-decoration:none; cursor:pointer;
-  background:#f5f3ff; color:#6b21a8; border:1px solid #e9d5ff;
-  transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+.ps-section { margin-bottom: 2rem; }
+.ps-section:last-child { margin-bottom: 0; }
+.ps-title {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  color: #6b7280; margin-bottom: 0.75rem;
 }
-.ps-btn:hover { background:#ede9fe; transform:translateY(-1px); box-shadow:0 2px 8px rgba(0,0,0,.06); }
-.ps-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 18px; }
-
-/* 섹션 라벨 */
-.ps-label { font-size:1.05rem; font-weight:700; margin:24px 0 8px; display:flex; align-items:center; gap:8px; }
-.ps-emoji { font-size:1.2rem; }
-
-/* 색상 변형(원하면 조절 가능) */
-.ps-samsung { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
-.ps-happy   { background:#ecfdf5; color:#059669; border-color:#bbf7d0; }
-.ps-leet    { background:#f5f3ff; color:#7c3aed; border-color:#e9d5ff; }
-
-/* details 기본 스타일 */
-.ps-acc { margin:8px 0 4px; }
-.ps-acc > summary { list-style:none; }
-.ps-acc > summary::-webkit-details-marker { display:none; }
-
-/* 리스트 정돈 */
-.ps-list { margin:6px 0 14px 18px; }
-.ps-list li { margin:4px 0; }
-
-
-
-/* 하위 링크들을 버튼처럼 */
-.ps-list {
-  margin: 8px 0 14px 0;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.ps-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ps-links a {
+  display: inline-block; padding: 0.5rem 1rem; border-radius: 6px;
+  font-size: 0.9rem; font-weight: 500; text-decoration: none;
+  background: #f8fafc; color: #334155; border: 1px solid #e2e8f0;
+  transition: background .15s, border-color .15s, color .15s;
 }
-.ps-list li { list-style: none; margin: 0; }
-.ps-list a {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  color: #111827;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+.ps-links a:hover {
+  background: #f1f5f9; border-color: #cbd5e1; color: #0f172a;
 }
-.ps-list a:hover {
-  background: #f3f4f6;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+.ps-links.ps-leet a { background: #f5f3ff; color: #5b21b6; border-color: #e9d5ff; }
+.ps-links.ps-leet a:hover { background: #ede9fe; border-color: #c4b5fd; color: #4c1d95; }
+.ps-links.ps-other a { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+.ps-links.ps-other a:hover { background: #dcfce7; border-color: #86efac; color: #14532d; }
+.ps-links.ps-samsung a { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+.ps-links.ps-samsung a:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+.ps-sub { margin-top: 0.5rem; padding-left: 0; }
+.ps-sub summary {
+  list-style: none; font-size: 0.875rem; font-weight: 500; color: #64748b; cursor: pointer;
+  padding: 0.35rem 0; border-bottom: 1px solid #f1f5f9;
 }
-
-/* 카테고리별 색감(상위 버튼 팔레트와 맞춤) */
-.ps-list.ps-samsung a { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
-.ps-list.ps-happy   a { background:#ecfdf5; color:#059669; border-color:#bbf7d0; }
-.ps-list.ps-leet    a { background:#f5f3ff; color:#7c3aed; border-color:#e9d5ff; }
-
+.ps-sub summary::-webkit-details-marker { display: none; }
+.ps-sub .ps-links { margin-top: 0.5rem; margin-bottom: 0.5rem; }
 </style>
 
+<!-- 1. LeetCode (top) -->
+<section class="ps-section">
+  <h2 class="ps-title">LeetCode</h2>
+  <div class="ps-links ps-leet">
+    <a href="{{ site.baseurl }}/ps/LEETCODE/EASY/">Easy</a>
+    <a href="{{ site.baseurl }}/ps/LEETCODE/MEDIUM/">Medium</a>
+    <a href="{{ site.baseurl }}/ps/LEETCODE/HARD/">Hard</a>
+  </div>
+</section>
 
+<!-- 2. Codeforces, BOJ -->
+<section class="ps-section">
+  <h2 class="ps-title">Codeforces &amp; BOJ</h2>
+  <div class="ps-links ps-other">
+    <a href="{{ site.baseurl }}/ps/COFO/coforound/">Codeforces Round</a>
+    <a href="{{ site.baseurl }}/ps/COFO/cofoeach/">Codeforces 1000–1400</a>
+    <a href="{{ site.baseurl }}/ps/BOJ/">BOJ</a>
+  </div>
+</section>
 
-
-
-<!-- Samsung -->
-<p class="ps-label"><span class="ps-emoji">🐶</span> Samsung Coding Test</p>
-<details class="ps-acc">
-  <summary class="ps-btn ps-samsung">Advanced (Type A)</summary>
-  <ul class="ps-list">
-    <li><a href="https://beenpow.github.io/ps/JONGMAN/">Book: 알고리즘 문제 해결 전략 (구종만)</a></li>
-    <li><a href="https://beenpow.github.io/ps/FAILNOTE/">Fail Note with mistakes</a></li>
-  </ul>
-</details>
-<details class="ps-acc">
-  <summary class="ps-btn ps-samsung">Professional (Type B)</summary>
-  <ul class="ps-list">
-    <li><a href="https://beenpow.github.io/ps/PRO/">Basic Data Structure</a></li>
-    <li><a href="https://beenpow.github.io/ps/USACO/">USACO Silver</a></li>
-  </ul>
-</details>
-
-<!-- Happy PS -->
-<p class="ps-label"><span class="ps-emoji">👻</span> Happy PS</p>
-<details class="ps-acc">
-  <summary class="ps-btn ps-happy">Codeforces</summary>
-  <ul class="ps-list">
-    <li><a href="https://beenpow.github.io/ps/COFO/coforound/">Codeforces Round</a></li>
-    <li><a href="https://beenpow.github.io/ps/COFO/cofoeach/">Codeforces 1000–1400</a></li>
-  </ul>
-</details>
-<div class="ps-row">
-  <a class="ps-btn ps-happy" href="https://beenpow.github.io/ps/BOJ/">BOJ</a>
-</div>
-
-<!-- LeetCode -->
-<p class="ps-label"><span class="ps-emoji">👻</span> LeetCode</p>
-<div class="ps-row">
-  <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/EASY/">Easy</a>
-  <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/MEDIUM/">Medium</a>
-  <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/HARD/">Hard</a>
-</div>
+<!-- 3. Samsung (bottom) -->
+<section class="ps-section">
+  <h2 class="ps-title">Samsung Coding Test</h2>
+  <details class="ps-sub">
+    <summary>Advanced (Type A)</summary>
+    <div class="ps-links ps-samsung">
+      <a href="{{ site.baseurl }}/ps/JONGMAN/">Book: Algorithm Problem Solving Strategy (Jongman)</a>
+      <a href="{{ site.baseurl }}/ps/FAILNOTE/">Fail Note</a>
+    </div>
+  </details>
+  <details class="ps-sub">
+    <summary>Professional (Type B)</summary>
+    <div class="ps-links ps-samsung">
+      <a href="{{ site.baseurl }}/ps/PRO/">Basic Data Structure</a>
+      <a href="{{ site.baseurl }}/ps/USACO/">USACO Silver</a>
+    </div>
+  </details>
+</section>

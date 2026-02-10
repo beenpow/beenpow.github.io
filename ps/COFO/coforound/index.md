@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Codeforce full round 진행하기
-description: Level Check 하며 쌓아가기
+title: Codeforce full round
+description: Level check while building up
 work: true
 main: true
 project-header: true
@@ -13,14 +13,14 @@ header-img: ""
       &#128293;
    </span>
    &nbsp; Round Progress
-   <a href="https://beenpow.github.io/ps/COFO/coforound/2020-04-07-cofo-list/2020-04-07-cofo-list" target="_top">click</a>
+   <a href="{{ site.baseurl }}/ps/COFO/coforound/2020-04-07-cofo-list/2020-04-07-cofo-list" target="_top">click</a>
 </p>
 
-<ul class="catalogue">
+<div class="ps-gallery">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
 {% if page.round == true %}
-{% include post-list.html %}
+{% include post-list-ps-gallery.html %}
 {% endif %}
 {% endfor %}
-</ul>
+</div>

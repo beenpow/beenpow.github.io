@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{% if page.url == '/' or page.url == '' %}page-home{% endif %}{% if page.projects == true and page.url != '/projects/' %} page-project-post{% endif %}">
       {% assign current = page.url | downcase | split: '/' %}
       <nav class="nav">
         <div class="nav-container">

@@ -9,13 +9,13 @@ header-img: ""
 ---
 
 
-<ul class="catalogue">
+<div class="ps-gallery">
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for page in sorted %}
 {% if page.leetcode == true %}
 {% if page.hard == true %}
-{% include post-list.html %}
+{% include post-list-ps-gallery.html %}
 {% endif %}
 {% endif %}
 {% endfor %}
-</ul>
+</div>

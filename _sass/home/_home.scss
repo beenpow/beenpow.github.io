@@ -1,270 +1,287 @@
 /* =========================
-   Home – Hero section
+   Home page - layout and rhythm
    ========================= */
-/* Hero hierarchy */
-.hero-name {
-    font-weight: 700;
-  }
-  
-  .hero-title {
-    font-weight: 400;
-    color: #4b5563; /* muted gray */
-    margin-top: 12px;
-  }
-  
-  .hero-highlight {
-    font-weight: 600;
-    color: #111827; /* primary highlight */
-  }
-  
-  .hero-highlight-secondary {
-    font-weight: 500;
-    color: #374151; /* softer emphasis */
-  }
-  
-  
-  /* Keyword strip */
-  .hero-keywords {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .hero-keywords li {
-    font-size: 12px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(0,0,0,0.08);
-    color: #6b7280; /* softer */
-  }
+$home-accent: #6366f1;
+$home-accent-soft: rgba(99, 102, 241, 0.12);
+$home-bg-subtle: #f8fafc;
+$home-border: #e2e8f0;
 
-// Home - about
-  .home-about .about-text {
-    font-size: 14px;
-    color: #374151;
-    line-height: 1.6;
-    max-width: 720px;
-    margin-top: 10px;
-  }
-  
-  .home-about .hero-keywords {
-    margin-top: 12px;
-  }
-  
-  
-/* 05. Home – Education strip */
-.home-education {
-  margin-top: 18px;
+body.page-home main {
+  max-width: 680px;
+  padding-top: 16px;
+  padding-bottom: 56px;
 }
 
-
-.edu-icon {
-  font-size: 16px;
-  opacity: 0.85;
-}
-
-.edu-text {
-  font-size: 14px;
-  color: #374151;
-}
-
-.edu-period {
-  color: #6b7280;
-}
-.education-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-  
-  
-/* =========================
-   06. Home – Worked For section
-   ========================= */
-/* ===== Workedfor (Professional Experience) – Vertical List ===== */
-/* Experience (Workedfor) */
-/* Experience (Workedfor) - minimal */
-.workedfor-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 14px;
-  max-width: 860px;
-}
-
-.workedfor-card {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 18px;
-  align-items: start;
-
-  padding: 18px 18px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 14px;
-  background: #fff;
-}
-
-.workedfor-left {
-  padding-top: 2px;
-}
-
-.workedfor-company {
-  font-size: 13px;
+body.page-home .section-title {
+  font-size: 11px;
   font-weight: 600;
-  color: #111827;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+  padding-left: 14px;
+  border-left: 3px solid $home-accent;
 }
 
-.workedfor-right {
-  min-width: 0;
+/* =========================
+   Hero
+   ========================= */
+.home-hero {
+  margin-top: 0;
+  margin-bottom: 2.25rem;
+  padding: 24px 0;
+  border-bottom: 1px solid $home-border;
 }
 
-.workedfor-role {
-  font-size: 15px;
-  font-weight: 650;
-  color: #111827;
-  margin-bottom: 6px;
-  line-height: 1.25;
+.hero-name {
+  font-size: clamp(1.9rem, 5.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
 }
 
-.workedfor-period {
+.hero-title {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #475569;
+  margin-top: 0;
+  max-width: 32em;
+}
+
+.hero-highlight {
+  font-weight: 600;
+  color: $home-accent;
+}
+
+.hero-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-keywords li {
+  font-size: 12px;
   font-weight: 500;
-  color: #6b7280;
-  margin-left: 8px;
-  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: $home-accent-soft;
+  color: #4338ca;
+  border: 1px solid rgba(99, 102, 241, 0.2);
 }
 
-.workedfor-summary {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #6b7280;
+/* =========================
+   About
+   ========================= */
+.home-about {
+  margin-top: 2.5rem;
+}
+
+.about-block {
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: $home-bg-subtle;
+  border: 1px solid $home-border;
+  border-left: 3px solid $home-accent;
+}
+
+.about-bullets {
+  list-style: disc;
   margin: 0;
-  max-width: 720px;
+  padding-left: 1.25rem;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
 }
 
-/* hover는 아주 약하게만 (선택) */
-.workedfor-card:hover {
-  border-color: rgba(0, 0, 0, 0.10);
-}
-.workedfor-patents {
-  margin-top: 6px;
-  font-size: 13px;
-  color: #6b7280;
+.about-bullets li {
+  margin-bottom: 6px;
 }
 
-
-/* 모바일 */
-@media (max-width: 640px) {
-  .workedfor-card {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+.about-bullets li:last-child {
+  margin-bottom: 0;
 }
 
-    
+.home-about .about-text {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.75;
+  max-width: 100%;
+  margin: 0;
+}
 
-/* 03. Home – Links / CTA */
+/* =========================
+   Links (CTA pills)
+   ========================= */
 .home-links-wrap {
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin-top: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .links-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: center;
 }
 
 .link-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   font-size: 14px;
-  padding: 10px 14px;
-
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid $home-border;
   background: #fff;
-  color: #111827;
+  color: #0f172a;
   text-decoration: none;
-
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
 .link-pill:hover {
+  border-color: $home-accent;
+  background: $home-accent-soft;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.15);
   transform: translateY(-1px);
-  border-color: rgba(0, 0, 0, 0.18);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-.link-pill:visited {
-  color: #111827;
-}
-
-.link-pill:active {
-  transform: translateY(0px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.link-pill.primary {
-  background: #111827;
-  border-color: #111827;
-  color: #fff;
-}
-
-/* icon inside button */
 .link-pill .icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 6px;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
 }
 
-/* LinkedIn: text stays black (icon has its own color) */
-.link-pill.linkedin {
-  color: #111827;
+.link-pill.primary {
+  background: $home-accent;
+  border-color: $home-accent;
+  color: #fff;
 }
 
-// 04. Projects
+.link-pill.primary:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+}
+
+.link-pill.linkedin {
+  color: #0f172a;
+}
+
+/* =========================
+   Section divider
+   ========================= */
+.section-divider {
+  width: 100%;
+  margin: 2.25rem 0;
+}
+
+.section-divider span {
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, $home-border 15%, $home-border 85%, transparent);
+}
+
+/* =========================
+   Projects
+   ========================= */
 .home-projects {
-  margin-top: 36px;
+  margin-top: 0.5rem;
 }
 
 .projects-grid {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 860px;
+  max-width: 100%;
 }
 
 .project-card {
-  padding: 14px 16px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
+  display: block;
+  padding: 20px 22px;
+  border: 1px solid $home-border;
+  border-radius: 14px;
   background: #fff;
+  color: inherit;
+  cursor: default;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, border-left-color 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.project-card a {
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-left-color: $home-accent;
+  border-color: #c7d2fe;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.08);
+  transform: translateY(-2px);
 }
 
 .project-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  color: #111827;
-  margin-bottom: 6px;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+}
+
+.project-bullets {
+  list-style: disc;
+  margin: 0 0 12px 0;
+  padding-left: 1.25rem;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.projects-grid .project-bullets {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.project-bullets li {
+  margin-bottom: 4px;
+}
+
+.project-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.project-url-line {
+  margin-top: 6px;
+  list-style: none;
+  padding-left: 0;
+  margin-left: -1.25rem;
+}
+
+.project-card a.project-title {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card a.project-title:hover {
+  color: $home-accent;
 }
 
 .project-desc {
-  font-size: 13px;
-  line-height: 1.4;
-  color: #6b7280;
-  margin-bottom: 8px;
-  max-width: 720px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0 0 12px 0;
+  max-width: 100%;
 }
 
 .project-tags {
@@ -277,110 +294,147 @@
 }
 
 .project-tags li {
-  font-size: 12px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.08);
-  color: #6b7280;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 11px;
+  border-radius: 8px;
+  background: $home-accent-soft;
+  color: #4338ca;
 }
 
-.project-card.placeholder {
-  opacity: 0.7;
-}
-.project-card {
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 0, 0, 0.16);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+.project-url,
+.project-bullets .project-url {
+  font-size: 13px;
+  color: $home-accent;
+  word-break: break-all;
 }
 
-
-  
-  
-
-  /* Home – Experience */
-.home-experience {
-    margin-top: 36px;
-  }
-  .home-experience {
-    margin-bottom: 64px;
-  }
-  
-  .section-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 18px;
-  }
-  
-  .exp-item {
-    margin-bottom: 20px;
-  }
-  
-  .exp-header {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: baseline;
-  }
-  
-  .exp-company {
-    font-weight: 600;
-    color: #111827;
-  }
-  
-  .exp-role {
-    font-size: 14px;
-    color: #6b7280;
-  }
-  
-  .exp-desc {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #374151;
-    max-width: 720px;
-  }
-  
 /* =========================
-   Section Divider
+   Education
    ========================= */
-   .section-divider {
-    width: min(900px, 92%);
-    margin: 26px auto; /* 섹션 사이 breathing room */
-  }
-  
-  .section-divider span {
-    display: block;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.08);
-  }
-  
-  /* Global section rhythm (home) */
-.home-hero,
-.home-about,
-.home-links-wrap,
-.home-projects,
-.home-education,
+.home-education {
+  margin-top: 0.5rem;
+}
+
+.education-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 6px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: $home-bg-subtle;
+  border: 1px solid $home-border;
+}
+
+.edu-icon {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.edu-text {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.edu-period {
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* =========================
+   Experience (Worked for)
+   ========================= */
 .home-experience {
-  margin-top: 18px;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-.section-title {
-  margin-top: 0;
-  margin-bottom: 12px;
+.workedfor-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 100%;
 }
 
-.about-text,
-.project-desc,
-.workedfor-summary {
-  margin-top: 0;
+.workedfor-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 22px 22px;
+  border: 1px solid $home-border;
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+  border-left: 3px solid transparent;
 }
 
+.workedfor-card:hover {
+  border-left-color: $home-accent;
+  border-color: #c7d2fe;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.06);
+}
 
-// Footer.html
-.footer_wrap {
-  margin-top: 56px; /* 핵심 */
+.workedfor-left {
+  padding-top: 2px;
+}
+
+.workedfor-company {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.workedfor-right {
+  min-width: 0;
+}
+
+.workedfor-role {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.workedfor-period {
+  font-weight: 500;
+  color: #64748b;
+  margin-left: 6px;
+  font-size: 13px;
+}
+
+.workedfor-bullets {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.workedfor-bullets li {
+  margin-bottom: 4px;
+}
+
+.workedfor-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .workedfor-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px;
+  }
+}
+
+/* =========================
+   Footer spacing (home)
+   ========================= */
+body.page-home .footer_wrap {
+  margin-top: 48px;
 }

@@ -4,7 +4,7 @@ work: true
 main: true
 title: PROJECTS
 project-header: true
-description: "This page includes both recent work and earlier projects that reflect my long-term interest in systems, software engineering, and applied learning."
+description: "Side projects and SSM archive."
 header-img: ""
 ---
 
@@ -12,29 +12,36 @@ header-img: ""
 
 <div class="projects-grid">
 
-  <a class="project-card" href="https://github.com/beenpow/echoslice" target="_blank" rel="noopener">
-    <div class="project-title">Echo Slice</div>
-    <div class="project-desc">
-      A personal project exploring interactive learning workflows and content slicing. Currently under active development.
-    </div>
+  <div class="project-card">
+    <a href="https://timeslicer-rose.vercel.app/" target="_blank" rel="noopener" class="project-title">Time Slicer</a>
+    <ul class="project-bullets">
+      <li>Daily check-off tasks and weekly goals (target minutes)</li>
+      <li>Log time in blocks (+15m / +30m / +60m), progress bars and weekly bar chart</li>
+      <li>Next.js, React, TypeScript, Tailwind</li>
+      <li class="project-url-line">Live: <a href="https://timeslicer-rose.vercel.app/" target="_blank" rel="noopener" class="project-url">https://timeslicer-rose.vercel.app/</a> · <a href="https://github.com/beenpow/timeSlicer" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Repo</a></li>
+    </ul>
+    <ul class="project-tags">
+      <li>Next.js</li>
+      <li>React</li>
+      <li>TypeScript</li>
+      <li>Tailwind</li>
+    </ul>
+  </div>
+
+  <div class="project-card">
+    <a href="https://echoslicefront.vercel.app/" target="_blank" rel="noopener" class="project-title">Echo Slice</a>
+    <ul class="project-bullets">
+      <li>Slice long-form content (articles, videos, notes) into chunks and review flows</li>
+      <li>Optional AI to summarize or structure material</li>
+      <li>Web app with backend for persistence and sync. In active development</li>
+      <li class="project-url-line">Live: <a href="https://echoslicefront.vercel.app/" target="_blank" rel="noopener" class="project-url">https://echoslicefront.vercel.app/</a> · <a href="https://github.com/beenpow/echoslice" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Repo</a></li>
+    </ul>
     <ul class="project-tags">
       <li>Web</li>
       <li>Backend</li>
       <li>AI</li>
     </ul>
-  </a>
-
-  <a class="project-card" href="https://github.com/beenpow/AI_Journey_with_Me" target="_blank" rel="noopener">
-    <div class="project-title">AI Journey with Me</div>
-    <div class="project-desc">
-      A personal repository documenting hands-on experiments and learning notes across applied AI topics.
-    </div>
-    <ul class="project-tags">
-      <li>AI</li>
-      <li>Learning</li>
-      <li>Notes</li>
-    </ul>
-  </a>
+  </div>
 
 </div>
 
@@ -47,10 +54,10 @@ header-img: ""
 
   <a class="project-card" href="/projects/ssm-01">
     <div class="project-title">Wireless USB Adapter for Wired Devices</div>
-    <div class="project-desc">
-      Designed a wireless adapter that converts wired keyboards and mice into
-      Bluetooth-based input devices using embedded firmware and Linux drivers.
-    </div>
+    <ul class="project-bullets">
+      <li>Wireless adapter that converts wired keyboards and mice into Bluetooth input devices</li>
+      <li>Embedded firmware and Linux drivers</li>
+    </ul>
     <ul class="project-tags">
       <li>Embedded</li>
       <li>Linux</li>
@@ -60,10 +67,10 @@ header-img: ""
 
   <a class="project-card" href="/projects/ssm-02">
     <div class="project-title">Web &amp; Native App Communication Program</div>
-    <div class="project-desc">
-      Implemented a communication framework enabling data exchange between
-      web services and native applications across heterogeneous environments.
-    </div>
+    <ul class="project-bullets">
+      <li>Communication framework for data exchange between web services and native apps</li>
+      <li>Heterogeneous environments (Windows WPF, Mac OSX, iPhone, Android)</li>
+    </ul>
     <ul class="project-tags">
       <li>Web</li>
       <li>Native App</li>
@@ -73,10 +80,10 @@ header-img: ""
 
   <a class="project-card" href="/projects/ssm-03">
     <div class="project-title">Gesture-Based Control</div>
-    <div class="project-desc">
-      Built a prototype system that recognizes user gestures and maps them to
-      system-level control commands.
-    </div>
+    <ul class="project-bullets">
+      <li>Prototype that recognizes user gestures and maps them to system-level control commands</li>
+      <li>Hardware design and Bluetooth communication</li>
+    </ul>
     <ul class="project-tags">
       <li>Interaction</li>
       <li>Computer Vision</li>
@@ -86,10 +93,10 @@ header-img: ""
 
   <a class="project-card" href="/projects/ssm-04">
     <div class="project-title">Automated Laundry Management System</div>
-    <div class="project-desc">
-      Developed an end-to-end unmanned laundry system integrating embedded
-      controllers, Android apps, and real-time monitoring.
-    </div>
+    <ul class="project-bullets">
+      <li>End-to-end unmanned laundry system</li>
+      <li>Embedded controllers, Android app, and real-time monitoring</li>
+    </ul>
     <ul class="project-tags">
       <li>Embedded</li>
       <li>Android</li>

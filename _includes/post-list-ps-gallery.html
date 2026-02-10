@@ -1,0 +1,62 @@
+<div class="ps-gallery-item">
+  {% comment %}COFO: strip exactly "COFO::Cofo " so "Round 870" etc remain. Do this first. {% endcomment %}
+  {% assign clean_title = page.title | remove: "COFO::Cofo " | remove: "Leetcode:: " | remove: "Leetcode::" | remove: "BOJ::" | remove: "COFO::" | strip %}
+  {% assign pro_prefix = clean_title | split: "Pro::" %}
+  {% if pro_prefix.size > 1 %}
+    {% assign clean_title = pro_prefix | last | strip %}
+  {% endif %}
+  {% assign title_has_cofo = page.title | split: "COFO" | size %}
+  {% assign title_has_boj = page.title | split: "BOJ" | size %}
+  {% if title_has_cofo <= 1 and title_has_boj <= 1 %}
+    {% comment %} LeetCode only: run problem + digit stripping. COFO and BOJ titles skip this. {% endcomment %}
+    {% assign ct_down = clean_title | downcase %}
+    {% assign ct7 = ct_down | slice: 0, 7 %}
+    {% assign ct8 = ct_down | slice: 0, 8 %}
+    {% if ct7 == "problem(" or ct8 == "problem (" %}
+      {% assign clean_title = clean_title | split: ")" | last | strip %}
+      {% assign ct_down = clean_title | downcase %}
+    {% endif %}
+    {% assign ct8_check = ct_down | slice: 0, 8 %}
+    {% if ct8_check == "problem " %}
+      {% assign clean_title = clean_title | slice: 8, 9999 | strip %}
+    {% endif %}
+    {% comment %} Only strip "숫자)" when title actually contains ")" (e.g. "36) Valid Sudoku"). Skip for BOJ "1793 타일링" which has no ")". {% endcomment %}
+    {% if clean_title contains ")" %}
+      {% assign first_char = clean_title | slice: 0, 1 %}
+      {% if first_char == "0" or first_char == "1" or first_char == "2" or first_char == "3" or first_char == "4" or first_char == "5" or first_char == "6" or first_char == "7" or first_char == "8" or first_char == "9" %}
+        {% assign parts = clean_title | split: ")" %}
+        {% if parts.size > 1 %}
+          {% assign after_paren = parts[1] | strip %}
+          {% assign ap_size = after_paren | size %}
+          {% if ap_size > 0 %}
+            {% assign clean_title = after_paren %}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  <p class="ps-gallery-title-line"><span class="ps-gallery-label">Title :</span> {{ clean_title }}</p>
+  <span class="ps-gallery-date">{% if page.date %}{{ page.date | date: "%b %d, %Y" }}{% endif %}</span>
+  <div class="ps-gallery-links">
+    <a href="{{ page.url | prepend: site.baseurl }}" class="ps-gallery-link">View</a>
+    {%- comment -%}
+      Extract LeetCode URL from this page's rendered content.
+      Assumes there's a link like:
+        [Link : ...](https://leetcode.com/...)
+      which becomes:
+        <a href="https://leetcode.com/...">...</a>
+    {%- endcomment -%}
+    {% assign leet_url = nil %}
+    {% if page.content %}
+      {% assign lc_chunks = page.content | split: 'https://leetcode.com' %}
+      {% if lc_chunks.size > 1 %}
+        {% assign lc_tail = lc_chunks[1] | split: '"' | first %}
+        {% assign leet_url = 'https://leetcode.com' | append: lc_tail | strip %}
+      {% endif %}
+    {% endif %}
+    {% if leet_url %}
+    <a href="{{ leet_url | escape }}" target="_blank" rel="noopener" class="ps-gallery-link ps-gallery-link-leet">LeetCode</a>
+    {% endif %}
+  </div>
+</div>
