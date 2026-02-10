@@ -113,12 +113,3 @@ header-img: ""
   <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/MEDIUM/">Medium</a>
   <a class="ps-btn ps-leet" href="https://beenpow.github.io/ps/LEETCODE/HARD/">Hard</a>
 </div>
-
-<ul class="catalogue">
-{% assign sorted = site.pages | sort: 'date' | reverse %}
-{% for page in sorted %}
-{% if page.ps == true %}
-{% include post-list.html %}
-{% endif %}
-{% endfor %}
-</ul>
