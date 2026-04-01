@@ -558,13 +558,13 @@ const PROBLEMS = [
 },
 {
   num:438, title:"Find All Anagrams in a String", diff:"M", tags:["B"], cat:"Two Pointers / Sliding Window",
-  solved:false, review:0,
+  solved:true, review:1,
   link:"https://leetcode.com/problems/find-all-anagrams-in-a-string/",
   desc:"s에서 p의 모든 애너그램의 시작 인덱스 반환.",
   approaches:[
-    {name:"Sliding Window (fixed size)", detail:"p 길이 고정 창. p_count와 window_count 비교. 창 이동 시 왼쪽 빼고 오른쪽 추가.", tc:"O(n)", sc:"O(26)"}
+    {name:"Sliding Window (fixed size, char count)", detail:"cnt[26] 배열 2개 유지. p 길이 고정 창 이동 시 왼쪽 빼고 오른쪽 추가. 총 일치하는 개수(matches) 변수로 O(1) 비교.", tc:"O(n)", sc:"O(26)"}
   ],
-  myNotes:""
+  myNotes:"이런 풀이 방법으로 풀 수 있는 다른 문제들도 있음."
 },
 {
   num:904, title:"Fruit Into Baskets", diff:"M", tags:["A"], cat:"Two Pointers / Sliding Window",
