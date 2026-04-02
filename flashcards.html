@@ -54,30 +54,54 @@ header h1 {
 }
 .stat span { color: var(--text); font-weight: 700; }
 
-.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.filter-divider {
+  width: 1px; height: 22px; background: var(--border2);
+  margin: 0 4px; flex-shrink: 0;
+}
 .filter-btn {
   padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border);
   background: var(--surface2); color: var(--muted); cursor: pointer; font-size: 0.8rem;
   font-family: inherit; transition: all 0.15s; letter-spacing: 0.01em;
 }
 .filter-btn:hover { border-color: var(--border2); color: var(--text2); background: var(--surface3); }
-.filter-btn.active {
+/* Source filter active states */
+.filter-btn.src.active {
   background: linear-gradient(135deg, #6d28d9, #2563eb);
   border-color: transparent; color: #fff; font-weight: 600;
   box-shadow: 0 2px 10px rgba(109,40,217,0.3);
 }
-.filter-btn.amazon.active { background: linear-gradient(135deg, #b45309, #f59e0b); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(180,83,9,0.3); }
-.filter-btn.blind.active  { background: linear-gradient(135deg, #6d28d9, #a78bfa); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(109,40,217,0.35); }
-.filter-btn.fire.active   { background: linear-gradient(135deg, #dc2626, #f87171); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(220,38,38,0.3); }
+.filter-btn.src.amazon.active { background: linear-gradient(135deg, #b45309, #f59e0b); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(180,83,9,0.3); }
+.filter-btn.src.blind.active  { background: linear-gradient(135deg, #6d28d9, #a78bfa); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(109,40,217,0.35); }
+/* Sub-filter active states */
+.filter-btn.sub.active {
+  background: rgba(202,138,4,0.15); border-color: rgba(202,138,4,0.55);
+  color: #b45309; font-weight: 600;
+}
+.filter-btn.sub.fire.active { background: rgba(220,38,38,0.1); border-color: rgba(220,38,38,0.4); color: #dc2626; font-weight: 600; }
+.filter-btn.sub.solved-btn.active { background: rgba(21,128,61,0.1); border-color: rgba(21,128,61,0.4); color: #15803d; font-weight: 600; }
 
 /* ── GRID ───────────────────────────── */
 main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
 .section-label {
-  color: var(--muted); font-size: 0.72rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  margin: 26px 0 10px; display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 10px;
+  margin: 34px 0 12px;
+  font-size: 0.8rem; font-weight: 700;
+  color: var(--text2);
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
-.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 1.1em;
+  border-radius: 2px;
+  background: linear-gradient(160deg, #6d28d9, #2563eb);
+  flex-shrink: 0;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--border2), transparent);
+}
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
 
 /* ── MINI CARD ──────────────────────── */
@@ -227,12 +251,13 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
   header h1 { font-size: 1rem; }
   .stats { gap: 6px; }
   .stat { font-size: 0.72rem; padding: 3px 9px; }
-  .filters { gap: 5px; }
+  .filter-row { gap: 5px; }
   .filter-btn { font-size: 0.75rem; padding: 4px 11px; }
+  .filter-divider { display: none; }
 
   /* Grid */
   main { padding: 14px 12px 50px; }
-  .section-label { font-size: 0.68rem; margin: 18px 0 8px; }
+  .section-label { font-size: 0.72rem; margin: 22px 0 8px; }
   .card-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
 
   /* Mini card */
@@ -288,13 +313,14 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
     <h1>⚡ LC Flashcards</h1>
     <div class="stats" id="stats"></div>
   </div>
-  <div class="filters" id="filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn amazon" data-filter="amazon">Amazon30d</button>
-    <button class="filter-btn blind" data-filter="blind">Blind75</button>
-    <button class="filter-btn" data-filter="unsolved">❌ 미풀이</button>
-    <button class="filter-btn fire" data-filter="review">🔥 리뷰 필요</button>
-    <button class="filter-btn" data-filter="solved">✅ 풀이 완료</button>
+  <div class="filter-row" id="filters">
+    <button class="filter-btn src active" data-src="all">All</button>
+    <button class="filter-btn src amazon" data-src="amazon">Amazon30d</button>
+    <button class="filter-btn src blind" data-src="blind">Blind75</button>
+    <div class="filter-divider"></div>
+    <button class="filter-btn sub" data-sub="unsolved">❌ 미풀이</button>
+    <button class="filter-btn sub fire" data-sub="review">🔥 리뷰 필요</button>
+    <button class="filter-btn sub solved-btn" data-sub="solved">✅ 풀이 완료</button>
   </div>
 </header>
 
@@ -410,7 +436,7 @@ const PROBLEMS = [
 },
 {
   num:217, title:"Contains Duplicate", diff:"E", tags:["A","B"], cat:"Array / HashMap",
-  solved:false, review:0,
+  solved:true, review:0,
   link:"https://leetcode.com/problems/contains-duplicate/",
   desc:"정수 배열 nums에서 같은 값이 두 번 이상 등장하면 true, 아니면 false.",
   approaches:[
@@ -431,7 +457,7 @@ const PROBLEMS = [
 },
 {
   num:242, title:"Valid Anagram", diff:"E", tags:["A"], cat:"Array / HashMap",
-  solved:false, review:0,
+  solved:true, review:0,
   link:"https://leetcode.com/problems/valid-anagram/",
   desc:"두 문자열 s, t가 주어질 때 t가 s의 애너그램인지 판단.",
   approaches:[
@@ -442,7 +468,7 @@ const PROBLEMS = [
 },
 {
   num:268, title:"Missing Number", diff:"E", tags:["A","B"], cat:"Array / HashMap",
-  solved:false, review:0,
+  solved:true, review:1,
   link:"https://leetcode.com/problems/missing-number/",
   desc:"0~n의 n+1개 숫자 중 배열에 없는 숫자 하나 반환.",
   approaches:[
@@ -453,7 +479,7 @@ const PROBLEMS = [
 },
 {
   num:136, title:"Single Number", diff:"E", tags:["A"], cat:"Array / HashMap",
-  solved:false, review:0,
+  solved:true, review:0,
   link:"https://leetcode.com/problems/single-number/",
   desc:"모든 숫자가 두 번 나타나는 배열에서 한 번만 나타나는 숫자 반환.",
   approaches:[
@@ -538,7 +564,7 @@ const PROBLEMS = [
 },
 {
   num:125, title:"Valid Palindrome", diff:"E", tags:["B"], cat:"Two Pointers / Sliding Window",
-  solved:false, review:0,
+  solved:true, review:0,
   link:"https://leetcode.com/problems/valid-palindrome/",
   desc:"알파벳/숫자만 고려 시 문자열이 팰린드롬인지 판단 (대소문자 무관).",
   approaches:[
@@ -583,6 +609,19 @@ const PROBLEMS = [
   desc:"0과 1의 배열에서 최대 k개의 0을 1로 바꿀 때 연속된 1의 최대 길이.",
   approaches:[
     {name:"Sliding Window", detail:"창 안 zeros 개수 추적. zeros > k이면 left 이동. max(right-left+1) 갱신.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+
+{
+  num:42, title:"Trapping Rain Water", diff:"H", tags:["A"], cat:"Two Pointers / Sliding Window",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/trapping-rain-water/",
+  desc:"히스토그램 막대 배열에서 비가 내릴 때 고일 수 있는 총 물의 양.",
+  approaches:[
+    {name:"Two Pointers", detail:"lo=0, hi=n-1. max_left/max_right 유지. 더 작은 쪽 포인터 이동. water += max_side - height[ptr].", tc:"O(n)", sc:"O(1)"},
+    {name:"Precompute left/right max", detail:"left_max[i], right_max[i] 배열 사전 계산. water[i] = min(left_max[i], right_max[i]) - height[i].", tc:"O(n)", sc:"O(n)"},
+    {name:"Monotonic Stack", detail:"감소 스택 유지. 오른쪽 벽 발견 시 pop + 물 높이 계산.", tc:"O(n)", sc:"O(n)"}
   ],
   myNotes:""
 },
@@ -677,6 +716,17 @@ const PROBLEMS = [
   desc:"nums1의 각 원소에 대해 nums2에서 해당 원소 오른쪽의 next greater element 반환.",
   approaches:[
     {name:"Monotonic Stack + HashMap", detail:"nums2에 대해 monotonic stack으로 next greater 미리 계산. HashMap에 저장 후 nums1 조회.", tc:"O(n+m)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+{
+  num:239, title:"Sliding Window Maximum", diff:"H", tags:["A"], cat:"Stack / Monotonic Stack",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/sliding-window-maximum/",
+  desc:"크기 k의 슬라이딩 윈도우가 이동할 때 각 윈도우의 최대값 반환.",
+  approaches:[
+    {name:"Monotonic Deque (decreasing)", detail:"deque에 인덱스 저장. 왼쪽: 윈도우 밖 인덱스 제거. 오른쪽: 현재보다 작은 인덱스 pop. deque[0]이 현재 윈도우 최대.", tc:"O(n)", sc:"O(k)"}
   ],
   myNotes:""
 },
@@ -831,6 +881,18 @@ const PROBLEMS = [
   myNotes:""
 },
 
+{
+  num:21, title:"Merge Two Sorted Lists", diff:"E", tags:["A","B"], cat:"Linked List",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/merge-two-sorted-lists/",
+  desc:"두 정렬된 연결 리스트를 하나의 정렬 연결 리스트로 합쳐서 반환.",
+  approaches:[
+    {name:"Iterative (dummy head)", detail:"dummy head 사용. l1.val ≤ l2.val이면 curr.next = l1 후 l1=l1.next. 반대면 l2. 남은 리스트 tail에 연결.", tc:"O(n+m)", sc:"O(1)"},
+    {name:"Recursive", detail:"min(l1.val, l2.val) 노드를 선택하고 나머지 재귀 호출로 연결.", tc:"O(n+m)", sc:"O(n+m)"}
+  ],
+  myNotes:""
+},
+
 // ═══════════════════════════════════════════════════
 // 6. Tree / DFS / BFS
 // ═══════════════════════════════════════════════════
@@ -933,6 +995,18 @@ const PROBLEMS = [
   desc:"1~n을 노드로 하는 구조적으로 다른 BST의 수 (Catalan number).",
   approaches:[
     {name:"DP (Catalan Number)", detail:"dp[n] = sum(dp[i-1] * dp[n-i]) for i=1..n. dp[0]=dp[1]=1.", tc:"O(n²)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+{
+  num:297, title:"Serialize and Deserialize Binary Tree", diff:"H", tags:["A"], cat:"Tree / DFS / BFS",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+  desc:"이진 트리를 문자열로 직렬화하고 복원. 특정 형식 제한 없음.",
+  approaches:[
+    {name:"BFS Level Order", detail:"BFS로 null 포함 serialization. deserialize 시 queue로 복원. 'null' 토큰으로 null 처리.", tc:"O(n)", sc:"O(n)"},
+    {name:"DFS Preorder", detail:"preorder DFS. null → '#'. split(',') 후 재귀로 복원. index 전역변수 또는 queue로 관리.", tc:"O(n)", sc:"O(n)"}
   ],
   myNotes:""
 },
@@ -1167,6 +1241,28 @@ const PROBLEMS = [
   myNotes:""
 },
 
+{
+  num:53, title:"Maximum Subarray", diff:"M", tags:["A"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/maximum-subarray/",
+  desc:"정수 배열에서 합이 최대인 연속 부분 배열의 합 반환.",
+  approaches:[
+    {name:"Kadane's Algorithm", detail:"cur = max(nums[i], cur + nums[i]). max_sum = max(max_sum, cur). 음수이면 초기화.", tc:"O(n)", sc:"O(1)"},
+    {name:"Divide and Conquer", detail:"중간 분할 후 각 절반 최대 + 중간 걸치는 최대 계산. O(n log n).", tc:"O(n log n)", sc:"O(log n)"}
+  ],
+  myNotes:""
+},
+{
+  num:416, title:"Partition Equal Subset Sum", diff:"M", tags:["A"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/partition-equal-subset-sum/",
+  desc:"양수 배열을 두 부분집합으로 나눠서 합이 같게 할 수 있는지 판단.",
+  approaches:[
+    {name:"DP (0/1 Knapsack)", detail:"target = sum/2. dp[j] = true if subset sum j 가능. 배열 역순 순회: dp[j] |= dp[j-num].", tc:"O(n × target)", sc:"O(target)"}
+  ],
+  myNotes:"sum이 홀수면 즉시 false. target = sum // 2."
+},
+
 // ═══════════════════════════════════════════════════
 // 10. Greedy / Interval
 // ═══════════════════════════════════════════════════
@@ -1219,13 +1315,43 @@ const PROBLEMS = [
     {name:"Two-pass Greedy", detail:"1) 좌→우: ratings[i] > ratings[i-1]이면 candies[i] = candies[i-1]+1. 2) 우→좌: ratings[i] > ratings[i+1]이면 candies[i] = max(candies[i], candies[i+1]+1). sum 반환.", tc:"O(n)", sc:"O(n)"}
   ],
   myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// 11. Backtracking
+// ═══════════════════════════════════════════════════
+{
+  num:78, title:"Subsets", diff:"M", tags:["A"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/subsets/",
+  desc:"중복 없는 정수 배열의 모든 가능한 부분집합(Power Set) 반환.",
+  approaches:[
+    {name:"Backtracking", detail:"dfs(start, current). start~n-1 각 원소 추가 → 재귀 → pop. 2^n개 부분집합.", tc:"O(n × 2^n)", sc:"O(n)"},
+    {name:"Bit Manipulation", detail:"0~2^n-1 각 비트마스크에서 1인 비트에 해당하는 원소 수집.", tc:"O(n × 2^n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// 12. Design / Data Structure
+// ═══════════════════════════════════════════════════
+{
+  num:146, title:"LRU Cache", diff:"M", tags:["A"], cat:"Design / Data Structure",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/lru-cache/",
+  desc:"LRU (Least Recently Used) 캐시 설계. get/put 모두 O(1) 요구. 용량 초과 시 가장 최근에 사용되지 않은 것 제거.",
+  approaches:[
+    {name:"HashMap + Doubly Linked List", detail:"HashMap: key → 노드. DLL: head(MRU)~tail(LRU) 순서 유지. get/put 시 해당 노드를 head 앞으로 이동. capacity 초과 시 tail 노드 제거.", tc:"O(1) get/put", sc:"O(capacity)"}
+  ],
+  myNotes:"Python: OrderedDict로 간단히 구현 가능. C++: list + unordered_map."
 }
 ];
 
 // ─────────────────────────────────────────────
 // APP STATE
 // ─────────────────────────────────────────────
-let currentFilter = 'all';
+let srcFilter = 'all';   // 'all' | 'amazon' | 'blind'
+let subFilter = null;    // null | 'unsolved' | 'review' | 'solved'
 let filteredProblems = [...PROBLEMS];
 let studyIndex = 0;
 let isFlipped = false;
@@ -1233,15 +1359,20 @@ let isFlipped = false;
 // ─────────────────────────────────────────────
 // FILTER
 // ─────────────────────────────────────────────
-function applyFilter(filter) {
-  currentFilter = filter;
-  switch (filter) {
-    case 'all':     filteredProblems = [...PROBLEMS]; break;
-    case 'amazon':  filteredProblems = PROBLEMS.filter(p => p.tags.includes('A')); break;
-    case 'blind':   filteredProblems = PROBLEMS.filter(p => p.tags.includes('B')); break;
-    case 'unsolved':filteredProblems = PROBLEMS.filter(p => !p.solved); break;
-    case 'review':  filteredProblems = PROBLEMS.filter(p => p.review > 0); break;
-    case 'solved':  filteredProblems = PROBLEMS.filter(p => p.solved); break;
+function applyFilters() {
+  // 1. Source filter
+  let base;
+  switch (srcFilter) {
+    case 'amazon': base = PROBLEMS.filter(p => p.tags.includes('A')); break;
+    case 'blind':  base = PROBLEMS.filter(p => p.tags.includes('B')); break;
+    default:       base = [...PROBLEMS]; break;
+  }
+  // 2. Sub-filter (stacked on top)
+  switch (subFilter) {
+    case 'unsolved': filteredProblems = base.filter(p => !p.solved); break;
+    case 'review':   filteredProblems = base.filter(p => p.review > 0); break;
+    case 'solved':   filteredProblems = base.filter(p => p.solved); break;
+    default:         filteredProblems = base; break;
   }
   renderGrid();
   updateStats();
@@ -1436,19 +1567,37 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeStudy();
 });
 
-// Filter buttons
-document.querySelectorAll('.filter-btn').forEach(btn => {
+// Source filter buttons
+document.querySelectorAll('.filter-btn.src').forEach(btn => {
   btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.filter-btn.src').forEach(b => b.classList.remove('active'));
     this.classList.add('active');
-    applyFilter(this.dataset.filter);
+    srcFilter = this.dataset.src;
+    applyFilters();
+  });
+});
+
+// Sub-filter buttons (toggle)
+document.querySelectorAll('.filter-btn.sub').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const val = this.dataset.sub;
+    if (subFilter === val) {
+      // toggle off
+      subFilter = null;
+      document.querySelectorAll('.filter-btn.sub').forEach(b => b.classList.remove('active'));
+    } else {
+      subFilter = val;
+      document.querySelectorAll('.filter-btn.sub').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    }
+    applyFilters();
   });
 });
 
 // ─────────────────────────────────────────────
 // INIT
 // ─────────────────────────────────────────────
-applyFilter('all');
+applyFilters();
 </script>
 </body>
 </html>
