@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interview Flashcards</title>
+  <style>
+    :root {
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --card-back: #f8faff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 2px 8px rgba(15,23,42,0.07);
+      --shadow-md: 0 8px 28px rgba(15,23,42,0.11);
+      --radius: 14px;
+      --t: #2563eb;
+      --p: #ea580c;
+      --l: #16a34a;
+      --g: #9333ea;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(900px 420px at 8% 4%, #dbeafe 0%, transparent 55%),
+        radial-gradient(900px 420px at 95% 2%, #fef3c7 0%, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 48px;
+      gap: 14px;
+    }
+
+    /* ── Header ── */
+    header {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h1 { font-size: 17px; font-weight: 700; letter-spacing: -0.2px; }
+
+    .mode-toggle {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+    }
+
+    .mode-btn {
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      background: #f8fafc;
+      color: var(--muted);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .mode-btn.active { background: var(--text); color: #fff; }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .cat-btn {
+      padding: 5px 14px;
+      font-size: 13px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      background: #fff;
+      color: var(--muted);
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+
+    .cat-btn:hover { border-color: #94a3b8; }
+    .cat-btn.active { border-color: transparent; color: #fff; }
+    .cat-btn[data-cat="All"].active            { background: var(--text); }
+    .cat-btn[data-cat="Teamwork"].active       { background: var(--t); }
+    .cat-btn[data-cat="Problem Solving"].active { background: var(--p); }
+    .cat-btn[data-cat="Leadership"].active     { background: var(--l); }
+    .cat-btn[data-cat="Growth"].active         { background: var(--g); }
+
+    .star-toggle {
+      margin-left: auto;
+      padding: 5px 14px;
+      font-size: 13px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      background: #fff;
+      color: var(--muted);
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+
+    .star-toggle.active {
+      background: #fefce8;
+      border-color: #fbbf24;
+      color: #92400e;
+    }
+
+    /* ── Card ── */
+    .card-area { width: 100%; max-width: 820px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 5px solid #cbd5e1;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      min-height: 320px;
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-top-color 0.25s, background 0.25s;
+      position: relative;
+    }
+
+    .card:hover { box-shadow: 0 12px 36px rgba(15,23,42,0.14); }
+    .card[data-cat="Teamwork"]        { border-top-color: var(--t); }
+    .card[data-cat="Problem Solving"] { border-top-color: var(--p); }
+    .card[data-cat="Leadership"]      { border-top-color: var(--l); }
+    .card[data-cat="Growth"]          { border-top-color: var(--g); }
+    .card.back-face                   { background: var(--card-back); }
+
+    /* ── Faces ── */
+    .face { display: none; }
+    .face.visible { display: block; animation: fadeUp 0.22s ease; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Card header ── */
+    .card-hdr {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .card-id {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      padding: 2px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #f8fafc;
+      white-space: nowrap;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 1.35;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* ── Badges ── */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+
+    .lp-pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      background: #ede9fe;
+      color: #5b21b6;
+      border: 1px solid #ddd6fe;
+    }
+
+    .time-pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    /* ── Section labels ── */
+    .sec-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .sec-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+    /* ── Action bullets ── */
+    .action-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+
+    .action-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .action-list li::before {
+      content: "•";
+      color: #2563eb;
+      font-size: 17px;
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Result box ── */
+    .result-box {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-left: 4px solid #16a34a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ── Follow-up ── */
+    .fq-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 14px;
+      margin-top: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .fq-toggle:hover { background: #f1f5f9; border-color: #94a3b8; color: var(--text); }
+    .fq-toggle.open  { border-color: #94a3b8; color: var(--text); }
+
+    .fq-content { display: none; margin-top: 14px; }
+    .fq-content.open { display: block; animation: fadeUp 0.2s ease; }
+
+    .fq-item { margin-bottom: 14px; }
+    .fq-item:last-child { margin-bottom: 0; }
+
+    .fq-q {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 5px;
+    }
+
+    .fq-q::before { content: "Q  "; font-family: monospace; color: #94a3b8; }
+
+    .fq-a {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text);
+      padding-left: 22px;
+    }
+
+    /* ── Korean back sections ── */
+    .kor-sections { display: flex; flex-direction: column; gap: 10px; }
+
+    .kor-sec {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .kor-sec-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #475569;
+      padding-top: 1px;
+    }
+
+    .kor-sec-text { font-size: 14px; line-height: 1.65; }
+
+    /* ── STAR summary (English front) ── */
+    .star-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .star-row {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 9px 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    .star-key {
+      font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      padding-top: 1px;
+      letter-spacing: 0.3px;
+    }
+
+    .star-val {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .star-mini-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .star-mini-bullets li {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text);
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+    }
+
+    .star-mini-bullets li::before {
+      content: "•";
+      color: #2563eb;
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    /* ── Flip hint ── */
+    .flip-hint {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 22px;
+    }
+
+    /* ── Nav bar ── */
+    .nav-bar {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 9px 20px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .nav-btn:hover { background: #f1f5f9; border-color: #94a3b8; }
+    .nav-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    .nav-btn.primary { background: var(--text); color: #fff; border-color: transparent; }
+    .nav-btn.primary:hover { background: #1e293b; }
+
+    /* ── Progress ── */
+    .progress-area {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .progress-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress-counter { font-size: 13px; color: var(--muted); }
+    .progress-hint    { font-size: 12px; color: #94a3b8; }
+
+    .progress-wrap {
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #2563eb;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    /* ── Empty state ── */
+    .empty { text-align: center; padding: 70px 20px; color: var(--muted); }
+    .empty p     { font-size: 16px; margin-bottom: 8px; }
+    .empty small { font-size: 13px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Interview Flashcards</h1>
+    <div class="mode-toggle">
+      <button class="mode-btn"        id="btnKor" onclick="setMode('kor')">&#127472;&#127479; 한국어 STAR</button>
+      <button class="mode-btn active" id="btnEng" onclick="setMode('eng')">&#127482;&#127480; English Speech</button>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <button class="cat-btn active" data-cat="All"             onclick="setCat('All')">All</button>
+    <button class="cat-btn"        data-cat="Teamwork"        onclick="setCat('Teamwork')">Teamwork</button>
+    <button class="cat-btn"        data-cat="Problem Solving" onclick="setCat('Problem Solving')">Problem Solving</button>
+    <button class="cat-btn"        data-cat="Leadership"      onclick="setCat('Leadership')">Leadership</button>
+    <button class="cat-btn"        data-cat="Growth"          onclick="setCat('Growth')">Growth</button>
+    <button class="star-toggle" id="starToggle" onclick="toggleStar()">&#11088; Starred Only</button>
+  </div>
+
+  <div class="card-area">
+    <div class="card" id="mainCard" data-cat="Teamwork" onclick="flipCard()">
+      <div class="face visible" id="frontFace"></div>
+      <div class="face"         id="backFace"></div>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">&#8592; Prev</button>
+    <button class="nav-btn primary"      onclick="navigate(1)">Next &#8594;</button>
+    <button class="nav-btn"              onclick="goRandom()">&#128256; Random</button>
+    <button class="nav-btn"              onclick="flipCard()">&#8617; Flip</button>
+  </div>
+
+  <div class="progress-area">
+    <div class="progress-row">
+      <span class="progress-counter" id="counter">1 / 12</span>
+      <span class="progress-hint">&#8592; &#8594; navigate &nbsp;&middot;&nbsp; &#8595; back &nbsp;&middot;&nbsp; &#8593; front &nbsp;&middot;&nbsp; Space toggle</span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progressFill" style="width:8.33%"></div>
+    </div>
+  </div>
+
+  <script>
+  /* ==========================================================
+     DATA — Korean STAR (12 cards)
+  ========================================================== */
+  const korCards = [
+    {
+      id:"T1", star:true, cat:"Teamwork",
+      title:"Samsung / Google: Issue Tracker 협업",
+      ctx:"Samsung·Google Android 협업. 원인 불명 Galaxy 버그를 Pixel에서도 재현 확인 후 Google Issue Tracker에서 공동 분석.",
+      sections:[
+        {label:"Conflict",  text:"OS는 같지만 버전·환경이 달라 log mismatch, 책임 소재 불명확."},
+        {label:"Action",    text:"dumpstate/trace로 repro test case 작성, Pixel 재현 확인, Issue Tracker에 공동 분석 thread 운영, root cause narrowing."},
+        {label:"Outcome",   text:"10건 이상 Issue Tracker 등재, 여러 건 upstream fix → Galaxy 빌드 통합 개선."},
+        {label:"Strength",  text:"precise cross-team communication, 외부 협력사와 async 협업 구조."}
+      ]
+    },
+    {
+      id:"T2", star:true, cat:"Teamwork",
+      title:"Ad-hoc 수정 vs. Factory Method (코드 리뷰)",
+      ctx:"버그 수정 제출 시 리뷰어가 factory method 패턴 제안. 변경 범위·리스크 우려.",
+      sections:[
+        {label:"Conflict",   text:"factory method 제안 vs 변경 범위·리스크 우려 (처음엔 overkill로 판단)."},
+        {label:"Alignment",  text:"리뷰어와 대화 → 유사 문제 반복·확장 가능 구조 의도 파악 → time horizon 차이 인식."},
+        {label:"Action",     text:"factory method 리팩토링, 최소 범위 유지."},
+        {label:"Outcome",    text:"이후 유사 케이스 추가 수정 없이 커버. 설계 논의 방식 학습."},
+        {label:"Strength",   text:"design trade-off 판단, 의도 파악 후 결정 전환."}
+      ]
+    },
+    {
+      id:"T3", star:false, cat:"Teamwork",
+      title:"Daily Boot Regression: 다팀 의견 충돌",
+      ctx:"특정 모델 boot 지연 발생 → kernel/framework/device 팀 간 원인 논쟁.",
+      sections:[
+        {label:"Conflict",  text:"kernel/framework/device 팀 각각 다른 원인 지목, 책임 핑퐁."},
+        {label:"Action",    text:"systrace로 구간 narrowing, repro log 자동화, 팀별 evidence 개별 전달."},
+        {label:"Outcome",   text:"driver init delay 제거, boot 안정화."},
+        {label:"Strength",  text:"structured analysis, multi-team evidence 기반 소통."}
+      ]
+    },
+    {
+      id:"P1", star:true, cat:"Problem Solving",
+      title:"Daily Boot Regression: 근본 원인 분석",
+      ctx:"부팅 지연·hang 반복. kernel/init/system server 중 병목 불명확.",
+      sections:[
+        {label:"Problem",  text:"구간별 병목·국가·모델별 증상 차이로 시작점 불명확."},
+        {label:"Action",   text:"systrace/boot log로 구간 분해, deviation 큰 구간 가설 우선, repro log 자동화, 팀과 evidence 협업."},
+        {label:"Outcome",  text:"30건 이상 해결, 100ms~수 초 개선, 신규 모델 론칭 표준 프로세스화."},
+        {label:"Strength", text:"RCA, early narrowing, 체계적 반복 분석."}
+      ]
+    },
+    {
+      id:"P2", star:true, cat:"Problem Solving",
+      title:"단말 전반 지연: Binder IPC 분석",
+      ctx:"Galaxy 전체 sluggish. 앱 문제인지 시스템 문제인지 불명확.",
+      sections:[
+        {label:"Problem",  text:"앱 vs 시스템 불명. Binder thread pool starvation 가능성."},
+        {label:"Action",   text:"process trace·binder 재구성, 의심 앱 패턴 식별, 외부앱 컨택팀 통해 양방향 피드백 운영."},
+        {label:"Outcome",  text:"problematic 앱 패턴 식별 프로세스 정립, responsiveness 회복."},
+        {label:"Strength", text:"execution flow reconstruction, 시스템·앱 경계 분리."}
+      ]
+    },
+    {
+      id:"P3", star:false, cat:"Problem Solving",
+      title:"Cold Start / Prelaunch (Russia 팀 협업)",
+      ctx:"앱 cold start 지연. ART 리소스를 install 시점에 사전 처리해 startup 개선.",
+      sections:[
+        {label:"Problem",  text:"cold start 시 ART 초기화 비용 집중. 실행 전 선행 작업 필요, 리소스·안정성 리스크."},
+        {label:"Action",   text:"Russia 팀과 prelaunch 메커니즘 설계, install 시점 background 사전 처리, 리소스 제한 적용."},
+        {label:"Outcome",  text:"cold start 약 15% 개선, 추가 최적화 기반 마련, 특허 출원."},
+        {label:"Strength", text:"타이밍 앞당기는 설계, cross-team 원격 협업."}
+      ]
+    },
+    {
+      id:"L1", star:true, cat:"Leadership",
+      title:"한국–Russia 팀 조율",
+      ctx:"ART 모듈을 한국(유지보수)·Russia(신규 기능) 양 팀이 공동 개발. 6시간 시차.",
+      sections:[
+        {label:"Problem",  text:"원격 팀 간 일정·이슈·우선순위 공유 구조 부재."},
+        {label:"Action",   text:"Russia 팀 주요 피처 코드 리뷰, 고객 이슈 Jira 직접 등록, 퇴근 전 async handoff 작성 → overnight 진행."},
+        {label:"Outcome",  text:"3~4년간 통합 충돌 없이 조율, 급한 이슈 overnight 해결 가능."},
+        {label:"Strength", text:"cross-geo coordination, informal tech lead, 정보 흐름 책임."}
+      ]
+    },
+    {
+      id:"L2", star:true, cat:"Leadership",
+      title:"ART 메모리·성능 옵션 문서화",
+      ctx:"ART 설정 반복 문의 (월 5건+). 선택 기준 없어 매번 full walkthrough 필요.",
+      sections:[
+        {label:"Problem",  text:"메모리·성능 trade-off 기준 없음, 반복 문의 대응 비용 높음."},
+        {label:"Action",   text:"ART 옵션 문서화: 각 옵션 설명, trade-off, 시나리오별 선택 기준, 패치 가이드 포함."},
+        {label:"Outcome",  text:"팀들이 독립 결정 가능, 내 개입 full walkthrough → 짧은 조언 수준으로 감소, 모델·지역향 사이클 전반 재사용."},
+        {label:"Strength", text:"반복 문제 구조화, 결정을 쉽게 하는 기준 제공."}
+      ]
+    },
+    {
+      id:"L3", star:false, cat:"Leadership",
+      title:"Dumpstate 리뷰 보드·품질 기준",
+      ctx:"공용 Dumpstate 모듈에 여러 팀이 무분별 추가 → 유지보수 어려워짐.",
+      sections:[
+        {label:"Problem",  text:"공용 모듈 일관성·장기 안정성 위협."},
+        {label:"Action",   text:"변경 요청 review board 운영, 설계·확장성·일관성 3기준으로 approve/reject."},
+        {label:"Outcome",  text:"모듈 일관성 유지, 팀들이 사전에 기준 인지 → 불필요한 back-and-forth 감소."},
+        {label:"Strength", text:"모듈 오너십, 기술적 기준·책임 경계 정의."}
+      ]
+    },
+    {
+      id:"G1", star:true, cat:"Growth",
+      title:"Memory Corruption → 자동 복구 로직",
+      ctx:"고객 기기 재부팅 루프. factory reset 실패. 시스템 파일 corruption 확인.",
+      sections:[
+        {label:"Problem",  text:"특정 파일 corruption으로 boot 반복 실패, 수동 패치 필요."},
+        {label:"Action",   text:"단기 복구 후 동일 패턴 재발 확인 → 팀과 자동 감지·재생성 로직 설계·구현."},
+        {label:"Outcome",  text:"복구율 95% 이상, phone·tablet·wearable 전체 적용, 특허 출원."},
+        {label:"Strength", text:"고객 1명 → 시스템 차원 재발 방지로 관점 전환."}
+      ]
+    },
+    {
+      id:"G2", star:true, cat:"Growth",
+      title:"Ad-hoc → Factory Method: 설계 관점 전환",
+      ctx:"코드 리뷰에서 factory method 제안 수신. 처음엔 거부감, 대화 후 관점 변화.",
+      sections:[
+        {label:"Conflict", text:"factory method vs 변경 범위·리스크 (처음엔 overkill로 판단)."},
+        {label:"Action",   text:"리뷰어 의도 확인 → time horizon 차이 인식 → 최소 범위로 리팩토링."},
+        {label:"Outcome",  text:"이후 유사 케이스 자동 커버. 코드 리뷰 관점 영구 변화: 'why' 먼저 묻기."},
+        {label:"Strength", text:"설계 논쟁은 time horizon 차이임을 학습."}
+      ]
+    },
+    {
+      id:"G3", star:false, cat:"Growth",
+      title:"문서화 습관 만들기",
+      ctx:"병렬 이슈 처리 중 비슷한 이슈 재발 시 복기·재도출 비용 인식.",
+      sections:[
+        {label:"Problem",  text:"비슷한 이슈 재발 시 이전 결론을 처음부터 재도출."},
+        {label:"Action",   text:"매일 처리 이슈·판단·결과를 해당 티켓·문서에 직접 기록."},
+        {label:"Outcome",  text:"복기 속도 향상, 팀원들도 참조 → 팀 전체 시간 절감."},
+        {label:"Strength", text:"문서화는 팀 성장 속도를 높이는 투자."}
+      ]
+    }
+  ];
+
+  /* ==========================================================
+     DATA — English Speech (12 cards)
+  ========================================================== */
+  const engCards = [
+    {
+      id:"T1", star:true, cat:"Teamwork",
+      title:"Samsung / Google: Issue Tracker Collaboration",
+      lp:["11(Earn Trust)","12(Dive Deep)"], time:"~90s",
+      st:"At Samsung, part of my job involved collaborating with Google on shared Android system issues. When we hit a bug on Galaxy that we couldn't explain internally, our process was to first check whether it also reproduced on Google Pixel. If it did, that meant the issue was platform-level — not specific to our hardware — so we'd file it on Google's Issue Tracker and work through it with Google engineers.",
+      actions:[
+        "I reproduced the issue on both Galaxy and Pixel myself to confirm it was a shared, platform-level problem.",
+        "I wrote up a detailed reproduction case — steps, conditions, and logs — formatted so Google engineers could follow it exactly, and posted it to establish a shared baseline.",
+        "Throughout the analysis, I kept the ticket updated with our team's hypotheses, new logs, and findings, so the discussion stayed in sync even without real-time meetings.",
+        "We worked back and forth in comments, narrowing the root cause together, and once we identified it, I authored the patch and submitted it upstream."
+      ],
+      r:"In total, I filed over 10 issues directly on Google's Issue Tracker. Several resulted in upstream fixes from Google engineers, which were then integrated into Galaxy builds.",
+      followup:[
+        {q:"How did you handle situations where you and the Google team interpreted the root cause differently?", a:"We kept everything evidence-based. If there was a disagreement, I'd update the ticket with more targeted logs or a narrower reproduction case — let the data lead rather than assumptions."},
+        {q:"How long did these back-and-forth cycles typically take?", a:"It varied. Some resolved in a few days, others took a few weeks of async iteration. The key was making sure each comment had enough information to keep the other side moving without needing to ask follow-up questions."}
+      ]
+    },
+    {
+      id:"T2", star:true, cat:"Teamwork",
+      title:"Ad-hoc Fix vs. Factory Method (Code Review)",
+      lp:["13(Have Backbone; Disagree and Commit)"], time:"~80s",
+      st:"I came across a bug and fixed it with a targeted, minimal change — just addressing the specific instance that was failing. When I submitted the code review, my reviewer suggested I use a factory method pattern instead, which would generalize the fix but also expand the scope significantly.",
+      actions:[
+        "My initial reaction was that the scope creep wasn't worth it — the bug didn't seem to recur frequently, and a bigger change meant more risk.",
+        "Instead of just pushing back, I had a conversation with my reviewer to understand the intent behind the suggestion.",
+        "He explained that similar issues had appeared in different places before, and the codebase would benefit from a structure other engineers could extend without rewriting things.",
+        "Once I understood we were optimizing for different time horizons — I was thinking about this week, he was thinking about the next year — I changed my approach and refactored using the factory method, keeping the scope as minimal as possible."
+      ],
+      r:"The refactored version handled not just the immediate issue, but also covered similar cases that came up later without any additional changes.",
+      followup:[
+        {q:"How do you decide when to push back on a reviewer versus accepting the feedback?", a:"I try to understand the intent first. If I disagree, I ask why they're suggesting it — usually there's context I'm missing. If after that I still think it's the wrong call, I explain my concern. But if the rationale makes sense, I trust the feedback and commit to it."}
+      ]
+    },
+    {
+      id:"T3", star:false, cat:"Teamwork",
+      title:"Daily Boot Regression: Multi-Team Disagreement",
+      lp:["11(Earn Trust)","13(Have Backbone)"], time:"~70s",
+      st:"We had an internal system for monitoring boot performance across devices — daily regression tests that would catch when a device started taking significantly longer to boot. One time, we saw a specific model degrading consistently, and when we surfaced it across teams, everyone had a different theory about what was causing it. The kernel team, framework team, and device team were all pointing at each other.",
+      actions:[
+        "I used systrace — a system-level profiling tool — to analyze the boot sequence and identify which specific phase was actually taking longer.",
+        "I automated reproduction log collection so we had consistent, comparable data across runs, removing the \"different environment\" argument.",
+        "Rather than taking sides, I compiled evidence specific to each team's hypothesis and sent it to the relevant team — kernel team got kernel traces, framework team got theirs — so each could evaluate their own theory against real data."
+      ],
+      r:"We traced it to a faulty driver initialization delay. Removing that delay stabilized boot time for the model.",
+      followup:[
+        {q:"What did you do when teams were resistant to accepting the evidence?", a:"I made the logs as precise as possible — showing exactly when the delay started and ended, which process was responsible. Once the numbers were specific and reproducible, it was hard to dispute."}
+      ]
+    },
+    {
+      id:"P1", star:true, cat:"Problem Solving",
+      title:"Daily Boot Regression: Root Cause Analysis",
+      lp:["12(Dive Deep)","14(Deliver Results)"], time:"~95s",
+      st:"I was responsible for investigating boot performance regressions — situations where a device's startup time degraded compared to baseline. The challenge was that the boot process involves multiple layers: the kernel, the init process, and the system server, and symptoms often varied by model or OS version, making it hard to know where to start.",
+      actions:[
+        "I broke down the boot sequence into phases using systrace and boot logs — creating a step-by-step timeline of what was happening and when.",
+        "I focused on the phases with the largest deviation from baseline and formed a hypothesis there first, rather than trying to check everything at once.",
+        "I built a script to automatically collect reproduction logs, keeping analysis consistent across different runs and configurations.",
+        "I split issues into two tracks: ones in my team's area — Android Runtime — I addressed directly; ones in other teams' areas, I flagged and handed off with the supporting evidence."
+      ],
+      r:"I resolved over 30 boot regression issues this way. Boot time improvements ranged from about 100 milliseconds to several seconds per issue. This process became the standard approach for new model launches.",
+      followup:[
+        {q:"How did you prioritize which regressions to investigate first?", a:"Severity and scope. If a regression affected multiple models or appeared close to a launch deadline, those went first. I also weighted by magnitude — a 5-second regression is more user-visible than 100ms."}
+      ]
+    },
+    {
+      id:"P2", star:true, cat:"Problem Solving",
+      title:"Device-Wide Slowdown: Binder IPC Analysis",
+      lp:["12(Dive Deep)","1(Customer Obsession)"], time:"~80s",
+      st:"We kept getting reports that certain Galaxy devices felt generally sluggish — apps were slow, the UI wasn't responsive. The hard part was figuring out whether it was an app issue or a system issue, because the symptoms were device-wide, not tied to one specific app.",
+      actions:[
+        "Android uses a mechanism called Binder IPC for most system service calls, and each process has a limited thread pool for handling them. I suspected a specific app or process was flooding the binder, starving other services.",
+        "I reconstructed the binder transaction flow by analyzing process-level traces and IPC patterns, looking for spikes in call density aligned with specific timestamps.",
+        "When I identified apps generating suspicious patterns, I documented the findings and passed them to the team responsible for external app vendor relationships.",
+        "When app vendors reached out with compatibility questions, I provided targeted analysis based on what we saw in the traces — and vice versa, flagged patterns we caught on our end."
+      ],
+      r:"We established a repeatable process for identifying problematic app patterns. Issues that looked like general \"slowness\" could be traced back to specific apps, giving both our team and the vendors something concrete to act on.",
+      followup:[
+        {q:"How did you distinguish between a system problem and an app problem?", a:"Timing alignment. If binder congestion consistently spiked with specific app activity, that pointed to the app. If it happened regardless of which apps were running, that suggested a system-level issue."}
+      ]
+    },
+    {
+      id:"P3", star:false, cat:"Problem Solving",
+      title:"Cold Start / Prelaunch (Russia Team Collaboration)",
+      lp:["3(Invent and Simplify)","14(Deliver Results)"], time:"~80s",
+      st:"Cold start latency — how long it takes an app to launch right after install — was a pain point for user experience. Android's runtime needs to initialize, compile certain code, and load resources before the app becomes interactive, and all of that adds up. We wanted to shift some of that work earlier so it wasn't all happening at launch time.",
+      actions:[
+        "I collaborated with a team in Russia who was working on new Android Runtime features.",
+        "Together, we designed a prelaunch mechanism: at the time of app install, we'd kick off background preparation — loading ART-related resources and pre-processing what we could — so by the time the user actually launched the app, most of the heavy lifting was already done.",
+        "I separated the execution path so the actual launch only needed to handle the essential parts.",
+        "We put resource limits on the background work to make sure it didn't affect battery or stability."
+      ],
+      r:"We achieved roughly a 15% reduction in cold start latency. The structure we built also created a foundation for further startup optimization work. The approach was novel enough that it led to a patent filing.",
+      followup:[
+        {q:"How did you make sure the background preparation didn't cause instability?", a:"We set explicit resource budgets — CPU time limits and memory caps — and tested across device configurations. If the background work exceeded the threshold, it would abort cleanly rather than compete with foreground processes."}
+      ]
+    },
+    {
+      id:"L1", star:true, cat:"Leadership",
+      title:"Korea\u2013Russia Team Coordination",
+      lp:["11(Earn Trust)","2(Ownership)"], time:"~80s",
+      st:"The Android Runtime module I worked on was shared between two teams — our team in Korea, which mainly handled maintenance and customer issue response, and a team in Russia, which developed new features. We were working on the same codebase with a 6-hour time zone difference, which meant coordination had to be intentional.",
+      actions:[
+        "When the Russia team completed a major feature, I reviewed their code directly to make sure the design was consistent with what our team was maintaining.",
+        "If we encountered a customer issue in the Russia team's area, I filed it in their Jira with enough context that they could start without needing clarification.",
+        "For urgent issues, I built an async handoff rhythm: before our team ended the day, I'd write up where we were — what we'd tried, what we suspected, and what we needed next — so Russia could continue immediately when their workday started, and we'd have updates waiting when we came in the next morning."
+      ],
+      r:"Over about 3 to 4 years, we kept both sides aligned without significant integration conflicts. Urgent issues that might have taken multiple days could be resolved overnight with this handoff approach.",
+      followup:[
+        {q:"What was the hardest part of coordinating across time zones?", a:"Making handoff notes complete enough that the other team wouldn't get blocked waiting for clarification. If I left something vague, the question would come back 6 hours later and we'd lose a full day. I got deliberate about writing handoffs that anticipated the next question."}
+      ]
+    },
+    {
+      id:"L2", star:true, cat:"Leadership",
+      title:"ART Memory & Performance Options: Documentation",
+      lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~80s",
+      st:"Android Runtime — the layer that executes app code on Android — has a trade-off between memory usage and startup performance depending on how apps are compiled. Platform leads and application teams would come to our team whenever they had a memory issue, because they didn't know which configuration options were available or when to use each one. This was happening constantly — at least 5 times a month, across every device cycle.",
+      actions:[
+        "I noticed we were answering the same questions over and over, and every time it required one of us to walk someone through the whole analysis from scratch.",
+        "I documented the ART configuration options: what each one does, the trade-off between memory and startup performance, and concrete selection criteria for common scenarios.",
+        "I included code-level guidance — what patches to apply for each case — so teams could make the decision and implement it without needing to come back to us."
+      ],
+      r:"After publishing the document, teams were able to make these decisions independently. My involvement dropped from full walkthroughs to occasional final checks. The document became reusable across every new model and regional variant cycle.",
+      followup:[
+        {q:"How did you make sure the document stayed accurate as Android evolved?", a:"I tied updates to our release cycles. When ART changed in a new Android version, I'd revisit the relevant sections. If teams flagged something that wasn't covered, that was a signal to update."}
+      ]
+    },
+    {
+      id:"L3", star:false, cat:"Leadership",
+      title:"Dumpstate Review Board & Quality Standards",
+      lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~75s",
+      st:"Dumpstate is a shared system module in Android — it collects diagnostic information from the device. Because it touches many parts of the system, multiple teams wanted to add logging or new data collection to it over time. With no gate on contributions, the module was getting harder to maintain and more fragile.",
+      actions:[
+        "I set up a review process specifically for Dumpstate changes — a board where anyone wanting to modify the module had to submit a request first.",
+        "I reviewed each request against three criteria: design intent, extensibility, and consistency with the existing structure.",
+        "If a change didn't meet the bar, I'd either suggest an alternative or reject it with a specific explanation.",
+        "This gave the module a clear owner and a consistent standard that other teams could understand upfront."
+      ],
+      r:"The module stayed manageable. Teams knew what the expectations were before submitting, which reduced back-and-forth and prevented unnecessary code churn.",
+      followup:[
+        {q:"How did you handle pushback from teams whose changes you rejected?", a:"I made the feedback specific — not just \"this doesn't fit\" but \"here's the exact concern and here's what I'd suggest instead.\" Most teams were fine once the reasoning was clear. If there was a real disagreement, I'd escalate to discuss trade-offs openly."}
+      ]
+    },
+    {
+      id:"G1", star:true, cat:"Growth",
+      title:"Memory Corruption \u2192 Auto-Recovery Logic",
+      lp:["8(Think Big)","14(Deliver Results)"], time:"~105s",
+      st:"We received a customer device that was stuck in a reboot loop — it would start up, fail partway through the boot process, and restart over and over. The customer had already tried a factory reset, which hadn't helped. We brought it into the lab for direct analysis.",
+      actions:[
+        "I identified that specific system files had been corrupted — likely due to a memory fault — causing the boot sequence to fail at a consistent point.",
+        "I applied a targeted patch to recover the customer's device in the short term.",
+        "But then I started seeing the same pattern in other incoming devices. So I went back to look at the underlying failure mode more carefully.",
+        "I worked with team members to design an auto-recovery mechanism: logic that detects when a critical system file is corrupted and automatically regenerates it, so the device can boot normally without manual intervention."
+      ],
+      r:"The recovery rate for matching cases was over 95%. We rolled it out across phones, tablets, and wearables, covering more than two Android OS release versions. Customers no longer needed to send in their devices for manual patching. The work led to a patent filing.",
+      followup:[
+        {q:"How did you scope what the auto-recovery logic should handle?", a:"We started with the specific file category causing the most failures, then evaluated whether the detection logic could generalize. We were careful not to make it too aggressive — false positives would have been worse than the original problem — so we defined precise signatures for what \"corrupted\" meant before triggering recovery."},
+        {q:"How did you go from a one-off fix to a system-wide solution?", a:"When I saw the same pattern repeat, I stopped treating it as individual incidents and asked what the common failure mode was. Once I could describe it precisely, designing a general solution became straightforward."}
+      ]
+    },
+    {
+      id:"G2", star:true, cat:"Growth",
+      title:"Ad-hoc \u2192 Factory Method: Design Perspective Shift",
+      lp:["5(Learn and Be Curious)","13(Have Backbone)"], time:"~80s",
+      st:"This was a code review experience that changed how I think about engineering trade-offs. I fixed a bug with a minimal, targeted change and submitted it for review. My reviewer came back suggesting a factory method pattern — a more generalizable design — which would have meant a larger change with more risk and more code to test.",
+      actions:[
+        "My first instinct was to push back — the pattern felt like overkill for a one-time fix.",
+        "But instead of dismissing it, I asked my reviewer to explain the motivation.",
+        "He pointed out that similar bugs had come up in different places, and the codebase needed a structure other engineers could extend without rewriting things from scratch.",
+        "Once I understood that we were optimizing for different time horizons — I was thinking short-term, he was thinking long-term — I changed my approach and did the refactor, keeping the scope as minimal as possible."
+      ],
+      r:"The factory method version covered a few similar cases that surfaced later without needing any additional changes. More importantly, it shifted how I approach code reviews: I now ask \"why\" before evaluating \"what.\"",
+      followup:[
+        {q:"What did you take away from that experience?", a:"That technical disagreements are often really disagreements about time horizon. When someone suggests a more complex approach, it's worth asking what future scenarios they're protecting against — because that usually explains everything."}
+      ]
+    },
+    {
+      id:"G3", star:false, cat:"Growth",
+      title:"Building a Documentation Habit",
+      lp:["2(Ownership)"], time:"~65s",
+      st:"At Samsung, I was handling multiple customer issues and internal tickets in parallel at any point. After a while, I noticed that when a similar issue came up again later, I'd spend time re-deriving conclusions I'd already reached — because I hadn't written anything down.",
+      actions:[
+        "I started writing a brief summary at the end of each workday: what I worked on, the key decisions I made, and what the outcome was.",
+        "I kept these notes attached directly to the relevant tickets and documents — not in a separate place — so the context was always where someone would naturally look."
+      ],
+      r:"When similar issues came up again, I could pull up past analysis in minutes instead of starting from scratch. My notes also started getting referenced by other engineers on the team, so the time savings multiplied beyond just my own work. It also made my work more visible in code reviews and team discussions, because I always had documented reasoning to reference.",
+      followup:[
+        {q:"How did you keep this sustainable without it feeling like extra overhead?", a:"I kept it lightweight — not a formal write-up, just enough for someone (including future me) to understand what happened and why. Usually 3 to 5 lines per ticket. The habit was easy to maintain because the payoff was immediately visible."}
+      ]
+    }
+  ];
+
+  /* ==========================================================
+     STATE
+  ========================================================== */
+  var mode       = "eng";
+  var activeCat  = "All";
+  var starOnly   = false;
+  var isFlipped  = false;
+  var currentIdx = 0;
+  var filtered   = [];
+
+  function getPool() {
+    var data = mode === "kor" ? korCards : engCards;
+    var indices = [];
+    for (var i = 0; i < data.length; i++) {
+      if (activeCat !== "All" && data[i].cat !== activeCat) continue;
+      if (starOnly && !data[i].star) continue;
+      indices.push(i);
+    }
+    return {data: data, indices: indices};
+  }
+
+  /* ==========================================================
+     CONTROLS
+  ========================================================== */
+  function setMode(m) {
+    mode = m; isFlipped = false;
+    document.getElementById("btnKor").classList.toggle("active", m === "kor");
+    document.getElementById("btnEng").classList.toggle("active", m === "eng");
+    refresh(true);
+  }
+
+  function setCat(cat) {
+    activeCat = cat; isFlipped = false;
+    document.querySelectorAll(".cat-btn").forEach(function(b) {
+      b.classList.toggle("active", b.dataset.cat === cat);
+    });
+    refresh(true);
+  }
+
+  function toggleStar() {
+    starOnly = !starOnly; isFlipped = false;
+    document.getElementById("starToggle").classList.toggle("active", starOnly);
+    refresh(true);
+  }
+
+  function flipCard() {
+    if (!filtered.length) return;
+    isFlipped = !isFlipped;
+    renderFaces();
+  }
+
+  function navigate(dir) {
+    if (!filtered.length) return;
+    currentIdx = (currentIdx + dir + filtered.length) % filtered.length;
+    isFlipped = false;
+    renderCard();
+  }
+
+  function goRandom() {
+    if (!filtered.length) return;
+    var next = currentIdx;
+    if (filtered.length > 1) {
+      while (next === currentIdx) next = Math.floor(Math.random() * filtered.length);
+    }
+    currentIdx = next; isFlipped = false;
+    renderCard();
+  }
+
+  /* ==========================================================
+     RENDER
+  ========================================================== */
+  function refresh(resetIdx) {
+    var pool = getPool();
+    filtered = pool.indices;
+    if (resetIdx) currentIdx = 0;
+    renderCard();
+  }
+
+  function renderCard() {
+    var pool      = getPool();
+    var card      = document.getElementById("mainCard");
+    var counter   = document.getElementById("counter");
+    var fill      = document.getElementById("progressFill");
+    var btnPrev   = document.getElementById("btnPrev");
+    var frontFace = document.getElementById("frontFace");
+    var backFace  = document.getElementById("backFace");
+
+    if (!filtered.length) {
+      card.setAttribute("data-cat","");
+      card.classList.remove("back-face");
+      frontFace.className = "face visible";
+      backFace.className  = "face";
+      frontFace.innerHTML = "<div class=\"empty\"><p>No cards match the current filter.</p><small>Try removing the &#11088; filter or selecting a different category.</small></div>";
+      backFace.innerHTML  = "";
+      counter.textContent = "0 / 0";
+      fill.style.width    = "0%";
+      btnPrev.disabled    = true;
+      return;
+    }
+
+    if (currentIdx >= filtered.length) currentIdx = 0;
+    var c = pool.data[filtered[currentIdx]];
+
+    card.setAttribute("data-cat", c.cat);
+    card.classList.toggle("back-face", isFlipped);
+    counter.textContent = (currentIdx + 1) + " / " + filtered.length;
+    fill.style.width    = ((currentIdx + 1) / filtered.length * 100) + "%";
+    btnPrev.disabled    = filtered.length <= 1;
+
+    frontFace.className = isFlipped ? "face" : "face visible";
+    backFace.className  = isFlipped ? "face visible" : "face";
+
+    if (!isFlipped) { frontFace.innerHTML = buildFront(c); }
+    else            { backFace.innerHTML  = buildBack(c);  }
+  }
+
+  function renderFaces() {
+    var pool = getPool();
+    if (!filtered.length) return;
+    var c    = pool.data[filtered[currentIdx]];
+    var card = document.getElementById("mainCard");
+    var fF   = document.getElementById("frontFace");
+    var bF   = document.getElementById("backFace");
+
+    card.classList.toggle("back-face", isFlipped);
+    fF.className = isFlipped ? "face" : "face visible";
+    bF.className = isFlipped ? "face visible" : "face";
+
+    if (!isFlipped) { fF.innerHTML = buildFront(c); }
+    else            { bF.innerHTML = buildBack(c);  }
+  }
+
+  /* ── front ── */
+  function buildFront(c) {
+    var star = c.star ? " &#11088;" : "";
+    if (mode === "kor") {
+      return "<div class=\"card-hdr\"><span class=\"card-id\">" + c.id + "</span>"
+           + "<span class=\"card-title\">" + esc(c.title) + star + "</span></div>"
+           + "<span class=\"sec-label\">Context</span>"
+           + "<p class=\"sec-text\">" + esc(c.ctx) + "</p>"
+           + "<p class=\"flip-hint\">&#128432; 카드 클릭 또는 Flip 버튼으로 뒤집기</p>";
+    } else {
+      // Summary: first sentence of S/T, first 8 words per action, first sentence of R
+      var pills    = c.lp.map(function(l){ return "<span class=\"lp-pill\">" + esc(l) + "</span>"; }).join("");
+      var stSnip   = esc(firstSentence(c.st));
+      var aBullets = c.actions.map(function(a){
+        return "<li>" + esc(firstWords(a, 9)) + "</li>";
+      }).join("");
+      var rSnip    = esc(firstSentence(c.r));
+
+      return "<div class=\"card-hdr\"><span class=\"card-id\">" + c.id + "</span>"
+           + "<span class=\"card-title\">" + esc(c.title) + star + "</span></div>"
+           + "<div class=\"badge-row\">" + pills + "<span class=\"time-pill\">&#9201; " + esc(c.time) + "</span></div>"
+           + "<div class=\"star-summary\">"
+           +   "<div class=\"star-row\"><span class=\"star-key\">S/T</span><span class=\"star-val\">" + stSnip + "</span></div>"
+           +   "<div class=\"star-row\"><span class=\"star-key\">A</span><ul class=\"star-mini-bullets\">" + aBullets + "</ul></div>"
+           +   "<div class=\"star-row\"><span class=\"star-key\">R</span><span class=\"star-val\">" + rSnip + "</span></div>"
+           + "</div>"
+           + "<p class=\"flip-hint\">&#128432; Click card or Flip to see the full story</p>";
+    }
+  }
+
+  function firstSentence(s) {
+    var m = String(s).match(/^.+?[.!?](?:\s|$)/);
+    return m ? m[0].trim() : String(s).split(" ").slice(0, 18).join(" ") + "…";
+  }
+
+  function firstWords(s, n) {
+    var words = String(s).split(" ");
+    return words.length <= n ? s : words.slice(0, n).join(" ") + "…";
+  }
+
+  /* ── back ── */
+  function buildBack(c) {
+    var star = c.star ? " &#11088;" : "";
+    var hdr  = "<div class=\"card-hdr\"><span class=\"card-id\">" + c.id + "</span>"
+             + "<span class=\"card-title\">" + esc(c.title) + star + "</span></div>";
+
+    if (mode === "kor") {
+      var secs = c.sections.map(function(s){
+        return "<div class=\"kor-sec\"><span class=\"kor-sec-label\">" + esc(s.label) + "</span>"
+             + "<span class=\"kor-sec-text\">" + esc(s.text) + "</span></div>";
+      }).join("");
+      return hdr + "<div class=\"kor-sections\">" + secs + "</div>";
+    } else {
+      var bullets = c.actions.map(function(a){ return "<li>" + esc(a) + "</li>"; }).join("");
+      var fqs = c.followup.map(function(fq){
+        return "<div class=\"fq-item\"><p class=\"fq-q\">" + esc(fq.q) + "</p>"
+             + "<p class=\"fq-a\">&#8594; " + esc(fq.a) + "</p></div>";
+      }).join("");
+      return hdr
+           + "<span class=\"sec-label\">Situation / Task</span>"
+           + "<p class=\"sec-text\" style=\"margin-bottom:0\">" + esc(c.st) + "</p>"
+           + "<hr class=\"divider\" />"
+           + "<span class=\"sec-label\">Action</span>"
+           + "<ul class=\"action-list\">" + bullets + "</ul>"
+           + "<hr class=\"divider\" />"
+           + "<span class=\"sec-label\">Result</span>"
+           + "<div class=\"result-box\">" + esc(c.r) + "</div>"
+           + "<hr class=\"divider\" />"
+           + "<button class=\"fq-toggle\" id=\"fqBtn\" onclick=\"event.stopPropagation();toggleFQ()\">&#9654; Follow-up Q&amp;A</button>"
+           + "<div class=\"fq-content\" id=\"fqBox\">" + fqs + "</div>";
+    }
+  }
+
+  function toggleFQ() {
+    var btn = document.getElementById("fqBtn");
+    var box = document.getElementById("fqBox");
+    if (!btn || !box) return;
+    var open = box.classList.toggle("open");
+    btn.classList.toggle("open", open);
+    btn.innerHTML = (open ? "&#9660;" : "&#9654;") + " Follow-up Q&amp;A";
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  /* ==========================================================
+     KEYBOARD
+  ========================================================== */
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowLeft")  { e.preventDefault(); navigate(-1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); navigate(1);  }
+    if (e.key === "ArrowDown")  { e.preventDefault(); if (!isFlipped) flipCard(); }
+    if (e.key === "ArrowUp")    { e.preventDefault(); if (isFlipped)  flipCard(); }
+    if (e.key === " ")          { e.preventDefault(); flipCard();   }
+  });
+
+  /* init */
+  refresh(true);
+  </script>
+</body>
+</html>
