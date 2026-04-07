@@ -705,7 +705,7 @@
       id:"P1", star:true, cat:"Problem Solving",
       title:"Daily Boot Regression: Root Cause Analysis",
       lp:["12(Dive Deep)","14(Deliver Results)"], time:"~95s",
-      st:"I was responsible for investigating boot performance regressions — situations where a device's startup time degraded compared to baseline. The challenge was that the boot process involves multiple layers: the kernel, the init process, and the system server, and symptoms often varied by model or OS version, making it hard to know where to start.",
+      st:"We had an internal system that ran daily boot regression tests across all device models — it would automatically flag when a device started taking consistently longer to boot compared to baseline. I was responsible for investigating those flagged cases. The challenge was that the boot process involves multiple layers: the kernel, the init process, and the system server, and symptoms often varied by model or OS version, making it hard to know where to start.",
       actions:[
         "I broke down the boot sequence into phases using systrace and boot logs — creating a step-by-step timeline of what was happening and when.",
         "I focused on the phases with the largest deviation from baseline and formed a hypothesis there first, rather than trying to check everything at once.",
@@ -826,6 +826,24 @@
       r:"The factory method version covered a few similar cases that surfaced later without needing any additional changes. More importantly, it shifted how I approach code reviews: I now ask \"why\" before evaluating \"what.\"",
       followup:[
         {q:"What did you take away from that experience?", a:"That technical disagreements are often really disagreements about time horizon. When someone suggests a more complex approach, it's worth asking what future scenarios they're protecting against — because that usually explains everything."}
+      ]
+    },
+    {
+      id:"F1", star:true, cat:"Failure",
+      title:"Prelaunch Feature: VirtualDisplay Rejected, Redesigned and Shipped",
+      lp:["14(Deliver Results)","7(Insist on the Highest Standards)"], time:"~100s",
+      st:"One of my clearest failures at Samsung was a Prelaunch feature we developed for Android Runtime. The goal was to speed up cold start — how fast an app launches right after install. We designed it with two parts: using a VirtualDisplay to briefly run the app silently after install and generate a usage profile, and a background process to preload ART resources in parallel. We completed the full implementation and submitted it for review.",
+      actions:[
+        "The Window Manager team — who owns the VirtualDisplay layer — flagged serious concerns. They said using VirtualDisplay this way was too risky for production and didn't align with where Android was heading in the next OS version.",
+        "We tried to explain the rationale and proposed modifications, but the concerns stood. We couldn't reach agreement in time.",
+        "The feature missed the release entirely.",
+        "After the miss, I reflected on what had actually gone wrong. We'd built the whole thing and only then asked the team most impacted by our design choices to weigh in. By that point, their options were to approve or reject — there was no room for collaboration.",
+        "For the next release cycle, I changed the approach: I brought the Window Manager team in at the design stage, before any code was written. We dropped the VirtualDisplay part and redesigned around background process preloading only."
+      ],
+      r:"The redesigned version passed review cleanly and shipped in the following premium model release. It\'s still running on Samsung Galaxy devices today — every time a user installs an app, that background preloading kicks in.",
+      followup:[
+        {q:"Do you think the original VirtualDisplay approach could have worked?", a:"Technically it might have, but the Window Manager team\'s point about Android\'s direction was valid. In newer OS versions, that kind of VirtualDisplay usage became more restricted anyway. So the pivot led to a more durable design."},
+        {q:"What specifically changed in how you approached cross-team features after this?", a:"I now schedule a design review with any team that owns a component my feature depends on — before committing to an implementation. Even a short conversation at the start changes the dynamic completely: from \'please approve this\' to \'help us build this right.\'"}
       ]
     },
     {
