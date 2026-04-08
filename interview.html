@@ -576,7 +576,7 @@
       ctx:"앱 cold start 지연. ART 리소스를 install 시점에 사전 처리해 startup 개선.",
       sections:[
         {label:"Problem",  text:"cold start 시 ART 초기화 비용 집중. 실행 전 선행 작업 필요, 리소스·안정성 리스크."},
-        {label:"Action",   text:"Russia 팀과 prelaunch 메커니즘 설계, install 시점 background 사전 처리, 리소스 제한 적용."},
+        {label:"Action",   text:"background process fork 및 ART 리소스 headless 사전 로딩 구현, install 후 프로세스 동작 및 cold start 시간 end-to-end 검증."},
         {label:"Outcome",  text:"cold start 약 15% 개선, 추가 최적화 기반 마련, 특허 출원."},
         {label:"Strength", text:"타이밍 앞당기는 설계, cross-team 원격 협업."}
       ]
@@ -740,8 +740,8 @@
       st:"Cold start latency — how long it takes an app to launch right after install — was a pain point for user experience. Android's runtime needs to initialize, compile certain code, and load resources before the app becomes interactive, and all of that adds up. We wanted to shift some of that work earlier so it wasn't all happening at launch time.",
       actions:[
         "I collaborated with a team in Russia who was working on new Android Runtime features.",
-        "Together, we designed a prelaunch mechanism: at the time of app install, we'd kick off background preparation — loading ART-related resources and pre-processing what we could — so by the time the user actually launched the app, most of the heavy lifting was already done.",
-        "I separated the execution path so the actual launch only needed to handle the essential parts.",
+        "I implemented the prelaunch mechanism: fork a background process at install time, preload ART resources headlessly — no display, no user-visible activity — so the heavy lifting was done before the user ever tapped the app.",
+        "I owned the end-to-end testing: verifying the background process spun up correctly, checking it via ps, and measuring actual cold start time before and after.",
         "We put resource limits on the background work to make sure it didn't affect battery or stability."
       ],
       r:"We achieved roughly a 15% reduction in cold start latency. The structure we built also created a foundation for further startup optimization work. The approach was novel enough that it led to a patent filing.",
