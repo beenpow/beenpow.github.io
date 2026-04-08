@@ -6,7 +6,7 @@ _site/
 .jekyll
 
 # Ruby / Bundler
-vendor/bundle/
+vendor/
 
 # misc
 .DS_Store
