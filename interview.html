@@ -538,7 +538,7 @@
       ]
     },
     {
-      id:"P1", star:true, cat:"Problem Solving",
+      id:"P2", star:true, cat:"Problem Solving",
       title:"Daily Boot Regression: 근본 원인 분석",
       ctx:"부팅 지연·hang 반복. kernel/init/system server 중 병목 불명확.",
       sections:[
@@ -549,7 +549,7 @@
       ]
     },
     {
-      id:"P2", star:true, cat:"Problem Solving",
+      id:"P3", star:false, cat:"Problem Solving",
       title:"단말 전반 지연: Binder IPC 분석",
       ctx:"Galaxy 전체 sluggish. 앱 문제인지 시스템 문제인지 불명확.",
       sections:[
@@ -560,7 +560,7 @@
       ]
     },
     {
-      id:"P3", star:false, cat:"Problem Solving",
+      id:"P1", star:true, cat:"Problem Solving",
       title:"Cold Start / Prelaunch (Russia 팀 협업)",
       ctx:"앱 cold start 지연. ART 리소스를 install 시점에 사전 처리해 startup 개선.",
       sections:[
@@ -571,7 +571,7 @@
       ]
     },
     {
-      id:"L1", star:true, cat:"Leadership",
+      id:"L2", star:true, cat:"Leadership",
       title:"한국–Russia 팀 조율",
       ctx:"ART 모듈을 한국(유지보수)·Russia(신규 기능) 양 팀이 공동 개발. 6시간 시차.",
       sections:[
@@ -582,7 +582,7 @@
       ]
     },
     {
-      id:"L2", star:true, cat:"Leadership",
+      id:"L3", star:false, cat:"Leadership",
       title:"ART 메모리·성능 옵션 문서화",
       ctx:"ART 설정 반복 문의 (월 5건+). 선택 기준 없어 매번 full walkthrough 필요.",
       sections:[
@@ -593,7 +593,7 @@
       ]
     },
     {
-      id:"L3", star:false, cat:"Leadership",
+      id:"L1", star:true, cat:"Leadership",
       title:"Dumpstate 리뷰 보드·품질 기준",
       ctx:"공용 Dumpstate 모듈에 여러 팀이 무분별 추가 → 유지보수 어려워짐.",
       sections:[
@@ -604,7 +604,7 @@
       ]
     },
     {
-      id:"G1", star:true, cat:"Growth",
+      id:"G2", star:true, cat:"Growth",
       title:"Memory Corruption → 자동 복구 로직",
       ctx:"고객 기기 재부팅 루프. factory reset 실패. 시스템 파일 corruption 확인.",
       sections:[
@@ -615,7 +615,7 @@
       ]
     },
     {
-      id:"G2", star:true, cat:"Growth",
+      id:"G3", star:false, cat:"Growth",
       title:"Ad-hoc → Factory Method: 설계 관점 전환",
       ctx:"코드 리뷰에서 factory method 제안 수신. 처음엔 거부감, 대화 후 관점 변화.",
       sections:[
@@ -626,7 +626,7 @@
       ]
     },
     {
-      id:"G3", star:false, cat:"Growth",
+      id:"G1", star:true, cat:"Growth",
       title:"문서화 습관 만들기",
       ctx:"병렬 이슈 처리 중 비슷한 이슈 재발 시 복기·재도출 비용 인식.",
       sections:[
@@ -689,7 +689,7 @@
       ]
     },
     {
-      id:"P1", star:true, cat:"Problem Solving",
+      id:"P2", star:true, cat:"Problem Solving",
       title:"Daily Boot Regression: Root Cause Analysis",
       lp:["12(Dive Deep)","14(Deliver Results)"], time:"~95s",
       st:"We had an internal system that ran daily boot regression tests across all device models — it would automatically flag when a device started taking consistently longer to boot compared to baseline. I was responsible for investigating those flagged cases. The challenge was that the boot process involves multiple layers: the kernel, the init process, and the system server, and symptoms often varied by model or OS version, making it hard to know where to start.",
@@ -705,7 +705,7 @@
       ]
     },
     {
-      id:"P2", star:true, cat:"Problem Solving",
+      id:"P3", star:false, cat:"Problem Solving",
       title:"Device-Wide Slowdown: Binder IPC Analysis",
       lp:["12(Dive Deep)","1(Customer Obsession)"], time:"~80s",
       st:"We kept getting reports that certain Galaxy devices felt generally sluggish — apps were slow, the UI wasn't responsive. The hard part was figuring out whether it was an app issue or a system issue, because the symptoms were device-wide, not tied to one specific app.",
@@ -721,7 +721,7 @@
       ]
     },
     {
-      id:"P3", star:false, cat:"Problem Solving",
+      id:"P1", star:true, cat:"Problem Solving",
       title:"Cold Start / Prelaunch (Russia Team Collaboration)",
       lp:["3(Invent and Simplify)","14(Deliver Results)"], time:"~80s",
       st:"Cold start latency — how long it takes an app to launch right after install — was a pain point for user experience. Android's runtime needs to initialize, compile certain code, and load resources before the app becomes interactive, and all of that adds up. We wanted to shift some of that work earlier so it wasn't all happening at launch time.",
@@ -737,7 +737,7 @@
       ]
     },
     {
-      id:"L1", star:true, cat:"Leadership",
+      id:"L2", star:true, cat:"Leadership",
       title:"Korea\u2013Russia Team Coordination",
       lp:["11(Earn Trust)","2(Ownership)"], time:"~80s",
       st:"The Android Runtime module I worked on was shared between two teams — our team in Korea, which mainly handled maintenance and customer issue response, and a team in Russia, which developed new features. We were working on the same codebase with a 6-hour time zone difference, which meant coordination had to be intentional.",
@@ -752,7 +752,7 @@
       ]
     },
     {
-      id:"L2", star:true, cat:"Leadership",
+      id:"L3", star:false, cat:"Leadership",
       title:"ART Memory & Performance Options: Documentation",
       lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~80s",
       st:"Android Runtime — the layer that executes app code on Android — has a trade-off between memory usage and startup performance depending on how apps are compiled. Platform leads and application teams would come to our team whenever they had a memory issue, because they didn't know which configuration options were available or when to use each one. This was happening constantly — at least 5 times a month, across every device cycle.",
@@ -767,7 +767,7 @@
       ]
     },
     {
-      id:"L3", star:false, cat:"Leadership",
+      id:"L1", star:true, cat:"Leadership",
       title:"Dumpstate Review Board & Quality Standards",
       lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~75s",
       st:"Dumpstate is a shared system module in Android — it collects diagnostic information from the device. Because it touches many parts of the system, multiple teams wanted to add logging or new data collection to it over time. With no gate on contributions, the module was getting harder to maintain and more fragile.",
@@ -783,7 +783,7 @@
       ]
     },
     {
-      id:"G1", star:true, cat:"Growth",
+      id:"G2", star:true, cat:"Growth",
       title:"Memory Corruption \u2192 Auto-Recovery Logic",
       lp:["8(Think Big)","14(Deliver Results)"], time:"~105s",
       st:"We received a customer device that was stuck in a reboot loop — it would start up, fail partway through the boot process, and restart over and over. The customer had already tried a factory reset, which hadn't helped. We brought it into the lab for direct analysis.",
@@ -800,7 +800,7 @@
       ]
     },
     {
-      id:"G2", star:true, cat:"Growth",
+      id:"G3", star:false, cat:"Growth",
       title:"Ad-hoc \u2192 Factory Method: Design Perspective Shift",
       lp:["5(Learn and Be Curious)","13(Have Backbone)"], time:"~80s",
       st:"This was a code review experience that changed how I think about engineering trade-offs. I fixed a bug with a minimal, targeted change and submitted it for review. My reviewer came back suggesting a factory method pattern — a more generalizable design — which would have meant a larger change with more risk and more code to test.",
@@ -834,7 +834,7 @@
       ]
     },
     {
-      id:"G3", star:false, cat:"Growth",
+      id:"G1", star:true, cat:"Growth",
       title:"Building a Documentation Habit",
       lp:["2(Ownership)"], time:"~65s",
       st:"At Samsung, I was handling multiple customer issues and internal tickets in parallel at any point. After a while, I noticed that when a similar issue came up again later, I'd spend time re-deriving conclusions I'd already reached — because I hadn't written anything down.",
