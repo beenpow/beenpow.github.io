@@ -80,6 +80,10 @@ header h1 {
 }
 .filter-btn.sub.fire.active { background: rgba(220,38,38,0.1); border-color: rgba(220,38,38,0.4); color: #dc2626; font-weight: 600; }
 .filter-btn.sub.solved-btn.active { background: rgba(21,128,61,0.1); border-color: rgba(21,128,61,0.4); color: #15803d; font-weight: 600; }
+/* Difficulty filter active states */
+.filter-btn.diff.active[data-diff="E"] { background: rgba(21,128,61,0.12); border-color: rgba(21,128,61,0.5); color: #15803d; font-weight: 600; }
+.filter-btn.diff.active[data-diff="M"] { background: rgba(180,83,9,0.12); border-color: rgba(180,83,9,0.5); color: #b45309; font-weight: 600; }
+.filter-btn.diff.active[data-diff="H"] { background: rgba(220,38,38,0.12); border-color: rgba(220,38,38,0.5); color: #dc2626; font-weight: 600; }
 
 /* ── GRID ───────────────────────────── */
 main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
@@ -321,6 +325,10 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
     <button class="filter-btn sub" data-sub="unsolved">❌ 미풀이</button>
     <button class="filter-btn sub fire" data-sub="review">🔥 리뷰 필요</button>
     <button class="filter-btn sub solved-btn" data-sub="solved">✅ 풀이 완료</button>
+    <div class="filter-divider"></div>
+    <button class="filter-btn diff" data-diff="E">Easy</button>
+    <button class="filter-btn diff" data-diff="M">Medium</button>
+    <button class="filter-btn diff" data-diff="H">Hard</button>
   </div>
 </header>
 
@@ -1406,6 +1414,7 @@ const PROBLEMS = [
 // ─────────────────────────────────────────────
 let srcFilter = 'all';   // 'all' | 'amazon' | 'blind'
 let subFilter = null;    // null | 'unsolved' | 'review' | 'solved'
+let diffFilter = null;   // null | 'E' | 'M' | 'H'
 let filteredProblems = [...PROBLEMS];
 let studyIndex = 0;
 let isFlipped = false;
@@ -1423,11 +1432,16 @@ function applyFilters() {
   }
   // 2. Sub-filter (stacked on top)
   switch (subFilter) {
-    case 'unsolved': filteredProblems = base.filter(p => !p.solved); break;
-    case 'review':   filteredProblems = base.filter(p => p.review > 0); break;
-    case 'solved':   filteredProblems = base.filter(p => p.solved); break;
-    default:         filteredProblems = base; break;
+    case 'unsolved': base = base.filter(p => !p.solved); break;
+    case 'review':   base = base.filter(p => p.review > 0); break;
+    case 'solved':   base = base.filter(p => p.solved); break;
+    default: break;
   }
+  // 3. Difficulty filter (stacked on top)
+  if (diffFilter) {
+    base = base.filter(p => p.diff === diffFilter);
+  }
+  filteredProblems = base;
   renderGrid();
   updateStats();
 }
@@ -1642,6 +1656,22 @@ document.querySelectorAll('.filter-btn.sub').forEach(btn => {
     } else {
       subFilter = val;
       document.querySelectorAll('.filter-btn.sub').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    }
+    applyFilters();
+  });
+});
+
+// Difficulty filter buttons (toggle)
+document.querySelectorAll('.filter-btn.diff').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const val = this.dataset.diff;
+    if (diffFilter === val) {
+      diffFilter = null;
+      document.querySelectorAll('.filter-btn.diff').forEach(b => b.classList.remove('active'));
+    } else {
+      diffFilter = val;
+      document.querySelectorAll('.filter-btn.diff').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
     }
     applyFilters();
