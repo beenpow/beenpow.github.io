@@ -617,7 +617,7 @@
         "He pointed out that similar bugs had come up in different places, and the codebase needed a structure other engineers could extend without rewriting things from scratch.",
         "Once I understood that we were optimizing for different time horizons — I was thinking short-term, he was thinking long-term — I changed my approach and did the refactor, keeping the scope as minimal as possible."
       ],
-      r:"The factory method version covered a few similar cases that surfaced later without needing any additional changes. More importantly, it shifted how I approach code reviews: I now ask \"why\" before evaluating \"what.\"",
+      r:"The factory method became a base that other engineers extended over time — subsequent contributors added to it rather than rewriting from scratch. It held across multiple release cycles, growing more robust with each addition. More importantly, it changed how I evaluate design disagreements — what looks like over-engineering is often just a longer time horizon.",
       followup:[
         {q:"What did you take away from that experience?", a:"That technical disagreements are often really disagreements about time horizon. When someone suggests a more complex approach, it's worth asking what future scenarios they're protecting against — because that usually explains everything."}
       ]
