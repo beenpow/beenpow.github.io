@@ -546,13 +546,13 @@
       id:"L1", star:true, cat:"Leadership",
       title:"ART Memory & Performance Options: Documentation",
       lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~80s",
-      st:"Android Runtime — the layer that executes app code on Android — has a trade-off between memory usage and startup performance depending on how apps are compiled. Platform leads and application teams would come to our team whenever they had a memory issue, because they didn't know which configuration options were available or when to use each one. This was happening constantly — at least 5 times a month, across every device cycle.",
+      st:"Android Runtime — the layer that executes app code on Android — has a trade-off between memory usage and startup performance depending on how apps are compiled. Platform leads and application teams would come to our team whenever they had a memory issue, because they didn't know which configuration options were available or when to use each one. This was happening constantly, across every device cycle.",
       actions:[
         "I noticed we were answering the same questions over and over, and every time it required one of us to walk someone through the whole analysis from scratch.",
         "I documented the ART configuration options: what each one does, the trade-off between memory and startup performance, and concrete selection criteria for common scenarios.",
         "I included code-level guidance — what patches to apply for each case — so teams could make the decision and implement it without needing to come back to us."
       ],
-      r:"After publishing the document, teams were able to make these decisions independently. My involvement dropped from full walkthroughs to occasional final checks. The document became reusable across every new model and regional variant cycle.",
+      r:"Before the document, I was being pulled in for these questions at least 5 times a month. After publishing, teams were able to make these decisions independently — my involvement dropped to occasional final checks. The document became reusable across every new model and regional variant cycle.",
       followup:[
         {q:"How did you make sure the document stayed accurate as Android evolved?", a:"I tied updates to our release cycles. When ART changed in a new Android version, I'd revisit the relevant sections. If teams flagged something that wasn't covered, that was a signal to update."}
       ]
