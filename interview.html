@@ -309,13 +309,13 @@
     /* ── Leadership ── */
     {
       id:"L1", star:true, cat:"Leadership",
-      title:"Dumpstate 리뷰 보드·품질 기준",
-      ctx:"공용 Dumpstate 모듈에 여러 팀이 무분별 추가 → 유지보수 어려워짐.",
+      title:"ART 메모리·성능 옵션 문서화",
+      ctx:"ART 설정 반복 문의 (월 5건+). 선택 기준 없어 매번 full walkthrough 필요.",
       sections:[
-        {label:"Problem",  text:"공용 모듈 일관성·장기 안정성 위협."},
-        {label:"Action",   text:"변경 요청 review board 운영, 설계·확장성·일관성 3기준으로 approve/reject."},
-        {label:"Outcome",  text:"모듈 일관성 유지, 팀들이 사전에 기준 인지 → 불필요한 back-and-forth 감소."},
-        {label:"Strength", text:"모듈 오너십, 기술적 기준·책임 경계 정의."}
+        {label:"Problem",  text:"메모리·성능 trade-off 기준 없음, 반복 문의 대응 비용 높음."},
+        {label:"Action",   text:"ART 옵션 문서화: 각 옵션 설명, trade-off, 시나리오별 선택 기준, 패치 가이드 포함."},
+        {label:"Outcome",  text:"팀들이 독립 결정 가능, 내 개입 full walkthrough → 짧은 조언 수준으로 감소, 모델·지역향 사이클 전반 재사용."},
+        {label:"Strength", text:"반복 문제 구조화, 결정을 쉽게 하는 기준 제공."}
       ]
     },
     {
@@ -331,13 +331,13 @@
     },
     {
       id:"L3", star:false, cat:"Leadership",
-      title:"ART 메모리·성능 옵션 문서화",
-      ctx:"ART 설정 반복 문의 (월 5건+). 선택 기준 없어 매번 full walkthrough 필요.",
+      title:"Dumpstate 리뷰 보드·품질 기준",
+      ctx:"공용 Dumpstate 모듈에 여러 팀이 무분별 추가 → 유지보수 어려워짐.",
       sections:[
-        {label:"Problem",  text:"메모리·성능 trade-off 기준 없음, 반복 문의 대응 비용 높음."},
-        {label:"Action",   text:"ART 옵션 문서화: 각 옵션 설명, trade-off, 시나리오별 선택 기준, 패치 가이드 포함."},
-        {label:"Outcome",  text:"팀들이 독립 결정 가능, 내 개입 full walkthrough → 짧은 조언 수준으로 감소, 모델·지역향 사이클 전반 재사용."},
-        {label:"Strength", text:"반복 문제 구조화, 결정을 쉽게 하는 기준 제공."}
+        {label:"Problem",  text:"공용 모듈 일관성·장기 안정성 위협."},
+        {label:"Action",   text:"변경 요청 review board 운영, 설계·확장성·일관성 3기준으로 approve/reject."},
+        {label:"Outcome",  text:"모듈 일관성 유지, 팀들이 사전에 기준 인지 → 불필요한 back-and-forth 감소."},
+        {label:"Strength", text:"모듈 오너십, 기술적 기준·책임 경계 정의."}
       ]
     },
     /* ── Growth ── */
@@ -544,18 +544,17 @@
     /* ── Leadership ── */
     {
       id:"L1", star:true, cat:"Leadership",
-      title:"Dumpstate Review Board & Quality Standards",
-      lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~75s",
-      st:"Dumpstate is a shared system module in Android — it collects diagnostic information from the device. Because it touches many parts of the system, multiple teams wanted to add logging or new data collection to it over time. With no gate on contributions, the module was getting harder to maintain and more fragile.",
+      title:"ART Memory & Performance Options: Documentation",
+      lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~80s",
+      st:"Android Runtime — the layer that executes app code on Android — has a trade-off between memory usage and startup performance depending on how apps are compiled. Platform leads and application teams would come to our team whenever they had a memory issue, because they didn't know which configuration options were available or when to use each one. This was happening constantly — at least 5 times a month, across every device cycle.",
       actions:[
-        "I set up a review process specifically for Dumpstate changes — a board where anyone wanting to modify the module had to submit a request first.",
-        "I reviewed each request against three criteria: design intent, extensibility, and consistency with the existing structure.",
-        "If a change didn't meet the bar, I'd either suggest an alternative or reject it with a specific explanation.",
-        "This gave the module a clear owner and a consistent standard that other teams could understand upfront."
+        "I noticed we were answering the same questions over and over, and every time it required one of us to walk someone through the whole analysis from scratch.",
+        "I documented the ART configuration options: what each one does, the trade-off between memory and startup performance, and concrete selection criteria for common scenarios.",
+        "I included code-level guidance — what patches to apply for each case — so teams could make the decision and implement it without needing to come back to us."
       ],
-      r:"The module stayed manageable. Teams knew what the expectations were before submitting, which reduced back-and-forth and prevented unnecessary code churn.",
+      r:"After publishing the document, teams were able to make these decisions independently. My involvement dropped from full walkthroughs to occasional final checks. The document became reusable across every new model and regional variant cycle.",
       followup:[
-        {q:"How did you handle pushback from teams whose changes you rejected?", a:"I made the feedback specific — not just \"this doesn't fit\" but \"here's the exact concern and here's what I'd suggest instead.\" Most teams were fine once the reasoning was clear. If there was a real disagreement, I'd escalate to discuss trade-offs openly."}
+        {q:"How did you make sure the document stayed accurate as Android evolved?", a:"I tied updates to our release cycles. When ART changed in a new Android version, I'd revisit the relevant sections. If teams flagged something that wasn't covered, that was a signal to update."}
       ]
     },
     {
@@ -575,17 +574,18 @@
     },
     {
       id:"L3", star:false, cat:"Leadership",
-      title:"ART Memory & Performance Options: Documentation",
-      lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~80s",
-      st:"Android Runtime — the layer that executes app code on Android — has a trade-off between memory usage and startup performance depending on how apps are compiled. Platform leads and application teams would come to our team whenever they had a memory issue, because they didn't know which configuration options were available or when to use each one. This was happening constantly — at least 5 times a month, across every device cycle.",
+      title:"Dumpstate Review Board & Quality Standards",
+      lp:["2(Ownership)","7(Insist on the Highest Standards)"], time:"~75s",
+      st:"Dumpstate is a shared system module in Android — it collects diagnostic information from the device. Because it touches many parts of the system, multiple teams wanted to add logging or new data collection to it over time. With no gate on contributions, the module was getting harder to maintain and more fragile.",
       actions:[
-        "I noticed we were answering the same questions over and over, and every time it required one of us to walk someone through the whole analysis from scratch.",
-        "I documented the ART configuration options: what each one does, the trade-off between memory and startup performance, and concrete selection criteria for common scenarios.",
-        "I included code-level guidance — what patches to apply for each case — so teams could make the decision and implement it without needing to come back to us."
+        "I set up a review process specifically for Dumpstate changes — a board where anyone wanting to modify the module had to submit a request first.",
+        "I reviewed each request against three criteria: design intent, extensibility, and consistency with the existing structure.",
+        "If a change didn't meet the bar, I'd either suggest an alternative or reject it with a specific explanation.",
+        "This gave the module a clear owner and a consistent standard that other teams could understand upfront."
       ],
-      r:"After publishing the document, teams were able to make these decisions independently. My involvement dropped from full walkthroughs to occasional final checks. The document became reusable across every new model and regional variant cycle.",
+      r:"The module stayed manageable. Teams knew what the expectations were before submitting, which reduced back-and-forth and prevented unnecessary code churn.",
       followup:[
-        {q:"How did you make sure the document stayed accurate as Android evolved?", a:"I tied updates to our release cycles. When ART changed in a new Android version, I'd revisit the relevant sections. If teams flagged something that wasn't covered, that was a signal to update."}
+        {q:"How did you handle pushback from teams whose changes you rejected?", a:"I made the feedback specific — not just \"this doesn't fit\" but \"here's the exact concern and here's what I'd suggest instead.\" Most teams were fine once the reasoning was clear. If there was a real disagreement, I'd escalate to discuss trade-offs openly."}
       ]
     },
     /* ── Growth ── */
