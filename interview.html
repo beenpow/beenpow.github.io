@@ -462,14 +462,14 @@
       id:"T1", star:true, cat:"Teamwork",
       title:"Samsung / Google: Issue Tracker Collaboration",
       lp:["11(Earn Trust)","12(Dive Deep)"], time:"~90s",
-      st:"At Samsung, part of my job involved collaborating with Google on shared Android system issues. When we hit a bug on Galaxy that we couldn't explain internally, our process was to first check whether it also reproduced on Google Pixel. If it did, that meant the issue was platform-level — not specific to our hardware — so we'd file it on Google's Issue Tracker and work through it with Google engineers.",
+      st:"At Samsung, one of the toughest class of issues I dealt with were CLC — Class Loader Context — mismatches in ART. When they hit, ART would reject precompiled artifacts and fall back to interpreter mode, and since this affected system-level code, every app on the device would run noticeably slower. Customer complaints came in fast. The tricky part was that the root cause was different almost every time — and often couldn't be explained from our side alone. One case in particular: I confirmed the same mismatch behavior reproduced on Pixel, which meant the issue was in ART itself, not our build.",
       actions:[
         "I reproduced the issue on both Galaxy and Pixel myself to confirm it was a shared, platform-level problem.",
         "I wrote up a detailed reproduction case — steps, conditions, and logs — formatted so Google engineers could follow it exactly, and posted it to establish a shared baseline.",
         "Throughout the analysis, I kept the ticket updated with our team's hypotheses, new logs, and findings, so the discussion stayed in sync even without real-time meetings.",
-        "We worked back and forth in comments, narrowing the root cause together, and once we identified it, I authored the patch and submitted it upstream."
+        "We worked back and forth in comments, narrowing the root cause together, and once we identified it, Google authored the upstream fix based on our joint analysis — I then validated it against our builds and integrated it into Galaxy."
       ],
-      r:"In total, I filed over 10 issues directly on Google's Issue Tracker. Several resulted in upstream fixes from Google engineers, which were then integrated into Galaxy builds.",
+      r:"That specific issue resulted in an upstream ART fix from Google, which was then integrated into Galaxy builds. In total, I filed over 10 issues on Google's Issue Tracker this way — several led to upstream fixes that resolved customer-facing performance regressions.",
       followup:[
         {q:"How did you handle situations where you and the Google team interpreted the root cause differently?", a:"We kept everything evidence-based. If there was a disagreement, I'd update the ticket with more targeted logs or a narrower reproduction case — let the data lead rather than assumptions."},
         {q:"How long did these back-and-forth cycles typically take?", a:"It varied. Some resolved in a few days, others took a few weeks of async iteration. The key was making sure each comment had enough information to keep the other side moving without needing to ask follow-up questions."}
@@ -513,14 +513,14 @@
       id:"P2", star:true, cat:"Problem Solving",
       title:"Daily Boot Regression: Root Cause Analysis",
       lp:["12(Dive Deep)","14(Deliver Results)"], time:"~95s",
-      st:"We had an internal system that ran daily boot regression tests across all device models — it would automatically flag when a device started taking consistently longer to boot compared to baseline. I was responsible for investigating those flagged cases. The challenge was that the boot process involves multiple layers: the kernel, the init process, and the system server, and symptoms often varied by model or OS version, making it hard to know where to start.",
+      st:"One case that stands out was during the Galaxy S23 validation cycle. Our daily boot regression system flagged that the S23 build had suddenly become several seconds slower to boot compared to baseline — not a gradual drift, it appeared all at once. The challenge was that the boot process spans many layers — from the kernel all the way up through the framework — and the symptom alone gave no indication of where to start.",
       actions:[
-        "I broke down the boot sequence into phases using systrace and boot logs — creating a step-by-step timeline of what was happening and when.",
-        "I focused on the phases with the largest deviation from baseline and formed a hypothesis there first, rather than trying to check everything at once.",
-        "I built a script to automatically collect reproduction logs, keeping analysis consistent across different runs and configurations.",
-        "I split issues into two tracks: ones in my team's area — Android Runtime — I addressed directly; ones in other teams' areas, I flagged and handed off with the supporting evidence."
+        "I instrumented the boot sequence by adding trace points at the boundaries of each section — when boot completed, this produced a timing table showing exactly how long each phase took.",
+        "That table immediately pointed to the kernel module loading phase as the outlier, so I focused my analysis there instead of checking everything at once.",
+        "I scanned insmod and modprobe entries in the kernel logs for that phase, going timestamp by timestamp until I isolated the specific module causing the delay.",
+        "I handed the findings off to the kernel team — they confirmed it was a module that had been pulled in unnecessarily for this model and removed it."
       ],
-      r:"I resolved over 30 boot regression issues this way. Boot time improvements ranged from about 100 milliseconds to several seconds per issue. This process became the standard approach for new model launches.",
+      r:"Boot time recovered by several seconds on that case. In total, I resolved over 30 boot regression issues this way — improvements ranged from about 100 milliseconds to several seconds per issue. The process became the standard approach for new model launch validation.",
       followup:[
         {q:"How did you prioritize which regressions to investigate first?", a:"Severity and scope. If a regression affected multiple models or appeared close to a launch deadline, those went first. I also weighted by magnitude — a 5-second regression is more user-visible than 100ms."}
       ]
@@ -807,9 +807,9 @@
            + "<p class=\"flip-hint\">&#128432; 카드 클릭 또는 Flip 버튼으로 뒤집기</p>";
     } else {
       var pills    = c.lp.map(function(l){ return "<span class=\"lp-pill\">" + esc(l) + "</span>"; }).join("");
-      var stSnip   = esc(firstSentence(c.st));
-      var aBullets = c.actions.map(function(a){ return "<li>" + esc(firstWords(a,9)) + "</li>"; }).join("");
-      var rSnip    = esc(firstSentence(c.r));
+      var stSnip   = hl3words(firstSentence(c.st), c.cat);
+      var aBullets = c.actions.map(function(a){ return "<li>" + hl3words(firstWords(a,9), c.cat) + "</li>"; }).join("");
+      var rSnip    = hl3words(firstSentence(c.r), c.cat);
       return "<div class=\"card-hdr\"><span class=\"card-id\">" + c.id + "</span>"
            + "<span class=\"card-title\">" + esc(c.title) + star + "</span></div>"
            + "<div class=\"badge-row\">" + pills + "<span class=\"time-pill\">&#9201; " + esc(c.time) + "</span></div>"
@@ -844,20 +844,20 @@
       }).join("");
       return hdr + "<div class=\"kor-sections\">" + secs + "</div>";
     } else {
-      var bullets = c.actions.map(function(a){ return "<li>" + esc(a) + "</li>"; }).join("");
+      var bullets = c.actions.map(function(a){ return "<li><span>" + hl3words(a, c.cat) + "</span></li>"; }).join("");
       var fqs = c.followup.map(function(fq){
         return "<div class=\"fq-item\"><p class=\"fq-q\">" + esc(fq.q) + "</p>"
              + "<p class=\"fq-a\">&#8594; " + esc(fq.a) + "</p></div>";
       }).join("");
       return hdr
            + "<span class=\"sec-label\">Situation / Task</span>"
-           + "<p class=\"sec-text\" style=\"margin-bottom:0\">" + esc(c.st) + "</p>"
+           + "<p class=\"sec-text\" style=\"margin-bottom:0\">" + hl3sentences(c.st, c.cat) + "</p>"
            + "<hr class=\"divider\" />"
            + "<span class=\"sec-label\">Action</span>"
            + "<ul class=\"action-list\">" + bullets + "</ul>"
            + "<hr class=\"divider\" />"
            + "<span class=\"sec-label\">Result</span>"
-           + "<div class=\"result-box\">" + esc(c.r) + "</div>"
+           + "<div class=\"result-box\">" + hl3sentences(c.r, c.cat) + "</div>"
            + "<hr class=\"divider\" />"
            + "<button class=\"fq-toggle\" id=\"fqBtn\" onclick=\"event.stopPropagation();toggleFQ()\">&#9654; Follow-up Q&amp;A</button>"
            + "<div class=\"fq-content\" id=\"fqBox\">" + fqs + "</div>";
@@ -875,6 +875,27 @@
 
   function esc(s) {
     return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  function hl3words(rawText, cat) {
+    var sty = "font-weight:700;color:var(--p);background:#fef9c3;border-radius:2px;";
+    var ws   = String(rawText).split(/\s+/);
+    var head = "<span style=\"" + sty + "\">" + esc(ws.slice(0, 3).join(" ")) + "</span>";
+    var tail = ws.length > 3 ? " " + esc(ws.slice(3).join(" ")) : "";
+    return head + tail;
+  }
+
+  function hl3sentences(rawText, cat) {
+    var sty = "font-weight:700;color:var(--p);background:#fef9c3;border-radius:2px;";
+    var sents = String(rawText).replace(/([.!?])\s+/g, "$1\x00").split("\x00");
+    return sents.map(function(s) {
+      s = s.trim();
+      if (!s) return "";
+      var ws   = s.split(/\s+/);
+      var head = "<span style=\"" + sty + "\">" + esc(ws.slice(0, 3).join(" ")) + "</span>";
+      var tail = ws.length > 3 ? " " + esc(ws.slice(3).join(" ")) : "";
+      return head + tail;
+    }).filter(Boolean).join(" ");
   }
 
   /* ==========================================================
