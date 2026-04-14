@@ -153,6 +153,27 @@
     .empty { text-align: center; padding: 70px 20px; color: var(--muted); }
     .empty p     { font-size: 16px; margin-bottom: 8px; }
     .empty small { font-size: 13px; color: #94a3b8; }
+
+    /* ── Overview grid ── */
+    .overview-panel { display:none; padding:4px 0 12px; }
+    .overview-grid  { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    @media(max-width:520px){ .overview-grid { grid-template-columns:1fr; } }
+    .ov-tile { background:#fff; border:1px solid var(--border); border-left:4px solid #cbd5e1; border-radius:10px; padding:10px 12px; cursor:pointer; transition:box-shadow .15s,transform .1s; }
+    .ov-tile:hover { box-shadow:0 4px 14px rgba(0,0,0,.10); transform:translateY(-1px); }
+    .ov-tile[data-cat="Extra"]           { border-left-color:var(--e); }
+    .ov-tile[data-cat="Teamwork"]        { border-left-color:var(--t); }
+    .ov-tile[data-cat="Problem Solving"] { border-left-color:var(--p); }
+    .ov-tile[data-cat="Leadership"]      { border-left-color:var(--l); }
+    .ov-tile[data-cat="Growth"]          { border-left-color:var(--g); }
+    .ov-tile[data-cat="Failure"]         { border-left-color:var(--f); }
+    .ov-hdr   { display:flex; align-items:center; gap:6px; margin-bottom:6px; }
+    .ov-id    { font-family:"SF Mono","Fira Code","Consolas",monospace; font-size:11px; font-weight:700; color:#2563eb; background:#eff6ff; padding:1px 5px; border-radius:4px; flex-shrink:0; }
+    .ov-title { font-size:12.5px; font-weight:700; color:var(--text); flex:1; line-height:1.3; }
+    .ov-star  { font-size:11px; flex-shrink:0; }
+    .ov-rows  { display:flex; flex-direction:column; gap:3px; }
+    .ov-row   { display:flex; gap:5px; align-items:flex-start; font-size:11.5px; line-height:1.4; }
+    .ov-label { font-weight:700; color:#94a3b8; width:12px; flex-shrink:0; font-family:"SF Mono","Fira Code","Consolas",monospace; font-size:10px; padding-top:1px; }
+    .ov-snip  { color:#475569; }
   </style>
 </head>
 <body>
@@ -177,6 +198,7 @@
   </div>
 
   <div class="card-area">
+    <div class="overview-panel" id="overviewPanel"></div>
     <div class="card" id="mainCard" data-cat="Extra" onclick="flipCard()">
       <div class="face visible" id="frontFace"></div>
       <div class="face"         id="backFace"></div>
@@ -666,7 +688,7 @@
   var activeCat  = "All";
   var starOnly   = false;
   var isFlipped  = false;
-  var currentIdx = 0;
+  var currentIdx = -1;   // -1 = overview mode (All tab)
   var filtered   = [];
 
   function getPool() {
@@ -705,12 +727,16 @@
   }
 
   function flipCard() {
-    if (!filtered.length) return;
+    if (currentIdx === -1 || !filtered.length) return;
     isFlipped = !isFlipped;
     renderFaces();
   }
 
   function navigate(dir) {
+    if (currentIdx === -1) {
+      if (dir === 1 && filtered.length) { currentIdx = 0; isFlipped = false; renderCard(); }
+      return;
+    }
     if (!filtered.length) return;
     currentIdx = (currentIdx + dir + filtered.length) % filtered.length;
     isFlipped = false;
@@ -719,10 +745,9 @@
 
   function goRandom() {
     if (!filtered.length) return;
-    var next = currentIdx;
-    if (filtered.length > 1) {
-      while (next === currentIdx) next = Math.floor(Math.random() * filtered.length);
-    }
+    var base = currentIdx === -1 ? -1 : currentIdx;
+    var next = Math.floor(Math.random() * filtered.length);
+    if (filtered.length > 1) { while (next === base) next = Math.floor(Math.random() * filtered.length); }
     currentIdx = next; isFlipped = false;
     renderCard();
   }
@@ -733,18 +758,33 @@
   function refresh(resetIdx) {
     var pool = getPool();
     filtered = pool.indices;
-    if (resetIdx) currentIdx = 0;
+    if (resetIdx) currentIdx = (activeCat === "All") ? -1 : 0;
     renderCard();
   }
 
   function renderCard() {
-    var pool      = getPool();
-    var card      = document.getElementById("mainCard");
-    var counter   = document.getElementById("counter");
-    var fill      = document.getElementById("progressFill");
-    var btnPrev   = document.getElementById("btnPrev");
-    var frontFace = document.getElementById("frontFace");
-    var backFace  = document.getElementById("backFace");
+    var pool         = getPool();
+    var card         = document.getElementById("mainCard");
+    var ovPanel      = document.getElementById("overviewPanel");
+    var counter      = document.getElementById("counter");
+    var fill         = document.getElementById("progressFill");
+    var btnPrev      = document.getElementById("btnPrev");
+    var frontFace    = document.getElementById("frontFace");
+    var backFace     = document.getElementById("backFace");
+
+    // Overview mode
+    if (currentIdx === -1 && activeCat === "All") {
+      card.style.display    = "none";
+      ovPanel.style.display = "block";
+      ovPanel.innerHTML     = buildOverview();
+      counter.textContent   = "Overview (" + filtered.length + " cards)";
+      fill.style.width      = "0%";
+      btnPrev.disabled      = true;
+      document.querySelectorAll(".cat-btn").forEach(function(b){ b.classList.remove("ring"); });
+      return;
+    }
+    card.style.display    = "";
+    ovPanel.style.display = "none";
 
     if (!filtered.length) {
       card.setAttribute("data-cat","");
@@ -784,6 +824,7 @@
   }
 
   function renderFaces() {
+    if (currentIdx === -1) return;
     var pool = getPool();
     if (!filtered.length) return;
     var c    = pool.data[filtered[currentIdx]];
@@ -874,6 +915,44 @@
     btn.innerHTML = (open ? "&#9660;" : "&#9654;") + " Follow-up Q&amp;A";
   }
 
+  function goToCard(pos) {
+    currentIdx = pos; isFlipped = false;
+    renderCard();
+  }
+
+  function buildOverview() {
+    var pool = getPool();
+    var html = '<div class="overview-grid">';
+    pool.indices.forEach(function(idx) {
+      var c    = pool.data[idx];
+      var pos  = pool.indices.indexOf(idx);
+      var star = c.star ? '<span class="ov-star">&#11088;</span>' : '';
+      var rows = '';
+      if (mode === 'eng') {
+        rows = '<div class="ov-rows">'
+             + '<div class="ov-row"><span class="ov-label">S</span><span class="ov-snip">' + esc(firstWords(c.st, 8)) + '\u2026</span></div>'
+             + '<div class="ov-row"><span class="ov-label">A</span><span class="ov-snip">' + esc(firstWords(c.actions[0] || '', 6)) + '\u2026</span></div>'
+             + '<div class="ov-row"><span class="ov-label">R</span><span class="ov-snip">' + esc(firstWords(c.r, 8)) + '\u2026</span></div>'
+             + '</div>';
+      } else {
+        var secLblMap = {'배경':'S','상황':'S','문제':'P','Problem':'P','핵심 경험':'A','행동':'A','Action':'A','마무리':'R','결과':'R','Outcome':'O','Strength':'+'};
+        var secs = (c.sections || []).slice(0, 3);
+        rows = '<div class="ov-rows">'
+             + secs.map(function(s) {
+                 var lbl = secLblMap[s.label] || s.label.charAt(0);
+                 return '<div class="ov-row"><span class="ov-label">' + esc(lbl) + '</span><span class="ov-snip">' + esc(firstWords(s.text, 7)) + '\u2026</span></div>';
+               }).join('')
+             + '</div>';
+      }
+      html += '<div class="ov-tile" data-cat="' + esc(c.cat) + '" onclick="goToCard(' + pos + ')">'
+            + '<div class="ov-hdr"><span class="ov-id">' + esc(c.id) + '</span>'
+            + '<span class="ov-title">' + esc(c.title) + '</span>' + star + '</div>'
+            + rows + '</div>';
+    });
+    html += '</div>';
+    return html;
+  }
+
   function esc(s) {
     return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   }
@@ -905,8 +984,8 @@
   document.addEventListener("keydown", function(e) {
     if (e.key === "ArrowLeft")  { e.preventDefault(); navigate(-1); }
     if (e.key === "ArrowRight") { e.preventDefault(); navigate(1);  }
-    if (e.key === "ArrowDown")  { e.preventDefault(); if (!isFlipped) flipCard(); }
-    if (e.key === "ArrowUp")    { e.preventDefault(); if (isFlipped)  flipCard(); }
+    if (e.key === "ArrowDown")  { if (currentIdx === -1) { window.scrollBy(0, 120); } else { e.preventDefault(); if (!isFlipped) flipCard(); } }
+    if (e.key === "ArrowUp")    { if (currentIdx === -1) { window.scrollBy(0, -120); } else { e.preventDefault(); if (isFlipped)  flipCard(); } }
     if (e.key === " ")          { e.preventDefault(); flipCard(); }
   });
 
