@@ -435,7 +435,8 @@
       actions:[
         "I maintain a rule file for each project: constraints and context the AI should always follow. This keeps the AI's behavior consistent and predictable, especially across longer tasks.",
         "Before any session, I write out a Todo list — the goal and the sequence — so I'm driving the work, not reacting to whatever the AI produces.",
-        "For code specifically, I never paste output directly. I verify against docs or test cases — I've caught subtle logic errors that looked correct but broke on edge cases."
+        "For code specifically, I never paste output directly. I verify against docs or test cases — I've caught subtle logic errors that looked correct but broke on edge cases.",
+        "For example, in one Web Technology assignment, the AI handled the null case correctly but missed the empty-array case in the search results logic. I caught that by checking the API behavior and updated the condition to handle both cases."
       ],
       r:"This workflow has made AI genuinely useful rather than just fast. For me, AI is a fast collaborator, not a replacement for structured thinking.",
       followup:[
@@ -449,10 +450,10 @@
       st:"In my Web Technology course at USC, the professor had a very clear policy on AI usage. He didn't just say 'you can use AI' — he gave us explicit guidelines on how to use it effectively, and more importantly, what patterns lead to meaningless code. One of the requirements was to submit a log: how we used AI, where it gave a wrong implementation, and how we identified and fixed it.",
       actions:[
         "I defined the goal and structure of my implementation before prompting, so I had a clear reference to evaluate against.",
-        "When the AI produced code that looked correct but missed the actual intent, I traced through the output, identified what assumption it had made, and corrected it with a targeted follow-up prompt or manual fix.",
+        "When the AI produced code that looked correct but missed the actual intent, I didn't just accept it — I traced through the output, identified what assumption it had made, and corrected it with a targeted follow-up prompt or manual fix.",
         "I documented each instance: what I prompted, what it got wrong, what the root cause was, and how I fixed it."
       ],
-      r:"AI tends to fail most often when the problem requires specific domain context — it produces code that looks syntactically correct but misses the intent entirely. That experience shaped how I use AI now: I treat AI output the same way I treat code from a new colleague — review it, understand why it made that choice, and verify before committing.",
+      r:"Going through that process, I noticed AI tends to fail most often when the problem requires specific domain context — it produces code that looks syntactically correct but misses the intent entirely. That experience shaped how I use AI now: I treat AI output the same way I treat code from a new colleague — review it, understand why it made that choice, and verify before committing. The professor's approach actually made me a more critical user of AI, not a more dependent one.",
       followup:[
         {q:"Does logging every AI interaction slow you down?", a:"It did at first. But the habit of defining intent before prompting actually speeds things up — I spend less time fixing outputs that went in the wrong direction. The log itself becomes lightweight once the discipline is there."}
       ]
