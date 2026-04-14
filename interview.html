@@ -462,14 +462,14 @@
       id:"T1", star:true, cat:"Teamwork",
       title:"Samsung / Google: Issue Tracker Collaboration",
       lp:["11(Earn Trust)","12(Dive Deep)"], time:"~90s",
-      st:"At Samsung, one of the toughest class of issues I dealt with were CLC — Class Loader Context — mismatches in ART. When they hit, ART would reject precompiled artifacts and fall back to interpreter mode, and since this affected system-level code, every app on the device would run noticeably slower. Customer complaints came in fast. The tricky part was that the root cause was different almost every time — and often couldn't be explained from our side alone. One case in particular: I confirmed the same mismatch behavior reproduced on Pixel, which meant the issue was in ART itself, not our build.",
+      st:"At Samsung, one of the toughest class of issues I dealt with were CLC — Class Loader Context — mismatches in ART. When they hit, ART would reject precompiled artifacts and fall back to interpreter mode, and since this affected system-level code, every app on the device would run noticeably slower. Customer complaints came in fast. The tricky part was that the root cause was different almost every time — and often couldn't be explained from our side alone.",
       actions:[
-        "I reproduced the issue on both Galaxy and Pixel myself to confirm it was a shared, platform-level problem.",
+        "I reproduced the issue on both Galaxy and Pixel myself to confirm it was a shared, platform-level problem — not something specific to our build.",
         "I wrote up a detailed reproduction case — steps, conditions, and logs — formatted so Google engineers could follow it exactly, and posted it to establish a shared baseline.",
         "Throughout the analysis, I kept the ticket updated with our team's hypotheses, new logs, and findings, so the discussion stayed in sync even without real-time meetings.",
         "We worked back and forth in comments, narrowing the root cause together, and once we identified it, Google authored the upstream fix based on our joint analysis — I then validated it against our builds and integrated it into Galaxy."
       ],
-      r:"That specific issue resulted in an upstream ART fix from Google, which was then integrated into Galaxy builds. In total, I filed over 10 issues on Google's Issue Tracker this way — several led to upstream fixes that resolved customer-facing performance regressions.",
+      r:"In total, I filed over 10 issues on Google's Issue Tracker this way — several led to upstream fixes that resolved customer-facing performance regressions.",
       followup:[
         {q:"How did you handle situations where you and the Google team interpreted the root cause differently?", a:"We kept everything evidence-based. If there was a disagreement, I'd update the ticket with more targeted logs or a narrower reproduction case — let the data lead rather than assumptions."},
         {q:"How long did these back-and-forth cycles typically take?", a:"It varied. Some resolved in a few days, others took a few weeks of async iteration. The key was making sure each comment had enough information to keep the other side moving without needing to ask follow-up questions."}
