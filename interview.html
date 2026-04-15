@@ -251,6 +251,16 @@
       ]
     },
     {
+      id:"E5", star:false, cat:"Extra",
+      title:"두 매니저 충돌: 출시 직전 우선순위 판단",
+      ctx:"S23 검증 중 매니저 A(boot regression 긴급 패치)와 매니저 B(이슈 분석 마감)가 같은 날 충돌. severity·blast radius 기준으로 판단.",
+      sections:[
+        {label:"Problem",  text:"런칭 직전 boot regression(전 라인업 영향) vs 이슈 분석 마감(단일 이슈). 병행 불가."},
+        {label:"Action",   text:"Severity·scope 비교 → regression 우선 판단. 매니저 B에 이유 설명 후 하루 조정 요청. regression 해결 후 분석 복귀."},
+        {label:"Outcome",  text:"패치 S23 전 라인업 9개+ 반영. 분석 다음 날 완료. 이후 팀 트리아지 기준으로 채택."}
+      ]
+    },
+    {
       id:"E6", star:false, cat:"Extra",
       title:"AI 사용 방식 (GenAI 고정 답변)",
       ctx:"고정 답변. 유형 1·2·3 전체 커버. Rule 파일 + Todo List 기반 구조적 활용.",
@@ -447,6 +457,24 @@
       followup:[
         {q:"How long did it take to write the automation script?", a:"It took a couple of hours to build the initial version, which was still faster than running the manual test even once. And once it was done, every future run was essentially free."},
         {q:"What would you have done if the automation had taken longer than expected?", a:"I would have started with documentation first — it was the less time-sensitive of the two — and then switched to testing once I had a working script. The key was not committing to sequential order without reassessing."}
+      ]
+    },
+    {
+      id:"E5", star:false, cat:"Extra",
+      title:"Two Managers Conflict: Launch-Window Priority Call",
+      lp:["14(Deliver Results)","2(Ownership)"], time:"~85s",
+      st:"During the Galaxy S23 validation cycle, I was in a situation where two managers had conflicting urgent requests on the same day. One manager flagged a boot regression that had just appeared in the S23 build — it needed a fix before the launch window closed. At the same time, a second manager was expecting me to deliver a root cause analysis on a separate issue by end of day. Both were genuinely urgent, and doing them sequentially wasn't going to work.",
+      actions:[
+        "I assessed the two against severity and scope — the boot regression affected the entire S23 lineup across all regional variants, while the analysis was scoped to a single issue with more schedule flexibility.",
+        "I went to the second manager directly, explained the conflict and my reasoning, and asked if the analysis deadline could shift by one day.",
+        "He agreed once the tradeoff was clear.",
+        "I resolved the boot regression first, applying the fix and verifying it across the affected configurations.",
+        "Then I returned to the analysis and completed it the following day."
+      ],
+      r:"The boot regression fix shipped across the full S23 lineup — at least 9 variants. The analysis was delivered one day later than originally planned, with no downstream impact. After that, my manager started using the same severity-and-scope framing when triaging competing requests across the team.",
+      followup:[
+        {q:"How did the second manager react when you pushed back on the deadline?", a:"He was fine once the reasoning was clear. I didn't just say I can't do it — I explained the specific tradeoff: one issue affected every launch variant, the other had more room to move. That framing made the conversation straightforward."},
+        {q:"What would you have done if he hadn't agreed?", a:"I would have escalated the conflict transparently — not to override him, but to get alignment at a higher level on which was the right call. The goal was to make the tradeoff visible, not to win an argument."}
       ]
     },
     {
