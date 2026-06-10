@@ -18,7 +18,7 @@
   --text2: #3d4270;
   --muted: #7880aa;
   --easy: #15803d; --medium: #b45309; --hard: #dc2626;
-  --amazon: #c97200; --blind: #6d28d9;
+  --amazon: #c97200; --blind: #6d28d9; --neetcode: #0d9488;
   --solved: #15803d; --unsolved: #9ca3c0;
   --fire: #dc2626;
   --flip-duration: 0.45s;
@@ -73,6 +73,7 @@ header h1 {
 }
 .filter-btn.src.amazon.active { background: linear-gradient(135deg, #b45309, #f59e0b); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(180,83,9,0.3); }
 .filter-btn.src.blind.active  { background: linear-gradient(135deg, #6d28d9, #a78bfa); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(109,40,217,0.35); }
+.filter-btn.src.neetcode.active { background: linear-gradient(135deg, #0d9488, #14b8a6); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(13,148,136,0.35); }
 /* Sub-filter active states */
 .filter-btn.sub.active {
   background: rgba(202,138,4,0.15); border-color: rgba(202,138,4,0.55);
@@ -145,6 +146,7 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
 .badge.hard   { background: rgba(220,38,38,0.1);  color: var(--hard);   border: 1px solid rgba(220,38,38,0.25); }
 .badge.amazon { background: rgba(201,114,0,0.1);  color: var(--amazon); border: 1px solid rgba(201,114,0,0.25); }
 .badge.blind  { background: rgba(109,40,217,0.1); color: var(--blind);  border: 1px solid rgba(109,40,217,0.25); }
+.badge.neetcode { background: rgba(13,148,136,0.1); color: var(--neetcode); border: 1px solid rgba(13,148,136,0.25); }
 
 /* ── STUDY OVERLAY ──────────────────── */
 #overlay {
@@ -321,6 +323,7 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
     <button class="filter-btn src active" data-src="all">All</button>
     <button class="filter-btn src amazon" data-src="amazon">Amazon30d</button>
     <button class="filter-btn src blind" data-src="blind">Blind75</button>
+    <button class="filter-btn src neetcode" data-src="neetcode">NeetCode150</button>
     <div class="filter-divider"></div>
     <button class="filter-btn sub" data-sub="unsolved">❌ 미풀이</button>
     <button class="filter-btn sub fire" data-sub="review">🔥 리뷰 필요</button>
@@ -378,7 +381,7 @@ const PROBLEMS = [
 // 1. Array / HashMap
 // ═══════════════════════════════════════════════════
 {
-  num:1, title:"Two Sum", diff:"E", tags:["B"], cat:"Array / HashMap",
+  num:1, title:"Two Sum", diff:"E", tags:["B","N"], cat:"Array / HashMap",
   solved:true, review:0,
   link:"https://leetcode.com/problems/two-sum/",
   desc:"정수 배열 nums와 target이 주어질 때, 합이 target이 되는 두 원소의 인덱스를 반환. 정확히 하나의 답이 존재하고, 같은 원소를 두 번 쓸 수 없음.",
@@ -389,7 +392,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:49, title:"Group Anagrams", diff:"M", tags:["B"], cat:"Array / HashMap",
+  num:49, title:"Group Anagrams", diff:"M", tags:["B","N"], cat:"Array / HashMap",
   solved:true, review:0,
   link:"https://leetcode.com/problems/group-anagrams/",
   desc:"문자열 배열 strs에서 애너그램끼리 묶어서 반환.",
@@ -400,7 +403,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:128, title:"Longest Consecutive Sequence", diff:"M", tags:["B"], cat:"Array / HashMap",
+  num:128, title:"Longest Consecutive Sequence", diff:"M", tags:["B","N"], cat:"Array / HashMap",
   solved:true, review:2,
   link:"https://leetcode.com/problems/longest-consecutive-sequence/",
   desc:"정렬되지 않은 정수 배열에서 가장 긴 연속 수열의 길이를 O(n)에 반환.",
@@ -410,7 +413,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:121, title:"Best Time to Buy and Sell Stock", diff:"E", tags:["A","B"], cat:"Array / HashMap",
+  num:121, title:"Best Time to Buy and Sell Stock", diff:"E", tags:["A","B","N"], cat:"Array / HashMap",
   solved:true, review:0,
   link:"https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
   desc:"prices[i] = i번째 날 주가. 하루 매수 하루 매도로 최대 이익 계산. 이익 없으면 0 반환.",
@@ -421,7 +424,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:5, title:"Longest Palindromic Substring", diff:"M", tags:["B"], cat:"Array / HashMap",
+  num:5, title:"Longest Palindromic Substring", diff:"M", tags:["B","N"], cat:"Array / HashMap",
   solved:true, review:3,
   link:"https://leetcode.com/problems/longest-palindromic-substring/",
   desc:"문자열 s에서 가장 긴 팰린드롬 부분문자열을 반환.",
@@ -443,7 +446,7 @@ const PROBLEMS = [
   myNotes:"Boyer-Moore Voting Algorithm 필수! 공간 O(1) 가능."
 },
 {
-  num:217, title:"Contains Duplicate", diff:"E", tags:["A","B"], cat:"Array / HashMap",
+  num:217, title:"Contains Duplicate", diff:"E", tags:["A","B","N"], cat:"Array / HashMap",
   solved:true, review:0,
   link:"https://leetcode.com/problems/contains-duplicate/",
   desc:"정수 배열 nums에서 같은 값이 두 번 이상 등장하면 true, 아니면 false.",
@@ -454,7 +457,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:238, title:"Product of Array Except Self", diff:"M", tags:["B"], cat:"Array / HashMap",
+  num:238, title:"Product of Array Except Self", diff:"M", tags:["B","N"], cat:"Array / HashMap",
   solved:false, review:0,
   link:"https://leetcode.com/problems/product-of-array-except-self/",
   desc:"nums[i]를 제외한 나머지 모든 원소의 곱을 담은 배열 반환. 나눗셈 사용 금지, O(n) 요구.",
@@ -464,7 +467,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:242, title:"Valid Anagram", diff:"E", tags:["A"], cat:"Array / HashMap",
+  num:242, title:"Valid Anagram", diff:"E", tags:["A","N"], cat:"Array / HashMap",
   solved:true, review:0,
   link:"https://leetcode.com/problems/valid-anagram/",
   desc:"두 문자열 s, t가 주어질 때 t가 s의 애너그램인지 판단.",
@@ -475,7 +478,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:268, title:"Missing Number", diff:"E", tags:["A","B"], cat:"Array / HashMap",
+  num:268, title:"Missing Number", diff:"E", tags:["A","B","N"], cat:"Array / HashMap",
   solved:true, review:1,
   link:"https://leetcode.com/problems/missing-number/",
   desc:"0~n의 n+1개 숫자 중 배열에 없는 숫자 하나 반환.",
@@ -486,7 +489,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:136, title:"Single Number", diff:"E", tags:["A"], cat:"Array / HashMap",
+  num:136, title:"Single Number", diff:"E", tags:["A","N"], cat:"Array / HashMap",
   solved:true, review:0,
   link:"https://leetcode.com/problems/single-number/",
   desc:"모든 숫자가 두 번 나타나는 배열에서 한 번만 나타나는 숫자 반환.",
@@ -500,7 +503,7 @@ const PROBLEMS = [
 // 2. Two Pointers / Sliding Window
 // ═══════════════════════════════════════════════════
 {
-  num:3, title:"Longest Substring Without Repeating Characters", diff:"M", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:3, title:"Longest Substring Without Repeating Characters", diff:"M", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:0,
   link:"https://leetcode.com/problems/longest-substring-without-repeating-characters/",
   desc:"문자열 s에서 반복되는 문자 없는 가장 긴 부분문자열의 길이 반환.",
@@ -510,7 +513,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:424, title:"Longest Repeating Character Replacement", diff:"M", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:424, title:"Longest Repeating Character Replacement", diff:"M", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:3,
   link:"https://leetcode.com/problems/longest-repeating-character-replacement/",
   desc:"대문자 문자열에서 최대 k번 교체 허용 시, 같은 문자로만 이루어진 가장 긴 부분문자열 길이.",
@@ -520,7 +523,7 @@ const PROBLEMS = [
   myNotes:"Approach 3 정확히는 이해 안됨 — 복습 필요."
 },
 {
-  num:76, title:"Minimum Window Substring", diff:"H", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:76, title:"Minimum Window Substring", diff:"H", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:1,
   link:"https://leetcode.com/problems/minimum-window-substring/",
   desc:"문자열 s에서 t의 모든 문자를 포함하는 가장 짧은 부분문자열 반환.",
@@ -530,7 +533,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:11, title:"Container With Most Water", diff:"M", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:11, title:"Container With Most Water", diff:"M", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:1,
   link:"https://leetcode.com/problems/container-with-most-water/",
   desc:"n개 수직선이 있을 때 두 선과 x축으로 이루어진 컨테이너의 최대 담수량.",
@@ -540,7 +543,7 @@ const PROBLEMS = [
   myNotes:"양쪽에서 시작하는 Two Pointers (Sliding이 아님 주의)."
 },
 {
-  num:15, title:"3Sum", diff:"M", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:15, title:"3Sum", diff:"M", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:3,
   link:"https://leetcode.com/problems/3sum/",
   desc:"배열 nums에서 합이 0이 되는 모든 세 숫자 triplet 반환 (중복 없이).",
@@ -550,7 +553,7 @@ const PROBLEMS = [
   myNotes:"Sliding Window: 연속구간 + 단조성에만 적용. Two Pointers: 연속 아니어도 가능, 양끝 lo/hi로 시작."
 },
 {
-  num:167, title:"Two Sum II - Input Array Is Sorted", diff:"M", tags:["A"], cat:"Two Pointers / Sliding Window",
+  num:167, title:"Two Sum II - Input Array Is Sorted", diff:"M", tags:["A","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:1,
   link:"https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
   desc:"정렬된 1-indexed 배열에서 합이 target인 두 인덱스 반환. O(1) 공간 요구.",
@@ -561,7 +564,7 @@ const PROBLEMS = [
   myNotes:"에딧에 투포인터 O(N) 솔루션 → 더 심플함."
 },
 {
-  num:567, title:"Permutation in String", diff:"M", tags:["A"], cat:"Two Pointers / Sliding Window",
+  num:567, title:"Permutation in String", diff:"M", tags:["A","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:1,
   link:"https://leetcode.com/problems/permutation-in-string/",
   desc:"s1의 순열이 s2의 부분문자열로 존재하면 true.",
@@ -571,7 +574,7 @@ const PROBLEMS = [
   myNotes:"count 배열로 하면 훨씬 단축. HashMap, Count 솔루션 모두 생각나야 최적화 가능."
 },
 {
-  num:125, title:"Valid Palindrome", diff:"E", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:125, title:"Valid Palindrome", diff:"E", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:true, review:0,
   link:"https://leetcode.com/problems/valid-palindrome/",
   desc:"알파벳/숫자만 고려 시 문자열이 팰린드롬인지 판단 (대소문자 무관).",
@@ -581,7 +584,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:647, title:"Palindromic Substrings", diff:"M", tags:["B"], cat:"Two Pointers / Sliding Window",
+  num:647, title:"Palindromic Substrings", diff:"M", tags:["B","N"], cat:"Two Pointers / Sliding Window",
   solved:false, review:0,
   link:"https://leetcode.com/problems/palindromic-substrings/",
   desc:"문자열 s에서 팰린드롬 부분문자열의 총 개수 반환.",
@@ -632,7 +635,7 @@ const PROBLEMS = [
   myNotes:"Amazon intern VO 후기 (Reviews/Coding.md)."
 },
 {
-  num:239, title:"Sliding Window Maximum", diff:"H", tags:["A"], cat:"Two Pointers / Sliding Window",
+  num:239, title:"Sliding Window Maximum", diff:"H", tags:["A","N"], cat:"Two Pointers / Sliding Window",
   solved:false, review:0,
   link:"https://leetcode.com/problems/sliding-window-maximum/",
   desc:"크기 k의 슬라이딩 윈도우가 이동할 때 각 윈도우의 최대값 반환.",
@@ -643,7 +646,7 @@ const PROBLEMS = [
 },
 
 {
-  num:42, title:"Trapping Rain Water", diff:"H", tags:["A"], cat:"Two Pointers / Sliding Window",
+  num:42, title:"Trapping Rain Water", diff:"H", tags:["A","N"], cat:"Two Pointers / Sliding Window",
   solved:false, review:0,
   link:"https://leetcode.com/problems/trapping-rain-water/",
   desc:"히스토그램 막대 배열에서 비가 내릴 때 고일 수 있는 총 물의 양.",
@@ -659,7 +662,7 @@ const PROBLEMS = [
 // 3. Stack / Monotonic Stack
 // ═══════════════════════════════════════════════════
 {
-  num:20, title:"Valid Parentheses", diff:"E", tags:["B"], cat:"Stack / Monotonic Stack",
+  num:20, title:"Valid Parentheses", diff:"E", tags:["B","N"], cat:"Stack / Monotonic Stack",
   solved:true, review:0,
   link:"https://leetcode.com/problems/valid-parentheses/",
   desc:"괄호 문자열이 올바르게 닫혀있는지 판단.",
@@ -669,7 +672,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:155, title:"Min Stack", diff:"M", tags:["B"], cat:"Stack / Monotonic Stack",
+  num:155, title:"Min Stack", diff:"M", tags:["B","N"], cat:"Stack / Monotonic Stack",
   solved:true, review:1,
   link:"https://leetcode.com/problems/min-stack/",
   desc:"push/pop/top/getMin을 O(1)에 지원하는 스택 설계.",
@@ -679,7 +682,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:739, title:"Daily Temperatures", diff:"M", tags:["B"], cat:"Stack / Monotonic Stack",
+  num:739, title:"Daily Temperatures", diff:"M", tags:["B","N"], cat:"Stack / Monotonic Stack",
   solved:true, review:2,
   link:"https://leetcode.com/problems/daily-temperatures/",
   desc:"각 날짜에 대해 더 따뜻한 날이 며칠 후인지 반환. 없으면 0.",
@@ -689,7 +692,7 @@ const PROBLEMS = [
   myNotes:"Monotonic Stack 사용법 필수!"
 },
 {
-  num:84, title:"Largest Rectangle in Histogram", diff:"H", tags:["B"], cat:"Stack / Monotonic Stack",
+  num:84, title:"Largest Rectangle in Histogram", diff:"H", tags:["B","N"], cat:"Stack / Monotonic Stack",
   solved:true, review:3,
   link:"https://leetcode.com/problems/largest-rectangle-in-histogram/",
   desc:"히스토그램 막대들의 높이 배열에서 가장 큰 직사각형 넓이.",
@@ -699,7 +702,7 @@ const PROBLEMS = [
   myNotes:"왜 적용 가능한지 이해 필요. D&C + Segment Tree로도 풀림. Monotonic stack 해결이 매우 신기함."
 },
 {
-  num:150, title:"Evaluate Reverse Polish Notation", diff:"M", tags:["A"], cat:"Stack / Monotonic Stack",
+  num:150, title:"Evaluate Reverse Polish Notation", diff:"M", tags:["A","N"], cat:"Stack / Monotonic Stack",
   solved:true, review:0,
   link:"https://leetcode.com/problems/evaluate-reverse-polish-notation/",
   desc:"역폴란드 표기법(후위 표기) 수식 토큰 배열을 계산하여 결과 반환.",
@@ -764,7 +767,7 @@ const PROBLEMS = [
 // 4. Binary Search
 // ═══════════════════════════════════════════════════
 {
-  num:33, title:"Search in Rotated Sorted Array", diff:"M", tags:["B"], cat:"Binary Search",
+  num:33, title:"Search in Rotated Sorted Array", diff:"M", tags:["B","N"], cat:"Binary Search",
   solved:true, review:2,
   link:"https://leetcode.com/problems/search-in-rotated-sorted-array/",
   desc:"pivot으로 회전된 정렬 배열에서 target의 인덱스 반환. O(log n) 요구.",
@@ -775,7 +778,7 @@ const PROBLEMS = [
   myNotes:"2번 방법으로 풀었는데 1번이 훨씬 심플함."
 },
 {
-  num:153, title:"Find Minimum in Rotated Sorted Array", diff:"M", tags:["B"], cat:"Binary Search",
+  num:153, title:"Find Minimum in Rotated Sorted Array", diff:"M", tags:["B","N"], cat:"Binary Search",
   solved:true, review:1,
   link:"https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
   desc:"pivot으로 회전된 정렬 배열에서 최솟값 반환. O(log n) 요구.",
@@ -795,7 +798,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:875, title:"Koko Eating Bananas", diff:"M", tags:["A"], cat:"Binary Search",
+  num:875, title:"Koko Eating Bananas", diff:"M", tags:["A","N"], cat:"Binary Search",
   solved:true, review:0,
   link:"https://leetcode.com/problems/koko-eating-bananas/",
   desc:"piles[i]개의 바나나 더미. 시간 h 내에 모두 먹을 수 있는 최소 속도 k.",
@@ -805,7 +808,7 @@ const PROBLEMS = [
   myNotes:"max_element로 큰 값 찾기. BS 최솟값은 보통 1 또는 0."
 },
 {
-  num:230, title:"Kth Smallest Element in a BST", diff:"M", tags:["B"], cat:"Binary Search",
+  num:230, title:"Kth Smallest Element in a BST", diff:"M", tags:["B","N"], cat:"Binary Search",
   solved:false, review:0,
   link:"https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
   desc:"BST에서 k번째로 작은 원소 반환.",
@@ -839,7 +842,7 @@ const PROBLEMS = [
 // 5. Linked List
 // ═══════════════════════════════════════════════════
 {
-  num:2, title:"Add Two Numbers", diff:"M", tags:["A"], cat:"Linked List",
+  num:2, title:"Add Two Numbers", diff:"M", tags:["A","N"], cat:"Linked List",
   solved:true, review:0,
   link:"https://leetcode.com/problems/add-two-numbers/",
   desc:"역순으로 저장된 두 양의 정수 연결 리스트의 합을 역순 연결 리스트로 반환.",
@@ -849,7 +852,7 @@ const PROBLEMS = [
   myNotes:"dummy head 용어 기억. 메모리 관리 시 delete 필요."
 },
 {
-  num:19, title:"Remove Nth Node From End of List", diff:"M", tags:["B"], cat:"Linked List",
+  num:19, title:"Remove Nth Node From End of List", diff:"M", tags:["B","N"], cat:"Linked List",
   solved:false, review:0,
   link:"https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
   desc:"연결 리스트에서 뒤에서 n번째 노드 제거 후 head 반환.",
@@ -859,7 +862,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:141, title:"Linked List Cycle", diff:"E", tags:["B"], cat:"Linked List",
+  num:141, title:"Linked List Cycle", diff:"E", tags:["B","N"], cat:"Linked List",
   solved:false, review:0,
   link:"https://leetcode.com/problems/linked-list-cycle/",
   desc:"연결 리스트에 cycle이 있으면 true.",
@@ -869,7 +872,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:143, title:"Reorder List", diff:"M", tags:["B"], cat:"Linked List",
+  num:143, title:"Reorder List", diff:"M", tags:["B","N"], cat:"Linked List",
   solved:false, review:0,
   link:"https://leetcode.com/problems/reorder-list/",
   desc:"L0→L1→…→Ln 을 L0→Ln→L1→Ln-1→… 순으로 재배치.",
@@ -879,7 +882,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:206, title:"Reverse Linked List", diff:"E", tags:["B"], cat:"Linked List",
+  num:206, title:"Reverse Linked List", diff:"E", tags:["B","N"], cat:"Linked List",
   solved:false, review:0,
   link:"https://leetcode.com/problems/reverse-linked-list/",
   desc:"단방향 연결 리스트 역순 반환.",
@@ -911,7 +914,7 @@ const PROBLEMS = [
 },
 
 {
-  num:21, title:"Merge Two Sorted Lists", diff:"E", tags:["A","B"], cat:"Linked List",
+  num:21, title:"Merge Two Sorted Lists", diff:"E", tags:["A","B","N"], cat:"Linked List",
   solved:true, review:0,
   link:"https://leetcode.com/problems/merge-two-sorted-lists/",
   desc:"두 정렬된 연결 리스트를 하나의 정렬 연결 리스트로 합쳐서 반환.",
@@ -926,7 +929,7 @@ const PROBLEMS = [
 // 6. Tree / DFS / BFS
 // ═══════════════════════════════════════════════════
 {
-  num:98, title:"Validate Binary Search Tree", diff:"M", tags:["B"], cat:"Tree / DFS / BFS",
+  num:98, title:"Validate Binary Search Tree", diff:"M", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:true, review:2,
   link:"https://leetcode.com/problems/validate-binary-search-tree/",
   desc:"이진 트리가 유효한 BST인지 판단.",
@@ -937,7 +940,7 @@ const PROBLEMS = [
   myNotes:"Inorder traversal, lo/hi 사용법 모두 익히기."
 },
 {
-  num:102, title:"Binary Tree Level Order Traversal", diff:"M", tags:["B"], cat:"Tree / DFS / BFS",
+  num:102, title:"Binary Tree Level Order Traversal", diff:"M", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:true, review:0,
   link:"https://leetcode.com/problems/binary-tree-level-order-traversal/",
   desc:"이진 트리 레벨 순서 순회. 각 레벨의 값을 리스트로.",
@@ -947,7 +950,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:199, title:"Binary Tree Right Side View", diff:"M", tags:["A"], cat:"Tree / DFS / BFS",
+  num:199, title:"Binary Tree Right Side View", diff:"M", tags:["A","N"], cat:"Tree / DFS / BFS",
   solved:true, review:0,
   link:"https://leetcode.com/problems/binary-tree-right-side-view/",
   desc:"트리를 오른쪽에서 볼 때 보이는 노드 값 (위→아래).",
@@ -958,7 +961,7 @@ const PROBLEMS = [
   myNotes:"BFS로도 가능. 입력 빈 트리 처리 필요."
 },
 {
-  num:104, title:"Maximum Depth of Binary Tree", diff:"E", tags:["B"], cat:"Tree / DFS / BFS",
+  num:104, title:"Maximum Depth of Binary Tree", diff:"E", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:false, review:0,
   link:"https://leetcode.com/problems/maximum-depth-of-binary-tree/",
   desc:"이진 트리의 최대 깊이(루트에서 가장 먼 leaf까지 노드 수).",
@@ -968,7 +971,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:226, title:"Invert Binary Tree", diff:"E", tags:["B"], cat:"Tree / DFS / BFS",
+  num:226, title:"Invert Binary Tree", diff:"E", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:false, review:0,
   link:"https://leetcode.com/problems/invert-binary-tree/",
   desc:"이진 트리를 좌우 반전.",
@@ -978,7 +981,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:235, title:"Lowest Common Ancestor of a BST", diff:"M", tags:["B"], cat:"Tree / DFS / BFS",
+  num:235, title:"Lowest Common Ancestor of a BST", diff:"M", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:false, review:0,
   link:"https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
   desc:"BST에서 두 노드 p, q의 최소 공통 조상(LCA) 반환.",
@@ -988,7 +991,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:572, title:"Subtree of Another Tree", diff:"E", tags:["B"], cat:"Tree / DFS / BFS",
+  num:572, title:"Subtree of Another Tree", diff:"E", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:false, review:0,
   link:"https://leetcode.com/problems/subtree-of-another-tree/",
   desc:"트리 root의 어떤 subtree가 subRoot와 동일한지 판단.",
@@ -998,7 +1001,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:105, title:"Construct Binary Tree from Preorder and Inorder Traversal", diff:"M", tags:["B"], cat:"Tree / DFS / BFS",
+  num:105, title:"Construct Binary Tree from Preorder and Inorder Traversal", diff:"M", tags:["B","N"], cat:"Tree / DFS / BFS",
   solved:false, review:0,
   link:"https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
   desc:"preorder와 inorder 배열로 이진 트리 복원.",
@@ -1029,7 +1032,7 @@ const PROBLEMS = [
 },
 
 {
-  num:297, title:"Serialize and Deserialize Binary Tree", diff:"H", tags:["A"], cat:"Tree / DFS / BFS",
+  num:297, title:"Serialize and Deserialize Binary Tree", diff:"H", tags:["A","N"], cat:"Tree / DFS / BFS",
   solved:false, review:0,
   link:"https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
   desc:"이진 트리를 문자열로 직렬화하고 복원. 특정 형식 제한 없음.",
@@ -1044,7 +1047,7 @@ const PROBLEMS = [
 // 7. Graph / BFS / DFS / Union-Find
 // ═══════════════════════════════════════════════════
 {
-  num:200, title:"Number of Islands", diff:"M", tags:["B"], cat:"Graph / BFS / DFS / Union-Find",
+  num:200, title:"Number of Islands", diff:"M", tags:["B","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:true, review:0,
   link:"https://leetcode.com/problems/number-of-islands/",
   desc:"'1'(땅)과 '0'(물)의 2D 그리드에서 섬의 개수 반환.",
@@ -1054,7 +1057,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:261, title:"Graph Valid Tree", diff:"M", tags:["B"], cat:"Graph / BFS / DFS / Union-Find",
+  num:261, title:"Graph Valid Tree", diff:"M", tags:["B","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:true, review:1,
   link:"https://leetcode.com/problems/graph-valid-tree/",
   desc:"n개 노드와 edges로 구성된 무방향 그래프가 valid tree인지 판단.",
@@ -1065,7 +1068,7 @@ const PROBLEMS = [
   myNotes:"vector<vector<int>> grp(n, vector<int>(0)) → O(V²+E). grp(n) → O(V+E). 복잡도 차이 주의!"
 },
 {
-  num:994, title:"Rotting Oranges", diff:"M", tags:["A"], cat:"Graph / BFS / DFS / Union-Find",
+  num:994, title:"Rotting Oranges", diff:"M", tags:["A","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:true, review:0,
   link:"https://leetcode.com/problems/rotting-oranges/",
   desc:"2D 그리드에서 썩은 오렌지가 인접 신선한 오렌지를 1분에 전염. 모두 썩는 데 걸리는 최소 시간 (불가능이면 -1).",
@@ -1075,7 +1078,7 @@ const PROBLEMS = [
   myNotes:"inplace로 하면 시간 늘지만 공간 줄임."
 },
 {
-  num:286, title:"Walls and Gates", diff:"M", tags:["A"], cat:"Graph / BFS / DFS / Union-Find",
+  num:286, title:"Walls and Gates", diff:"M", tags:["A","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:true, review:0,
   link:"https://leetcode.com/problems/walls-and-gates/",
   desc:"INF(빈 방), -1(벽), 0(게이트)가 있는 2D 그리드에서 각 빈 방까지 가장 가까운 게이트까지의 거리로 채우기.",
@@ -1086,7 +1089,7 @@ const PROBLEMS = [
   myNotes:"Amazon30d / intern VO BFS 패턴 보강."
 },
 {
-  num:207, title:"Course Schedule", diff:"M", tags:["B"], cat:"Graph / BFS / DFS / Union-Find",
+  num:207, title:"Course Schedule", diff:"M", tags:["B","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:false, review:0,
   link:"https://leetcode.com/problems/course-schedule/",
   desc:"prerequisites 관계가 있는 numCourses개 강의를 모두 수강 가능한지 판단 (cycle 감지).",
@@ -1097,7 +1100,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:323, title:"Number of Connected Components in an Undirected Graph", diff:"M", tags:["B"], cat:"Graph / BFS / DFS / Union-Find",
+  num:323, title:"Number of Connected Components in an Undirected Graph", diff:"M", tags:["B","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:false, review:0,
   link:"https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
   desc:"n개 노드의 무방향 그래프에서 연결 컴포넌트 수 반환.",
@@ -1108,7 +1111,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:133, title:"Clone Graph", diff:"M", tags:["B"], cat:"Graph / BFS / DFS / Union-Find",
+  num:133, title:"Clone Graph", diff:"M", tags:["B","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:false, review:0,
   link:"https://leetcode.com/problems/clone-graph/",
   desc:"연결 무방향 그래프의 깊은 복사본 반환.",
@@ -1118,7 +1121,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:127, title:"Word Ladder", diff:"H", tags:["A"], cat:"Graph / BFS / DFS / Union-Find",
+  num:127, title:"Word Ladder", diff:"H", tags:["A","N"], cat:"Graph / BFS / DFS / Union-Find",
   solved:false, review:0,
   link:"https://leetcode.com/problems/word-ladder/",
   desc:"beginWord→endWord까지 한 글자씩만 바꾸고 매번 wordList에 있어야 할 때 최소 변환 횟수.",
@@ -1132,7 +1135,7 @@ const PROBLEMS = [
 // 8. Heap / Priority Queue
 // ═══════════════════════════════════════════════════
 {
-  num:215, title:"Kth Largest Element in an Array", diff:"M", tags:["A"], cat:"Heap / Priority Queue",
+  num:215, title:"Kth Largest Element in an Array", diff:"M", tags:["A","N"], cat:"Heap / Priority Queue",
   solved:true, review:0,
   link:"https://leetcode.com/problems/kth-largest-element-in-an-array/",
   desc:"정렬 없이 배열에서 k번째 최대 원소 반환.",
@@ -1143,7 +1146,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:347, title:"Top K Frequent Elements", diff:"M", tags:["A","B"], cat:"Heap / Priority Queue",
+  num:347, title:"Top K Frequent Elements", diff:"M", tags:["A","B","N"], cat:"Heap / Priority Queue",
   solved:false, review:0,
   link:"https://leetcode.com/problems/top-k-frequent-elements/",
   desc:"배열에서 가장 빈도 높은 k개의 원소 반환.",
@@ -1176,7 +1179,7 @@ const PROBLEMS = [
   myNotes:"Coding.md 추천 heap 변형."
 },
 {
-  num:253, title:"Meeting Rooms II", diff:"M", tags:["B"], cat:"Heap / Priority Queue",
+  num:253, title:"Meeting Rooms II", diff:"M", tags:["B","N"], cat:"Heap / Priority Queue",
   solved:false, review:0,
   link:"https://leetcode.com/problems/meeting-rooms-ii/",
   desc:"회의 intervals에서 필요한 최소 회의실 수.",
@@ -1186,7 +1189,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:23, title:"Merge k Sorted Lists", diff:"H", tags:["B"], cat:"Heap / Priority Queue",
+  num:23, title:"Merge k Sorted Lists", diff:"H", tags:["B","N"], cat:"Heap / Priority Queue",
   solved:false, review:0,
   link:"https://leetcode.com/problems/merge-k-sorted-lists/",
   desc:"k개의 정렬된 연결 리스트를 하나로 합쳐서 반환.",
@@ -1197,7 +1200,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:295, title:"Find Median from Data Stream", diff:"H", tags:["B"], cat:"Heap / Priority Queue",
+  num:295, title:"Find Median from Data Stream", diff:"H", tags:["B","N"], cat:"Heap / Priority Queue",
   solved:false, review:0,
   link:"https://leetcode.com/problems/find-median-from-data-stream/",
   desc:"스트리밍 데이터의 중앙값을 O(log n) 추가, O(1) 쿼리로 반환.",
@@ -1207,7 +1210,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:252, title:"Meeting Rooms", diff:"E", tags:["B"], cat:"Heap / Priority Queue",
+  num:252, title:"Meeting Rooms", diff:"E", tags:["B","N"], cat:"Heap / Priority Queue",
   solved:false, review:0,
   link:"https://leetcode.com/problems/meeting-rooms/",
   desc:"회의 intervals 배열에서 한 사람이 모든 회의 참석 가능한지 (겹침 없는지).",
@@ -1221,7 +1224,7 @@ const PROBLEMS = [
 // 9. Dynamic Programming
 // ═══════════════════════════════════════════════════
 {
-  num:198, title:"House Robber", diff:"M", tags:["A","B"], cat:"Dynamic Programming",
+  num:198, title:"House Robber", diff:"M", tags:["A","B","N"], cat:"Dynamic Programming",
   solved:true, review:0,
   link:"https://leetcode.com/problems/house-robber/",
   desc:"인접한 집은 동시에 털 수 없을 때, 훔칠 수 있는 최대 금액.",
@@ -1231,7 +1234,7 @@ const PROBLEMS = [
   myNotes:"명확하게 바로 식이 생각 안 남. 트리 구조(루트→좌:rob, 우:skip)로 모든 경우 포함됨 확인."
 },
 {
-  num:70, title:"Climbing Stairs", diff:"E", tags:["B"], cat:"Dynamic Programming",
+  num:70, title:"Climbing Stairs", diff:"E", tags:["B","N"], cat:"Dynamic Programming",
   solved:false, review:0,
   link:"https://leetcode.com/problems/climbing-stairs/",
   desc:"n계단을 1 또는 2칸씩 오를 수 있을 때 방법의 수 (Fibonacci).",
@@ -1241,7 +1244,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:213, title:"House Robber II", diff:"M", tags:["B"], cat:"Dynamic Programming",
+  num:213, title:"House Robber II", diff:"M", tags:["B","N"], cat:"Dynamic Programming",
   solved:false, review:0,
   link:"https://leetcode.com/problems/house-robber-ii/",
   desc:"첫 번째와 마지막 집이 인접한 원형 배열에서 최대 금액.",
@@ -1251,7 +1254,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:322, title:"Coin Change", diff:"M", tags:["B"], cat:"Dynamic Programming",
+  num:322, title:"Coin Change", diff:"M", tags:["B","N"], cat:"Dynamic Programming",
   solved:false, review:0,
   link:"https://leetcode.com/problems/coin-change/",
   desc:"동전 종류 coins와 목표 amount가 주어질 때 최소 동전 개수. 불가능이면 -1.",
@@ -1261,7 +1264,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:139, title:"Word Break", diff:"M", tags:["B"], cat:"Dynamic Programming",
+  num:139, title:"Word Break", diff:"M", tags:["B","N"], cat:"Dynamic Programming",
   solved:false, review:0,
   link:"https://leetcode.com/problems/word-break/",
   desc:"문자열 s를 wordDict의 단어들로 분리할 수 있는지 판단.",
@@ -1282,7 +1285,7 @@ const PROBLEMS = [
   myNotes:"Amazon intern VO 후기 (Coding.md)."
 },
 {
-  num:300, title:"Longest Increasing Subsequence", diff:"M", tags:["A"], cat:"Dynamic Programming",
+  num:300, title:"Longest Increasing Subsequence", diff:"M", tags:["A","N"], cat:"Dynamic Programming",
   solved:true, review:1,
   link:"https://leetcode.com/problems/longest-increasing-subsequence/",
   desc:"정수 배열에서 가장 긴 순증가 부분수열(LIS) 길이.",
@@ -1304,7 +1307,7 @@ const PROBLEMS = [
 },
 
 {
-  num:53, title:"Maximum Subarray", diff:"M", tags:["A"], cat:"Dynamic Programming",
+  num:53, title:"Maximum Subarray", diff:"M", tags:["A","N"], cat:"Dynamic Programming",
   solved:true, review:2,
   link:"https://leetcode.com/problems/maximum-subarray/",
   desc:"정수 배열에서 합이 최대인 연속 부분 배열의 합 반환.",
@@ -1315,7 +1318,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:416, title:"Partition Equal Subset Sum", diff:"M", tags:["A"], cat:"Dynamic Programming",
+  num:416, title:"Partition Equal Subset Sum", diff:"M", tags:["A","N"], cat:"Dynamic Programming",
   solved:false, review:0,
   link:"https://leetcode.com/problems/partition-equal-subset-sum/",
   desc:"양수 배열을 두 부분집합으로 나눠서 합이 같게 할 수 있는지 판단.",
@@ -1329,7 +1332,7 @@ const PROBLEMS = [
 // 10. Greedy / Interval
 // ═══════════════════════════════════════════════════
 {
-  num:56, title:"Merge Intervals", diff:"M", tags:["B"], cat:"Greedy / Interval",
+  num:56, title:"Merge Intervals", diff:"M", tags:["B","N"], cat:"Greedy / Interval",
   solved:true, review:0,
   link:"https://leetcode.com/problems/merge-intervals/",
   desc:"겹치는 intervals 배열을 합쳐서 반환.",
@@ -1339,7 +1342,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:57, title:"Insert Interval", diff:"M", tags:["B"], cat:"Greedy / Interval",
+  num:57, title:"Insert Interval", diff:"M", tags:["B","N"], cat:"Greedy / Interval",
   solved:true, review:0,
   link:"https://leetcode.com/problems/insert-interval/",
   desc:"정렬된 non-overlapping intervals에 newInterval을 삽입하고 merge.",
@@ -1349,7 +1352,7 @@ const PROBLEMS = [
   myNotes:""
 },
 {
-  num:55, title:"Jump Game", diff:"M", tags:["A","B"], cat:"Greedy / Interval",
+  num:55, title:"Jump Game", diff:"M", tags:["A","B","N"], cat:"Greedy / Interval",
   solved:true, review:0,
   link:"https://leetcode.com/problems/jump-game/",
   desc:"nums[i] = 최대 점프 거리. 첫 번째 인덱스에서 마지막에 도달 가능한지.",
@@ -1359,7 +1362,7 @@ const PROBLEMS = [
   myNotes:"if 조건문이 설명할 때는 생각 안 나고 코딩할 때 나옴. 이런 상황에서 쓸 말 미리 준비."
 },
 {
-  num:435, title:"Non-overlapping Intervals", diff:"M", tags:["B"], cat:"Greedy / Interval",
+  num:435, title:"Non-overlapping Intervals", diff:"M", tags:["B","N"], cat:"Greedy / Interval",
   solved:false, review:0,
   link:"https://leetcode.com/problems/non-overlapping-intervals/",
   desc:"겹치지 않게 만들기 위해 제거해야 할 최소 interval 수.",
@@ -1383,7 +1386,7 @@ const PROBLEMS = [
 // 11. Backtracking
 // ═══════════════════════════════════════════════════
 {
-  num:78, title:"Subsets", diff:"M", tags:["A"], cat:"Backtracking",
+  num:78, title:"Subsets", diff:"M", tags:["A","N"], cat:"Backtracking",
   solved:false, review:0,
   link:"https://leetcode.com/problems/subsets/",
   desc:"중복 없는 정수 배열의 모든 가능한 부분집합(Power Set) 반환.",
@@ -1398,7 +1401,7 @@ const PROBLEMS = [
 // 12. Design / Data Structure
 // ═══════════════════════════════════════════════════
 {
-  num:146, title:"LRU Cache", diff:"M", tags:["A"], cat:"Design / Data Structure",
+  num:146, title:"LRU Cache", diff:"M", tags:["A","N"], cat:"Design / Data Structure",
   solved:false, review:0,
   link:"https://leetcode.com/problems/lru-cache/",
   desc:"LRU (Least Recently Used) 캐시 설계. get/put 모두 O(1) 요구. 용량 초과 시 가장 최근에 사용되지 않은 것 제거.",
@@ -1406,6 +1409,839 @@ const PROBLEMS = [
     {name:"HashMap + Doubly Linked List", detail:"HashMap: key → 노드. DLL: head(MRU)~tail(LRU) 순서 유지. get/put 시 해당 노드를 head 앞으로 이동. capacity 초과 시 tail 노드 제거.", tc:"O(1) get/put", sc:"O(capacity)"}
   ],
   myNotes:"Python: OrderedDict로 간단히 구현 가능. C++: list + unordered_map."
+},
+// ═══════════════════════════════════════════════════
+// N1. Array / HashMap (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:271, title:"Encode and Decode Strings", diff:"M", tags:["N"], cat:"Array / HashMap",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/encode-and-decode-strings/",
+  desc:"문자열 리스트를 하나의 문자열로 인코딩하고, 다시 원래 리스트로 디코딩하는 함수 구현.",
+  approaches:[
+    {name:"Length-prefix encoding", detail:"각 문자열 앞에 '길이#문자열' 형태로 붙여 연결. 디코딩 시 '#' 전까지 길이를 읽고 그만큼 문자열을 잘라냄.", tc:"O(n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:36, title:"Valid Sudoku", diff:"M", tags:["N"], cat:"Array / HashMap",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/valid-sudoku/",
+  desc:"9x9 스도쿠 보드가 부분적으로 채워졌을 때, 행/열/3x3 박스 규칙을 위반하지 않는지 검증.",
+  approaches:[
+    {name:"HashSet per row/col/box", detail:"행, 열, 박스마다 HashSet 유지. 각 칸을 순회하며 이미 등장한 숫자가 있으면 false. 박스 인덱스는 (r/3, c/3)로 계산.", tc:"O(81)", sc:"O(81)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N2. Stack / Monotonic Stack (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:853, title:"Car Fleet", diff:"M", tags:["N"], cat:"Stack / Monotonic Stack",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/car-fleet/",
+  desc:"같은 목적지를 향하는 자동차들의 위치와 속도가 주어질 때, 도착 시 형성되는 차량 무리(fleet)의 개수.",
+  approaches:[
+    {name:"Sort + Monotonic Stack (arrival time)", detail:"위치 기준 내림차순 정렬. 각 차의 도착 시간 계산. stack에 도착 시간 push하되, 앞차(스택 top)보다 늦게 도착하면 합쳐짐(pop 안함). fleet 수 = 최종 stack 크기.", tc:"O(n log n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N3. Binary Search (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:704, title:"Binary Search", diff:"E", tags:["N"], cat:"Binary Search",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/binary-search/",
+  desc:"정렬된 정수 배열에서 target의 인덱스를 O(log n)에 반환. 없으면 -1.",
+  approaches:[
+    {name:"Binary Search", detail:"lo=0, hi=n-1. mid 값과 target 비교하며 구간을 절반씩 좁힘.", tc:"O(log n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:74, title:"Search a 2D Matrix", diff:"M", tags:["N"], cat:"Binary Search",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/search-a-2d-matrix/",
+  desc:"각 행이 정렬되고 다음 행의 첫 값이 이전 행의 마지막보다 큰 행렬에서 target 존재 여부.",
+  approaches:[
+    {name:"Binary Search (treat as 1D)", detail:"m*n 크기의 1차원 배열로 간주. mid를 행/열 인덱스로 변환(mid/n, mid%n)해 일반 이진 탐색.", tc:"O(log(m·n))", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:981, title:"Time Based Key-Value Store", diff:"M", tags:["N"], cat:"Binary Search",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/time-based-key-value-store/",
+  desc:"set(key, value, timestamp)와 get(key, timestamp)을 지원하는 자료구조. get은 timestamp 이하인 가장 최근 값 반환.",
+  approaches:[
+    {name:"HashMap + Binary Search", detail:"key별로 (timestamp, value) 리스트를 시간순 저장. get 시 timestamp 이하 중 가장 큰 timestamp를 이진 탐색으로 찾음.", tc:"O(log n) get, O(1) set", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:4, title:"Median of Two Sorted Arrays", diff:"H", tags:["N"], cat:"Binary Search",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/median-of-two-sorted-arrays/",
+  desc:"두 정렬 배열 nums1, nums2의 중앙값을 O(log(m+n))에 구함.",
+  approaches:[
+    {name:"Binary Search on partition", detail:"더 짧은 배열에서 partition 위치를 이진 탐색. 양쪽 partition의 left max ≤ right min 조건을 만족하는 지점이 정답.", tc:"O(log(min(m,n)))", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N4. Linked List (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:138, title:"Copy List with Random Pointer", diff:"M", tags:["N"], cat:"Linked List",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/copy-list-with-random-pointer/",
+  desc:"각 노드가 next와 random 포인터를 가진 연결 리스트의 깊은 복사본 생성.",
+  approaches:[
+    {name:"HashMap (old → new)", detail:"1차 패스: 모든 노드 복사하며 old→new 매핑 저장. 2차 패스: 각 복사 노드의 next/random을 매핑을 통해 연결.", tc:"O(n)", sc:"O(n)"},
+    {name:"Interweaving (O(1) space)", detail:"각 원본 노드 뒤에 복사 노드를 삽입. random 포인터를 cur.next.random = cur.random.next로 설정 후 두 리스트 분리.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:287, title:"Find the Duplicate Number", diff:"M", tags:["N"], cat:"Linked List",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/find-the-duplicate-number/",
+  desc:"1~n 범위 정수 n+1개로 이루어진 배열에서 중복된 하나의 숫자 찾기 (수정 불가, O(1) 공간).",
+  approaches:[
+    {name:"Floyd's Cycle Detection", detail:"nums[i]를 다음 인덱스로 가는 포인터로 간주해 cycle을 형성. slow/fast로 만나는 지점 찾고, 다시 처음부터 같은 속도로 이동해 cycle 시작점(중복값) 탐색.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:25, title:"Reverse Nodes in k-Group", diff:"H", tags:["N"], cat:"Linked List",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/reverse-nodes-in-k-group/",
+  desc:"연결 리스트를 k개씩 묶어서 각 그룹을 역순으로 만들기. 남은 노드가 k개 미만이면 그대로.",
+  approaches:[
+    {name:"Iterative group reversal", detail:"먼저 k개 노드가 남아있는지 확인. 있으면 해당 그룹을 역순 연결하고 이전 그룹의 tail과 다음 그룹의 head를 연결. dummy head 사용.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N5. Tree / DFS / BFS (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:543, title:"Diameter of Binary Tree", diff:"E", tags:["N"], cat:"Tree / DFS / BFS",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/diameter-of-binary-tree/",
+  desc:"이진 트리에서 임의의 두 노드 사이의 가장 긴 경로의 길이(간선 수).",
+  approaches:[
+    {name:"DFS Postorder", detail:"각 노드에서 left/right 깊이를 구하며, diameter = max(diameter, left+right) 갱신. 반환값은 1+max(left,right).", tc:"O(n)", sc:"O(h)"}
+  ],
+  myNotes:""
+},
+{
+  num:110, title:"Balanced Binary Tree", diff:"E", tags:["N"], cat:"Tree / DFS / BFS",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/balanced-binary-tree/",
+  desc:"이진 트리의 모든 노드에서 좌우 서브트리 높이 차이가 1 이하인지 판단.",
+  approaches:[
+    {name:"DFS Postorder (early exit)", detail:"각 서브트리 높이를 반환하면서 불균형 발견 시 -1을 전파해 즉시 false 처리.", tc:"O(n)", sc:"O(h)"}
+  ],
+  myNotes:""
+},
+{
+  num:100, title:"Same Tree", diff:"E", tags:["N"], cat:"Tree / DFS / BFS",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/same-tree/",
+  desc:"두 이진 트리가 구조와 노드 값 모두 동일한지 판단.",
+  approaches:[
+    {name:"DFS Recursion", detail:"둘 다 null이면 true, 하나만 null이거나 값이 다르면 false. 그 외엔 left/right 재귀 비교 AND.", tc:"O(n)", sc:"O(h)"}
+  ],
+  myNotes:""
+},
+{
+  num:1448, title:"Count Good Nodes in Binary Tree", diff:"M", tags:["N"], cat:"Tree / DFS / BFS",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+  desc:"루트에서 해당 노드까지 경로상 자신보다 큰 값이 없는 노드(good node)의 개수.",
+  approaches:[
+    {name:"DFS with maxSoFar", detail:"루트부터 내려가며 경로상 최댓값을 인자로 전달. 현재 노드 값이 maxSoFar 이상이면 count++ 후 maxSoFar 갱신.", tc:"O(n)", sc:"O(h)"}
+  ],
+  myNotes:""
+},
+{
+  num:124, title:"Binary Tree Maximum Path Sum", diff:"H", tags:["N"], cat:"Tree / DFS / BFS",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+  desc:"이진 트리에서 임의의 노드에서 시작해 끝나는 경로 중 최대 합 (경로는 부모-자식 연결만 가능).",
+  approaches:[
+    {name:"DFS Postorder with global max", detail:"각 노드에서 left/right 중 음수면 0으로 처리한 최대 gain을 반환. 전역 최댓값은 node.val + leftGain + rightGain로 갱신.", tc:"O(n)", sc:"O(h)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N6. Heap / Priority Queue (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:703, title:"Kth Largest Element in a Stream", diff:"E", tags:["N"], cat:"Heap / Priority Queue",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+  desc:"스트림에서 새 숫자가 추가될 때마다 k번째로 큰 값을 반환하는 자료구조 설계.",
+  approaches:[
+    {name:"Min-Heap of size k", detail:"크기 k의 min-heap을 유지. 새 값 추가 후 크기가 k 초과면 pop. heap의 top이 k번째로 큰 값.", tc:"O(log k) per add", sc:"O(k)"}
+  ],
+  myNotes:""
+},
+{
+  num:1046, title:"Last Stone Weight", diff:"E", tags:["N"], cat:"Heap / Priority Queue",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/last-stone-weight/",
+  desc:"가장 무거운 두 돌을 매번 충돌시켜(차이만큼 남김) 마지막에 남는 돌의 무게(없으면 0).",
+  approaches:[
+    {name:"Max-Heap", detail:"모든 돌을 max-heap에 넣고, 가장 큰 두 개를 pop해 차이를 다시 push. 반복해 1개 이하 남을 때까지.", tc:"O(n log n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:973, title:"K Closest Points to Origin", diff:"M", tags:["N"], cat:"Heap / Priority Queue",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/k-closest-points-to-origin/",
+  desc:"2D 평면의 점들 중 원점에서 가장 가까운 k개의 점 반환.",
+  approaches:[
+    {name:"Max-Heap of size k", detail:"거리 기준 크기 k max-heap 유지. 새 점이 더 가까우면 top과 교체. 최종 heap의 점들이 답.", tc:"O(n log k)", sc:"O(k)"},
+    {name:"Quickselect", detail:"거리 기준 partition으로 k번째 위치를 찾아 그 앞 k개 반환. 평균 O(n).", tc:"O(n) avg", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:621, title:"Task Scheduler", diff:"M", tags:["N"], cat:"Heap / Priority Queue",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/task-scheduler/",
+  desc:"같은 종류의 작업 사이에 최소 n 간격의 쿨다운이 필요할 때, 모든 작업을 완료하는 최소 시간.",
+  approaches:[
+    {name:"Greedy + Max-Heap", detail:"작업 빈도를 max-heap에 넣고, 가장 빈도 높은 작업부터 n+1 슬롯 단위로 배치. 빈 슬롯은 idle. 빈도 카운트 기반 수식으로도 풀이 가능.", tc:"O(n log 26)", sc:"O(26)"}
+  ],
+  myNotes:""
+},
+{
+  num:355, title:"Design Twitter", diff:"M", tags:["N"], cat:"Heap / Priority Queue",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/design-twitter/",
+  desc:"postTweet, getNewsFeed(최근 10개), follow, unfollow를 지원하는 간단한 트위터 설계.",
+  approaches:[
+    {name:"HashMap + Max-Heap (timestamp)", detail:"유저별 트윗 리스트(시간 포함)와 팔로잉 set 유지. getNewsFeed 시 본인+팔로잉의 최신 트윗들을 max-heap으로 병합해 상위 10개 추출.", tc:"O(k log k) per feed", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N7. Backtracking (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:39, title:"Combination Sum", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/combination-sum/",
+  desc:"중복 없는 후보 배열에서 합이 target이 되는 모든 조합 반환 (같은 수 여러 번 사용 가능).",
+  approaches:[
+    {name:"Backtracking", detail:"dfs(start, remain, path). candidates[start] 선택 시 같은 인덱스 재사용 가능하므로 다음 호출도 start 유지. remain<0이면 종료, ==0이면 결과 추가.", tc:"O(n^(target/min))", sc:"O(target/min)"}
+  ],
+  myNotes:""
+},
+{
+  num:40, title:"Combination Sum II", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/combination-sum-ii/",
+  desc:"중복 가능한 후보 배열에서 합이 target이 되는 모든 조합 반환 (각 원소 한 번씩만 사용, 중복 조합 제거).",
+  approaches:[
+    {name:"Backtracking + sort + skip dup", detail:"정렬 후 dfs(start, remain, path). 같은 레벨에서 이전과 같은 값이면 skip해 중복 조합 방지. 다음 호출은 start+1.", tc:"O(2^n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:46, title:"Permutations", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/permutations/",
+  desc:"중복 없는 정수 배열의 모든 순열 반환.",
+  approaches:[
+    {name:"Backtracking + visited", detail:"path와 visited 배열로 사용한 원소 추적. path 길이 == n이면 결과 추가.", tc:"O(n × n!)", sc:"O(n)"},
+    {name:"Swap-based", detail:"in-place swap으로 각 위치에 모든 가능한 원소를 배치 후 재귀, 다시 swap으로 복원.", tc:"O(n × n!)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:90, title:"Subsets II", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/subsets-ii/",
+  desc:"중복 원소를 포함할 수 있는 정수 배열의 모든 부분집합 반환 (중복 부분집합 제거).",
+  approaches:[
+    {name:"Backtracking + sort + skip dup", detail:"정렬 후 dfs(start, path). 같은 레벨에서 이전 원소와 같으면 skip. 매 호출마다 path를 결과에 추가.", tc:"O(n × 2^n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:22, title:"Generate Parentheses", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/generate-parentheses/",
+  desc:"n쌍의 괄호로 만들 수 있는 모든 올바른 괄호 조합 반환.",
+  approaches:[
+    {name:"Backtracking (open/close count)", detail:"open < n이면 '(' 추가 가능, close < open이면 ')' 추가 가능. 길이 2n에서 결과 추가.", tc:"O(4^n / sqrt(n))", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:79, title:"Word Search", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/word-search/",
+  desc:"2D 보드에서 인접한 칸을 따라가며 word를 만들 수 있는지 판단 (같은 칸 재사용 불가).",
+  approaches:[
+    {name:"DFS Backtracking", detail:"각 칸을 시작점으로 DFS. 현재 글자가 일치하면 4방향 탐색, 방문 표시 후 복원(backtrack).", tc:"O(m·n·4^L)", sc:"O(L)"}
+  ],
+  myNotes:""
+},
+{
+  num:131, title:"Palindrome Partitioning", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/palindrome-partitioning/",
+  desc:"문자열 s를 모든 부분 문자열이 팰린드롬이 되도록 분할하는 모든 방법 반환.",
+  approaches:[
+    {name:"Backtracking + palindrome check", detail:"start 위치에서 가능한 모든 끝 위치까지의 부분문자열이 팰린드롬이면 path에 추가하고 재귀. 끝까지 도달하면 결과 추가.", tc:"O(n × 2^n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:17, title:"Letter Combinations of a Phone Number", diff:"M", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+  desc:"전화번호 숫자 문자열(2-9)에 대응하는 문자들의 모든 조합 반환.",
+  approaches:[
+    {name:"Backtracking", detail:"숫자→문자 매핑 테이블 사용. dfs(idx, path)로 각 숫자에 대응하는 문자를 하나씩 선택해 길이 n에서 결과 추가.", tc:"O(4^n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:51, title:"N-Queens", diff:"H", tags:["N"], cat:"Backtracking",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/n-queens/",
+  desc:"n×n 체스판에 서로 공격하지 않도록 n개의 퀸을 배치하는 모든 방법 반환.",
+  approaches:[
+    {name:"Backtracking + column/diagonal sets", detail:"행마다 하나의 퀸을 배치. 사용된 열, 대각선(r-c, r+c) set으로 충돌 검사. 마지막 행까지 도달하면 결과 추가.", tc:"O(n!)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N8. Tries
+// ═══════════════════════════════════════════════════
+{
+  num:208, title:"Implement Trie (Prefix Tree)", diff:"M", tags:["N"], cat:"Tries",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/implement-trie-prefix-tree/",
+  desc:"insert, search, startsWith를 지원하는 Trie(접두사 트리) 자료구조 구현.",
+  approaches:[
+    {name:"Trie Node (children map + isEnd)", detail:"각 노드는 26개(or map) 자식 포인터와 isEnd 플래그 보유. insert/search/startsWith 모두 문자별로 노드를 따라 이동.", tc:"O(L) per op", sc:"O(N·L)"}
+  ],
+  myNotes:""
+},
+{
+  num:211, title:"Design Add and Search Words Data Structure", diff:"M", tags:["N"], cat:"Tries",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+  desc:"단어 추가(addWord)와 '.'(임의 문자) 와일드카드를 포함한 검색(search)을 지원하는 자료구조.",
+  approaches:[
+    {name:"Trie + DFS for wildcard", detail:"기본은 Trie. search에서 '.'을 만나면 현재 노드의 모든 자식에 대해 재귀적으로 DFS 탐색.", tc:"O(L) normal, O(26^L) worst with '.'", sc:"O(N·L)"}
+  ],
+  myNotes:""
+},
+{
+  num:212, title:"Word Search II", diff:"H", tags:["N"], cat:"Tries",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/word-search-ii/",
+  desc:"2D 보드와 단어 리스트가 주어질 때, 보드에서 찾을 수 있는 모든 단어 반환 (Word Search 확장).",
+  approaches:[
+    {name:"Trie + DFS Backtracking", detail:"단어 리스트를 Trie로 구성. 보드의 각 칸에서 DFS하며 Trie를 따라 이동. 단어 끝(isEnd) 도달 시 결과에 추가하고 중복 방지를 위해 표시. 가지치기 위해 방문한 리프 제거.", tc:"O(m·n·4^L)", sc:"O(N·L)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N9. Graph / BFS / DFS / Union-Find (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:695, title:"Max Area of Island", diff:"M", tags:["N"], cat:"Graph / BFS / DFS / Union-Find",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/max-area-of-island/",
+  desc:"2D 그리드에서 연결된 1(섬)들로 이루어진 섬 중 최대 넓이 반환.",
+  approaches:[
+    {name:"DFS Flood Fill", detail:"각 1을 시작점으로 DFS하며 방문한 칸 수를 세고, 방문 처리(0으로 변경 또는 visited). 전체 최댓값 갱신.", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:417, title:"Pacific Atlantic Water Flow", diff:"M", tags:["N"], cat:"Graph / BFS / DFS / Union-Find",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/pacific-atlantic-water-flow/",
+  desc:"높이 행렬에서 물이 태평양과 대서양 둘 다로 흐를 수 있는 좌표들 반환 (높은 곳→낮거나 같은 곳으로 흐름).",
+  approaches:[
+    {name:"Multi-source DFS (reverse flow)", detail:"각 바다의 경계 칸에서 역방향(낮은 곳→높거나 같은 곳)으로 DFS해 도달 가능한 칸을 표시. 두 바다 모두 도달 가능한 칸이 답.", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:130, title:"Surrounded Regions", diff:"M", tags:["N"], cat:"Graph / BFS / DFS / Union-Find",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/surrounded-regions/",
+  desc:"보드의 'O' 영역 중 가장자리와 연결되지 않은 영역을 모두 'X'로 변경.",
+  approaches:[
+    {name:"Border DFS + flip", detail:"가장자리에서 연결된 'O'들을 DFS로 임시 마커(예: '#')로 표시. 나머지 'O'는 모두 'X'로 변경 후 '#'를 다시 'O'로 복원.", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:210, title:"Course Schedule II", diff:"M", tags:["N"], cat:"Graph / BFS / DFS / Union-Find",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/course-schedule-ii/",
+  desc:"prerequisites가 주어질 때 모든 강의를 수강할 수 있는 순서 반환 (불가능하면 빈 배열).",
+  approaches:[
+    {name:"BFS (Kahn's Algorithm)", detail:"indegree 배열과 인접 리스트 구성. indegree 0인 노드부터 큐에 넣고 처리하며 순서 기록. 처리된 노드 수 < n이면 cycle → 빈 배열.", tc:"O(V+E)", sc:"O(V+E)"}
+  ],
+  myNotes:""
+},
+{
+  num:684, title:"Redundant Connection", diff:"M", tags:["N"], cat:"Graph / BFS / DFS / Union-Find",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/redundant-connection/",
+  desc:"트리에 간선 하나가 추가되어 사이클이 생긴 그래프에서, 제거하면 트리가 되는 마지막 간선 반환.",
+  approaches:[
+    {name:"Union-Find", detail:"간선을 순서대로 union. 이미 같은 집합에 속한 두 노드를 연결하는 간선이 답(사이클 형성).", tc:"O(n·α(n))", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N10. Advanced Graphs
+// ═══════════════════════════════════════════════════
+{
+  num:743, title:"Network Delay Time", diff:"M", tags:["N"], cat:"Advanced Graphs",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/network-delay-time/",
+  desc:"방향 그래프에서 노드 k로부터 신호를 보낼 때 모든 노드에 도달하는 최소 시간 (불가능하면 -1).",
+  approaches:[
+    {name:"Dijkstra", detail:"min-heap 기반 다익스트라로 k에서 각 노드까지 최단 거리 계산. 모든 노드에 도달 못하면 -1, 가능하면 최댓값 반환.", tc:"O(E log V)", sc:"O(V+E)"}
+  ],
+  myNotes:""
+},
+{
+  num:332, title:"Reconstruct Itinerary", diff:"H", tags:["N"], cat:"Advanced Graphs",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/reconstruct-itinerary/",
+  desc:"항공권 [from,to] 쌍들로 'JFK'에서 출발해 모든 티켓을 사용하는 사전순으로 가장 작은 경로 반환.",
+  approaches:[
+    {name:"Hierholzer's Algorithm (Eulerian path)", detail:"인접 리스트를 목적지 사전순 정렬(min-heap 또는 정렬). DFS로 사용 가능한 간선이 없을 때까지 진행 후 경로를 스택에 push, 마지막에 reverse.", tc:"O(E log E)", sc:"O(E)"}
+  ],
+  myNotes:""
+},
+{
+  num:1584, title:"Min Cost to Connect All Points", diff:"M", tags:["N"], cat:"Advanced Graphs",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/min-cost-to-connect-all-points/",
+  desc:"2D 평면의 점들을 맨해튼 거리로 모두 연결하는 최소 비용 (MST).",
+  approaches:[
+    {name:"Prim's Algorithm", detail:"임의 점에서 시작. min-heap으로 현재 트리에 인접한 가장 짧은 간선을 선택해 확장. n-1개 간선 선택될 때까지 반복.", tc:"O(n² log n)", sc:"O(n²)"},
+    {name:"Kruskal's + Union-Find", detail:"모든 쌍의 거리를 정렬 후 작은 것부터 union. 사이클 형성 안되면 채택.", tc:"O(n² log n)", sc:"O(n²)"}
+  ],
+  myNotes:""
+},
+{
+  num:778, title:"Swim in Rising Water", diff:"H", tags:["N"], cat:"Advanced Graphs",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/swim-in-rising-water/",
+  desc:"각 칸의 고도가 주어진 그리드에서, (0,0)에서 (n-1,n-1)까지 도달하기 위한 최소 시간(경로상 최대 고도의 최솟값).",
+  approaches:[
+    {name:"Dijkstra-like (min-heap)", detail:"min-heap에 (고도, r, c) push. pop한 칸의 인접 칸으로 확장하며 경로상 최대 고도를 갱신. 목적지 도달 시 반환.", tc:"O(n² log n)", sc:"O(n²)"},
+    {name:"Binary Search + BFS/DFS", detail:"시간 t에 대해 고도 ≤ t인 칸들만으로 (0,0)→(n-1,n-1) 연결 가능한지 확인하며 이분 탐색.", tc:"O(n² log n)", sc:"O(n²)"}
+  ],
+  myNotes:""
+},
+{
+  num:269, title:"Alien Dictionary", diff:"H", tags:["N"], cat:"Advanced Graphs",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/alien-dictionary/",
+  desc:"외계어 사전순으로 정렬된 단어 리스트로부터 외계 알파벳의 글자 순서 추론.",
+  approaches:[
+    {name:"Topological Sort", detail:"인접한 두 단어를 비교해 처음 다른 글자 쌍에서 a→b 간선 추가. 모든 글자에 대해 위상 정렬(DFS 또는 Kahn's). cycle이면 빈 문자열.", tc:"O(C)", sc:"O(1) (알파벳 26개 한정)"}
+  ],
+  myNotes:""
+},
+{
+  num:787, title:"Cheapest Flights Within K Stops", diff:"M", tags:["N"], cat:"Advanced Graphs",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+  desc:"방향 그래프에서 최대 k번 경유로 src에서 dst까지 가는 최소 비용 (불가능하면 -1).",
+  approaches:[
+    {name:"Bellman-Ford (k+1 iterations)", detail:"dist 배열 초기화 후 k+1번 반복하며 모든 간선에 대해 완화(relax). 매 반복마다 이전 dist의 복사본을 사용해 정확히 k+1개의 간선만 허용.", tc:"O(k·E)", sc:"O(V)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N11. Dynamic Programming (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:746, title:"Min Cost Climbing Stairs", diff:"E", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/min-cost-climbing-stairs/",
+  desc:"각 계단에 비용이 있을 때, 0번 또는 1번 계단에서 시작해 한 번에 1~2칸씩 올라 꼭대기까지 가는 최소 비용.",
+  approaches:[
+    {name:"DP (1D, O(1) space)", detail:"dp[i] = cost[i] + min(dp[i-1], dp[i-2]). 꼭대기는 dp[n-1], dp[n-2] 중 작은 값.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:91, title:"Decode Ways", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/decode-ways/",
+  desc:"숫자 문자열을 'A'~'Z'(1~26)로 디코딩하는 방법의 수.",
+  approaches:[
+    {name:"DP (1D)", detail:"dp[i] = s[i:]를 디코딩하는 방법 수. s[i]가 '0'이 아니면 dp[i]+=dp[i+1]. s[i:i+2]가 10~26이면 dp[i]+=dp[i+2].", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:152, title:"Maximum Product Subarray", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/maximum-product-subarray/",
+  desc:"정수 배열에서 곱이 최대인 연속 부분 배열의 곱 반환.",
+  approaches:[
+    {name:"DP (track max & min)", detail:"음수를 곱하면 최댓값과 최솟값이 뒤바뀔 수 있으므로 둘 다 추적. curMax, curMin = max/min(num, num*curMax, num*curMin). 전역 최댓값 갱신.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:62, title:"Unique Paths", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/unique-paths/",
+  desc:"m×n 격자의 좌상단에서 우하단까지(오른쪽/아래로만 이동) 가는 경로의 수.",
+  approaches:[
+    {name:"DP (2D 또는 1D)", detail:"dp[i][j] = dp[i-1][j] + dp[i][j-1]. 첫 행/열은 모두 1. 1D 배열로 공간 최적화 가능.", tc:"O(m·n)", sc:"O(n)"},
+    {name:"Combinatorics", detail:"총 (m-1)+(n-1)번 이동 중 (m-1)번을 아래로 선택하는 조합 C(m+n-2, m-1).", tc:"O(m+n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:1143, title:"Longest Common Subsequence", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/longest-common-subsequence/",
+  desc:"두 문자열의 최장 공통 부분수열(LCS)의 길이.",
+  approaches:[
+    {name:"DP (2D table)", detail:"dp[i][j] = text1[:i]와 text2[:j]의 LCS 길이. 문자가 같으면 dp[i-1][j-1]+1, 다르면 max(dp[i-1][j], dp[i][j-1]).", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:309, title:"Best Time to Buy and Sell Stock with Cooldown", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+  desc:"매도 후 하루 쿨다운이 있는 주식 거래에서 최대 이익 (여러 번 거래 가능, 동시 보유 불가).",
+  approaches:[
+    {name:"State Machine DP", detail:"hold(보유), sold(방금 매도), rest(대기) 세 상태로 dp 전이. hold = max(hold, rest-price), sold = hold+price, rest = max(rest, sold_prev).", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:518, title:"Coin Change II", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/coin-change-ii/",
+  desc:"동전 종류 coins로 amount를 만드는 조합의 수 (순서 무관).",
+  approaches:[
+    {name:"DP (Unbounded Knapsack)", detail:"dp[amount+1] 초기화 dp[0]=1. 각 coin마다 dp[j] += dp[j-coin] (오름차순). 코인을 바깥 루프로 두어 조합(순열 아님) 보장.", tc:"O(amount × |coins|)", sc:"O(amount)"}
+  ],
+  myNotes:""
+},
+{
+  num:494, title:"Target Sum", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/target-sum/",
+  desc:"배열의 각 원소 앞에 +/- 부호를 붙여 합이 target이 되는 경우의 수.",
+  approaches:[
+    {name:"DP (subset sum 변형)", detail:"sum(P) - sum(N) = target, sum(P)+sum(N) = total → sum(P) = (total+target)/2. 해당 합을 만드는 부분집합 개수를 0/1 knapsack DP로 계산.", tc:"O(n × total)", sc:"O(total)"},
+    {name:"DFS + memoization", detail:"(index, currentSum) 상태를 메모이제이션하며 +/- 모두 탐색.", tc:"O(n × range)", sc:"O(n × range)"}
+  ],
+  myNotes:""
+},
+{
+  num:97, title:"Interleaving String", diff:"H", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/interleaving-string/",
+  desc:"문자열 s3가 s1과 s2를 순서를 유지한 채 인터리빙해서 만들 수 있는지 판단.",
+  approaches:[
+    {name:"DP (2D table)", detail:"dp[i][j] = s1[:i], s2[:j]로 s3[:i+j] 구성 가능 여부. dp[i][j] = (dp[i-1][j] && s1[i-1]==s3[i+j-1]) || (dp[i][j-1] && s2[j-1]==s3[i+j-1]).", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:329, title:"Longest Increasing Path in a Matrix", diff:"H", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+  desc:"행렬에서 인접 칸으로 값이 증가하는 방향으로만 이동할 때 가장 긴 경로의 길이.",
+  approaches:[
+    {name:"DFS + Memoization", detail:"각 칸에서 시작하는 최장 증가 경로 길이를 메모이제이션. 4방향 중 더 큰 값으로 가는 경우만 재귀.", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:115, title:"Distinct Subsequences", diff:"H", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/distinct-subsequences/",
+  desc:"문자열 s에서 t와 같은 부분수열을 만드는 방법의 수.",
+  approaches:[
+    {name:"DP (2D table)", detail:"dp[i][j] = s[:i]에서 t[:j]를 만드는 방법 수. s[i-1]==t[j-1]이면 dp[i][j]=dp[i-1][j-1]+dp[i-1][j], 아니면 dp[i-1][j].", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:72, title:"Edit Distance", diff:"M", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/edit-distance/",
+  desc:"word1을 word2로 바꾸는 데 필요한 최소 삽입/삭제/교체 횟수.",
+  approaches:[
+    {name:"DP (2D table)", detail:"dp[i][j] = word1[:i]→word2[:j] 최소 연산 수. 문자가 같으면 dp[i-1][j-1], 다르면 1+min(삽입,삭제,교체) = 1+min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1]).", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+{
+  num:312, title:"Burst Balloons", diff:"H", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/burst-balloons/",
+  desc:"풍선을 하나씩 터뜨릴 때 coins[left]*coins[i]*coins[right]를 얻으며, 모두 터뜨려 얻을 수 있는 최대 점수.",
+  approaches:[
+    {name:"Interval DP", detail:"양 끝에 1을 패딩. dp[l][r] = (l,r) 구간에서 마지막에 터뜨릴 풍선 i를 결정해 nums[l-1]*nums[i]*nums[r+1] + dp[l][i-1] + dp[i+1][r] 최대화. 구간 길이 작은 것부터 채움.", tc:"O(n³)", sc:"O(n²)"}
+  ],
+  myNotes:""
+},
+{
+  num:10, title:"Regular Expression Matching", diff:"H", tags:["N"], cat:"Dynamic Programming",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/regular-expression-matching/",
+  desc:"'.'(임의 문자)와 '*'(앞 문자 0회 이상 반복)을 지원하는 정규식 패턴이 문자열 전체와 매칭되는지 판단.",
+  approaches:[
+    {name:"DP (2D table)", detail:"dp[i][j] = s[:i]와 p[:j] 매칭 여부. p[j-1]=='*'이면 0회 사용(dp[i][j-2]) 또는 1회 이상 반복(매치되면 dp[i-1][j]) 고려. 그 외엔 문자 일치 + dp[i-1][j-1].", tc:"O(m·n)", sc:"O(m·n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N12. Greedy / Interval (NeetCode150 추가)
+// ═══════════════════════════════════════════════════
+{
+  num:45, title:"Jump Game II", diff:"M", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/jump-game-ii/",
+  desc:"nums[i] = 최대 점프 거리일 때, 첫 인덱스에서 마지막 인덱스까지 도달하는 최소 점프 횟수.",
+  approaches:[
+    {name:"Greedy (BFS-like levels)", detail:"현재 점프로 도달 가능한 범위(curEnd)와 다음 점프로 도달 가능한 최대 범위(farthest)를 추적. curEnd 도달 시 jumps++ 하고 curEnd=farthest로 갱신.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:134, title:"Gas Station", diff:"M", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/gas-station/",
+  desc:"원형 경로의 각 주유소에서 얻는 가스량과 다음 주유소까지 소모되는 가스량이 주어질 때, 한 바퀴를 완주할 수 있는 시작 인덱스 (유일하면 그 값, 없으면 -1).",
+  approaches:[
+    {name:"Greedy (single pass)", detail:"total과 tank를 추적. tank<0이면 시작점을 i+1로 갱신하고 tank=0으로 리셋. total>=0이면 마지막 시작점이 답, 아니면 -1.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:846, title:"Hand of Straights", diff:"M", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/hand-of-straights/",
+  desc:"카드 배열을 크기 groupSize의 연속된 숫자 그룹들로 나눌 수 있는지 판단.",
+  approaches:[
+    {name:"Greedy + Min-Heap/Sorted Count", detail:"카드 빈도를 카운트하고 정렬된 키 순회. 가장 작은 카드부터 시작해 연속된 groupSize개를 빈도에서 차감. 부족하면 false.", tc:"O(n log n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:1899, title:"Merge Triplets to Form Target Triplet", diff:"M", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+  desc:"triplet들을 좌표별 max 연산으로 병합해 target triplet을 만들 수 있는지 판단.",
+  approaches:[
+    {name:"Greedy (filter valid triplets)", detail:"각 좌표가 target을 초과하는 triplet은 무시. 유효한 triplet들에 대해 각 좌표별 최댓값이 target과 일치하는지 확인.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:763, title:"Partition Labels", diff:"M", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/partition-labels/",
+  desc:"문자열을 가능한 많은 부분으로 나누되, 각 문자가 한 부분에만 등장하도록. 각 부분의 길이 반환.",
+  approaches:[
+    {name:"Greedy (last occurrence)", detail:"각 문자의 마지막 등장 인덱스를 미리 계산. 현재 구간의 end를 현재까지 본 문자들의 last occurrence 최댓값으로 갱신. i==end이면 구간 종료.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:678, title:"Valid Parenthesis String", diff:"M", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/valid-parenthesis-string/",
+  desc:"'(', ')', '*'(빈 문자/'('/')' 중 하나로 취급)로 이루어진 문자열이 유효한 괄호 문자열이 될 수 있는지.",
+  approaches:[
+    {name:"Greedy (min/max open count)", detail:"가능한 열린 괄호 수의 범위 [lo, hi] 유지. '('이면 둘 다 +1, ')'이면 둘 다 -1, '*'이면 lo-1, hi+1. lo<0이면 0으로 클램프, hi<0이면 false. 끝에 lo==0이면 true.", tc:"O(n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:1851, title:"Minimum Interval to Include Each Query", diff:"H", tags:["N"], cat:"Greedy / Interval",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+  desc:"각 쿼리 값을 포함하는 구간 중 길이가 최소인 구간의 길이를 쿼리별로 반환 (없으면 -1).",
+  approaches:[
+    {name:"Sort + Min-Heap (offline)", detail:"구간을 시작점 기준 정렬, 쿼리도 정렬(원래 인덱스 보존). 쿼리 값 이하 시작점을 가진 구간들을 (길이, end) min-heap에 추가. heap에서 end < query인 것 제거 후 top이 답.", tc:"O((n+q) log n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N13. Math & Geometry
+// ═══════════════════════════════════════════════════
+{
+  num:48, title:"Rotate Image", diff:"M", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/rotate-image/",
+  desc:"n×n 행렬을 시계방향 90도로 in-place 회전.",
+  approaches:[
+    {name:"Transpose + Reverse rows", detail:"행렬을 전치(transpose)한 후 각 행을 좌우 반전하면 시계방향 90도 회전과 동일.", tc:"O(n²)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:54, title:"Spiral Matrix", diff:"M", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/spiral-matrix/",
+  desc:"m×n 행렬의 모든 원소를 나선형(시계방향) 순서로 반환.",
+  approaches:[
+    {name:"Boundary shrinking", detail:"top/bottom/left/right 경계 4개 변수 유지. 위→오른쪽→아래→왼쪽 순으로 순회하며 각 방향 후 해당 경계를 좁힘.", tc:"O(m·n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:73, title:"Set Matrix Zeroes", diff:"M", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/set-matrix-zeroes/",
+  desc:"행렬에서 0인 원소가 있는 행과 열 전체를 0으로 설정 (in-place, O(1) 추가 공간).",
+  approaches:[
+    {name:"First row/col as markers", detail:"첫 번째 행/열을 마커로 사용해 각 행/열에 0이 있는지 표시. 별도 변수로 첫 행/열 자체에 0이 있었는지 기록 후 마지막에 처리.", tc:"O(m·n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:202, title:"Happy Number", diff:"E", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/happy-number/",
+  desc:"각 자릿수 제곱의 합을 반복했을 때 1에 도달하면 happy number.",
+  approaches:[
+    {name:"Cycle Detection (HashSet)", detail:"이미 본 값이 다시 나오면 cycle(1 아닌 무한루프) → false. 1 도달하면 true.", tc:"O(log n)", sc:"O(log n)"},
+    {name:"Floyd's Cycle Detection", detail:"slow/fast 포인터로 사이클 검출, O(1) 공간.", tc:"O(log n)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:66, title:"Plus One", diff:"E", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/plus-one/",
+  desc:"큰 정수를 나타내는 자릿수 배열에 1을 더한 결과 배열 반환.",
+  approaches:[
+    {name:"Reverse iteration + carry", detail:"마지막 자리부터 +1. 9면 0으로 만들고 carry, 아니면 즉시 반환. 모두 9였으면 맨 앞에 1 추가.", tc:"O(n)", sc:"O(1) (출력 제외)"}
+  ],
+  myNotes:""
+},
+{
+  num:50, title:"Pow(x, n)", diff:"M", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/powx-n/",
+  desc:"x의 n제곱을 계산 (n은 음수일 수 있음).",
+  approaches:[
+    {name:"Fast Exponentiation (Binary)", detail:"n을 절반씩 줄이며 x를 제곱. n이 홀수면 결과에 x를 추가로 곱함. n<0이면 x=1/x, n=-n으로 변환.", tc:"O(log n)", sc:"O(log n) or O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:43, title:"Multiply Strings", diff:"M", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/multiply-strings/",
+  desc:"문자열로 표현된 두 음이 아닌 정수의 곱을 문자열로 반환 (big integer 라이브러리 사용 금지).",
+  approaches:[
+    {name:"Digit-by-digit multiplication", detail:"길이 m, n인 두 수의 곱은 최대 m+n자리. result[i+j] += d1*d2 형태로 누적 후 carry 처리해 최종 문자열 구성.", tc:"O(m·n)", sc:"O(m+n)"}
+  ],
+  myNotes:""
+},
+{
+  num:2013, title:"Detect Squares", diff:"M", tags:["N"], cat:"Math & Geometry",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/detect-squares/",
+  desc:"점을 추가(add)하고, 쿼리 점과 함께 축에 평행한 정사각형을 이루는 점의 개수(count) 반환.",
+  approaches:[
+    {name:"HashMap of point counts", detail:"점 좌표별 빈도를 HashMap에 저장. count 쿼리 시, 쿼리 점과 같은 x를 가진 점들(다른 y) 및 같은 y를 가진 점들을 순회해 정사각형의 네 번째 점이 존재하는지 빈도 곱으로 계산.", tc:"O(1) add, O(n) count (in practice small)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+
+// ═══════════════════════════════════════════════════
+// N14. Bit Manipulation
+// ═══════════════════════════════════════════════════
+{
+  num:191, title:"Number of 1 Bits", diff:"E", tags:["N"], cat:"Bit Manipulation",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/number-of-1-bits/",
+  desc:"부호 없는 정수의 이진 표현에서 1의 개수(Hamming Weight) 반환.",
+  approaches:[
+    {name:"Brian Kernighan's Algorithm", detail:"n & (n-1)을 반복하면 매번 가장 오른쪽 1비트가 제거됨. 0이 될 때까지 반복 횟수가 답.", tc:"O(k) (k=1의 개수)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:338, title:"Counting Bits", diff:"E", tags:["N"], cat:"Bit Manipulation",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/counting-bits/",
+  desc:"0부터 n까지 각 숫자의 이진 표현에서 1의 개수를 배열로 반환.",
+  approaches:[
+    {name:"DP (offset by lowest set bit)", detail:"dp[i] = dp[i >> 1] + (i & 1). 즉, i를 2로 나눈 결과의 비트 수에 마지막 비트를 더함.", tc:"O(n)", sc:"O(n)"}
+  ],
+  myNotes:""
+},
+{
+  num:190, title:"Reverse Bits", diff:"E", tags:["N"], cat:"Bit Manipulation",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/reverse-bits/",
+  desc:"부호 없는 32비트 정수의 비트 순서를 반전.",
+  approaches:[
+    {name:"Bit-by-bit shift", detail:"32번 반복하며 result를 왼쪽으로 시프트하고 n의 최하위 비트를 OR. n은 오른쪽으로 시프트.", tc:"O(32) = O(1)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:371, title:"Sum of Two Integers", diff:"M", tags:["N"], cat:"Bit Manipulation",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/sum-of-two-integers/",
+  desc:"+ 연산자 없이 두 정수의 합을 계산.",
+  approaches:[
+    {name:"XOR + AND (carry simulation)", detail:"a^b는 carry 없는 합, (a&b)<<1은 carry. carry가 0이 될 때까지 a, b를 갱신하며 반복.", tc:"O(1) (32비트 한정)", sc:"O(1)"}
+  ],
+  myNotes:""
+},
+{
+  num:7, title:"Reverse Integer", diff:"M", tags:["N"], cat:"Bit Manipulation",
+  solved:false, review:0,
+  link:"https://leetcode.com/problems/reverse-integer/",
+  desc:"32비트 부호 있는 정수의 자릿수를 뒤집되, 32비트 범위를 벗어나면 0 반환.",
+  approaches:[
+    {name:"Digit extraction with overflow check", detail:"% 10, / 10으로 자릿수를 추출해 result에 누적. 매 단계에서 INT_MAX/INT_MIN 범위 초과 여부 체크.", tc:"O(log n)", sc:"O(1)"}
+  ],
+  myNotes:""
 }
 ];
 
@@ -1428,6 +2264,7 @@ function applyFilters() {
   switch (srcFilter) {
     case 'amazon': base = PROBLEMS.filter(p => p.tags.includes('A')); break;
     case 'blind':  base = PROBLEMS.filter(p => p.tags.includes('B')); break;
+    case 'neetcode': base = PROBLEMS.filter(p => p.tags.includes('N')); break;
     default:       base = [...PROBLEMS]; break;
   }
   // 2. Sub-filter (stacked on top)
@@ -1478,9 +2315,12 @@ function renderGrid() {
         ? '<div class="solved-dot" title="풀었음"></div>'
         : '<div class="unsolved-dot" title="미풀이"></div>';
       const review = p.review > 0 ? `<span class="review-dots">${'🔥'.repeat(p.review)}</span>` : '';
-      const tagBadges = p.tags.map(t =>
-        t === 'A' ? '<span class="badge amazon">Amazon</span>' : '<span class="badge blind">Blind75</span>'
-      ).join('');
+      const tagBadges = p.tags.map(t => {
+        if (t === 'A') return '<span class="badge amazon">Amazon</span>';
+        if (t === 'B') return '<span class="badge blind">Blind75</span>';
+        if (t === 'N') return '<span class="badge neetcode">NC150</span>';
+        return '';
+      }).join('');
       html += `
         <div class="mini-card ${solvedClass}" onclick="openStudy(${idx})">
           <div class="mini-top">
@@ -1512,11 +2352,14 @@ function updateStats() {
   const amazonSolved = PROBLEMS.filter(p => p.tags.includes('A') && p.solved).length;
   const blind = PROBLEMS.filter(p => p.tags.includes('B')).length;
   const blindSolved = PROBLEMS.filter(p => p.tags.includes('B') && p.solved).length;
+  const neetcode = PROBLEMS.filter(p => p.tags.includes('N')).length;
+  const neetcodeSolved = PROBLEMS.filter(p => p.tags.includes('N') && p.solved).length;
   const needReview = PROBLEMS.filter(p => p.review > 0).length;
   document.getElementById('stats').innerHTML = `
     <div class="stat">전체 <span>${solved}/${total}</span></div>
     <div class="stat">Amazon <span>${amazonSolved}/${amazon}</span></div>
     <div class="stat">Blind75 <span>${blindSolved}/${blind}</span></div>
+    <div class="stat">NC150 <span>${neetcodeSolved}/${neetcode}</span></div>
     <div class="stat">🔥 리뷰 <span>${needReview}</span></div>
   `;
 }
@@ -1553,9 +2396,12 @@ function renderCard() {
   const solvedBadge = p.solved
     ? '<span class="card-front-solved yes">✅ 풀었음</span>'
     : '<span class="card-front-solved no">⬜ 미풀이</span>';
-  const tagBadges = p.tags.map(t =>
-    t === 'A' ? '<span class="badge amazon">Amazon30d</span>' : '<span class="badge blind">Blind75</span>'
-  ).join('');
+  const tagBadges = p.tags.map(t => {
+    if (t === 'A') return '<span class="badge amazon">Amazon30d</span>';
+    if (t === 'B') return '<span class="badge blind">Blind75</span>';
+    if (t === 'N') return '<span class="badge neetcode">NC150</span>';
+    return '';
+  }).join('');
   const review = p.review > 0 ? `<span class="badge" style="background:rgba(248,81,73,0.15);color:#f85149;border:1px solid rgba(248,81,73,0.3)">${'🔥'.repeat(p.review)} 리뷰</span>` : '';
   document.getElementById('card-front').innerHTML = `
     <div class="card-front-num">#${p.num}</div>
