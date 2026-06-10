@@ -89,7 +89,17 @@ header h1 {
 }
 .stat span { color: var(--text); font-weight: 700; }
 
-.filter-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.filter-row { display: flex; align-items: stretch; gap: 10px; flex-wrap: wrap; }
+.filter-group {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 10px; border-radius: 12px;
+  background: var(--surface2); border: 1px solid var(--border);
+}
+.filter-group-label {
+  font-size: 0.68rem; font-weight: 700; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase; flex-shrink: 0;
+}
+.filter-group-btns { display: flex; gap: 6px; flex-wrap: wrap; }
 .filter-divider {
   width: 1px; height: 22px; background: var(--border2);
   margin: 0 4px; flex-shrink: 0;
@@ -392,18 +402,31 @@ header h1 {
     <button class="theme-toggle" id="theme-toggle" title="다크 모드 전환">🌙</button>
   </div>
   <div class="filter-row" id="filters">
-    <button class="filter-btn src active" data-src="all">All</button>
-    <button class="filter-btn src amazon" data-src="amazon">Amazon30d</button>
-    <button class="filter-btn src blind" data-src="blind">Blind75</button>
-    <button class="filter-btn src neetcode" data-src="neetcode">NeetCode150</button>
-    <div class="filter-divider"></div>
-    <button class="filter-btn sub" data-sub="unsolved">❌ 미풀이</button>
-    <button class="filter-btn sub fire" data-sub="review">🔥 리뷰 필요</button>
-    <button class="filter-btn sub solved-btn" data-sub="solved">✅ 풀이 완료</button>
-    <div class="filter-divider"></div>
-    <button class="filter-btn diff" data-diff="E">Easy</button>
-    <button class="filter-btn diff" data-diff="M">Medium</button>
-    <button class="filter-btn diff" data-diff="H">Hard</button>
+    <div class="filter-group">
+      <span class="filter-group-label">목록</span>
+      <div class="filter-group-btns">
+        <button class="filter-btn src active" data-src="all">All</button>
+        <button class="filter-btn src amazon" data-src="amazon">Amazon30d</button>
+        <button class="filter-btn src blind" data-src="blind">Blind75</button>
+        <button class="filter-btn src neetcode" data-src="neetcode">NeetCode150</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-group-label">상태</span>
+      <div class="filter-group-btns">
+        <button class="filter-btn sub" data-sub="unsolved">❌ 미풀이</button>
+        <button class="filter-btn sub fire" data-sub="review">🔥 리뷰 필요</button>
+        <button class="filter-btn sub solved-btn" data-sub="solved">✅ 풀이 완료</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-group-label">난이도</span>
+      <div class="filter-group-btns">
+        <button class="filter-btn diff" data-diff="E">Easy</button>
+        <button class="filter-btn diff" data-diff="M">Medium</button>
+        <button class="filter-btn diff" data-diff="H">Hard</button>
+      </div>
+    </div>
   </div>
 </header>
 
