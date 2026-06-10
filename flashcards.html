@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+  const saved = localStorage.getItem('lc-flashcards-theme');
+  if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+})();
+</script>
 <title>LC Flashcards — Amazon30d + Blind75</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -18,11 +24,40 @@
   --text2: #3d4270;
   --muted: #7880aa;
   --easy: #15803d; --medium: #b45309; --hard: #dc2626;
-  --amazon: #c97200; --blind: #6d28d9; --neetcode: #0d9488;
+  --amazon: #c97200; --blind: #6d28d9; --neetcode: #be185d;
   --solved: #15803d; --unsolved: #9ca3c0;
   --fire: #dc2626;
   --flip-duration: 0.45s;
 }
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: #1a1d2e;
+  --surface2: #20243a;
+  --surface3: #272c46;
+  --border: #313756;
+  --border2: #424a72;
+  --text: #e8e9f5;
+  --text2: #c0c4e0;
+  --muted: #8a90bb;
+  --easy: #4ade80; --medium: #fbbf24; --hard: #f87171;
+  --amazon: #f59e0b; --blind: #a78bfa; --neetcode: #f472b6;
+  --solved: #4ade80; --unsolved: #6b7299;
+  --fire: #f87171;
+}
+[data-theme="dark"] header,
+[data-theme="dark"] .card-face { background: var(--surface); }
+[data-theme="dark"] header h1 {
+  background: linear-gradient(90deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.theme-toggle {
+  background: var(--surface2); border: 1px solid var(--border);
+  color: var(--muted); cursor: pointer; font-size: 0.95rem;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s; flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--border2); background: var(--surface3); color: var(--text); }
 body {
   background: var(--bg);
   color: var(--text);
@@ -73,7 +108,7 @@ header h1 {
 }
 .filter-btn.src.amazon.active { background: linear-gradient(135deg, #b45309, #f59e0b); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(180,83,9,0.3); }
 .filter-btn.src.blind.active  { background: linear-gradient(135deg, #6d28d9, #a78bfa); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(109,40,217,0.35); }
-.filter-btn.src.neetcode.active { background: linear-gradient(135deg, #0d9488, #14b8a6); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(13,148,136,0.35); }
+.filter-btn.src.neetcode.active { background: linear-gradient(135deg, #be185d, #ec4899); border-color: transparent; color: #fff; box-shadow: 0 2px 10px rgba(190,24,93,0.35); }
 /* Sub-filter active states */
 .filter-btn.sub.active {
   background: rgba(202,138,4,0.15); border-color: rgba(202,138,4,0.55);
@@ -100,7 +135,7 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
   display: inline-block;
   width: 4px; height: 1.1em;
   border-radius: 2px;
-  background: linear-gradient(160deg, #6d28d9, #2563eb);
+  background: var(--accent-color, linear-gradient(160deg, #6d28d9, #2563eb));
   flex-shrink: 0;
 }
 .section-label::after {
@@ -123,8 +158,8 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
   box-shadow: 0 8px 24px rgba(100,110,200,0.13);
   border-color: var(--border2);
 }
-.mini-card.solved { border-top: 2px solid var(--solved); padding-top: 12px; }
-.mini-card.unsolved { border-top: 2px solid var(--unsolved); padding-top: 12px; opacity: 0.75; }
+.mini-card.solved { border-top: 2px solid var(--solved); padding-top: 12px; background: linear-gradient(135deg, rgba(21,128,61,0.06), var(--surface) 45%); }
+.mini-card.unsolved { border-top: 2px solid var(--unsolved); padding-top: 12px; opacity: 0.75; background: linear-gradient(135deg, rgba(120,128,170,0.05), var(--surface) 45%); }
 .mini-card.unsolved:hover { opacity: 1; }
 
 /* Top row: num on left, [review 🔥] + [dot] on right — NO overlap */
@@ -146,7 +181,7 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
 .badge.hard   { background: rgba(220,38,38,0.1);  color: var(--hard);   border: 1px solid rgba(220,38,38,0.25); }
 .badge.amazon { background: rgba(201,114,0,0.1);  color: var(--amazon); border: 1px solid rgba(201,114,0,0.25); }
 .badge.blind  { background: rgba(109,40,217,0.1); color: var(--blind);  border: 1px solid rgba(109,40,217,0.25); }
-.badge.neetcode { background: rgba(13,148,136,0.1); color: var(--neetcode); border: 1px solid rgba(13,148,136,0.25); }
+.badge.neetcode { background: rgba(190,24,93,0.1); color: var(--neetcode); border: 1px solid rgba(190,24,93,0.25); }
 
 /* ── STUDY OVERLAY ──────────────────── */
 #overlay {
@@ -318,6 +353,7 @@ main { padding: 20px 28px 60px; max-width: 1440px; margin: 0 auto; }
   <div class="header-top">
     <h1>⚡ LC Flashcards</h1>
     <div class="stats" id="stats"></div>
+    <button class="theme-toggle" id="theme-toggle" title="다크 모드 전환">🌙</button>
   </div>
   <div class="filter-row" id="filters">
     <button class="filter-btn src active" data-src="all">All</button>
@@ -2293,6 +2329,25 @@ function getReviewEmoji(r) {
 function getDiffClass(d) { return d === 'E' ? 'easy' : d === 'M' ? 'medium' : 'hard'; }
 function getDiffLabel(d) { return d === 'E' ? 'Easy' : d === 'M' ? 'Medium' : 'Hard'; }
 
+const CAT_COLORS = {
+  "Array / HashMap": "#6d28d9",
+  "Two Pointers / Sliding Window": "#2563eb",
+  "Stack / Monotonic Stack": "#0891b2",
+  "Binary Search": "#0d9488",
+  "Linked List": "#16a34a",
+  "Tree / DFS / BFS": "#65a30d",
+  "Graph / BFS / DFS / Union-Find": "#ca8a04",
+  "Heap / Priority Queue": "#d97706",
+  "Dynamic Programming": "#ea580c",
+  "Greedy / Interval": "#dc2626",
+  "Backtracking": "#e11d48",
+  "Tries": "#db2777",
+  "Advanced Graphs": "#c026d3",
+  "Math & Geometry": "#9333ea",
+  "Bit Manipulation": "#7c3aed",
+  "Design / Data Structure": "#4f46e5"
+};
+
 function renderGrid() {
   const main = document.getElementById('main');
   if (filteredProblems.length === 0) {
@@ -2307,7 +2362,8 @@ function renderGrid() {
   });
   let html = '';
   for (const cat in grouped) {
-    html += `<div class="section-label">${cat}</div><div class="card-grid">`;
+    const accent = CAT_COLORS[cat] || '#6d28d9';
+    html += `<div class="section-label" style="--accent-color:${accent}">${cat}</div><div class="card-grid">`;
     grouped[cat].forEach(p => {
       const idx = filteredProblems.indexOf(p);
       const solvedClass = p.solved ? 'solved' : 'unsolved';
@@ -2522,6 +2578,26 @@ document.querySelectorAll('.filter-btn.diff').forEach(btn => {
     }
     applyFilters();
   });
+});
+
+// ─────────────────────────────────────────────
+// THEME TOGGLE
+// ─────────────────────────────────────────────
+const themeToggleBtn = document.getElementById('theme-toggle');
+function updateThemeIcon() {
+  themeToggleBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+}
+updateThemeIcon();
+themeToggleBtn.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('lc-flashcards-theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('lc-flashcards-theme', 'dark');
+  }
+  updateThemeIcon();
 });
 
 // ─────────────────────────────────────────────
