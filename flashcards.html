@@ -3898,12 +3898,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(V+E)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "@status:"
+   "solved": true,
+   "review": 2,
+   "time": "O(V + E) - 간선 한 번씩 훑으며 indegree 깎기",
+   "space": "O(V + E) 인접리스트 + O(V) indegree/queue/ret",
+   "note": "Kahn's algorithm (BFS 위상정렬) 하나로 끝난다.\nindegree 0 을 큐에 넣고, 꺼낼 때마다 자식 indegree 를 깎아 0 이 된 것만 다시 큐에.\n\n[1] 사이클 판정도 Kahn 이 겸한다 -> 별도 DFS 불필요 ⭐️\n    사이클 안 정점은 내부 간선 때문에 indegree 가 0 이 안 되고, 먼저 빠질 놈이 없어 큐에 못 들어감.\n    -> 큐가 빈 뒤 ret.size() != n 이면 그게 곧 사이클. 꼬리가 붙어도 꼬리 몫만 처리되고 멈춤.\n    처음엔 207 처럼 DFS 로 먼저 판정했는데 같은 일을 두 번 하는 것이었음 (62줄 -> 37줄).\n    cf. 207 도 Kahn 하나로 풀린다. DFS 를 쓴 건 3색 상태 관리를 익히려던 것.\n\n[2] 큐에 넣는 시점 = indegree 가 0 이 된 순간\n    선행이 여러 개면 전부 끝나야 수강 가능. 깎기만 하고 push 하면 남은 선행이 있는데 진행해버림.\n    -> ret.push_back 과 q.push 를 같은 indegree == 0 블록 안에.",
+   "date": "2026-09-06"
   },
   {
    "num": 684,
