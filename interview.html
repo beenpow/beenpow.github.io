@@ -280,6 +280,16 @@
         {label:"결론",   text:"AI는 도메인 특화 맥락이 필요한 부분에서 hallucination 빈도 높음. AI output을 동료 코드처럼 대한다 — 이해하고 검증 후 사용."}
       ]
     },
+    {
+      id:"E8", star:true, cat:"Extra",
+      title:"EchoSlice: 개인 프로젝트에 LLM 통합",
+      ctx:"TED 클립 영어 공부 앱. 후보 구간 중 shadowing에 적합한 k개를 LLM이 선택. JSON schema 강제, short talk skip, daily limit fallback 설계.",
+      sections:[
+        {label:"Task",    text:"TED 화자별 구간을 자동으로 추려야 함. 수동 큐레이션 불가 → LLM으로 selection 담당."},
+        {label:"Action",  text:"criteria 명시 (coherent idea / natural phrasing / length) + JSON schema 강제. short talk → skip, daily limit → naive fallback."},
+        {label:"Outcome", text:"앱 라이브. 프롬프트 stable. 매일 사용 중."}
+      ]
+    },
     /* ── Teamwork ── */
     {
       id:"T1", star:true, cat:"Teamwork",
@@ -506,6 +516,23 @@
       r:"Going through that process, I noticed AI tends to fail most often when the problem requires specific domain context — it produces code that looks syntactically correct but misses the intent entirely. That experience shaped how I use AI now: I treat AI output the same way I treat code from a new colleague — review it, understand why it made that choice, and verify before committing. The professor's approach actually made me a more critical user of AI, not a more dependent one.",
       followup:[
         {q:"Does logging every AI interaction slow you down?", a:"It did at first. But the habit of defining intent before prompting actually speeds things up — I spend less time fixing outputs that went in the wrong direction. The log itself becomes lightweight once the discipline is there."}
+      ]
+    },
+    {
+      id:"E8", star:true, cat:"Extra",
+      title:"EchoSlice: LLM Integration in a Personal Project",
+      lp:["3(Invent and Simplify)","5(Learn and Be Curious)"], time:"~80s",
+      st:"I built EchoSlice — a personal web app for English speaking practice using TED talk clips. The core challenge was: given a TED talk, how do I automatically surface the segments that are actually worth practicing? Manually curating every clip wasn't scalable, so I decided to use an LLM to handle the selection.",
+      actions:[
+        "I defined the LLM's task precisely: select the best k segments from candidates based on three criteria — coherent idea, natural phrasing, suitable length for shadowing.",
+        "I enforced a strict JSON schema on the response, so the model couldn't deviate from the expected structure.",
+        "If a talk was too short to produce enough candidates, I skipped the LLM call entirely.",
+        "For the response, I validated strictly — and if the daily API limit was hit, fell back to naive selection."
+      ],
+      r:"The app is live and I use it every day. The prompt has been stable for a while now — the clips it recommends are consistently good, and I haven't needed to touch the criteria since I got them right.",
+      followup:[
+        {q:"Why enforce a JSON schema instead of just parsing free-form text?", a:"Free-form text parsing is fragile — the model might phrase the answer differently each time and break the parser. With a schema, I get a fixed structure every call, and validation becomes straightforward."},
+        {q:"What does the fallback do exactly?", a:"If the daily API limit is hit, instead of failing, the system just takes the first N candidates by position — no ranking, but the app stays functional."}
       ]
     },
     /* ── Teamwork ── */
