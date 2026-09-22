@@ -3,6 +3,33 @@
 
   <div class="workedfor-grid">
 
+<!-- Amazon -->
+<div class="workedfor-card">
+  <div class="workedfor-left">
+    <div class="workedfor-company">Amazon</div>
+  </div>
+
+  <div class="workedfor-right">
+    <div class="workedfor-role">
+      Software Development Engineer Intern
+      <span class="workedfor-period">(Summer 2026)</span>
+    </div>
+
+    <ul class="workedfor-bullets">
+      <li>Shipped a self-service deploy option that stands up a disaggregated vLLM topology on Kubernetes, separate prefill and decode workers behind a router with an RDMA KV side channel, added alongside the existing single-worker path rather than replacing it</li>
+      <li>Root-caused per-request KV-transfer latency swinging from 12ms to 800ms by reading vLLM and NIXL internals, showing the driver was descriptor count rather than payload size</li>
+      <li>Built the benchmark and analysis pipeline behind 100+ runs, parsing raw Prometheus histograms into one traceable report so every reported number could be traced back to its source</li>
+    </ul>
+    <dl class="facts">
+      <div><b>duration</b><span>12w</span></div>
+      <div><b>users</b><span>~200</span></div>
+      <div><b>driver</b><span>descriptor count</span></div>
+      <div><b>stack</b><span>vLLM · NIXL · K8s</span></div>
+    </dl>
+  </div>
+</div>
+
+
 <!-- Samsung Electronics -->
 <div class="workedfor-card">
   <div class="workedfor-left">
@@ -11,15 +38,22 @@
 
   <div class="workedfor-right">
     <div class="workedfor-role">
-      System Software Engineer
-      <span class="workedfor-period">(2017 – 2025)</span>
+      Software Engineer
+      <span class="workedfor-period">(2020 – 2025)</span>
     </div>
 
     <ul class="workedfor-bullets">
-      <li>Android framework-level systems for millions of Galaxy devices</li>
-      <li>System resets, recovery mechanisms, large-scale debugging across app, framework, and Linux layers</li>
-      <li>Co-inventor on multiple system-related patents</li>
+      <li>Cut application startup latency by 15% in Android Runtime, the C++ and Java execution runtime shipping on millions of devices, by profiling the ahead-of-time compilation pipeline and reworking it around pre-execution profiling, prioritized background compilation, and artifact recovery</li>
+      <li>Resolved 20+ release-blocking runtime and framework issues across organizational boundaries with Google and Qualcomm, shipping upstream platform fixes; triaged and reproduced critical failures from 1,000+ reported cases</li>
+      <li>Worked on boot and recovery paths: separating platform resets from kernel resets, watchdog handling, and regenerating runtime artifacts to pull devices out of reboot loops, shipped across multiple Android releases with 95%+ recovery</li>
+      <li>Three issued patents from this work, all deployed in production: pre-execution profiling, reboot-loop recovery, and usage-driven package compilation</li>
     </ul>
+    <dl class="facts">
+      <div><b>duration</b><span>4y 10mo</span></div>
+      <div><b>startup</b><span>15% faster</span></div>
+      <div><b>patents</b><span>3 issued</span></div>
+      <div><b>blockers</b><span>20+ upstream</span></div>
+    </dl>
   </div>
 </div>
 
@@ -40,7 +74,12 @@
       <li>Embedded platform components for ARM-based automotive systems</li>
       <li>In-vehicle dashboard platforms in production vehicles</li>
       <li>Performance-critical and resource-constrained environments</li>
-    </ul>    
+    </ul>
+    <dl class="facts">
+      <div><b>duration</b><span>2y 7mo</span></div>
+      <div><b>adoption</b><span>200+ engineers</span></div>
+      <div><b>manual QA</b><span>30% less</span></div>
+    </dl>    
   </div>
 </div>
 

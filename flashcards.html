@@ -141,7 +141,14 @@ body{
 .b-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--rule-red);margin:0 0 10px}
 .cx{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line-soft)}
 .cx b{font-weight:500;color:var(--muted);margin-right:6px}
-.note{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14.5px;line-height:1.7;color:var(--ink)}
+.note{font-size:14.5px;line-height:1.7;color:var(--ink)}
+.note .p{white-space:pre-wrap;overflow-wrap:anywhere}
+.ncode{margin:10px 0;padding:10px 12px;border-radius:8px;background:var(--card-2);
+  border-left:2px solid var(--rule-blue);overflow-x:auto;
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;line-height:1.55;white-space:pre;color:var(--ink-2);
+  -webkit-overflow-scrolling:touch}
+@media (max-width:480px){ .ncode{font-size:11px;padding:8px 10px} }
 .note:empty::before{content:"아직 노트가 없습니다. Core/LC 의 @note 를 채우면 여기 나타납니다.";color:var(--muted)}
 .appr{margin-top:18px;border-top:1px solid var(--line-soft);padding-top:10px}
 .appr summary{cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);list-style:none;display:flex;align-items:center;gap:8px}
@@ -460,7 +467,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 242,
@@ -803,7 +810,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 438,
@@ -940,7 +947,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 42,
@@ -979,7 +986,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 20,
@@ -1363,7 +1370,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "Amazon30d.md 표에 남은 짧은 메모:\n- max_element(nums.begin(), nums.end())로 탐색 상한(속도의 최댓값)을 잡을 것 - min_element는 예외 케이스가 있어 쓰면 안 됨\n- Binary search 할 때 하한(최소 속도)은 보통 1이거나 0이어야 함\n개별 노트 파일은 없고 Amazon30d.md의 aggregate 표 한 줄에만 기록되어 있던 내용",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 230,
@@ -1496,7 +1503,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 141,
@@ -1582,7 +1589,7 @@ LC 복습 카드 — 데이터 규약
    "review": 1,
    "time": "O(n)",
    "space": "O(1)",
-   "note": "prev=nullptr로 시작하면 head null 체크/첫 노드 분기 불필요\n더 깔끔한 패턴:\n    ListNode* prev = nullptr, *cur = head;\n    while (cur) { auto nxt = cur->next; cur->next = prev; prev = cur; cur = nxt; }\n    return prev;",
+   "note": "  prev=nullptr로 시작하면 head null 체크/첫 노드 분기 불필요\n  더 깔끔한 패턴:\n  ```\n    ListNode* prev = nullptr, *cur = head;\n      while (cur) { auto nxt = cur->next; cur->next = prev; prev = cur; cur = nxt; }\n      return prev;\n```",
    "date": "2026-06-09"
   },
   {
@@ -1762,7 +1769,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "Amazon30d.md 표에 남은 짧은 메모:\n- Tree Traversal을 BFS로도 가능하다는 점 기억해두기\n- 입력이 빈 배열([])로 들어올 수 있다는 점을 풀 때 항상 생각해야 함\n개별 노트 파일은 없고 Amazon30d.md의 aggregate 표 한 줄에만 기록되어 있던 내용",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 104,
@@ -1788,7 +1795,7 @@ LC 복습 카드 — 데이터 규약
    "review": 1,
    "time": "O(n)",
    "space": "O(h) 재귀 스택",
-   "note": "내 풀이: 멤버 mxD + DFS(node, depth)로 내려가며 max 갱신\n더 깔끔한 방식(연습 필요!): 리턴값으로 바로 누적\n    if (!root) return 0;\n    return 1 + max(maxDepth(left), maxDepth(right));\n→ 올라오면서 깊이 합산. 전역 상태 불필요\n⚠️ 재귀 결과를 return에 바로 합치는 패턴이 약함. 트리 문제에서 반복 연습",
+   "note": "  내 풀이: 멤버 mxD + DFS(node, depth)로 내려가며 max 갱신\n  더 깔끔한 방식(연습 필요!): 리턴값으로 바로 누적\n  ```\n    if (!root) return 0;\n      return 1 + max(maxDepth(left), maxDepth(right));\n```\n  → 올라오면서 깊이 합산. 전역 상태 불필요\n  ⚠️ 재귀 결과를 return에 바로 합치는 패턴이 약함. 트리 문제에서 반복 연습",
    "date": "2026-06-24"
   },
   {
@@ -2163,12 +2170,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(V)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "@status:"
+   "solved": true,
+   "review": 1,
+   "time": "O(N + E) - 경로 압축 덕에 find 가 거의 상수",
+   "space": "O(N) parent + sz",
+   "note": "  merge 와 getParent 만 제대로 짜면 끝난다.\n\n```\n  getParent: return parent[x] = getParent(parent[x], parent)   <- 대입이 곧 경로 압축\n  merge:     두 루트를 먼저 구하고, 같으면 return. 다르면 한쪽을 다른 쪽에 붙인다\n```\n\n  덩어리 개수는 sz[i] > 0 인 정점을 세서 구했다.\n  합칠 때 sz[pu] = 0 으로 비우므로 살아남은 루트만 남는다. parent[i] == i 를 세도 같은 결과.",
+   "date": "2026-09-10"
   },
   {
    "num": 133,
@@ -2222,7 +2229,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 215,
@@ -2289,7 +2296,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 692,
@@ -2380,7 +2387,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 23,
@@ -2413,7 +2420,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 295,
@@ -2440,7 +2447,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 252,
@@ -2467,7 +2474,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 198,
@@ -2549,7 +2556,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 322,
@@ -2576,7 +2583,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 139,
@@ -2603,7 +2610,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 140,
@@ -2754,7 +2761,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 56,
@@ -2863,7 +2870,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 135,
@@ -2948,7 +2955,7 @@ LC 복습 카드 — 데이터 규약
    "review": 3,
    "time": "O(1) get/put",
    "space": "O(capacity)",
-   "note": "핵심: unordered_map<key, list::iterator> + list<pair<key,value>>\nmap이 노드 iterator를 들고 있어서 O(1)로 노드 접근/이동/삭제 가능\n\nlist::splice - 노드를 복사 없이 포인터만 재연결해서 옮김 → O(1)\niterator는 그대로 유효 (그래서 map 안 고쳐도 됨)\n    li.splice(li.begin(), li, it);  // it 노드를 맨 앞으로 (move-to-front)\n형태: splice(pos, otherList, it) → it를 pos '앞'에 삽입. 같은 리스트면 otherList=li\n\nput 분기 주의:\n- 새 키(map에 없음): 꽉 찼으면(sz==cap) li.back() evict(map+list+sz 다 정리) → 그 다음 push_front\n- 기존 키: 값 갱신 + move-to-front. evict 무관(개수 안 늘어남)\nevict는 '새 키 삽입' 분기에서만. front=최근, back=LRU",
+   "note": "  핵심: unordered_map<key, list::iterator> + list<pair<key,value>>\n  map이 노드 iterator를 들고 있어서 O(1)로 노드 접근/이동/삭제 가능\n\n  list::splice - 노드를 복사 없이 포인터만 재연결해서 옮김 → O(1)\n  iterator는 그대로 유효 (그래서 map 안 고쳐도 됨)\n  ```\n    li.splice(li.begin(), li, it);  // it 노드를 맨 앞으로 (move-to-front)\n```\n  형태: splice(pos, otherList, it) → it를 pos '앞'에 삽입. 같은 리스트면 otherList=li\n\n  put 분기 주의:\n  - 새 키(map에 없음): 꽉 찼으면(sz==cap) li.back() evict(map+list+sz 다 정리) → 그 다음 push_front\n  - 기존 키: 값 갱신 + move-to-front. evict 무관(개수 안 늘어남)\n  evict는 '새 키 삽입' 분기에서만. front=최근, back=LRU",
    "date": "2026-06-23"
   },
   {
@@ -2975,7 +2982,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 36,
@@ -3001,7 +3008,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 853,
@@ -3027,7 +3034,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 704,
@@ -3053,7 +3060,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 74,
@@ -3079,7 +3086,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 981,
@@ -3105,7 +3112,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 4,
@@ -3131,7 +3138,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 138,
@@ -3163,7 +3170,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 287,
@@ -3189,7 +3196,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 25,
@@ -3215,7 +3222,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 543,
@@ -3370,7 +3377,7 @@ LC 복습 카드 — 데이터 규약
    "review": 1,
    "time": "init O(N log K), add O(log K)",
    "space": "O(K)",
-   "note": "크기 K짜리 min-heap 유지 → 그 중 최솟값(top) = 지금까지 본 것 중 K번째 큰 값\nStream이라 pop된 값은 안 돌아옴 → heap 하나로 충분\nadd(val): heap.size() < K면 push, 아니면 push+pop (K개 유지)\nmin-heap 두 가지 방법:\n- priority_queue<int, vector<int>, greater<int>> minHeap;  // 정석\n- priority_queue<int> maxHeap; push(-val), return -top();  // 부호 뒤집기 트릭 (현재 코드)\n⚠️ \"K번째 큰\"은 \"내림차순 K번째\"임. 중복도 각자 셈\n⚠️ heap<int>는 기본 max-heap (Python의 heapq와 반대. Python은 min-heap)",
+   "note": "  크기 K짜리 min-heap 유지 → 그 중 최솟값(top) = 지금까지 본 것 중 K번째 큰 값\n  Stream이라 pop된 값은 안 돌아옴 → heap 하나로 충분\n  add(val): heap.size() < K면 push, 아니면 push+pop (K개 유지)\n  min-heap 두 가지 방법:\n  ```\n- priority_queue<int, vector<int>, greater<int>> minHeap;  // 정석\n  - priority_queue<int> maxHeap; push(-val), return -top();  // 부호 뒤집기 트릭 (현재 코드)\n```\n  ⚠️ \"K번째 큰\"은 \"내림차순 K번째\"임. 중복도 각자 셈\n  ⚠️ heap<int>는 기본 max-heap (Python의 heapq와 반대. Python은 min-heap)",
    "date": "2026-08-11"
   },
   {
@@ -3397,7 +3404,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 973,
@@ -3429,7 +3436,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 621,
@@ -3455,7 +3462,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 355,
@@ -3481,7 +3488,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 39,
@@ -3746,7 +3753,7 @@ LC 복습 카드 — 데이터 규약
    "review": 1,
    "time": "insert/search/startsWith 각각 O(L) - L = word/prefix 길이",
    "space": "O(전체 문자 수 * 26) worst - 매 노드가 26칸 children 배열",
-   "note": "스타일 B - Trie 인스턴스 하나 = 노드 하나 (root 따로 안 만듬, 자기 자신이 root)\n멤버: isEnd (단어 끝), children[26] (a~z 자식 포인터)\n재귀로 word.substr(1) 넘겨가며 한 글자씩 소비\n- insert: word 빌 때까지 내려가며 없으면 new Trie(). 끝나면 isEnd=true\n- search: 끝까지 갔을 때 isEnd 체크. 중간에 nullptr 만나면 false\n- startsWith: 끝까지 갈 수 있으면 true. isEnd 무관\n⚠️ hasChild 플래그는 사실 불필요 - startsWith에서 \"prefix 다 소비하고 노드 도착\"하면 그 자체로 true (자식 유무 상관없이). 단순화 여지 있음\n⚠️ word.substr(1)은 매번 새 문자열 복사 → O(L^2). 인덱스 i로 순회하면 O(L)\nIterative 버전은 관용구:\n    Trie* cur = this;\n    for (char c : word) {\n        int idx = c - 'a';\n        if (!cur->children[idx]) cur->children[idx] = new Trie();\n        cur = cur->children[idx];\n    }\n    cur->isEnd = true;",
+   "note": "  스타일 B - Trie 인스턴스 하나 = 노드 하나 (root 따로 안 만듬, 자기 자신이 root)\n  멤버: isEnd (단어 끝), children[26] (a~z 자식 포인터)\n  재귀로 word.substr(1) 넘겨가며 한 글자씩 소비\n  - insert: word 빌 때까지 내려가며 없으면 new Trie(). 끝나면 isEnd=true\n  - search: 끝까지 갔을 때 isEnd 체크. 중간에 nullptr 만나면 false\n  - startsWith: 끝까지 갈 수 있으면 true. isEnd 무관\n  ⚠️ hasChild 플래그는 사실 불필요 - startsWith에서 \"prefix 다 소비하고 노드 도착\"하면 그 자체로 true (자식 유무 상관없이). 단순화 여지 있음\n  ⚠️ word.substr(1)은 매번 새 문자열 복사 → O(L^2). 인덱스 i로 순회하면 O(L)\n  Iterative 버전은 관용구:\n  ```\n    Trie* cur = this;\n      for (char c : word) {\n          int idx = c - 'a';\n          if (!cur->children[idx]) cur->children[idx] = new Trie();\n          cur = cur->children[idx];\n      }\n      cur->isEnd = true;\n```",
    "date": "2026-08-07"
   },
   {
@@ -3773,7 +3780,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 212,
@@ -3799,7 +3806,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 695,
@@ -3820,12 +3827,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(m·n)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "@status:"
+   "solved": true,
+   "review": 1,
+   "time": "O(N*M) - 각 칸을 한 번씩만 방문",
+   "space": "O(N*M) vis 격자 + 재귀 스택 (전부 땅이면 깊이가 N*M)",
+   "note": "각 칸에서 dfs 를 돌리되 vis 로 이미 센 섬은 건너뛴다.\n넓이는 재귀 리턴값을 더해서 올린다. 자기 1 + 네 방향 결과 합.\n\nvis 대신 grid 를 직접 0 으로 지우면서 돌면 vis 격자를 안 만들어도 된다.\n다만 재귀 스택이 최악 O(N*M) 라 복잡도 등급은 그대로고, 상수만 줄어든다.\n대가로 호출자의 grid 가 파괴된다. 문제에서 허용하는지 확인하고 쓸 것.",
+   "date": "2026-09-10"
   },
   {
    "num": 417,
@@ -3846,12 +3853,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(m·n)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "@status:"
+   "solved": true,
+   "review": 3,
+   "time": "O(m*n) - 바다 2번 퍼뜨리기. 각 칸을 바다당 한 번씩만 방문",
+   "space": "O(m*n) pac/atl 격자 + 큐",
+   "note": "  [1] 처음 시도: 각 칸에서 dfs + dp 캐싱 -> 실패\n      dx/dy 순서(위 -> 오른 -> 아래 -> 왼)라 [0,0] 하나에서 테두리를 한 바퀴 돌아버린다.\n\n```\n      분지 3x3 = {{9,9,9},{9,1,9},{9,9,9}}\n        [0,0] -> [0,1] -> [0,2] -> [1,2] -> [2,2] -> [2,1] -> [1,1] -> [2,0] -> [1,0]\n                                                                              ^ 마지막에 도착\n```\n\n      한 바퀴 도는 사이 모든 칸이 visited 로 찍히고, [1,0] 에 도착했을 땐\n      이웃 [0,0] [1,1] [2,0] 이 전부 \"이미 방문됨\"이라 dp=0 을 돌려준다.\n      -> 다른 방향으로 다시 들어가서 각 지점을 방문하는 것이 불가능. 경로가 잘림.\n\n```\n      실제 dp        기대 dp\n        3 3 3          3 3 3\n        1 0 3          3 0 3     <- [1,0] 이 1(태평양만). 아래로 돌아 대서양에도 닿아야 하는데 못 감\n        3 3 3          3 3 3\n```\n\n      정확히 하려면 매번 visited 초기화 = O((mn)^2), 200x200 이면 16억.\n\n  [2] 바다 출발과 각 지점 출발은 메커니즘이 다르다 ⭐️\n      각 지점 출발: 질문이 mn개 (\"이 칸이 바다에 닿나\"). 답이 칸마다 달라 visited 공유 불가.\n      바다 출발  : 질문이 1개 (\"바다가 어디까지 닿나\"). 답이 집합 하나라 visited 공유 가능.\n      -> 바다 접점이 m+n개여도 전부 큐에 넣고 한 번만 돌린다. 어느 변에서 왔는지 구분할 이유가 없으니까.\n      -> 닿는 순간 그 칸이 곧 답. 경로를 되짚을 필요가 없다.\n      cf. 994 Rotting Oranges 도 같은 조건 (어느 오렌지가 감염시켰는지는 안 궁금)\n\n  [3] 거슬러 올라가므로 부등호가 뒤집힌다\n      물 흐르기 heights[nxt] <= heights[cur]  /  거슬러가기 heights[nxt] >= heights[cur]\n      ⚠️ 등호를 빼면 같은 높이에서 못 넘어감. 전부 같은 높이 3x3 이 9칸 -> 2칸으로 줄며 걸림.",
+   "date": "2026-09-08"
   },
   {
    "num": 130,
@@ -3872,12 +3879,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(m·n)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "@status:"
+   "solved": true,
+   "review": 1,
+   "time": "O(N*M) - 테두리에서 한 번 퍼뜨리고, 판을 한 번 훑어 뒤집기",
+   "space": "O(N*M) vis 격자 + 큐",
+   "note": "테두리의 O 에서 BFS 하는 게 쉽다. 안쪽 O 에서 어떻게 해보려는 것보다.\n\n안쪽에서 시작하면 \"이 덩어리가 테두리에 닿나\"를 덩어리마다 따져야 한다.\n테두리에서 시작하면 닿는 것들이 곧 살아남는 O 고, 나머지를 X 로 뒤집으면 끝.",
+   "date": "2026-09-10"
   },
   {
    "num": 210,
@@ -3929,7 +3936,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": "2026-09-10"
   },
   {
    "num": 743,
@@ -3955,7 +3962,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 332,
@@ -3981,7 +3988,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 1584,
@@ -4013,7 +4020,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 778,
@@ -4045,7 +4052,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 269,
@@ -4071,7 +4078,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 787,
@@ -4097,7 +4104,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 746,
@@ -4149,7 +4156,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 152,
@@ -4175,7 +4182,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 62,
@@ -4232,7 +4239,7 @@ LC 복습 카드 — 데이터 규약
    "review": 2,
    "time": "O(m*n)",
    "space": "O(m*n) (한 행 rolling으로 O(min(m,n)) 축소 가능)",
-   "note": "dp[i][j] = \"text1의 앞 i글자 x text2의 앞 j글자\"의 LCS 길이 (prefix DP, 끝점 정의).\n       - 같을 때 (text1[i-1]==text2[j-1]): dp[i][j] = dp[i-1][j-1] + 1\n         (양쪽 다 한 글자씩 뗀 상태의 답에 매칭된 한 글자 보탬)\n       - 다를 때: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n         (한 쪽 글자 포기, 더 나은 쪽 물려받음. dp[i-1][j-1]도 후보긴 하지만\n         dp[i-1][j], dp[i][j-1]이 이미 그 값을 포함하니 볼 필요 X.)\n       - 사이즈 (n+1)x(m+1), 인덱스 1부터 → base 0행/0열이 자동으로 0 (빈 문자열 vs 뭐든 = 0).\n       - 답 = dp[n][m] (오른쪽 아래 한 칸)\n       ---\n       [Prefix DP vs Suffix DP]\n       같은 문제도 상태를 \"끝점\"으로 잡느냐 \"시작점\"으로 잡느냐 두 방향 가능.\n\n       * Prefix DP  (\"여기까지 봤을 때 답\", 끝점 정의)\n         - 상태:  dp[i][j] = text1의 앞 i글자 x text2의 앞 j글자의 답\n         - 방향:  왼쪽 위 → 오른쪽 아래로 채움\n         - Base:  0행/0열 = 빈 prefix (자동 0)\n         - 답:    dp[n][m] (오른쪽 아래 한 칸)\n\n       * Suffix DP  (\"여기부터 끝까지 답\", 시작점 정의)\n         - 상태:  dp[i][j] = text1[i..] x text2[j..]의 답\n         - 방향:  오른쪽 아래 → 왼쪽 위로 채움\n         - Base:  n행/m열 = 빈 suffix (자동 0)\n         - 답:    dp[0][0] (왼쪽 위 한 칸)\n\n       * 언제 뭘 쓰나 (감각)\n         - \"여기까지 얼마나 쌓였나?\" → Prefix\n           (LCS, Unique Paths, Edit Distance, Coin Change, Climbing Stairs - 대부분)\n         - \"여기부터 뒤가 어떻게 되나?\" → Suffix\n           (House Robber \"이 집부터 끝까지 최대\", 일부 매칭/파티션 문제)\n         - 애매하면 prefix부터 시도, 대부분 prefix로 자연스럽게 풀림.\n\n       * 왜 prefix가 편한가\n         - 사람은 \"왼→오, 앞→뒤\"로 읽는 게 자연스러움 → 채우는 순서도 자연스러움.\n         - 사이즈 (n+1)x(m+1)로 잡으면 base가 저절로 0 → if 가드 불필요.\n         - Rolling(공간 최적화)도 왼→오가 표준이라 prefix가 대응 쉬움.\n\n       * 이 문제(LCS)에 적용\n         - Prefix: dp[i][j] = 앞 ix앞 j LCS → dp[n][m] 반환 (현재 코드)\n         - Suffix로 풀 수도 있음: dp[i][j] = text1[i..]xtext2[j..] LCS,\n           같으면 dp[i+1][j+1]+1, 다르면 max(dp[i+1][j], dp[i][j+1]), 답 = dp[0][0].\n           결과는 같지만 인덱스가 안쪽으로 밀려 base가 dp[n][*]=dp[*][m]=0.",
+   "note": " dp[i][j] = \"text1의 앞 i글자 x text2의 앞 j글자\"의 LCS 길이 (prefix DP, 끝점 정의).\n        - 같을 때 (text1[i-1]==text2[j-1]): dp[i][j] = dp[i-1][j-1] + 1\n          (양쪽 다 한 글자씩 뗀 상태의 답에 매칭된 한 글자 보탬)\n        - 다를 때: dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n          (한 쪽 글자 포기, 더 나은 쪽 물려받음. dp[i-1][j-1]도 후보긴 하지만\n          dp[i-1][j], dp[i][j-1]이 이미 그 값을 포함하니 볼 필요 X.)\n        - 사이즈 (n+1)x(m+1), 인덱스 1부터 → base 0행/0열이 자동으로 0 (빈 문자열 vs 뭐든 = 0).\n        - 답 = dp[n][m] (오른쪽 아래 한 칸)\n        ---\n```\n        [Prefix DP vs Suffix DP]\n        같은 문제도 상태를 \"끝점\"으로 잡느냐 \"시작점\"으로 잡느냐 두 방향 가능.\n\n        * Prefix DP  (\"여기까지 봤을 때 답\", 끝점 정의)\n          - 상태:  dp[i][j] = text1의 앞 i글자 x text2의 앞 j글자의 답\n          - 방향:  왼쪽 위 → 오른쪽 아래로 채움\n          - Base:  0행/0열 = 빈 prefix (자동 0)\n          - 답:    dp[n][m] (오른쪽 아래 한 칸)\n\n        * Suffix DP  (\"여기부터 끝까지 답\", 시작점 정의)\n          - 상태:  dp[i][j] = text1[i..] x text2[j..]의 답\n          - 방향:  오른쪽 아래 → 왼쪽 위로 채움\n          - Base:  n행/m열 = 빈 suffix (자동 0)\n          - 답:    dp[0][0] (왼쪽 위 한 칸)\n```\n\n        * 언제 뭘 쓰나 (감각)\n          - \"여기까지 얼마나 쌓였나?\" → Prefix\n            (LCS, Unique Paths, Edit Distance, Coin Change, Climbing Stairs - 대부분)\n          - \"여기부터 뒤가 어떻게 되나?\" → Suffix\n            (House Robber \"이 집부터 끝까지 최대\", 일부 매칭/파티션 문제)\n          - 애매하면 prefix부터 시도, 대부분 prefix로 자연스럽게 풀림.\n\n        * 왜 prefix가 편한가\n          - 사람은 \"왼→오, 앞→뒤\"로 읽는 게 자연스러움 → 채우는 순서도 자연스러움.\n          - 사이즈 (n+1)x(m+1)로 잡으면 base가 저절로 0 → if 가드 불필요.\n          - Rolling(공간 최적화)도 왼→오가 표준이라 prefix가 대응 쉬움.\n\n        * 이 문제(LCS)에 적용\n          - Prefix: dp[i][j] = 앞 ix앞 j LCS → dp[n][m] 반환 (현재 코드)\n          - Suffix로 풀 수도 있음: dp[i][j] = text1[i..]xtext2[j..] LCS,\n            같으면 dp[i+1][j+1]+1, 다르면 max(dp[i+1][j], dp[i][j+1]), 답 = dp[0][0].\n            결과는 같지만 인덱스가 안쪽으로 밀려 base가 dp[n][*]=dp[*][m]=0.",
    "date": "2026-08-05"
   },
   {
@@ -4259,7 +4266,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 518,
@@ -4285,7 +4292,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 494,
@@ -4317,7 +4324,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 97,
@@ -4343,7 +4350,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 329,
@@ -4369,7 +4376,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 115,
@@ -4395,7 +4402,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 72,
@@ -4421,7 +4428,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 312,
@@ -4447,7 +4454,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 10,
@@ -4473,7 +4480,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 45,
@@ -4499,7 +4506,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 134,
@@ -4525,7 +4532,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 846,
@@ -4551,7 +4558,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 1899,
@@ -4577,7 +4584,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 763,
@@ -4603,7 +4610,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 678,
@@ -4629,7 +4636,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 1851,
@@ -4655,7 +4662,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 48,
@@ -4707,7 +4714,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 73,
@@ -4733,7 +4740,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 202,
@@ -4817,7 +4824,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 43,
@@ -4843,7 +4850,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 2013,
@@ -4869,7 +4876,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 191,
@@ -4895,7 +4902,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 338,
@@ -4921,7 +4928,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 190,
@@ -4947,7 +4954,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 371,
@@ -4973,7 +4980,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   },
   {
    "num": 7,
@@ -4999,7 +5006,7 @@ LC 복습 카드 — 데이터 규약
    "time": "",
    "space": "",
    "note": "",
-   "date": "@status:"
+   "date": ""
   }
  ],
  "cats": [
@@ -5212,6 +5219,21 @@ function go(d){
 }
 function flip(){ flipped=!flipped; study.querySelector(".card").classList.toggle("flipped",flipped); }
 
+function noteHTML(s){
+  if(!s) return "";
+  var parts = String(s).split("```");
+  var out = "";
+  for(var i=0;i<parts.length;i++){
+    var seg = parts[i];
+    if(i%2===1){                                  // 펜스 안 = 코드/표
+      out += '<div class="ncode">'+esc(seg.replace(/^\n/,"").replace(/\n$/,""))+'</div>';
+    }else{
+      var txt = seg.replace(/^\n/,"").replace(/\n$/,"");
+      if(txt.trim()) out += '<div class="p">'+esc(txt)+'</div>';
+    }
+  }
+  return out;
+}
 function drawStudy(){
   var c = queue[pos]; if(!c) return;
   var r = c.solved ? c.review : 0;
@@ -5244,7 +5266,7 @@ function drawStudy(){
   var back = '<div class="face back"><div class="f-body">'
     + '<p class="b-label">내 노트</p>'
     + cx
-    + '<div class="note">'+esc(c.note||"")+'</div>'
+    + '<div class="note">'+noteHTML(c.note||"")+'</div>'
     + ap
     + '</div></div>';
 
