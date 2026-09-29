@@ -942,12 +942,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(k)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 2,
+   "time": "O(N) - 각 원소가 평생 한 번 push, 한 번 pop",
+   "space": "O(K) - deque 에 후보만",
+   "note": "내림차순 deque 를 유지하면서 한 번 훑으면 끝난다. 최댓값은 항상 front.\n\n넣기 전에 뒤에서 자기보다 작거나 같은 값을 전부 pop_back 한다.\n나보다 뒤에 들어왔는데 나보다 큰 값이 있으면 나는 영영 답이 될 수 없기 때문.\n창 밖 판정용으로 {값, 인덱스} 를 같이 넣는다.\n\ncf. map<값,개수> 로도 풀린다 (아래 주석). O(N log K), 실측 82.6ms vs deque 14.5ms.",
+   "date": "2026-09-28"
   },
   {
    "num": 42,
@@ -2224,12 +2224,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(M²·N)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 2,
+   "time": "O(N^2 * L) - 모든 쌍을 비교해 간선을 만들고, 쌍마다 글자 L 개를 본다. BFS 는 여기 묻힘",
+   "space": "O(N * L) - 한 단어의 이웃이 최대 L*25 개라 간선 수가 선형에 묶인다",
+   "note": "단어를 정점으로 놓고 한 글자 차이를 간선으로 잇는 그래프 문제. 최단이니까 BFS.\n\n[1] endWord 는 wordList 에 있어야 하고 beginWord 는 없어도 된다 ⭐️\n    둘 다 리스트에 밀어넣었더니 없는 endWord 까지 도달 가능해졌다.\n    beginWord 만 넣고, endWord 는 없으면 그 자리에서 0.\n\n[2] BFS 레벨 분리는 \"지금 큐에 있는 만큼\" 만 돈다\n    while(!q.empty()) 로 안쪽을 돌면 큐를 통째로 비워서 레벨이 안 나뉜다.\n    레벨 진입 시점의 q.size() 를 먼저 찍어두고 그 횟수만큼만 pop.",
+   "date": "2026-09-17"
   },
   {
    "num": 215,
@@ -3029,12 +3029,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(n)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 3,
+   "time": "O(N log N) - 정렬이 지배한다. 스캔 자체는 O(N)",
+   "space": "O(N) - (위치, 속도) 쌍 배열",
+   "note": "정렬 후 앞(위치 큰 쪽)부터 내려오며 \"지금까지 본 최대 도착시간\" 하나만 들고 간다. ⭐️\n\n[1] 그 최대값의 정체는 \"앞 fleet 이 실제로 언제 도착하는가\" 다\n    인접한 앞차와 비교하면 틀린다.\n    그 앞차가 이미 막혀서 느려져 있을 수 있는데, 혼자 갔을 때 시간과 비교하게 된다.\n\n    현재 차가 더 빨리 도착 -> 반드시 막힌다 -> 합류. 최대 그대로\n    현재 차가 더 늦게 도착 -> 앞은 이미 갔다 -> 새 fleet. 최대가 현재 차로 갱신\n\n[2] int / int 는 double 변수에 담아도 이미 잘려 있다\n    double t = (target - p) / s;            // 우변이 전부 int -> 정수 나눗셈이 먼저 끝남\n    double t = (double)(target - p) / s;    // 나눗셈 \"전에\" 캐스팅해야 한다\n\n    아예 나눗셈을 피하려면 교차 곱셈으로:\n        (target - p1) * s2  <=  (target - p2) * s1\n    곱이 10^12 까지 가므로 long long 이어야 한다.\n\n[3] double 을 써도 되는지 따지는 법 ⭐️\n\n    차 1 의 도착시간 = a/b     a = target - p1,  b = s1\n    차 2 의 도착시간 = c/d     c = target - p2,  d = s2     전부 정수\n\n    물어야 할 것 : 두 값이 서로 다를 때, 아무리 가까워도 최소 얼마나 벌어지나?\n    (최악의 경우를 만들어놓고 그것도 double 이 구분하는지 본다)\n\n    1) 차이를 구한다 (통분)\n\n           a     c      ad - bc\n          --- - ---  =  -------\n           b     d        bd\n\n       분자 ad - bc 도 정수다. 두 시간이 다르면 0 이 아니므로 |ad - bc| >= 1\n\n    2) 상대 차이로 바꾼다 = 차이를 도착시간으로 나눈다\n\n       double 해상도는 값 크기에 비례한다.\n       \"몇 초 차이\" 가 아니라 \"도착시간 대비 몇 % 차이\" 로 봐야 2^-52 하나로 판정된다.\n\n           ad - bc         a        ad - bc      b       ad - bc\n           -------    ÷   ---   =   -------  x  ---  =   -------\n             bd            b          bd         a        a * d\n                                                             ^ b 가 약분됨\n\n    3) 가장 작아지는 쪽으로 밀어넣는다\n       (분자는 최솟값, 분모는 최댓값. 둘 다 전체를 작게 만드는 방향)\n\n           |ad - bc|          1               1\n           ---------   >=   -----    >=   ---------  =  10^-12\n             a * d           a*d         10^6 * 10^6\n\n       a = target - p1 <= 10^6,   d = s2 <= 10^6\n\n    4) 판정\n\n       가장 가까울 때의 상대 간격 : 10^-12\n       double 의 상대 정밀도      : 2^-52 = 2.2 x 10^-16\n       최악에도 4500배 여유  ->  이 제약에서 double 안전\n\n    실전 감각 : 정수 연산이면 결과가 2^53 (약 9 x 10^15) 이하일 때 double 로도 정확.\n               나눗셈이 끼면 위처럼 제약 상한을 곱해서 10^-16 과 비교한다.",
+   "date": "2026-09-17"
   },
   {
    "num": 704,
@@ -3931,11 +3931,11 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(n)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
+   "solved": true,
+   "review": 2,
+   "time": "O(N) - 간선 N 개를 한 번씩, find 는 경로 압축으로 사실상 상수",
+   "space": "O(N + M) parent 배열 + 입력 edges",
+   "note": "입력 순서대로 합치다가 처음 충돌하는 간선이 곧 답이다. ⭐️\n덩어리 안에 뭐가 들어있는지 셀 필요가 없다. \"대표가 같은가\" 만 물으면 된다.\n\n[1] 사이클 정점을 모을 필요가 없다\n    DFS 로 가면 사이클 찾기 -> 정점 뽑기 -> 간선 복원 -> 마지막 것 고르기 4단계.\n    유파는 합치다 막히면 그 간선을 반환하고 끝. 2~4단계가 통째로 사라진다.\n\n[2] \"답 후보 중 마지막\" 이 저절로 걸린다\n    사이클 간선이 k 개면 답 후보도 k 개. 그 중 배열에서 마지막 것을 고르라는 조건인데,\n    앞의 k-1 개는 아직 고리가 안 닫혀서 충돌이 안 난다.\n    k 번째에서 처음이자 유일하게 충돌 -> 그게 곧 \"마지막 후보\".\n    순서대로 훑는 것만으로 조건이 만족된다.\n\n[3] 충돌이 한 번뿐인 건 제약 덕분\n    정점 N 개 + 간선 N 개 + 연결 보장 = \"트리 + 간선 1개\" -> 사이클이 정확히 하나.\n    사이클이 여럿인 일반 그래프면 충돌도 여러 번 나고 이 논리가 깨진다.\n\n[4] 무방향 사이클에 DFS 를 쓰면 예외가 는다\n    직전에 온 노드를 이웃에서 또 보게 되니 제외해야 하고 (무방향이라 간선이 양쪽에 있음),\n    \"이미 만난 노드\" 를 현재 경로 기준으로 봐야 해서 되돌아올 때 pop 이 필요하다.\n    유파는 둘 다 없다.",
    "date": "2026-09-10"
   },
   {
@@ -3957,12 +3957,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(V+E)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 2,
+   "time": "O(V*E) 최악 - 평범한 큐라 dist 가 줄면 노드를 다시 넣는다. 제약 상한 100*6000=60만이라 통과",
+   "space": "O(N + E) - adj 인접리스트 + dist 배열",
+   "note": "큐에 우선순위가 없으면 Dijkstra 가 아니라 SPFA 다 (큐를 쓰는 Bellman-Ford). ⭐️\n정답은 나오지만 이름과 복잡도가 다르다.\n\nDijkstra  priority_queue. 가장 가까운 것부터 꺼내므로 꺼낸 순간 확정. O(E log V)\n지금 코드  queue. 순서 보장이 없어 확정이 안 되고, 더 싼 길이 나중에 나오면 다시 넣는다\n\n완화 식 자체는 Bellman-Ford 와 같다: dist[to] > dist[from] + w 면 갱신.\n차이는 어떤 간선을 언제 보느냐 뿐이다.\n고전 BF 는 V-1 번 모든 간선을 쓸고, SPFA 는 값이 바뀐 노드 주변만 다시 본다.\n\n측정: 1 -> i 직행을 뒤로 갈수록 비싸게, i -> i+1 사슬을 싸게 두면\nn=100 에서 pop 이 198회 (Dijkstra 는 100회). 노드가 평균 2번 꺼내진다.",
+   "date": "2026-09-21"
   },
   {
    "num": 332,
@@ -4099,12 +4099,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(V)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 3,
+   "time": "O(K*M) 기준 - 간선 M 개 x depth K+2 개 상태. k<=n-1 이라 O(N*M) 규모, 제약상 약 49만 단 같은 셀이 더 작은 값으로 재갱신되면 그때마다 다시 내려가므로 최악은 이보다 크다 (SPFA 와 같은 성질)",
+   "space": "O(N^3) - mnSumUpto[u][v][depth]. 아래 [2] 참고",
+   "note": "depth 를 막는 기준과 쓰는 인덱스가 한 칸 어긋나 있었다. ⭐️\n\n[1] 경계는 depth 로 재고 쓰기는 depth+1 에 한다\n    if (depth > k+1) return;        // depth 7 은 통과\n    mnSumUpto[u][v][depth + 1]      // 그런데 [8] 에 쓴다\n\n    벡터 끝 바로 다음이라 크래시가 안 나고 옆 칸을 덮어쓴다.\n    그 옆 칸이 mnSumUpto[i][dst][..] 자리에 걸리면\n    dst 에 한 번도 안 갔는데 집계 루프가 값을 주워온다.\n    도달 불가라 -1 이어야 하는데 엉뚱한 숫자가 나왔다.\n\n    막는 값과 쓰는 값이 다르면 둘 중 큰 쪽에 배열을 맞춰야 한다.\n\n[2] dp 차원 하나가 불필요하다\n    [u][v][depth] 로 잡았지만 답을 읽을 때 u 는 안 쓴다 (v=dst 로 고정).\n    dp[v][depth] 면 충분하고 공간이 O(N^3) -> O(N*K) 로 준다.",
+   "date": "2026-09-21"
   },
   {
    "num": 746,
@@ -4319,12 +4319,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(n × range)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 3,
+   "time": "O(2^N) - 각 숫자마다 +/- 두 갈래. N <= 20 이라 2^20 = 약 10^6",
+   "space": "O(N) 재귀 스택 깊이 (최대 20)",
+   "note": "Time complexity 가 생각보다 높지 않다.\n각 숫자에 +/- 두 갈래뿐이라 다 펼쳐도 2^20 = 약 10^6.\n제약을 먼저 계산해보면 naive 로 충분하다는 게 바로 나온다.\n\n0 은 +0 과 -0 이 다른 조합으로 세어진다.\n{0} 타겟 0 의 답이 1 이 아니라 2 인 이유.\n\n[DP 유도] 내 dfs 에서 출발해서 dp[j] += dp[j-num] 까지\n\n    (1) 내 dfs\n        int dfs(int idx, int sum) {\n            if (idx == n) return (sum == target) ? 1 : 0;\n            return dfs(idx+1, sum + nums[idx]) + dfs(idx+1, sum - nums[idx]);\n        }\n        dfs(idx, sum) = \"idx 번째부터 끝까지 부호를 붙여 target 에 닿는 방법의 수\"\n\n    (2) 같은 질문이 여러 번 온다\n        nums = {1,1,1} 이면 dfs(2, 0) 이 두 번 불림 (+1-1 경로, -1+1 경로).\n        질문이 같으면 답도 같은데 매번 끝까지 계산한다.\n\n    (3) 답을 적어둔다 = memo = DP\n        map<pair<int,int>, int> memo;\n        if (memo.count({idx,sum})) return memo[{idx,sum}];\n        return memo[{idx,sum}] = dfs(...) + dfs(...);\n        로직은 그대로. 같은 질문에 두 번 답하지 않을 뿐.\n        (idx, sum) 조합이 20 x 2001 = 4만 가지뿐이라 계산도 최대 4만 번.\n\n    (4) memo 를 격자로 그리면 표\n        세로 idx, 가로 sum. dfs 는 필요한 칸만 채우는데,\n        끝(idx = n)에서부터 거꾸로 모든 칸을 순서대로 채우면 재귀가 필요 없다.\n        for (idx = n-1; idx >= 0; idx--)\n            for (sum = -1000; sum <= 1000; sum++)\n                dp[idx][sum] = dp[idx+1][sum + nums[idx]] + dp[idx+1][sum - nums[idx]];\n\n    (5) 두 번째 인자를 sum 에서 p 로 ⭐️\n        dp[idx][sum] = dp[idx+1][sum + num] + dp[idx+1][sum - num]      (4)\n                ↓ sum(부호 합) 대신 p(P 무더기 합) 를 적는다\n        dp[idx][p]   = dp[idx+1][p + num]   + dp[idx+1][p]              (5)\n                       (P 에 넣음)            (N 에 넣음. p 그대로)\n        바뀐 건 오른쪽 가지 하나. sum - num 이 p 로.\n        나무 모양은 그대로, 칸의 숫자만 바뀜. sum = 2p - (앞까지 합) 이라 같은 정보.\n        음수가 사라짐. p 는 0 에서 올라가기만 한다.\n\n    (5') 앞에서부터 세도 같다 ⭐️\n        부분집합 개수는 순서 무관이라 idx 를 0 부터 올려도 답이 같다.\n        dp[idx][p] = dp[idx+1][p + num] + dp[idx+1][p]                  (5)  뒤에서부터\n                ↓ 방향 뒤집기. j = \"앞 k 개로 만든 합\"\n        dp[k][j]   = dp[k-1][j - num]   + dp[k-1][j]                    (5') 앞에서부터\n                     (씀)                 (안 씀)\n\n    (6) 줄 겹치기\n        각 줄이 바로 아랫줄만 보니까 줄 하나로 덮어써도 된다.\n        dp[j] += dp[j - num]\n        덮어쓸 때 읽는 칸(j-num)이 쓰는 칸(j)보다 항상 왼쪽이라,\n        오른쪽부터 돌아야 아직 안 바뀐 값을 읽는다. 왼쪽부터 돌면 num 을 두 번 쓴다.\n\n    (7) 결과\n        int total = sum(nums);\n        if (abs(target) > total || (total + target) % 2) return 0;\n        int P = (total + target) / 2;\n        vector<int> dp(P+1, 0); dp[0] = 1;\n        for (int num : nums)\n            for (int j = P; j >= num; j--)\n                dp[j] += dp[j - num];\n        return dp[P];\n\n[DP] 전체 사슬:\n    ① +/- 붙이기\n          ↓  부호는 결국 \"두 무더기로 나누기\"\n    ② P 무더기 (+), N 무더기 (-)\n          ↓  P - N = target, P + N = total 에서\n    ③ P = (total + target) / 2 로 고정\n          ↓  N 은 자동이니 P 무더기만 정하면 됨\n    ④ \"합이 P 인 부분집합\" 세기\n          ↓  부분집합 = 각 숫자를 넣거나 안 넣거나\n    ⑤ 숫자 하나씩 \"넣을까 말까\" 결정          <- 바깥 루프. 백트래킹의 idx 와 같은 것\n          ↓  결정을 표에 반영\n    ⑥ dp[j] += dp[j - num]                    <- 안쪽 루프\n\n    dp[j] = 합이 j 가 되게 고르는 방법의 수. 답 = dp[P].\n    바깥 루프가 i 번 돈 뒤의 표 = 앞 i 개 숫자만 있을 때의 답. 그래서 앞부분을 다시 안 본다.\n    백트래킹 O(2^N) -> DP O(N * P). 답의 개수와 계산 횟수가 분리됨.",
+   "date": "2026-09-28"
   },
   {
    "num": 97,
@@ -4423,12 +4423,12 @@ LC 복습 카드 — 데이터 규약
      "sc": "O(m·n)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": ""
+   "solved": true,
+   "review": 2,
+   "time": "O(N*M)",
+   "space": "O(N*M)",
+   "note": "[1] 중요한 건 dp[i][j] 를 어떻게 정의할지 이다.\n    dp[i][j] = src 앞 i 글자를 dst 앞 j 글자로 바꾸는 최소 횟수.\n\n[2] 점화식\n    if (word1[i-1] == word2[j-1])\n        dp[i][j] = dp[i-1][j-1];\n    else\n        dp[i][j] = min({dp[i-1][j-1], dp[i-1][j], dp[i][j-1]}) + 1;\n\n    dp[i-1][j-1]  replace  src 한 글자 쓰고 dst 한 글자 채움\n    dp[i-1][j]    delete   src 인덱스만 줄어든 칸. dst 는 다 찼는데 src 글자가 남아 지운다\n    dp[i][j-1]    insert   dst 인덱스만 줄어든 칸. src 는 다 썼는데 dst 가 모자라 넣는다\n\n    같을 때 대각선만 쓰는 건, 이웃 칸끼리 1 이상 차이 날 수 없어서 대각선이 항상 최소라서.",
+   "date": "2026-09-24"
   },
   {
    "num": 312,
