@@ -1,9 +1,15 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
 <title>LC 복습 카드</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
 <style id="app-css">
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -169,6 +175,8 @@ body{
 .md code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--card-2);padding:1px 5px;border-radius:4px;color:var(--ink)}
 .md pre{margin:10px 0;padding:10px 12px;border-radius:8px;background:var(--card-2);border-left:2px solid var(--rule-blue);overflow-x:auto;-webkit-overflow-scrolling:touch}
 .md pre code{background:none;padding:0;font-size:12px;line-height:1.55;color:var(--ink-2);white-space:pre}
+.md .katex-display{margin:10px 0;overflow-x:auto;overflow-y:hidden;padding:4px 0}
+.md .katex{font-size:1.05em}
 .md .tbl{overflow-x:auto;margin:10px 0;-webkit-overflow-scrolling:touch}
 .md table{border-collapse:collapse;font-size:13px;min-width:100%}
 .md th,.md td{border:1px solid var(--line-soft);padding:6px 8px;text-align:left;vertical-align:top}
@@ -257,6 +265,7 @@ body{
     review 0~3 = 복습 필요도 (LC: .cpp @review / CS·AI: Review Log 가 "재복습" 이면 2)
     카드 윗줄 두께와 목록의 빨간 세로선이 이 값을 그대로 보여준다.
     뒷면 .md 는 marked.js(cdnjs) 로 렌더. 로드 실패 시 평문으로 보여준다.
+    $…$ · $$…$$ 수식은 marked 전에 빼뒀다가 복원하고 KaTeX auto-render 로 그린다. 로드 실패 시 원문 그대로.
 </script>
 
 <script id="app-state" type="application/json">
@@ -1813,13 +1822,13 @@ body{
      "sc": "O(1)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "",
-   "pri": "A"
+   "solved": true,
+   "review": 2,
+   "time": "O(N)",
+   "space": "O(1)",
+   "note": "잘못된 접근: fast 2칸 · slow 1칸 ⭐️\n  - fast 가 끝에 닿을 때 slow 는 절반 지점\n  - 지울 노드가 앞 절반에 있으면 slow 가 이미 지나쳐서 삭제 불가\n맞는 접근: 같은 속도, 간격 n 을 먼저 벌림\n  - fast 를 n 칸 먼저 보낸 뒤 둘이 같이 전진\n  - fast 가 null 이 되면 slow 가 뒤에서 n 번째\n실수: n == 길이 (head 를 지우는 경우) 를 처음에 놓침 → got=[0]\n  - 처음엔 fast 가 n 칸 간 순간 이미 null 이라 while 이 0번 돔. 루프 0번 케이스 또 ⭐️",
+   "date": "2026-11-09",
+   "pri": ""
   },
   {
    "track": "lc",
@@ -8086,7 +8095,7 @@ body{
    "md": "> THEORY · inference · T1  \n> 구현 → engine/vllm/paged_attention_block_manager.md\n\n---\n\n## 0-1. 개념: Q, K, V 가 뭔가\n\n\"가중치\" 라는 말이 두 가지로 쓰이니 먼저 가른다.\n\n| 용어 | 뭔가 | 바뀌나 |\n|---|---|---|\n| W_Q, W_K, W_V | 학습된 모델 파라미터. 행렬 3개 | 학습 끝나면 고정 |\n| w₁, w₂, w₃ | attention 점수를 softmax 한 값. \"얼마나 볼지\" 비율 | 토큰마다 새로 계산 |\n\n- 토큰마다 입력 벡터 x 에 세 행렬을 곱해 벡터 3개를 만든다\n  - q = x·W_Q, k = x·W_K, v = x·W_V\n- 도서관 비유\n\n```\nq (query)  = 지금 토큰이 던지는 질문      \"나 앞에 뭐가 있었지?\"\nk (key)    = 각 과거 토큰이 붙인 라벨     \"나는 주어야\" \"나는 목적어야\"\nv (value)  = 각 과거 토큰이 실제로 주는 내용\n```\n\n- 계산 순서\n  - 지금 토큰의 q 를 과거 토큰들의 k 와 하나씩 내적. 크면 연관성 높음\n  - 그 점수를 softmax 로 비율 w 로 바꿈. 합이 1\n  - 그 비율대로 v 를 섞음. 이게 attention 출력\n- \"가장 연관성 높은 하나를 고른다\" 가 아니라 **연관성 비율대로 과거 토큰들의 v 를 가중 평균**\n\n예시: \"나는 밥을 먹\" 에서 \"먹\" 토큰\n\n```\n\"먹\" 의 q₃:  \"누가 뭘 먹는 거지?\"\n\n        k₁ \"나는\"(주어)     k₂ \"밥을\"(목적어)     k₃ \"먹\"(자기)\n연관성      높음               높음                 낮음\nw           0.4                0.5                  0.1\n\n출력 = 0.4·v₁ + 0.5·v₂ + 0.1·v₃\n     = \"나는\" 과 \"밥을\" 의 정보를 많이 섞은 벡터\n```\n\n- KV 캐시와의 연결\n  - 비교 대상 k 와 섞을 재료 v 는 과거 토큰 것을 매번 다시 씀 → 이 둘만 저장\n  - q 는 지금 토큰이 던지는 질문이라 한 번 쓰고 버림\n\n---\n\n## 0-2. 예시: 숫자로 보는 KV 캐시\n\n레이어 1개, 헤드 1개, 벡터 길이 2.\n\"라벨\" \"내용\" 은 비유고, 실체는 둘 다 숫자 벡터다.\n차이는 쓰임새 하나: k 는 q 와 **내적** 되고, v 는 점수대로 **더해진다**.\n\n상황 설정.\n\n| 구분 | 토큰 | 뭘 하나 |\n|---|---|---|\n| 이미 처리됨 (프롬프트) | \"나는\" \"밥을\" \"먹\" | 단계 1 - 3. k, v 를 만들어 캐시에 쌓음 |\n| 지금 생성 중 | \"는다\" (4번째) | 단계 4. 자기 q, k, v 만 새로 계산, 캐시의 k, v 로 attention |\n\n**단계 1. 토큰마다 k, v 가 나온다**\n\n```\nx₁ = [1, 0]   \"나는\"   →   k₁ = [2, 0]      v₁ = [5, 1]\nx₂ = [0, 1]   \"밥을\"   →   k₂ = [0, 2]      v₂ = [1, 7]\nx₃ = [1, 1]   \"먹\"     →   k₃ = [1, 1]      v₃ = [3, 3]     q₃ = [1, 3]\n```\n\n**단계 2. \"먹\" 의 attention**\n\n```\n점수:  q₃·k₁ = 1·2 + 3·0 = 2\n       q₃·k₂ = 1·0 + 3·2 = 6      ← \"밥을\" 쪽이 더 맞는다\n       q₃·k₃ = 1·1 + 3·1 = 4\n\nsoftmax → w ≈ (0.02, 0.86, 0.12)\n출력 = 0.02·v₁ + 0.86·v₂ + 0.12·v₃  ≈ 거의 v₂, \"밥을\" 의 정보\n```\n\n**단계 3. 여기까지 처리한 뒤 캐시에 남은 것**\n\n```\n   K = [ 2, 0 ]  ← k₁ \"나는\"      V = [ 5, 1 ]  ← v₁\n       [ 0, 2 ]  ← k₂ \"밥을\"          [ 1, 7 ]  ← v₂\n       [ 1, 1 ]  ← k₃ \"먹\"            [ 3, 3 ]  ← v₃\n\n   q₁ q₂ q₃ 는 없음. 쓰고 버렸음.\n```\n\n숫자 12개. 이게 캐시 전부다.\n\n**단계 4. 4번째 토큰 \"는다\" 생성**\n\n```\nx₄ = [1, 1]  ──► 새로 계산:  q₄ = [2, 1]   k₄ = [1, 2]   v₄ = [0, 4]\n\n캐시에 k₄, v₄ 한 행씩만 추가\n\n   K = [ 2, 0 ]      V = [ 5, 1 ]\n       [ 0, 2 ]          [ 1, 7 ]\n       [ 1, 1 ]          [ 3, 3 ]\n       [ 1, 2 ] ◄new     [ 0, 4 ] ◄new\n\n점수 = q₄ 와 K 의 각 행 내적 = [4, 2, 3, 4]\nsoftmax → w ≈ [0.37, 0.05, 0.14, 0.37]\n출력 = Σ wᵢ · vᵢ   (V 의 네 행을 그 비율로 섞음)\n```\n\n**단계 5. 캐시가 없었다면**\n\n```\nx₁ ──► k₁ v₁   ┐\nx₂ ──► k₂ v₂   │  이 6개를 또 계산. 결과는 단계 3 의 표와 똑같음\nx₃ ──► k₃ v₃   ┘\nx₄ ──► q₄ k₄ v₄\n```\n\n- 4번째 토큰에서 벡터 6개를 아낌. 100번째에서는 198개\n- 안 아끼면 총량 O(n²)\n- 정리: KV 캐시 = **지금까지 토큰들의 k 행, v 행을 두 행렬에 쌓아둔 것**. 새 토큰은 자기 k, v 한 행씩만 붙임\n- 위는 레이어 1개 기준. 레이어 32개면 \"나는\" 하나에 k₁ 이 32개, v₁ 이 32개 (레이어마다 x₁ 이 다른 벡터로 변해 들어감)\n\n---\n\n## Q1: KV 캐시는 왜 필요한가요? 없으면 토큰 하나 생성에 얼마가 드나요?\n\n**30초.** 이전 토큰들의 K 와 V 는 바뀌지 않으니 저장해두고, 새 토큰의 Q 만 계산해 붙인다.\n\n- 없으면: 토큰 하나 만들 때마다 지금까지의 모든 토큰에 대해 K·V 를 다시 계산\n  - t 번째 토큰 비용 O(t), 전체 생성 O(n²)\n- 있으면: 토큰당 forward O(1) 번 + attention 읽기 O(t)\n- 한 줄 요약: **계산을 메모리로 바꾼 것**\n\n---\n\n## Q2: KV 캐시 크기 공식을 써보세요. 어떤 변수가 지배하나요?\n\n**30초.** `2 × L × n_kv_heads × head_dim × bytes × seq × batch`.\n\n- 2 = K 와 V\n- L = 레이어 수\n- n_kv_heads × head_dim = 레이어당 K (또는 V) 한 토큰의 크기\n- 지배 변수 = **seq × batch** ⭐️\n  - 가중치는 고정, 이건 요청이 길어지고 많아질수록 선형으로 증가\n\n변수 풀이 (0-2 예시 기준)\n\n| 변수 | 뜻 | 예시에서 |\n|---|---|---|\n| seq | K 행렬의 행 수 = 지금까지 토큰 수. 프롬프트 + 생성 모두 | 4 |\n| head_dim | 행 하나의 길이 = k 벡터의 숫자 개수 | 2. 실제는 128 |\n| 2 | K 와 V. 크기가 같음 | |\n| bytes | 숫자 하나의 크기. FP32 4, BF16 2, FP8 1 | |\n| batch | 동시 처리 중인 요청 수. 요청마다 K, V 따로 | 1 |\n| L | 레이어 수. 토큰 하나를 뽑을 때 32층을 순서대로 통과, 층마다 k v 가 따로 생김 | 1 |\n| n_kv_heads | 한 층 안에서 W_K 를 몇 벌 쓰나. 헤드마다 k v 따로 | 1 |\n\n- 레이어 = 토큰 하나를 뽑는 파이프라인. 토큰을 32번 만드는 게 아님\n- 헤드 = 한 층 안에서 동시에 보는 눈 여러 개\n- 외우기: 토큰 한 행의 크기 (헤드 × 길이 × 바이트) 를, 층 수만큼, 토큰 수만큼, 요청 수만큼, K 와 V 두 번\n- 계산 예: 2 × 128 × 2 B × 1200 × 8 = 4.8 MB, × 32층 × 32헤드 ≈ 4.9 GB\n\n---\n\n## Q3: 7B · 32 layer · 4096 컨텍스트 · BF16 · batch 1 의 KV 캐시는 대략 몇 GB 인가요?\n\n**30초.** 약 2 GB.\n\n- Llama-2-7B: L=32, MHA 라 n_kv_heads=32, head_dim=128, BF16 2 바이트\n- 토큰당 = 2 × 32 × 32 × 128 × 2 = 524,288 B = **512 KB**\n- 4096 토큰 → 512 KB × 4096 = **2 GB**\n- 비교: 가중치 14 GB 에 요청 하나가 2 GB 추가\n  - 배치 8 이면 16 GB 로 가중치보다 커짐\n\n---\n\n## Q4: KV 캐시를 줄이는 방법 4가지와 각각의 대가는?\n\n**30초.** 헤드를 줄이거나(GQA·MLA), 바이트를 줄이거나(양자화), GPU 밖으로 내리거나(offload), 겹치는 걸 공유한다(prefix caching).\n\n공식의 변수 하나를 줄이면 캐시가 준다. 방법마다 어느 변수를 건드리는지 붙여서 본다.\n\n| 방법 | 뭘 하나 | 줄이는 변수 | 대가 |\n|---|---|---|---|\n| GQA / MQA | 헤드 32개가 k, v 를 각자 만들지 않고 몇 개가 하나를 공유. Llama-3 는 32개 헤드가 k v 8벌만 씀 | n_kv_heads (32 → 8, 4배) | 품질 소폭, 학습 때 정해야 함 |\n| MLA | k, v 를 작은 latent 벡터로 눌러서 저장하고 쓸 때 복원 | n_kv_heads × head_dim 묶음 | 복원 연산 추가, 전용 커널 |\n| KV 양자화 (FP8/INT8) | 숫자를 BF16 대신 FP8 로 저장 | bytes (2 → 1) | 미세한 품질 저하, 스케일 관리 |\n| Offload (CPU/SSD) | GPU 메모리 대신 CPU 메모리나 SSD 에 둠 | 없음. 놓는 장소만 바꿈 | 다시 올릴 때 PCIe 대역폭 |\n| Prefix caching | 요청 여러 개가 같은 앞부분 (시스템 프롬프트) 을 공유하면 그 k v 를 한 번만 저장 | seq × batch 합계 (공유 구간은 1벌) | 해시 관리, 히트 안 되면 이득 없음 |\n\n---\n\n## Follow-up: 긴 컨텍스트에서 가중치보다 KV 캐시가 더 큰 메모리를 먹는 지점은 어디인가요?\n\n**30초.** seq × batch 가 가중치 크기 / 토큰당 KV 를 넘는 순간부터다.\n\n- 7B: 14 GB / 512 KB ≈ **28K 토큰**\n- 배치 7 × 4K 컨텍스트, 또는 요청 하나 28K 면 KV = 가중치\n- 결론: 긴 컨텍스트 서빙은 모델 크기보다 **KV 예산 싸움**\n",
    "file": "theory/inference/kv_cache.md",
    "solved": false,
-   "review": 0,
+   "review": 2,
    "time": "",
    "space": "",
    "note": "",
@@ -8459,7 +8468,7 @@ body{
     "Q4: 시퀀스 길이 n, 차원 d 일 때 attention 의 시간·공간 복잡도는?",
     "Follow-up: self-attention 과 cross-attention 의 차이는?"
    ],
-   "md": "> THEORY · transformer · T1  \n> 구현 → engine/vllm/attention_backends.md\n\n## Q1: Attention 이 하는 일을 Q·K·V 로 설명해보세요. 각각 무엇을 뜻하나요?\n\n**30초.** 각 토큰이 \"내가 찾는 것(Q)\" 으로 다른 토큰들의 \"이름표(K)\" 를 훑어 얼마나 볼지 정하고, 그 비율로 \"내용물(V)\" 을 섞어 가져온다.\n\nQ·K·V 는 같은 입력 x 에 서로 다른 행렬 W_Q·W_K·W_V 를 곱해 만든다.\nQK^T 가 토큰 쌍마다 \"얼마나 관련 있나\" 점수가 되고, softmax 로 합이 1 인 가중치로 바꾼 뒤 V 를 가중합한다.\n결과는 토큰마다 \"문맥을 섞어 넣은 새 표현\" 이다.\n한 줄: `Attention(Q,K,V) = softmax(QK^T / √d) V`.\n\n## Q2: 왜 QK^T 를 √d 로 나누나요? 안 나누면 어떻게 되나요?\n\n**30초.** d 가 커지면 QK^T 의 내적 값이 √d 에 비례해 커져서 softmax 가 한 토큰에 몰리고 gradient 가 사라진다.\n\nQ·K 의 각 성분이 평균 0, 분산 1 이면 내적의 분산은 d 다.\nd=128 이면 표준편차 11 짜리 값들이 softmax 에 들어가 거의 one-hot 이 된다.\n√d 로 나누면 분산이 1 로 돌아와 softmax 가 부드럽게 분포된다.\n안 나누면 학습 초기에 attention 이 한 곳만 보고 gradient 가 흐르지 않는다. ⭐️\n\n## Q3: causal mask 는 왜 필요하고 어디에 적용되나요?\n\n**30초.** 디코더가 미래 토큰을 보면 \"다음 토큰 예측\" 이 정답을 베끼는 문제가 되기 때문에, 위치 i 가 i 보다 뒤를 못 보게 막는다.\n\nQK^T 를 계산한 뒤 softmax 전에 j > i 인 자리에 -∞ 를 더한다.\nsoftmax 를 지나면 그 자리가 0 이 되어 미래 V 가 섞이지 않는다.\n학습 때는 시퀀스 전체를 한 번에 넣어도 각 위치가 자기 앞만 보게 되고, 추론 때는 자연스럽게 지금까지 생성된 것만 보게 된다.\n\n## Q4: 시퀀스 길이 n, 차원 d 일 때 attention 의 시간·공간 복잡도는?\n\n**30초.** 시간 O(n²d), 공간 O(n²) (점수 행렬) 다.\n\nQK^T 가 n×d 와 d×n 의 곱이라 n²d 번 곱한다.\nn×n 점수 행렬을 만들어 softmax 하니 공간이 n² 이다.\nFFN 은 O(nd²) 라 n 이 d(수천) 보다 작으면 FFN 이, 크면 attention 이 지배한다.\nFlashAttention 은 이 n² 행렬을 HBM 에 쓰지 않아 공간을 O(n) 으로 줄인다.\n시간 복잡도는 그대로다.\n\n## Follow-up: self-attention 과 cross-attention 의 차이는?\n\n**30초.** self 는 Q·K·V 가 전부 같은 시퀀스에서 나오고, cross 는 Q 는 디코더에서 K·V 는 인코더 출력에서 나온다.\n\ncross-attention 은 번역처럼 입력 시퀀스를 보면서 출력을 만드는 enc-dec 구조에 있다.\nGPT 계열 decoder-only 는 self-attention 만 쓴다.\n멀티모달 모델이 이미지 토큰을 텍스트가 보게 할 때 cross-attention 을 쓰기도 한다.\n\n",
+   "md": "> THEORY · transformer · T1  \n> 구현 → engine/vllm/attention_backends.md\n\n---\n\n## Q1: Attention 이 하는 일을 Q·K·V 로 설명해보세요. 각각 무엇을 뜻하나요?\n\n**30초.** 각 토큰이 \"내가 찾는 것 q\" 으로 다른 토큰들의 \"이름표 k\" 를 훑어 얼마나 볼지 정하고, 그 비율로 \"내용물 v\" 을 섞어 가져온다.\n\n- q, k, v = 같은 입력 x 에 서로 다른 행렬 W_Q, W_K, W_V 를 곱한 것\n- 순서\n  - QKᵀ → 토큰 쌍마다 \"얼마나 관련 있나\" 점수\n  - softmax → 합이 1 인 가중치\n  - 그 가중치로 V 를 가중합\n- 결과 = 토큰마다 \"문맥을 섞어 넣은 새 표현\"\n- 한 줄:\n\n$$\n\\text{Attention}(Q, K, V) = \\text{softmax}\\!\\left(\\frac{QK^\\top}{\\sqrt{d}}\\right) V\n$$\n\n### 왜 필요한가\n\n- \"배\" 는 혼자서는 뜻이 안 정해짐. \"배를 먹었다\" (과일) vs \"배를 탔다\" (선박)\n- 입력 벡터는 같은 단어라 두 문장에서 똑같음\n- 주변 단어의 정보를 \"배\" 벡터에 섞어야 구분됨 → 그 섞는 연산이 attention\n- 들어갈 때 단어 n 개 벡터 n 개, 나올 때도 n 개. 개수·길이 그대로, 내용만 문맥이 섞임\n\n### q, k, v 의 역할은 어디서 오나\n\n- 만드는 식. 만들어질 때는 아무 역할도 없음. 같은 x 의 복사본 셋\n\n$$\nq = x W_Q, \\qquad k = x W_K, \\qquad v = x W_V\n$$\n\n- 역할은 쓰이는 자리가 정함. outᵢ = 단어 i 의 attention 출력 벡터 (문맥이 섞여 들어간 새 벡터). 예: out₂ 는 \"배를\" 의 새 벡터 [0.56, 3.26]\n\n$$\n\\text{out}_i = \\sum_{j} \\text{softmax}_j\\!\\left(q_i \\cdot k_j\\right) \\, v_j\n$$\n\n  - qᵢ: 첨자 i. 출력 하나를 만드는 동안 **하나로 고정** → \"보는 쪽\"\n  - kⱼ: 첨자 j. Σ 으로 **전부 훑임** → \"보이는 쪽\"\n  - vⱼ: 첨자 j. 점수 곱해 더해짐 → \"건네주는 내용\"\n  - 내적은 q · k = k · q 라 왼쪽 오른쪽은 무의미. 비대칭은 **하나 대 여럿** 에서 옴\n  - q 와 k 를 서로 바꾸면 W_Q, W_K 이름만 바뀌고 똑같이 동작\n- 학습은 그 자리에 맞게 W_Q, W_K, W_V 숫자를 채움. \"attention 이 배운다\" = W 세 개가 바뀐다\n- 외울 건 식 하나. 나는 q, 남들은 k 와 v\n\n### 숫자 예시: 단어 3개, d = 2\n\n**준비물**\n\n입력 벡터 (단어마다 하나):\n\n$$\nx_1 = [1, 0] \\;\\text{\"나는\"}, \\qquad\nx_2 = [0, 1] \\;\\text{\"배를\"}, \\qquad\nx_3 = [1, 1] \\;\\text{\"탔다\"}\n$$\n\n학습된 행렬 3개 (고정, 모든 단어가 공유):\n\n$$\nW_Q = \\begin{bmatrix} 1 & 0 \\\\ 0 & 2 \\end{bmatrix}, \\qquad\nW_K = \\begin{bmatrix} 2 & 0 \\\\ 0 & 1 \\end{bmatrix}, \\qquad\nW_V = \\begin{bmatrix} 1 & 1 \\\\ 0 & 3 \\end{bmatrix}\n$$\n\n**단계 1. 단어마다 q, k, v 만들기**\n\n곱하는 법 하나만 보면:\n\n$$\nq_2 = x_2 W_Q = [0, 1] \\begin{bmatrix} 1 & 0 \\\\ 0 & 2 \\end{bmatrix}\n= [\\,0 \\cdot 1 + 1 \\cdot 0,\\; 0 \\cdot 0 + 1 \\cdot 2\\,] = [0, 2]\n$$\n\n| 단어 | q = xW_Q | k = xW_K | v = xW_V |\n|---|---|---|---|\n| \"나는\" | [1, 0] | [2, 0] | [1, 1] |\n| \"배를\" | [0, 2] | [0, 1] | [0, 3] |\n| \"탔다\" | [1, 2] | [2, 1] | [1, 4] |\n\n**단계 2. \"배를\" 의 attention** (q₂ = [0, 2] 로 셋 다 훑기. causal mask 없는 버전. mask 건 계산은 Q3 아래)\n\n점수 q₂ · kⱼ:\n\n$$\nq_2 \\cdot k_1 = 0, \\qquad q_2 \\cdot k_2 = 2, \\qquad q_2 \\cdot k_3 = 2\n$$\n\n√d = √2 ≈ 1.41 로 나눔:\n\n$$\n[\\,0,\\; 1.41,\\; 1.41\\,]\n$$\n\nsoftmax (e^점수 / 합). e^0 = 1, e^1.41 ≈ 4.1, 합 ≈ 9.2:\n\n$$\nw = [\\,0.11,\\; 0.45,\\; 0.45\\,]\n$$\n\n출력:\n\n$$\n\\text{out}_2 = \\sum_j w_j v_j = 0.11 [1,1] + 0.45 [0,3] + 0.45 [1,4] = [\\,0.56,\\; 3.26\\,]\n$$\n\n- \"배를\" 은 들어갈 때 x₂ = [0, 1], 나올 때 out₂ = [0.56, 3.26]\n\n```\nx₂ = [0, 1]  ─┬─► q₂ = [0, 2]  ┐\n              ├─► k₂ = [0, 1]  ├─ 계산에만 쓰이는 중간 재료\n              └─► v₂ = [0, 3]  ┘\n                      │\n                      ▼\n              out₂ = [0.56, 3.26]   ← \"배를\" 의 새 벡터 = 다음 층의 x₂\n```\n\n| 벡터 | 정체 | 어디로 가나 |\n|---|---|---|\n| x₂ | \"배를\" 의 입력 벡터 (임베딩) | 이 층의 입력 |\n| q₂ k₂ v₂ | x₂ 에서 만든 중간 재료 셋 | 점수 내고 섞는 데 쓰고 끝. k₂ v₂ 는 KV 캐시에 저장만 |\n| out₂ | attention 결과 | **다음 층의 x₂** 가 됨. 거기서 q k v 를 또 새로 만듦 |\n\n- k₂ 가 x₂ 와 같은 [0, 1] 인 건 이 예시의 W_K 때문에 생긴 우연. 둘은 다른 것\n- \"갱신\" 되는 건 x. k 는 층마다 새로 만드는 것\n- \"탔다\" 의 v₃ = [1, 4] 가 45% 섞여서 그쪽으로 끌려감\n- 문장이 \"먹었다\" 였으면 v₃ 가 달라 다른 쪽으로 끌려갔을 것\n\n**단계 3. 세 단어를 한 번에 (행렬로)**\n\nQ, K, V 는 각각 3 × 2 (행 = 단어):\n\n$$\nQ = \\begin{bmatrix} q_1 \\\\ q_2 \\\\ q_3 \\end{bmatrix}, \\quad\nK = \\begin{bmatrix} k_1 \\\\ k_2 \\\\ k_3 \\end{bmatrix}, \\quad\nV = \\begin{bmatrix} v_1 \\\\ v_2 \\\\ v_3 \\end{bmatrix}\n$$\n\nQKᵀ 은 3 × 3 점수표 (여기가 n²):\n\n$$\nQK^\\top =\n\\begin{array}{c|ccc}\n & k_1\\,\\text{나는} & k_2\\,\\text{배를} & k_3\\,\\text{탔다} \\\\ \\hline\nq_1\\,\\text{나는} & 2 & 0 & 2 \\\\\nq_2\\,\\text{배를} & 0 & 2 & 2 \\\\\nq_3\\,\\text{탔다} & 2 & 2 & 4\n\\end{array}\n$$\n\n- q₂ 행이 단계 2 에서 계산한 줄\n- 행마다 √d 나누고 softmax → 3 × 3 가중치\n- 가중치 × V → 3 × 2 출력 (단어 3개, 길이 2 그대로)\n- 단어 n 개면 점수표가 n × n → Q4 의 O(n²)\n- 디코더는 여기에 causal mask 를 걸어 \"배를\" 이 \"탔다\" 를 못 보게 함 → Q3\n- KV 캐시와의 연결: 위 k, v 행들이 캐시에 쌓이는 것. inference/kv_cache.md 0-2 절\n\n---\n\n## Q2: 왜 QK^T 를 √d 로 나누나요? 안 나누면 어떻게 되나요?\n\n**30초.** d 가 커지면 QKᵀ 의 내적 값이 √d 에 비례해 커져서 softmax 가 한 토큰에 몰리고 gradient 가 사라진다.\n\n- q, k 각 성분이 평균 0, 분산 1 이면 내적의 분산 = d\n- d = 128 → 표준편차 11 짜리 값들이 softmax 에 들어감 → 거의 one-hot\n- √d 로 나누면 분산 1 로 복귀 → softmax 가 부드럽게 분포\n- 안 나누면: 학습 초기에 attention 이 한 곳만 보고 gradient 가 안 흐름 ⭐️\n\n---\n\n## Q3: causal mask 는 왜 필요하고 어디에 적용되나요?\n\n**30초.** 디코더가 미래 토큰을 보면 \"다음 토큰 예측\" 이 정답을 베끼는 문제가 되기 때문에, 위치 i 가 i 보다 뒤를 못 보게 막는다.\n\n- 어디에: QKᵀ 계산 뒤, softmax 전. j > i 인 자리에 -∞ 를 더함\n- softmax 를 지나면 그 자리가 0 → 미래 v 가 안 섞임\n- 학습 때: 시퀀스 전체를 한 번에 넣어도 각 위치가 자기 앞만 봄\n- 추론 때: 지금까지 생성된 것만 있으니 자연스럽게 만족\n\n### 숫자 예시에 mask 걸기\n\n단계 2 의 \"배를\" (i = 2) 은 j ≤ 2 만 본다. \"탔다\" 는 미래.\n\n```\n점수   q₂·k₁ = 0    q₂·k₂ = 2    q₂·k₃ = 2\nmask     0            2           -∞        ← j > i 자리에 -∞\n÷√2      0           1.41         -∞\nsoftmax  0.20        0.80          0        ← e^-∞ = 0\nout₂ = 0.20·[1,1] + 0.80·[0,3] = [0.20, 2.61]\n```\n\n- mask 없을 때 [0.56, 3.26] → mask 걸면 [0.20, 2.61]. v₃ 가 전혀 안 섞임\n- 점수표는 대각선 위가 전부 -∞\n\n```\n            k₁     k₂     k₃\nq₁ 나는   [ 2     -∞     -∞ ]\nq₂ 배를   [ 0      2     -∞ ]\nq₃ 탔다   [ 2      2      4 ]    ← 마지막 단어만 전부 봄\n```\n\n- KV 캐시가 성립하는 이유: 과거 토큰의 out 은 미래를 안 보니, 토큰이 뒤에 추가돼도 과거 k v 가 안 바뀜\n\n---\n\n## Q4: 시퀀스 길이 n, 차원 d 일 때 attention 의 시간·공간 복잡도는?\n\n**30초.** 시간 O(n² d), 공간 O(n²) (점수 행렬) 다.\n\n- 시간: QKᵀ 가 (n × d) · (d × n) → n² d 번 곱셈\n- 공간: n × n 점수 행렬을 만들어 softmax → n²\n- FFN 은 O(n d²). n 이 d (수천) 보다 작으면 FFN 이, 크면 attention 이 지배\n- FlashAttention: n² 행렬을 HBM 에 안 씀 → 공간 O(n). 시간은 그대로\n\n### 숫자 예시로 세기\n\n- d 는 벡터 하나의 길이. 내적 하나에 곱셈이 d 번 든다\n\n$$ q·k = 1×2 + 0×1 + 2×0 + 1×1 + 3×1 $$\n\n- 위처럼 길이 5 벡터 두 개를 내적하면 곱셈 5번. 길이 2 면 2번, 길이 d 면 d 번\n- 우리 예시 (단어 3개, d = 2): q₂·k₃ = 0×2 + 2×1 → 곱셈 2번\n\n| 단어 | 보는 개수 (causal mask) | 곱셈 |\n|---|---|---|\n| 나는 | 1 | 1 × 2 = 2 |\n| 배를 | 2 | 2 × 2 = 4 |\n| 탔다 | 3 | 3 × 2 = 6 |\n| 합계 | | 12 |\n\n- mask 없이 9칸 다 채우면 9 × 2 = 18. mask 걸면 12. 절반은 O 표기에서 사라져 둘 다 O(n²d)\n- 일반식: 단어 k 는 내적 k 번 × d = k·d. 다 더하면 d × (1 + 2 + … + n) ≈ n²d / 2\n- 공간: 점수표 숫자 9개 = n² 개. mask 걸어도 절반이라 O(n²)\n\n---\n\n## Follow-up: self-attention 과 cross-attention 의 차이는?\n\n**30초.** self 는 Q, K, V 가 전부 같은 시퀀스에서 나오고, cross 는 Q 는 디코더에서 K, V 는 인코더 출력에서 나온다.\n\n- cross-attention: 번역처럼 입력 시퀀스를 보면서 출력을 만드는 enc-dec 구조에 있음\n- GPT 계열 decoder-only: self-attention 만\n- 멀티모달: 이미지 토큰을 텍스트가 보게 할 때 cross-attention 쓰기도 함\n",
    "file": "theory/transformer/attention_mechanism.md",
    "solved": false,
    "review": 0,
@@ -9153,11 +9162,15 @@ function noteHTML(s){
 var MDCACHE = {};
 function mdHTML(c){
   if(MDCACHE[c.id]) return MDCACHE[c.id];
-  var out;
+  var out, math = [];
+  var src = (c.md||"")
+    .replace(/\$\$([\s\S]+?)\$\$/g, function(_,m){ math.push("$$"+m+"$$"); return "QQMATH"+(math.length-1)+"QQ"; })
+    .replace(/\$([^$\n]+?)\$/g, function(_,m){ math.push("$"+m+"$"); return "QQMATH"+(math.length-1)+"QQ"; });
   if(window.marked && marked.parse){
-    try{ out = marked.parse(c.md||"", {gfm:true, breaks:false}); }catch(e){ out = null; }
+    try{ out = marked.parse(src, {gfm:true, breaks:false}); }catch(e){ out = null; }
   }
-  if(!out) out = noteHTML(c.md||"");
+  if(!out) out = noteHTML(src);
+  out = out.replace(/QQMATH(\d+)QQ/g, function(_,i){ return esc(math[+i]); });
   out = out.replace(/<table>/g,'<div class="tbl"><table>').replace(/<\/table>/g,'</table></div>');
   MDCACHE[c.id] = out; return out;
 }
@@ -9229,7 +9242,13 @@ function drawStudyMD(c){
     + '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" data-r="'+r+'" id="card">'+front+back+'</div></div>'
     + '<div class="s-bar"><button class="close" id="close2" aria-label="닫기">×</button><button id="prev"'+(pos===0?" disabled":"")+'>← 이전</button><button class="flip" id="flip">뒤집기</button><button id="next"'+(pos===queue.length-1?" disabled":"")+'>다음 →</button></div>';
   ui.last = c.id; save();
+  renderMath(study.querySelector(".md"));
 }
+function renderMath(el){
+  if(!el || !window.renderMathInElement) return;
+  try{ renderMathInElement(el, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}], throwOnError:false}); }catch(e){}
+}
+window.addEventListener("load", function(){ renderMath(study.querySelector(".md")); });
 
 /* ---------- events ---------- */
 root.addEventListener("click", function(e){
