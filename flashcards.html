@@ -2783,7 +2783,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -2964,7 +2964,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": "A"
+   "pri": ""
   },
   {
    "track": "lc",
@@ -3163,7 +3163,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": "A"
+   "pri": ""
   },
   {
    "track": "lc",
@@ -3344,7 +3344,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -3843,7 +3843,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": "A"
+   "pri": ""
   },
   {
    "track": "lc",
@@ -4591,7 +4591,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -4923,7 +4923,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -5051,7 +5051,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -5319,7 +5319,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -5697,13 +5697,13 @@ body{
      "sc": "O(1)"
     }
    ],
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
-   "date": "2026-08-17",
-   "pri": "A"
+   "solved": true,
+   "review": 2,
+   "time": "O(N^2) - 각 칸을 한 번씩만 만진다",
+   "space": "O(1) - 네 칸을 한 바퀴 돌리며 제자리 교환",
+   "note": "네 칸이 한 조다. (x, y) -> (y, n-1-x) 를 네 번 돌리면 제자리.\n1·2·3·4 를 좌상단부터 돌려가며 x, y 변화를 써봤더니 네 번 다 같은 식이었다.\n-> 90도 회전은 어디서 시작하든 같은 공식. 모서리별로 따로 쓸 필요 없다. ⭐️\n\n⚠️ 안쪽 범위는 j < (n+1)/2. n/2 로 쓰면 홀수에서 변 가운데가 안 돈다.\n   3x3 을 j<1 로 돌리면 조가 (0,0) 하나뿐이라 모서리만 돌고 2 4 6 8 이 남는다.\n   j<2 면 (0,1) 조가 변 가운데를 맡아 4+4+1=9 가 전부 처리된다.\n   짝수는 n/2 와 (n+1)/2 가 같아서 티가 안 난다. 4x4 는 처음부터 맞았다.",
+   "date": "2026-11-12",
+   "pri": ""
   },
   {
    "track": "lc",
@@ -5767,7 +5767,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": "A"
+   "pri": ""
   },
   {
    "track": "lc",
@@ -5933,7 +5933,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -5965,7 +5965,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": ""
+   "pri": "A"
   },
   {
    "track": "lc",
@@ -6094,6 +6094,409 @@ body{
    "note": "",
    "date": "",
    "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:1891",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 1891,
+   "title": "Cutting Ribbons",
+   "diff": "M",
+   "cat": "05_binary_search",
+   "catName": "Binary Search",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/cutting-ribbons/",
+   "desc": "리본 길이 배열과 k. 모두 같은 길이인 조각을 k 개 이상 얻을 수 있는 가장 큰 조각 길이. 불가능하면 0.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:986",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 986,
+   "title": "Interval List Intersections",
+   "diff": "M",
+   "cat": "16_intervals",
+   "catName": "Intervals",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/interval-list-intersections/",
+   "desc": "각각 정렬되고 내부에서 겹치지 않는 두 구간 목록의 교집합을 구간 목록으로 반환.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:1235",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 1235,
+   "title": "Maximum Profit in Job Scheduling",
+   "diff": "H",
+   "cat": "13_1d_dp",
+   "catName": "1-D DP",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+   "desc": "start, end, profit 배열. 겹치지 않는 작업 부분집합의 이익 합 최대. X 에 끝나고 X 에 시작하면 안 겹침.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:410",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 410,
+   "title": "Split Array Largest Sum",
+   "diff": "H",
+   "cat": "05_binary_search",
+   "catName": "Binary Search",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/split-array-largest-sum/",
+   "desc": "nums 를 k 개의 연속 부분배열로 나눌 때 부분배열 합의 최댓값을 최소화.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:339",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 339,
+   "title": "Nested List Weight Sum",
+   "diff": "M",
+   "cat": "04_stack",
+   "catName": "Stack",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/nested-list-weight-sum/",
+   "desc": "중첩 리스트의 각 정수에 깊이를 곱해 합산. 꼬리질문: 문자열 입력 파싱.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:2402",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 2402,
+   "title": "Meeting Rooms III",
+   "diff": "H",
+   "cat": "08_heap",
+   "catName": "Heap / Priority Queue",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/meeting-rooms-iii/",
+   "desc": "방 n 개, 회의 [start,end). 빈 방 중 최소 번호, 없으면 가장 먼저 비는 방을 기다려 같은 길이로. 가장 많이 쓰인 방 번호.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:359",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 359,
+   "title": "Logger Rate Limiter",
+   "diff": "E",
+   "cat": "01_arrays_and_hashing",
+   "catName": "Arrays & Hashing",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/logger-rate-limiter/",
+   "desc": "같은 메시지는 10초에 한 번만 출력. shouldPrintMessage(timestamp, message).",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "lc",
+   "id": "lc:1091",
+   "qs": [],
+   "md": "",
+   "file": "",
+   "num": 1091,
+   "title": "Shortest Path in Binary Matrix",
+   "diff": "M",
+   "cat": "11_graphs",
+   "catName": "Graphs",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+   "desc": "n x n 이진 격자, 8방향. (0,0) 에서 (n-1,n-1) 까지 0 칸만 밟는 최단 경로의 칸 수. 없으면 -1.",
+   "approaches": [],
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": ""
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/art_aot_jit",
+   "num": "",
+   "title": "ART 실행 모델 — 해석기 · JIT · AOT · 프로파일 · bg-dexopt",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: ART 는 코드를 어떻게 실행하나? 왜 세 가지 방식을 섞나?",
+    "Q2: 프로파일은 어떻게 모이고 bg-dexopt 는 언제 도나?",
+    "Q3: 이력서 줄에서 나올 꼬리질문",
+    "Q4: JIT 와 GC 는 짧게 어디까지 말할 수 있어야 하나?",
+    "Follow-up: 앱 콜드 시작은 어떤 단계로 이뤄지고, ART 는 어디에 끼나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 1번 줄 (\"ART AOT 파이프라인 재구성으로 앱 시작 15% 단축\") 의 딥다이브 질문에 대비한다.\n> 바탕: Apple 준비 때 쓴 [ART 프로파일·JIT/AOT·컴파일러 필터 노트](../../../USC/FullTime/Experienced/Interview/Progress/2026-10-14_Apple_Core-OS-System-Services-Daemons/02-domain-notes/ART/01-profiling-jit-aot-compiler-filters.md). 그 노트의 주의점 (ProfileSaver 세부는 버전별 차이, hotness 임계값 미확정) 은 그대로 유효하다.\n> 본인 경험 연결 칸은 비워 두었다. 숫자와 사례는 본인이 채운다.\n\n---\n\n## Q1: ART 는 코드를 어떻게 실행하나? 왜 세 가지 방식을 섞나?\n\n| 방식 | 언제 | 장점 | 비용 |\n|---|---|---|---|\n| 해석기 (interpreter) | 컴파일된 코드가 없는 메서드 | 즉시 실행, 저장공간 0 | 느림 |\n| JIT | 실행 중 hot 해진 메서드. 코드 캐시 (메모리) 에 생성 | 실제 사용 패턴에 맞음, 설치 즉시 가능 | 매 실행마다 다시 컴파일, 메모리·전력 |\n| AOT (dex2oat) | 설치 시 · 백그라운드 dexopt · OTA 후 | 시작 빠름, 전력 안 씀 | 컴파일 시간, 저장공간 (odex·vdex·art), 업데이트마다 재컴파일 |\n\n- Dalvik 은 JIT 만, Android 5 (L) 의 ART 는 설치 시 **전부 AOT** → 설치가 수 분 걸리고 OTA 뒤 \"앱 최적화 중\" 화면.\n- Android 7 (N) 부터 **프로파일 가이드**: 설치는 `verify` 또는 `speed-profile`, 실행하면서 JIT + 프로파일 수집, 유휴·충전 때 프로파일 기반 AOT. 세 방식이 공존한다.\n- 왜 전부 `speed` 로 안 하나: 앱 코드 대부분은 한 번도 안 돌아간다. 전부 컴파일하면 저장공간이 2-3배, 설치·OTA 시간이 길고, 시작 시간 이득은 hot 메서드에서만 나온다.\n\n**파일 세 개** (`/data/app/<pkg>/oat/arm64/`)\n\n| 파일 | 내용 |\n|---|---|\n| `.vdex` | 검증된 DEX (quickened 는 Android 12 에서 제거). 재컴파일 때 검증을 건너뛰게 해 준다 |\n| `.odex` (OAT) | 네이티브 코드 + 메타데이터 |\n| `.art` | 미리 초기화한 클래스·객체 이미지 (app image). 클래스 로딩을 줄인다 |\n\n부팅 클래스패스는 `boot.art` / `boot.oat` (boot image) 로 zygote 가 매핑하고, 모든 앱이 COW 로 공유한다.\n\n---\n\n## Q2: 프로파일은 어떻게 모이고 bg-dexopt 는 언제 도나?\n\n```\n앱 실행 ─ 해석기·JIT ─▶ ProfileSaver (런타임 스레드) ─▶ /data/misc/profiles/cur/<user>/<pkg>/primary.prof\n                                                            │ (주기적으로 병합)\n                                                            ▼\nBackgroundDexOptService (유휴 + 충전 + 배터리·열·저장공간 조건) ─▶ profman 병합 ─▶ ref/<pkg>/primary.prof\n                                                            ─▶ dex2oat --compiler-filter=speed-profile\n```\n\n- ProfileSaver 는 메서드에 **hot / startup / post-startup** 표시를 남긴다. 호출 횟수 전체 기록이 아니다. 어떤 메서드가 hot 이 되는지의 임계값과 저장 주기는 버전·설정마다 다르다.\n- `profman` 이 cur 프로파일을 ref 로 병합하고, 변화가 충분할 때만 재컴파일한다 (매번 전부 다시 하지 않음).\n- **Baseline / cloud profile**: 개발자가 AGP 로 넣은 baseline profile, Play 가 모은 cloud profile 이 설치 시점에 함께 와서 첫 실행 전에 `speed-profile` 컴파일을 가능하게 한다 (Android 9 이후 점진 확대).\n- Android 14 부터 **ART Service** (ART 모듈 안, Java API `ArtManagerLocal`) 가 PackageManager 의 dexopt 로직을 대체했다. 동작 원리는 같고 소유 모듈이 바뀌었다.\n- 조건: `BackgroundDexOptService` 는 JobScheduler 로 유휴·충전 때 돌며, 배터리 수준·열·저장공간 부족이면 중단한다. \"밤에 충전기 꽂아 두면 아침에 빨라진다\" 가 이것.\n\n**컴파일 필터** (자주 쓰는 것만)\n\n| 필터 | 뜻 |\n|---|---|\n| `verify` | 검증만. 코드 없음. 해석기 + JIT 로 돈다 |\n| `speed-profile` | 프로파일에 있는 메서드만 AOT + 그 클래스들 app image. 기본값 |\n| `speed` | 전부 AOT. 시스템 앱·persistent 앱에 쓴다 |\n| `everything` | speed + 안 쓰는 것까지. 테스트용 |\n\n```\nadb shell cmd package compile -m speed-profile -f <pkg>     # 강제 컴파일\nadb shell cmd package bg-dexopt-job                           # bg-dexopt 즉시\nadb shell dumpsys package dexopt                             # 패키지별 필터·상태\nadb shell pm art dump <pkg>                                  # Android 14+ ART Service\n```\n\n---\n\n## Q3: 이력서 줄에서 나올 꼬리질문\n\n이력서: \"pre-execution profiling, prioritized bg-dexopt scheduling, artifact recovery 로 시작 15% 단축\".\n\n| 예상 질문 | 준비할 답의 뼈대 (본인이 채움) |\n|---|---|\n| 15% 를 어떻게 측정했나 | 측정 도구 (`am start -W` TotalTime, 첫 프레임, reportFullyDrawn), 반복 횟수, 대상 앱·기기, 콜드 시작 정의 (프로세스 없음 + 캐시 상태) |\n| pre-execution profiling 이 뭔가 | 첫 사용자 실행 전에 어떤 신호로 프로파일을 만들었나, 기존 프로파일 수집과 뭐가 다른가, 잘못된 프로파일의 위험 (안 쓰는 코드 컴파일 → 저장공간·시간 낭비) |\n| prioritized bg-dexopt 가 뭘 바꿨나 | 기본은 어떤 순서였나, 어떤 신호로 우선순위를 매겼나 (사용 빈도·최근성), 첫 실행 성능을 어떻게 지켰나 |\n| 트레이드오프 | 저장공간, 충전 중 전력, 열, OTA 직후 시간, 그리고 측정 외 기기에서의 회귀 위험 |\n| 왜 ART 를 건드렸나, 앱 쪽에서 못 하나 | 플랫폼 레벨이라 모든 앱에 적용, 앱은 자기 프로파일만 |\n| 구글과 어떻게 협업했나 | 업스트림 이슈·패치 사례 (이력서 3번 줄과 연결) |\n\n본인 경험 연결 (채울 것):\n- 측정 데이터 숫자, 기기 수, 앱 수.\n- 특허 세 건이 이 줄에서 각각 어디에 해당하는지 한 줄씩.\n\n---\n\n## Q4: JIT 와 GC 는 짧게 어디까지 말할 수 있어야 하나?\n\n- **JIT**: 메서드별 hotness 카운터가 임계값을 넘으면 컴파일 스레드가 네이티브 코드를 코드 캐시 (`jit-code-cache`, 수 MB) 에 넣는다. 루프 안에서 전환하는 OSR, 가정이 깨지면 deoptimize 해 해석기로 돌아간다. JIT 결과는 프로세스가 죽으면 사라지고, 프로파일만 남아 다음 AOT 의 입력이 된다.\n- **GC**: Android 8+ 는 Concurrent Copying (region 기반, 읽기 배리어), Android 14 부터 userfaultfd 기반 Concurrent Mark-Compact 가 들어갔다. 면접에서 묻는 건 보통 \"GC 가 멈추는 시간이 jank 로 어떻게 보이나\" 정도. 백그라운드 앱은 더 공격적으로 압축한다 (foreground/background collector 전환).\n- **클래스 로딩·검증**: 앱 시작 비용의 큰 부분. app image (`.art`) 가 이걸 줄인다. `verify` 상태 앱은 첫 로딩 때 검증 비용을 낸다.\n\n---\n\n## Follow-up: 앱 콜드 시작은 어떤 단계로 이뤄지고, ART 는 어디에 끼나?\n\n```\nsystem_server(AMS) 결정 ─▶ zygote fork ─▶ ActivityThread.main ─▶ bindApplication\n   ─▶ 클래스 로딩·검증 (ART) ─▶ Application.onCreate ─▶ Activity.onCreate ─▶ 레이아웃·측정 ─▶ 첫 프레임 (SurfaceFlinger)\n```\n\n- ART 가 끼는 곳: 클래스 로딩·검증 (app image 유무), 메서드 실행 방식 (AOT 있음 / 해석기 / JIT 워밍업), GC.\n- 측정: `adb shell am start -W` 의 TotalTime (첫 프레임), `reportFullyDrawn`, Perfetto 의 `launching:` 슬라이스, `dumpsys gfxinfo`.\n- 시작 종류: cold (프로세스 없음) / warm (프로세스 있음, Activity 재생성) / hot (그냥 전면으로). 측정은 보통 cold 를 명시하고, 캐시 상태 (첫 설치 직후 vs 재부팅 직후) 도 같이 적는다.\n- 구글의 공식 가이드는 baseline profile + `speed-profile`, 그리고 startup 에서 하는 일 줄이기 (lazy init, App Startup 라이브러리).\n\n관련: [boot_chain.md](boot_chain.md) (zygote 가 boot image 를 미리 매핑), [perf_tracing.md](perf_tracing.md) (측정 도구), [reboot_loop_recovery.md](reboot_loop_recovery.md) (아티팩트 손상 복구).\n",
+   "file": "android/art_aot_jit.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/binder",
+   "num": "",
+   "title": "Binder — 동작 원리, 스레드풀, 타임아웃 진단",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Binder 가 뭐고 왜 소켓·파이프 대신 쓰나?",
+    "Q2: 한 번의 호출이 커널 안에서 어떻게 흐르나?",
+    "Q3: 스레드풀 고갈과 타임아웃은 어떻게 생기고 어떻게 진단하나? (이력서 딥다이브)",
+    "Q4: 보안·권한과 Treble 에서 Binder 는 어떻게 쓰이나?",
+    "Follow-up: Binder 와 Unix 도메인 소켓 중 하나를 고른다면?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 4번 줄 (\"Binder IPC 타임아웃과 스레드풀 고갈을 다중 서비스 실행 흐름 추적으로 진단\") 의 바탕.\n> Apple 스크린 (10-26) 에서 \"Binder 동작 원리\" 에 직접 호출 경험이 없다고 답했고, \"Binder 외 IPC\" 는 [ipc.md](../os/ipc.md) 에 정리했다. 이 파일은 그 구멍을 메운다.\n\n---\n\n## Q1: Binder 가 뭐고 왜 소켓·파이프 대신 쓰나?\n\nAndroid 의 기본 IPC. **동기 호출 (RPC) 모양** 이고, 커널 드라이버 (`/dev/binder`) 가 메시지 전달·스레드 깨우기·객체 참조 관리를 한다.\n\n| 소켓·파이프와 다른 점 | 설명 |\n|---|---|\n| 복사 1회 | 보내는 쪽 버퍼 → 커널이 **받는 쪽이 mmap 한 버퍼에 직접** 복사. 소켓은 2회 (유저→커널→유저) |\n| 객체 참조 | Binder 객체 (`IBinder`) 를 메시지에 담아 넘길 수 있고 커널이 참조 카운트와 핸들 변환을 한다. 소켓은 바이트만 |\n| fd 전달 | 파일 디스크립터를 넘긴다 (Unix 소켓의 SCM_RIGHTS 와 같은 기능). 큰 데이터는 ashmem/memfd fd 로 |\n| 호출자 신원 | 커널이 발신 pid·uid 를 붙여 준다 (`getCallingUid`). 권한 검사의 근거. 위조 불가 |\n| 스레드 모델 | 수신 프로세스의 **스레드풀** 이 요청을 받는다. 동기 호출이라 호출 스레드는 응답까지 블록 |\n| 죽음 통지 | `linkToDeath` 로 상대 프로세스가 죽으면 콜백 |\n| 우선순위 전달 | 호출자의 nice 를 수신 스레드에 적용 (RT 상속은 설정) |\n\n---\n\n## Q2: 한 번의 호출이 커널 안에서 어떻게 흐르나?\n\n```\n클라이언트 스레드                       커널 binder 드라이버                      서버 프로세스\nProxy.foo(args)\n  Parcel 에 직렬화\n  ioctl(BINDER_WRITE_READ, BC_TRANSACTION) ─▶ 대상 node 찾기 (handle → node)\n                                             서버의 mmap 버퍼에서 공간 할당, 데이터 1회 복사\n                                             fd·binder 객체는 변환 (handle ↔ node)\n                                             대기 중인 binder 스레드 깨움 ───────▶ BR_TRANSACTION\n  블록 (BR_REPLY 대기)                                                           Stub.onTransact → 실제 메서드\n                                             ◀────────────────────────────────── BC_REPLY\n  BR_REPLY ◀──────────────────────────────── 복사, 클라이언트 깨움\n  Parcel 역직렬화 → 반환\n```\n\n- **mmap 버퍼**: 프로세스가 binder 를 열 때 약 1MB − 8KB 를 mmap. 그 프로세스가 **받는 모든 트랜잭션** 이 이 버퍼를 나눠 쓴다. 그래서 큰 Parcel 을 보내면 `TransactionTooLargeException` (수신 측 버퍼 부족) 이 난다. oneway 는 그 절반까지만.\n- **servicemanager**: handle 0 의 특별한 노드 (context manager). 서비스가 이름으로 `addService`, 클라이언트가 `getService` 로 핸들을 얻는다. Treble 이후 `hwservicemanager` (HIDL, /dev/hwbinder), `vndservicemanager` (/dev/vndbinder) 가 따로 있다.\n- **AIDL**: 인터페이스 정의 → Java/C++/Rust 의 Proxy (클라이언트) 와 Stub (서버) 코드 생성. `Parcel` 이 직렬화 포맷. 사람이 쓰는 건 `Stub` 상속한 구현체.\n- **oneway**: 응답을 기다리지 않음. 서버는 같은 노드의 oneway 를 **직렬로** 처리하므로 폭주하면 버퍼가 찬다.\n- **스레드풀**: 서버는 `startThreadPool()` + `joinThreadPool()`. 드라이버가 요청이 쌓이면 `BR_SPAWN_LOOPER` 로 스레드 추가를 요청하고, 최대치 (`setMaxThreads`) 까지 늘어난다. 앱 기본 15, **system_server 31** (SystemServer.java 의 `BinderInternal.setMaxThreads(31)`).\n\n---\n\n## Q3: 스레드풀 고갈과 타임아웃은 어떻게 생기고 어떻게 진단하나? (이력서 딥다이브)\n\n**생기는 모양**\n- system_server 는 프로세스 하나에 스레드풀 하나. 안의 서비스 100개가 31개를 나눠 쓴다.\n- 31개가 전부 (a) 다른 프로세스로의 **아웃바운드 Binder 호출 응답 대기**, (b) **락 대기** 에 묶이면 새 요청이 큐에 쌓인다. 앱 입장에선 system_server 가 무응답, 결국 **watchdog** 이 system_server 를 죽인다 (60초).\n- 중첩 호출 (앱 → system_server → 다시 앱 → 응답이 system_server 로) 은 스레드를 두 번 쓴다. 느린 앱 하나가 system_server 스레드를 잡아먹는 경로다.\n- Binder 자체에는 타임아웃이 없다. \"Binder 타임아웃\" 은 보통 상위 계층 (watchdog, ANR, HAL 호출의 자체 타임아웃) 이 정한 것이다.\n\n**진단 도구**\n\n| 도구 | 보는 것 |\n|---|---|\n| `/dev/binderfs/binder_logs/` (`stats`, `state`, `transactions`, `failed_transaction_log`) 또는 옛 `/sys/kernel/debug/binder/` | 프로세스별 스레드 수·대기 트랜잭션·실패 로그. \"스레드가 전부 바쁘다\" 를 숫자로 |\n| ANR 트레이스 (`/data/anr/`), watchdog 덤프 | 각 Binder 스레드가 어디서 블록돼 있나. `Binder:1234_5` 스레드 이름 |\n| Perfetto `binder_transaction` ftrace + 스레드 상태 | 호출 쌍 (sender ↔ receiver) 과 지연을 시간축에서. 어느 서비스가 병목인지 |\n| `dumpsys binder_calls_stats` | 서비스·메서드별 호출 횟수·지연 통계 |\n| `debuggerd -b <pid>` | 네이티브 스택 |\n\n진단 순서는 \"누가 기다리나 (스레드 덤프) → 누구를 기다리나 (트랜잭션 로그·Perfetto) → 그 상대는 왜 느리나 (상대 프로세스 덤프)\".\n\n본인 경험 연결 (채울 것):\n- 어떤 서비스 간 흐름에서 타임아웃이 났나, 스레드가 몇 개 어디에 묶여 있었나, 고친 방법 (호출 비동기화·락 범위·우선순위·스레드 수).\n- 재현 방법과 재발 방지 (모니터링 지표).\n\n---\n\n## Q4: 보안·권한과 Treble 에서 Binder 는 어떻게 쓰이나?\n\n- 권한 검사: 서버가 `Binder.getCallingUid()/Pid()` 로 호출자를 확인하고 `checkPermission`. `clearCallingIdentity` 로 자기 권한으로 아웃바운드 호출 뒤 `restoreCallingIdentity`. 이걸 잊으면 권한 누출.\n- SELinux 가 Binder 호출도 통제한다 (`binder_call`, 어떤 도메인이 어떤 서비스에 `find`/`add` 가능한지 `service_contexts`). 거부는 `avc: denied { call }` ([hal_aidl_selinux.md](hal_aidl_selinux.md)).\n- Treble: 프레임워크 ↔ 벤더 HAL 은 `/dev/hwbinder` (HIDL) 또는 stable AIDL 로. 벤더 프로세스끼리는 `/dev/vndbinder`. 도메인을 분리해 한쪽 폭주가 다른 쪽을 막지 않게 한다.\n- 큰 데이터: Parcel 에 넣지 말고 ashmem/memfd/dma-buf fd 를 넘긴다. 그래픽 버퍼가 이 경로 ([dma_cache.md](../embedded/dma_cache.md)).\n\n---\n\n## Follow-up: Binder 와 Unix 도메인 소켓 중 하나를 고른다면?\n\n- 요청·응답 모양, 호출자 신원 필요, 객체 참조·죽음 통지 필요 → Binder.\n- 스트림 데이터, 비동기 바이트 흐름, 프레임워크 밖 (네이티브 데몬끼리, 플랫폼 독립 코드) → 소켓.\n- Binder 의 단점: 동기 호출이라 상대가 느리면 내 스레드가 묶인다. 1MB 버퍼 공유. 커널 의존 (Linux 전용). 그래서 zygote 는 Binder 가 아니라 **소켓** 으로 명령을 받는다 (fork 전 단계라 Binder 스레드풀이 없음).\n\n관련: [ipc.md](../os/ipc.md) (IPC 종류 비교표), [boot_chain.md](boot_chain.md) (servicemanager 기동 순서), [perf_tracing.md](perf_tracing.md).\n",
+   "file": "android/binder.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/boot_chain",
+   "num": "",
+   "title": "Android 부팅 체인 — bootloader · kernel · init · zygote · system_server",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 전원이 켜진 뒤 홈 화면까지 무슨 순서로 뜨나?",
+    "Q2: zygote 와 system_server 는 왜 이렇게 나눠져 있나?",
+    "Q3: init.rc 는 어떻게 읽고, 서비스는 어떻게 뜨나?",
+    "Q4: 부팅 시간은 어떻게 재고, 어디서 늘어지나? (이력서 딥다이브)",
+    "Follow-up: OTA 와 A/B, verified boot 는 부팅과 어떻게 얽히나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 4번 줄 (\"kernel 부터 userspace 서비스까지 100+ 기기 변형의 부팅 경로 프로파일링, 구조화된 부팅 추적\") 의 바탕.\n> Apple 준비 때 쓴 [boot-chain.md](../../../USC/FullTime/Experienced/Interview/Progress/2026-10-14_Apple_Core-OS-System-Services-Daemons/02-domain-notes/boot-chain.md) 의 Android 부분을 옮기고 앞 단계 (bootloader·kernel) 와 측정을 보강했다. Darwin 대응표는 그 파일에만 둔다.\n> 근거 등급: 흐름과 파일 위치는 확실. 코드 스니펫은 AOSP 13-14 기억이라 변수명이 조금 다를 수 있다.\n\n---\n\n## Q1: 전원이 켜진 뒤 홈 화면까지 무슨 순서로 뜨나?\n\n```\nBoot ROM ─▶ bootloader (ABL/UEFI, 공급사) ─▶ kernel (GKI, dtb) ─▶ first-stage init ─▶ second-stage init\n   ─▶ 네이티브 데몬 (servicemanager, surfaceflinger, vold, netd …)  +  zygote ─fork─▶ system_server ─▶ 앱 (Launcher, SystemUI)\n```\n\n| 단계 | 하는 일 | 흔적 |\n|---|---|---|\n| bootloader | A/B 슬롯 선택, verified boot (vbmeta 서명 검증), 커널·ramdisk·dtb 로드. fastboot 모드 | `bootloader` 타임스탬프는 bootstat 이 받아 둠 |\n| kernel | 드라이버 초기화, 루트 ramdisk 마운트, `/init` 실행 | `dmesg` 타임스탬프 (0 초 기준) |\n| **first-stage init** | fstab 으로 `/system` `/vendor` 마운트 (dm-verity), **벤더 커널 모듈 로드** (GKI 이후), SELinux 정책 로드 | logd 없음. `dmesg` 만 |\n| **second-stage init** | `init.rc` 파싱, 속성 서비스, ueventd, apexd, 서비스 기동 | `logcat`, `init` 로그, boot trace |\n| zygote | boot image (boot.art/oat) 와 프레임워크 클래스 preload 뒤 대기. system_server fork | `zygote` 태그, Perfetto `PreloadClasses` |\n| system_server | 서비스 100개+ 기동, boot phase 진행 | `SystemServerTiming` 슬라이스 |\n| boot completed | `sys.boot_completed=1`, BOOT_COMPLETED 브로드캐스트, Launcher | `bootstat`, `boot_progress_*` 로그 |\n\n- init 은 PID 1 이고 커널 모듈이 아니다. first-stage 와 second-stage 는 같은 바이너리가 `exec` 로 자신을 다시 부르는 구조다.\n- GKI (Generic Kernel Image, Android 12+): 커널 본체는 구글 공용, SoC·보드 차이는 **벤더 모듈** 로. 그래서 모듈 로딩이 first-stage init 의 일이 됐고, 부팅 시간에서 눈에 띄는 구간이다.\n\n---\n\n## Q2: zygote 와 system_server 는 왜 이렇게 나눠져 있나?\n\n```\nzygote (app_process64 --zygote --start-system-server)\n   ├─fork─▶ system_server    한 번, 시작 직후. uid 1000. SystemServer.main\n   └─fork─▶ 앱 프로세스들     system_server(AMS) 요청마다. 각자 uid. ActivityThread.main\n```\n\n- zygote 는 프레임워크 클래스·리소스·boot image 를 **미리 로드한 채 대기** 한다. fork 하면 자식이 그 메모리를 copy-on-write 로 공유한다. 앱마다 프레임워크를 다시 로드하지 않아 시작이 빠르고 메모리가 공유된다.\n- system_server 에서 fork 하지 않는 이유: 서비스 100개의 상태를 앱이 물려받는다. fork 는 깨끗한 zygote 에서만.\n- 앱 프로세스가 뜨는 순서: AMS 가 결정 → zygote 소켓 (`/dev/socket/zygote`) 으로 명령 → zygote fork → 자식이 `ActivityThread.main` → Binder 로 `attachApplication`.\n- **USAP** (unspecialized app process) 풀: 미리 fork 해 둔 빈 프로세스를 두고 요청 때 specialize 만 하는 옵션 (Android 10+).\n- system_server 가 죽으면 zygote 도 죽고 (waitpid 감시), init 이 zygote 를 재시작하면서 `onrestart` 줄의 audioserver·cameraserver 등을 함께 재시작한다. 프레임워크 전체 재기동이다. 앱 하나가 죽으면 그 앱만.\n\n| | system_server | 앱 프로세스 |\n|---|---|---|\n| 언제 | zygote 시작 직후 한 번 | 필요할 때마다 |\n| 진입점 | SystemServer.main | ActivityThread.main |\n| uid | 1000 (system) | 앱마다 다른 uid |\n| 죽으면 | 프레임워크 전체 재시작 | 그 앱만 |\n\n**boot phase**: PHASE_SYSTEM_SERVICES_READY 500 → PHASE_ACTIVITY_MANAGER_READY 550 → PHASE_THIRD_PARTY_APPS_CAN_START 600 → PHASE_BOOT_COMPLETED 1000.\n550 뒤 persistent 앱 (SystemUI, Phone), 1000 에서 BOOT_COMPLETED.\n\n```\n# system/core/rootdir/init.zygote64.rc\nservice zygote /system/bin/app_process64 -Xzygote /system/bin --zygote --start-system-server\n    class main\n    priority -20\n    user root\n    socket zygote stream 660 root system\n    onrestart restart audioserver\n    onrestart restart cameraserver\n```\n\n---\n\n## Q3: init.rc 는 어떻게 읽고, 서비스는 어떻게 뜨나?\n\n- 문법: `on <trigger>` 블록 (액션) 과 `service <name> <path>` 블록. 트리거는 `early-init`, `init`, `late-init`, `boot`, `property:sys.boot_completed=1` 등.\n- 서비스 옵션: `class` (main/core/late_start 묶음 기동), `user`/`group`, `oneshot`, `disabled`, `critical` (4분 안에 4회 넘게 죽으면 bootloader/recovery 로 재부팅), `onrestart`, `socket`, `writepid`, `capabilities`.\n- `class_start main` 처럼 묶음으로 띄우고, 의존은 **속성 트리거** 로 푼다 (`on property:vold.decrypt=trigger_restart_framework`). 명시적 의존 그래프가 없어서 순서 문제가 속성 타이밍으로 나타난다.\n- 속성 서비스 (`/dev/socket/property_service`): `setprop/getprop`. `ro.*` 는 한 번만, `persist.*` 는 재부팅 유지, `ctl.start/stop` 으로 서비스 제어.\n- `ueventd`: 커널 uevent 받아 `/dev` 노드 생성·권한 (`ueventd.rc`).\n- `apexd`: Mainline 모듈 (ART 포함) 을 `/apex/` 에 마운트. 이게 떠야 ART 가 최신 버전으로 잡힌다.\n- `vendor/etc/init/*.rc`, `system/etc/init/*.rc` 로 쪼개져 있어 어느 파티션의 .rc 가 서비스를 정의했는지 찾는 게 디버깅의 첫 단계.\n\n---\n\n## Q4: 부팅 시간은 어떻게 재고, 어디서 늘어지나? (이력서 딥다이브)\n\n| 도구 | 보는 것 |\n|---|---|\n| `adb shell bootstat -p` | 단계별 타임스탬프 (bootloader, kernel, boot_complete). 기기 간 비교에 적합 |\n| `dmesg` | 커널·first-stage init 구간. 유일한 로그 |\n| `logcat -b all` 의 `boot_progress_*` | init 끝, zygote preload, system_server 단계, 홈 화면 |\n| Perfetto boot trace (`persist.debug.perfetto.boottrace=1` + 설정 파일) | 부팅부터 ftrace·atrace. `SystemServerTiming`, `PreloadClasses`, 서비스별 시간 |\n| `systrace`/`atrace` (legacy) | 같은 용도의 옛 도구 |\n| `adb shell dumpsys activity services` + `am start -W` | 부팅 뒤 첫 앱 |\n\n늘어지는 전형적 구간:\n- first-stage init 의 벤더 모듈 로딩 (GKI). 모듈 수·크기·의존 순서.\n- `/data` 마운트와 fsck, 암호화 (FBE) 키 풀기.\n- zygote preload (클래스·리소스·boot image 매핑).\n- system_server 의 특정 서비스 생성자가 I/O 를 함 (PackageManager 가 패키지 스캔 — 앱 수에 비례).\n- dexopt 가 필요한 상태 (OTA 뒤 boot image 불일치) 로 부팅하면 앱 시작마다 느림.\n\n본인 경험 연결 (채울 것):\n- \"구조화된 부팅 추적\" 이 어떤 포맷·어떤 수집점이었나. 100+ 변형을 어떻게 한 그래프에 올렸나.\n- 회귀를 잡은 사례 하나 (어느 단계, 원인, 수정).\n- 측정 노이즈 (콜드 vs 재부팅, 저장공간 상태, 열) 를 어떻게 통제했나.\n\n---\n\n## Follow-up: OTA 와 A/B, verified boot 는 부팅과 어떻게 얽히나?\n\n- **A/B 업데이트**: 두 슬롯. 백그라운드로 비활성 슬롯에 쓰고 재부팅 때 전환. 부팅이 성공해 `boot_control` 이 \"successful\" 로 표시하기 전까지 bootloader 가 재시도 횟수를 세고, 넘으면 **이전 슬롯으로 자동 복귀**. 리부트 루프 방지의 1차 방어선 ([reboot_loop_recovery.md](reboot_loop_recovery.md)).\n- **verified boot (AVB)**: vbmeta 가 각 파티션의 해시·서명을 담고, dm-verity 가 블록 읽을 때마다 검증. 손상이면 `eio` 또는 `restart` 모드로 재부팅. 그래서 \"파일이 손상됐는데 부팅은 됐다\" 는 보통 `/data` 쪽 이야기다.\n- **Mainline/APEX**: ART 같은 모듈은 Play 로 따로 업데이트. apexd 가 새 버전 마운트, 실패하면 이전 버전으로 롤백.\n- OTA 뒤 첫 부팅이 느린 이유: boot image 가 바뀌어 앱 odex 가 무효 → bg-dexopt 가 다시 돌기 전까지 해석기·JIT ([art_aot_jit.md](art_aot_jit.md)).\n\n관련: [binder.md](binder.md) (servicemanager 등록, system_server 스레드풀), [perf_tracing.md](perf_tracing.md).\n",
+   "file": "android/boot_chain.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/hal_aidl_selinux",
+   "num": "",
+   "title": "HAL · AIDL · Treble · SELinux",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Treble 이 뭘 바꿨고, HAL 은 어디서 돌아가나?",
+    "Q2: AIDL 로 HAL 인터페이스를 정의하면 어떻게 생기고 어떻게 버전을 올리나?",
+    "Q3: SELinux 는 Android 에서 어떻게 동작하고, 거부는 어떻게 읽나?",
+    "Q4: 앱과 벤더를 추가로 묶는 장치는?",
+    "Follow-up: 새 센서용 HAL 을 하나 추가한다면 건드릴 곳을 순서대로 말해보라"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 추정 영역. 유사 공고 (Android System and Frameworks) 가 \"Android IPC/Binder optimization\", \"custom HAL interfaces (AIDL/HIDL)\" 를 명시해서 넣었다. 1차 후기 없음.\n> 이력서 3번 줄 (\"구글·퀄컴과 조직 경계 넘어 20+ 릴리즈 블로커 해결\") 의 벤더·프레임워크 경계 이야기가 여기 걸린다.\n\n---\n\n## Q1: Treble 이 뭘 바꿨고, HAL 은 어디서 돌아가나?\n\n문제 (Android 7 이전): 프레임워크와 벤더 코드가 한 덩어리라 OS 업데이트마다 SoC·OEM 이 전부 다시 맞춰야 했다.\n\nTreble (Android 8+):\n- **파티션 분리**: `/system` (구글·OEM 프레임워크) 과 `/vendor` (SoC·보드 코드). 프레임워크만 OTA 해도 벤더가 그대로 돌아야 한다.\n- **안정된 인터페이스**: 프레임워크 ↔ 벤더 사이를 HIDL (Android 8-12) 로, 지금은 **stable AIDL** 로 정의. 버전이 매겨지고 하위 호환을 지켜야 한다.\n- **VNDK**: 벤더가 쓸 수 있는 시스템 공유 라이브러리 집합을 고정.\n- **VINTF**: 기기 매니페스트 (벤더가 제공하는 HAL 버전) 와 호환성 매트릭스 (프레임워크가 요구하는 것) 를 부팅 시 대조. 불일치면 부팅 실패.\n- **GKI** (Android 12+): 커널까지 분리. 구글 커널 + 벤더 모듈, KMI (커널 모듈 인터페이스) 안정화.\n\nHAL 실행 형태:\n\n| 형태 | 설명 |\n|---|---|\n| binderized | HAL 이 **별도 프로세스** (`android.hardware.camera.provider@2.4-service`). 프레임워크와 `/dev/hwbinder` 또는 AIDL binder 로 통신. 크래시 격리, SELinux 도메인 분리 |\n| passthrough (legacy) | 프레임워크 프로세스 안에 `.so` 로 로드. 빠르지만 격리 없음. Treble 전환기용, 지금은 거의 없음 |\n\n---\n\n## Q2: AIDL 로 HAL 인터페이스를 정의하면 어떻게 생기고 어떻게 버전을 올리나?\n\n```aidl\n// hardware/interfaces/vibrator/aidl/android/hardware/vibrator/IVibrator.aidl\n@VintfStability\ninterface IVibrator {\n    int getCapabilities();\n    void on(int timeoutMs, in IVibratorCallback callback);\n    void off();\n}\n```\n\n- `@VintfStability`: 프레임워크·벤더 경계용. 한 번 동결 (freeze) 된 버전은 바꾸지 못하고, 다음 버전에 메서드를 **추가** 만 한다. `aidl_api/<name>/<N>/` 에 동결된 사본, `current/` 에 작업 중.\n- 생성 코드: C++ (`ndk` backend, 벤더용), Java, Rust. `BnVibrator` (서버), `BpVibrator` (프록시).\n- 등록: 서비스가 `AServiceManager_addService(binder, \"android.hardware.vibrator.IVibrator/default\")`, 클라이언트는 `waitForService`. 인스턴스 이름이 붙어 같은 인터페이스를 여러 하드웨어가 제공할 수 있다.\n- VINTF 매니페스트 (`manifest.xml`) 에 `<hal format=\"aidl\"><name>android.hardware.vibrator<\/name><version>2<\/version>…` 로 선언.\n- HIDL 과 차이: HIDL 은 전용 언어·`hwbinder`·버전이 패키지 이름에 박힘 (`@2.4`). AIDL 은 프레임워크와 같은 언어·binder, 증분 버전. Android 13 부터 새 HAL 은 AIDL 만.\n- 테스트: VTS (Vendor Test Suite) 가 HAL 인터페이스 준수를 검사. CTS 는 프레임워크 API.\n\n벤더·프레임워크 경계 디버깅 (이력서 3번 줄 연결): 로그가 두 프로세스로 갈리고, SELinux 도메인이 다르고, 벤더 쪽 소스가 없을 때가 많다. 트랜잭션 추적 (Perfetto binder) 과 인터페이스 계약 (어느 쪽이 스펙을 어겼나) 으로 책임을 가른다.\n\n본인 경험 연결 (채울 것): 퀄컴·구글과 함께 푼 블로커 중 HAL 경계였던 것 하나. 어느 쪽 코드였고 어떻게 증명했나.\n\n---\n\n## Q3: SELinux 는 Android 에서 어떻게 동작하고, 거부는 어떻게 읽나?\n\n- Android 5 부터 **enforcing**. 모든 프로세스가 도메인 (`u:r:system_server:s0`, `u:r:untrusted_app:s0`, `u:r:hal_camera_default:s0`) 을 갖고, 파일·소켓·속성·Binder 서비스가 타입 라벨을 갖는다. 정책이 허용한 접근만 된다 (화이트리스트).\n- 정책 위치: `system/sepolicy/` (플랫폼), `device/<vendor>/sepolicy/` (벤더). 파일 라벨은 `file_contexts`, 속성은 `property_contexts`, 서비스는 `service_contexts`. 부팅 시 first-stage init 이 정책을 로드한다.\n- **neverallow**: 정책 컴파일 시점에 \"이런 허용은 절대 있을 수 없다\" 를 검사. CTS 가 기기의 정책을 neverallow 로 검증하므로 OEM 이 편의로 구멍을 못 낸다. `untrusted_app` 이 `/dev/block` 을 읽는 규칙 같은 것.\n- uid 권한과의 관계: Linux DAC (uid·gid·파일 모드) 를 먼저 통과해야 하고, 그 다음 MAC (SELinux). 둘 다 통과해야 접근.\n\n거부 로그:\n\n```\navc: denied { read } for pid=1234 comm=\"my_daemon\" name=\"foo.txt\" dev=\"dm-4\" ino=99\n     scontext=u:r:my_daemon:s0 tcontext=u:object_r:vendor_data_file:s0 tclass=file permissive=0\n```\n\n읽는 법: **누가** (scontext 도메인) **무엇에** (tcontext 타입, tclass) **어떤 동작** (denied { }) 을 하려다 막혔나.\n해결은 두 갈래: (a) 정말 필요한 접근이면 `allow my_daemon vendor_data_file:file read;` 를 정책에 추가 (neverallow 에 걸리면 설계를 바꿔야 함), (b) 파일 라벨이 잘못됐으면 `file_contexts` 수정 뒤 `restorecon`.\n`audit2allow` 가 denial 을 규칙으로 바꿔 주지만 그대로 넣으면 안 되고 왜 필요한지 따진다.\n개발 중엔 `setenforce 0` (permissive) 로 \"SELinux 문제인지\" 만 확인하고 끈 채로 두지 않는다.\n\n---\n\n## Q4: 앱과 벤더를 추가로 묶는 장치는?\n\n| 장치 | 역할 |\n|---|---|\n| seccomp-bpf | 앱 프로세스가 쓸 수 있는 시스템 콜 목록 제한 (zygote 가 specialize 때 적용) |\n| 속성 접근 제어 | `property_contexts` 로 어느 도메인이 어느 `sys.*`/`vendor.*` 를 읽고 쓰나 |\n| Binder 서비스 접근 | `service_contexts` + `allow domain service_type:service_manager { find add }` |\n| 벤더 ↔ 시스템 소켓 금지 | 벤더 프로세스는 `/dev/vndbinder` 만. 프레임워크 Binder 서비스 직접 호출 불가 |\n| dm-verity · AVB | 파티션 무결성 ([boot_chain.md](boot_chain.md)) |\n| Keystore · StrongBox · TEE | 키는 TEE/보안 칩 안에서만. 프레임워크는 핸들만 |\n\n---\n\n## Follow-up: 새 센서용 HAL 을 하나 추가한다면 건드릴 곳을 순서대로 말해보라\n\n1. 인터페이스: `hardware/interfaces/<name>/aidl/` 에 `.aidl` 정의, `@VintfStability`, 버전 1 동결.\n2. 구현: 벤더 프로세스 (`/vendor/bin/hw/…-service`), `init.rc` 서비스 항목 (`class hal`, `user`/`group`).\n3. SELinux: `hal_<name>_default` 도메인, 장치 노드 라벨, Binder 서비스 라벨, 필요한 allow 규칙 (neverallow 통과 확인).\n4. VINTF: 기기 매니페스트에 HAL 선언, 프레임워크 호환성 매트릭스와 맞추기.\n5. 프레임워크 클라이언트: system_server 안 서비스가 `waitForService` 로 연결, 죽음 통지 (`linkToDeath`) 로 HAL 재시작 대응.\n6. 테스트: VTS 모듈, 그리고 HAL 크래시 시 프레임워크가 살아 있는지 (binderized 격리 확인).\n\n관련: [binder.md](binder.md), [boot_chain.md](boot_chain.md), [process_memory_lmk.md](process_memory_lmk.md).\n",
+   "file": "android/hal_aidl_selinux.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/perf_tracing",
+   "num": "",
+   "title": "성능 추적 도구 — Perfetto · simpleperf · ANR · jank",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Perfetto 는 뭐고 systrace 와 뭐가 다른가?",
+    "Q2: 부팅·Binder·앱 시작은 각각 어떻게 추적하나?",
+    "Q3: ANR 과 jank 는 어떻게 정의되고 어디서 보나?",
+    "Q4: CPU 프로파일링과 그 밖의 도구",
+    "Follow-up: \"앱 시작이 가끔 2초씩 느려진다\" 를 받으면 첫 30분에 무엇을 하나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. \"어떤 디버깅 도구를 쓰나 (profiler, perfetto)\" 가 Android 면접 댓글에 나온다 ([1xc9gl4](https://www.reddit.com/r/androiddev/comments/1xc9gl4/google_android_interview/)). 이력서의 부팅 추적·Binder 진단이 전부 이 도구들 위에 있다.\n\n---\n\n## Q1: Perfetto 는 뭐고 systrace 와 뭐가 다른가?\n\n| | Perfetto (Android 9+, 기본은 10+) | systrace / atrace (legacy) |\n|---|---|---|\n| 구조 | `traced` (서비스) + `traced_probes` (ftrace·/proc 수집) + 앱 SDK. 공유 메모리 링버퍼 | atrace 가 ftrace 를 켜고 파일로 덤프 |\n| 데이터 | ftrace (sched, irq, binder, …), atrace 카테고리 (`gfx view am wm binder_driver …`), 프로세스·메모리 카운터, 로그, heapprofd, Java heap 덤프 | ftrace + atrace |\n| 길이 | 긴 트레이스 (수 분), 링버퍼로 \"문제 순간만\" | 짧게 |\n| 분석 | ui.perfetto.dev, `trace_processor` (SQL) | HTML |\n\n```\nadb shell perfetto -o /data/misc/perfetto-traces/t.pftrace -t 10s sched freq idle am wm gfx view binder_driver\nadb pull /data/misc/perfetto-traces/t.pftrace\n```\n\n보는 법: 스레드별 상태 (Running·Runnable·Sleeping·**Uninterruptible sleep = I/O 또는 락**), atrace 슬라이스 (프레임워크가 `Trace.beginSection` 으로 남긴 구간), binder 트랙 (호출 쌍 화살표), CPU 주파수·idle.\n\"Runnable 인데 안 돌았다\" 는 CPU 경쟁, \"Sleeping\" 은 뭘 기다렸나 (wakeup 화살표로 깨운 주체 추적).\n\n---\n\n## Q2: 부팅·Binder·앱 시작은 각각 어떻게 추적하나?\n\n| 대상 | 방법 |\n|---|---|\n| 부팅 | `persist.debug.perfetto.boottrace=1` + `/data/misc/perfetto-configs/boottrace.pbtxt`. 재부팅하면 init 직후부터 수집. `SystemServerTiming`, `PreloadClasses`, `apexd`, 서비스 기동 슬라이스 |\n| Binder | ftrace `binder_transaction`, `binder_transaction_received` (`binder_driver` 카테고리). sender 스레드 → receiver 스레드 화살표. 지연 = receiver 가 깨어난 시각 − 전송 시각 |\n| 앱 시작 | `am` 카테고리의 `launching: <pkg>` 슬라이스, `bindApplication`, `activityStart`, 첫 `Choreographer#doFrame`. 숫자는 `am start -W` TotalTime |\n| 잠금·대기 | 스레드가 `Uninterruptible` 이면 커널 스택 (`sched_blocked_reason`), Java 락은 ANR 트레이스의 `waiting to lock` |\n| 메모리 | `mem` 카운터, heapprofd (네이티브 힙 할당 스택), Java heap dump |\n\n본인 경험 연결 (채울 것): \"구조화된 부팅 추적\" 이 Perfetto 위였나 자체 로그였나, 어떤 지표를 기기별로 비교했나.\n\n---\n\n## Q3: ANR 과 jank 는 어떻게 정의되고 어디서 보나?\n\n**ANR** (Application Not Responding): 메인 스레드가 정해진 시간 안에 이벤트를 처리하지 못함.\n\n| 종류 | 임계 |\n|---|---|\n| 입력 이벤트 (터치·키) | 5초 |\n| 브로드캐스트 | foreground 10초, background 60초 |\n| 서비스 시작 | foreground 20초, background 200초 |\n| ContentProvider | 10초 |\n\n- 발생 시 `/data/anr/` 에 전 스레드 스택, dropbox 에 요약, `am_anr` 로그. 원인은 대개 메인 스레드의 I/O·Binder 동기 호출·락 대기·무한 루프. 트레이스에서 main 스레드 맨 위 프레임을 본다.\n- system_server 쪽은 ANR 이 아니라 **watchdog** ([reboot_loop_recovery.md](reboot_loop_recovery.md)).\n\n**jank**: 프레임 하나가 디스플레이 주기 (60Hz 16.7ms, 90Hz 11.1ms, 120Hz 8.3ms) 를 넘겨 같은 프레임이 두 번 보임.\n\n```\nVSYNC ─▶ Choreographer#doFrame (앱: input → animation → measure/layout → draw → RenderThread) ─▶ BufferQueue ─▶ SurfaceFlinger 합성 ─▶ 디스플레이\n```\n\n- 앱 쪽 원인: 메인 스레드 긴 작업, 레이아웃 과다, 큰 비트맵 디코딩. 시스템 쪽: SurfaceFlinger 지연, GPU 경쟁, CPU 주파수 낮음.\n- 측정: `dumpsys gfxinfo <pkg> framestats`, Perfetto 의 `Expected/Actual Timeline` 트랙 (Android 12+ FrameTimeline), `SurfaceFlinger` 트랙.\n- 트리플 버퍼링이 지터를 흡수하지만 지연을 한 프레임 늘린다.\n\n---\n\n## Q4: CPU 프로파일링과 그 밖의 도구\n\n| 도구 | 용도 |\n|---|---|\n| `simpleperf` | 샘플링 CPU 프로파일러 (perf 기반). Java·네이티브 혼합 스택. `simpleperf record -p <pid> -g` → 플레임그래프 |\n| `perf` | 커널·네이티브. 하드웨어 카운터 (cache-misses) |\n| `strace -p` | 시스템 콜 추적 (느리지만 확실) |\n| `dumpsys <service>` | 서비스 내부 상태. `meminfo`, `gfxinfo`, `activity`, `binder_calls_stats`, `package dexopt` |\n| `logcat -b all` | main·system·events·crash·kernel 버퍼. `events` 의 `am_proc_start`, `boot_progress_*` |\n| `bugreport` | 전부 한 번에. 필드 이슈의 기본 입력 |\n| `procrank`, `showmap`, `/proc/<pid>/smaps` | PSS·USS 메모리 |\n| `top -H`, `/proc/<pid>/task/*/stat` | 스레드별 CPU |\n\n도구를 고르는 기준: **시간축이 필요하면 Perfetto, 어디서 CPU 를 쓰는지면 simpleperf, 한 순간의 상태면 dumpsys·스택 덤프.**\n\n---\n\n## Follow-up: \"앱 시작이 가끔 2초씩 느려진다\" 를 받으면 첫 30분에 무엇을 하나?\n\n1. 재현 조건 좁히기: 콜드·웜, 첫 설치 직후인지, 충전 중인지, 다른 앱 설치 직후인지 (bg-dexopt 가 돌고 있나).\n2. `am start -W` 로 숫자 재현, 느린 회차와 빠른 회차 둘 다 Perfetto 로 잡기 (링버퍼 + 트리거).\n3. 느린 트레이스에서 `launching` 슬라이스 안의 공백을 본다. 메인 스레드가 Sleeping 이면 뭘 기다렸나 (Binder → 어느 서비스, I/O → 어느 파일, 락), Runnable 이면 CPU 경쟁 (다른 프로세스·주파수).\n4. ART 상태 확인: `dumpsys package dexopt` 로 필터가 `verify` 인지, odex 가 무효 (OTA 직후) 인지 ([art_aot_jit.md](art_aot_jit.md)).\n5. 결론을 \"어느 단계에서 몇 ms 가 어디로 갔다\" 한 문장으로 적고, 수정과 재측정.\n\n관련: [boot_chain.md](boot_chain.md), [binder.md](binder.md).\n",
+   "file": "android/perf_tracing.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/process_memory_lmk",
+   "num": "",
+   "title": "프로세스 수명과 메모리 — zygote COW · oom_adj · lmkd · ashmem",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 앱 프로세스는 어떻게 만들어지고 메모리를 어떻게 공유하나?",
+    "Q2: 메모리 부족이면 누가 무엇을 죽이나?",
+    "Q3: 프로세스 메모리는 어떻게 세나? (PSS·RSS·USS, dumpsys meminfo)",
+    "Q4: 프로세스 사이에 큰 메모리를 어떻게 공유하나?",
+    "Follow-up: 앱이 백그라운드로 가면 플랫폼은 무엇을 제한하나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 추정 영역 (공고 \"Android OS Internals 3년\" 기준). 1차 후기 없음.\n> 플랫폼 면접에서 \"앱이 백그라운드로 가면 무슨 일이 나나\", \"메모리 부족이면 누가 뭘 죽이나\" 는 OS 질문의 Android 판이다.\n\n---\n\n## Q1: 앱 프로세스는 어떻게 만들어지고 메모리를 어떻게 공유하나?\n\n- zygote 가 프레임워크 클래스·리소스·boot image 를 **preload** 한 채 대기, `fork()` 로 앱 프로세스를 만든다 ([boot_chain.md](boot_chain.md)).\n- fork 뒤 부모·자식은 같은 물리 페이지를 **copy-on-write** 로 공유한다. 앱이 그 페이지를 쓰기 전까지 복사가 없다. 그래서 수십 개 앱이 떠 있어도 프레임워크 코드·상수는 한 벌이다.\n- 자식은 `setuid` 로 앱 uid 로 내려가고, SELinux 도메인 (`untrusted_app`), seccomp 필터, cgroup (cpuset) 이 적용된다. 이 순서가 \"specialize\".\n- Android 10+ USAP: fork 만 미리 해 둔 프로세스 풀. specialize 비용만 남아 시작이 빨라진다 (기본은 꺼져 있는 기기도 많다).\n- GC 와 JIT 가 쓰기를 하면 COW 가 깨져 private 페이지가 늘어난다. 그래서 zygote 가 preload 한 힙은 **compact 뒤 공유** 하고, 앱 이미지 (`.art`) 는 읽기 전용으로 매핑한다.\n\n---\n\n## Q2: 메모리 부족이면 누가 무엇을 죽이나?\n\n```\n커널 PSI (memory pressure) ─▶ lmkd (유저 공간 데몬) ─▶ oom_adj 점수가 가장 높은 (= 덜 중요한) 프로세스부터 kill\n                                                        (커널 OOM killer 는 최후 수단)\n```\n\n- **oom_adj / oom_score_adj**: ActivityManager 가 프로세스 상태에 따라 매긴다. 전면 앱 0, 보이는 앱 100-200, 포그라운드 서비스 200, 백그라운드 서비스 500, 캐시된 빈 프로세스 900-999. AMS 가 상태 바뀔 때마다 `/proc/<pid>/oom_score_adj` 에 쓴다.\n- **lmkd**: Android 10 부터 **PSI** (Pressure Stall Information, `/proc/pressure/memory`) 기반. 압박 수준별 임계값 (`ro.lmk.*`) 을 넘으면 adj 높은 것부터 죽인다. 옛 커널 LMK 드라이버는 minfree 테이블 (free 페이지 수) 기준이었다.\n- 커널 **OOM killer** 는 lmkd 가 못 따라가 할당이 실패할 때 `oom_badness` 로 죽인다. 여기까지 가면 시스템 프로세스도 위험하다.\n- 사용자가 보는 결과: 백그라운드 앱을 다시 열면 콜드 시작 (죽었다), 또는 `onTrimMemory` 콜백으로 앱이 스스로 캐시를 비우는 것.\n- 캐시된 프로세스를 많이 유지하면 앱 전환이 빠르고, 적게 유지하면 전면 앱이 넉넉하다. lmkd 임계값이 그 조절점이고 저사양 (Android Go) 은 공격적이다.\n\n---\n\n## Q3: 프로세스 메모리는 어떻게 세나? (PSS·RSS·USS, dumpsys meminfo)\n\n| 지표 | 뜻 | 쓸 때 |\n|---|---|---|\n| RSS | 매핑되어 메모리에 있는 전부. 공유 페이지를 각 프로세스에 전부 센다 | 과대평가 |\n| **PSS** | 공유 페이지를 공유하는 프로세스 수로 나눠 배분 | 프로세스별 \"공정한 몫\". `dumpsys meminfo` 기본 |\n| USS | 그 프로세스만 쓰는 private 페이지 | 죽이면 돌아오는 양 |\n| ZRAM | 압축 스왑 (RAM 안). 스왑 아웃된 페이지 | 저사양에서 큼 |\n\n```\nadb shell dumpsys meminfo <pkg>      # Java Heap · Native Heap · Code · Stack · Graphics · Private Other · System\nadb shell procrank                    # 전 프로세스 PSS 정렬\nadb shell cat /proc/<pid>/smaps       # 매핑별 상세\n```\n\n- `Graphics` 는 GPU·dma-buf 메모리 (gralloc 버퍼). 앱 힙 밖에 있어 Java 힙 OOM 과 무관하게 시스템 메모리를 잡는다.\n- `Code` 는 .oat·.so 매핑. AOT 를 많이 하면 늘어난다 ([art_aot_jit.md](art_aot_jit.md)).\n- Java 힙 상한 (`dalvik.vm.heapgrowthlimit`, `largeHeap`) 은 앱 하나의 힙만 제한한다. 시스템 전체 메모리는 lmkd 가 본다.\n\n---\n\n## Q4: 프로세스 사이에 큰 메모리를 어떻게 공유하나?\n\n| 수단 | 특징 |\n|---|---|\n| ashmem (Anonymous Shared Memory, `/dev/ashmem`) | Android 고유. fd 로 공유, `pin/unpin` 으로 커널이 회수 가능. Android 10+ 는 **memfd** 로 대체 중 |\n| memfd (`memfd_create`) | 리눅스 표준. seal 로 크기 고정·쓰기 금지 가능. `MemoryFile`, `SharedMemory` API 의 뒷면 |\n| dma-buf | 장치 (GPU·카메라·디스플레이) 와 공유. gralloc 버퍼 ([dma_cache.md](../embedded/dma_cache.md)) |\n| Binder Parcel | 1MB 버퍼 한계. 큰 건 위 fd 를 Parcel 에 담아 넘김 ([binder.md](binder.md)) |\n\nfd 를 Binder 로 넘기면 커널이 수신 프로세스의 fd 테이블에 복제해 준다. 매핑은 각자 `mmap`. 같은 물리 페이지라 복사 없음.\n\n---\n\n## Follow-up: 앱이 백그라운드로 가면 플랫폼은 무엇을 제한하나?\n\n- oom_adj 상향 → lmkd 의 1순위 후보.\n- cgroup 이동: `top-app` → `foreground` → `background` cpuset (작은 코어만), CPU 비중 축소.\n- Android 8+ 백그라운드 실행 제한: 백그라운드 서비스 시작 금지 (JobScheduler·WorkManager 로), 암시적 브로드캐스트 제한.\n- Doze·App Standby 버킷 (active, working set, frequent, rare, restricted) 이 네트워크·알람·job 빈도를 묶는다.\n- Android 12+ Phantom process 제한 (앱이 fork 한 자식 32개 상한), 포그라운드 서비스 종류 선언.\n- 플랫폼 입장에서 설계 질문이 되면: \"전면 사용자 경험을 지키기 위해 백그라운드의 CPU·메모리·네트워크·웨이크업을 단계적으로 줄이고, 죽일 때는 상태를 저장할 기회 (`onSaveInstanceState`, `onTrimMemory`) 를 먼저 준다\" 가 뼈대.\n",
+   "file": "android/process_memory_lmk.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:android/reboot_loop_recovery",
+   "num": "",
+   "title": "부팅 실패와 복구 — watchdog · critical · Rescue Party · A/B 복귀 · 아티팩트 재생성",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 부팅이 실패하는 지점은 어디고, 각 지점의 복구 장치는 뭔가?",
+    "Q2: 아티팩트가 손상되면 ART 와 프레임워크는 어떻게 반응하나?",
+    "Q3: 리부트 루프 자동 복구를 설계한다면 어떤 결정이 필요한가? (이력서 딥다이브)",
+    "Q4: \"손상 파일을 로드할 때 크래시가 설계인가, 오류 반환이 설계인가?\" (Apple 되물음)",
+    "Follow-up: 크래시 뒤 남는 흔적과 읽는 순서"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 2번 줄 (\"손상된 런타임 아티팩트를 감지해 안전하게 재생성하는 OS 레벨 메커니즘으로 리부트 루프 제거, 95%+ 복구, 특허\") 의 바탕.\n> Apple 스크린 (10-26) 에서 \"손상 파일 로드 시 크래시가 설계인가 오류 반환이 설계인가\" 를 세 번 되물었다. 그 질문의 답 구조를 Q4 에 둔다.\n\n---\n\n## Q1: 부팅이 실패하는 지점은 어디고, 각 지점의 복구 장치는 뭔가?\n\n| 실패 지점 | 증상 | 기본 복구 장치 |\n|---|---|---|\n| bootloader·커널 | 부팅 로고에서 멈춤, 커널 패닉 | A/B 슬롯: 성공 표시 전 재시도 초과 시 **이전 슬롯으로 복귀**. ramdump |\n| first-stage init | 마운트 실패, dm-verity 오류 | verity `restart`/`eio` 모드. recovery 진입 |\n| 네이티브 데몬 | 특정 서비스 반복 크래시 | init 이 재시작. `critical` 서비스는 4분 내 4회 넘으면 **bootloader/recovery 로 재부팅** |\n| zygote·system_server | 프레임워크 재시작 반복 (부팅 애니메이션 루프) | init 의 zygote 재시작. 반복되면 **Rescue Party** |\n| system_server 멈춤 | 화면은 떠 있는데 입력 무응답 | **Watchdog** 이 60초 뒤 system_server kill → 재시작 |\n| 앱 | 그 앱만 죽음 | AMS 가 재시작·crash 다이얼로그. persistent 앱은 자동 재시작 |\n\n**Watchdog** (`com.android.server.Watchdog`): system_server 안의 스레드가 주요 핸들러 스레드 (main, fg, ui, io, display …) 에 주기적으로 작업을 보내고 응답을 기다린다. 30초 반응 없으면 경고, **60초** 면 스택 덤프 (`/data/anr/`) 뒤 자기 프로세스를 죽인다. 락 홀더도 감시 (`Watchdog.getInstance().addMonitor`).\n\n**Rescue Party** (Android 8+, `RescueParty`, `PackageWatchdog`): 부팅 루프·persistent 앱 반복 크래시를 세어 단계적으로 대응한다. 설정 리셋 (device_config, settings) → 문제 모듈 롤백 (Mainline) → 마지막은 **공장 초기화 프롬프트** 가 있는 recovery. 사용자 데이터를 지우는 쪽으로 가는 길이라 이것이 \"factory reset 을 피했다\" 의 비교 대상이다.\n\n---\n\n## Q2: 아티팩트가 손상되면 ART 와 프레임워크는 어떻게 반응하나?\n\n- 앱 odex·vdex 손상: 로드 시 **체크섬·헤더 검증** 에 실패하면 그 파일을 버리고 해석기·JIT 로 돈다. 느려지지만 죽지 않는다. 다음 dexopt 때 재생성.\n- boot image (boot.art/boot.oat) 손상: zygote 가 이미지를 매핑하다 실패하면 이미지 없이 뜨거나 (느림), 손상 형태에 따라 zygote 가 죽는다. zygote 가 죽으면 프레임워크 전체가 재시작하고, 같은 파일을 다시 읽으니 **같은 자리에서 다시 죽는다 → 루프**.\n- 검증이 통과하는데 내용이 틀린 경우 (비트 플립이 체크섬 안 걸린 영역, 또는 체크섬이 없는 경로) 가 가장 나쁘다. 네이티브 코드가 틀린 자리로 점프해 SIGSEGV. 이때 디버깅 단서는 tombstone (`/data/tombstones/`) 의 크래시 주소가 어느 .oat 매핑 안인가.\n- 재생성이 가능한 조건: 원본 DEX (APK) 가 멀쩡하고, 저장공간이 있고, 재생성 중 다시 죽지 않게 **먼저 손상 파일을 치우거나 격리** 해야 한다.\n\n관련 파일 위치: `/data/dalvik-cache/` (boot image, 시스템 앱 odex 일부), `/data/app/<pkg>/oat/`, `/data/misc/profiles/`, `/apex/com.android.art/` (ART 모듈 자체).\n\n---\n\n## Q3: 리부트 루프 자동 복구를 설계한다면 어떤 결정이 필요한가? (이력서 딥다이브)\n\n| 결정 | 선택지 | 트레이드오프 |\n|---|---|---|\n| **감지 신호** | 부팅 횟수 카운터 (`persist.*` 속성, bootstat), 같은 서비스의 연속 크래시 수, tombstone 의 크래시 주소가 아티팩트 매핑 안인지 | 카운터만 쓰면 오탐 (사용자가 재부팅 반복). 주소 매칭은 정확하지만 구현 복잡 |\n| **판정 시점** | init (second-stage) 에서 zygote 띄우기 전 / zygote 안 / system_server 안 | 늦을수록 정보가 많고, 이를수록 안전한 상태에서 행동 가능. 루프를 끊으려면 **죽는 지점보다 앞** 이어야 함 |\n| **행동** | 손상 의심 아티팩트 삭제 → 재생성 (dexopt), 또는 이미지 없이 부팅 뒤 백그라운드 재생성 | 삭제는 안전하지만 다음 부팅이 느림. 전체 삭제 vs 의심 파일만 |\n| **재생성 중 보호** | 재생성 자체가 실패·반복되지 않게 횟수 제한, 다음 단계 (Rescue Party) 로 넘기는 조건 | 무한 재생성 루프 방지 |\n| **사용자 데이터** | `/data` 는 건드리지 않음. 아티팩트는 전부 재생성 가능한 캐시 | factory reset 을 피하는 핵심 논리 |\n| **측정** | 복구 성공률 (루프 진입 → 정상 부팅), 복구 뒤 성능 저하 기간, 오탐율 | 95% 는 어떻게 셌나 (분모가 뭔가) |\n\n예상 꼬리질문:\n- 왜 기존 Rescue Party 로 충분하지 않았나 (Rescue Party 는 원인을 모르고 설정·모듈을 되돌린다. 아티팩트 손상은 그 범위 밖).\n- 손상 원인은 뭐였나 (저장장치 비트 오류, 전원 끊김 중 쓰기, 업데이트 중단, 버그) 와 원인별 재발 방지.\n- 폰·워치·태블릿 2+ 릴리즈에 어떻게 일반화했나 (경로·파티션·메모리 차이).\n- 구글 upstream 과의 관계 (AOSP 에 비슷한 기능이 있나, 있다면 차이).\n\n본인 경험 연결 (채울 것): 위 표의 각 칸에 실제 선택과 이유, 숫자 (복구율 분모·분자, 기기 수).\n\n---\n\n## Q4: \"손상 파일을 로드할 때 크래시가 설계인가, 오류 반환이 설계인가?\" (Apple 되물음)\n\n둘 다 정답이 될 수 있고, **어느 계층이냐** 로 답을 가른다.\n\n| 계층 | 바람직한 반응 | 이유 |\n|---|---|---|\n| 신뢰 경계 (verified boot, dm-verity, 서명 검증) | **즉시 실패 (fail-fast)**. 부팅 중단·재부팅 | 변조된 코드를 실행하지 않는 것이 목적. 계속 가면 보안이 깨진다 |\n| 재생성 가능한 캐시 (odex, 프로파일, 이미지) | **오류 반환 → 폴백 → 재생성** | 원본이 있고 캐시는 성능 최적화일 뿐. 죽을 이유가 없다 |\n| 라이브러리 로더가 내부 불변식 위반을 만났을 때 | abort (CHECK 실패) | 이미 잘못된 상태로 더 가면 조용한 데이터 손상. 그러나 **로드 시점 검증** 을 먼저 두어 여기까지 오지 않게 한다 |\n\n면접관이 원한 핵심은 두 가지였다.\n1. **로드 시점에 바로 아는 방법** = 헤더 매직·버전·체크섬 검증 (파일 전체 해시는 비싸니 헤더+섹션 체크섬, 또는 dm-verity 처럼 블록 단위 해시).\n2. **잘못된 입력에 크래시하는 것의 보안 문제** = 공격자가 조작한 파일로 서비스를 반복 죽여 DoS, 또는 파서 취약점 (경계 검사 없는 길이 필드) 으로 코드 실행. 그래서 신뢰 안 되는 입력은 검증 뒤 오류 반환, 신뢰 경계 위반은 fail-fast.\n\n---\n\n## Follow-up: 크래시 뒤 남는 흔적과 읽는 순서\n\n| 흔적 | 위치 | 언제 |\n|---|---|---|\n| tombstone | `/data/tombstones/` | 네이티브 크래시 (SIGSEGV, abort). 레지스터·스택·메모리 맵 |\n| ANR 트레이스 | `/data/anr/` | ANR, watchdog. 모든 스레드의 Java·네이티브 스택 |\n| dropbox | `/data/system/dropbox/` | 프레임워크가 모은 크래시·ANR·watchdog 요약 |\n| 커널 | `/sys/fs/pstore/` (console-ramoops) | 커널 패닉 뒤 마지막 dmesg |\n| bootstat | `/data/misc/bootstat/` | 부팅 이유 (`ro.boot.bootreason`), 단계 시간 |\n| bugreport | `adb bugreport` | 위 전부 + dumpsys |\n\n읽는 순서: bootreason → 마지막 tombstone/ANR 의 시간과 프로세스 → 스택 맨 위 프레임이 어느 매핑 (`.oat`, `.so`) 인지 → 그 파일의 무결성.\n\n관련: [art_aot_jit.md](art_aot_jit.md), [boot_chain.md](boot_chain.md) (A/B·verity), [perf_tracing.md](perf_tracing.md).\n",
+   "file": "android/reboot_loop_recovery.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
   },
   {
    "track": "cs",
@@ -6451,6 +6854,151 @@ body{
    "md": "## Q1: SQL과 NoSQL의 핵심 차이는?\n\n| | SQL (Relational) | NoSQL |\n|---|---|---|\n| 스키마 | 고정 스키마 (테이블, 컬럼) | 유연/스키마리스 |\n| 관계 | JOIN으로 테이블 간 관계 표현 | 비정규화, 중첩 문서 |\n| 확장 | 수직 확장 (scale up) 위주 | 수평 확장 (scale out) 설계 |\n| 일관성 | ACID 보장 | 보통 eventual consistency |\n| 예시 | PostgreSQL, MySQL | MongoDB, DynamoDB, Redis, Cassandra |\n\n> ⚠️ **헷갈림 주의:** \"자유로운\" 건 **관계 표현이 아니라 스키마**다.\n> 관계(JOIN) 표현은 오히려 **SQL이 더 강함**. NoSQL은 JOIN이 약해서\n> 비정규화(한 문서에 다 넣기)/중첩/앱 코드로 처리한다.\n> - SQL: 스키마 고정 + **관계 강함**(JOIN)\n> - NoSQL: 스키마 유연(자유로움) + **관계 약함**\n\n---\n\n## Q2: NoSQL의 종류?\n\n| 타입 | 구조 | 용도 | 예시 |\n|------|------|------|------|\n| Document | JSON 문서 | 유연한 스키마, 중첩 데이터 | MongoDB |\n| Key-Value | key → value | 캐싱, 세션 | Redis, DynamoDB |\n| Wide-Column | row key + column family | 대규모 시계열, 로그 | Cassandra, HBase |\n| Graph | 노드 + 엣지 | 관계 탐색 (소셜, 추천) | Neo4j |\n\n---\n\n## Q3: 언제 뭘 쓰나요?\n\n**SQL 선택:**\n- 데이터 관계가 복잡 (JOIN 빈번)\n- 트랜잭션 ACID가 중요 (금융, 주문)\n- 스키마가 안정적\n\n**NoSQL 선택:**\n- 대규모 수평 확장 필요\n- 스키마가 자주 바뀜\n- 읽기/쓰기 성능이 최우선\n- 비정형 데이터 (로그, 이벤트, 문서)\n\n---\n\n## Follow-up: CAP Theorem이란?\n\n분산 시스템에서 동시에 3가지를 다 만족시킬 수 없음:\n- **C (Consistency)** - 모든 노드가 같은 데이터를 봄\n- **A (Availability)** - 모든 요청에 응답\n- **P (Partition Tolerance)** - 네트워크 분할에도 동작\n\n네트워크 분할은 피할 수 없으므로 실질적으로 CP vs AP 선택:\n- CP: MongoDB, HBase (일관성 우선, 일부 요청 거부 가능)\n- AP: Cassandra, DynamoDB (가용성 우선, 일시적 불일치 허용)\n\n### Partition(분할)이란\n\n분산 시스템에서 노드 간 네트워크가 끊겨 서로 소식을 모르는 상태.\n\n```\n정상: [노드A] ←통신→ [노드B]\n분할: [노드A] ×끊김× [노드B]  ← 서로 동기화 불가\n```\n\n현실에서 네트워크 단절은 못 피함 → P는 사실상 필수 → **실제 선택은 C vs A**.\n\n### 은행 잔액 예시 (핵심 직관)\n\n노드 A, B 연결이 끊긴 상태, 사용자가 A에 \"잔액 업데이트\"함,\n이때 다른 사용자가 B에 \"잔액 조회\"하면?\n\n- **CP (일관성 우선)**: \"A랑 동기화 안 돼 최신값 확인 못 함 → **응답 거부**\"\n  - 틀린 값 주느니 안 줌. 예: 은행, 결제\n- **AP (가용성 우선)**: \"동기화 안 됐지만 **내가 아는 값이라도 응답**\" (옛날 값일 수 있음)\n  - 나중에 맞춰짐 = eventual consistency. 예: SNS 좋아요 수, 조회수\n\n> 한 줄: 분할 시 **\"틀린 값 주느니 거부\"(CP)** vs **\"옛날 값이라도 응답\"(AP)**.\n\n### ⚠️ 흔한 오해\n\n\"항상 셋 중 둘만\"이 아니라, **분할이 일어난 순간에만** C vs A를 고름.\n평상시(분할 없을 때)는 C도 A도 다 만족.\n\n### SQL vs NoSQL 연결\n\n- SQL(RDBMS): 보통 단일 서버 → ACID 강한 일관성 (C 중시)\n- NoSQL: 여러 노드 수평 확장 → 대부분 A 위해 C 완화 (eventual consistency = AP)\n",
    "file": "db/sql_vs_nosql.md",
    "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:embedded/dma_cache",
+   "num": "",
+   "title": "DMA 와 캐시 일관성",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: DMA 가 뭐고 왜 쓰나?",
+    "Q2: DMA 와 CPU 캐시는 왜 충돌하고 어떻게 맞추나?",
+    "Q3: 멀티코어 캐시 일관성과 false sharing 은?",
+    "Q4: Android 는 장치 간 버퍼를 어떻게 공유하나?",
+    "Follow-up: UART 수신을 DMA 로 바꾸면 설계가 어떻게 달라지나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 근거: Apple 질문 은행 C10 \"Interrupts, polling, and DMA\", C16 \"Shared memory and MESI\", B11 \"per-core 카운터 배열의 성능 문제\" (false sharing).\n> Android 연결: 카메라·디스플레이·GPU 버퍼 공유 (dma-buf), zero-copy.\n\n---\n\n## Q1: DMA 가 뭐고 왜 쓰나?\n\nCPU 가 바이트를 옮기는 대신 **DMA 컨트롤러가 메모리↔장치, 메모리↔메모리 복사를 대신** 한다.\nCPU 는 디스크립터 (출발 주소, 도착 주소, 길이, 다음 디스크립터) 를 써 주고 시작 비트를 켠 뒤 다른 일을 한다.\n끝나면 완료 인터럽트가 온다.\n\n- 큰 데이터 (오디오 프레임, 네트워크 패킷, 디스플레이 프레임버퍼) 를 CPU 사이클 없이 옮긴다.\n- UART 처럼 바이트마다 인터럽트가 오는 장치도 DMA 를 붙이면 \"버퍼 반 찼음·다 찼음\" 두 번만 인터럽트가 온다 (ping-pong, 순환 DMA).\n- 장치가 직접 메모리를 읽고 쓰므로 **버스 마스터** 다. 주소 변환은 IOMMU (ARM SMMU) 가 한다. IOMMU 가 없으면 물리 연속 메모리가 필요하다 (bounce buffer, CMA).\n- scatter-gather: 물리적으로 흩어진 페이지들을 디스크립터 체인으로 한 번에 전송.\n\n---\n\n## Q2: DMA 와 CPU 캐시는 왜 충돌하고 어떻게 맞추나?\n\n캐시는 CPU 만 안다. DMA 는 메모리를 직접 본다.\n\n| 방향 | 문제 | 해법 |\n|---|---|---|\n| CPU 가 쓴 버퍼를 장치로 DMA | 데이터가 캐시에만 있고 메모리는 옛 값. 장치가 옛 값을 보냄 | DMA 시작 **전** 캐시 **clean (writeback)** |\n| 장치가 메모리에 쓴 것을 CPU 가 읽음 | CPU 캐시에 그 주소의 옛 라인이 남아 있어 stale 읽기 | DMA 완료 **후** 캐시 **invalidate** |\n| 버퍼가 캐시 라인을 다른 변수와 공유 | invalidate 가 옆 변수의 캐시 내용을 날리거나, writeback 이 DMA 결과를 덮어씀 | 버퍼를 **캐시 라인 (64B) 정렬** 하고 길이도 라인 배수로 |\n\nLinux 두 가지 매핑:\n- **coherent** (`dma_alloc_coherent`): 처음부터 non-cacheable 로 매핑. 동기화 호출 없음. 자주 건드리는 작은 디스크립터·링에 적합. CPU 접근이 느리다.\n- **streaming** (`dma_map_single`, `dma_sync_*_for_device/cpu`): 캐시 가능 버퍼를 전송 때마다 clean·invalidate. 큰 데이터 버퍼에 적합.\n\n하드웨어가 캐시 일관 DMA (ACE, ACP) 를 지원하면 이 절차가 사라진다. 임베디드 SoC 는 대개 안 그렇다.\nDMA 시작 레지스터를 쓰기 전에 `dsb` 로 버퍼 쓰기가 끝났음을 보장한다 ([memory_ordering.md](memory_ordering.md)).\n\n---\n\n## Q3: 멀티코어 캐시 일관성과 false sharing 은?\n\n**MESI**: 각 캐시 라인이 Modified · Exclusive · Shared · Invalid 중 하나.\n한 코어가 쓰려면 다른 코어의 복사본을 Invalid 로 만든다 (스누핑 또는 디렉터리).\n그래서 두 코어가 **같은 라인** 을 번갈아 쓰면 라인이 코어 사이를 왕복한다.\n\n**false sharing (Apple B11)**\n\n```c\nint counter[NCORES];              /* 코어 i 가 counter[i]++ */\n```\n\n서로 다른 변수지만 한 64B 라인에 16개가 들어간다. 각 코어의 증가가 다른 코어의 라인을 무효화해 수십 배 느려진다.\n\n```c\nstruct alignas(64) Slot { int v; };   /* 라인 하나에 하나 */\nSlot counter[NCORES];\n```\n\n같은 이유로 링버퍼의 head·tail, 스핀락과 그 뒤 데이터, per-CPU 변수는 라인 단위로 떨어뜨린다.\n측정은 `perf stat -e cache-misses`, 또는 그냥 패딩 전후 시간 비교.\n\n---\n\n## Q4: Android 는 장치 간 버퍼를 어떻게 공유하나?\n\n- 카메라 → ISP → GPU → 디스플레이로 프레임이 흐르는데, 매 단계 복사하면 대역폭과 전력이 남지 않는다. **zero-copy** 가 목표.\n- **dma-buf**: 커널의 버퍼 공유 프레임워크. 한 장치 드라이버가 할당한 버퍼를 fd 로 export 하고, 다른 드라이버가 import 해서 자기 IOMMU 에 매핑한다. fd 라서 Binder 로 프로세스 사이에 넘길 수 있다.\n- **dma-buf heaps** (옛 ION): system heap, CMA heap 등 어디서 할당할지 고르는 입구. gralloc 이 이걸로 그래픽 버퍼를 만든다.\n- 동기화: dma-fence 로 \"GPU 가 다 그렸다\" 를 디스플레이가 기다린다. 캐시 유지는 `DMA_BUF_IOCTL_SYNC` 로 begin/end cpu access 를 알린다.\n- 메모리 종류: normal cacheable (앱 힙), non-cacheable (디스크립터), device (레지스터). 그래픽 버퍼는 보통 write-combine 이나 non-cacheable.\n\n---\n\n## Follow-up: UART 수신을 DMA 로 바꾸면 설계가 어떻게 달라지나?\n\n- 바이트 인터럽트 → 순환 DMA 버퍼 + 반 찼음·다 찼음 인터럽트 + idle line 인터럽트 (패킷 끝 감지).\n- 소비자는 DMA 가 쓴 위치 (NDTR 레지스터) 를 읽어 새 바이트 범위를 알고, 그 범위만 invalidate 뒤 처리한다.\n- 오버런 정책은 그대로 필요하다. 소비자가 늦으면 DMA 가 덮어쓴다. 버퍼 크기 = 최대 지연 × 전송률.\n- 링버퍼 자체는 [19_embedded/E01](../../LC/19_embedded/) 과 같다. 생산자가 ISR 에서 DMA 엔진으로 바뀐 것뿐이다.\n",
+   "file": "embedded/dma_cache.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:embedded/interrupts",
+   "num": "",
+   "title": "인터럽트 (Interrupts)",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 인터럽트가 뭐고, 폴링과 뭐가 다른가?",
+    "Q2: 인터럽트가 발생하면 무슨 일이 순서대로 일어나나?",
+    "Q3: ISR 안에서 하면 안 되는 것과 그 이유는?",
+    "Q4: 중첩·우선순위·지연은 어떻게 다루나?",
+    "Follow-up: 하드웨어 버튼 디바운스는 어떻게 설계하나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 (Android platform/OS 도메인) 준비.\n> 근거: 구글러 \"임베디드 지원자 다수가 인터럽트를 모른다\" (Blind AgKMxnR7), \"ISR sync design\" 질문 (Blind cc1aonsy).\n> 본인 경험 연결: AUTOSAR 카테고리 1/2 인터럽트, Android 부팅 추적에서 본 irq 핸들러 지연. 숫자나 사례가 있으면 Q4 아래에 적는다.\n\n---\n\n## Q1: 인터럽트가 뭐고, 폴링과 뭐가 다른가?\n\n장치가 \"할 일 생겼다\" 고 CPU 에 신호를 보내 **현재 실행을 가로채고** 미리 등록한 핸들러 (ISR) 를 돌리게 하는 메커니즘.\n폴링은 CPU 가 주기적으로 상태 레지스터를 읽어 확인하는 것.\n\n| | 인터럽트 | 폴링 |\n|---|---|---|\n| 지연 | 이벤트 즉시 (수 µs). 임계구역 길이가 최악 지연을 정한다 | 폴링 주기만큼 |\n| CPU | 이벤트 없으면 0 | 항상 소비 |\n| 결정성 | 비동기라 지터 있음 | 주기가 고정이면 예측 가능 |\n| 유리한 때 | 드물고 언제 올지 모르는 이벤트 | 고빈도 짧은 이벤트 (인터럽트 오버헤드가 더 큼), 지터 민감한 루프 |\n\n실무에선 둘을 섞는다. 네트워크 드라이버의 NAPI 는 인터럽트로 깨고, 패킷이 쏟아지면 인터럽트를 꺼 두고 폴링으로 돌린다 (인터럽트 폭주 방지).\n\n---\n\n## Q2: 인터럽트가 발생하면 무슨 일이 순서대로 일어나나?\n\n```\n장치 핀 → 인터럽트 컨트롤러 (ARM GIC / Cortex-M NVIC) → CPU 에 요청\nCPU: 현재 명령 끝 → 같은 레벨 인터럽트 마스크 → 복귀 주소·상태 레지스터 저장 → 벡터 테이블에서 핸들러 주소 → 점프\n핸들러: 원인 확인 (status 레지스터) → 장치 ack / 상태 비트 클리어 → 최소 작업 → EOI (컨트롤러에 끝 알림)\n복귀: 레지스터 복원 → 인터럽트 재활성 → 원래 명령\n```\n\nLinux 는 핸들러를 둘로 쪼갠다.\n\n| | top half (hardirq) | bottom half |\n|---|---|---|\n| 실행 문맥 | 인터럽트 문맥. 인터럽트 비활성 상태일 수 있음 | softirq · tasklet · threaded IRQ · workqueue |\n| 할 일 | ack, 데이터 꺼내 버퍼에 넣기, 플래그 세우기 | 파싱, 프로토콜 처리, 깨우기 |\n| 잠들 수 있나 | 없음 | workqueue · threaded IRQ 는 가능 |\n\n왜 쪼개나: top half 가 길면 그 동안 다른 인터럽트가 밀려 전체 지연이 커진다.\n\n**level vs edge 트리거**\n\n- level: 신호가 높은 동안 계속 요청. ack 를 안 하면 복귀 즉시 다시 들어온다. 공유 인터럽트 라인에 적합.\n- edge: 전이 한 번. 핸들러 안에서 두 번째 edge 가 오면 놓칠 수 있어 \"다 처리했는지\" 루프로 재확인한다.\n\n---\n\n## Q3: ISR 안에서 하면 안 되는 것과 그 이유는?\n\n| 금지 | 이유 |\n|---|---|\n| sleep, 블로킹 I/O, 잠드는 락 (mutex, semaphore take) | 인터럽트 문맥은 스케줄 대상이 아니다. 잠들면 돌아올 주체가 없다 |\n| malloc, printf, 파일 I/O | 내부에 락이 있고 느리다. 재진입 안전하지 않다 |\n| 긴 루프, 파싱, 복사 | 다른 인터럽트와 실시간 태스크가 밀린다 |\n| 부동소수점 (일부 MCU) | FPU 레지스터 저장을 안 하는 설정이면 메인 코드의 FPU 상태를 깨뜨린다 |\n\n**ISR 과 메인 코드가 데이터를 공유할 때**\n\n- `volatile` 은 \"매번 메모리에서 읽어라\" 일 뿐이다. 다중 바이트 읽기 수정 쓰기를 원자적으로 만들지 않는다 ([volatile_mmio.md](volatile_mmio.md)).\n- 임계구역이 필요하면 **인터럽트 마스킹** (MCU) 또는 `spin_lock_irqsave` (Linux). ISR 은 메인이 잡은 mutex 를 기다릴 수 없으므로 mutex 는 답이 아니다.\n- 가장 깨끗한 패턴은 **단일 생산자·단일 소비자 링버퍼**. ISR 은 tail 만 쓰고 메인은 head 만 쓴다. 각 인덱스가 한 쓰기 주체만 가지면 락 없이 된다 ([memory_ordering.md](memory_ordering.md)).\n- 깨우기는 ISR 에서 세마포어 give · 플래그 세트 · 이벤트 큐 push 로 하고, 실제 일은 태스크에서 한다 (deferred interrupt).\n\n---\n\n## Q4: 중첩·우선순위·지연은 어떻게 다루나?\n\n- **우선순위**: NVIC·GIC 는 인터럽트마다 우선순위가 있다. 높은 것이 낮은 ISR 을 선점할 수 있다 (중첩 허용 시).\n- **최악 지연 = 가장 긴 인터럽트 비활성 구간 + 더 높은 우선순위 ISR 들의 합.** 그래서 임계구역을 짧게 하라는 말이 나온다.\n- **인터럽트 우선순위 역전**: 낮은 우선순위 장치의 ISR 이 길면 높은 우선순위 태스크가 밀린다. 태스크 우선순위와 인터럽트 우선순위는 별개의 체계다.\n- **공유 라인**: 여러 장치가 한 IRQ 를 쓰면 핸들러가 각 장치 status 를 읽어 자기 것인지 확인한다 (`IRQ_NONE` 반환).\n- **인터럽트 폭주**: 장치 고장이나 level 미ack 로 ISR 이 무한 반복되면 시스템이 멈춘다. 횟수 제한 뒤 마스크하고 폴링으로 전환한다.\n- **지연 측정**: GPIO 토글 + 오실로스코프, 또는 타임스탬프 차이. Android 에선 `irqsoff` 트레이서, Perfetto 의 irq 트랙.\n\n본인 경험 연결 (채울 것):\n- AUTOSAR 카테고리 1 (OS 안 거침, 가장 짧게) · 카테고리 2 (OS 서비스 호출 가능) 를 어떤 기준으로 나눴나.\n- 부팅 추적에서 인터럽트 지연이 문제였던 사례가 있나.\n\n---\n\n## Follow-up: 하드웨어 버튼 디바운스는 어떻게 설계하나?\n\n버튼은 눌릴 때 수 ms 동안 수십 번 튄다. ISR 마다 처리하면 한 번 누름이 여러 번 인식된다.\n\n- 방법 1: edge ISR 에서 **인터럽트를 끄고 타이머를 건다**. 타이머 만료 시 핀을 읽어 안정 값으로 확정하고 인터럽트를 다시 켠다.\n- 방법 2: ISR 없이 주기 폴링 (예: 5ms) 으로 N 번 연속 같은 값이면 상태 전이.\n- 상태머신 (RELEASED → MAYBE_PRESSED → PRESSED → MAYBE_RELEASED) 으로 그리면 설명이 깔끔하다.\n- 구현 연습은 [19_embedded/E12](../../LC/19_embedded/) 에서.\n",
+   "file": "embedded/interrupts.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:embedded/memory_ordering",
+   "num": "",
+   "title": "메모리 순서와 원자성 (Memory Ordering, Atomics)",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 왜 코드에 적은 순서대로 실행되지 않나?",
+    "Q2: acquire 와 release 는 무슨 뜻이고, 링버퍼에 어떻게 쓰나?",
+    "Q3: 배리어 종류와 lock-free 의 뜻은?",
+    "Q4: 스핀락은 어떤 순서로 구현하나?",
+    "Follow-up: mutex 를 쓰면 배리어는 신경 안 써도 되나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 링버퍼 (E01) 와 스핀락 (E05) 의 꼬리질문이 결국 여기로 온다. \"lock-free SPSC\" (dataford), \"volatile 만으로는 원자적이 아님\" (interviewstack).\n> 참고: kernel.org memory-barriers.txt, C++ `<atomic>`.\n\n---\n\n## Q1: 왜 코드에 적은 순서대로 실행되지 않나?\n\n세 층에서 순서가 바뀐다.\n\n| 층 | 무엇이 | 막는 방법 |\n|---|---|---|\n| 컴파일러 | 의존성 없는 접근을 재배치, 레지스터에 캐싱 | `volatile`, 컴파일러 배리어 `asm volatile(\"\" ::: \"memory\")`, atomic |\n| CPU | 아웃오브오더 실행, **스토어 버퍼** (쓰기가 캐시에 늦게 반영), 로드 선행 | 메모리 배리어, acquire/release 명령 |\n| 캐시 | 코어마다 캐시. 일관성 프로토콜이 결국 맞추지만 **시점** 은 보장 안 함 | 같은 배리어가 가시성 시점을 정한다 |\n\nx86 은 TSO 라 \"store 뒤 load\" 만 뒤바뀐다. **ARM 은 약한 순서** 라 load·store 전부 재배치될 수 있다. 그래서 x86 에서 잘 되던 lock-free 코드가 ARM 폰에서 깨진다.\n\n---\n\n## Q2: acquire 와 release 는 무슨 뜻이고, 링버퍼에 어떻게 쓰나?\n\n- **release 저장**: 이 저장 **앞의** 모든 읽기·쓰기가, 이 저장을 acquire 로 읽은 쪽에서 보인다. 앞의 것이 뒤로 못 내려간다.\n- **acquire 읽기**: 이 읽기 **뒤의** 접근이 앞으로 못 올라간다.\n- 둘이 쌍을 이루면 \"데이터 먼저 쓰고 플래그 올림 → 플래그 보고 데이터 읽음\" 이 성립한다.\n\n```cpp\n// 단일 생산자 · 단일 소비자 링버퍼. 크기는 2의 거듭제곱.\nstruct Ring {\n    static constexpr size_t N = 256;\n    uint8_t buf[N];\n    std::atomic<size_t> head{0};   // 소비자만 쓴다\n    std::atomic<size_t> tail{0};   // 생산자만 쓴다\n\n    bool push(uint8_t v) {\n        size_t t = tail.load(std::memory_order_relaxed);        // 내 것은 relaxed\n        size_t h = head.load(std::memory_order_acquire);        // 소비자가 비운 것을 봐야 함\n        if (t - h == N) return false;                           // full\n        buf[t & (N - 1)] = v;                                   // 데이터 먼저\n        tail.store(t + 1, std::memory_order_release);           // 그 다음 공개\n        return true;\n    }\n    bool pop(uint8_t &out) {\n        size_t h = head.load(std::memory_order_relaxed);\n        size_t t = tail.load(std::memory_order_acquire);        // 생산자의 데이터 쓰기가 보여야 함\n        if (t == h) return false;                               // empty\n        out = buf[h & (N - 1)];\n        head.store(h + 1, std::memory_order_release);           // 읽기 끝났음을 공개\n        return true;\n    }\n};\n```\n\n- 인덱스를 래핑하지 않고 계속 증가시키면 full·empty 구분이 쉽다 (`t - h == N`). 모듈로 대신 `& (N-1)`.\n- **왜 락이 없어도 되나**: head 는 한 쪽만, tail 은 한 쪽만 쓴다. 쓰는 주체가 하나면 읽기 수정 쓰기 경쟁이 없다. 두 생산자가 되면 바로 깨진다 (MPSC 는 CAS 필요).\n- MCU 단일 코어 + ISR 이면 atomic 대신 volatile + 자연 정렬 폭의 인덱스로도 되지만, 그 이유 (단일 코어라 CPU 재배치가 안 보임, 폭이 레지스터 크기라 원자적) 를 말해야 한다.\n\n---\n\n## Q3: 배리어 종류와 lock-free 의 뜻은?\n\n| 종류 | 예 | 뜻 |\n|---|---|---|\n| 컴파일러 배리어 | `asm volatile(\"\":::\"memory\")`, `barrier()` | 컴파일러만 재배치 금지. CPU 는 자유 |\n| CPU 배리어 (ARM) | `dmb` (메모리 접근 순서), `dsb` (완료까지 대기), `isb` (파이프라인 플러시) | 장치 레지스터·DMA 시작 전 `dsb`, 페이지 테이블 변경 뒤 `isb` |\n| Linux | `smp_mb()`, `smp_rmb()`, `smp_wmb()`, `smp_store_release()`, `smp_load_acquire()` | SMP 가 아니면 컴파일러 배리어로 줄어듦 |\n| C++ | `memory_order_relaxed / acquire / release / acq_rel / seq_cst`, `atomic_thread_fence` | 기본 seq_cst 는 가장 비쌈. ARM 에서 release 는 `stlr`, acquire 는 `ldar` |\n\n- **원자적 (atomic)**: 중간 상태가 안 보인다. 정렬된 워드 크기 접근은 대부분 원자적이지만, 표준이 보장하는 건 `std::atomic` 만.\n- **lock-free**: 어떤 스레드가 멈춰도 다른 스레드가 진행한다. `atomic<T>::is_lock_free()`. 128비트 등 큰 타입은 내부에서 락을 쓸 수 있다.\n- **false sharing**: 서로 다른 변수가 한 캐시 라인 (64B) 에 있으면 코어들이 라인을 뺏고 뺏긴다. head 와 tail 을 `alignas(64)` 로 떨어뜨린다 ([dma_cache.md](dma_cache.md)).\n\n---\n\n## Q4: 스핀락은 어떤 순서로 구현하나?\n\n```cpp\nstruct Spin {\n    std::atomic<bool> locked{false};\n    void lock() {\n        for (;;) {\n            if (!locked.exchange(true, std::memory_order_acquire)) return;   // 획득은 acquire\n            while (locked.load(std::memory_order_relaxed)) { /* pause / wfe */ } // test-and-test-and-set\n        }\n    }\n    void unlock() { locked.store(false, std::memory_order_release); }         // 해제는 release\n};\n```\n\n- lock 이 acquire 인 이유: 임계구역 안의 접근이 lock 앞으로 올라오면 안 된다.\n- unlock 이 release 인 이유: 임계구역 안의 쓰기가 unlock 뒤로 내려가면 다음 획득자가 못 본다.\n- **test-and-test-and-set**: 실패하면 쓰기 (exchange) 대신 읽기로 기다린다. 쓰기는 캐시 라인을 빼앗아 다른 코어까지 느리게 한다.\n- 대기 중 `pause` (x86) / `wfe` (ARM, `sev` 로 깨움) 로 전력과 버스 트래픽을 줄인다.\n- 스핀락 대 뮤텍스: 임계구역이 컨텍스트 스위치 2회보다 짧고, 잠들 수 없는 문맥 (ISR) 이면 스핀락. 단일 코어에서 선점 가능하면 스핀락은 데드락이라 인터럽트·선점을 끄고 잡는다 (`spin_lock_irqsave`).\n- 우선순위 역전: 스핀락 보유자가 선점되면 높은 우선순위가 헛돈다. RTOS 는 그래서 짧은 임계구역에 인터럽트 마스킹을 쓴다 ([rtos_scheduling.md](rtos_scheduling.md)).\n\n---\n\n## Follow-up: mutex 를 쓰면 배리어는 신경 안 써도 되나?\n\n된다. mutex lock 은 acquire, unlock 은 release 의미를 가진다.\n그래서 \"락으로 보호된 데이터\" 는 순서 걱정이 없다.\n문제는 **락 밖에서** 읽는 플래그, 통계 카운터, 더블 체크 락킹 같은 것들이다.\n더블 체크 락킹이 C++03 에서 깨졌던 이유가 포인터 쓰기와 객체 초기화 사이의 순서를 아무도 보장하지 않았기 때문이고, C++11 은 `static` 지역 변수 초기화와 `atomic` 으로 해결했다.\n",
+   "file": "embedded/memory_ordering.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:embedded/rtos_scheduling",
+   "num": "",
+   "title": "RTOS 스케줄링과 우선순위 역전",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: RTOS 스케줄러는 범용 OS 와 무엇이 다른가?",
+    "Q2: 우선순위 역전이 뭐고 어떻게 막나?",
+    "Q3: 태스크 상태, ISR 과 태스크의 연결, 스택은?",
+    "Q4: AUTOSAR OS 와 Android 의 실시간 스레드는?",
+    "Follow-up: 데드락과 역전은 뭐가 다르고, 둘 다 막는 방법은?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 근거: Pixel L6 임베디드 스크린 추천 목록 \"priority inversion, race/deadlock, mutex vs semaphore\" (Blind 2ionkzbi), 구글러 \"standard RTOS scheduling\" (Blind kyfotg4h).\n> 본인 경험 연결: Continental AUTOSAR OS (GV70·GV80·G80). 태스크 분류·주기·인터럽트 카테고리를 Q4 에 채운다.\n\n---\n\n## Q1: RTOS 스케줄러는 범용 OS 와 무엇이 다른가?\n\n| | RTOS (FreeRTOS, AUTOSAR OS, Zephyr) | 범용 (Linux CFS) |\n|---|---|---|\n| 목표 | **데드라인을 지키는 결정성.** 최악 지연이 유계 | 처리량과 공정성 |\n| 정책 | 고정 우선순위 선점. 같은 우선순위는 RR 또는 FIFO | 가중 공정 분배 (vruntime) |\n| 틱 | 고정 틱 (1ms) 또는 tickless | 고해상도 타이머, tickless |\n| 지연 | 컨텍스트 스위치 수 µs, 인터럽트 응답 수 µs | 수십 µs 이상, 지터 큼 |\n| 메모리 | 정적 할당, 태스크 스택 고정 | 동적 |\n\n실시간 = 빠름이 아니라 **늦지 않음이 보장됨**. 100ms 데드라인도 항상 지키면 실시간이다.\n\n스케줄 가능성 분석 두 가지 이름만:\n- **Rate Monotonic**: 주기가 짧을수록 우선순위 높게. 이용률 합이 약 69% 아래면 전부 데드라인 보장.\n- **EDF**: 데드라인이 가까운 것부터. 이용률 100% 까지 가능하지만 동적이라 RTOS 가 잘 안 쓴다.\n\n---\n\n## Q2: 우선순위 역전이 뭐고 어떻게 막나?\n\n```\nH (높음) 가 L (낮음) 이 잡은 뮤텍스를 기다린다.\n그 사이 M (중간) 이 L 을 선점한다.\n→ H 가 M 보다 먼저인데 M 이 끝날 때까지 H 가 못 돈다. 이것이 역전.\nMars Pathfinder (1997) 가 이걸로 리셋을 반복했다.\n```\n\n| 해법 | 동작 | 비용 |\n|---|---|---|\n| **우선순위 상속** (priority inheritance) | H 가 기다리기 시작하면 L 의 우선순위를 H 로 올린다. L 이 풀면 복귀 | 구현 간단. 중첩 락이면 연쇄 상속. Linux `rt_mutex`, PI futex |\n| **우선순위 천장** (priority ceiling) | 락마다 천장 (그 락을 쓰는 최고 우선순위) 을 정하고, 잡는 순간 천장으로 올린다 | 데드락도 막음. 설계 때 천장 계산 필요. AUTOSAR 의 기본 |\n| 임계구역에서 선점 금지 | 짧은 구간은 스케줄러·인터럽트를 끈다 | 가장 단순. 길면 전체 지연 |\n\n세마포어는 소유자가 없어 상속을 못 한다. 그래서 상호 배제에는 뮤텍스, 신호 전달에는 세마포어라고 가르는 것이다 ([mutex_vs_semaphore.md](../os/mutex_vs_semaphore.md)).\n\n---\n\n## Q3: 태스크 상태, ISR 과 태스크의 연결, 스택은?\n\n- 상태: Running · Ready · Blocked (세마포어·큐·지연 대기) · Suspended. 스케줄러는 Ready 중 최고 우선순위를 고른다.\n- **ISR → 태스크 통지**: ISR 은 짧게 끝내고 세마포어 give, 큐 push, 태스크 통지 (`xTaskNotifyFromISR`). 깨어난 태스크가 처리한다. ISR 안에서 \"FromISR\" 가 붙은 API 만 쓰는 이유는 잠들지 않고 스케줄러 상태를 안전하게 건드리기 위해서다.\n- **틱 대 tickless**: 틱이 있으면 지연·타임아웃이 틱 단위. tickless 는 다음 만료 시각까지 타이머를 걸고 잔다 (전력).\n- **스택**: 태스크마다 고정 크기. 오버플로를 잡기 위해 카나리 패턴 (0xA5) 검사, 하이워터마크 측정, MPU 가드 영역. 재귀와 큰 지역 배열이 주범.\n- **워치독**: 가장 낮은 우선순위 태스크가 주기적으로 kick. 높은 태스크가 굶기면 리셋. 각 태스크가 체크인하는 소프트웨어 워치독을 그 위에 둔다.\n\n---\n\n## Q4: AUTOSAR OS 와 Android 의 실시간 스레드는?\n\n**AUTOSAR OS (OSEK 기반)** — 본인 경험 연결 지점.\n\n| 개념 | 내용 |\n|---|---|\n| Basic task | 대기 상태 없음. 시작·종료만. 가장 가볍다 |\n| Extended task | 이벤트 대기 가능. 상태 하나 더 |\n| 인터럽트 카테고리 1 | OS 안 거침. 가장 빠름. OS 서비스 호출 금지 |\n| 인터럽트 카테고리 2 | OS 가 관리. 태스크 활성화 같은 서비스 호출 가능 |\n| 자원 | 우선순위 천장 프로토콜로 보호 |\n| 스케줄 테이블·알람 | 주기 태스크 활성화. 10ms·100ms 주기 등 |\n\n채울 것: 어떤 태스크를 어느 주기에 넣었나, 카테고리 1 로 뺀 인터럽트가 뭐였나, 데드라인 미스를 어떻게 측정했나.\n\n**Android (Linux)**\n- 기본은 CFS. `SCHED_FIFO` / `SCHED_RR` 가 실시간 클래스 (우선순위 1-99). 오디오 (`audioserver` fast mixer), SurfaceFlinger 일부, 입력 경로가 RT 또는 높은 nice 를 쓴다.\n- 커널은 `rt_mutex` 와 PI futex 로 우선순위 상속을 지원한다.\n- Binder 는 호출자의 우선순위를 수신 스레드에 전달한다 (RT 상속은 설정으로). 그래서 낮은 우선순위 서비스가 높은 우선순위 호출을 막는 역전이 줄어든다.\n- 부팅·앱 시작에서 CPU 를 묶는 건 cpuset·cgroup (top-app, foreground, background) 과 EAS 다.\n\n---\n\n## Follow-up: 데드락과 역전은 뭐가 다르고, 둘 다 막는 방법은?\n\n- 데드락은 서로의 락을 **영원히** 기다리는 것. 역전은 결국 풀리지만 **늦는** 것.\n- 우선순위 천장은 둘 다 막는다. 천장으로 올라간 태스크가 돌면서 두 번째 락을 잡으려 할 때, 그 락을 잡을 수 있는 다른 태스크는 이미 선점당해 있기 때문이다.\n- 상속만으로는 데드락을 못 막는다. 락 순서 고정이 따로 필요하다 ([deadlock.md](../os/deadlock.md)).\n",
+   "file": "embedded/rtos_scheduling.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "approaches": []
+  },
+  {
+   "track": "cs",
+   "id": "cs:embedded/volatile_mmio",
+   "num": "",
+   "title": "volatile 과 메모리맵 레지스터 (MMIO)",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: volatile 은 컴파일러에게 무엇을 말하나?",
+    "Q2: 메모리맵 레지스터 접근 코드는 어떻게 쓰고, 어디서 깨지나?",
+    "Q3: volatile 로 스레드 동기화를 하면 왜 안 되나?",
+    "Q4: MMIO 영역은 메모리 속성이 뭐가 다르고, 유저 공간에서 어떻게 접근하나?",
+    "Follow-up: 아래 코드의 문제를 전부 찾아라"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 근거: Blind v77qsn8s \"Don't forget about volatile\", 레지스터 비트 필드 추출 (Apple 질문 은행 B18), dataford \"상태 비트 폴링에서 volatile 이 최적화를 어떻게 막는가\".\n> 구글 임베디드 라운드 빈도 최상위 묶음이다.\n\n---\n\n## Q1: volatile 은 컴파일러에게 무엇을 말하나?\n\n\"이 객체는 **프로그램 밖에서 바뀔 수 있고, 접근 자체가 부작용** 이다. 소스에 적힌 모든 읽기·쓰기를 적힌 횟수와 순서대로 실제로 수행하라.\"\n\n컴파일러가 하지 않게 되는 것:\n- 루프 밖으로 읽기를 끌어내기 (hoisting), 레지스터에 캐싱.\n- 결과를 안 쓰는 읽기 제거, 같은 값 연속 쓰기 합치기.\n- volatile 접근끼리의 순서 바꾸기.\n\nvolatile 이 **보장하지 않는 것**:\n- CPU 의 실행 순서 재배치 (메모리 배리어 아님).\n- 원자성. `volatile uint64_t` 는 32비트 MCU 에서 두 번에 나눠 읽힌다.\n- 캐시 일관성. 다른 코어나 DMA 가 보는 값과 같다는 보장 없음.\n- 다른 volatile 아닌 접근과의 순서.\n\n---\n\n## Q2: 메모리맵 레지스터 접근 코드는 어떻게 쓰고, 어디서 깨지나?\n\n```c\n#define UART_BASE   0x40011000u\n#define UART_SR     (*(volatile uint32_t *)(UART_BASE + 0x00))   /* status */\n#define UART_DR     (*(volatile uint32_t *)(UART_BASE + 0x04))   /* data   */\n#define SR_TXE      (1u << 7)\n\nvoid uart_putc(char c) {\n    while (!(UART_SR & SR_TXE)) { }     /* volatile 없으면 컴파일러가 한 번만 읽고 무한 루프로 바꾼다 */\n    UART_DR = (uint32_t)c;\n}\n```\n\n| 함정 | 설명 |\n|---|---|\n| 상태 비트 폴링 | volatile 없으면 `while(!(SR & TXE))` 가 `if(!(SR & TXE)) for(;;);` 로 최적화된다 |\n| 읽기 부작용 | read-to-clear 레지스터 (읽으면 플래그가 지워짐). 디버거로 보기만 해도 상태가 바뀐다. `x = REG; y = REG;` 를 합치면 안 되니 volatile 필수 |\n| 쓰기 전용 | write-only 레지스터는 읽으면 쓰레기. 읽기 수정 쓰기 패턴 금지. 드라이버가 섀도 변수를 둔다 |\n| 비트 수정 경쟁 | `REG \\|= BIT` 는 읽기·수정·쓰기 3단계. 중간에 ISR 이 같은 레지스터를 고치면 하나가 사라진다. 인터럽트 마스킹, 또는 하드웨어의 SET/CLR 전용 레지스터 (`REG_SET = BIT`) 사용 |\n| 접근 폭 | 32비트 레지스터를 8비트로 쓰면 버스 오류나 무시. 레지스터 폭 그대로 접근 |\n| 구조체 비트필드 | `struct { uint32_t en:1; ... }` 로 레지스터를 매핑하면 접근 폭·순서·패킹이 구현 정의라 이식성이 없다. 마스크·시프트로 직접 한다 |\n\n**비트 필드 추출·설정 (Apple B18 유형)**\n\n```c\nstatic inline uint32_t reg_get(volatile uint32_t *reg, unsigned shift, unsigned width) {\n    uint32_t mask = (width == 32) ? 0xFFFFFFFFu : ((1u << width) - 1u);\n    return (*reg >> shift) & mask;\n}\nstatic inline void reg_set(volatile uint32_t *reg, unsigned shift, unsigned width, uint32_t val) {\n    uint32_t mask = ((width == 32) ? 0xFFFFFFFFu : ((1u << width) - 1u)) << shift;\n    uint32_t v = *reg;                 /* 읽기 */\n    v = (v & ~mask) | ((val << shift) & mask);\n    *reg = v;                          /* 쓰기. 사이에 ISR 이 끼면 경쟁 */\n}\n```\n\n`1u << 32` 는 미정의 동작이라 width 32 를 따로 처리한다.\nLinux 커널은 이 역할을 `readl/writel`, `FIELD_GET/FIELD_PREP` 매크로가 한다.\n\n---\n\n## Q3: volatile 로 스레드 동기화를 하면 왜 안 되나?\n\n- C/C++ 표준에서 두 스레드가 동기화 없이 같은 변수에 쓰고 읽으면 **data race = 미정의 동작**. volatile 은 이걸 바꾸지 않는다.\n- CPU 가 순서를 바꾼다. `data = 1; volatile flag = 1;` 에서 다른 코어가 flag 를 보고 data 를 읽어도 옛 값일 수 있다 (ARM 약한 순서). 배리어나 release/acquire 가 필요하다 ([memory_ordering.md](memory_ordering.md)).\n- 그래서 C++11 이후 스레드 간 플래그는 `std::atomic<bool>`. volatile 의 정당한 용도는 셋뿐이다. **MMIO, 시그널 핸들러와 공유하는 `volatile sig_atomic_t`, setjmp/longjmp 사이의 지역 변수.**\n- ISR 과 공유하는 단일 코어 MCU 에서는 volatile + 인터럽트 마스킹 조합이 전통적 답이다. 단일 코어라 CPU 재배치 문제가 안 보이지만, 원자성은 여전히 마스킹이 책임진다.\n\n---\n\n## Q4: MMIO 영역은 메모리 속성이 뭐가 다르고, 유저 공간에서 어떻게 접근하나?\n\n- MMU 가 그 영역을 **device / non-cacheable** 로 매핑한다. 캐시되면 레지스터 쓰기가 캐시에만 남고 장치에 안 간다.\n- Linux 드라이버는 `ioremap()` 으로 매핑하고 `readl/writel` 로 접근한다. 이 접근자는 컴파일러 배리어와 필요한 CPU 배리어를 포함한다.\n- 유저 공간: `/dev/mem` 을 mmap (루트, 보안상 보통 막음), 또는 UIO 드라이버. Android 에선 HAL 이 커널 드라이버를 통해서만 장치를 만진다.\n- ARM 에선 device 메모리 접근도 순서가 보장되지 않는 경우가 있어 `dsb` 를 끼운다 (예: DMA 시작 레지스터 쓰기 전 버퍼 쓰기 완료 보장).\n\n---\n\n## Follow-up: 아래 코드의 문제를 전부 찾아라\n\n```c\nuint8_t *buf = (uint8_t *)0x20000000;     /* DMA 수신 버퍼 */\nint ready = 0;                            /* ISR 이 1 로 세움 */\nvoid dma_isr(void) { ready = 1; }\nvoid wait(void) { while (!ready) { } process(buf); }\n```\n\n1. `ready` 가 volatile 이 아니라 `while(!ready)` 가 한 번만 읽힌다.\n2. ISR 이 `ready = 1` 을 쓰기 전에 DMA 가 버퍼 쓰기를 끝냈다는 보장은 DMA 완료 인터럽트가 해 주지만, CPU 캐시에 옛 버퍼 내용이 있으면 `process` 가 stale 데이터를 읽는다. 캐시 invalidate 또는 non-cacheable 버퍼 ([dma_cache.md](dma_cache.md)).\n3. 멀티코어라면 `ready` 를 atomic 으로 하고 acquire 로 읽어야 한다.\n4. `ready` 를 다시 0 으로 내리는 쪽과 ISR 이 경쟁하면 이벤트를 놓친다. 카운터나 링버퍼로 바꾼다.\n",
+   "file": "embedded/volatile_mmio.md",
+   "solved": false,
    "review": 0,
    "time": "",
    "space": "",
@@ -8912,6 +9460,11 @@ body{
    "name": "Bit Manipulation"
   },
   {
+   "track": "lc",
+   "key": "19_embedded",
+   "name": "Embedded"
+  },
+  {
    "track": "cs",
    "key": "os",
    "name": "OS"
@@ -8935,6 +9488,16 @@ body{
    "track": "cs",
    "key": "oop",
    "name": "OOP"
+  },
+  {
+   "track": "cs",
+   "key": "android",
+   "name": "Android"
+  },
+  {
+   "track": "cs",
+   "key": "embedded",
+   "name": "Embedded"
   },
   {
    "track": "ai",
