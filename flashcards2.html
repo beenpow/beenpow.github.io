@@ -1,0 +1,3196 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<title>면접 1 카드</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<style id="app-css">
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+
+:root{
+  --ground:#E9ECF0; --card:#FFFFFF; --card-2:#F5F6F8; --line:#D5DAE2; --line-soft:#E4E8EE;
+  --ink:#1C2128; --ink-2:#5B6470; --muted:#8A93A0; --faint:#B5BCC6;
+  --rule-red:#C9412B; --rule-blue:#9DB4D6; --rule-blue-soft:#DCE5F1;
+  --accent:#2F5FAB; --accent-ink:#FFFFFF;
+  --easy:#2E7D4F; --medium:#B7791F; --hard:#B33A3A;
+  --pri:#B7791F; --pri-bg:#FBF0D9;
+  --easy-bg:#E3F1E8; --medium-bg:#F7EBD3; --hard-bg:#F5DEDE;
+  --shadow:0 1px 2px rgba(28,33,40,.06), 0 10px 28px -14px rgba(28,33,40,.25);
+  --shadow-lift:0 2px 4px rgba(28,33,40,.08), 0 24px 48px -20px rgba(28,33,40,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#14171C; --card:#1E232B; --card-2:#252B34; --line:#343B46; --line-soft:#2B323C;
+    --ink:#E6E9EE; --ink-2:#9AA3AF; --muted:#727B88; --faint:#4E5662;
+    --rule-red:#D9553F; --rule-blue:#3D5170; --rule-blue-soft:#2A3547;
+    --accent:#7FA6E8; --accent-ink:#0F1520;
+    --easy:#6FC493; --medium:#E0B25E; --hard:#E4756B;
+    --pri:#E0B25E; --pri-bg:#3A3220;
+    --easy-bg:#1E3328; --medium-bg:#3A2F17; --hard-bg:#3B2222;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 24px 48px -20px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#14171C; --card:#1E232B; --card-2:#252B34; --line:#343B46; --line-soft:#2B323C;
+  --ink:#E6E9EE; --ink-2:#9AA3AF; --muted:#727B88; --faint:#4E5662;
+  --rule-red:#D9553F; --rule-blue:#3D5170; --rule-blue-soft:#2A3547;
+  --accent:#7FA6E8; --accent-ink:#0F1520;
+  --easy:#6FC493; --medium:#E0B25E; --hard:#E4756B;
+  --pri:#E0B25E; --pri-bg:#3A3220;
+  --easy-bg:#1E3328; --medium-bg:#3A2F17; --hard-bg:#3B2222;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+  --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 24px 48px -20px rgba(0,0,0,.7);
+}
+
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ───────── shell ───────── */
+.wrap{max-width:640px;min-width:0;margin:0 auto;padding:0 0 80px}
+
+.top{position:sticky;top:0;z-index:5;background:var(--ground);padding:14px 16px 10px;padding-top:max(14px,env(safe-area-inset-top));border-bottom:1px solid var(--line-soft)}
+.brand{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.brand h1{margin:0;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.brand .cnt{font-size:12px;color:var(--muted);letter-spacing:.02em}
+.brand .grow{flex:1}
+.theme{width:30px;height:30px;border-radius:8px;color:var(--muted);display:grid;place-items:center;font-size:15px}
+.theme:hover{background:var(--card-2);color:var(--ink)}
+
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+.track{padding:8px 4px;border-radius:9px;border:1px solid var(--line);background:var(--card);font-size:13.5px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px}
+.track em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;color:var(--muted)}
+.track[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--card)}
+.track[aria-pressed="true"] em{color:var(--card);opacity:.7}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--card-2);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{padding:7px 2px;border-radius:7px;font-size:13px;font-weight:500;color:var(--ink-2);display:flex;align-items:center;justify-content:center;gap:5px;min-height:34px}
+.seg button em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.seg button[aria-pressed="true"] em{color:var(--ink-2)}
+
+.chips{display:flex;gap:6px;overflow-x:auto;padding:10px 0 2px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12.5px;color:var(--ink-2);white-space:nowrap;display:flex;align-items:center;gap:6px;min-height:30px}
+.chip em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip[aria-pressed="true"] em{color:var(--accent-ink);opacity:.8}
+
+/* ───────── list ───────── */
+.list{padding:6px 12px 0}
+.group{margin-top:14px}
+.group-h{display:flex;align-items:baseline;gap:8px;padding:6px 6px 6px;font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.group-h em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:0;text-transform:none}
+.rows{background:var(--card);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:10px;width:100%;padding:11px 14px 11px 12px;text-align:left;border-top:1px solid var(--line-soft);position:relative;min-height:46px}
+.row:first-child{border-top:0}
+.row:hover{background:var(--card-2)}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:transparent}
+.row[data-r="1"]::before{background:color-mix(in oklab,var(--rule-red) 45%,transparent)}
+.row[data-r="2"]::before{background:color-mix(in oklab,var(--rule-red) 70%,transparent)}
+.row[data-r="3"]::before{background:var(--rule-red)}
+.row .n{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .t{font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.3;min-width:0;overflow-wrap:anywhere}
+.row.unsolved .t{color:var(--ink-2);font-weight:400}
+.row.unsolved .n{color:var(--muted)}
+.row .meta{display:flex;align-items:center;gap:8px}
+.diff{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;width:22px;height:22px;border-radius:6px;display:grid;place-items:center}
+.diff.E{color:var(--easy);background:var(--easy-bg)}
+.diff.M{color:var(--medium);background:var(--medium-bg)}
+.diff.H{color:var(--hard);background:var(--hard-bg)}
+.rv{display:flex;gap:2px;width:22px}
+.rv i{flex:1;height:8px;border-radius:2px;background:var(--line)}
+.rv[data-r="1"] i:nth-child(1),.rv[data-r="2"] i:nth-child(-n+2),.rv[data-r="3"] i{background:var(--rule-red)}
+.row.unsolved .rv i{background:var(--line-soft)}
+.row.pri::before{background:var(--pri)}
+.row.pri .t{color:var(--ink);font-weight:500}
+.row.pri .n{color:var(--pri)}
+.pri-badge{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--pri);background:var(--pri-bg);border-radius:6px;padding:2px 6px;line-height:1.4}
+.fu-badge{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 5px;line-height:1.4}
+.empty{padding:40px 16px;text-align:center;color:var(--muted);font-size:14px}
+
+/* ───────── study ───────── */
+.study{position:fixed;inset:0;z-index:20;background:var(--ground);display:none;flex-direction:column}
+.study.open{display:flex}
+.s-top{display:flex;align-items:center;gap:10px;padding:12px 14px 6px;padding-top:max(12px,env(safe-area-inset-top))}
+.s-top .pos{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.s-top .cat{font-size:12px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.s-top .grow{flex:1}
+.s-top .x{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:var(--ink-2);font-size:18px}
+.s-top .x:hover{background:var(--card-2);color:var(--ink)}
+
+.stage{flex:1;min-height:0;min-width:0;padding:6px 14px 10px;perspective:1400px}
+.card{position:relative;width:100%;height:100%;max-width:560px;margin:0 auto;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.card.flipped{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+.face{position:absolute;inset:0;min-width:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border-radius:16px;box-shadow:var(--shadow-lift);display:flex;flex-direction:column;overflow:hidden;cursor:pointer}
+.face.back{transform:rotateY(180deg)}
+.face::before{content:"";display:block;flex:none;height:var(--rule-h,2px);background:var(--rule-c,var(--rule-blue))}
+.card[data-r="0"]{--rule-h:2px;--rule-c:var(--rule-blue)}
+.card[data-r="1"]{--rule-h:4px;--rule-c:var(--rule-red)}
+.card[data-r="2"]{--rule-h:7px;--rule-c:var(--rule-red)}
+.card[data-r="3"]{--rule-h:11px;--rule-c:var(--rule-red)}
+.f-body{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px 22px 22px}
+.f-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.f-num{font-family:"IBM Plex Mono",monospace;font-size:30px;font-weight:500;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.f-num small{font-size:16px;color:var(--muted);margin-right:1px}
+.f-badges{display:flex;gap:6px;align-items:center;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:10.5px;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line);padding:2px 7px;border-radius:999px}
+.f-title{margin:0 0 14px;font-size:22px;font-weight:600;line-height:1.25;letter-spacing:-.01em;text-wrap:balance}
+.f-desc{font-size:15px;line-height:1.65;color:var(--ink-2);max-width:62ch;white-space:pre-wrap;overflow-wrap:anywhere}
+.f-foot{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.f-foot a{color:var(--accent);text-decoration:none;font-weight:500}
+.f-foot a:hover{text-decoration:underline}
+.f-foot .hint{margin-left:auto}
+.f-unsolved{display:inline-block;font-size:11.5px;color:var(--muted);border:1px dashed var(--line);padding:2px 8px;border-radius:6px;margin-bottom:12px}
+.f-cat{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);line-height:30px}
+.f-qs{margin:0 0 14px;padding-left:22px;font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.f-qs li{margin:4px 0}
+.f-file{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);overflow-wrap:anywhere}
+.md{font-size:14.5px;line-height:1.7;color:var(--ink);overflow-wrap:anywhere}
+.md h2{font-size:16px;margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--line-soft);line-height:1.35}
+.md h2:first-child{margin-top:0;padding-top:0;border-top:0}
+.md h3{font-size:14px;margin:16px 0 6px;color:var(--ink-2)}
+.md h4{font-size:13.5px;margin:14px 0 6px;color:var(--ink-2)}
+.md p{margin:0 0 10px}
+.md ul,.md ol{margin:0 0 10px;padding-left:22px}
+.md li{margin:2px 0}
+.md blockquote{margin:0 0 12px;padding:6px 12px;border-left:3px solid var(--rule-blue);color:var(--ink-2);background:var(--card-2);border-radius:0 6px 6px 0;font-size:13.5px}
+.md blockquote p{margin:0}
+.md code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--card-2);padding:1px 5px;border-radius:4px;color:var(--ink)}
+.md pre{margin:10px 0;padding:10px 12px;border-radius:8px;background:var(--card-2);border-left:2px solid var(--rule-blue);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.md pre code{background:none;padding:0;font-size:12px;line-height:1.55;color:var(--ink-2);white-space:pre}
+.md .katex-display{margin:10px 0;overflow-x:auto;overflow-y:hidden;padding:4px 0}
+.md .katex{font-size:1.05em}
+.md .tbl{overflow-x:auto;margin:10px 0;-webkit-overflow-scrolling:touch}
+.md table{border-collapse:collapse;font-size:13px;min-width:100%}
+.md th,.md td{border:1px solid var(--line-soft);padding:6px 8px;text-align:left;vertical-align:top}
+.md th{background:var(--card-2);font-weight:600;white-space:nowrap}
+.md hr{border:0;border-top:1px solid var(--line-soft);margin:16px 0}
+.md a{color:var(--accent)}
+.md img{max-width:100%}
+@media (max-width:480px){ .md{font-size:14px} .md pre code{font-size:11px} .md table{font-size:12px} }
+.f-pri{display:inline-block;font-size:11.5px;font-weight:600;color:var(--pri);background:var(--pri-bg);padding:2px 8px;border-radius:6px;margin:0 6px 12px 0}
+
+/* back */
+.b-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--rule-red);margin:0 0 10px}
+.b-label.fu{color:var(--accent);margin-top:18px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.cx{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line-soft)}
+.cx b{font-weight:500;color:var(--muted);margin-right:6px}
+.note{font-size:14.5px;line-height:1.7;color:var(--ink)}
+.note .p{white-space:pre-wrap;overflow-wrap:anywhere}
+.ncode{margin:10px 0;padding:10px 12px;border-radius:8px;background:var(--card-2);
+  border-left:2px solid var(--rule-blue);overflow-x:auto;
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;line-height:1.55;white-space:pre;color:var(--ink-2);
+  -webkit-overflow-scrolling:touch}
+@media (max-width:480px){ .ncode{font-size:11px;padding:8px 10px} }
+.note:empty::before{content:"아직 노트가 없습니다. .cpp 헤더의 @note 를 채우면 여기 나타납니다.";color:var(--muted)}
+.fulist{margin:0;padding-left:22px;font-size:14px;line-height:1.65;color:var(--ink)}
+.fulist li{margin:6px 0}
+.appr{margin-top:18px;border-top:1px solid var(--line-soft);padding-top:10px}
+.appr summary{cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);list-style:none;display:flex;align-items:center;gap:8px}
+.appr summary::-webkit-details-marker{display:none}
+.appr summary::after{content:"▾";margin-left:auto;transition:transform .15s}
+.appr[open] summary::after{transform:rotate(180deg)}
+.ap{margin-top:12px;padding-left:12px;border-left:2px solid var(--rule-blue)}
+.ap .nm{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.ap .dt{font-size:13px;color:var(--ink-2);line-height:1.6}
+.ap .c{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);margin-top:4px}
+
+.s-bar{display:grid;grid-template-columns:44px 1fr auto 1fr;align-items:center;gap:8px;padding:8px 14px 14px;padding-bottom:max(14px,env(safe-area-inset-bottom))}
+.s-bar .close{font-size:20px;color:var(--ink-2);padding:0}
+.s-bar button{height:44px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-weight:500;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.s-bar button:hover{background:var(--card-2)}
+.s-bar button:disabled{opacity:.35;cursor:default}
+.s-bar .flip{padding:0 18px;background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.s-bar .flip:hover{background:var(--accent)}
+
+/* ───────── desktop: list | card ───────── */
+.s-empty{flex:1;display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:40px}
+.s-empty kbd{font-family:"IBM Plex Mono",monospace;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--ink-2)}
+@media (min-width:900px){
+  body{display:grid;grid-template-columns:420px minmax(0,1fr);height:100vh;overflow:hidden}
+  #root{overflow-y:auto;height:100vh;border-right:1px solid var(--line)}
+  .wrap{max-width:none;padding-bottom:40px}
+  .study{position:static;display:flex;height:100vh;background:var(--card-2)}
+  .study .s-top{padding:16px 20px 8px}
+  .stage{padding:8px 28px 12px}
+  .card{max-width:640px}
+  .s-bar{max-width:640px;margin:0 auto;width:100%;padding-bottom:18px}
+  .s-bar .close{display:none}
+}
+@media (max-width:480px){
+  .f-body{padding:16px 18px 18px}
+  .f-num{font-size:26px}
+  .f-title{font-size:20px}
+  .track{font-size:12.5px}
+}
+</style>
+
+<div id="root"></div>
+<div id="study" class="study" aria-hidden="true"></div>
+
+<script id="app-doc" type="text/plain">
+면접 1 카드 (Google L5 Android platform/OS + C++ 코딩, 60분) 데이터 규약
+
+■ 원본은 전부 Core/ 에 있다. 이 파일은 manifest 로 고른 것만 보여준다.
+    A  구두     Core/CS/{android,embedded,os,concurrency}/*.md   상태 = CS/tracker.md
+    B-1 구현    Core/LC/19_embedded/*.cpp  (@problem: E01.)      상태 = .cpp 헤더
+    B-2 알고리즘 Core/LC/*/*.cpp (번호, G 접두)                   상태 = .cpp 헤더, 설명 = cards_meta.json
+    꼬리질문    .cpp 의 @followup 줄 / .md 의 "## Follow-up"
+    ★          manifest.md 의 우선 표시. 최소 세트
+
+■ 갱신 절차
+    1) Core 원본을 고친다 (.cpp 헤더 / .md / tracker)  — flashcards1 과 같은 원본
+    2) python3 02-flashcards2/build_cards2.py        (Core 빌드도 같이 돈다)
+    3) cp 02-flashcards2/flashcards2.html ~/gitClones/beenpow.github.io/flashcards2.html
+
+■ 카드 하나 = { track(a|b1|b2), kind(md|cpp), id, num, title, diff, cat, catName, tags, link, desc, qs[], md, file,
+                approaches[], solved, review, time, space, note, date, pri(★), role, followups[] }
+</script>
+
+<script id="app-state" type="application/json">
+{
+ "cards": [
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/art_aot_jit.md",
+   "num": "",
+   "title": "ART 실행 모델 — 해석기 · JIT · AOT · 프로파일 · bg-dexopt",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: ART 는 코드를 어떻게 실행하나? 왜 세 가지 방식을 섞나?",
+    "Q2: 프로파일은 어떻게 모이고 bg-dexopt 는 언제 도나?",
+    "Q3: 이력서 줄에서 나올 꼬리질문",
+    "Q4: JIT 와 GC 는 짧게 어디까지 말할 수 있어야 하나?",
+    "Follow-up: 앱 콜드 시작은 어떤 단계로 이뤄지고, ART 는 어디에 끼나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 1번 줄 (\"ART AOT 파이프라인 재구성으로 앱 시작 15% 단축\") 의 딥다이브 질문에 대비한다.\n> 바탕: Apple 준비 때 쓴 [ART 프로파일·JIT/AOT·컴파일러 필터 노트](../../../USC/FullTime/Experienced/Interview/Progress/2026-10-14_Apple_Core-OS-System-Services-Daemons/02-domain-notes/ART/01-profiling-jit-aot-compiler-filters.md). 그 노트의 주의점 (ProfileSaver 세부는 버전별 차이, hotness 임계값 미확정) 은 그대로 유효하다.\n> 본인 경험 연결 칸은 비워 두었다. 숫자와 사례는 본인이 채운다.\n\n---\n\n## Q1: ART 는 코드를 어떻게 실행하나? 왜 세 가지 방식을 섞나?\n\n| 방식 | 언제 | 장점 | 비용 |\n|---|---|---|---|\n| 해석기 (interpreter) | 컴파일된 코드가 없는 메서드 | 즉시 실행, 저장공간 0 | 느림 |\n| JIT | 실행 중 hot 해진 메서드. 코드 캐시 (메모리) 에 생성 | 실제 사용 패턴에 맞음, 설치 즉시 가능 | 매 실행마다 다시 컴파일, 메모리·전력 |\n| AOT (dex2oat) | 설치 시 · 백그라운드 dexopt · OTA 후 | 시작 빠름, 전력 안 씀 | 컴파일 시간, 저장공간 (odex·vdex·art), 업데이트마다 재컴파일 |\n\n- Dalvik 은 JIT 만, Android 5 (L) 의 ART 는 설치 시 **전부 AOT** → 설치가 수 분 걸리고 OTA 뒤 \"앱 최적화 중\" 화면.\n- Android 7 (N) 부터 **프로파일 가이드**: 설치는 `verify` 또는 `speed-profile`, 실행하면서 JIT + 프로파일 수집, 유휴·충전 때 프로파일 기반 AOT. 세 방식이 공존한다.\n- 왜 전부 `speed` 로 안 하나: 앱 코드 대부분은 한 번도 안 돌아간다. 전부 컴파일하면 저장공간이 2-3배, 설치·OTA 시간이 길고, 시작 시간 이득은 hot 메서드에서만 나온다.\n\n**파일 세 개** (`/data/app/<pkg>/oat/arm64/`)\n\n| 파일 | 내용 |\n|---|---|\n| `.vdex` | 검증된 DEX (quickened 는 Android 12 에서 제거). 재컴파일 때 검증을 건너뛰게 해 준다 |\n| `.odex` (OAT) | 네이티브 코드 + 메타데이터 |\n| `.art` | 미리 초기화한 클래스·객체 이미지 (app image). 클래스 로딩을 줄인다 |\n\n부팅 클래스패스는 `boot.art` / `boot.oat` (boot image) 로 zygote 가 매핑하고, 모든 앱이 COW 로 공유한다.\n\n---\n\n## Q2: 프로파일은 어떻게 모이고 bg-dexopt 는 언제 도나?\n\n```\n앱 실행 ─ 해석기·JIT ─▶ ProfileSaver (런타임 스레드) ─▶ /data/misc/profiles/cur/<user>/<pkg>/primary.prof\n                                                            │ (주기적으로 병합)\n                                                            ▼\nBackgroundDexOptService (유휴 + 충전 + 배터리·열·저장공간 조건) ─▶ profman 병합 ─▶ ref/<pkg>/primary.prof\n                                                            ─▶ dex2oat --compiler-filter=speed-profile\n```\n\n- ProfileSaver 는 메서드에 **hot / startup / post-startup** 표시를 남긴다. 호출 횟수 전체 기록이 아니다. 어떤 메서드가 hot 이 되는지의 임계값과 저장 주기는 버전·설정마다 다르다.\n- `profman` 이 cur 프로파일을 ref 로 병합하고, 변화가 충분할 때만 재컴파일한다 (매번 전부 다시 하지 않음).\n- **Baseline / cloud profile**: 개발자가 AGP 로 넣은 baseline profile, Play 가 모은 cloud profile 이 설치 시점에 함께 와서 첫 실행 전에 `speed-profile` 컴파일을 가능하게 한다 (Android 9 이후 점진 확대).\n- Android 14 부터 **ART Service** (ART 모듈 안, Java API `ArtManagerLocal`) 가 PackageManager 의 dexopt 로직을 대체했다. 동작 원리는 같고 소유 모듈이 바뀌었다.\n- 조건: `BackgroundDexOptService` 는 JobScheduler 로 유휴·충전 때 돌며, 배터리 수준·열·저장공간 부족이면 중단한다. \"밤에 충전기 꽂아 두면 아침에 빨라진다\" 가 이것.\n\n**컴파일 필터** (자주 쓰는 것만)\n\n| 필터 | 뜻 |\n|---|---|\n| `verify` | 검증만. 코드 없음. 해석기 + JIT 로 돈다 |\n| `speed-profile` | 프로파일에 있는 메서드만 AOT + 그 클래스들 app image. 기본값 |\n| `speed` | 전부 AOT. 시스템 앱·persistent 앱에 쓴다 |\n| `everything` | speed + 안 쓰는 것까지. 테스트용 |\n\n```\nadb shell cmd package compile -m speed-profile -f <pkg>     # 강제 컴파일\nadb shell cmd package bg-dexopt-job                           # bg-dexopt 즉시\nadb shell dumpsys package dexopt                             # 패키지별 필터·상태\nadb shell pm art dump <pkg>                                  # Android 14+ ART Service\n```\n\n---\n\n## Q3: 이력서 줄에서 나올 꼬리질문\n\n이력서: \"pre-execution profiling, prioritized bg-dexopt scheduling, artifact recovery 로 시작 15% 단축\".\n\n| 예상 질문 | 준비할 답의 뼈대 (본인이 채움) |\n|---|---|\n| 15% 를 어떻게 측정했나 | 측정 도구 (`am start -W` TotalTime, 첫 프레임, reportFullyDrawn), 반복 횟수, 대상 앱·기기, 콜드 시작 정의 (프로세스 없음 + 캐시 상태) |\n| pre-execution profiling 이 뭔가 | 첫 사용자 실행 전에 어떤 신호로 프로파일을 만들었나, 기존 프로파일 수집과 뭐가 다른가, 잘못된 프로파일의 위험 (안 쓰는 코드 컴파일 → 저장공간·시간 낭비) |\n| prioritized bg-dexopt 가 뭘 바꿨나 | 기본은 어떤 순서였나, 어떤 신호로 우선순위를 매겼나 (사용 빈도·최근성), 첫 실행 성능을 어떻게 지켰나 |\n| 트레이드오프 | 저장공간, 충전 중 전력, 열, OTA 직후 시간, 그리고 측정 외 기기에서의 회귀 위험 |\n| 왜 ART 를 건드렸나, 앱 쪽에서 못 하나 | 플랫폼 레벨이라 모든 앱에 적용, 앱은 자기 프로파일만 |\n| 구글과 어떻게 협업했나 | 업스트림 이슈·패치 사례 (이력서 3번 줄과 연결) |\n\n본인 경험 연결 (채울 것):\n- 측정 데이터 숫자, 기기 수, 앱 수.\n- 특허 세 건이 이 줄에서 각각 어디에 해당하는지 한 줄씩.\n\n---\n\n## Q4: JIT 와 GC 는 짧게 어디까지 말할 수 있어야 하나?\n\n- **JIT**: 메서드별 hotness 카운터가 임계값을 넘으면 컴파일 스레드가 네이티브 코드를 코드 캐시 (`jit-code-cache`, 수 MB) 에 넣는다. 루프 안에서 전환하는 OSR, 가정이 깨지면 deoptimize 해 해석기로 돌아간다. JIT 결과는 프로세스가 죽으면 사라지고, 프로파일만 남아 다음 AOT 의 입력이 된다.\n- **GC**: Android 8+ 는 Concurrent Copying (region 기반, 읽기 배리어), Android 14 부터 userfaultfd 기반 Concurrent Mark-Compact 가 들어갔다. 면접에서 묻는 건 보통 \"GC 가 멈추는 시간이 jank 로 어떻게 보이나\" 정도. 백그라운드 앱은 더 공격적으로 압축한다 (foreground/background collector 전환).\n- **클래스 로딩·검증**: 앱 시작 비용의 큰 부분. app image (`.art`) 가 이걸 줄인다. `verify` 상태 앱은 첫 로딩 때 검증 비용을 낸다.\n\n---\n\n## Follow-up: 앱 콜드 시작은 어떤 단계로 이뤄지고, ART 는 어디에 끼나?\n\n```\nsystem_server(AMS) 결정 ─▶ zygote fork ─▶ ActivityThread.main ─▶ bindApplication\n   ─▶ 클래스 로딩·검증 (ART) ─▶ Application.onCreate ─▶ Activity.onCreate ─▶ 레이아웃·측정 ─▶ 첫 프레임 (SurfaceFlinger)\n```\n\n- ART 가 끼는 곳: 클래스 로딩·검증 (app image 유무), 메서드 실행 방식 (AOT 있음 / 해석기 / JIT 워밍업), GC.\n- 측정: `adb shell am start -W` 의 TotalTime (첫 프레임), `reportFullyDrawn`, Perfetto 의 `launching:` 슬라이스, `dumpsys gfxinfo`.\n- 시작 종류: cold (프로세스 없음) / warm (프로세스 있음, Activity 재생성) / hot (그냥 전면으로). 측정은 보통 cold 를 명시하고, 캐시 상태 (첫 설치 직후 vs 재부팅 직후) 도 같이 적는다.\n- 구글의 공식 가이드는 baseline profile + `speed-profile`, 그리고 startup 에서 하는 일 줄이기 (lazy init, App Startup 라이브러리).\n\n관련: [boot_chain.md](boot_chain.md) (zygote 가 boot image 를 미리 매핑), [perf_tracing.md](perf_tracing.md) (측정 도구), [reboot_loop_recovery.md](reboot_loop_recovery.md) (아티팩트 손상 복구).\n",
+   "file": "android/art_aot_jit.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 앱 콜드 시작은 어떤 단계로 이뤄지고, ART 는 어디에 끼나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/binder.md",
+   "num": "",
+   "title": "Binder — 동작 원리, 스레드풀, 타임아웃 진단",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Binder 가 뭐고 왜 소켓·파이프 대신 쓰나?",
+    "Q2: 한 번의 호출이 커널 안에서 어떻게 흐르나?",
+    "Q3: 스레드풀 고갈과 타임아웃은 어떻게 생기고 어떻게 진단하나? (이력서 딥다이브)",
+    "Q4: 보안·권한과 Treble 에서 Binder 는 어떻게 쓰이나?",
+    "Follow-up: Binder 와 Unix 도메인 소켓 중 하나를 고른다면?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 4번 줄 (\"Binder IPC 타임아웃과 스레드풀 고갈을 다중 서비스 실행 흐름 추적으로 진단\") 의 바탕.\n> Apple 스크린 (10-26) 에서 \"Binder 동작 원리\" 에 직접 호출 경험이 없다고 답했고, \"Binder 외 IPC\" 는 [ipc.md](../os/ipc.md) 에 정리했다. 이 파일은 그 구멍을 메운다.\n\n---\n\n## Q1: Binder 가 뭐고 왜 소켓·파이프 대신 쓰나?\n\nAndroid 의 기본 IPC. **동기 호출 (RPC) 모양** 이고, 커널 드라이버 (`/dev/binder`) 가 메시지 전달·스레드 깨우기·객체 참조 관리를 한다.\n\n| 소켓·파이프와 다른 점 | 설명 |\n|---|---|\n| 복사 1회 | 보내는 쪽 버퍼 → 커널이 **받는 쪽이 mmap 한 버퍼에 직접** 복사. 소켓은 2회 (유저→커널→유저) |\n| 객체 참조 | Binder 객체 (`IBinder`) 를 메시지에 담아 넘길 수 있고 커널이 참조 카운트와 핸들 변환을 한다. 소켓은 바이트만 |\n| fd 전달 | 파일 디스크립터를 넘긴다 (Unix 소켓의 SCM_RIGHTS 와 같은 기능). 큰 데이터는 ashmem/memfd fd 로 |\n| 호출자 신원 | 커널이 발신 pid·uid 를 붙여 준다 (`getCallingUid`). 권한 검사의 근거. 위조 불가 |\n| 스레드 모델 | 수신 프로세스의 **스레드풀** 이 요청을 받는다. 동기 호출이라 호출 스레드는 응답까지 블록 |\n| 죽음 통지 | `linkToDeath` 로 상대 프로세스가 죽으면 콜백 |\n| 우선순위 전달 | 호출자의 nice 를 수신 스레드에 적용 (RT 상속은 설정) |\n\n---\n\n## Q2: 한 번의 호출이 커널 안에서 어떻게 흐르나?\n\n```\n클라이언트 스레드                       커널 binder 드라이버                      서버 프로세스\nProxy.foo(args)\n  Parcel 에 직렬화\n  ioctl(BINDER_WRITE_READ, BC_TRANSACTION) ─▶ 대상 node 찾기 (handle → node)\n                                             서버의 mmap 버퍼에서 공간 할당, 데이터 1회 복사\n                                             fd·binder 객체는 변환 (handle ↔ node)\n                                             대기 중인 binder 스레드 깨움 ───────▶ BR_TRANSACTION\n  블록 (BR_REPLY 대기)                                                           Stub.onTransact → 실제 메서드\n                                             ◀────────────────────────────────── BC_REPLY\n  BR_REPLY ◀──────────────────────────────── 복사, 클라이언트 깨움\n  Parcel 역직렬화 → 반환\n```\n\n- **mmap 버퍼**: 프로세스가 binder 를 열 때 약 1MB − 8KB 를 mmap. 그 프로세스가 **받는 모든 트랜잭션** 이 이 버퍼를 나눠 쓴다. 그래서 큰 Parcel 을 보내면 `TransactionTooLargeException` (수신 측 버퍼 부족) 이 난다. oneway 는 그 절반까지만.\n- **servicemanager**: handle 0 의 특별한 노드 (context manager). 서비스가 이름으로 `addService`, 클라이언트가 `getService` 로 핸들을 얻는다. Treble 이후 `hwservicemanager` (HIDL, /dev/hwbinder), `vndservicemanager` (/dev/vndbinder) 가 따로 있다.\n- **AIDL**: 인터페이스 정의 → Java/C++/Rust 의 Proxy (클라이언트) 와 Stub (서버) 코드 생성. `Parcel` 이 직렬화 포맷. 사람이 쓰는 건 `Stub` 상속한 구현체.\n- **oneway**: 응답을 기다리지 않음. 서버는 같은 노드의 oneway 를 **직렬로** 처리하므로 폭주하면 버퍼가 찬다.\n- **스레드풀**: 서버는 `startThreadPool()` + `joinThreadPool()`. 드라이버가 요청이 쌓이면 `BR_SPAWN_LOOPER` 로 스레드 추가를 요청하고, 최대치 (`setMaxThreads`) 까지 늘어난다. 앱 기본 15, **system_server 31** (SystemServer.java 의 `BinderInternal.setMaxThreads(31)`).\n\n---\n\n## Q3: 스레드풀 고갈과 타임아웃은 어떻게 생기고 어떻게 진단하나? (이력서 딥다이브)\n\n**생기는 모양**\n- system_server 는 프로세스 하나에 스레드풀 하나. 안의 서비스 100개가 31개를 나눠 쓴다.\n- 31개가 전부 (a) 다른 프로세스로의 **아웃바운드 Binder 호출 응답 대기**, (b) **락 대기** 에 묶이면 새 요청이 큐에 쌓인다. 앱 입장에선 system_server 가 무응답, 결국 **watchdog** 이 system_server 를 죽인다 (60초).\n- 중첩 호출 (앱 → system_server → 다시 앱 → 응답이 system_server 로) 은 스레드를 두 번 쓴다. 느린 앱 하나가 system_server 스레드를 잡아먹는 경로다.\n- Binder 자체에는 타임아웃이 없다. \"Binder 타임아웃\" 은 보통 상위 계층 (watchdog, ANR, HAL 호출의 자체 타임아웃) 이 정한 것이다.\n\n**진단 도구**\n\n| 도구 | 보는 것 |\n|---|---|\n| `/dev/binderfs/binder_logs/` (`stats`, `state`, `transactions`, `failed_transaction_log`) 또는 옛 `/sys/kernel/debug/binder/` | 프로세스별 스레드 수·대기 트랜잭션·실패 로그. \"스레드가 전부 바쁘다\" 를 숫자로 |\n| ANR 트레이스 (`/data/anr/`), watchdog 덤프 | 각 Binder 스레드가 어디서 블록돼 있나. `Binder:1234_5` 스레드 이름 |\n| Perfetto `binder_transaction` ftrace + 스레드 상태 | 호출 쌍 (sender ↔ receiver) 과 지연을 시간축에서. 어느 서비스가 병목인지 |\n| `dumpsys binder_calls_stats` | 서비스·메서드별 호출 횟수·지연 통계 |\n| `debuggerd -b <pid>` | 네이티브 스택 |\n\n진단 순서는 \"누가 기다리나 (스레드 덤프) → 누구를 기다리나 (트랜잭션 로그·Perfetto) → 그 상대는 왜 느리나 (상대 프로세스 덤프)\".\n\n본인 경험 연결 (채울 것):\n- 어떤 서비스 간 흐름에서 타임아웃이 났나, 스레드가 몇 개 어디에 묶여 있었나, 고친 방법 (호출 비동기화·락 범위·우선순위·스레드 수).\n- 재현 방법과 재발 방지 (모니터링 지표).\n\n---\n\n## Q4: 보안·권한과 Treble 에서 Binder 는 어떻게 쓰이나?\n\n- 권한 검사: 서버가 `Binder.getCallingUid()/Pid()` 로 호출자를 확인하고 `checkPermission`. `clearCallingIdentity` 로 자기 권한으로 아웃바운드 호출 뒤 `restoreCallingIdentity`. 이걸 잊으면 권한 누출.\n- SELinux 가 Binder 호출도 통제한다 (`binder_call`, 어떤 도메인이 어떤 서비스에 `find`/`add` 가능한지 `service_contexts`). 거부는 `avc: denied { call }` ([hal_aidl_selinux.md](hal_aidl_selinux.md)).\n- Treble: 프레임워크 ↔ 벤더 HAL 은 `/dev/hwbinder` (HIDL) 또는 stable AIDL 로. 벤더 프로세스끼리는 `/dev/vndbinder`. 도메인을 분리해 한쪽 폭주가 다른 쪽을 막지 않게 한다.\n- 큰 데이터: Parcel 에 넣지 말고 ashmem/memfd/dma-buf fd 를 넘긴다. 그래픽 버퍼가 이 경로 ([dma_cache.md](../embedded/dma_cache.md)).\n\n---\n\n## Follow-up: Binder 와 Unix 도메인 소켓 중 하나를 고른다면?\n\n- 요청·응답 모양, 호출자 신원 필요, 객체 참조·죽음 통지 필요 → Binder.\n- 스트림 데이터, 비동기 바이트 흐름, 프레임워크 밖 (네이티브 데몬끼리, 플랫폼 독립 코드) → 소켓.\n- Binder 의 단점: 동기 호출이라 상대가 느리면 내 스레드가 묶인다. 1MB 버퍼 공유. 커널 의존 (Linux 전용). 그래서 zygote 는 Binder 가 아니라 **소켓** 으로 명령을 받는다 (fork 전 단계라 Binder 스레드풀이 없음).\n\n관련: [ipc.md](../os/ipc.md) (IPC 종류 비교표), [boot_chain.md](boot_chain.md) (servicemanager 기동 순서), [perf_tracing.md](perf_tracing.md).\n",
+   "file": "android/binder.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: Binder 와 Unix 도메인 소켓 중 하나를 고른다면?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/boot_chain.md",
+   "num": "",
+   "title": "Android 부팅 체인 — bootloader · kernel · init · zygote · system_server",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 전원이 켜진 뒤 홈 화면까지 무슨 순서로 뜨나?",
+    "Q2: zygote 와 system_server 는 왜 이렇게 나눠져 있나?",
+    "Q3: init.rc 는 어떻게 읽고, 서비스는 어떻게 뜨나?",
+    "Q4: 부팅 시간은 어떻게 재고, 어디서 늘어지나? (이력서 딥다이브)",
+    "Follow-up: OTA 와 A/B, verified boot 는 부팅과 어떻게 얽히나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 4번 줄 (\"kernel 부터 userspace 서비스까지 100+ 기기 변형의 부팅 경로 프로파일링, 구조화된 부팅 추적\") 의 바탕.\n> Apple 준비 때 쓴 [boot-chain.md](../../../USC/FullTime/Experienced/Interview/Progress/2026-10-14_Apple_Core-OS-System-Services-Daemons/02-domain-notes/boot-chain.md) 의 Android 부분을 옮기고 앞 단계 (bootloader·kernel) 와 측정을 보강했다. Darwin 대응표는 그 파일에만 둔다.\n> 근거 등급: 흐름과 파일 위치는 확실. 코드 스니펫은 AOSP 13-14 기억이라 변수명이 조금 다를 수 있다.\n\n---\n\n## Q1: 전원이 켜진 뒤 홈 화면까지 무슨 순서로 뜨나?\n\n```\nBoot ROM ─▶ bootloader (ABL/UEFI, 공급사) ─▶ kernel (GKI, dtb) ─▶ first-stage init ─▶ second-stage init\n   ─▶ 네이티브 데몬 (servicemanager, surfaceflinger, vold, netd …)  +  zygote ─fork─▶ system_server ─▶ 앱 (Launcher, SystemUI)\n```\n\n| 단계 | 하는 일 | 흔적 |\n|---|---|---|\n| bootloader | A/B 슬롯 선택, verified boot (vbmeta 서명 검증), 커널·ramdisk·dtb 로드. fastboot 모드 | `bootloader` 타임스탬프는 bootstat 이 받아 둠 |\n| kernel | 드라이버 초기화, 루트 ramdisk 마운트, `/init` 실행 | `dmesg` 타임스탬프 (0 초 기준) |\n| **first-stage init** | fstab 으로 `/system` `/vendor` 마운트 (dm-verity), **벤더 커널 모듈 로드** (GKI 이후), SELinux 정책 로드 | logd 없음. `dmesg` 만 |\n| **second-stage init** | `init.rc` 파싱, 속성 서비스, ueventd, apexd, 서비스 기동 | `logcat`, `init` 로그, boot trace |\n| zygote | boot image (boot.art/oat) 와 프레임워크 클래스 preload 뒤 대기. system_server fork | `zygote` 태그, Perfetto `PreloadClasses` |\n| system_server | 서비스 100개+ 기동, boot phase 진행 | `SystemServerTiming` 슬라이스 |\n| boot completed | `sys.boot_completed=1`, BOOT_COMPLETED 브로드캐스트, Launcher | `bootstat`, `boot_progress_*` 로그 |\n\n- init 은 PID 1 이고 커널 모듈이 아니다. first-stage 와 second-stage 는 같은 바이너리가 `exec` 로 자신을 다시 부르는 구조다.\n- GKI (Generic Kernel Image, Android 12+): 커널 본체는 구글 공용, SoC·보드 차이는 **벤더 모듈** 로. 그래서 모듈 로딩이 first-stage init 의 일이 됐고, 부팅 시간에서 눈에 띄는 구간이다.\n\n---\n\n## Q2: zygote 와 system_server 는 왜 이렇게 나눠져 있나?\n\n```\nzygote (app_process64 --zygote --start-system-server)\n   ├─fork─▶ system_server    한 번, 시작 직후. uid 1000. SystemServer.main\n   └─fork─▶ 앱 프로세스들     system_server(AMS) 요청마다. 각자 uid. ActivityThread.main\n```\n\n- zygote 는 프레임워크 클래스·리소스·boot image 를 **미리 로드한 채 대기** 한다. fork 하면 자식이 그 메모리를 copy-on-write 로 공유한다. 앱마다 프레임워크를 다시 로드하지 않아 시작이 빠르고 메모리가 공유된다.\n- system_server 에서 fork 하지 않는 이유: 서비스 100개의 상태를 앱이 물려받는다. fork 는 깨끗한 zygote 에서만.\n- 앱 프로세스가 뜨는 순서: AMS 가 결정 → zygote 소켓 (`/dev/socket/zygote`) 으로 명령 → zygote fork → 자식이 `ActivityThread.main` → Binder 로 `attachApplication`.\n- **USAP** (unspecialized app process) 풀: 미리 fork 해 둔 빈 프로세스를 두고 요청 때 specialize 만 하는 옵션 (Android 10+).\n- system_server 가 죽으면 zygote 도 죽고 (waitpid 감시), init 이 zygote 를 재시작하면서 `onrestart` 줄의 audioserver·cameraserver 등을 함께 재시작한다. 프레임워크 전체 재기동이다. 앱 하나가 죽으면 그 앱만.\n\n| | system_server | 앱 프로세스 |\n|---|---|---|\n| 언제 | zygote 시작 직후 한 번 | 필요할 때마다 |\n| 진입점 | SystemServer.main | ActivityThread.main |\n| uid | 1000 (system) | 앱마다 다른 uid |\n| 죽으면 | 프레임워크 전체 재시작 | 그 앱만 |\n\n**boot phase**: PHASE_SYSTEM_SERVICES_READY 500 → PHASE_ACTIVITY_MANAGER_READY 550 → PHASE_THIRD_PARTY_APPS_CAN_START 600 → PHASE_BOOT_COMPLETED 1000.\n550 뒤 persistent 앱 (SystemUI, Phone), 1000 에서 BOOT_COMPLETED.\n\n```\n# system/core/rootdir/init.zygote64.rc\nservice zygote /system/bin/app_process64 -Xzygote /system/bin --zygote --start-system-server\n    class main\n    priority -20\n    user root\n    socket zygote stream 660 root system\n    onrestart restart audioserver\n    onrestart restart cameraserver\n```\n\n---\n\n## Q3: init.rc 는 어떻게 읽고, 서비스는 어떻게 뜨나?\n\n- 문법: `on <trigger>` 블록 (액션) 과 `service <name> <path>` 블록. 트리거는 `early-init`, `init`, `late-init`, `boot`, `property:sys.boot_completed=1` 등.\n- 서비스 옵션: `class` (main/core/late_start 묶음 기동), `user`/`group`, `oneshot`, `disabled`, `critical` (4분 안에 4회 넘게 죽으면 bootloader/recovery 로 재부팅), `onrestart`, `socket`, `writepid`, `capabilities`.\n- `class_start main` 처럼 묶음으로 띄우고, 의존은 **속성 트리거** 로 푼다 (`on property:vold.decrypt=trigger_restart_framework`). 명시적 의존 그래프가 없어서 순서 문제가 속성 타이밍으로 나타난다.\n- 속성 서비스 (`/dev/socket/property_service`): `setprop/getprop`. `ro.*` 는 한 번만, `persist.*` 는 재부팅 유지, `ctl.start/stop` 으로 서비스 제어.\n- `ueventd`: 커널 uevent 받아 `/dev` 노드 생성·권한 (`ueventd.rc`).\n- `apexd`: Mainline 모듈 (ART 포함) 을 `/apex/` 에 마운트. 이게 떠야 ART 가 최신 버전으로 잡힌다.\n- `vendor/etc/init/*.rc`, `system/etc/init/*.rc` 로 쪼개져 있어 어느 파티션의 .rc 가 서비스를 정의했는지 찾는 게 디버깅의 첫 단계.\n\n---\n\n## Q4: 부팅 시간은 어떻게 재고, 어디서 늘어지나? (이력서 딥다이브)\n\n| 도구 | 보는 것 |\n|---|---|\n| `adb shell bootstat -p` | 단계별 타임스탬프 (bootloader, kernel, boot_complete). 기기 간 비교에 적합 |\n| `dmesg` | 커널·first-stage init 구간. 유일한 로그 |\n| `logcat -b all` 의 `boot_progress_*` | init 끝, zygote preload, system_server 단계, 홈 화면 |\n| Perfetto boot trace (`persist.debug.perfetto.boottrace=1` + 설정 파일) | 부팅부터 ftrace·atrace. `SystemServerTiming`, `PreloadClasses`, 서비스별 시간 |\n| `systrace`/`atrace` (legacy) | 같은 용도의 옛 도구 |\n| `adb shell dumpsys activity services` + `am start -W` | 부팅 뒤 첫 앱 |\n\n늘어지는 전형적 구간:\n- first-stage init 의 벤더 모듈 로딩 (GKI). 모듈 수·크기·의존 순서.\n- `/data` 마운트와 fsck, 암호화 (FBE) 키 풀기.\n- zygote preload (클래스·리소스·boot image 매핑).\n- system_server 의 특정 서비스 생성자가 I/O 를 함 (PackageManager 가 패키지 스캔 — 앱 수에 비례).\n- dexopt 가 필요한 상태 (OTA 뒤 boot image 불일치) 로 부팅하면 앱 시작마다 느림.\n\n본인 경험 연결 (채울 것):\n- \"구조화된 부팅 추적\" 이 어떤 포맷·어떤 수집점이었나. 100+ 변형을 어떻게 한 그래프에 올렸나.\n- 회귀를 잡은 사례 하나 (어느 단계, 원인, 수정).\n- 측정 노이즈 (콜드 vs 재부팅, 저장공간 상태, 열) 를 어떻게 통제했나.\n\n---\n\n## Follow-up: OTA 와 A/B, verified boot 는 부팅과 어떻게 얽히나?\n\n- **A/B 업데이트**: 두 슬롯. 백그라운드로 비활성 슬롯에 쓰고 재부팅 때 전환. 부팅이 성공해 `boot_control` 이 \"successful\" 로 표시하기 전까지 bootloader 가 재시도 횟수를 세고, 넘으면 **이전 슬롯으로 자동 복귀**. 리부트 루프 방지의 1차 방어선 ([reboot_loop_recovery.md](reboot_loop_recovery.md)).\n- **verified boot (AVB)**: vbmeta 가 각 파티션의 해시·서명을 담고, dm-verity 가 블록 읽을 때마다 검증. 손상이면 `eio` 또는 `restart` 모드로 재부팅. 그래서 \"파일이 손상됐는데 부팅은 됐다\" 는 보통 `/data` 쪽 이야기다.\n- **Mainline/APEX**: ART 같은 모듈은 Play 로 따로 업데이트. apexd 가 새 버전 마운트, 실패하면 이전 버전으로 롤백.\n- OTA 뒤 첫 부팅이 느린 이유: boot image 가 바뀌어 앱 odex 가 무효 → bg-dexopt 가 다시 돌기 전까지 해석기·JIT ([art_aot_jit.md](art_aot_jit.md)).\n\n관련: [binder.md](binder.md) (servicemanager 등록, system_server 스레드풀), [perf_tracing.md](perf_tracing.md).\n",
+   "file": "android/boot_chain.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: OTA 와 A/B, verified boot 는 부팅과 어떻게 얽히나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/hal_aidl_selinux.md",
+   "num": "",
+   "title": "HAL · AIDL · Treble · SELinux",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Treble 이 뭘 바꿨고, HAL 은 어디서 돌아가나?",
+    "Q2: AIDL 로 HAL 인터페이스를 정의하면 어떻게 생기고 어떻게 버전을 올리나?",
+    "Q3: SELinux 는 Android 에서 어떻게 동작하고, 거부는 어떻게 읽나?",
+    "Q4: 앱과 벤더를 추가로 묶는 장치는?",
+    "Follow-up: 새 센서용 HAL 을 하나 추가한다면 건드릴 곳을 순서대로 말해보라"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 추정 영역. 유사 공고 (Android System and Frameworks) 가 \"Android IPC/Binder optimization\", \"custom HAL interfaces (AIDL/HIDL)\" 를 명시해서 넣었다. 1차 후기 없음.\n> 이력서 3번 줄 (\"구글·퀄컴과 조직 경계 넘어 20+ 릴리즈 블로커 해결\") 의 벤더·프레임워크 경계 이야기가 여기 걸린다.\n\n---\n\n## Q1: Treble 이 뭘 바꿨고, HAL 은 어디서 돌아가나?\n\n문제 (Android 7 이전): 프레임워크와 벤더 코드가 한 덩어리라 OS 업데이트마다 SoC·OEM 이 전부 다시 맞춰야 했다.\n\nTreble (Android 8+):\n- **파티션 분리**: `/system` (구글·OEM 프레임워크) 과 `/vendor` (SoC·보드 코드). 프레임워크만 OTA 해도 벤더가 그대로 돌아야 한다.\n- **안정된 인터페이스**: 프레임워크 ↔ 벤더 사이를 HIDL (Android 8-12) 로, 지금은 **stable AIDL** 로 정의. 버전이 매겨지고 하위 호환을 지켜야 한다.\n- **VNDK**: 벤더가 쓸 수 있는 시스템 공유 라이브러리 집합을 고정.\n- **VINTF**: 기기 매니페스트 (벤더가 제공하는 HAL 버전) 와 호환성 매트릭스 (프레임워크가 요구하는 것) 를 부팅 시 대조. 불일치면 부팅 실패.\n- **GKI** (Android 12+): 커널까지 분리. 구글 커널 + 벤더 모듈, KMI (커널 모듈 인터페이스) 안정화.\n\nHAL 실행 형태:\n\n| 형태 | 설명 |\n|---|---|\n| binderized | HAL 이 **별도 프로세스** (`android.hardware.camera.provider@2.4-service`). 프레임워크와 `/dev/hwbinder` 또는 AIDL binder 로 통신. 크래시 격리, SELinux 도메인 분리 |\n| passthrough (legacy) | 프레임워크 프로세스 안에 `.so` 로 로드. 빠르지만 격리 없음. Treble 전환기용, 지금은 거의 없음 |\n\n---\n\n## Q2: AIDL 로 HAL 인터페이스를 정의하면 어떻게 생기고 어떻게 버전을 올리나?\n\n```aidl\n// hardware/interfaces/vibrator/aidl/android/hardware/vibrator/IVibrator.aidl\n@VintfStability\ninterface IVibrator {\n    int getCapabilities();\n    void on(int timeoutMs, in IVibratorCallback callback);\n    void off();\n}\n```\n\n- `@VintfStability`: 프레임워크·벤더 경계용. 한 번 동결 (freeze) 된 버전은 바꾸지 못하고, 다음 버전에 메서드를 **추가** 만 한다. `aidl_api/<name>/<N>/` 에 동결된 사본, `current/` 에 작업 중.\n- 생성 코드: C++ (`ndk` backend, 벤더용), Java, Rust. `BnVibrator` (서버), `BpVibrator` (프록시).\n- 등록: 서비스가 `AServiceManager_addService(binder, \"android.hardware.vibrator.IVibrator/default\")`, 클라이언트는 `waitForService`. 인스턴스 이름이 붙어 같은 인터페이스를 여러 하드웨어가 제공할 수 있다.\n- VINTF 매니페스트 (`manifest.xml`) 에 `<hal format=\"aidl\"><name>android.hardware.vibrator<\/name><version>2<\/version>…` 로 선언.\n- HIDL 과 차이: HIDL 은 전용 언어·`hwbinder`·버전이 패키지 이름에 박힘 (`@2.4`). AIDL 은 프레임워크와 같은 언어·binder, 증분 버전. Android 13 부터 새 HAL 은 AIDL 만.\n- 테스트: VTS (Vendor Test Suite) 가 HAL 인터페이스 준수를 검사. CTS 는 프레임워크 API.\n\n벤더·프레임워크 경계 디버깅 (이력서 3번 줄 연결): 로그가 두 프로세스로 갈리고, SELinux 도메인이 다르고, 벤더 쪽 소스가 없을 때가 많다. 트랜잭션 추적 (Perfetto binder) 과 인터페이스 계약 (어느 쪽이 스펙을 어겼나) 으로 책임을 가른다.\n\n본인 경험 연결 (채울 것): 퀄컴·구글과 함께 푼 블로커 중 HAL 경계였던 것 하나. 어느 쪽 코드였고 어떻게 증명했나.\n\n---\n\n## Q3: SELinux 는 Android 에서 어떻게 동작하고, 거부는 어떻게 읽나?\n\n- Android 5 부터 **enforcing**. 모든 프로세스가 도메인 (`u:r:system_server:s0`, `u:r:untrusted_app:s0`, `u:r:hal_camera_default:s0`) 을 갖고, 파일·소켓·속성·Binder 서비스가 타입 라벨을 갖는다. 정책이 허용한 접근만 된다 (화이트리스트).\n- 정책 위치: `system/sepolicy/` (플랫폼), `device/<vendor>/sepolicy/` (벤더). 파일 라벨은 `file_contexts`, 속성은 `property_contexts`, 서비스는 `service_contexts`. 부팅 시 first-stage init 이 정책을 로드한다.\n- **neverallow**: 정책 컴파일 시점에 \"이런 허용은 절대 있을 수 없다\" 를 검사. CTS 가 기기의 정책을 neverallow 로 검증하므로 OEM 이 편의로 구멍을 못 낸다. `untrusted_app` 이 `/dev/block` 을 읽는 규칙 같은 것.\n- uid 권한과의 관계: Linux DAC (uid·gid·파일 모드) 를 먼저 통과해야 하고, 그 다음 MAC (SELinux). 둘 다 통과해야 접근.\n\n거부 로그:\n\n```\navc: denied { read } for pid=1234 comm=\"my_daemon\" name=\"foo.txt\" dev=\"dm-4\" ino=99\n     scontext=u:r:my_daemon:s0 tcontext=u:object_r:vendor_data_file:s0 tclass=file permissive=0\n```\n\n읽는 법: **누가** (scontext 도메인) **무엇에** (tcontext 타입, tclass) **어떤 동작** (denied { }) 을 하려다 막혔나.\n해결은 두 갈래: (a) 정말 필요한 접근이면 `allow my_daemon vendor_data_file:file read;` 를 정책에 추가 (neverallow 에 걸리면 설계를 바꿔야 함), (b) 파일 라벨이 잘못됐으면 `file_contexts` 수정 뒤 `restorecon`.\n`audit2allow` 가 denial 을 규칙으로 바꿔 주지만 그대로 넣으면 안 되고 왜 필요한지 따진다.\n개발 중엔 `setenforce 0` (permissive) 로 \"SELinux 문제인지\" 만 확인하고 끈 채로 두지 않는다.\n\n---\n\n## Q4: 앱과 벤더를 추가로 묶는 장치는?\n\n| 장치 | 역할 |\n|---|---|\n| seccomp-bpf | 앱 프로세스가 쓸 수 있는 시스템 콜 목록 제한 (zygote 가 specialize 때 적용) |\n| 속성 접근 제어 | `property_contexts` 로 어느 도메인이 어느 `sys.*`/`vendor.*` 를 읽고 쓰나 |\n| Binder 서비스 접근 | `service_contexts` + `allow domain service_type:service_manager { find add }` |\n| 벤더 ↔ 시스템 소켓 금지 | 벤더 프로세스는 `/dev/vndbinder` 만. 프레임워크 Binder 서비스 직접 호출 불가 |\n| dm-verity · AVB | 파티션 무결성 ([boot_chain.md](boot_chain.md)) |\n| Keystore · StrongBox · TEE | 키는 TEE/보안 칩 안에서만. 프레임워크는 핸들만 |\n\n---\n\n## Follow-up: 새 센서용 HAL 을 하나 추가한다면 건드릴 곳을 순서대로 말해보라\n\n1. 인터페이스: `hardware/interfaces/<name>/aidl/` 에 `.aidl` 정의, `@VintfStability`, 버전 1 동결.\n2. 구현: 벤더 프로세스 (`/vendor/bin/hw/…-service`), `init.rc` 서비스 항목 (`class hal`, `user`/`group`).\n3. SELinux: `hal_<name>_default` 도메인, 장치 노드 라벨, Binder 서비스 라벨, 필요한 allow 규칙 (neverallow 통과 확인).\n4. VINTF: 기기 매니페스트에 HAL 선언, 프레임워크 호환성 매트릭스와 맞추기.\n5. 프레임워크 클라이언트: system_server 안 서비스가 `waitForService` 로 연결, 죽음 통지 (`linkToDeath`) 로 HAL 재시작 대응.\n6. 테스트: VTS 모듈, 그리고 HAL 크래시 시 프레임워크가 살아 있는지 (binderized 격리 확인).\n\n관련: [binder.md](binder.md), [boot_chain.md](boot_chain.md), [process_memory_lmk.md](process_memory_lmk.md).\n",
+   "file": "android/hal_aidl_selinux.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: 새 센서용 HAL 을 하나 추가한다면 건드릴 곳을 순서대로 말해보라"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/perf_tracing.md",
+   "num": "",
+   "title": "성능 추적 도구 — Perfetto · simpleperf · ANR · jank",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Perfetto 는 뭐고 systrace 와 뭐가 다른가?",
+    "Q2: 부팅·Binder·앱 시작은 각각 어떻게 추적하나?",
+    "Q3: ANR 과 jank 는 어떻게 정의되고 어디서 보나?",
+    "Q4: CPU 프로파일링과 그 밖의 도구",
+    "Follow-up: \"앱 시작이 가끔 2초씩 느려진다\" 를 받으면 첫 30분에 무엇을 하나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. \"어떤 디버깅 도구를 쓰나 (profiler, perfetto)\" 가 Android 면접 댓글에 나온다 ([1xc9gl4](https://www.reddit.com/r/androiddev/comments/1xc9gl4/google_android_interview/)). 이력서의 부팅 추적·Binder 진단이 전부 이 도구들 위에 있다.\n\n---\n\n## Q1: Perfetto 는 뭐고 systrace 와 뭐가 다른가?\n\n| | Perfetto (Android 9+, 기본은 10+) | systrace / atrace (legacy) |\n|---|---|---|\n| 구조 | `traced` (서비스) + `traced_probes` (ftrace·/proc 수집) + 앱 SDK. 공유 메모리 링버퍼 | atrace 가 ftrace 를 켜고 파일로 덤프 |\n| 데이터 | ftrace (sched, irq, binder, …), atrace 카테고리 (`gfx view am wm binder_driver …`), 프로세스·메모리 카운터, 로그, heapprofd, Java heap 덤프 | ftrace + atrace |\n| 길이 | 긴 트레이스 (수 분), 링버퍼로 \"문제 순간만\" | 짧게 |\n| 분석 | ui.perfetto.dev, `trace_processor` (SQL) | HTML |\n\n```\nadb shell perfetto -o /data/misc/perfetto-traces/t.pftrace -t 10s sched freq idle am wm gfx view binder_driver\nadb pull /data/misc/perfetto-traces/t.pftrace\n```\n\n보는 법: 스레드별 상태 (Running·Runnable·Sleeping·**Uninterruptible sleep = I/O 또는 락**), atrace 슬라이스 (프레임워크가 `Trace.beginSection` 으로 남긴 구간), binder 트랙 (호출 쌍 화살표), CPU 주파수·idle.\n\"Runnable 인데 안 돌았다\" 는 CPU 경쟁, \"Sleeping\" 은 뭘 기다렸나 (wakeup 화살표로 깨운 주체 추적).\n\n---\n\n## Q2: 부팅·Binder·앱 시작은 각각 어떻게 추적하나?\n\n| 대상 | 방법 |\n|---|---|\n| 부팅 | `persist.debug.perfetto.boottrace=1` + `/data/misc/perfetto-configs/boottrace.pbtxt`. 재부팅하면 init 직후부터 수집. `SystemServerTiming`, `PreloadClasses`, `apexd`, 서비스 기동 슬라이스 |\n| Binder | ftrace `binder_transaction`, `binder_transaction_received` (`binder_driver` 카테고리). sender 스레드 → receiver 스레드 화살표. 지연 = receiver 가 깨어난 시각 − 전송 시각 |\n| 앱 시작 | `am` 카테고리의 `launching: <pkg>` 슬라이스, `bindApplication`, `activityStart`, 첫 `Choreographer#doFrame`. 숫자는 `am start -W` TotalTime |\n| 잠금·대기 | 스레드가 `Uninterruptible` 이면 커널 스택 (`sched_blocked_reason`), Java 락은 ANR 트레이스의 `waiting to lock` |\n| 메모리 | `mem` 카운터, heapprofd (네이티브 힙 할당 스택), Java heap dump |\n\n본인 경험 연결 (채울 것): \"구조화된 부팅 추적\" 이 Perfetto 위였나 자체 로그였나, 어떤 지표를 기기별로 비교했나.\n\n---\n\n## Q3: ANR 과 jank 는 어떻게 정의되고 어디서 보나?\n\n**ANR** (Application Not Responding): 메인 스레드가 정해진 시간 안에 이벤트를 처리하지 못함.\n\n| 종류 | 임계 |\n|---|---|\n| 입력 이벤트 (터치·키) | 5초 |\n| 브로드캐스트 | foreground 10초, background 60초 |\n| 서비스 시작 | foreground 20초, background 200초 |\n| ContentProvider | 10초 |\n\n- 발생 시 `/data/anr/` 에 전 스레드 스택, dropbox 에 요약, `am_anr` 로그. 원인은 대개 메인 스레드의 I/O·Binder 동기 호출·락 대기·무한 루프. 트레이스에서 main 스레드 맨 위 프레임을 본다.\n- system_server 쪽은 ANR 이 아니라 **watchdog** ([reboot_loop_recovery.md](reboot_loop_recovery.md)).\n\n**jank**: 프레임 하나가 디스플레이 주기 (60Hz 16.7ms, 90Hz 11.1ms, 120Hz 8.3ms) 를 넘겨 같은 프레임이 두 번 보임.\n\n```\nVSYNC ─▶ Choreographer#doFrame (앱: input → animation → measure/layout → draw → RenderThread) ─▶ BufferQueue ─▶ SurfaceFlinger 합성 ─▶ 디스플레이\n```\n\n- 앱 쪽 원인: 메인 스레드 긴 작업, 레이아웃 과다, 큰 비트맵 디코딩. 시스템 쪽: SurfaceFlinger 지연, GPU 경쟁, CPU 주파수 낮음.\n- 측정: `dumpsys gfxinfo <pkg> framestats`, Perfetto 의 `Expected/Actual Timeline` 트랙 (Android 12+ FrameTimeline), `SurfaceFlinger` 트랙.\n- 트리플 버퍼링이 지터를 흡수하지만 지연을 한 프레임 늘린다.\n\n---\n\n## Q4: CPU 프로파일링과 그 밖의 도구\n\n| 도구 | 용도 |\n|---|---|\n| `simpleperf` | 샘플링 CPU 프로파일러 (perf 기반). Java·네이티브 혼합 스택. `simpleperf record -p <pid> -g` → 플레임그래프 |\n| `perf` | 커널·네이티브. 하드웨어 카운터 (cache-misses) |\n| `strace -p` | 시스템 콜 추적 (느리지만 확실) |\n| `dumpsys <service>` | 서비스 내부 상태. `meminfo`, `gfxinfo`, `activity`, `binder_calls_stats`, `package dexopt` |\n| `logcat -b all` | main·system·events·crash·kernel 버퍼. `events` 의 `am_proc_start`, `boot_progress_*` |\n| `bugreport` | 전부 한 번에. 필드 이슈의 기본 입력 |\n| `procrank`, `showmap`, `/proc/<pid>/smaps` | PSS·USS 메모리 |\n| `top -H`, `/proc/<pid>/task/*/stat` | 스레드별 CPU |\n\n도구를 고르는 기준: **시간축이 필요하면 Perfetto, 어디서 CPU 를 쓰는지면 simpleperf, 한 순간의 상태면 dumpsys·스택 덤프.**\n\n---\n\n## Follow-up: \"앱 시작이 가끔 2초씩 느려진다\" 를 받으면 첫 30분에 무엇을 하나?\n\n1. 재현 조건 좁히기: 콜드·웜, 첫 설치 직후인지, 충전 중인지, 다른 앱 설치 직후인지 (bg-dexopt 가 돌고 있나).\n2. `am start -W` 로 숫자 재현, 느린 회차와 빠른 회차 둘 다 Perfetto 로 잡기 (링버퍼 + 트리거).\n3. 느린 트레이스에서 `launching` 슬라이스 안의 공백을 본다. 메인 스레드가 Sleeping 이면 뭘 기다렸나 (Binder → 어느 서비스, I/O → 어느 파일, 락), Runnable 이면 CPU 경쟁 (다른 프로세스·주파수).\n4. ART 상태 확인: `dumpsys package dexopt` 로 필터가 `verify` 인지, odex 가 무효 (OTA 직후) 인지 ([art_aot_jit.md](art_aot_jit.md)).\n5. 결론을 \"어느 단계에서 몇 ms 가 어디로 갔다\" 한 문장으로 적고, 수정과 재측정.\n\n관련: [boot_chain.md](boot_chain.md), [binder.md](binder.md).\n",
+   "file": "android/perf_tracing.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: \"앱 시작이 가끔 2초씩 느려진다\" 를 받으면 첫 30분에 무엇을 하나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/process_memory_lmk.md",
+   "num": "",
+   "title": "프로세스 수명과 메모리 — zygote COW · oom_adj · lmkd · ashmem",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 앱 프로세스는 어떻게 만들어지고 메모리를 어떻게 공유하나?",
+    "Q2: 메모리 부족이면 누가 무엇을 죽이나?",
+    "Q3: 프로세스 메모리는 어떻게 세나? (PSS·RSS·USS, dumpsys meminfo)",
+    "Q4: 프로세스 사이에 큰 메모리를 어떻게 공유하나?",
+    "Follow-up: 앱이 백그라운드로 가면 플랫폼은 무엇을 제한하나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 추정 영역 (공고 \"Android OS Internals 3년\" 기준). 1차 후기 없음.\n> 플랫폼 면접에서 \"앱이 백그라운드로 가면 무슨 일이 나나\", \"메모리 부족이면 누가 뭘 죽이나\" 는 OS 질문의 Android 판이다.\n\n---\n\n## Q1: 앱 프로세스는 어떻게 만들어지고 메모리를 어떻게 공유하나?\n\n- zygote 가 프레임워크 클래스·리소스·boot image 를 **preload** 한 채 대기, `fork()` 로 앱 프로세스를 만든다 ([boot_chain.md](boot_chain.md)).\n- fork 뒤 부모·자식은 같은 물리 페이지를 **copy-on-write** 로 공유한다. 앱이 그 페이지를 쓰기 전까지 복사가 없다. 그래서 수십 개 앱이 떠 있어도 프레임워크 코드·상수는 한 벌이다.\n- 자식은 `setuid` 로 앱 uid 로 내려가고, SELinux 도메인 (`untrusted_app`), seccomp 필터, cgroup (cpuset) 이 적용된다. 이 순서가 \"specialize\".\n- Android 10+ USAP: fork 만 미리 해 둔 프로세스 풀. specialize 비용만 남아 시작이 빨라진다 (기본은 꺼져 있는 기기도 많다).\n- GC 와 JIT 가 쓰기를 하면 COW 가 깨져 private 페이지가 늘어난다. 그래서 zygote 가 preload 한 힙은 **compact 뒤 공유** 하고, 앱 이미지 (`.art`) 는 읽기 전용으로 매핑한다.\n\n---\n\n## Q2: 메모리 부족이면 누가 무엇을 죽이나?\n\n```\n커널 PSI (memory pressure) ─▶ lmkd (유저 공간 데몬) ─▶ oom_adj 점수가 가장 높은 (= 덜 중요한) 프로세스부터 kill\n                                                        (커널 OOM killer 는 최후 수단)\n```\n\n- **oom_adj / oom_score_adj**: ActivityManager 가 프로세스 상태에 따라 매긴다. 전면 앱 0, 보이는 앱 100-200, 포그라운드 서비스 200, 백그라운드 서비스 500, 캐시된 빈 프로세스 900-999. AMS 가 상태 바뀔 때마다 `/proc/<pid>/oom_score_adj` 에 쓴다.\n- **lmkd**: Android 10 부터 **PSI** (Pressure Stall Information, `/proc/pressure/memory`) 기반. 압박 수준별 임계값 (`ro.lmk.*`) 을 넘으면 adj 높은 것부터 죽인다. 옛 커널 LMK 드라이버는 minfree 테이블 (free 페이지 수) 기준이었다.\n- 커널 **OOM killer** 는 lmkd 가 못 따라가 할당이 실패할 때 `oom_badness` 로 죽인다. 여기까지 가면 시스템 프로세스도 위험하다.\n- 사용자가 보는 결과: 백그라운드 앱을 다시 열면 콜드 시작 (죽었다), 또는 `onTrimMemory` 콜백으로 앱이 스스로 캐시를 비우는 것.\n- 캐시된 프로세스를 많이 유지하면 앱 전환이 빠르고, 적게 유지하면 전면 앱이 넉넉하다. lmkd 임계값이 그 조절점이고 저사양 (Android Go) 은 공격적이다.\n\n---\n\n## Q3: 프로세스 메모리는 어떻게 세나? (PSS·RSS·USS, dumpsys meminfo)\n\n| 지표 | 뜻 | 쓸 때 |\n|---|---|---|\n| RSS | 매핑되어 메모리에 있는 전부. 공유 페이지를 각 프로세스에 전부 센다 | 과대평가 |\n| **PSS** | 공유 페이지를 공유하는 프로세스 수로 나눠 배분 | 프로세스별 \"공정한 몫\". `dumpsys meminfo` 기본 |\n| USS | 그 프로세스만 쓰는 private 페이지 | 죽이면 돌아오는 양 |\n| ZRAM | 압축 스왑 (RAM 안). 스왑 아웃된 페이지 | 저사양에서 큼 |\n\n```\nadb shell dumpsys meminfo <pkg>      # Java Heap · Native Heap · Code · Stack · Graphics · Private Other · System\nadb shell procrank                    # 전 프로세스 PSS 정렬\nadb shell cat /proc/<pid>/smaps       # 매핑별 상세\n```\n\n- `Graphics` 는 GPU·dma-buf 메모리 (gralloc 버퍼). 앱 힙 밖에 있어 Java 힙 OOM 과 무관하게 시스템 메모리를 잡는다.\n- `Code` 는 .oat·.so 매핑. AOT 를 많이 하면 늘어난다 ([art_aot_jit.md](art_aot_jit.md)).\n- Java 힙 상한 (`dalvik.vm.heapgrowthlimit`, `largeHeap`) 은 앱 하나의 힙만 제한한다. 시스템 전체 메모리는 lmkd 가 본다.\n\n---\n\n## Q4: 프로세스 사이에 큰 메모리를 어떻게 공유하나?\n\n| 수단 | 특징 |\n|---|---|\n| ashmem (Anonymous Shared Memory, `/dev/ashmem`) | Android 고유. fd 로 공유, `pin/unpin` 으로 커널이 회수 가능. Android 10+ 는 **memfd** 로 대체 중 |\n| memfd (`memfd_create`) | 리눅스 표준. seal 로 크기 고정·쓰기 금지 가능. `MemoryFile`, `SharedMemory` API 의 뒷면 |\n| dma-buf | 장치 (GPU·카메라·디스플레이) 와 공유. gralloc 버퍼 ([dma_cache.md](../embedded/dma_cache.md)) |\n| Binder Parcel | 1MB 버퍼 한계. 큰 건 위 fd 를 Parcel 에 담아 넘김 ([binder.md](binder.md)) |\n\nfd 를 Binder 로 넘기면 커널이 수신 프로세스의 fd 테이블에 복제해 준다. 매핑은 각자 `mmap`. 같은 물리 페이지라 복사 없음.\n\n---\n\n## Follow-up: 앱이 백그라운드로 가면 플랫폼은 무엇을 제한하나?\n\n- oom_adj 상향 → lmkd 의 1순위 후보.\n- cgroup 이동: `top-app` → `foreground` → `background` cpuset (작은 코어만), CPU 비중 축소.\n- Android 8+ 백그라운드 실행 제한: 백그라운드 서비스 시작 금지 (JobScheduler·WorkManager 로), 암시적 브로드캐스트 제한.\n- Doze·App Standby 버킷 (active, working set, frequent, rare, restricted) 이 네트워크·알람·job 빈도를 묶는다.\n- Android 12+ Phantom process 제한 (앱이 fork 한 자식 32개 상한), 포그라운드 서비스 종류 선언.\n- 플랫폼 입장에서 설계 질문이 되면: \"전면 사용자 경험을 지키기 위해 백그라운드의 CPU·메모리·네트워크·웨이크업을 단계적으로 줄이고, 죽일 때는 상태를 저장할 기회 (`onSaveInstanceState`, `onTrimMemory`) 를 먼저 준다\" 가 뼈대.\n",
+   "file": "android/process_memory_lmk.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: 앱이 백그라운드로 가면 플랫폼은 무엇을 제한하나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:android/reboot_loop_recovery.md",
+   "num": "",
+   "title": "부팅 실패와 복구 — watchdog · critical · Rescue Party · A/B 복귀 · 아티팩트 재생성",
+   "diff": "",
+   "cat": "android",
+   "catName": "Android",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 부팅이 실패하는 지점은 어디고, 각 지점의 복구 장치는 뭔가?",
+    "Q2: 아티팩트가 손상되면 ART 와 프레임워크는 어떻게 반응하나?",
+    "Q3: 리부트 루프 자동 복구를 설계한다면 어떤 결정이 필요한가? (이력서 딥다이브)",
+    "Q4: \"손상 파일을 로드할 때 크래시가 설계인가, 오류 반환이 설계인가?\" (Apple 되물음)",
+    "Follow-up: 크래시 뒤 남는 흔적과 읽는 순서"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비. 이력서 2번 줄 (\"손상된 런타임 아티팩트를 감지해 안전하게 재생성하는 OS 레벨 메커니즘으로 리부트 루프 제거, 95%+ 복구, 특허\") 의 바탕.\n> Apple 스크린 (10-26) 에서 \"손상 파일 로드 시 크래시가 설계인가 오류 반환이 설계인가\" 를 세 번 되물었다. 그 질문의 답 구조를 Q4 에 둔다.\n\n---\n\n## Q1: 부팅이 실패하는 지점은 어디고, 각 지점의 복구 장치는 뭔가?\n\n| 실패 지점 | 증상 | 기본 복구 장치 |\n|---|---|---|\n| bootloader·커널 | 부팅 로고에서 멈춤, 커널 패닉 | A/B 슬롯: 성공 표시 전 재시도 초과 시 **이전 슬롯으로 복귀**. ramdump |\n| first-stage init | 마운트 실패, dm-verity 오류 | verity `restart`/`eio` 모드. recovery 진입 |\n| 네이티브 데몬 | 특정 서비스 반복 크래시 | init 이 재시작. `critical` 서비스는 4분 내 4회 넘으면 **bootloader/recovery 로 재부팅** |\n| zygote·system_server | 프레임워크 재시작 반복 (부팅 애니메이션 루프) | init 의 zygote 재시작. 반복되면 **Rescue Party** |\n| system_server 멈춤 | 화면은 떠 있는데 입력 무응답 | **Watchdog** 이 60초 뒤 system_server kill → 재시작 |\n| 앱 | 그 앱만 죽음 | AMS 가 재시작·crash 다이얼로그. persistent 앱은 자동 재시작 |\n\n**Watchdog** (`com.android.server.Watchdog`): system_server 안의 스레드가 주요 핸들러 스레드 (main, fg, ui, io, display …) 에 주기적으로 작업을 보내고 응답을 기다린다. 30초 반응 없으면 경고, **60초** 면 스택 덤프 (`/data/anr/`) 뒤 자기 프로세스를 죽인다. 락 홀더도 감시 (`Watchdog.getInstance().addMonitor`).\n\n**Rescue Party** (Android 8+, `RescueParty`, `PackageWatchdog`): 부팅 루프·persistent 앱 반복 크래시를 세어 단계적으로 대응한다. 설정 리셋 (device_config, settings) → 문제 모듈 롤백 (Mainline) → 마지막은 **공장 초기화 프롬프트** 가 있는 recovery. 사용자 데이터를 지우는 쪽으로 가는 길이라 이것이 \"factory reset 을 피했다\" 의 비교 대상이다.\n\n---\n\n## Q2: 아티팩트가 손상되면 ART 와 프레임워크는 어떻게 반응하나?\n\n- 앱 odex·vdex 손상: 로드 시 **체크섬·헤더 검증** 에 실패하면 그 파일을 버리고 해석기·JIT 로 돈다. 느려지지만 죽지 않는다. 다음 dexopt 때 재생성.\n- boot image (boot.art/boot.oat) 손상: zygote 가 이미지를 매핑하다 실패하면 이미지 없이 뜨거나 (느림), 손상 형태에 따라 zygote 가 죽는다. zygote 가 죽으면 프레임워크 전체가 재시작하고, 같은 파일을 다시 읽으니 **같은 자리에서 다시 죽는다 → 루프**.\n- 검증이 통과하는데 내용이 틀린 경우 (비트 플립이 체크섬 안 걸린 영역, 또는 체크섬이 없는 경로) 가 가장 나쁘다. 네이티브 코드가 틀린 자리로 점프해 SIGSEGV. 이때 디버깅 단서는 tombstone (`/data/tombstones/`) 의 크래시 주소가 어느 .oat 매핑 안인가.\n- 재생성이 가능한 조건: 원본 DEX (APK) 가 멀쩡하고, 저장공간이 있고, 재생성 중 다시 죽지 않게 **먼저 손상 파일을 치우거나 격리** 해야 한다.\n\n관련 파일 위치: `/data/dalvik-cache/` (boot image, 시스템 앱 odex 일부), `/data/app/<pkg>/oat/`, `/data/misc/profiles/`, `/apex/com.android.art/` (ART 모듈 자체).\n\n---\n\n## Q3: 리부트 루프 자동 복구를 설계한다면 어떤 결정이 필요한가? (이력서 딥다이브)\n\n| 결정 | 선택지 | 트레이드오프 |\n|---|---|---|\n| **감지 신호** | 부팅 횟수 카운터 (`persist.*` 속성, bootstat), 같은 서비스의 연속 크래시 수, tombstone 의 크래시 주소가 아티팩트 매핑 안인지 | 카운터만 쓰면 오탐 (사용자가 재부팅 반복). 주소 매칭은 정확하지만 구현 복잡 |\n| **판정 시점** | init (second-stage) 에서 zygote 띄우기 전 / zygote 안 / system_server 안 | 늦을수록 정보가 많고, 이를수록 안전한 상태에서 행동 가능. 루프를 끊으려면 **죽는 지점보다 앞** 이어야 함 |\n| **행동** | 손상 의심 아티팩트 삭제 → 재생성 (dexopt), 또는 이미지 없이 부팅 뒤 백그라운드 재생성 | 삭제는 안전하지만 다음 부팅이 느림. 전체 삭제 vs 의심 파일만 |\n| **재생성 중 보호** | 재생성 자체가 실패·반복되지 않게 횟수 제한, 다음 단계 (Rescue Party) 로 넘기는 조건 | 무한 재생성 루프 방지 |\n| **사용자 데이터** | `/data` 는 건드리지 않음. 아티팩트는 전부 재생성 가능한 캐시 | factory reset 을 피하는 핵심 논리 |\n| **측정** | 복구 성공률 (루프 진입 → 정상 부팅), 복구 뒤 성능 저하 기간, 오탐율 | 95% 는 어떻게 셌나 (분모가 뭔가) |\n\n예상 꼬리질문:\n- 왜 기존 Rescue Party 로 충분하지 않았나 (Rescue Party 는 원인을 모르고 설정·모듈을 되돌린다. 아티팩트 손상은 그 범위 밖).\n- 손상 원인은 뭐였나 (저장장치 비트 오류, 전원 끊김 중 쓰기, 업데이트 중단, 버그) 와 원인별 재발 방지.\n- 폰·워치·태블릿 2+ 릴리즈에 어떻게 일반화했나 (경로·파티션·메모리 차이).\n- 구글 upstream 과의 관계 (AOSP 에 비슷한 기능이 있나, 있다면 차이).\n\n본인 경험 연결 (채울 것): 위 표의 각 칸에 실제 선택과 이유, 숫자 (복구율 분모·분자, 기기 수).\n\n---\n\n## Q4: \"손상 파일을 로드할 때 크래시가 설계인가, 오류 반환이 설계인가?\" (Apple 되물음)\n\n둘 다 정답이 될 수 있고, **어느 계층이냐** 로 답을 가른다.\n\n| 계층 | 바람직한 반응 | 이유 |\n|---|---|---|\n| 신뢰 경계 (verified boot, dm-verity, 서명 검증) | **즉시 실패 (fail-fast)**. 부팅 중단·재부팅 | 변조된 코드를 실행하지 않는 것이 목적. 계속 가면 보안이 깨진다 |\n| 재생성 가능한 캐시 (odex, 프로파일, 이미지) | **오류 반환 → 폴백 → 재생성** | 원본이 있고 캐시는 성능 최적화일 뿐. 죽을 이유가 없다 |\n| 라이브러리 로더가 내부 불변식 위반을 만났을 때 | abort (CHECK 실패) | 이미 잘못된 상태로 더 가면 조용한 데이터 손상. 그러나 **로드 시점 검증** 을 먼저 두어 여기까지 오지 않게 한다 |\n\n면접관이 원한 핵심은 두 가지였다.\n1. **로드 시점에 바로 아는 방법** = 헤더 매직·버전·체크섬 검증 (파일 전체 해시는 비싸니 헤더+섹션 체크섬, 또는 dm-verity 처럼 블록 단위 해시).\n2. **잘못된 입력에 크래시하는 것의 보안 문제** = 공격자가 조작한 파일로 서비스를 반복 죽여 DoS, 또는 파서 취약점 (경계 검사 없는 길이 필드) 으로 코드 실행. 그래서 신뢰 안 되는 입력은 검증 뒤 오류 반환, 신뢰 경계 위반은 fail-fast.\n\n---\n\n## Follow-up: 크래시 뒤 남는 흔적과 읽는 순서\n\n| 흔적 | 위치 | 언제 |\n|---|---|---|\n| tombstone | `/data/tombstones/` | 네이티브 크래시 (SIGSEGV, abort). 레지스터·스택·메모리 맵 |\n| ANR 트레이스 | `/data/anr/` | ANR, watchdog. 모든 스레드의 Java·네이티브 스택 |\n| dropbox | `/data/system/dropbox/` | 프레임워크가 모은 크래시·ANR·watchdog 요약 |\n| 커널 | `/sys/fs/pstore/` (console-ramoops) | 커널 패닉 뒤 마지막 dmesg |\n| bootstat | `/data/misc/bootstat/` | 부팅 이유 (`ro.boot.bootreason`), 단계 시간 |\n| bugreport | `adb bugreport` | 위 전부 + dumpsys |\n\n읽는 순서: bootreason → 마지막 tombstone/ANR 의 시간과 프로세스 → 스택 맨 위 프레임이 어느 매핑 (`.oat`, `.so`) 인지 → 그 파일의 무결성.\n\n관련: [art_aot_jit.md](art_aot_jit.md), [boot_chain.md](boot_chain.md) (A/B·verity), [perf_tracing.md](perf_tracing.md).\n",
+   "file": "android/reboot_loop_recovery.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 크래시 뒤 남는 흔적과 읽는 순서"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:concurrency/producer_consumer.md",
+   "num": "",
+   "title": "Producer-Consumer Problem",
+   "diff": "",
+   "cat": "concurrency",
+   "catName": "Concurrency",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Producer-Consumer 문제란?",
+    "Q2: C++로 구현하면?",
+    "Q3: Condition variable은 왜 필요한가요? busy-wait와의 차이?",
+    "Follow-up: 실제 어디서 쓰이나요?"
+   ],
+   "md": "## Q1: Producer-Consumer 문제란?\n\n공유 버퍼를 두고:\n- **Producer**: 데이터를 생성해서 버퍼에 넣음\n- **Consumer**: 버퍼에서 데이터를 꺼내 처리\n\n문제:\n- 버퍼 가득 찼을 때 producer는 대기해야 함\n- 버퍼 비었을 때 consumer는 대기해야 함\n- 동시 접근 시 race condition 방지 필요\n\n---\n\n## Q2: C++로 구현하면?\n\n```cpp\n#include <queue>\n#include <mutex>\n#include <condition_variable>\n\nstd::queue<int> buffer;\nconst int MAX_SIZE = 10;\nstd::mutex mtx;\nstd::condition_variable cv_full, cv_empty;\n\nvoid producer(int item) {\n    std::unique_lock<std::mutex> lock(mtx);\n    cv_full.wait(lock, [] { return buffer.size() < MAX_SIZE; });\n    buffer.push(item);\n    cv_empty.notify_one();\n}\n\nint consumer() {\n    std::unique_lock<std::mutex> lock(mtx);\n    cv_empty.wait(lock, [] { return !buffer.empty(); });\n    int item = buffer.front();\n    buffer.pop();\n    cv_full.notify_one();\n    return item;\n}\n```\n\n핵심: mutex (상호배제) + condition_variable (대기/신호).\n\n---\n\n## Q3: Condition variable은 왜 필요한가요? busy-wait와의 차이?\n\n**Busy-wait (polling):**\n```cpp\nwhile (buffer.empty()) { }  // CPU 100% 소모하며 대기\n```\n\n**Condition variable:**\n```cpp\ncv.wait(lock, predicate);  // OS가 스레드를 sleep시킴, 깨워줄 때까지 CPU 안 씀\n```\n\n차이: busy-wait는 CPU 낭비. CV는 스레드를 블록시키고 신호 받으면 깨움.\n\n### 튜터링 메모 (헷갈렸던 핵심)\n\n- **busy-wait(polling) vs blocking**: polling은 `while`로 계속 확인(=CPU 낭비). sleep(N초)로 확인해도 낭비거나 늦음. blocking은 조건 될 때까지 완전히 잠(CPU 0%).\n- **CV는 timer가 아니라 event(신호) 기반**. `wait()`는 몇 초 아니라 \"깨워질 때까지\" 무기한 잠.\n- **감시자(watcher)는 없다**: 자는 스레드는 CV의 wait queue에 담겨 CPU에서 내려감, 즐히하여 지켜보는 주체가 없음. 깨우는 건 **notify()**를 호출하는 스레드가 직접 프로듀서 → OS가 큐에서 하나 꺼내 runnable로. (초인종 비유: 대기자가 감시자 없이, 벨을 눌러 사람이 직접 깨움)\n- **wait()은 mutex를 자동으로 놓고 잠**. 안 놓으면 상대가 buffer 못 건드려 영원 못 깨남 → deadlock. 깨날 때 mutex 다시 잡고 나옴.\n- **조건 확인은 `if`가 아니라 `while`**: 깨나도 조건 여전히 안 맞을 수 있음(다른 consumer가 먼저 채감 / spurious wakeup). C++ `cv.wait(lock, predicate)`는 내부적으로 while+predicate 이걸 처리해줌.\n\n---\n\n## Follow-up: 실제 어디서 쓰이나요?\n\n- **메시지 큐** (Kafka, RabbitMQ) - producer가 메시지 발행, consumer가 구독\n- **스레드 풀** - task queue에 작업 넣으면 worker thread가 꺼내 실행\n- **I/O 버퍼** - 네트워크에서 받은 데이터를 버퍼에 쌓고 처리 스레드가 소비\n- **파이프라인** - 영상 인코딩 (읽기 → 디코딩 → 인코딩 → 쓰기)\n",
+   "file": "concurrency/producer_consumer.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: 실제 어디서 쓰이나요?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:concurrency/race_condition.md",
+   "num": "",
+   "title": "Race Condition",
+   "diff": "",
+   "cat": "concurrency",
+   "catName": "Concurrency",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Race condition이 뭔가요?",
+    "Q2: Race condition을 어떻게 해결하나요?",
+    "Q3: Mutex와 Semaphore 차이는?",
+    "Follow-up: C++에서 race condition 방지 코드 예시?"
+   ],
+   "md": "## Q1: Race condition이 뭔가요?\n\n두 개 이상의 스레드/프로세스가 공유 자원에 동시에 접근할 때, 실행 순서에 따라 결과가 달라지는 상황.\n\n예: 두 스레드가 `counter++` 실행\n```\nThread A: read counter (0)\nThread B: read counter (0)\nThread A: write counter (1)\nThread B: write counter (1)  ← 기대값 2인데 결과는 1\n```\n\n`counter++`가 atomic하지 않기 때문. (read → increment → write 3단계)\n\n---\n\n## Q2: Race condition을 어떻게 해결하나요?\n\n1. **Mutex (Mutual Exclusion)** - lock 잡은 스레드만 critical section 진입. 나머지는 대기.\n2. **Semaphore** - 카운터 기반. N개까지 동시 접근 허용.\n3. **Atomic operation** - `std::atomic<int>` 같이 하드웨어 레벨에서 원자적 실행 보장.\n4. **Lock-free 자료구조** - CAS(Compare-And-Swap) 기반으로 lock 없이 동시성 처리.\n\n---\n\n## Q3: Mutex와 Semaphore 차이는?\n\n| | Mutex | Semaphore |\n|---|---|---|\n| 동시 접근 수 | 1 (binary) | N (counting) |\n| 소유권 | Lock한 스레드만 unlock 가능 | 누구나 signal 가능 |\n| 용도 | 상호 배제 | 리소스 카운팅, 신호 전달 |\n\nMutex는 \"화장실 열쇠\" (1명만 사용), Semaphore는 \"주차장 빈 자리 수\".\n\n---\n\n## Follow-up: C++에서 race condition 방지 코드 예시?\n\n```cpp\n#include <mutex>\n\nstd::mutex mtx;\nint counter = 0;\n\nvoid increment() {\n    std::lock_guard<std::mutex> lock(mtx);\n    counter++;  // critical section\n}\n```\n\n`lock_guard`는 스코프 벗어나면 자동 unlock (RAII 패턴).\n",
+   "file": "concurrency/race_condition.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: C++에서 race condition 방지 코드 예시?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:concurrency/thread_pool.md",
+   "num": "",
+   "title": "Thread Pool",
+   "diff": "",
+   "cat": "concurrency",
+   "catName": "Concurrency",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Thread pool이란? 왜 쓰나요?",
+    "Q2: Thread pool 크기는 어떻게 정하나요?",
+    "Q3: C++에서의 간단한 thread pool?",
+    "Follow-up: 다른 언어에서는?"
+   ],
+   "md": "## Q1: Thread pool이란? 왜 쓰나요?\n\n미리 생성해둔 스레드 집합. 작업이 들어오면 유휴 스레드에 할당.\n\n```\n[Task Queue] → [Thread 1] (busy)\n             → [Thread 2] (idle) ← 새 작업 할당\n             → [Thread 3] (busy)\n```\n\n왜?\n- **스레드 생성/소멸 비용 절감** - 매 요청마다 생성하면 오버헤드 큼\n- **자원 제한** - 무한정 스레드 생성 방지 (메모리, context switch)\n- **응답 시간 향상** - 이미 만들어져 있으니 바로 실행\n\n---\n\n## Q2: Thread pool 크기는 어떻게 정하나요?\n\n**CPU-bound 작업:**\n- 스레드 수 ≈ CPU 코어 수\n- 그 이상은 context switch만 늘어남\n\n**I/O-bound 작업:**\n- 스레드 수 > 코어 수 (I/O 대기 중 다른 스레드 실행)\n- 경험적 공식: `threads = cores * (1 + wait_time / compute_time)`\n\n**실무:**\n- 웹서버: 보통 수백 스레드 (대부분 I/O 대기)\n- 연산 서버: 코어 수와 동일\n\n---\n\n## Q3: C++에서의 간단한 thread pool?\n\n```cpp\nclass ThreadPool {\n    std::vector<std::thread> workers;              // 미리 만들어둘 worker 스레드들\n    std::queue<std::function<void()>> tasks;       // 공유 버퍼. producer 가 넣고 consumer 가 꺼냄\n    std::mutex mtx;                                // tasks 를 보호하는 자물쇠\n    std::condition_variable cv;                    // \"일 들어왔다\" 를 알리는 신호\n    bool stop = false;                             // 종료 플래그\n\npublic:\n    ThreadPool(int n) {\n        for (int i = 0; i < n; i++) {\n            // emplace_back 이 벡터 안에서 스레드를 바로 생성한다.\n            // [this] 로 캡처해야 람다 안에서 tasks/mtx/cv 같은 멤버를 쓸 수 있다.\n            workers.emplace_back([this] {\n                while (true) {                     // worker 는 죽을 때까지 이 루프를 돈다\n                    std::function<void()> task;    // 꺼낸 작업을 담을 자리. 락 밖에서도 쓰려고 여기 선언\n                    {                              // ── 락 구간 시작 ──\n                        std::unique_lock<std::mutex> lock(mtx);\n\n                        // 조건이 거짓이면 락을 놓고 잠든다.\n                        // 놓는 게 핵심. 안 놓으면 enqueue 가 락을 못 잡아 영원히 안 깨어남.\n                        // 깨어나면 락을 다시 잡고 조건을 재확인한다.\n                        cv.wait(lock, [this] { return stop || !tasks.empty(); });\n\n                        // 종료 신호가 왔고 남은 일도 없을 때만 빠져나간다.\n                        // stop 만 보고 나가면 큐에 남은 작업이 버려진다.\n                        if (stop && tasks.empty()) return;\n\n                        task = std::move(tasks.front());   // 복사 대신 이동\n                        tasks.pop();\n                    }                              // ── 락 해제 ──\n\n                    // ★ 작업 실행은 반드시 락 밖에서.\n                    // 락 안에서 돌리면 worker 가 몇 개든 한 번에 하나씩만 실행돼\n                    // 스레드 풀의 의미가 사라진다. 큐를 만질 때만 락이 필요하다.\n                    task();\n                }\n            });\n        }\n    }\n\n    ~ThreadPool() {\n        {\n            std::lock_guard<std::mutex> lock(mtx);\n            stop = true;                    // 종료 플래그 세우고\n        }\n        cv.notify_all();                    // 자고 있는 worker 를 전부 깨운다. one 이 아니라 all\n        for (auto& w : workers) w.join();   // 다 끝날 때까지 기다린다\n    }\n\n    void enqueue(std::function<void()> task) {\n        {                                          // 큐에 넣는 동안만 잠근다\n            std::lock_guard<std::mutex> lock(mtx);\n            tasks.push(std::move(task));\n        }                                          // ← 여기서 락 해제\n        // 락을 푼 뒤에 깨운다.\n        // 잡은 채로 깨우면 깨어난 worker 가 락을 못 잡고 다시 잠들어 한 번 헛돈다.\n        cv.notify_one();\n    }\n};\n```\n\n### 락은 언제 잡히고 언제 풀리나\n\n```\nworker 쪽\n    unique_lock 생성          ->  잡음\n    cv.wait 진입, 조건 거짓    ->  놓음. 자는 동안 계속 놓은 상태   ★\n    깨어남                    ->  다시 잡음. 조건 재확인\n        조건이 거짓           ->  다시 놓고 잠 (while 이라 반복)\n        조건이 참             ->  잡은 채로 wait 를 빠져나옴\n    tasks.front(), pop()      ->  잡은 상태로 큐를 만짐\n    스코프 } 끝               ->  놓음\n    task() 실행               ->  놓은 상태. 작업이 몇 초 걸리든 무관\n\nenqueue 쪽\n    lock_guard 생성           ->  잡음\n    tasks.push                ->  잡은 상태\n    스코프 } 끝               ->  놓음\n    cv.notify_one             ->  놓은 뒤에 깨움\n```\n\n요약: 락은 tasks 큐를 읽고 쓰는 순간에만 잡힌다.\n자는 동안과 작업을 실행하는 동안은 놓는다.\n\n`if` 가 아니라 `while` 로 반복 확인하는 이유는 두 가지다.\n하나, 작업 1개에 worker 여럿이 깨어나면 먼저 잡은 하나만 가져가고 나머지는 빈 큐를 보게 된다.\n둘, 아무도 깨우지 않았는데 OS 가 깨우는 spurious wakeup 이 표준상 허용된다.\n그래서 깨어났다고 조건이 참이라고 믿으면 안 된다.\n\n원래 노트의 코드에는 소멸자가 없었다.\n`stop` 을 true 로 만드는 곳이 없고 join 도 안 하면, ThreadPool 이 파괴될 때\njoin/detach 안 된 스레드 때문에 `std::terminate` 로 프로그램이 죽는다.\n종료는 모두에게 알려야 하므로 `notify_one` 이 아니라 `notify_all` 이다.\n\n본질: Producer-Consumer 패턴 + 미리 생성된 worker threads.\n\n---\n\n## Follow-up: 다른 언어에서는?\n\n- **Java**: `ExecutorService`, `ThreadPoolExecutor`\n- **Python**: `concurrent.futures.ThreadPoolExecutor`\n- **Go**: goroutine + channel (언어 레벨에서 경량 스레드 지원)\n",
+   "file": "concurrency/thread_pool.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: 다른 언어에서는?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:embedded/dma_cache.md",
+   "num": "",
+   "title": "DMA 와 캐시 일관성",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: DMA 가 뭐고 왜 쓰나?",
+    "Q2: DMA 와 CPU 캐시는 왜 충돌하고 어떻게 맞추나?",
+    "Q3: 멀티코어 캐시 일관성과 false sharing 은?",
+    "Q4: Android 는 장치 간 버퍼를 어떻게 공유하나?",
+    "Follow-up: UART 수신을 DMA 로 바꾸면 설계가 어떻게 달라지나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 근거: Apple 질문 은행 C10 \"Interrupts, polling, and DMA\", C16 \"Shared memory and MESI\", B11 \"per-core 카운터 배열의 성능 문제\" (false sharing).\n> Android 연결: 카메라·디스플레이·GPU 버퍼 공유 (dma-buf), zero-copy.\n\n---\n\n## Q1: DMA 가 뭐고 왜 쓰나?\n\nCPU 가 바이트를 옮기는 대신 **DMA 컨트롤러가 메모리↔장치, 메모리↔메모리 복사를 대신** 한다.\nCPU 는 디스크립터 (출발 주소, 도착 주소, 길이, 다음 디스크립터) 를 써 주고 시작 비트를 켠 뒤 다른 일을 한다.\n끝나면 완료 인터럽트가 온다.\n\n- 큰 데이터 (오디오 프레임, 네트워크 패킷, 디스플레이 프레임버퍼) 를 CPU 사이클 없이 옮긴다.\n- UART 처럼 바이트마다 인터럽트가 오는 장치도 DMA 를 붙이면 \"버퍼 반 찼음·다 찼음\" 두 번만 인터럽트가 온다 (ping-pong, 순환 DMA).\n- 장치가 직접 메모리를 읽고 쓰므로 **버스 마스터** 다. 주소 변환은 IOMMU (ARM SMMU) 가 한다. IOMMU 가 없으면 물리 연속 메모리가 필요하다 (bounce buffer, CMA).\n- scatter-gather: 물리적으로 흩어진 페이지들을 디스크립터 체인으로 한 번에 전송.\n\n---\n\n## Q2: DMA 와 CPU 캐시는 왜 충돌하고 어떻게 맞추나?\n\n캐시는 CPU 만 안다. DMA 는 메모리를 직접 본다.\n\n| 방향 | 문제 | 해법 |\n|---|---|---|\n| CPU 가 쓴 버퍼를 장치로 DMA | 데이터가 캐시에만 있고 메모리는 옛 값. 장치가 옛 값을 보냄 | DMA 시작 **전** 캐시 **clean (writeback)** |\n| 장치가 메모리에 쓴 것을 CPU 가 읽음 | CPU 캐시에 그 주소의 옛 라인이 남아 있어 stale 읽기 | DMA 완료 **후** 캐시 **invalidate** |\n| 버퍼가 캐시 라인을 다른 변수와 공유 | invalidate 가 옆 변수의 캐시 내용을 날리거나, writeback 이 DMA 결과를 덮어씀 | 버퍼를 **캐시 라인 (64B) 정렬** 하고 길이도 라인 배수로 |\n\nLinux 두 가지 매핑:\n- **coherent** (`dma_alloc_coherent`): 처음부터 non-cacheable 로 매핑. 동기화 호출 없음. 자주 건드리는 작은 디스크립터·링에 적합. CPU 접근이 느리다.\n- **streaming** (`dma_map_single`, `dma_sync_*_for_device/cpu`): 캐시 가능 버퍼를 전송 때마다 clean·invalidate. 큰 데이터 버퍼에 적합.\n\n하드웨어가 캐시 일관 DMA (ACE, ACP) 를 지원하면 이 절차가 사라진다. 임베디드 SoC 는 대개 안 그렇다.\nDMA 시작 레지스터를 쓰기 전에 `dsb` 로 버퍼 쓰기가 끝났음을 보장한다 ([memory_ordering.md](memory_ordering.md)).\n\n---\n\n## Q3: 멀티코어 캐시 일관성과 false sharing 은?\n\n**MESI**: 각 캐시 라인이 Modified · Exclusive · Shared · Invalid 중 하나.\n한 코어가 쓰려면 다른 코어의 복사본을 Invalid 로 만든다 (스누핑 또는 디렉터리).\n그래서 두 코어가 **같은 라인** 을 번갈아 쓰면 라인이 코어 사이를 왕복한다.\n\n**false sharing (Apple B11)**\n\n```c\nint counter[NCORES];              /* 코어 i 가 counter[i]++ */\n```\n\n서로 다른 변수지만 한 64B 라인에 16개가 들어간다. 각 코어의 증가가 다른 코어의 라인을 무효화해 수십 배 느려진다.\n\n```c\nstruct alignas(64) Slot { int v; };   /* 라인 하나에 하나 */\nSlot counter[NCORES];\n```\n\n같은 이유로 링버퍼의 head·tail, 스핀락과 그 뒤 데이터, per-CPU 변수는 라인 단위로 떨어뜨린다.\n측정은 `perf stat -e cache-misses`, 또는 그냥 패딩 전후 시간 비교.\n\n---\n\n## Q4: Android 는 장치 간 버퍼를 어떻게 공유하나?\n\n- 카메라 → ISP → GPU → 디스플레이로 프레임이 흐르는데, 매 단계 복사하면 대역폭과 전력이 남지 않는다. **zero-copy** 가 목표.\n- **dma-buf**: 커널의 버퍼 공유 프레임워크. 한 장치 드라이버가 할당한 버퍼를 fd 로 export 하고, 다른 드라이버가 import 해서 자기 IOMMU 에 매핑한다. fd 라서 Binder 로 프로세스 사이에 넘길 수 있다.\n- **dma-buf heaps** (옛 ION): system heap, CMA heap 등 어디서 할당할지 고르는 입구. gralloc 이 이걸로 그래픽 버퍼를 만든다.\n- 동기화: dma-fence 로 \"GPU 가 다 그렸다\" 를 디스플레이가 기다린다. 캐시 유지는 `DMA_BUF_IOCTL_SYNC` 로 begin/end cpu access 를 알린다.\n- 메모리 종류: normal cacheable (앱 힙), non-cacheable (디스크립터), device (레지스터). 그래픽 버퍼는 보통 write-combine 이나 non-cacheable.\n\n---\n\n## Follow-up: UART 수신을 DMA 로 바꾸면 설계가 어떻게 달라지나?\n\n- 바이트 인터럽트 → 순환 DMA 버퍼 + 반 찼음·다 찼음 인터럽트 + idle line 인터럽트 (패킷 끝 감지).\n- 소비자는 DMA 가 쓴 위치 (NDTR 레지스터) 를 읽어 새 바이트 범위를 알고, 그 범위만 invalidate 뒤 처리한다.\n- 오버런 정책은 그대로 필요하다. 소비자가 늦으면 DMA 가 덮어쓴다. 버퍼 크기 = 최대 지연 × 전송률.\n- 링버퍼 자체는 [19_embedded/E01](../../LC/19_embedded/) 과 같다. 생산자가 ISR 에서 DMA 엔진으로 바뀐 것뿐이다.\n",
+   "file": "embedded/dma_cache.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: UART 수신을 DMA 로 바꾸면 설계가 어떻게 달라지나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:embedded/interrupts.md",
+   "num": "",
+   "title": "인터럽트 (Interrupts)",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 인터럽트가 뭐고, 폴링과 뭐가 다른가?",
+    "Q2: 인터럽트가 발생하면 무슨 일이 순서대로 일어나나?",
+    "Q3: ISR 안에서 하면 안 되는 것과 그 이유는?",
+    "Q4: 중첩·우선순위·지연은 어떻게 다루나?",
+    "Follow-up: 하드웨어 버튼 디바운스는 어떻게 설계하나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 (Android platform/OS 도메인) 준비.\n> 근거: 구글러 \"임베디드 지원자 다수가 인터럽트를 모른다\" (Blind AgKMxnR7), \"ISR sync design\" 질문 (Blind cc1aonsy).\n> 본인 경험 연결: AUTOSAR 카테고리 1/2 인터럽트, Android 부팅 추적에서 본 irq 핸들러 지연. 숫자나 사례가 있으면 Q4 아래에 적는다.\n\n---\n\n## Q1: 인터럽트가 뭐고, 폴링과 뭐가 다른가?\n\n장치가 \"할 일 생겼다\" 고 CPU 에 신호를 보내 **현재 실행을 가로채고** 미리 등록한 핸들러 (ISR) 를 돌리게 하는 메커니즘.\n폴링은 CPU 가 주기적으로 상태 레지스터를 읽어 확인하는 것.\n\n| | 인터럽트 | 폴링 |\n|---|---|---|\n| 지연 | 이벤트 즉시 (수 µs). 임계구역 길이가 최악 지연을 정한다 | 폴링 주기만큼 |\n| CPU | 이벤트 없으면 0 | 항상 소비 |\n| 결정성 | 비동기라 지터 있음 | 주기가 고정이면 예측 가능 |\n| 유리한 때 | 드물고 언제 올지 모르는 이벤트 | 고빈도 짧은 이벤트 (인터럽트 오버헤드가 더 큼), 지터 민감한 루프 |\n\n실무에선 둘을 섞는다. 네트워크 드라이버의 NAPI 는 인터럽트로 깨고, 패킷이 쏟아지면 인터럽트를 꺼 두고 폴링으로 돌린다 (인터럽트 폭주 방지).\n\n---\n\n## Q2: 인터럽트가 발생하면 무슨 일이 순서대로 일어나나?\n\n```\n장치 핀 → 인터럽트 컨트롤러 (ARM GIC / Cortex-M NVIC) → CPU 에 요청\nCPU: 현재 명령 끝 → 같은 레벨 인터럽트 마스크 → 복귀 주소·상태 레지스터 저장 → 벡터 테이블에서 핸들러 주소 → 점프\n핸들러: 원인 확인 (status 레지스터) → 장치 ack / 상태 비트 클리어 → 최소 작업 → EOI (컨트롤러에 끝 알림)\n복귀: 레지스터 복원 → 인터럽트 재활성 → 원래 명령\n```\n\nLinux 는 핸들러를 둘로 쪼갠다.\n\n| | top half (hardirq) | bottom half |\n|---|---|---|\n| 실행 문맥 | 인터럽트 문맥. 인터럽트 비활성 상태일 수 있음 | softirq · tasklet · threaded IRQ · workqueue |\n| 할 일 | ack, 데이터 꺼내 버퍼에 넣기, 플래그 세우기 | 파싱, 프로토콜 처리, 깨우기 |\n| 잠들 수 있나 | 없음 | workqueue · threaded IRQ 는 가능 |\n\n왜 쪼개나: top half 가 길면 그 동안 다른 인터럽트가 밀려 전체 지연이 커진다.\n\n**level vs edge 트리거**\n\n- level: 신호가 높은 동안 계속 요청. ack 를 안 하면 복귀 즉시 다시 들어온다. 공유 인터럽트 라인에 적합.\n- edge: 전이 한 번. 핸들러 안에서 두 번째 edge 가 오면 놓칠 수 있어 \"다 처리했는지\" 루프로 재확인한다.\n\n---\n\n## Q3: ISR 안에서 하면 안 되는 것과 그 이유는?\n\n| 금지 | 이유 |\n|---|---|\n| sleep, 블로킹 I/O, 잠드는 락 (mutex, semaphore take) | 인터럽트 문맥은 스케줄 대상이 아니다. 잠들면 돌아올 주체가 없다 |\n| malloc, printf, 파일 I/O | 내부에 락이 있고 느리다. 재진입 안전하지 않다 |\n| 긴 루프, 파싱, 복사 | 다른 인터럽트와 실시간 태스크가 밀린다 |\n| 부동소수점 (일부 MCU) | FPU 레지스터 저장을 안 하는 설정이면 메인 코드의 FPU 상태를 깨뜨린다 |\n\n**ISR 과 메인 코드가 데이터를 공유할 때**\n\n- `volatile` 은 \"매번 메모리에서 읽어라\" 일 뿐이다. 다중 바이트 읽기 수정 쓰기를 원자적으로 만들지 않는다 ([volatile_mmio.md](volatile_mmio.md)).\n- 임계구역이 필요하면 **인터럽트 마스킹** (MCU) 또는 `spin_lock_irqsave` (Linux). ISR 은 메인이 잡은 mutex 를 기다릴 수 없으므로 mutex 는 답이 아니다.\n- 가장 깨끗한 패턴은 **단일 생산자·단일 소비자 링버퍼**. ISR 은 tail 만 쓰고 메인은 head 만 쓴다. 각 인덱스가 한 쓰기 주체만 가지면 락 없이 된다 ([memory_ordering.md](memory_ordering.md)).\n- 깨우기는 ISR 에서 세마포어 give · 플래그 세트 · 이벤트 큐 push 로 하고, 실제 일은 태스크에서 한다 (deferred interrupt).\n\n---\n\n## Q4: 중첩·우선순위·지연은 어떻게 다루나?\n\n- **우선순위**: NVIC·GIC 는 인터럽트마다 우선순위가 있다. 높은 것이 낮은 ISR 을 선점할 수 있다 (중첩 허용 시).\n- **최악 지연 = 가장 긴 인터럽트 비활성 구간 + 더 높은 우선순위 ISR 들의 합.** 그래서 임계구역을 짧게 하라는 말이 나온다.\n- **인터럽트 우선순위 역전**: 낮은 우선순위 장치의 ISR 이 길면 높은 우선순위 태스크가 밀린다. 태스크 우선순위와 인터럽트 우선순위는 별개의 체계다.\n- **공유 라인**: 여러 장치가 한 IRQ 를 쓰면 핸들러가 각 장치 status 를 읽어 자기 것인지 확인한다 (`IRQ_NONE` 반환).\n- **인터럽트 폭주**: 장치 고장이나 level 미ack 로 ISR 이 무한 반복되면 시스템이 멈춘다. 횟수 제한 뒤 마스크하고 폴링으로 전환한다.\n- **지연 측정**: GPIO 토글 + 오실로스코프, 또는 타임스탬프 차이. Android 에선 `irqsoff` 트레이서, Perfetto 의 irq 트랙.\n\n본인 경험 연결 (채울 것):\n- AUTOSAR 카테고리 1 (OS 안 거침, 가장 짧게) · 카테고리 2 (OS 서비스 호출 가능) 를 어떤 기준으로 나눴나.\n- 부팅 추적에서 인터럽트 지연이 문제였던 사례가 있나.\n\n---\n\n## Follow-up: 하드웨어 버튼 디바운스는 어떻게 설계하나?\n\n버튼은 눌릴 때 수 ms 동안 수십 번 튄다. ISR 마다 처리하면 한 번 누름이 여러 번 인식된다.\n\n- 방법 1: edge ISR 에서 **인터럽트를 끄고 타이머를 건다**. 타이머 만료 시 핀을 읽어 안정 값으로 확정하고 인터럽트를 다시 켠다.\n- 방법 2: ISR 없이 주기 폴링 (예: 5ms) 으로 N 번 연속 같은 값이면 상태 전이.\n- 상태머신 (RELEASED → MAYBE_PRESSED → PRESSED → MAYBE_RELEASED) 으로 그리면 설명이 깔끔하다.\n- 구현 연습은 [19_embedded/E12](../../LC/19_embedded/) 에서.\n",
+   "file": "embedded/interrupts.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 하드웨어 버튼 디바운스는 어떻게 설계하나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:embedded/memory_ordering.md",
+   "num": "",
+   "title": "메모리 순서와 원자성 (Memory Ordering, Atomics)",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 왜 코드에 적은 순서대로 실행되지 않나?",
+    "Q2: acquire 와 release 는 무슨 뜻이고, 링버퍼에 어떻게 쓰나?",
+    "Q3: 배리어 종류와 lock-free 의 뜻은?",
+    "Q4: 스핀락은 어떤 순서로 구현하나?",
+    "Follow-up: mutex 를 쓰면 배리어는 신경 안 써도 되나?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 링버퍼 (E01) 와 스핀락 (E05) 의 꼬리질문이 결국 여기로 온다. \"lock-free SPSC\" (dataford), \"volatile 만으로는 원자적이 아님\" (interviewstack).\n> 참고: kernel.org memory-barriers.txt, C++ `<atomic>`.\n\n---\n\n## Q1: 왜 코드에 적은 순서대로 실행되지 않나?\n\n세 층에서 순서가 바뀐다.\n\n| 층 | 무엇이 | 막는 방법 |\n|---|---|---|\n| 컴파일러 | 의존성 없는 접근을 재배치, 레지스터에 캐싱 | `volatile`, 컴파일러 배리어 `asm volatile(\"\" ::: \"memory\")`, atomic |\n| CPU | 아웃오브오더 실행, **스토어 버퍼** (쓰기가 캐시에 늦게 반영), 로드 선행 | 메모리 배리어, acquire/release 명령 |\n| 캐시 | 코어마다 캐시. 일관성 프로토콜이 결국 맞추지만 **시점** 은 보장 안 함 | 같은 배리어가 가시성 시점을 정한다 |\n\nx86 은 TSO 라 \"store 뒤 load\" 만 뒤바뀐다. **ARM 은 약한 순서** 라 load·store 전부 재배치될 수 있다. 그래서 x86 에서 잘 되던 lock-free 코드가 ARM 폰에서 깨진다.\n\n---\n\n## Q2: acquire 와 release 는 무슨 뜻이고, 링버퍼에 어떻게 쓰나?\n\n- **release 저장**: 이 저장 **앞의** 모든 읽기·쓰기가, 이 저장을 acquire 로 읽은 쪽에서 보인다. 앞의 것이 뒤로 못 내려간다.\n- **acquire 읽기**: 이 읽기 **뒤의** 접근이 앞으로 못 올라간다.\n- 둘이 쌍을 이루면 \"데이터 먼저 쓰고 플래그 올림 → 플래그 보고 데이터 읽음\" 이 성립한다.\n\n```cpp\n// 단일 생산자 · 단일 소비자 링버퍼. 크기는 2의 거듭제곱.\nstruct Ring {\n    static constexpr size_t N = 256;\n    uint8_t buf[N];\n    std::atomic<size_t> head{0};   // 소비자만 쓴다\n    std::atomic<size_t> tail{0};   // 생산자만 쓴다\n\n    bool push(uint8_t v) {\n        size_t t = tail.load(std::memory_order_relaxed);        // 내 것은 relaxed\n        size_t h = head.load(std::memory_order_acquire);        // 소비자가 비운 것을 봐야 함\n        if (t - h == N) return false;                           // full\n        buf[t & (N - 1)] = v;                                   // 데이터 먼저\n        tail.store(t + 1, std::memory_order_release);           // 그 다음 공개\n        return true;\n    }\n    bool pop(uint8_t &out) {\n        size_t h = head.load(std::memory_order_relaxed);\n        size_t t = tail.load(std::memory_order_acquire);        // 생산자의 데이터 쓰기가 보여야 함\n        if (t == h) return false;                               // empty\n        out = buf[h & (N - 1)];\n        head.store(h + 1, std::memory_order_release);           // 읽기 끝났음을 공개\n        return true;\n    }\n};\n```\n\n- 인덱스를 래핑하지 않고 계속 증가시키면 full·empty 구분이 쉽다 (`t - h == N`). 모듈로 대신 `& (N-1)`.\n- **왜 락이 없어도 되나**: head 는 한 쪽만, tail 은 한 쪽만 쓴다. 쓰는 주체가 하나면 읽기 수정 쓰기 경쟁이 없다. 두 생산자가 되면 바로 깨진다 (MPSC 는 CAS 필요).\n- MCU 단일 코어 + ISR 이면 atomic 대신 volatile + 자연 정렬 폭의 인덱스로도 되지만, 그 이유 (단일 코어라 CPU 재배치가 안 보임, 폭이 레지스터 크기라 원자적) 를 말해야 한다.\n\n---\n\n## Q3: 배리어 종류와 lock-free 의 뜻은?\n\n| 종류 | 예 | 뜻 |\n|---|---|---|\n| 컴파일러 배리어 | `asm volatile(\"\":::\"memory\")`, `barrier()` | 컴파일러만 재배치 금지. CPU 는 자유 |\n| CPU 배리어 (ARM) | `dmb` (메모리 접근 순서), `dsb` (완료까지 대기), `isb` (파이프라인 플러시) | 장치 레지스터·DMA 시작 전 `dsb`, 페이지 테이블 변경 뒤 `isb` |\n| Linux | `smp_mb()`, `smp_rmb()`, `smp_wmb()`, `smp_store_release()`, `smp_load_acquire()` | SMP 가 아니면 컴파일러 배리어로 줄어듦 |\n| C++ | `memory_order_relaxed / acquire / release / acq_rel / seq_cst`, `atomic_thread_fence` | 기본 seq_cst 는 가장 비쌈. ARM 에서 release 는 `stlr`, acquire 는 `ldar` |\n\n- **원자적 (atomic)**: 중간 상태가 안 보인다. 정렬된 워드 크기 접근은 대부분 원자적이지만, 표준이 보장하는 건 `std::atomic` 만.\n- **lock-free**: 어떤 스레드가 멈춰도 다른 스레드가 진행한다. `atomic<T>::is_lock_free()`. 128비트 등 큰 타입은 내부에서 락을 쓸 수 있다.\n- **false sharing**: 서로 다른 변수가 한 캐시 라인 (64B) 에 있으면 코어들이 라인을 뺏고 뺏긴다. head 와 tail 을 `alignas(64)` 로 떨어뜨린다 ([dma_cache.md](dma_cache.md)).\n\n---\n\n## Q4: 스핀락은 어떤 순서로 구현하나?\n\n```cpp\nstruct Spin {\n    std::atomic<bool> locked{false};\n    void lock() {\n        for (;;) {\n            if (!locked.exchange(true, std::memory_order_acquire)) return;   // 획득은 acquire\n            while (locked.load(std::memory_order_relaxed)) { /* pause / wfe */ } // test-and-test-and-set\n        }\n    }\n    void unlock() { locked.store(false, std::memory_order_release); }         // 해제는 release\n};\n```\n\n- lock 이 acquire 인 이유: 임계구역 안의 접근이 lock 앞으로 올라오면 안 된다.\n- unlock 이 release 인 이유: 임계구역 안의 쓰기가 unlock 뒤로 내려가면 다음 획득자가 못 본다.\n- **test-and-test-and-set**: 실패하면 쓰기 (exchange) 대신 읽기로 기다린다. 쓰기는 캐시 라인을 빼앗아 다른 코어까지 느리게 한다.\n- 대기 중 `pause` (x86) / `wfe` (ARM, `sev` 로 깨움) 로 전력과 버스 트래픽을 줄인다.\n- 스핀락 대 뮤텍스: 임계구역이 컨텍스트 스위치 2회보다 짧고, 잠들 수 없는 문맥 (ISR) 이면 스핀락. 단일 코어에서 선점 가능하면 스핀락은 데드락이라 인터럽트·선점을 끄고 잡는다 (`spin_lock_irqsave`).\n- 우선순위 역전: 스핀락 보유자가 선점되면 높은 우선순위가 헛돈다. RTOS 는 그래서 짧은 임계구역에 인터럽트 마스킹을 쓴다 ([rtos_scheduling.md](rtos_scheduling.md)).\n\n---\n\n## Follow-up: mutex 를 쓰면 배리어는 신경 안 써도 되나?\n\n된다. mutex lock 은 acquire, unlock 은 release 의미를 가진다.\n그래서 \"락으로 보호된 데이터\" 는 순서 걱정이 없다.\n문제는 **락 밖에서** 읽는 플래그, 통계 카운터, 더블 체크 락킹 같은 것들이다.\n더블 체크 락킹이 C++03 에서 깨졌던 이유가 포인터 쓰기와 객체 초기화 사이의 순서를 아무도 보장하지 않았기 때문이고, C++11 은 `static` 지역 변수 초기화와 `atomic` 으로 해결했다.\n",
+   "file": "embedded/memory_ordering.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: mutex 를 쓰면 배리어는 신경 안 써도 되나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:embedded/rtos_scheduling.md",
+   "num": "",
+   "title": "RTOS 스케줄링과 우선순위 역전",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: RTOS 스케줄러는 범용 OS 와 무엇이 다른가?",
+    "Q2: 우선순위 역전이 뭐고 어떻게 막나?",
+    "Q3: 태스크 상태, ISR 과 태스크의 연결, 스택은?",
+    "Q4: AUTOSAR OS 와 Android 의 실시간 스레드는?",
+    "Follow-up: 데드락과 역전은 뭐가 다르고, 둘 다 막는 방법은?"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 근거: Pixel L6 임베디드 스크린 추천 목록 \"priority inversion, race/deadlock, mutex vs semaphore\" (Blind 2ionkzbi), 구글러 \"standard RTOS scheduling\" (Blind kyfotg4h).\n> 본인 경험 연결: Continental AUTOSAR OS (GV70·GV80·G80). 태스크 분류·주기·인터럽트 카테고리를 Q4 에 채운다.\n\n---\n\n## Q1: RTOS 스케줄러는 범용 OS 와 무엇이 다른가?\n\n| | RTOS (FreeRTOS, AUTOSAR OS, Zephyr) | 범용 (Linux CFS) |\n|---|---|---|\n| 목표 | **데드라인을 지키는 결정성.** 최악 지연이 유계 | 처리량과 공정성 |\n| 정책 | 고정 우선순위 선점. 같은 우선순위는 RR 또는 FIFO | 가중 공정 분배 (vruntime) |\n| 틱 | 고정 틱 (1ms) 또는 tickless | 고해상도 타이머, tickless |\n| 지연 | 컨텍스트 스위치 수 µs, 인터럽트 응답 수 µs | 수십 µs 이상, 지터 큼 |\n| 메모리 | 정적 할당, 태스크 스택 고정 | 동적 |\n\n실시간 = 빠름이 아니라 **늦지 않음이 보장됨**. 100ms 데드라인도 항상 지키면 실시간이다.\n\n스케줄 가능성 분석 두 가지 이름만:\n- **Rate Monotonic**: 주기가 짧을수록 우선순위 높게. 이용률 합이 약 69% 아래면 전부 데드라인 보장.\n- **EDF**: 데드라인이 가까운 것부터. 이용률 100% 까지 가능하지만 동적이라 RTOS 가 잘 안 쓴다.\n\n---\n\n## Q2: 우선순위 역전이 뭐고 어떻게 막나?\n\n```\nH (높음) 가 L (낮음) 이 잡은 뮤텍스를 기다린다.\n그 사이 M (중간) 이 L 을 선점한다.\n→ H 가 M 보다 먼저인데 M 이 끝날 때까지 H 가 못 돈다. 이것이 역전.\nMars Pathfinder (1997) 가 이걸로 리셋을 반복했다.\n```\n\n| 해법 | 동작 | 비용 |\n|---|---|---|\n| **우선순위 상속** (priority inheritance) | H 가 기다리기 시작하면 L 의 우선순위를 H 로 올린다. L 이 풀면 복귀 | 구현 간단. 중첩 락이면 연쇄 상속. Linux `rt_mutex`, PI futex |\n| **우선순위 천장** (priority ceiling) | 락마다 천장 (그 락을 쓰는 최고 우선순위) 을 정하고, 잡는 순간 천장으로 올린다 | 데드락도 막음. 설계 때 천장 계산 필요. AUTOSAR 의 기본 |\n| 임계구역에서 선점 금지 | 짧은 구간은 스케줄러·인터럽트를 끈다 | 가장 단순. 길면 전체 지연 |\n\n세마포어는 소유자가 없어 상속을 못 한다. 그래서 상호 배제에는 뮤텍스, 신호 전달에는 세마포어라고 가르는 것이다 ([mutex_vs_semaphore.md](../os/mutex_vs_semaphore.md)).\n\n---\n\n## Q3: 태스크 상태, ISR 과 태스크의 연결, 스택은?\n\n- 상태: Running · Ready · Blocked (세마포어·큐·지연 대기) · Suspended. 스케줄러는 Ready 중 최고 우선순위를 고른다.\n- **ISR → 태스크 통지**: ISR 은 짧게 끝내고 세마포어 give, 큐 push, 태스크 통지 (`xTaskNotifyFromISR`). 깨어난 태스크가 처리한다. ISR 안에서 \"FromISR\" 가 붙은 API 만 쓰는 이유는 잠들지 않고 스케줄러 상태를 안전하게 건드리기 위해서다.\n- **틱 대 tickless**: 틱이 있으면 지연·타임아웃이 틱 단위. tickless 는 다음 만료 시각까지 타이머를 걸고 잔다 (전력).\n- **스택**: 태스크마다 고정 크기. 오버플로를 잡기 위해 카나리 패턴 (0xA5) 검사, 하이워터마크 측정, MPU 가드 영역. 재귀와 큰 지역 배열이 주범.\n- **워치독**: 가장 낮은 우선순위 태스크가 주기적으로 kick. 높은 태스크가 굶기면 리셋. 각 태스크가 체크인하는 소프트웨어 워치독을 그 위에 둔다.\n\n---\n\n## Q4: AUTOSAR OS 와 Android 의 실시간 스레드는?\n\n**AUTOSAR OS (OSEK 기반)** — 본인 경험 연결 지점.\n\n| 개념 | 내용 |\n|---|---|\n| Basic task | 대기 상태 없음. 시작·종료만. 가장 가볍다 |\n| Extended task | 이벤트 대기 가능. 상태 하나 더 |\n| 인터럽트 카테고리 1 | OS 안 거침. 가장 빠름. OS 서비스 호출 금지 |\n| 인터럽트 카테고리 2 | OS 가 관리. 태스크 활성화 같은 서비스 호출 가능 |\n| 자원 | 우선순위 천장 프로토콜로 보호 |\n| 스케줄 테이블·알람 | 주기 태스크 활성화. 10ms·100ms 주기 등 |\n\n채울 것: 어떤 태스크를 어느 주기에 넣었나, 카테고리 1 로 뺀 인터럽트가 뭐였나, 데드라인 미스를 어떻게 측정했나.\n\n**Android (Linux)**\n- 기본은 CFS. `SCHED_FIFO` / `SCHED_RR` 가 실시간 클래스 (우선순위 1-99). 오디오 (`audioserver` fast mixer), SurfaceFlinger 일부, 입력 경로가 RT 또는 높은 nice 를 쓴다.\n- 커널은 `rt_mutex` 와 PI futex 로 우선순위 상속을 지원한다.\n- Binder 는 호출자의 우선순위를 수신 스레드에 전달한다 (RT 상속은 설정으로). 그래서 낮은 우선순위 서비스가 높은 우선순위 호출을 막는 역전이 줄어든다.\n- 부팅·앱 시작에서 CPU 를 묶는 건 cpuset·cgroup (top-app, foreground, background) 과 EAS 다.\n\n---\n\n## Follow-up: 데드락과 역전은 뭐가 다르고, 둘 다 막는 방법은?\n\n- 데드락은 서로의 락을 **영원히** 기다리는 것. 역전은 결국 풀리지만 **늦는** 것.\n- 우선순위 천장은 둘 다 막는다. 천장으로 올라간 태스크가 돌면서 두 번째 락을 잡으려 할 때, 그 락을 잡을 수 있는 다른 태스크는 이미 선점당해 있기 때문이다.\n- 상속만으로는 데드락을 못 막는다. 락 순서 고정이 따로 필요하다 ([deadlock.md](../os/deadlock.md)).\n",
+   "file": "embedded/rtos_scheduling.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: 데드락과 역전은 뭐가 다르고, 둘 다 막는 방법은?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:embedded/volatile_mmio.md",
+   "num": "",
+   "title": "volatile 과 메모리맵 레지스터 (MMIO)",
+   "diff": "",
+   "cat": "embedded",
+   "catName": "Embedded",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: volatile 은 컴파일러에게 무엇을 말하나?",
+    "Q2: 메모리맵 레지스터 접근 코드는 어떻게 쓰고, 어디서 깨지나?",
+    "Q3: volatile 로 스레드 동기화를 하면 왜 안 되나?",
+    "Q4: MMIO 영역은 메모리 속성이 뭐가 다르고, 유저 공간에서 어떻게 접근하나?",
+    "Follow-up: 아래 코드의 문제를 전부 찾아라"
+   ],
+   "md": "> 2026-11-12 작성. Google 면접 1 준비.\n> 근거: Blind v77qsn8s \"Don't forget about volatile\", 레지스터 비트 필드 추출 (Apple 질문 은행 B18), dataford \"상태 비트 폴링에서 volatile 이 최적화를 어떻게 막는가\".\n> 구글 임베디드 라운드 빈도 최상위 묶음이다.\n\n---\n\n## Q1: volatile 은 컴파일러에게 무엇을 말하나?\n\n\"이 객체는 **프로그램 밖에서 바뀔 수 있고, 접근 자체가 부작용** 이다. 소스에 적힌 모든 읽기·쓰기를 적힌 횟수와 순서대로 실제로 수행하라.\"\n\n컴파일러가 하지 않게 되는 것:\n- 루프 밖으로 읽기를 끌어내기 (hoisting), 레지스터에 캐싱.\n- 결과를 안 쓰는 읽기 제거, 같은 값 연속 쓰기 합치기.\n- volatile 접근끼리의 순서 바꾸기.\n\nvolatile 이 **보장하지 않는 것**:\n- CPU 의 실행 순서 재배치 (메모리 배리어 아님).\n- 원자성. `volatile uint64_t` 는 32비트 MCU 에서 두 번에 나눠 읽힌다.\n- 캐시 일관성. 다른 코어나 DMA 가 보는 값과 같다는 보장 없음.\n- 다른 volatile 아닌 접근과의 순서.\n\n---\n\n## Q2: 메모리맵 레지스터 접근 코드는 어떻게 쓰고, 어디서 깨지나?\n\n```c\n#define UART_BASE   0x40011000u\n#define UART_SR     (*(volatile uint32_t *)(UART_BASE + 0x00))   /* status */\n#define UART_DR     (*(volatile uint32_t *)(UART_BASE + 0x04))   /* data   */\n#define SR_TXE      (1u << 7)\n\nvoid uart_putc(char c) {\n    while (!(UART_SR & SR_TXE)) { }     /* volatile 없으면 컴파일러가 한 번만 읽고 무한 루프로 바꾼다 */\n    UART_DR = (uint32_t)c;\n}\n```\n\n| 함정 | 설명 |\n|---|---|\n| 상태 비트 폴링 | volatile 없으면 `while(!(SR & TXE))` 가 `if(!(SR & TXE)) for(;;);` 로 최적화된다 |\n| 읽기 부작용 | read-to-clear 레지스터 (읽으면 플래그가 지워짐). 디버거로 보기만 해도 상태가 바뀐다. `x = REG; y = REG;` 를 합치면 안 되니 volatile 필수 |\n| 쓰기 전용 | write-only 레지스터는 읽으면 쓰레기. 읽기 수정 쓰기 패턴 금지. 드라이버가 섀도 변수를 둔다 |\n| 비트 수정 경쟁 | `REG \\|= BIT` 는 읽기·수정·쓰기 3단계. 중간에 ISR 이 같은 레지스터를 고치면 하나가 사라진다. 인터럽트 마스킹, 또는 하드웨어의 SET/CLR 전용 레지스터 (`REG_SET = BIT`) 사용 |\n| 접근 폭 | 32비트 레지스터를 8비트로 쓰면 버스 오류나 무시. 레지스터 폭 그대로 접근 |\n| 구조체 비트필드 | `struct { uint32_t en:1; ... }` 로 레지스터를 매핑하면 접근 폭·순서·패킹이 구현 정의라 이식성이 없다. 마스크·시프트로 직접 한다 |\n\n**비트 필드 추출·설정 (Apple B18 유형)**\n\n```c\nstatic inline uint32_t reg_get(volatile uint32_t *reg, unsigned shift, unsigned width) {\n    uint32_t mask = (width == 32) ? 0xFFFFFFFFu : ((1u << width) - 1u);\n    return (*reg >> shift) & mask;\n}\nstatic inline void reg_set(volatile uint32_t *reg, unsigned shift, unsigned width, uint32_t val) {\n    uint32_t mask = ((width == 32) ? 0xFFFFFFFFu : ((1u << width) - 1u)) << shift;\n    uint32_t v = *reg;                 /* 읽기 */\n    v = (v & ~mask) | ((val << shift) & mask);\n    *reg = v;                          /* 쓰기. 사이에 ISR 이 끼면 경쟁 */\n}\n```\n\n`1u << 32` 는 미정의 동작이라 width 32 를 따로 처리한다.\nLinux 커널은 이 역할을 `readl/writel`, `FIELD_GET/FIELD_PREP` 매크로가 한다.\n\n---\n\n## Q3: volatile 로 스레드 동기화를 하면 왜 안 되나?\n\n- C/C++ 표준에서 두 스레드가 동기화 없이 같은 변수에 쓰고 읽으면 **data race = 미정의 동작**. volatile 은 이걸 바꾸지 않는다.\n- CPU 가 순서를 바꾼다. `data = 1; volatile flag = 1;` 에서 다른 코어가 flag 를 보고 data 를 읽어도 옛 값일 수 있다 (ARM 약한 순서). 배리어나 release/acquire 가 필요하다 ([memory_ordering.md](memory_ordering.md)).\n- 그래서 C++11 이후 스레드 간 플래그는 `std::atomic<bool>`. volatile 의 정당한 용도는 셋뿐이다. **MMIO, 시그널 핸들러와 공유하는 `volatile sig_atomic_t`, setjmp/longjmp 사이의 지역 변수.**\n- ISR 과 공유하는 단일 코어 MCU 에서는 volatile + 인터럽트 마스킹 조합이 전통적 답이다. 단일 코어라 CPU 재배치 문제가 안 보이지만, 원자성은 여전히 마스킹이 책임진다.\n\n---\n\n## Q4: MMIO 영역은 메모리 속성이 뭐가 다르고, 유저 공간에서 어떻게 접근하나?\n\n- MMU 가 그 영역을 **device / non-cacheable** 로 매핑한다. 캐시되면 레지스터 쓰기가 캐시에만 남고 장치에 안 간다.\n- Linux 드라이버는 `ioremap()` 으로 매핑하고 `readl/writel` 로 접근한다. 이 접근자는 컴파일러 배리어와 필요한 CPU 배리어를 포함한다.\n- 유저 공간: `/dev/mem` 을 mmap (루트, 보안상 보통 막음), 또는 UIO 드라이버. Android 에선 HAL 이 커널 드라이버를 통해서만 장치를 만진다.\n- ARM 에선 device 메모리 접근도 순서가 보장되지 않는 경우가 있어 `dsb` 를 끼운다 (예: DMA 시작 레지스터 쓰기 전 버퍼 쓰기 완료 보장).\n\n---\n\n## Follow-up: 아래 코드의 문제를 전부 찾아라\n\n```c\nuint8_t *buf = (uint8_t *)0x20000000;     /* DMA 수신 버퍼 */\nint ready = 0;                            /* ISR 이 1 로 세움 */\nvoid dma_isr(void) { ready = 1; }\nvoid wait(void) { while (!ready) { } process(buf); }\n```\n\n1. `ready` 가 volatile 이 아니라 `while(!ready)` 가 한 번만 읽힌다.\n2. ISR 이 `ready = 1` 을 쓰기 전에 DMA 가 버퍼 쓰기를 끝냈다는 보장은 DMA 완료 인터럽트가 해 주지만, CPU 캐시에 옛 버퍼 내용이 있으면 `process` 가 stale 데이터를 읽는다. 캐시 invalidate 또는 non-cacheable 버퍼 ([dma_cache.md](dma_cache.md)).\n3. 멀티코어라면 `ready` 를 atomic 으로 하고 acquire 로 읽어야 한다.\n4. `ready` 를 다시 0 으로 내리는 쪽과 ISR 이 경쟁하면 이벤트를 놓친다. 카운터나 링버퍼로 바꾼다.\n",
+   "file": "embedded/volatile_mmio.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 아래 코드의 문제를 전부 찾아라"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/context_switch.md",
+   "num": "",
+   "title": "Context Switch",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Context switch란?",
+    "Q2: Context switch의 비용은?",
+    "Q3: 스레드 간 context switch가 프로세스 간보다 빠른 이유는?",
+    "Follow-up: Context switch가 언제 발생하나요?"
+   ],
+   "md": "## Q1: Context switch란?\n\nCPU가 현재 실행 중인 프로세스/스레드를 멈추고, 다른 프로세스/스레드로 전환하는 과정.\n\n순서:\n1. 현재 프로세스 상태를 PCB에 저장 (레지스터, PC, stack pointer)\n2. 스케줄러가 다음 프로세스 선택\n3. 선택된 프로세스의 PCB에서 상태 복원\n4. 실행 재개\n\n---\n\n## Q2: Context switch의 비용은?\n\n**직접 비용:**\n- 레지스터 저장/복원\n- 메모리 매핑 변경 (page table 교체)\n- 커널 모드 진입/복귀\n\n**간접 비용 (더 큼):**\n- CPU cache 무효화 (cache cold start)\n- TLB flush (프로세스 전환 시)\n- Pipeline flush\n\n일반적으로 수 마이크로초 ~ 수십 마이크로초. 빈번하면 성능에 큰 영향.\n\n---\n\n## Q3: 스레드 간 context switch가 프로세스 간보다 빠른 이유는?\n\n같은 프로세스 내 스레드는:\n- 같은 address space 공유 → page table 교체 불필요\n- TLB flush 불필요\n- 캐시 hit 확률 높음 (공유 메모리)\n\n저장/복원할 것: 레지스터, PC, stack pointer 정도만.\n\n---\n\n## Follow-up: Context switch가 언제 발생하나요?\n\n- **Timer interrupt** - time slice 만료 (preemptive scheduling)\n- **I/O 요청** - 현재 프로세스가 blocking I/O 호출\n- **System call** - 커널 서비스 요청\n- **Higher priority process** - 더 높은 우선순위 프로세스가 ready 상태로 전환\n",
+   "file": "os/context_switch.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: Context switch가 언제 발생하나요?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/deadlock.md",
+   "num": "",
+   "title": "Deadlock",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Deadlock이란? 발생 조건 4가지는?",
+    "Q2: Deadlock을 어떻게 해결하나요?",
+    "Q3: 정확히 어디서 엇갈리나?",
+    "Follow-up: Deadlock vs Livelock vs Starvation?"
+   ],
+   "md": "## 기준 코드 — 계좌 이체\n\n이 파일의 Q1 부터 Follow-up 까지 **전부 이 코드 하나** 를 놓고 답한다.\n목록을 외우는 게 아니라, 이 코드에서 뭐가 어디에 있는지를 본다.\n\n```cpp\nstruct Account { int id; int balance; mutex mtx; };\nAccount acc1{1, 1000, {}};   // 락이 지키는 건 balance. mutex 자체는 자원이 아니다\nAccount acc2{2, 1000, {}};\n\nvoid transfer(Account& from, Account& to, int amount) {\n    from.mtx.lock();          // ①\n    to.mtx.lock();            // ②\n    from.balance -= amount;\n    to.balance   += amount;\n    to.mtx.unlock();\n    from.mtx.unlock();\n}\n\n// 두 스레드가 동시에\ntransfer(acc1, acc2, 100);   // 스레드1\ntransfer(acc2, acc1, 100);   // 스레드2\n```\n\n이 코드는 멈춘다.\n왜 멈추는지가 Q1, 어떻게 살릴지가 Q2, 정확히 어디서 엇갈리는지가 Q3 다.\n\n---\n\n## Q1: Deadlock이란? 발생 조건 4가지는?\n\n두 개 이상의 프로세스가 서로 상대방이 가진 자원을 기다리면서 무한히 대기하는 상태.\n\n**4가지 조건이 위 코드의 어디에 있는지:**\n\n| 조건 | 이 코드의 어디 |\n|---|---|\n| **Mutual Exclusion** | `mutex` 다. 한 번에 한 스레드만 그 계좌의 balance 를 건드린다 |\n| **Hold and Wait** | ① 을 쥔 채로 ② 를 기다린다. 놓지 않고 기다리는 게 핵심이다 |\n| **No Preemption** | 남이 쥔 `mtx` 를 뺏어올 방법이 없다. 놓을 때까지 기다릴 뿐이다 |\n| **Circular Wait** | 스레드1 은 acc2 를, 스레드2 는 acc1 을 기다린다. 화살표가 고리를 이룬다 |\n\n네 줄이 전부 이 6줄짜리 함수 안에 있다.\n그래서 이런 코드는 특별히 이상하지 않아도 데드락이 난다.\n\n### 외우는 법: PEACH 🍑\n\n```\nP   No Preemption      뺏을 수 없다\nE   Mutual Exclusion   나만 쓴다\nA   All four           넷 다 있어야 데드락이다\nC   Circular Wait      고리를 이룬다\nH   Hold and Wait      쥔 채로 기다린다\n```\n\n**A 는 조건이 아니라 성질이다.** ⭐️\n네 조건이 **전부** 모여야 데드락이 생긴다.\n뒤집으면 **하나만 깨도 안 생긴다.**\n\nA 를 빼먹으면 PEACH 는 그냥 외운 글자 네 개로 끝난다.\nA 가 있어야 Q2 가 성립한다 — **해결책이란 곧 \"넷 중 하나를 깨는 방법\" 이다.**\n\n---\n\n## Q2: Deadlock을 어떻게 해결하나요?\n\n같은 코드를 놓고, 네 가지 답이 있다.\n\n### P — Prevention (예방): 코드를 고쳐서 조건 하나를 없앤다\n\n**Circular Wait 를 깬다.** 인자 순서가 아니라 **id 순서** 로 잠근다.\n\n```cpp\nAccount& first  = (from.id < to.id) ? from : to;\nAccount& second = (from.id < to.id) ? to   : from;\nfirst.mtx.lock();\nsecond.mtx.lock();\n```\n\n누가 어떤 순서로 부르든 항상 id 작은 것부터 잠근다.\n고리가 생길 수 없다. → 자세한 건 Q3.\n\n### A — Avoidance (회피): 잠그기 전에 안전한지 계산한다\n\n이체 요청이 올 때마다 \"지금 이 둘을 잠그면 교착 가능성이 생기나\" 를 미리 따져보고 허락한다.\nBanker's Algorithm 이 이것이다.\n계좌 이체에는 과하다. 매 요청마다 계산 비용이 붙는다.\n\n### I — Ignorance (무시): 아무것도 안 한다\n\n그냥 둔다.\n멈추면 사람이 재시작한다.\n\n**실제 대부분의 OS 가 고르는 게 이것이다.** ⭐️\n데드락은 자주 안 나서 앞의 셋이 수지가 안 맞는다.\n모래에 머리 박는다고 **타조 알고리즘** 이라고 부른다.\n\n### D — Detection + Recovery (탐지 + 복구): 터진 뒤에 수습한다\n\n누가 누구를 기다리는지 그래프로 들고 있다가 사이클이 생기면 잡아낸다.\n잡으면 한쪽 `transfer` 를 강제로 취소하고 롤백한다.\nDB 엔진이 실제로 이렇게 한다.\n\n### 외우는 법: PAID 💰\n\n```\nP   Prevention            코드를 고쳐서 조건 하나를 없앤다\nA   Avoidance             잠그기 전에 안전한지 계산한다\nI   Ignorance             그냥 둔다        <- 실제 답\nD   Detection + Recovery  터지면 잡아서 롤백한다\n```\n\n네 글자에 네 전략이 정확히 맞는다. 채운 글자가 없다.\n\n뜻도 통한다. 결국 **비용을 어디에 치를 것인가** 의 선택이다.\n\n| | 값을 치르는 지점 |\n|---|---|\n| Prevention | 설계 단계. 제약이 세져서 자원 활용도가 떨어진다 |\n| Avoidance | 할당할 때마다. 매번 안전한지 계산해야 한다 |\n| Ignorance | 안 치른다. 대신 가끔 멈춘다 |\n| Detection | 터진 뒤에. 탐지 비용 + 롤백 대가 |\n\n데드락은 공짜로 못 없앤다.\n어디서 PAID 할지만 고를 수 있다.\n\n---\n\n## Q3: 정확히 어디서 엇갈리나?\n\n같은 `from.mtx.lock()` 한 줄인데, `from` 이 가리키는 게 호출마다 다르다.\n\n```\ntransfer(acc1, acc2)   ->  from = acc1,  to = acc2   ->  acc1 잠그고 acc2 기다림\ntransfer(acc2, acc1)   ->  from = acc2,  to = acc1   ->  acc2 잠그고 acc1 기다림\n```\n\n함수 안에서는 둘 다 \"내 것 먼저\" 라는 같은 규칙이다.\n바깥에서 보면 잠그는 순서가 정반대다.\n\n```\n나쁜 코드 :  인자 순서대로 잠근다    -> 호출자마다 순서가 달라짐\n좋은 코드 :  id 순서대로 잠근다      -> 누가 부르든 순서가 같음\n```\n\n**왜 하필 id 인가** ⭐️\n\"먼저 온 쪽\" 이나 \"잔액이 많은 쪽\" 같은 **호출 시점에 달린 기준이면 안 된다.**\n누가 언제 부르든 같은 답이 나오는 **고정된 전역 기준** 이어야 순서가 통일된다.\nid 는 계좌에 박혀 있어서 절대 안 변한다. 그래서 쓸 수 있다.\n\n먼저 잠글 것을 못 잡은 쪽은 **아무것도 안 쥔 채** 기다린다.\nHold and Wait 도 같이 깨진다.\n\n순서를 통일하기 어려우면 `lock(m1, m2)` 로 두 락을 한꺼번에 잡는 방법도 있다.\n\n⚠️ 전제는 **동시 실행** 이다.\n두 호출을 순차로 하면 락 구간이 안 겹쳐서 순서가 반대여도 데드락이 안 난다.\n\n---\n\n## Follow-up: Deadlock vs Livelock vs Starvation?\n\n같은 코드를 **잘못 고치면** Livelock 이 나온다.\n\n```cpp\nvoid transfer(Account& from, Account& to, int amount) {\n    while (true) {\n        from.mtx.lock();\n        if (to.mtx.try_lock()) break;   // 둘 다 잡았다 -> 진행\n        from.mtx.unlock();              // 못 잡았으면 내 것도 놓고 양보한다\n    }\n    ...\n}\n```\n\n\"쥔 채로 기다리지 말고 양보하자\" 는 발상 자체는 맞다.\n그런데 두 스레드의 박자가 맞으면 **잡고 → 실패 → 놓고 → 다시 잡고** 를 영원히 반복한다.\n\n**멈춰 있지 않다. CPU 도 계속 쓴다. 그런데 아무도 이체를 못 끝낸다.**\n\n| | 상태 | 누가 못 하나 |\n|---|---|---|\n| **Deadlock** | **멈춰 있다.** 아무도 안 움직인다 | 걸린 전원 |\n| **Livelock** | **계속 움직인다.** 상태는 바뀌는데 진행이 없다 | 걸린 전원 |\n| **Starvation** | 시스템은 잘 돌아간다 | **특정 하나만** 계속 밀린다 |\n\nDeadlock 과 Livelock 은 **아무도 진행 못 한다** 는 결과가 같다.\n다른 건 멈춰 있느냐 바쁘게 움직이느냐다.\n그래서 Livelock 이 더 찾기 어렵다 — CPU 가 돌고 있어서 멈춘 것처럼 안 보인다.\n\nStarvation 은 결이 다르다.\n남들은 다 잘 돌아가는데 특정 스레드만 계속 순서가 안 온다.\n→ `concurrency/reader_writer.md` 의 writer starvation 이 같은 이야기다.\n\n복도 비유로 묶으면:\n\n```\nDeadlock    서로 마주 서서 아무도 안 비킨다\nLivelock    서로 동시에 같은 쪽으로 비켜서 또 막힌다. 계속 움직이는데 못 지나간다\nStarvation  나만 계속 뒤로 밀린다. 남들은 잘 지나간다\n```\n",
+   "file": "os/deadlock.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: Deadlock vs Livelock vs Starvation?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/ipc.md",
+   "num": "",
+   "title": "IPC (Inter-Process Communication)",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: IPC 가 뭐고, 왜 커널을 거쳐야 하나?",
+    "Q2: IPC 종류를 말해보라",
+    "Q3: 뭘 쓸지 어떻게 고르나?",
+    "Q4: fd 를 다른 프로세스에 넘길 수 있는 건 뭔가?",
+    "Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?"
+   ],
+   "md": "> 2026-10-27 작성. 10/26 Apple Core OS 스크린에서 \"Binder 외에 뭐가 있나\" 에 Binder 만 답했다.\n> 아래 Q2 표의 **첫 열을 순서대로 소리 내 읽을 수 있으면** 그 질문은 끝난다.\n\n---\n\n## Q1: IPC 가 뭐고, 왜 커널을 거쳐야 하나?\n\n주소 공간이 분리된 프로세스끼리 데이터나 신호를 주고받는 방법.\n스레드는 같은 주소 공간이라 IPC 가 필요 없다 (`process_vs_thread.md`).\n\n분리돼 있으니 한쪽이 쓴 메모리를 다른 쪽이 직접 못 본다.\n그래서 **커널이 중간에서 복사해주거나, 같은 물리 페이지를 양쪽에 매핑해준다.**\n전자가 파이프·소켓·메시지, 후자가 공유 메모리다.\n공유 메모리는 매핑을 만들 때만 커널이 끼고 그 뒤 읽고 쓰는 건 그냥 메모리 접근이다.\n\n---\n\n## Q2: IPC 종류를 말해보라\n\n**\"Binder 외에 뭐가 있나\" 의 답.** 첫 열을 위에서 아래로 읽는다. ⭐️\n\n| 종류 | 모양 | 커널 복사 | 쓰는 자리 |\n|---|---|---|---|\n| **파이프** | 한 방향 바이트 스트림. 경계 없음 | 2회 (쓰기 · 읽기) | 셸 `a \\| b`, 부모 → 자식 로그 |\n| **Unix 도메인 소켓** | 양방향 스트림 또는 데이터그램. **fd 를 넘길 수 있다** (SCM_RIGHTS) | 2회 | 데몬 ↔ 클라이언트의 기본. 같은 기계 안에서만 |\n| **공유 메모리** | 같은 물리 페이지를 둘 다 매핑 | **0** (매핑할 때만 개입) | 영상 프레임, 큰 버퍼. 동기화는 별도 |\n| **시그널** | 번호 하나. 데이터 없음 | 없음 | 종료 요청 (TERM), 자식 종료 알림 (CHLD), 타이머 |\n| **메시지 큐** | 경계 있는 메시지, 우선순위 | 2회 | POSIX mq. 실무에선 드묾 |\n| **Binder** | 동기 호출 (RPC). 객체 참조 · fd 전달 | 1회 (커널이 수신자 버퍼에 직접) | Android 의 모든 서비스 호출 |\n| **Mach 메시지** | 경계 있는 메시지. **포트 권한 자체를 담아 보낸다** | 1회 (큰 건 vm 매핑으로 0) | XNU 의 원시 IPC. 커널 객체도 포트로 다룬다 |\n| **XPC** | Mach 위의 직렬화 (dictionary) + 서비스 이름 해석 | Mach 와 같음 | Darwin 데몬 ↔ 앱의 표준. 요청 오면 launchd 가 그때 데몬을 띄움 |\n\n```c\n/* 기본 셋. 전부 POSIX, Darwin·Linux 둘 다 */\nint pfd[2]; pipe(pfd);                                   /* 파이프 */\nint sv[2];  socketpair(AF_UNIX, SOCK_STREAM, 0, sv);     /* Unix 소켓 */\nint shm = shm_open(\"/buf\", O_CREAT | O_RDWR, 0600);      /* 공유 메모리 */\nvoid *m = mmap(NULL, len, PROT_READ|PROT_WRITE, MAP_SHARED, shm, 0);\nkill(pid, SIGTERM);                                      /* 시그널 */\n```\n\n**Android ↔ Darwin 대응** (Core OS 면접이면 이 줄을 붙인다)\n\n| 자리 | Android | Darwin |\n|---|---|---|\n| 서비스 RPC | Binder. 이름 해석은 servicemanager | Mach 메시지 + XPC. 이름 해석은 launchd (bootstrap) |\n| 공유 메모리 | ashmem → memfd, Parcel 의 큰 blob | Mach `vm_remap`, IOSurface (GPU 버퍼) |\n| 로컬 소켓 | zygote 소켓, logd, adbd | syslogd, 많은 데몬의 로컬 포트 |\n| 시그널 | 같음 | 같음. launchd 가 TERM → KILL |\n\n---\n\n## Q3: 뭘 쓸지 어떻게 고르나?\n\n기준은 둘이다. **모양** 과 **양**.\n\n```\n모양   바이트 스트림이면 파이프·소켓\n       경계 있는 메시지면 mq·Binder·Mach\n       그냥 알림이면 시그널\n양     많으면 복사를 피해야 하니 공유 메모리.  IPC 로는 \"준비됐다\" 만 보낸다\n```\n\n큰 데이터를 소켓으로 보내면 복사 두 번(보내는 쪽 → 커널 → 받는 쪽)이 병목이다.\n그래서 Android 의 SurfaceFlinger 버퍼 큐, Darwin 의 IOSurface 는 프레임은 공유 메모리에 두고 핸들만 IPC 로 넘긴다.\n\n---\n\n## Q4: fd 를 다른 프로세스에 넘길 수 있는 건 뭔가?\n\n**Unix 소켓 (SCM_RIGHTS) · Binder · Mach 포트** 셋이다.\n파이프·시그널·mq 는 못 한다.\n\n\"열린 파일·소켓·공유 메모리 핸들을 다른 프로세스에 건네는\" 능력이 서비스 설계의 핵심이다.\n서비스가 클라이언트에 공유 메모리 fd 를 주는 패턴이 이걸로 된다.\n\nBinder 와 Mach 는 공통점이 하나 더 있다.\n**커널이 객체 참조를 센다.** 상대가 죽으면 커널이 알려준다 (Binder 의 death notification, Mach 의 dead-name notification).\n소켓은 EOF 로만 안다.\n\n```c\n/* Unix 소켓으로 fd 넘기기. 커널이 받는 쪽 fd 테이블에 새 번호로 복제해준다 */\nstruct msghdr mh = {0}; struct iovec io = { \"x\", 1 };\nchar cbuf[CMSG_SPACE(sizeof(int))];\nmh.msg_iov = &io; mh.msg_iovlen = 1; mh.msg_control = cbuf; mh.msg_controllen = sizeof cbuf;\nstruct cmsghdr *c = CMSG_FIRSTHDR(&mh);\nc->cmsg_level = SOL_SOCKET; c->cmsg_type = SCM_RIGHTS; c->cmsg_len = CMSG_LEN(sizeof(int));\nmemcpy(CMSG_DATA(c), &shm_fd, sizeof(int));\nsendmsg(sock, &mh, 0);\n```\n\n---\n\n## Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?\n\n**동기화가 공짜가 아니다.**\n한쪽이 쓰는 중에 다른 쪽이 읽으면 깨진 데이터를 본다.\n프로세스 간 뮤텍스 (`PTHREAD_PROCESS_SHARED`), 세마포어, 또는 원자 연산 + 메모리 배리어가 따로 필요하다.\n\"공유 메모리로 빠르게\" 라고만 답하면 반쪽이다.\n\n### 틀리기 쉬운 것\n\n```\nX  파이프는 양방향          -> 한 방향. 양방향이면 파이프 두 개거나 socketpair\nX  시그널로 데이터를 보낸다   -> 번호만 간다 (sigqueue 로 int 하나). \"확인해봐\" 신호로만 쓰고 내용은 다른 채널로\nX  Mach 메시지 = 소켓 비슷   -> 핵심은 포트 권한(send right)이 capability 라는 것. 가진 프로세스만 말을 걸 수 있고, 샌드박스가 이걸로 제한한다\n```\n",
+   "file": "os/ipc.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/mutex_vs_semaphore.md",
+   "num": "",
+   "title": "Mutex vs Semaphore",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Mutex와 Semaphore 차이를 설명해보세요.",
+    "Q2: 각각 언제 쓰나요?",
+    "Q3: C++에서의 사용 예시?",
+    "Follow-up: Spinlock이란?"
+   ],
+   "md": "## Q1: Mutex와 Semaphore 차이를 설명해보세요.\n\n| | Mutex | Semaphore |\n|---|-------|-----------|\n| 동시 접근 | 1개만 | N개까지 (counting) |\n| 소유권 | lock한 스레드만 unlock 가능 | 누구나 signal 가능 |\n| 목적 | 상호 배제 (mutual exclusion) | 리소스 카운팅 / 시그널링 |\n| 비유 | 화장실 열쇠 (1명) | 주차장 빈 자리 카운터 |\n\nBinary semaphore(값 0 or 1)와 mutex는 비슷해 보이지만, 소유권 개념이 다름.\n\n### 소유권이 왜 중요한가 — binary semaphore != mutex 인 이유\n\n```\nMutex      A가 lock    -> B가 unlock    X  (내가 잠근 건 나만 연다)\nSemaphore  A가 acquire -> B가 release   O\n```\n\n이 \"된다\"가 용도를 가른다. 소유자가 없어서 **서로 다른 스레드끼리 신호를 주고받을 수 있음**:\n\n```\nProducer 스레드:  버퍼에 넣고 -> sem.release()   \"하나 채웠다\"\nConsumer 스레드:  sem.acquire() -> 꺼냄          \"기다렸다 받는다\"\n```\n\nproducer_consumer.md 의 뼈대가 이것. Mutex로는 이 패턴이 안 만들어진다.\n\n-> Mutex = \"이 자원은 내 거\" (상호 배제)\n   Semaphore = \"몇 개 남았나 세기 + 남에게 신호\" (카운팅 + 시그널링)\n\n---\n\n## Q2: 각각 언제 쓰나요?\n\n**Mutex:**\n- Critical section 보호 (공유 변수 수정)\n- 파일 단독 접근\n- 하나의 자원을 하나의 스레드만 사용해야 할 때\n\n**Semaphore:**\n- Connection pool (최대 10개 연결 허용)\n- Producer-Consumer 패턴 (버퍼 빈 칸/찬 칸 카운트)\n- 스레드 간 순서 제어 (시그널링)\n\n---\n\n## Q3: C++에서의 사용 예시?\n\n**Mutex:**\n```cpp\nstd::mutex mtx;\n\nvoid critical() {\n    std::lock_guard<std::mutex> lock(mtx);\n    // 여기서 공유 자원 접근\n}  // 스코프 끝나면 자동 unlock\n```\n\n**Semaphore (C++20):**\n```cpp\nstd::counting_semaphore<3> sem(3);  // 최대 3개 동시 접근\n\nvoid access_resource() {\n    sem.acquire();     // 카운터 -1 (0이면 대기)\n    // 자원 사용\n    sem.release();     // 카운터 +1\n}\n```\n\n---\n\n## Follow-up: Spinlock이란?\n\n- Mutex의 변형. lock을 못 잡으면 sleep하지 않고 **busy-waiting** (반복 체크).\n- 장점: context switch 비용 없음\n- 단점: CPU 낭비\n- 용도: lock 보유 시간이 매우 짧을 때 (커널 내부, 멀티코어 환경)\n\n기준선: **lock 보유 시간 < context switch 비용(수 us)** 이면 spin이 이김.\n오래 잡을 거면 잠들어서 CPU를 남에게 양보하는 게 이득.\n(mutex로 대기 = 스레드가 blocked -> 스케줄러 개입 -> context switch.\n spinlock은 그걸 피하는 것. cf. user_kernel_mode.md Follow-up 2)\n",
+   "file": "os/mutex_vs_semaphore.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: Spinlock이란?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/pthreads.md",
+   "num": "",
+   "title": "pthreads (POSIX Threads)",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: pthreads 가 뭔가?",
+    "Q2: `pthread_create` 의 인자 넷은? `join` 을 안 하면?",
+    "Q3: `cond_wait` 를 왜 `while` 로 감싸고, 왜 뮤텍스를 넘기나?",
+    "Q4: Darwin 에서는 뭐가 다른가?",
+    "Follow-up: 스레드가 있는 프로세스에서 fork 하면?"
+   ],
+   "md": "> 2026-10-27 작성. 10/26 Apple Core OS 스크린에서 \"pthreads 아세요\" 를 못 알아들었다.\n> 묻는 건 **이 함수들을 써 봤냐** 다. `deadlock.md` 의 계좌 이체 코드, `race_condition.md`, `mutex_vs_semaphore.md` 가 전부 이 API 다.\n\n---\n\n## Q1: pthreads 가 뭔가?\n\nC 에서 스레드를 만들고 동기화하는 **POSIX 표준 API**. 헤더 `pthread.h`.\nDarwin 은 libSystem 에 포함, Linux 는 glibc (옛 버전은 `-lpthread`).\n\n함수는 네 묶음이다. ⭐️\n\n| 묶음 | 함수 | 하는 일 |\n|---|---|---|\n| **생명주기** | `pthread_create` / `join` / `detach` / `exit` | 만들고, 기다리고, 떼어내고, 끝낸다 |\n| **상호 배제** | `pthread_mutex_*` / `rwlock_*` / `spin_*` | 한 번에 하나만 |\n| **대기·신호** | `pthread_cond_wait` / `signal` / `broadcast` | 조건이 될 때까지 재우고 깨운다 |\n| **부가** | `pthread_once` / `key_create` (TLS) / `attr_*` | 한 번만 초기화, 스레드별 저장소, 스택 크기 |\n\n```c\nint pthread_create(pthread_t *t, const pthread_attr_t *attr, void *(*fn)(void *), void *arg);\nint pthread_join(pthread_t t, void **ret);       /* 끝날 때까지 기다리고 반환값 수거 */\nint pthread_detach(pthread_t t);                 /* join 안 할 거면. 끝나면 알아서 정리 */\n\nint pthread_mutex_lock(pthread_mutex_t *m);      /* 잠근 스레드만 풀 수 있다 (소유자) */\nint pthread_mutex_trylock(pthread_mutex_t *m);   /* 못 잡으면 EBUSY, 안 기다림 */\nint pthread_mutex_unlock(pthread_mutex_t *m);\n\nint pthread_cond_wait(pthread_cond_t *c, pthread_mutex_t *m);  /* 뮤텍스를 풀고 잠들었다가, 깨면 다시 잡고 돌아옴 */\nint pthread_cond_signal(pthread_cond_t *c);      /* 하나 깨움 */\nint pthread_cond_broadcast(pthread_cond_t *c);   /* 전부 깨움 */\n```\n\n**오류 처리가 특이하다.** `errno` 를 안 쓰고 **반환값이 오류 코드** 다. 0 이 성공.\n`if (pthread_mutex_lock(&m) != 0)` 식으로 검사한다.\n\n---\n\n## Q2: `pthread_create` 의 인자 넷은? `join` 을 안 하면?\n\n| 인자 | 뜻 |\n|---|---|\n| `pthread_t *t` | 핸들 받을 곳 |\n| `attr` | 속성. NULL 이면 기본 (스택 크기 등) |\n| `void *(*fn)(void *)` | 실행할 함수. 인자 하나, 반환 하나, 둘 다 `void *` |\n| `void *arg` | 그 함수에 줄 인자. 여러 값이면 구조체 포인터 |\n\n```c\nstatic void *worker(void *arg) {\n    int id = *(int *)arg;\n    /* ... */\n    return NULL;            /* 반환값은 join 의 두 번째 인자로 전달됨 */\n}\npthread_t t; int id = 1;\npthread_create(&t, NULL, worker, &id);\npthread_join(t, NULL);\n```\n\n**join 을 안 하면** 스레드가 끝나도 스택·핸들이 남는다. 프로세스의 좀비와 같다.\n`join` 하거나 `detach` 해야 하고, 둘 다 안 하면 누수다.\n데몬에서 작업 스레드를 만들고 잊으면 핸들이 쌓인다.\n\n---\n\n## Q3: `cond_wait` 를 왜 `while` 로 감싸고, 왜 뮤텍스를 넘기나?\n\n```c\npthread_mutex_lock(&m);\nwhile (!ready)                      /* if 가 아니라 while */\n    pthread_cond_wait(&c, &m);      /* 뮤텍스를 넘긴다 */\n/* ready 가 참인 상태로 뮤텍스를 쥐고 있음 */\npthread_mutex_unlock(&m);\n```\n\n**while 인 이유: spurious wakeup.**\n신호 없이도 깰 수 있고, 깨서 뮤텍스를 다시 잡는 사이 다른 스레드가 조건을 바꿨을 수 있다.\n그래서 깨고 나서 조건을 다시 확인해야 한다.\n\n**뮤텍스를 넘기는 이유: lost wakeup.**\n\"조건 검사 → 잠들기\" 사이에 신호가 오면 영원히 못 깬다.\n`cond_wait` 는 **뮤텍스를 풀고 잠드는 것을 원자적으로** 해준다. 그래서 뮤텍스가 필요하다.\n\n조건 변수는 항상 **뮤텍스 + 조건 변수 + 상태 변수** 세 개가 한 묶음이다.\n조건 변수 혼자는 상태를 기억하지 않는다 (`producer_consumer.md`).\n\n---\n\n## Q4: Darwin 에서는 뭐가 다른가?\n\npthread 는 **Mach 스레드 위의 라이브러리** 다.\n커널(XNU)이 스케줄하는 건 Mach 스레드고, 뮤텍스 대기는 `psynch` 트랩으로 들어간다.\n\n| | Darwin | Linux |\n|---|---|---|\n| 커널 스레드 | Mach 스레드 | task (clone) |\n| 뮤텍스 대기 | psynch 트랩 | futex |\n| 기본 스택 | **512 KB** (메인은 8 MB) | 8 MB |\n| C11 threads | 지원 안 함 | glibc 2.28+ |\n\n기본 스택이 512 KB 라 작업 스레드에서 깊은 재귀가 메인보다 16 배 빨리 터진다.\n스택 크기는 `attr` 로 **create 전에** 정한다. 만든 뒤에는 못 바꾼다.\n\n---\n\n## Follow-up: 스레드가 있는 프로세스에서 fork 하면?\n\n**자식엔 fork 한 스레드만 복제된다.**\n다른 스레드가 잡고 있던 뮤텍스는 자식에서 영원히 잠긴 채다. 풀어줄 스레드가 없다.\n그래서 fork 뒤엔 바로 exec 하거나 async-signal-safe 함수만 쓴다.\n\n### 틀리기 쉬운 것\n\n```\nX  pthread_cancel 로 스레드를 끝낸다   -> 어디서 끊길지 몰라 뮤텍스를 잡은 채 죽을 수 있다. 플래그를 세우고 스스로 빠져나오게\nX  pthread_t 를 정수로 비교·출력      -> Darwin 은 포인터, Linux 는 unsigned long. 비교는 pthread_equal\nX  메인이 return 해도 스레드는 돈다    -> 메인이 return 하면 프로세스 전체가 끝난다 (exit). 메인은 join 하거나 pthread_exit 로 빠져야\nX  다른 스레드가 unlock 해도 된다     -> 기본 타입은 UB, errorcheck 타입은 EPERM. 소유자만 푼다. 세마포어와의 차이가 이것\n```\n",
+   "file": "os/pthreads.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 스레드가 있는 프로세스에서 fork 하면?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/scheduling.md",
+   "num": "",
+   "title": "CPU Scheduling",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 주요 스케줄링 알고리즘을 설명해보세요.",
+    "Q2: Preemptive vs Non-preemptive 차이는?",
+    "Q3: Round Robin에서 time quantum을 어떻게 정하나요?",
+    "Follow-up: Starvation과 Aging이란?"
+   ],
+   "md": "## Q1: 주요 스케줄링 알고리즘을 설명해보세요.\n\n| 알고리즘 | 방식 | 특징 |\n|----------|------|------|\n| FCFS | 먼저 온 순서대로 | 단순, Convoy effect 문제 |\n| SJF | 실행 시간 짧은 것 우선 | 평균 대기시간 최소. 실행 시간 예측 어려움 |\n| Round Robin | 시간 할당량(quantum)만큼 돌아가며 | 응답 시간 좋음. quantum 크기가 핵심 |\n| Priority | 우선순위 높은 것 먼저 | Starvation 가능 → aging으로 해결 |\n| MLFQ | 여러 큐 + 피드백 | 실제 OS에서 가장 많이 사용 |\n\n---\n\n## Q2: Preemptive vs Non-preemptive 차이는?\n\n- **Non-preemptive**: 프로세스가 자발적으로 CPU 반납할 때까지 대기. (FCFS, non-preemptive SJF)\n- **Preemptive**: OS가 강제로 CPU를 빼앗을 수 있음. (RR, preemptive SJF, priority)\n\n현대 OS는 대부분 preemptive. 하나의 프로세스가 CPU 독점하는 걸 방지.\n\n---\n\n## Q3: Round Robin에서 time quantum을 어떻게 정하나요?\n\n- **너무 작으면** → context switch 오버헤드가 실행 시간보다 커짐\n- **너무 크면** → FCFS랑 다를 게 없음 (응답 시간 증가)\n- 일반적으로 10~100ms, 전체 CPU burst의 80%가 quantum 내에 끝나도록 설정하는 게 규칙.\n\n---\n\n## Follow-up: Starvation과 Aging이란?\n\n- **Starvation**: 낮은 우선순위 프로세스가 영원히 실행 못 하는 상황\n- **Aging**: 대기 시간이 길어질수록 우선순위를 점진적으로 올려주는 기법, Starvation 방지.\n",
+   "file": "os/scheduling.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: Starvation과 Aging이란?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/user_kernel_mode.md",
+   "num": "",
+   "title": "User Mode vs Kernel Mode",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: User mode 와 Kernel mode 의 차이는?",
+    "Q2: 왜 `call` 이 아니라 `syscall` 인가?",
+    "Q3: User -> Kernel 전환이 일어나는 경우는?",
+    "Q4: Mode switch 와 Context switch 는 다른가?",
+    "Follow-up: 왜 이렇게 분리해놨나?"
+   ],
+   "md": "> 2026-09-08 재작성. 목록을 외우는 대신 `printf` 한 줄에 전부 매단다.\n> 세 번(2/5, 3/5, 1.5/5) 낮은 점수가 나온 이유가 \"3가지 / 2x2 / 약자 3개\"를 따로 외우려 한 것이었음.\n> 2026-10-27 보강. 10/26 Apple Core OS 스크린에서 \"커널로 들어가는 경로\" 를 못 답해 다섯 단계 표와 Darwin 디테일을 그림 바로 아래에 추가.\n\n---\n\n## 기준점: `printf(\"hello\")` 가 화면에 찍히기까지\n\n```\nprintf(\"hello\")\n   |\n   |  libc 의 write() 래퍼            <- 아직 user mode. 그냥 함수 호출일 뿐\n   |\n   |  syscall 명령어  (= trap)         <- ★ 여기서 CPU 가 mode bit 을 뒤집는다\n   |     - 복귀 주소 + flags 저장\n   |     - 커널 스택으로 교체\n   |     - 커널이 등록해둔 진입점으로 점프\n   |\n   |  커널의 sys_write() 실행 -> 하드웨어 I/O\n   |\n   |  sysret -> 저장해둔 곳으로 복귀, mode bit 원상복구\n   v\nprintf 다음 줄\n```\n\n**이 그림 하나에서 아래가 전부 파생된다.**\n\n### 그림을 다섯 단계로 끊으면 (10/26 Apple 스크린에서 못 답한 질문)\n\n\"유저 코드가 커널로 들어가는 경로를 설명해보라\" 는 위 그림을 **다섯 단어** 로 말하는 것이다.\n**트랩 명령 · 모드 전환 · 커널 스택 · 번호 디스패치 · 복귀.** 이 순서대로만 말하면 된다. ⭐️\n\n| 단계 | 누가 | 하는 일 |\n|---|---|---|\n| 1 래퍼 | libc | 시스템 콜 **번호** 와 인자를 약속된 레지스터에 싣는다. 프로그램은 raw 트랩을 직접 안 쓴다 |\n| 2 트랩 | CPU | `svc` (arm64) / `syscall` (x86-64) 한 줄. 모드를 커널로 바꾸고, PC 를 커널 진입점(벡터 테이블)으로, 복귀 주소와 유저 상태를 보관 |\n| 3 저장·스택 교체 | 커널 진입 asm | 유저 레지스터 전부 저장. 스택을 그 스레드의 **커널 스택** 으로 교체. 유저 스택은 못 믿는다 |\n| 4 디스패치 | 커널 C | 번호가 범위 안인지 검사 → 테이블에서 핸들러 → 포인터 인자는 `copyin` 으로 검증하며 복사 → 실행 |\n| 5 복귀 | 커널 → CPU | 결과를 레지스터에, 레지스터 복원, `eret` / `sysret` 로 유저 모드. 시그널이 쌓여 있으면 복귀 직전에 핸들러로 |\n\n```asm\n; write(1, \"hi\\n\", 3) 이 Darwin arm64 에서 실제로 거치는 길\nmov  x16, #4        ; 1. 번호 (write = 4) 는 x16 에\nmov  x0,  #1        ;    fd\nadr  x1,  msg       ;    buf\nmov  x2,  #3        ;    len\nsvc  #0x80          ; 2. 트랩. 여기서 EL0 -> EL1\n                    ; 3-4. 커널: 레지스터 저장 -> 커널 스택 -> sysent[4] -> 결과 x0\n                    ; 5. eret. 다시 EL0. 래퍼가 x0 를 반환값으로, 오류면 errno 세팅\n```\n\n**틀리기 쉬운 두 가지**\n\n```\nX  \"시스템 콜 = 컨텍스트 스위치\"    -> 같은 스레드 안에서 모드만 바뀐다 (Q4). 커널 안에서 블록돼 다른 스레드로 넘어가면 그때 추가로 일어날 뿐\nX  \"커널이 유저 스택을 그대로 쓴다\"  -> 유저 스택은 조작돼 있을 수 있다. 스레드마다 별도 커널 스택이 있고, 포인터 인자도 copyin 으로 복사해서 쓴다\n```\n\n**Darwin 디테일 (Core OS 면접용)**\n\n| | Darwin (XNU) | Linux |\n|---|---|---|\n| 번호 공간 | 양수 = BSD 콜 (write, open, mmap), 음수 = Mach 트랩 (mach_msg, vm_allocate). 두 커널 계층이 한 입구를 나눠 쓴다 | 테이블 하나 |\n| 공개 ABI | libSystem 만. raw 번호는 릴리즈마다 바뀔 수 있어 정적 링크·직접 `svc` 는 깨진다 | 번호가 안정 ABI |\n| 관찰 | `dtruss -p PID`, `fs_usage` | `strace -p PID`, `perf trace` |\n\n비용은 모드 전환 자체가 수십 ns, 레지스터 저장·복원과 캐시·TLB 오염, Meltdown 이후 커널 페이지 테이블 분리까지 합치면 수백 ns 에서 1 µs.\n그래서 `read` 를 1 바이트씩 루프에서 부르면 느리고 stdio 버퍼링이 존재한다.\n`gettimeofday` 같은 건 커널이 읽기 전용 페이지를 유저에 매핑해둬서(Linux vDSO, Darwin commpage) 트랩 없이 읽는다.\n\n---\n\n## Q1: User mode 와 Kernel mode 의 차이는?\n\n| | User Mode | Kernel Mode |\n|---|-----------|-------------|\n| 권한 | 제한적, 하드웨어 직접 접근 불가 | 모든 명령어 + 하드웨어 접근 가능 |\n| 메모리 접근 | 자기 address space 만 | 모든 메모리 접근 가능 |\n| 실패 시 | 해당 프로세스만 crash | 전체 시스템 crash (kernel panic) |\n| 예시 | 앱 코드 실행 | 드라이버, 스케줄러, 메모리 관리 |\n\nCPU 의 mode bit 으로 구분 (0 = kernel, 1 = user).\n유저 코드는 이 비트를 **직접 못 쓴다.** 그런 명령어가 user mode 에서 금지되어 있다.\n\n---\n\n## Q2: 왜 `call` 이 아니라 `syscall` 인가?\n\n위 그림에서 제일 중요한 줄.\n\n```asm\ncall sys_write     ; X  점프할 주소를 내가 적는다\nsyscall            ; O  주소를 안 적는다. CPU 가 커널이 등록해둔 곳으로 보낸다\n```\n\n**문은 하나뿐이고, 그 문 위치는 커널이 정한다.**\n유저는 \"들어가겠다\"는 의사표시만 할 수 있다. 이게 보호(protection)의 핵심.\n\n`trap` = 이렇게 일부러 커널로 들어가려고 실행하는 명령어.\n**전환의 네 번째 종류가 아니라, syscall 이 들어가는 방법이다.** (Q3 과 헷갈리지 말 것)\n\n---\n\n## Q3: User -> Kernel 전환이 일어나는 경우는?\n\n`printf` 는 그중 **첫 번째** 경우일 뿐이다. 나머지 둘은 이렇게 갈린다:\n\n- **내가 부탁했나** -> **System call** (printf, file open, fork)\n- **내가 사고쳤나** -> **Exception** (divide by zero, page fault, segfault)\n- **밖에서 찔렀나** -> **Interrupt** (키보드, 타이머, 디스크 완료)\n\n부탁 / 사고 / 찔림. 앞의 둘은 **내 명령어가 원인**이고, interrupt 만 외부에서 온다.\n\n> 참고: 축 2개(의도적·비의도적 x 동기·비동기)로 보면 4칸 중 3칸만 찬다.\n> \"외부에서 오는 걸 내가 의도할 수는 없으니\" 그 칸이 빈다.\n> 다만 이건 정리용이지, 이걸 외워서 3개를 끄집어내려 하면 매번 하나씩 빠진다.\n> **부탁 / 사고 / 찔림으로 세는 게 낫다.**\n\n---\n\n## Q4: Mode switch 와 Context switch 는 다른가?\n\n**다르다. 세 번 다 여기서 틀렸다.**\n\n맨 위 `printf` 그림을 다시 보면, 저 흐름 어디에도 **\"프로세스를 바꾼다\"는 단계가 없다.**\n같은 프로세스가 권한만 잠깐 올렸다 내리는 것뿐.\n\n| | Mode switch | Context switch |\n|---|---|---|\n| 바뀌는 것 | 같은 프로세스의 **권한 레벨만** | **프로세스 자체**가 교체 |\n| 메모리 지도 | 그대로 | 통째로 교체 |\n| 비용 | 수백 ns | 수 us (수십 배) |\n\n### 반복해서 틀린 오답 두 개\n\n```\nX  \"저장을 안 해서 싸다\"        -> 저장한다. 안 하면 돌아갈 곳을 모른다\nX  \"비트 하나만 바꿔서 싸다\"     -> 복귀 주소 + flags 저장 + 스택 교체까지 한다\nO  \"프로세스를 안 바꿔서 싸다\"   -> 메모리 지도를 갈아끼울 필요가 없다\n```\n\n### 면접 한 줄\n\n> Mode switch 는 같은 프로세스에서 권한만 바뀌는 거라 주소공간이 그대로입니다.\n> Context switch 는 프로세스가 바뀌어서 페이지 테이블을 교체하고 캐시를 날려야 해서 훨씬 비쌉니다.\n\n---\n\n## Follow-up: 왜 이렇게 분리해놨나?\n\n**Protection.** 악의적이거나 버그 있는 프로그램이:\n- 다른 프로세스 메모리를 건드리는 것 방지\n- 하드웨어를 직접 조작하는 것 방지\n- OS 자체를 손상시키는 것 방지\n\n대가: mode 전환 비용 (수백 ns). 그래서 빈번한 system call 은 성능에 영향.\n\n---\n\n## 참고 (외우지 말 것)\n\nQ4 의 \"메모리 지도 교체\"가 실제로 무슨 일인지. **면접에서 이 약자들까지 묻는 경우는 드물다.**\nQ4 를 위 표 수준으로 말할 수 있으면 충분하고, 아래는 그 배경일 뿐이다.\n\n| 약자 | 원말 | 한 줄 |\n|---|---|---|\n| CR3 | Control Register 3 | \"지금 프로세스의 메모리 지도(페이지 테이블)가 어디 있는지\" 가리키는 레지스터 |\n| TLB | Translation Lookaside Buffer | 그 지도를 매번 보기 느려서 만든 캐시 |\n| PCB | Process Control Block | 프로세스 하나의 신상명세서 (지도 위치·레지스터·우선순위·열어둔 파일) |\n\n비유: CR3 = 지도책이 책장 어디 꽂혔는지 적힌 쪽지 / TLB = 자주 찾는 페이지를 적어둔 메모지.\n**지도책을 바꾸면 메모지는 전부 쓰레기** -> 버려야 함(TLB flush) -> 한동안 느려짐.\n이게 context switch 가 비싼 이유의 실체.\n\ncf. `context_switch.md`, `virtual_memory.md`\n",
+   "file": "os/user_kernel_mode.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 왜 이렇게 분리해놨나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "a",
+   "kind": "md",
+   "id": "a:os/virtual_memory.md",
+   "num": "",
+   "title": "Virtual Memory",
+   "diff": "",
+   "cat": "os",
+   "catName": "OS",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: Virtual memory란?",
+    "Q2: Paging이 뭔가요?",
+    "Q3: Page fault가 뭐고, 어떻게 처리되나요?",
+    "Follow-up: TLB란?"
+   ],
+   "md": "## Q1: Virtual memory란?\n\n각 프로세스에게 연속적이고 독립적인 메모리 공간이 있는 것처럼 보이게 하는 추상화.\n실제 물리 메모리(RAM)보다 큰 주소 공간을 제공.\n\n핵심 아이디어: 프로세스의 전체 메모리가 RAM에 있을 필요 없음. 지금 쓰는 부분만 RAM에, 나머지는 디스크(swap)에.\n\n---\n\n## Q2: Paging이 뭔가요?\n\n- Virtual memory를 고정 크기 **page** (보통 4KB)로 나눔\n- Physical memory를 같은 크기 **frame**으로 나눔\n- **Page table**이 virtual page → physical frame 매핑을 관리\n- 연속적인 virtual address가 불연속적인 physical address에 매핑될 수 있음\n\n장점: external fragmentation 없음 (고정 크기라서)\n\n---\n\n## Q3: Page fault가 뭐고, 어떻게 처리되나요?\n\n접근하려는 page가 RAM에 없을 때 발생하는 인터럽트.\n\n처리 순서:\n1. CPU가 page table에서 valid bit 확인 → invalid (RAM에 없음)\n2. Page fault trap 발생 → OS에 제어 넘어감\n3. 디스크에서 해당 page를 빈 frame에 로드\n4. Page table 업데이트 (valid bit 설정, frame 번호 기록)\n5. 중단됐던 명령어 재실행\n\nRAM이 꽉 차면? → Page replacement algorithm (LRU, FIFO, Clock 등)으로 victim page 선택 후 swap out.\n\n---\n\n## Follow-up: TLB란?\n\n**Translation Lookaside Buffer** - page table의 캐시.\n\n- Page table은 메모리에 있음 → 매 메모리 접근마다 page table 조회 = 2번 메모리 접근\n- TLB는 최근 사용된 page-frame 매핑을 CPU 내부에 캐시\n- TLB hit → 1번 메모리 접근으로 해결\n",
+   "file": "os/virtual_memory.md",
+   "solved": true,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "",
+   "followups": [
+    "Follow-up: TLB란?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E07",
+   "num": "E07",
+   "title": "aligned_malloc / aligned_free 와 고정 크기 메모리 풀",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "malloc/free 위에 정렬 할당을 구현하라. void* aligned_malloc(size_t size, size_t align); // 반환 주소가 align 의 배수. align 은 2 의 거듭제곱 void aligned_free(void* p); // aligned_malloc 이 준 포인터만 받는다 - 표준 aligned_alloc, posix_memalign, _aligned_malloc 금지. malloc/free 만. - aligned_free 는 원래 malloc 포인터를 어떻게든 알아내야 한다.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/aligned_malloc_pool.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "구현",
+   "followups": [
+    "align 이 2 의 거듭제곱이 아니면? 0 이면? sizeof(void*) 보다 작으면?",
+    "size + align - 1 + 헤더 계산이 size_t 를 넘치면 무슨 일이 나나? 어떻게 막나?",
+    "풀을 여러 스레드가 쓰면 어디를 보호해야 하나? 락 없이 (lock-free free list) 하려면?",
+    "고정 크기 풀 대신 가변 크기를 지원하면 생기는 문제 (단편화) 와, 임베디드에서 동적 할당을 금지하는 이유는?",
+    "double free 와 풀 밖 포인터 free 를 감지하려면 무엇을 추가하나? 비용은?",
+    "캐시 라인 (64B) 정렬이 왜 필요할 때가 있나? DMA 버퍼라면?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E08",
+   "num": "E08",
+   "title": "N바이트 블록만 지원하는 장치에 임의 크기 읽기·쓰기",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "장치는 BLOCK (= 16) 바이트 단위로만 읽고 쓸 수 있다. 하드웨어 드라이버가 제공하는 함수: bool dev_read_block (uint32_t block_idx, uint8_t* out16); // 16 바이트 읽기 bool dev_write_block(uint32_t block_idx, const uint8_t* in16); // 16 바이트 쓰기 바이트 주소 단위로 임의 길이를 읽고 쓰는 함수를 구현하라. bool dev_read (uint32_t addr, uint8_t* buf, size_t len); bool dev_write(uint32_t addr, const uint8_t* buf, size_t len); - 쓰기는 범위 밖의 바이트를 바꾸면 안 된다. - 장치 호출 횟수를 최소화하라 (머리·꼬리 블록을 제외하고는 블록당 1회). - 스택에 16 바이트 임시 버퍼 하나만 쓴다 (동적 할당 금지).",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/block_device_rw.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "구현",
+   "followups": [
+    "비정렬 쓰기의 머리와 꼬리 블록은 왜 읽기·수정·쓰기가 필요한가? 가운데 블록은?",
+    "쓰기 중간에 전원이 꺼지면 어떤 상태가 남나? 블록 하나의 쓰기는 원자적이라고 가정할 수 있나?",
+    "같은 블록을 두 호출이 연달아 건드리면 (예: 1바이트씩 쓰기) 장치 접근을 어떻게 줄이나 (캐시, write-back)?",
+    "두 스레드가 동시에 서로 다른 오프셋에 쓰는데 같은 블록을 공유하면?",
+    "블록 크기가 2 의 거듭제곱이 아니면 나눗셈·나머지 비용은? 임베디드에서 신경 쓰는 이유.",
+    "플래시 (지우기 단위가 쓰기 단위보다 큼) 라면 이 모델이 어떻게 달라지나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E11",
+   "num": "E11",
+   "title": "스레드 간 데이터 전달 — 유한 블로킹 큐",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "용량이 정해진 스레드 안전 큐를 구현하라. template <typename T> class BoundedQueue { explicit BoundedQueue(size_t capacity); bool put(T v); // 가득 차면 자리가 날 때까지 블록. 닫혔으면 false bool take(T& out); // 비었으면 들어올 때까지 블록. 닫히고 비었으면 false bool try_put(T v, std::chrono::milliseconds timeout); bool try_take(T& out, std::chrono::milliseconds timeout); void close(); // 이후 put 은 실패. take 는 남은 것을 다 빼고 나서 false size_t size() const; }; - 생산자 여럿, 소비자 여럿. - 바쁜 대기 (sleep 루프, yield 루프) 금지. mutex + condition_variable 사용.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/bounded_blocking_queue.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "구현",
+   "followups": [
+    "조건 변수 대기를 if 가 아니라 while 로 감싸는 이유는 (spurious wakeup, 다른 소비자가 먼저 가져감)?",
+    "notify_one 과 notify_all 중 무엇을 어디에 쓰나? 생산자·소비자가 각각 여럿일 때 잘못 고르면 생기는 문제는?",
+    "큐를 닫은 (close) 뒤 대기 중인 take 는 어떻게 깨어나고 무엇을 반환하나?",
+    "조건 변수 하나로 not_empty 와 not_full 을 같이 쓰면 무슨 문제가 생길 수 있나?",
+    "락 없이 (lock-free) 바꾸려면 SPSC 와 MPMC 의 난이도 차이는? E01 링버퍼와 뭐가 다른가?",
+    "구글 임베디드 폰스크린 1차 보고: \"스레드 간 데이터 전달 방법과 제약을 코딩\" (Reddit 1slod2k). 임베디드 제약 (동적 할당 금지, ISR 생산자) 이 붙으면 설계가 어떻게 바뀌나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E12",
+   "num": "E12",
+   "title": "하드웨어 버튼 디바운스",
+   "diff": "E",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "기계식 버튼은 눌리거나 떼어질 때 수 ms 동안 신호가 여러 번 튄다 (bounce). 주기적으로 샘플링한 핀 레벨을 받아 안정된 누름/떼기 이벤트만 보고하는 Debouncer 를 구현하라.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/button_debounce.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "구현",
+   "followups": [
+    "인터럽트 기반 (edge ISR 에서 인터럽트 끄고 타이머) 과 폴링 기반 (주기 샘플링 N 회 일치) 의 장단점은? 전력 관점에서는?",
+    "상태머신 (RELEASED → MAYBE_PRESSED → PRESSED → MAYBE_RELEASED) 으로 그려 보라. 각 전이의 조건은?",
+    "길게 누름 (long press) 과 더블 클릭을 같은 구조에 추가하려면?",
+    "버튼이 16개면 비트마스크로 한 번에 처리할 수 있나? 어떻게?",
+    "디바운스 시간 (예: 20ms) 은 무엇으로 정하나? 너무 길면·짧으면?",
+    "구글 HR 임베디드 준비 목록 \"Debounce a hardware button\" (Blind ce3lsrpe)."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E10",
+   "num": "E10",
+   "title": "Android Handler · Looper 간단 구현",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "https://developer.android.com/reference/android/os/Handler",
+   "desc": "한 스레드가 메시지 큐를 돌며 작업을 실행하는 Looper 와, 아무 스레드에서 그 큐에 작업을 넣는 Handler 를 구현하라. class Looper { void loop(); // 현재 스레드에서 quit 될 때까지 큐를 처리. 비어 있으면 잠든다 void quit(); // 남은 작업을 버리고 loop 종료 (다른 스레드에서 호출 가능) }; class Handler { explicit Handler(Looper& l); void post(std::function<void()> r); // 즉시 실행 대상으로 큐에 넣음 void postDelayed(std::function<void()> r, int delay_ms); // delay_ms 뒤 실행 bool removeCallbacks(int token); // (선택) post 가 돌려준 token 으로 취소 }; - 실행은 \"실행 시각이 빠른 순\", 같으면 \"넣은 순\". - 루퍼 스레드는 큐가 비었을 때 바쁜 대기 (spin) 하지 않는다. - 작업 안에서 post 를 다시 부를 수 있어야 한다 (재진입. 자기 큐에 넣기).",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/handler_looper.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "구현",
+   "followups": [
+    "지연 메시지를 \"실행 시각 순\" 으로 꺼내려면 어떤 자료구조를 쓰나? post 와 다음 꺼내기의 복잡도는?",
+    "다른 스레드가 post 할 때와 루퍼 스레드가 꺼낼 때의 동기화는? 조건 변수 대기에 왜 \"다음 만료까지\" 타임아웃이 필요한가?",
+    "removeCallbacks 로 큐 안의 특정 작업을 지우려면 자료구조가 어떻게 바뀌나?",
+    "quit() 뒤 큐에 남은 메시지는 어떻게 하나? quitSafely 와의 차이는?",
+    "Android 의 Looper 가 epoll 위에 있는 이유 (파일 디스크립터 이벤트와 메시지를 한 스레드에서) 를 설명하라.",
+    "메시지 객체를 매번 new 하지 않고 풀에서 재사용하는 이유는 (obtain/recycle)?",
+    "구글 HR 임베디드 준비 목록에 \"Write a simple version of Android Handler class\" 가 있다 (Blind ce3lsrpe). 15분 버전과 45분 버전을 구분해 보라."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E03",
+   "num": "E03",
+   "title": "memcpy 와 memmove 구현",
+   "diff": "E",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "https://en.cppreference.com/w/c/string/byte/memmove",
+   "desc": "다음 두 함수를 라이브러리 없이 구현하라. void* my_memcpy(void* dst, const void* src, size_t n); // 겹치지 않는다고 가정 void* my_memmove(void* dst, const void* src, size_t n); // 겹쳐도 올바르게 둘 다 dst 를 반환한다.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/memcpy_memmove.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "구현",
+   "followups": [
+    "memcpy 와 memmove 의 차이는? 겹치는 경우 두 가지 (dst < src, dst > src) 를 각각 어떻게 처리하나?",
+    "바이트 단위 복사를 워드 (4 또는 8 바이트) 단위로 바꾸면 무엇을 확인해야 하나 (정렬, 머리·꼬리, 엔디언)?",
+    "restrict 키워드는 무엇을 약속하고, memcpy 선언에 왜 붙어 있나?",
+    "목적지가 메모리맵 레지스터 (volatile) 이면 이 구현을 그대로 써도 되나?",
+    "수 MB 를 복사해야 하면 CPU 복사 대신 무엇을 쓰고, 그때 캐시는 어떻게 되나?",
+    "컴파일러가 이 루프를 memcpy 호출로 바꿔 버리는 (재귀) 문제를 아는가? 어떻게 막나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E06",
+   "num": "E06",
+   "title": "volatile 포인터로 레지스터 비트 필드 읽기·쓰기",
+   "diff": "E",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "메모리맵 32비트 레지스터의 비트 필드를 다루는 함수들을 구현하라. uint32_t reg_get (volatile uint32_t* reg, unsigned shift, unsigned width); // [shift, shift+width) 필드 값 void reg_set (volatile uint32_t* reg, unsigned shift, unsigned width, uint32_t value); // 그 필드만 value 로. 다른 비트 보존 void reg_set_bits (volatile uint32_t* reg, uint32_t mask); // mask 의 비트들을 1 로 void reg_clear_bits(volatile uint32_t* reg, uint32_t mask); // mask 의 비트들을 0 으로 bool reg_wait_bit (volatile uint32_t* reg, unsigned bit, bool expect, unsigned max_polls); // bit 가 expect 가 될 때까지 최대 max_polls 번 폴링. 성공 true",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/register_bitfield.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "구현",
+   "followups": [
+    "레지스터 포인터에 volatile 이 없으면 컴파일러가 무엇을 해 버릴 수 있나? 상태 비트 폴링 루프로 설명하라.",
+    "width 가 32 일 때 (1u << 32) 는 왜 안 되나? 어떻게 처리했나?",
+    "set 은 읽기·수정·쓰기 3단계다. 그 사이에 ISR 이 같은 레지스터를 고치면? 해결책 둘 (인터럽트 마스킹, 하드웨어 SET/CLR 레지스터).",
+    "쓰기 전용 (write-only) 레지스터나 읽으면 지워지는 (read-to-clear) 레지스터에는 이 함수들을 써도 되나?",
+    "구조체 비트필드 (struct { uint32_t en:1; ... }) 로 레지스터를 매핑하지 않는 이유는?",
+    "64비트 레지스터를 32비트 버스에서 두 번 읽으면 무엇이 깨지나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E01",
+   "num": "E01",
+   "title": "Ring Buffer (SPSC, ISR 과 공유)",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "고정 크기 바이트 링버퍼를 구현하라. 생산자 하나 (인터럽트 핸들러), 소비자 하나 (메인 루프) 가 동시에 접근한다. 동적 할당 금지. 블로킹 금지 (ISR 에서 호출된다).",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/ring_buffer.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "구현",
+   "followups": [
+    "생산자가 ISR 이고 소비자가 메인 루프일 때 이 코드가 안전한 조건은 무엇인가? 락 없이 되는 이유를 말해보라.",
+    "버퍼가 가득 찼을 때 정책 두 가지 (새 데이터 버림 vs 가장 오래된 것 덮어쓰기) 의 장단점과 구현 차이는?",
+    "head·tail 이 16비트이고 CPU 가 8비트라면 무엇이 깨지나? volatile 로 해결되나?",
+    "멀티코어에서 생산자·소비자가 다른 코어에 있으면 무엇을 추가해야 하나 (메모리 순서)?",
+    "생산자가 둘이 되면 (MPSC) 어디가 깨지고 어떻게 고치나?",
+    "크기를 2의 거듭제곱으로 제한한 이유와, 아닐 때의 구현은?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E04",
+   "num": "E04",
+   "title": "하드웨어 타이머 하나로 소프트웨어 타이머 여러 개",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "하드웨어 타이머는 하나뿐이고 1ms 마다 인터럽트를 준다. 그 위에 소프트웨어 타이머 여러 개를 제공하는 TimerManager 를 구현하라.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/software_timers.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "구현",
+   "followups": [
+    "타이머 목록 자료구조로 정렬 연결 리스트 · 최소 힙 · 타이머 휠 중 무엇을 고르고, 각각 add/cancel/tick 의 복잡도는?",
+    "콜백을 타이머 ISR 안에서 직접 부를 것인가, 플래그만 세우고 메인 루프에서 부를 것인가? 각각의 위험은?",
+    "32비트 밀리초 틱은 약 49.7일에 래핑된다. \"만료됐나\" 비교를 래핑에 안전하게 쓰는 방법은?",
+    "하드웨어 타이머를 1ms 마다 깨우는 대신 \"다음 만료 시각\" 에만 깨우게 (tickless) 바꾸면 무엇이 달라지나?",
+    "콜백 안에서 add 나 cancel 을 부르면 (재진입) 어디가 깨질 수 있나?",
+    "구글 HR 목록의 \"Kernel function to schedule a callback at a specific time\" 과 리눅스 hrtimer 의 자료구조는?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E05",
+   "num": "E05",
+   "title": "CPU 원시 명령으로 스핀락",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "뮤텍스나 OS 서비스 없이, 원자 명령만으로 스핀락을 구현하라. class Spinlock { void lock(); // 잡을 때까지 바쁜 대기 void unlock(); bool try_lock(); // 즉시 시도, 성공 여부 반환 }; - std::mutex, std::lock_guard 등 OS 락 금지. std::atomic 과 그 멤버 (exchange, compare_exchange, load, store) 만 사용. - 메모리 순서 (memory_order) 를 명시하고 이유를 말할 수 있어야 한다.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/spinlock.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "구현",
+   "followups": [
+    "스핀락과 뮤텍스는 언제 각각 고르나? 기준을 두 가지 이상 말해보라.",
+    "lock 에 acquire, unlock 에 release 순서를 쓰는 이유는? relaxed 로 하면 어떤 버그가 생기나?",
+    "test-and-set 과 test-and-test-and-set 의 차이는? 캐시 라인 관점에서 설명하라.",
+    "단일 코어에서 선점이 가능한 스레드가 스핀락을 쓰면 무슨 일이 나나? 인터럽트 핸들러와 공유하면?",
+    "공정성 (먼저 기다린 쪽이 먼저 잡기) 을 보장하려면 어떻게 바꾸나 (ticket lock)?",
+    "대기 중에 pause / wfe 를 넣는 이유는?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E02",
+   "num": "E02",
+   "title": "strtok 구현",
+   "diff": "M",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "https://en.cppreference.com/w/c/string/byte/strtok",
+   "desc": "C 표준 strtok 을 구현하라. char* my_strtok(char* str, const char* delim); - 첫 호출은 str 에 문자열, 이후 호출은 str == nullptr 로 같은 문자열을 이어서 쪼갠다. - delim 의 각 문자가 구분자다. 연속된 구분자는 하나로 취급하고 선두 구분자는 건너뛴다. - 토큰 끝에 '\\0' 을 써서 원본을 수정한다. 반환은 토큰 시작 포인터. 더 없으면 nullptr. - 라이브러리 함수 (strtok, strspn, strcspn, strpbrk, strchr) 금지. 직접 쓴다.",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/strtok.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "구현",
+   "followups": [
+    "두 스레드가 동시에 쓰면 왜 깨지나? strtok_r 시그니처로 바꿔 보라.",
+    "빈 토큰을 보존해야 하면 (\"a,,b\" -> \"a\", \"\", \"b\") 어디가 달라지나? strsep 와의 차이.",
+    "입력이 const 문자열 (수정 불가) 이면 어떻게 하나?",
+    "구분자 집합이 크면 (수백 개) 매 문자마다 strchr 하는 비용을 어떻게 줄이나?",
+    "실제 면접 사례: 25분에 완성했는데 \"2번째 문제를 못 받아\" 탈락 (1abqfx1). 15분 안에 끝내려면 무엇을 생략하고 무엇을 말로만 하나?"
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b1",
+   "kind": "cpp",
+   "id": "b1:E09",
+   "num": "E09",
+   "title": "32비트 타이머 레지스터 둘로 64비트 타이머 읽기",
+   "diff": "E",
+   "cat": "19_embedded",
+   "catName": "Embedded",
+   "tags": [
+    "E"
+   ],
+   "link": "",
+   "desc": "하드웨어 64비트 카운터가 두 개의 32비트 레지스터 (HI, LO) 로 노출된다. LO 는 매 틱 증가하고 0xFFFFFFFF 다음에 0 으로 래핑하며 그 순간 HI 가 1 증가한다. 레지스터는 한 번에 하나씩만 읽을 수 있고, 두 읽기 사이에 카운터는 계속 움직인다. 올바른 64비트 값을 돌려주는 함수를 구현하라. uint64_t read_timer64(const Timer& t); // t.read_hi(), t.read_lo() 만 사용 - 반환값은 \"함수 실행 중 어느 한 순간의 실제 카운터 값\" 이어야 한다 (hi 와 lo 가 서로 다른 시점의 조합이면 안 됨).",
+   "qs": [],
+   "md": "",
+   "file": "19_embedded/timer64_from_two32.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "구현",
+   "followups": [
+    "hi 를 읽고 lo 를 읽는 사이에 lo 가 래핑 (오버플로) 되면 어떤 값이 나오나? 구체적 숫자로 보여라.",
+    "왜 \"hi, lo, hi 다시\" 세 번 읽기로 해결되나? 두 hi 가 다를 때 어느 lo 를 믿나?",
+    "하드웨어가 \"lo 를 읽으면 hi 가 래치된다\" 를 제공하면 코드는 어떻게 줄어드나?",
+    "인터럽트가 ISR 로 hi 를 소프트웨어로 증가시키는 구조 (하드웨어 카운터는 32비트만) 라면 어떤 경쟁이 추가되나?",
+    "읽기 3회가 부담이면 (고빈도 호출) 어떻게 줄이나?",
+    "구글 임베디드 폰스크린 1차 보고 (Jointaro 2023-12). 10분 안에 끝낼 수 있어야 한다."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:200",
+   "num": "200",
+   "title": "Number of Islands",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/number-of-islands/",
+   "desc": "'1'(땅)과 '0'(물)의 2D 그리드에서 섬의 개수 반환.",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/number_of_islands.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "",
+   "space": "",
+   "note": "직접 풀이 성공 (10분)\n접근법 상세 노트는 남기지 않음",
+   "date": "2026-03-11",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [
+    "육지 셀 하나가 주어질 때 그 섬 안의 \"호수\" (물로 둘러싸인 0 영역) 를 전부 찾아라. 호수 안에 다시 육지가 있으면? 출처: LC discuss 8276966 (2026-05, L4 온사이트)"
+   ],
+   "approaches": [
+    {
+     "name": "DFS Flood Fill",
+     "detail": "'1' 발견 시 count++. DFS로 연결된 모든 '1'을 '0'으로 마킹 (visited 처리).",
+     "tc": "O(m·n)",
+     "sc": "O(m·n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:695",
+   "num": "695",
+   "title": "Max Area of Island",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/max-area-of-island/",
+   "desc": "2D 그리드에서 연결된 1(섬)들로 이루어진 섬 중 최대 넓이 반환.",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/max_area_of_island.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "O(N*M) - 각 칸을 한 번씩만 방문",
+   "space": "O(N*M) vis 격자 + 재귀 스택 (전부 땅이면 깊이가 N*M)",
+   "note": "각 칸에서 dfs 를 돌리되 vis 로 이미 센 섬은 건너뛴다.\n넓이는 재귀 리턴값을 더해서 올린다. 자기 1 + 네 방향 결과 합.\n\nvis 대신 grid 를 직접 0 으로 지우면서 돌면 vis 격자를 안 만들어도 된다.\n다만 재귀 스택이 최악 O(N*M) 라 복잡도 등급은 그대로고, 상수만 줄어든다.\n대가로 호출자의 grid 가 파괴된다. 문제에서 허용하는지 확인하고 쓸 것.",
+   "date": "2026-09-10",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [
+    "구글 L4 라운드 1 이 \"max area of island 의 변형 DP\" 였다 (Reddit 1wcqea2). 어떤 제약을 붙이면 DP 가 되나?"
+   ],
+   "approaches": [
+    {
+     "name": "DFS Flood Fill",
+     "detail": "각 1을 시작점으로 DFS하며 방문한 칸 수를 세고, 방문 처리(0으로 변경 또는 visited). 전체 최댓값 갱신.",
+     "tc": "O(m·n)",
+     "sc": "O(m·n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:994",
+   "num": "994",
+   "title": "Rotting Oranges",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "A",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/rotting-oranges/",
+   "desc": "2D 그리드에서 썩은 오렌지가 인접 신선한 오렌지를 1분에 전염. 모두 썩는 데 걸리는 최소 시간 (불가능이면 -1).",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/rotting_oranges.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "O(m*n)",
+   "space": "O(m*n)",
+   "note": "처음에 rotten(값 2)인 칸을 전부 큐에 넣고 BFS 시작\n인접한 fresh(값 1)를 rotten으로 바꾸며 전파, size=q.size()로 한 레벨(분)씩 처리해서 minutes 카운트\nin-place로 값을 바꾸므로 별도 visited 불필요\nBFS가 끝난 뒤 grid를 다시 스캔해서 fresh(1)가 남아있으면 -1, 없으면 minutes 반환\n엣지: fresh가 0개면 0분, rotten이 0개인데 fresh가 있으면 -1",
+   "date": "2026-02-10",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Multi-source BFS",
+     "detail": "모든 썩은 오렌지를 초기 queue에 동시 추가. BFS로 분 단위 진행. 남은 신선 오렌지 확인.",
+     "tc": "O(m·n)",
+     "sc": "O(m·n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:286",
+   "num": "286",
+   "title": "Walls and Gates",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "A",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/walls-and-gates/",
+   "desc": "INF(빈 방), -1(벽), 0(게이트)가 있는 2D 그리드에서 각 빈 방까지 가장 가까운 게이트까지의 거리로 채우기.",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/walls_and_gates.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "O(m*n)",
+   "space": "O(m*n)",
+   "note": "- Multi-source BFS: 모든 게이트(0)를 큐에 넣고 BFS, 빈 방(INF)만 거리 갱신, 벽(-1)은 통과 불가 (O(mn)/O(mn))\n- DFS(from each gate): 게이트마다 DFS로 거리 전파, 보통 BFS 한 번이 표준\n후기: 말하면서 풀어봤음",
+   "date": "2026-04-10",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Multi-source BFS",
+     "detail": "모든 게이트를 큐에 넣고 BFS. 인접 INF를 거리 1, 2, … 로 갱신. 방문/거리 배열로 중복 방지.",
+     "tc": "O(m·n)",
+     "sc": "O(m·n)"
+    },
+    {
+     "name": "DFS (two-pass)",
+     "detail": "각 방에서 DFS로 최단 거리 — 비효율적. 면접에선 BFS 권장.",
+     "tc": "O((mn)²)",
+     "sc": "O(mn)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:743",
+   "num": "743",
+   "title": "Network Delay Time",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/network-delay-time/",
+   "desc": "방향 그래프에서 노드 k로부터 신호를 보낼 때 모든 노드에 도달하는 최소 시간 (불가능하면 -1).",
+   "qs": [],
+   "md": "",
+   "file": "12_advanced_graphs/network_delay_time.cpp",
+   "solved": true,
+   "review": 2,
+   "time": "O(V*E) 최악 - 평범한 큐라 dist 가 줄면 노드를 다시 넣는다. 제약 상한 100*6000=60만이라 통과",
+   "space": "O(N + E) - adj 인접리스트 + dist 배열",
+   "note": "큐에 우선순위가 없으면 Dijkstra 가 아니라 SPFA 다 (큐를 쓰는 Bellman-Ford). ⭐️\n정답은 나오지만 이름과 복잡도가 다르다.\n\nDijkstra  priority_queue. 가장 가까운 것부터 꺼내므로 꺼낸 순간 확정. O(E log V)\n지금 코드  queue. 순서 보장이 없어 확정이 안 되고, 더 싼 길이 나중에 나오면 다시 넣는다\n\n완화 식 자체는 Bellman-Ford 와 같다: dist[to] > dist[from] + w 면 갱신.\n차이는 어떤 간선을 언제 보느냐 뿐이다.\n고전 BF 는 V-1 번 모든 간선을 쓸고, SPFA 는 값이 바뀐 노드 주변만 다시 본다.\n\n측정: 1 -> i 직행을 뒤로 갈수록 비싸게, i -> i+1 사슬을 싸게 두면\nn=100 에서 pop 이 198회 (Dijkstra 는 100회). 노드가 평균 2번 꺼내진다.",
+   "date": "2026-09-21",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Dijkstra",
+     "detail": "min-heap 기반 다익스트라로 k에서 각 노드까지 최단 거리 계산. 모든 노드에 도달 못하면 -1, 가능하면 최댓값 반환.",
+     "tc": "O(E log V)",
+     "sc": "O(V+E)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:56",
+   "num": "56",
+   "title": "Merge Intervals",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/merge-intervals/",
+   "desc": "겹치는 intervals 배열을 합쳐서 반환.",
+   "qs": [],
+   "md": "",
+   "file": "16_intervals/merge_intervals.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "",
+   "space": "",
+   "note": "직접 풀이 성공 (12분)\n접근법 상세 노트는 남기지 않음",
+   "date": "2026-03-11",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [
+    "정렬된 두 목록의 합집합을 반환하라 (986 변형). K 개 목록이면? 메모리에 안 들어오는 스트리밍이면? 출처: Reddit 1vr9jk5 (2026-08)"
+   ],
+   "approaches": [
+    {
+     "name": "Sort + Merge",
+     "detail": "시작점 정렬. 이전 interval의 end < 현재 start이면 새 interval 추가. 아니면 end = max(end, curr.end).",
+     "tc": "O(n log n)",
+     "sc": "O(n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:57",
+   "num": "57",
+   "title": "Insert Interval",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/insert-interval/",
+   "desc": "정렬된 non-overlapping intervals에 newInterval을 삽입하고 merge.",
+   "qs": [],
+   "md": "",
+   "file": "16_intervals/insert_interval.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "",
+   "space": "",
+   "note": "직접 풀이 성공 (22분)\n접근법 상세 노트는 남기지 않음",
+   "date": "2026-03-11",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Three-phase Linear",
+     "detail": "1) newInterval 이전 구간 모두 추가. 2) overlap 구간 merge(start=min, end=max). 3) 이후 구간 모두 추가.",
+     "tc": "O(n)",
+     "sc": "O(n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:875",
+   "num": "875",
+   "title": "Koko Eating Bananas",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "A",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/koko-eating-bananas/",
+   "desc": "piles[i]개의 바나나 더미. 시간 h 내에 모두 먹을 수 있는 최소 속도 k.",
+   "qs": [],
+   "md": "",
+   "file": "05_binary_search/koko_eating_bananas.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "",
+   "space": "",
+   "note": "Amazon30d.md 표에 남은 짧은 메모:\n- max_element(nums.begin(), nums.end())로 탐색 상한(속도의 최댓값)을 잡을 것 - min_element는 예외 케이스가 있어 쓰면 안 됨\n- Binary search 할 때 하한(최소 속도)은 보통 1이거나 0이어야 함\n개별 노트 파일은 없고 Amazon30d.md의 aggregate 표 한 줄에만 기록되어 있던 내용",
+   "date": "",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Binary Search on Answer",
+     "detail": "lo=1, hi=max(piles). mid 속도로 total hours = sum(ceil(pile/mid)) 계산. hours ≤ h이면 hi=mid, 아니면 lo=mid+1.",
+     "tc": "O(n log m)",
+     "sc": "O(1)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:146",
+   "num": "146",
+   "title": "LRU Cache",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "A",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/lru-cache/",
+   "desc": "LRU (Least Recently Used) 캐시 설계. get/put 모두 O(1) 요구. 용량 초과 시 가장 최근에 사용되지 않은 것 제거.",
+   "qs": [],
+   "md": "",
+   "file": "06_linked_list/lru_cache.cpp",
+   "solved": true,
+   "review": 3,
+   "time": "O(1) get/put",
+   "space": "O(capacity)",
+   "note": "  핵심: unordered_map<key, list::iterator> + list<pair<key,value>>\n  map이 노드 iterator를 들고 있어서 O(1)로 노드 접근/이동/삭제 가능\n\n  list::splice - 노드를 복사 없이 포인터만 재연결해서 옮김 → O(1)\n  iterator는 그대로 유효 (그래서 map 안 고쳐도 됨)\n  ```\n    li.splice(li.begin(), li, it);  // it 노드를 맨 앞으로 (move-to-front)\n```\n  형태: splice(pos, otherList, it) → it를 pos '앞'에 삽입. 같은 리스트면 otherList=li\n\n  put 분기 주의:\n  - 새 키(map에 없음): 꽉 찼으면(sz==cap) li.back() evict(map+list+sz 다 정리) → 그 다음 push_front\n  - 기존 키: 값 갱신 + move-to-front. evict 무관(개수 안 늘어남)\n  evict는 '새 키 삽입' 분기에서만. front=최근, back=LRU",
+   "date": "2026-06-23",
+   "pri": "★",
+   "role": "재복습",
+   "followups": [
+    "항목마다 만료 시간 (TTL) 을 추가하라. 만료된 항목은 get 에서 안 보여야 한다. lazy 삭제와 주기 작업의 트레이드오프는? 출처: LC discuss 7685567 (2026-03)",
+    "스레드 안전하게 바꾸면 어디를 잠그나? 락 하나 vs 샤딩.",
+    "LFU 변형: 값이 [content, score] 이고 접근마다 score +1, 퇴출은 score 최소. (LC discuss 8265899, 2026-05)"
+   ],
+   "approaches": [
+    {
+     "name": "HashMap + Doubly Linked List",
+     "detail": "HashMap: key → 노드. DLL: head(MRU)~tail(LRU) 순서 유지. get/put 시 해당 노드를 head 앞으로 이동. capacity 초과 시 tail 노드 제거.",
+     "tc": "O(1) get/put",
+     "sc": "O(capacity)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:208",
+   "num": "208",
+   "title": "Implement Trie (Prefix Tree)",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+   "desc": "insert, search, startsWith를 지원하는 Trie(접두사 트리) 자료구조 구현.",
+   "qs": [],
+   "md": "",
+   "file": "10_tries/implement_trie.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "insert/search/startsWith 각각 O(L) - L = word/prefix 길이",
+   "space": "O(전체 문자 수 * 26) worst - 매 노드가 26칸 children 배열",
+   "note": "  스타일 B - Trie 인스턴스 하나 = 노드 하나 (root 따로 안 만듬, 자기 자신이 root)\n  멤버: isEnd (단어 끝), children[26] (a~z 자식 포인터)\n  재귀로 word.substr(1) 넘겨가며 한 글자씩 소비\n  - insert: word 빌 때까지 내려가며 없으면 new Trie(). 끝나면 isEnd=true\n  - search: 끝까지 갔을 때 isEnd 체크. 중간에 nullptr 만나면 false\n  - startsWith: 끝까지 갈 수 있으면 true. isEnd 무관\n  ⚠️ hasChild 플래그는 사실 불필요 - startsWith에서 \"prefix 다 소비하고 노드 도착\"하면 그 자체로 true (자식 유무 상관없이). 단순화 여지 있음\n  ⚠️ word.substr(1)은 매번 새 문자열 복사 → O(L^2). 인덱스 i로 순회하면 O(L)\n  Iterative 버전은 관용구:\n  ```\n    Trie* cur = this;\n      for (char c : word) {\n          int idx = c - 'a';\n          if (!cur->children[idx]) cur->children[idx] = new Trie();\n          cur = cur->children[idx];\n      }\n      cur->isEnd = true;\n```",
+   "date": "2026-08-07",
+   "pri": "",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Trie Node (children map + isEnd)",
+     "detail": "각 노드는 26개(or map) 자식 포인터와 isEnd 플래그 보유. insert/search/startsWith 모두 문자별로 노드를 따라 이동.",
+     "tc": "O(L) per op",
+     "sc": "O(N·L)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:62",
+   "num": "62",
+   "title": "Unique Paths",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/unique-paths/",
+   "desc": "m×n 격자의 좌상단에서 우하단까지(오른쪽/아래로만 이동) 가는 경로의 수.",
+   "qs": [],
+   "md": "",
+   "file": "14_2d_dp/unique_paths.cpp",
+   "solved": true,
+   "review": 1,
+   "time": "O(m*n)",
+   "space": "O(m*n) (1행 rolling으로 O(n) 축소 가능)",
+   "note": "dp[i][j] = dp[i-1][j](위) + dp[i][j-1](왼쪽), base dp[0][0]=1\n\"오/아래만 이동\" = 각 칸 도달경로 = 위+왼쪽 경로 합\n공간최적화: 현재행이 위행만 참조 → 1행 rolling으로 O(mn)→O(n)\ndp[j] += dp[j-1]",
+   "date": "2026-08-04",
+   "pri": "",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "DP (2D 또는 1D)",
+     "detail": "dp[i][j] = dp[i-1][j] + dp[i][j-1]. 첫 행/열은 모두 1. 1D 배열로 공간 최적화 가능.",
+     "tc": "O(m·n)",
+     "sc": "O(n)"
+    },
+    {
+     "name": "Combinatorics",
+     "detail": "총 (m-1)+(n-1)번 이동 중 (m-1)번을 아래로 선택하는 조합 C(m+n-2, m-1).",
+     "tc": "O(m+n)",
+     "sc": "O(1)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:322",
+   "num": "322",
+   "title": "Coin Change",
+   "diff": "M",
+   "cat": "재복습",
+   "catName": "재복습",
+   "tags": [
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/coin-change/",
+   "desc": "동전 종류 coins와 목표 amount가 주어질 때 최소 동전 개수. 불가능이면 -1.",
+   "qs": [],
+   "md": "",
+   "file": "13_1d_dp/coin_change.cpp",
+   "solved": true,
+   "review": 3,
+   "time": "O(A * C) - 상태가 sum 0..A 로 A+1 개, 각 상태에서 동전 C 개를 훑는다. C<=12, A<=10^4",
+   "space": "O(A) - dp 배열 + 재귀 깊이. 동전 1 이 있으면 깊이도 최악 A",
+   "note": "같은 sum 을 만드는 조합이 여러 개 있다.\ncoins = {1,2}, amount = 4 라면 2+2 · 2+1+1 · 1+2+1 · 1+1+2 · 1+1+1+1 다섯 가지다.\n\n조합을 다 돌아보는 건 dfs 나 for 문으로 된다.\n문제는 같은 호출이 반복된다는 것.\n\n    f(4) 에서 f(3), f(2) 를 부른다\n    f(3) 에서 f(2), f(1) 을 부른다        <- f(2) 두 번째\n    f(2) 에서 f(1), f(0) 을 부른다        <- f(1) 두 번째\n\n그래서 dp 를 이렇게 쓴다 — write 는 1회만, 조회는 여러 번. ⭐️\n\nwrite 를 한 번에 끝내려면 그 자리에서 후보를 다 모아 min 을 골라야 한다.\n그러려면 더 작은 sum 들이 먼저 확정돼 있어야 하고, 재귀는 그 순서를 호출 스택이 만들어준다.\n\n[bottom-up 으로 바꾸면]\n    초기화는 sum = 0 인 칸만 한다. ⭐️\n    나머지는 \"아직 못 만듦\" 으로 두고 루프가 채운다.\n\n    sum - coin 으로 계산하니 sum 으로 건너올 수 있는 모든 방법이\n    이미 확정된 칸에서 온다.\n    그 중 가장 작은 값을 택해 한 번 write 한다.",
+   "date": "2026-10-01",
+   "pri": "",
+   "role": "재복습",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "DP Bottom-Up",
+     "detail": "dp[i] = amount i를 만드는 최소 동전 수. dp[i] = min(dp[i-coin]+1) for each coin. O(amount×|coins|)/O(amount).",
+     "tc": "O(amount × |coins|)",
+     "sc": "O(amount)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:48",
+   "num": "48",
+   "title": "Rotate Image",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/rotate-image/",
+   "desc": "n×n 행렬을 시계방향 90도로 in-place 회전.",
+   "qs": [],
+   "md": "",
+   "file": "17_math_and_geometry/rotate_image.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-08-17",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [
+    "2차원 배열 대신 픽셀이 1차원 배열 (row-major, 폭 n) 로 주어지면 어떻게 바뀌나? 출처: 구글 임베디드 온사이트 (Reddit 1abqfx1)",
+    "정방이 아닌 m x n 이미지면 in-place 가 가능한가?",
+    "이 C++ 코드를 GPU 로 옮기면 어디를 병렬화하나? (Reddit 1rm05al 의 임베디드 라운드 꼬리질문)"
+   ],
+   "approaches": [
+    {
+     "name": "Transpose + Reverse rows",
+     "detail": "행렬을 전치(transpose)한 후 각 행을 좌우 반전하면 시계방향 90도 회전과 동일.",
+     "tc": "O(n²)",
+     "sc": "O(1)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:621",
+   "num": "621",
+   "title": "Task Scheduler",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/task-scheduler/",
+   "desc": "같은 종류의 작업 사이에 최소 n 간격의 쿨다운이 필요할 때, 모든 작업을 완료하는 최소 시간.",
+   "qs": [],
+   "md": "",
+   "file": "08_heap/task_scheduler.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Greedy + Max-Heap",
+     "detail": "작업 빈도를 max-heap에 넣고, 가장 빈도 높은 작업부터 n+1 슬롯 단위로 배치. 빈 슬롯은 idle. 빈도 카운트 기반 수식으로도 풀이 가능.",
+     "tc": "O(n log 26)",
+     "sc": "O(26)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:253",
+   "num": "253",
+   "title": "Meeting Rooms II",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/meeting-rooms-ii/",
+   "desc": "회의 intervals에서 필요한 최소 회의실 수.",
+   "qs": [],
+   "md": "",
+   "file": "16_intervals/meeting_rooms_ii.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Sort + Min-Heap (end times)",
+     "detail": "시작 시간 정렬. end time min-heap 유지. heap.top() ≤ start이면 pop(재사용), 아니면 push(새 방). 최종 heap 크기.",
+     "tc": "O(n log n)",
+     "sc": "O(n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:23",
+   "num": "23",
+   "title": "Merge k Sorted Lists",
+   "diff": "H",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/merge-k-sorted-lists/",
+   "desc": "k개의 정렬된 연결 리스트를 하나로 합쳐서 반환.",
+   "qs": [],
+   "md": "",
+   "file": "06_linked_list/merge_k_sorted_lists.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Min-Heap",
+     "detail": "각 list의 head를 heap에 추가. min 뽑으며 result 연결. 해당 노드의 next를 heap에 push.",
+     "tc": "O(N log k)",
+     "sc": "O(k)"
+    },
+    {
+     "name": "Divide and Conquer",
+     "detail": "list들을 둘씩 merge. O(N log k)/O(log k).",
+     "tc": "O(N log k)",
+     "sc": "O(log k)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:2013",
+   "num": "2013",
+   "title": "Detect Squares",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/detect-squares/",
+   "desc": "점을 추가(add)하고, 쿼리 점과 함께 축에 평행한 정사각형을 이루는 점의 개수(count) 반환.",
+   "qs": [],
+   "md": "",
+   "file": "17_math_and_geometry/detect_squares.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "HashMap of point counts",
+     "detail": "점 좌표별 빈도를 HashMap에 저장. count 쿼리 시, 쿼리 점과 같은 x를 가진 점들(다른 y) 및 같은 y를 가진 점들을 순회해 정사각형의 네 번째 점이 존재하는지 빈도 곱으로 계산.",
+     "tc": "O(1) add, O(n) count (in practice small)",
+     "sc": "O(n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:416",
+   "num": "416",
+   "title": "Partition Equal Subset Sum",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "A",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/partition-equal-subset-sum/",
+   "desc": "양수 배열을 두 부분집합으로 나눠서 합이 같게 할 수 있는지 판단.",
+   "qs": [],
+   "md": "",
+   "file": "13_1d_dp/partition_equal_subset_sum.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "DP (0/1 Knapsack)",
+     "detail": "target = sum/2. dp[j] = true if subset sum j 가능. 배열 역순 순회: dp[j] |= dp[j-num].",
+     "tc": "O(n × target)",
+     "sc": "O(target)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:329",
+   "num": "329",
+   "title": "Longest Increasing Path in a Matrix",
+   "diff": "H",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+   "desc": "행렬에서 인접 칸으로 값이 증가하는 방향으로만 이동할 때 가장 긴 경로의 길이.",
+   "qs": [],
+   "md": "",
+   "file": "14_2d_dp/longest_increasing_path_in_a_matrix.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "DFS + Memoization",
+     "detail": "각 칸에서 시작하는 최장 증가 경로 길이를 메모이제이션. 4방향 중 더 큰 값으로 가는 경우만 재귀.",
+     "tc": "O(m·n)",
+     "sc": "O(m·n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:347",
+   "num": "347",
+   "title": "Top K Frequent Elements",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "A",
+    "B",
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/top-k-frequent-elements/",
+   "desc": "배열에서 가장 빈도 높은 k개의 원소 반환.",
+   "qs": [],
+   "md": "",
+   "file": "01_arrays_and_hashing/top_k_frequent_elements.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "HashMap + Min-Heap",
+     "detail": "freq 세고 크기 k min-heap 유지. 최종 heap에 남은 것이 top-k.",
+     "tc": "O(n log k)",
+     "sc": "O(n)"
+    },
+    {
+     "name": "Bucket Sort",
+     "detail": "freq를 index로 bucket[freq].push. 뒤에서부터 k개 수집. O(n)/O(n).",
+     "tc": "O(n)",
+     "sc": "O(n)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:54",
+   "num": "54",
+   "title": "Spiral Matrix",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/spiral-matrix/",
+   "desc": "m×n 행렬의 모든 원소를 나선형(시계방향) 순서로 반환.",
+   "qs": [],
+   "md": "",
+   "file": "17_math_and_geometry/spiral_matrix.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Boundary shrinking",
+     "detail": "top/bottom/left/right 경계 4개 변수 유지. 위→오른쪽→아래→왼쪽 순으로 순회하며 각 방향 후 해당 경계를 좁힘.",
+     "tc": "O(m·n)",
+     "sc": "O(1)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:91",
+   "num": "91",
+   "title": "Decode Ways",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/decode-ways/",
+   "desc": "숫자 문자열을 'A'~'Z'(1~26)로 디코딩하는 방법의 수.",
+   "qs": [],
+   "md": "",
+   "file": "13_1d_dp/decode_ways.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "DP (1D)",
+     "detail": "dp[i] = s[i:]를 디코딩하는 방법 수. s[i]가 '0'이 아니면 dp[i]+=dp[i+1]. s[i:i+2]가 10~26이면 dp[i]+=dp[i+2].",
+     "tc": "O(n)",
+     "sc": "O(1)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:778",
+   "num": "778",
+   "title": "Swim in Rising Water",
+   "diff": "H",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/swim-in-rising-water/",
+   "desc": "각 칸의 고도가 주어진 그리드에서, (0,0)에서 (n-1,n-1)까지 도달하기 위한 최소 시간(경로상 최대 고도의 최솟값).",
+   "qs": [],
+   "md": "",
+   "file": "12_advanced_graphs/swim_in_rising_water.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Dijkstra-like (min-heap)",
+     "detail": "min-heap에 (고도, r, c) push. pop한 칸의 인접 칸으로 확장하며 경로상 최대 고도를 갱신. 목적지 도달 시 반환.",
+     "tc": "O(n² log n)",
+     "sc": "O(n²)"
+    },
+    {
+     "name": "Binary Search + BFS/DFS",
+     "detail": "시간 t에 대해 고도 ≤ t인 칸들만으로 (0,0)→(n-1,n-1) 연결 가능한지 확인하며 이분 탐색.",
+     "tc": "O(n² log n)",
+     "sc": "O(n²)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:191",
+   "num": "191",
+   "title": "Number of 1 Bits",
+   "diff": "E",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/number-of-1-bits/",
+   "desc": "부호 없는 정수의 이진 표현에서 1의 개수(Hamming Weight) 반환.",
+   "qs": [],
+   "md": "",
+   "file": "18_bit_manipulation/number_of_1_bits.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Brian Kernighan's Algorithm",
+     "detail": "n & (n-1)을 반복하면 매번 가장 오른쪽 1비트가 제거됨. 0이 될 때까지 반복 횟수가 답.",
+     "tc": "O(k) (k=1의 개수)",
+     "sc": "O(1)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:211",
+   "num": "211",
+   "title": "Design Add and Search Words Data Structure",
+   "diff": "M",
+   "cat": "우선 A",
+   "catName": "우선 A",
+   "tags": [
+    "N"
+   ],
+   "link": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+   "desc": "단어 추가(addWord)와 '.'(임의 문자) 와일드카드를 포함한 검색(search)을 지원하는 자료구조.",
+   "qs": [],
+   "md": "",
+   "file": "10_tries/design_add_and_search_words_data_structure.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "",
+   "role": "우선 A",
+   "followups": [],
+   "approaches": [
+    {
+     "name": "Trie + DFS for wildcard",
+     "detail": "기본은 Trie. search에서 '.'을 만나면 현재 노드의 모든 자식에 대해 재귀적으로 DFS 탐색.",
+     "tc": "O(L) normal, O(26^L) worst with '.'",
+     "sc": "O(N·L)"
+    }
+   ]
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:1891",
+   "num": "1891",
+   "title": "Cutting Ribbons",
+   "diff": "M",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/cutting-ribbons/",
+   "desc": "리본 길이 배열과 k. 모두 같은 길이인 조각을 k 개 이상 얻을 수 있는 가장 큰 조각 길이. 불가능하면 0.",
+   "qs": [],
+   "md": "",
+   "file": "05_binary_search/cutting_ribbons.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "새 LC",
+   "followups": [
+    "후보 길이의 상한을 전체 길이 합이 아니라 가장 긴 리본 하나로 잡아야 하는 이유는?",
+    "길이가 정수가 아니라 부동소수점이면 무엇이 달라지나 (종료 조건, 정밀도)?",
+    "시간 복잡도의 로그 항이 입력 개수가 아니라 값의 범위에 의존하는 이유를 설명하라.",
+    "출처: Google L5 코딩 1 (Reddit 1vr9jk5, 2026-08). 위 세 꼬리질문이 그대로 나왔다."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:986",
+   "num": "986",
+   "title": "Interval List Intersections",
+   "diff": "M",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/interval-list-intersections/",
+   "desc": "각각 정렬되고 내부에서 겹치지 않는 두 구간 목록의 교집합을 구간 목록으로 반환.",
+   "qs": [],
+   "md": "",
+   "file": "16_intervals/interval_list_intersections.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "새 LC",
+   "followups": [
+    "교집합 대신 두 목록의 합집합을 겹치지 않는 구간 목록으로 반환하라.",
+    "목록이 2개가 아니라 K 개라면 설계가 어떻게 바뀌나? 복잡도는?",
+    "각 목록이 메모리에 안 들어가고 앞에서부터 하나씩만 읽을 수 있다면 (스트리밍)?",
+    "\"각 목록 안의 구간은 서로 겹치지 않는다\" 는 가정을 빼면 무엇을 먼저 해야 하나?",
+    "출처: Google L5 코딩 2 (Reddit 1vr9jk5, 2026-08) 는 합집합 변형으로 출제. 위 꼬리질문 순서 그대로."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:1235",
+   "num": "1235",
+   "title": "Maximum Profit in Job Scheduling",
+   "diff": "H",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+   "desc": "start, end, profit 배열. 겹치지 않는 작업 부분집합의 이익 합 최대. X 에 끝나고 X 에 시작하면 안 겹침.",
+   "qs": [],
+   "md": "",
+   "file": "13_1d_dp/maximum_profit_in_job_scheduling.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "새 LC",
+   "followups": [
+    "선택한 작업 집합 자체 (경로 복원) 도 반환하라.",
+    "작업이 스트림으로 들어오고 (끝나는 시각 순 아님) 매번 현재까지의 최대 이익을 물으면?",
+    "동시에 최대 2개까지 겹쳐도 된다면 (기계 2대) 어떻게 바뀌나?",
+    "출처: Google 온사이트 2 (Reddit 1wtoc1o, 2026-09). 같은 라운드 두 번째 문제가 G05 (범위 유일성 질의)."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:410",
+   "num": "410",
+   "title": "Split Array Largest Sum",
+   "diff": "H",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/split-array-largest-sum/",
+   "desc": "nums 를 k 개의 연속 부분배열로 나눌 때 부분배열 합의 최댓값을 최소화.",
+   "qs": [],
+   "md": "",
+   "file": "05_binary_search/split_array_largest_sum.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "새 LC",
+   "followups": [
+    "실제 분할 (각 부분배열의 경계) 도 반환하라.",
+    "같은 문제를 DP 로 풀면 복잡도는? 두 풀이의 트레이드오프를 말하라.",
+    "nums 에 음수가 있으면 어느 풀이가 깨지나? 왜?",
+    "출처: 구글 태그 빈도 30위 (Hard 중 최상위), 2026 출제 언급 (LC discuss 8546037), Google 50 목록."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:339",
+   "num": "339",
+   "title": "Nested List Weight Sum",
+   "diff": "M",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/nested-list-weight-sum/",
+   "desc": "중첩 리스트의 각 정수에 깊이를 곱해 합산. 꼬리질문: 문자열 입력 파싱.",
+   "qs": [],
+   "md": "",
+   "file": "04_stack/nested_list_weight_sum.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "새 LC",
+   "followups": [
+    "재귀 (DFS) 와 레벨 순회 (BFS) 두 가지로 풀고, 각각이 유리한 상황을 비교하라.",
+    "입력이 파싱된 구조 대신 문자열 \"[5, 7, [3, 11], [4, [20]]]\" 로 들어오면? 괄호·쉼표·중첩 깊이·여러 자리 정수·음수를 처리하는 파서를 써서 같은 답 (108) 을 내라.",
+    "가중치를 반대로 (가장 깊은 것이 1) 주면 (364. Nested List Weight Sum II) 한 번의 순회로 되나?",
+    "출처: Google L5 코딩 3 (Reddit 1vr9jk5, 2026-08). 문자열 입력 변형과 예시를 손으로 따라가 보라는 요구가 있었다."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:2402",
+   "num": "2402",
+   "title": "Meeting Rooms III",
+   "diff": "H",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/meeting-rooms-iii/",
+   "desc": "방 n 개, 회의 [start,end). 빈 방 중 최소 번호, 없으면 가장 먼저 비는 방을 기다려 같은 길이로. 가장 많이 쓰인 방 번호.",
+   "qs": [],
+   "md": "",
+   "file": "08_heap/meeting_rooms_iii.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "새 LC",
+   "followups": [
+    "회의마다 \"지연된 시간\" 의 총합도 함께 반환하라.",
+    "방 번호가 작은 것 우선이 아니라 \"가장 오래 비어 있던 방\" 우선이면 자료구조가 어떻게 바뀌나?",
+    "방 대신 식당 테이블 (크기가 다름) 에 파티 (인원수) 를 배정하는 변형이라면? (Reddit 1vam78s · LC 7631077 추정)",
+    "출처: Google 50 목록. L5 온사이트 \"tricky 변형\" 으로 이 한 라운드에서 탈락한 보고 (LC discuss 7631077, 2026-03)."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:359",
+   "num": "359",
+   "title": "Logger Rate Limiter",
+   "diff": "E",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/logger-rate-limiter/",
+   "desc": "같은 메시지는 10초에 한 번만 출력. shouldPrintMessage(timestamp, message).",
+   "qs": [],
+   "md": "",
+   "file": "01_arrays_and_hashing/logger_rate_limiter.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "새 LC",
+   "followups": [
+    "메시지 종류가 수백만이면 맵이 무한히 자란다. 오래된 항목을 어떻게 치우나 (lazy 삭제 vs 큐 vs 주기 작업)?",
+    "타임스탬프가 단조 증가가 아니면 (순서 섞여 도착) 무엇이 깨지나?",
+    "같은 구조로 rate limiter (초당 N 회) 를 만들면 고정 창 · 슬라이딩 창 · 토큰 버킷 세 방식의 차이와 선택 기준은?",
+    "여러 서버 인스턴스가 공유하는 분산 rate limiter 라면 저장소를 어디에 두나?",
+    "출처: Google L5 BLR 출제 (LC discuss 7610148, 2026-02). rate limiter 설계 비교는 L5 FE (LC 7858030)."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:1091",
+   "num": "1091",
+   "title": "Shortest Path in Binary Matrix",
+   "diff": "M",
+   "cat": "새 LC",
+   "catName": "새 LC",
+   "tags": [
+    "G"
+   ],
+   "link": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+   "desc": "n x n 이진 격자, 8방향. (0,0) 에서 (n-1,n-1) 까지 0 칸만 밟는 최단 경로의 칸 수. 없으면 -1.",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/shortest_path_in_binary_matrix.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "새 LC",
+   "followups": [
+    "경로 자체 (칸 목록) 도 반환하라.",
+    "격자가 아주 커서 메모리에 안 들어가거나, 시작·끝이 가까운데 격자가 크면 탐색을 어떻게 줄이나?",
+    "칸마다 통과 비용이 다르면 (가중치) 알고리즘이 무엇으로 바뀌나?",
+    "출처: 구글 HR 임베디드 준비 목록 \"Shortest distance between two points on a map\" (Blind ce3lsrpe). 격자 최단 경로의 기본형."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:G01",
+   "num": "G01",
+   "title": "화살표 격자 도달 가능성 (+ 칸 하나 변경)",
+   "diff": "M",
+   "cat": "변형",
+   "catName": "변형",
+   "tags": [
+    "G"
+   ],
+   "link": "",
+   "desc": "m x n 격자 grid 의 각 칸에 'U', 'D', 'L', 'R' 중 하나가 적혀 있다. (0,0) 에서 출발해 매 칸의 화살표 방향으로 한 칸씩 이동한다. 격자 밖으로 나가면 멈춘다. 같은 칸을 다시 밟으면 순환이라 영원히 못 나간다. (m-1,n-1) 에 도달할 수 있으면 true. 목적지 칸의 화살표는 무시한다 (도착하면 끝). 출발 칸이 목적지면 true. bool canReach(vector<string>& grid);",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/g01_arrow_grid_reachability.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "변형",
+   "followups": [
+    "칸 하나의 방향을 아무 방향으로 바꿀 수 있다면 도달 가능하게 만들 수 있나? 브루트포스 (칸마다 4방향 시도) 의 복잡도는? 더 나은 방법은?",
+    "변경 가능한 칸이 k 개라면?",
+    "출처: Google L5 라운드 1 (Reddit 1xsop60, 2026-11). 기본 문제는 풀었지만 꼬리질문을 브루트포스로 내고 시간이 끝나 탈락. 댓글: \"앞으로 한 번, 뒤로 한 번 탐색해서 맞붙이면 된다\"."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:G02",
+   "num": "G02",
+   "title": "0/1 격자에서 첫 행 → 마지막 행 경로",
+   "diff": "M",
+   "cat": "변형",
+   "catName": "변형",
+   "tags": [
+    "G"
+   ],
+   "link": "",
+   "desc": "m x n 이진 격자 grid. 1 은 지나갈 수 있고 0 은 막혀 있다. 첫 행 (row 0) 의 어느 1 칸에서든 출발해 상하좌우로 1 칸만 밟아 마지막 행 (row m-1) 의 어느 칸에든 도달할 수 있으면 true. bool hasPath(vector<vector<int>>& grid);",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/g02_first_row_to_last_row.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "변형",
+   "followups": [
+    "경로가 있는지만이 아니라 \"같은 칸을 두 번 밟지 않는 모든 경로\" 를 반환하라. 개수가 폭발할 수 있는데 어떻게 다루나?",
+    "칸마다 가중치 (비용) 가 있으면 첫 행에서 마지막 행까지 최소 비용은? BFS 와 Dijkstra 중 무엇을 왜 쓰나?",
+    "출발이 \"첫 행의 어느 칸이든\" 일 때 다중 출발을 BFS 에 어떻게 넣나?",
+    "출처: Google L5 온사이트 코딩 1 (Reddit 1vhkj5f) 과 prachub 2026-07 L5 코딩 2. 꼬리질문은 prachub 보고."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:G03",
+   "num": "G03",
+   "title": "쥐 → 치즈, 고양이와의 최소 거리 최대화",
+   "diff": "H",
+   "cat": "변형",
+   "catName": "변형",
+   "tags": [
+    "G"
+   ],
+   "link": "",
+   "desc": "N x N 격자. 각 칸은 '.' (땅), 'W' (물, 못 지남), 'S' (쥐 시작, 땅), 'T' (치즈, 땅), 'C' (고양이. 밟을 수 없다). 쥐는 상하좌우로 땅 칸만 밟아 S 에서 T 로 간다. 경로의 \"안전도\" = 경로 위 모든 칸 (S 와 T 포함) 에 대한 고양이와의 맨해튼 거리 |r - cr| + |c - cc| 의 최솟값. 안전도가 최대인 경로의 안전도를 반환하라. 경로가 없으면 -1.",
+   "qs": [],
+   "md": "",
+   "file": "11_graphs/g03_mouse_cheese_cat.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "변형",
+   "followups": [
+    "워밍업: 고양이 없이 S 에서 T 까지 갈 수 있나? 그 다음 본 문제. 두 풀이의 관계를 설명하라.",
+    "고양이가 여러 마리면 각 칸의 \"가장 가까운 고양이까지 거리\" 를 어떻게 한 번에 구하나?",
+    "거리를 맨해튼이 아니라 \"격자 위 실제 이동 거리 (물 우회 포함)\" 로 바꾸면 무엇이 달라지나?",
+    "출처: Google 폰스크린 1 (Reddit 1wtoc1o, 2026-09) 과 prachub 2026-09. 두 번 보고된 문제."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:G04",
+   "num": "G04",
+   "title": "우선순위 작업 스케줄러 (+ 쿨다운)",
+   "diff": "M",
+   "cat": "변형",
+   "catName": "변형",
+   "tags": [
+    "G"
+   ],
+   "link": "",
+   "desc": "우선순위 작업 스케줄러. class Scheduler { void addJob(int id, int priority); // id 는 유일 int getJob(); // 우선순위가 가장 높은 작업의 id 를 반환하고 스케줄러에서 제거. 없으면 -1 }; 같은 우선순위면 먼저 추가된 것.",
+   "qs": [],
+   "md": "",
+   "file": "08_heap/g04_priority_job_scheduler_cooldown.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "★",
+   "role": "변형",
+   "followups": [
+    "반환된 작업은 그 뒤 getJob 3회가 지나기 전엔 다시 반환되면 안 된다 (쿨다운). 자료구조가 어떻게 바뀌나? 복잡도는?",
+    "같은 우선순위면 먼저 추가된 것부터 (FIFO) 보장하려면?",
+    "작업의 우선순위를 중간에 바꾸는 updatePriority(id, p) 를 추가하면 힙에서 어떻게 처리하나?",
+    "광고 변형: insertAd(content, score) / getAd() 는 최고 점수를 반환하고 점수를 1 깎으며 같은 광고를 연속 반환하지 않는다 (LC discuss 8276966, 2026-05). 같은 구조인가?",
+    "출처: Google L5 라운드 1 코딩 (Reddit 1vhkj5f, 2026-08). 쿨다운 변형은 prachub 2026-07 L5."
+   ],
+   "approaches": []
+  },
+  {
+   "track": "b2",
+   "kind": "cpp",
+   "id": "b2:G05",
+   "num": "G05",
+   "title": "범위 안 원소 유일성 질의 (전처리 후 O(1))",
+   "diff": "M",
+   "cat": "변형",
+   "catName": "변형",
+   "tags": [
+    "G"
+   ],
+   "link": "",
+   "desc": "정수 배열 nums 와 질의 목록 queries 가 주어진다. 각 질의 [l, r] 에 대해 nums[l..r] (양 끝 포함) 의 원소가 모두 서로 다르면 true, 아니면 false. class RangeUnique { explicit RangeUnique(const vector<int>& nums); // 전처리 bool isUnique(int l, int r) const; // 질의. 전처리 뒤 O(1) 을 목표 };",
+   "qs": [],
+   "md": "",
+   "file": "01_arrays_and_hashing/g05_range_uniqueness_queries.cpp",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "2026-11-12",
+   "pri": "",
+   "role": "변형",
+   "followups": [
+    "질의가 하나면 O(r-l) 로 끝난다. 질의가 아주 많으면 무엇을 미리 계산해야 각 질의가 O(1) 이 되나?",
+    "전처리의 시간·공간 복잡도는? 배열이 갱신되면 (원소 하나 변경) 전처리를 어떻게 유지하나?",
+    "\"유일한가\" 대신 \"서로 다른 값의 개수\" 를 물으면 O(1) 이 여전히 가능한가?",
+    "출처: Google 온사이트 2 두 번째 문제 (Reddit 1wtoc1o, 2026-09). 첫 문제는 #1235."
+   ],
+   "approaches": []
+  }
+ ],
+ "cats": [
+  {
+   "track": "a",
+   "key": "android",
+   "name": "Android"
+  },
+  {
+   "track": "a",
+   "key": "embedded",
+   "name": "Embedded"
+  },
+  {
+   "track": "a",
+   "key": "os",
+   "name": "OS"
+  },
+  {
+   "track": "a",
+   "key": "concurrency",
+   "name": "Concurrency"
+  },
+  {
+   "track": "b1",
+   "key": "19_embedded",
+   "name": "Embedded"
+  },
+  {
+   "track": "b2",
+   "key": "재복습",
+   "name": "재복습"
+  },
+  {
+   "track": "b2",
+   "key": "우선 A",
+   "name": "우선 A"
+  },
+  {
+   "track": "b2",
+   "key": "새 LC",
+   "name": "새 LC"
+  },
+  {
+   "track": "b2",
+   "key": "변형",
+   "name": "변형"
+  }
+ ]
+}
+</script>
+
+<script id="app-js">
+(function(){
+"use strict";
+var DATA = JSON.parse(document.getElementById("app-state").textContent);
+var CARDS = DATA.cards, CATS = DATA.cats;
+var CATNAME = {}; CATS.forEach(function(c){ CATNAME[c.key]=c.name; });
+var KEY = "fc2.ui.v1";
+var TRACKS = [["a","A 구두"],["b1","B-1 구현"],["b2","B-2 알고리즘"]];
+var TRACKNAME = {a:"A 도메인 구두", b1:"B-1 임베디드 구현", b2:"B-2 알고리즘"};
+var TAGNAME = {A:"Amazon30d",B:"Blind75",N:"NC150",G:"Google",E:"Embedded"};
+var ui = load(); if(!TRACKNAME[ui.track]) ui.track="a";
+var root = document.getElementById("root"), study = document.getElementById("study");
+var queue = [], pos = -1, flipped = false;
+
+function load(){ try{ var r=localStorage.getItem(KEY); if(r) return JSON.parse(r); }catch(e){} return {seg:"star",cat:"all"}; }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(ui)); }catch(e){} }
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* ---------- theme ---------- */
+function applyTheme(){
+  var t = ui.theme;
+  if(t==="dark"||t==="light") document.documentElement.setAttribute("data-theme",t);
+  else document.documentElement.removeAttribute("data-theme");
+}
+function cycleTheme(){
+  var order=["system","dark","light"], i=order.indexOf(ui.theme||"system");
+  ui.theme = order[(i+1)%3]; save(); applyTheme(); render();
+}
+
+/* ---------- selection ---------- */
+function cats(){ return CATS.filter(function(c){return c.track===ui.track;}); }
+function catIdx(k){ for(var i=0;i<CATS.length;i++) if(CATS[i].key===k) return i; return 999; }
+function tcards(){ return CARDS.filter(function(c){return c.track===ui.track;}); }
+function segFilter(c){
+  if(c.track!==ui.track) return false;
+  if(ui.seg==="star") return !!c.pri;
+  if(ui.seg==="review") return c.solved && c.review>0;
+  if(ui.seg==="unsolved") return !c.solved;
+  return true;
+}
+function numKey(n){ var m=String(n).match(/^([A-Z]*)(\d+)/); return m?[m[1],+m[2]]:["",0]; }
+function selected(){
+  var xs = CARDS.filter(function(c){ return segFilter(c) && (ui.cat==="all"||c.cat===ui.cat); });
+  function base(a,b){
+    var d = catIdx(a.cat)-catIdx(b.cat); if(d) return d;
+    if(a.kind==="cpp"){ var ka=numKey(a.num), kb=numKey(b.num); return ka[0].localeCompare(kb[0]) || (ka[1]-kb[1]); }
+    return a.title.localeCompare(b.title);
+  }
+  if(ui.seg==="review"){
+    xs.sort(function(a,b){ return (b.review-a.review) || base(a,b); });
+  }else{
+    xs.sort(function(a,b){ return ((b.pri?1:0)-(a.pri?1:0)) || base(a,b); });
+  }
+  return xs;
+}
+function counts(){
+  var s=0,r=0,u=0,xs=tcards();
+  xs.forEach(function(c){ if(c.pri) s++; if(c.solved&&c.review>0) r++; if(!c.solved) u++; });
+  return {star:s, review:r, all:xs.length, unsolved:u};
+}
+
+/* ---------- list ---------- */
+function render(){
+  var xs = selected(), k = counts(), all = tcards();
+  var solved = all.filter(function(c){return c.solved;}).length;
+  var themeIcon = ui.theme==="dark"?"●":ui.theme==="light"?"○":"◐";
+  var isA = ui.track==="a";
+
+  var h = '<div class="wrap"><div class="top">';
+  h += '<div class="brand"><h1>'+esc(TRACKNAME[ui.track])+'</h1><span class="cnt mono">'+solved+' / '+all.length+' 완료</span><span class="grow"></span>';
+  h += '<button class="theme" id="theme" title="테마" aria-label="테마 전환">'+themeIcon+'</button></div>';
+  h += '<div class="tracks" role="tablist">';
+  TRACKS.forEach(function(tr){
+    var xs2 = CARDS.filter(function(c){return c.track===tr[0];});
+    var n = xs2.filter(function(c){return !c.solved;}).length;
+    h += '<button class="track" role="tab" data-track="'+tr[0]+'" aria-pressed="'+(ui.track===tr[0])+'">'+tr[1]+(n?'<em>'+n+'</em>':'')+'</button>';
+  });
+  h += '</div>';
+  h += '<div class="seg" role="tablist">';
+  [["star","★",k.star],["review","복습",k.review],["all","전체",k.all],["unsolved",isA?"미학습":"안 푼",k.unsolved]].forEach(function(s){
+    h += '<button role="tab" data-seg="'+s[0]+'" aria-pressed="'+(ui.seg===s[0])+'">'+s[1]+'<em>'+s[2]+'</em></button>';
+  });
+  h += '</div>';
+  var cs = cats();
+  if(cs.length>1){
+    h += '<div class="chips">';
+    h += '<button class="chip" data-cat="all" aria-pressed="'+(ui.cat==="all")+'">전체</button>';
+    cs.forEach(function(c){
+      var n = CARDS.filter(function(x){ return x.cat===c.key && segFilter(x); }).length;
+      if(!n && ui.cat!==c.key) return;
+      h += '<button class="chip" data-cat="'+esc(c.key)+'" aria-pressed="'+(ui.cat===c.key)+'">'+esc(c.name)+'<em>'+n+'</em></button>';
+    });
+    h += '</div>';
+  }
+  h += '</div>';
+
+  h += '<div class="list">';
+  if(!xs.length){
+    h += '<div class="empty">'+(ui.seg==="review"?"복습할 카드가 없습니다.":ui.seg==="star"?"★ 카드가 없습니다.":"해당하는 카드가 없습니다.")+'</div>';
+  }else if(ui.seg==="review" && ui.cat==="all"){
+    [3,2,1].forEach(function(lv){
+      var g = xs.filter(function(c){return c.review===lv;});
+      if(!g.length) return;
+      h += '<div class="group"><div class="group-h">'+["","다시 보면 좋음","다시 볼 것","반드시 복습"][lv]+'<em>'+g.length+'</em></div><div class="rows">';
+      g.forEach(function(c){ h += rowHTML(c); });
+      h += '</div></div>';
+    });
+  }else{
+    var cur=null;
+    xs.forEach(function(c){
+      if(c.cat!==cur){
+        if(cur!==null) h += '</div></div>';
+        cur=c.cat;
+        var tot = all.filter(function(x){return x.cat===cur;}).length;
+        var sv  = all.filter(function(x){return x.cat===cur && x.solved;}).length;
+        h += '<div class="group"><div class="group-h">'+esc(CATNAME[cur]||cur)+'<em>'+sv+'/'+tot+'</em></div><div class="rows">';
+      }
+      h += rowHTML(c);
+    });
+    if(cur!==null) h += '</div></div>';
+  }
+  h += '</div></div>';
+  root.innerHTML = h;
+}
+function rowHTML(c){
+  var nf = c.followups && c.followups.length ? '<span class="fu-badge" title="꼬리질문">꼬리 '+c.followups.length+'</span>' : '';
+  return '<button class="row'+(c.solved?"":" unsolved")+(c.pri?" pri":"")+'" data-id="'+esc(c.id)+'" data-r="'+(c.solved?c.review:0)+'">'
+    + '<span class="n">'+esc(c.kind==="cpp"?c.num:((c.qs||[]).length?(c.qs.length+"Q"):""))+'</span>'
+    + '<span class="t">'+esc(c.title)+'</span>'
+    + '<span class="meta">'+(c.pri?'<span class="pri-badge">'+esc(c.pri)+'</span>':'')+nf+(c.diff?'<span class="diff '+esc(c.diff)+'">'+esc(c.diff)+'</span>':'')
+    + '<span class="rv" data-r="'+(c.solved?c.review:0)+'"><i></i><i></i><i></i></span></span>'
+    + '</button>';
+}
+
+/* ---------- study ---------- */
+var DESK = window.matchMedia("(min-width:900px)");
+function drawEmpty(){
+  study.innerHTML = '<div class="s-empty"><div>왼쪽에서 카드를 고르면 여기에 열립니다<br><br><kbd>←</kbd> <kbd>→</kbd> 이동 · <kbd>Space</kbd> 뒤집기 · <kbd>Esc</kbd> 닫기</div></div>';
+}
+function open(id){
+  queue = selected();
+  pos = queue.findIndex(function(c){return c.id===id;});
+  if(pos<0){ queue=tcards(); pos=queue.findIndex(function(c){return c.id===id;}); }
+  flipped=false;
+  study.classList.add("open"); study.setAttribute("aria-hidden","false");
+  if(!DESK.matches) document.body.style.overflow="hidden";
+  drawStudy();
+}
+function close(){
+  study.classList.remove("open"); study.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+  if(DESK.matches) drawEmpty();
+}
+function go(d){
+  var n=pos+d; if(n<0||n>=queue.length) return;
+  pos=n; flipped=false; drawStudy();
+}
+function flip(){ flipped=!flipped; study.querySelector(".card").classList.toggle("flipped",flipped); }
+
+function noteHTML(s){
+  if(!s) return "";
+  var parts = String(s).split("```");
+  var out = "";
+  for(var i=0;i<parts.length;i++){
+    var seg = parts[i];
+    if(i%2===1){ out += '<div class="ncode">'+esc(seg.replace(/^\n/,"").replace(/\n$/,""))+'</div>'; }
+    else{ var txt = seg.replace(/^\n/,"").replace(/\n$/,""); if(txt.trim()) out += '<div class="p">'+esc(txt)+'</div>'; }
+  }
+  return out;
+}
+var MDCACHE = {};
+function mdHTML(c){
+  if(MDCACHE[c.id]) return MDCACHE[c.id];
+  var out, math = [];
+  var src = (c.md||"")
+    .replace(/\$\$([\s\S]+?)\$\$/g, function(_,m){ math.push("$$"+m+"$$"); return "QQMATH"+(math.length-1)+"QQ"; })
+    .replace(/\$([^$\n]+?)\$/g, function(_,m){ math.push("$"+m+"$"); return "QQMATH"+(math.length-1)+"QQ"; });
+  if(window.marked && marked.parse){
+    try{ out = marked.parse(src, {gfm:true, breaks:false}); }catch(e){ out = null; }
+  }
+  if(!out) out = noteHTML(src);
+  out = out.replace(/QQMATH(\d+)QQ/g, function(_,i){ return esc(math[+i]); });
+  out = out.replace(/<table>/g,'<div class="tbl"><table>').replace(/<\/table>/g,'</table></div>');
+  MDCACHE[c.id] = out; return out;
+}
+function fuHTML(c){
+  if(!c.followups || !c.followups.length) return "";
+  return '<p class="b-label fu">꼬리질문 <span class="mono">'+c.followups.length+'</span></p><ol class="fulist">'
+    + c.followups.map(function(q){ return '<li>'+esc(q)+'</li>'; }).join("") + '</ol>';
+}
+function barHTML(){
+  return '<div class="s-bar"><button class="close" id="close2" aria-label="닫기">×</button><button id="prev"'+(pos===0?" disabled":"")+'>← 이전</button><button class="flip" id="flip">뒤집기</button><button id="next"'+(pos===queue.length-1?" disabled":"")+'>다음 →</button></div>';
+}
+function topHTML(c){
+  return '<div class="s-top"><span class="pos">'+(pos+1)+' / '+queue.length+'</span><span class="cat">'+esc(c.catName||c.cat)+(c.role&&c.role!==c.catName?' · '+esc(c.role):'')+'</span><span class="grow"></span><button class="x" id="close" aria-label="닫기">×</button></div>';
+}
+function drawStudy(){
+  var c = queue[pos]; if(!c) return;
+  if(c.kind!=="cpp"){ drawStudyMD(c); return; }
+  var r = c.solved ? c.review : 0;
+  var tags = (c.tags||[]).map(function(t){ return '<span class="tag">'+esc(TAGNAME[t]||t)+'</span>'; }).join("");
+  var isNum = /^\d+$/.test(String(c.num));
+  var front = '<div class="face front">'
+    + '<div class="f-body">'
+    + '<div class="f-head"><div class="f-num mono">'+(isNum?'<small>#</small>':'')+esc(c.num)+'</div><div class="f-badges">'+(c.diff?'<span class="diff '+esc(c.diff)+'">'+esc(c.diff)+'</span>':'')+tags+'</div></div>'
+    + '<h2 class="f-title">'+esc(c.title)+'</h2>'
+    + (c.pri?'<span class="f-pri">★ 최소 세트</span>':'')
+    + (c.solved?"":'<span class="f-unsolved">아직 안 푼 문제</span>')
+    + '<p class="f-desc">'+esc(c.desc||"")+'</p>'
+    + '<div class="f-foot">'+(c.link?'<a href="'+esc(c.link)+'" target="_blank" rel="noopener">LeetCode에서 열기 ↗</a>':'')
+    + '<span class="f-file">'+esc(c.file)+'</span>'
+    + (c.date?'<span class="mono">'+esc(c.date)+'</span>':'')
+    + '<span class="hint">탭하면 뒤집힘</span></div>'
+    + '</div></div>';
+
+  var cx = "";
+  if(c.time||c.space){
+    cx = '<div class="cx">'+(c.time?'<span><b>time</b>'+esc(c.time)+'</span>':'')+(c.space?'<span><b>space</b>'+esc(c.space)+'</span>':'')+'</div>';
+  }
+  var ap = "";
+  if(c.approaches && c.approaches.length){
+    ap = '<details class="appr"><summary>풀이 접근법 <em class="mono" style="font-style:normal">'+c.approaches.length+'</em></summary>';
+    c.approaches.forEach(function(a){
+      ap += '<div class="ap"><div class="nm">'+esc(a.name)+'</div><div class="dt">'+esc(a.detail)+'</div><div class="c">'+esc(a.tc)+' · '+esc(a.sc)+'</div></div>';
+    });
+    ap += '</details>';
+  }
+  var back = '<div class="face back"><div class="f-body">'
+    + '<p class="b-label">내 노트</p>'
+    + cx
+    + '<div class="note">'+noteHTML(c.note||"")+'</div>'
+    + fuHTML(c)
+    + ap
+    + '</div></div>';
+
+  study.innerHTML = topHTML(c)
+    + '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" data-r="'+r+'" id="card">'+front+back+'</div></div>'
+    + barHTML();
+  ui.last = c.id; save();
+}
+function drawStudyMD(c){
+  var r = c.solved ? c.review : 0;
+  var qs = (c.qs||[]).map(function(q){ return '<li>'+esc(q)+'</li>'; }).join("");
+  var front = '<div class="face front"><div class="f-body">'
+    + '<div class="f-head"><div class="f-cat">'+esc(c.catName)+'</div><div class="f-badges">'+(c.pri?'<span class="pri-badge">'+esc(c.pri)+'</span>':'')+'</div></div>'
+    + '<h2 class="f-title">'+esc(c.title)+'</h2>'
+    + (c.solved?"":'<span class="f-unsolved">아직 학습 전</span>')
+    + (qs?'<ol class="f-qs">'+qs+'</ol>':'<p class="f-desc">'+esc(c.desc||"")+'</p>')
+    + '<div class="f-foot"><span class="f-file">'+esc(c.file)+'</span>'
+    + (c.date?'<span class="mono">'+esc(c.date)+'</span>':'')
+    + '<span class="hint">탭하면 뒤집힘</span></div>'
+    + '</div></div>';
+  var back = '<div class="face back"><div class="f-body">'
+    + '<p class="b-label">전문</p>'
+    + '<div class="md">'+mdHTML(c)+'</div>'
+    + '</div></div>';
+  study.innerHTML = topHTML(c)
+    + '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" data-r="'+r+'" id="card">'+front+back+'</div></div>'
+    + barHTML();
+  ui.last = c.id; save();
+  renderMath(study.querySelector(".md"));
+}
+function renderMath(el){
+  if(!el || !window.renderMathInElement) return;
+  try{ renderMathInElement(el, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}], throwOnError:false}); }catch(e){}
+}
+window.addEventListener("load", function(){ renderMath(study.querySelector(".md")); });
+
+/* ---------- events ---------- */
+root.addEventListener("click", function(e){
+  var t=e.target;
+  var b;
+  if((b=t.closest("[data-track]"))){ ui.track=b.dataset.track; ui.cat="all"; save(); render(); if(DESK.matches && !study.classList.contains("open")) drawEmpty(); return; }
+  if((b=t.closest("[data-seg]"))){ ui.seg=b.dataset.seg; save(); render(); return; }
+  if((b=t.closest("[data-cat]"))){ ui.cat=b.dataset.cat; save(); render(); return; }
+  if((b=t.closest(".row"))){ open(b.dataset.id); return; }
+  if(t.closest("#theme")){ cycleTheme(); return; }
+});
+study.addEventListener("click", function(e){
+  var t=e.target;
+  if(t.closest("a")) return;
+  if(t.closest("#close")||t.closest("#close2")){ close(); return; }
+  if(t.closest("#prev")){ go(-1); return; }
+  if(t.closest("#next")){ go(1); return; }
+  if(t.closest("#flip")){ flip(); return; }
+  if(t.closest("summary")) return;
+  if(t.closest(".face")){ flip(); return; }
+});
+document.addEventListener("keydown", function(e){
+  if(!study.classList.contains("open")) return;
+  if(e.key==="Escape") close();
+  else if(e.key==="ArrowLeft") go(-1);
+  else if(e.key==="ArrowRight") go(1);
+  else if(e.key===" "||e.key==="Enter"){ if(!e.target.closest("summary,a,button")){ e.preventDefault(); flip(); } }
+});
+var tx=null, ty=null;
+study.addEventListener("touchstart", function(e){ var p=e.changedTouches[0]; tx=p.clientX; ty=p.clientY; }, {passive:true});
+study.addEventListener("touchend", function(e){
+  if(tx===null) return;
+  var p=e.changedTouches[0], dx=p.clientX-tx, dy=p.clientY-ty; tx=ty=null;
+  if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)*1.5){ go(dx<0?1:-1); }
+}, {passive:true});
+
+/* URL 해시: #b1 → 트랙, #b2:G01 또는 #a:android/binder.md → 카드 열기, 끝에 ! 붙이면 뒷면 */
+(function(){
+  var hsh = decodeURIComponent((location.hash||"").slice(1)); if(!hsh) return;
+  var want = hsh.replace(/!$/,"");
+  var tr = want.split(":")[0];
+  if(TRACKNAME[tr]){ ui.track = tr; ui.cat = "all"; if(want.indexOf(":")>=0) ui.hashOpen = want; }
+})();
+applyTheme();
+render();
+if(DESK.matches) drawEmpty();
+if(ui.hashOpen){ var id = ui.hashOpen; delete ui.hashOpen; var fl = /!$/.test(location.hash); open(id); if(fl){ flipped=true; var cd=study.querySelector(".card"); if(cd) cd.classList.add("flipped"); } }
+DESK.addEventListener("change", function(){
+  if(DESK.matches){ document.body.style.overflow=""; if(!study.classList.contains("open")) drawEmpty(); }
+  else if(!study.classList.contains("open")) study.innerHTML="";
+});
+})();
+</script>
