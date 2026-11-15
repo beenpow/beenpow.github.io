@@ -201,6 +201,15 @@ body{
 .note:empty::before{content:"아직 노트가 없습니다. .cpp 헤더의 @note 를 채우면 여기 나타납니다.";color:var(--muted)}
 .fulist{margin:0;padding-left:22px;font-size:14px;line-height:1.65;color:var(--ink)}
 .fulist li{margin:6px 0}
+.fu-q summary{cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:8px}
+.fu-q summary::-webkit-details-marker{display:none}
+.fu-q summary::after{content:"▾";flex:none;margin-left:auto;color:var(--muted);transition:transform .15s}
+.fu-q[open] summary{color:var(--accent)}
+.fu-q[open] summary::after{transform:rotate(180deg)}
+.md.fu-ans{margin:8px 0 14px;padding:10px 12px;border-radius:8px;background:var(--card-2);font-size:13.5px;cursor:auto}
+.md.fu-ans pre,.md.fu-ans code,.md.fu-ans th{background:var(--card)}
+.fu-sub{font-size:11px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted);margin-left:6px}
+.rvnote .md{margin-top:12px;cursor:auto}
 .appr{margin-top:18px;border-top:1px solid var(--line-soft);padding-top:10px}
 .appr summary{cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);list-style:none;display:flex;align-items:center;gap:8px}
 .appr summary::-webkit-details-marker{display:none}
@@ -252,6 +261,7 @@ body{
     B-1 구현    Core/LC/19_embedded/*.cpp  (@problem: E01.)      상태 = .cpp 헤더
     B-2 알고리즘 Core/LC/*/*.cpp (번호, G 접두)                   상태 = .cpp 헤더, 설명 = cards_meta.json
     꼬리질문    .cpp 의 @followup 줄 / .md 의 "## Follow-up"
+    꼬리질문 답  .cpp 옆 <이름>-review.md 의 "### N." (N 번째 @followup). 위 본문은 "풀이 노트" 로 접힘
     ★          manifest.md 의 우선 표시. 최소 세트
 
 ■ 갱신 절차
@@ -298,6 +308,7 @@ body{
    "followups": [
     "Follow-up: 앱 콜드 시작은 어떤 단계로 이뤄지고, ART 는 어디에 끼나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -332,6 +343,7 @@ body{
    "followups": [
     "Follow-up: Binder 와 Unix 도메인 소켓 중 하나를 고른다면?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -366,6 +378,7 @@ body{
    "followups": [
     "Follow-up: OTA 와 A/B, verified boot 는 부팅과 어떻게 얽히나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -400,6 +413,7 @@ body{
    "followups": [
     "Follow-up: 새 센서용 HAL 을 하나 추가한다면 건드릴 곳을 순서대로 말해보라"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -434,6 +448,7 @@ body{
    "followups": [
     "Follow-up: \"앱 시작이 가끔 2초씩 느려진다\" 를 받으면 첫 30분에 무엇을 하나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -468,6 +483,7 @@ body{
    "followups": [
     "Follow-up: 앱이 백그라운드로 가면 플랫폼은 무엇을 제한하나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -502,6 +518,7 @@ body{
    "followups": [
     "Follow-up: 크래시 뒤 남는 흔적과 읽는 순서"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -535,6 +552,7 @@ body{
    "followups": [
     "Follow-up: 실제 어디서 쓰이나요?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -568,6 +586,7 @@ body{
    "followups": [
     "Follow-up: C++에서 race condition 방지 코드 예시?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -601,6 +620,7 @@ body{
    "followups": [
     "Follow-up: 다른 언어에서는?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -635,6 +655,7 @@ body{
    "followups": [
     "Follow-up: UART 수신을 DMA 로 바꾸면 설계가 어떻게 달라지나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -669,6 +690,7 @@ body{
    "followups": [
     "Follow-up: 하드웨어 버튼 디바운스는 어떻게 설계하나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -703,6 +725,7 @@ body{
    "followups": [
     "Follow-up: mutex 를 쓰면 배리어는 신경 안 써도 되나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -737,6 +760,7 @@ body{
    "followups": [
     "Follow-up: 데드락과 역전은 뭐가 다르고, 둘 다 막는 방법은?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -771,6 +795,7 @@ body{
    "followups": [
     "Follow-up: 아래 코드의 문제를 전부 찾아라"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -804,6 +829,7 @@ body{
    "followups": [
     "Follow-up: Context switch가 언제 발생하나요?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -837,6 +863,7 @@ body{
    "followups": [
     "Follow-up: Deadlock vs Livelock vs Starvation?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -858,7 +885,7 @@ body{
     "Q4: fd 를 다른 프로세스에 넘길 수 있는 건 뭔가?",
     "Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?"
    ],
-   "md": "> 2026-10-27 작성. 10/26 Apple Core OS 스크린에서 \"Binder 외에 뭐가 있나\" 에 Binder 만 답했다.\n> 아래 Q2 표의 **첫 열을 순서대로 소리 내 읽을 수 있으면** 그 질문은 끝난다.\n\n---\n\n## Q1: IPC 가 뭐고, 왜 커널을 거쳐야 하나?\n\n주소 공간이 분리된 프로세스끼리 데이터나 신호를 주고받는 방법.\n스레드는 같은 주소 공간이라 IPC 가 필요 없다 (`process_vs_thread.md`).\n\n분리돼 있으니 한쪽이 쓴 메모리를 다른 쪽이 직접 못 본다.\n그래서 **커널이 중간에서 복사해주거나, 같은 물리 페이지를 양쪽에 매핑해준다.**\n전자가 파이프·소켓·메시지, 후자가 공유 메모리다.\n공유 메모리는 매핑을 만들 때만 커널이 끼고 그 뒤 읽고 쓰는 건 그냥 메모리 접근이다.\n\n---\n\n## Q2: IPC 종류를 말해보라\n\n**\"Binder 외에 뭐가 있나\" 의 답.** 첫 열을 위에서 아래로 읽는다. ⭐️\n\n| 종류 | 모양 | 커널 복사 | 쓰는 자리 |\n|---|---|---|---|\n| **파이프** | 한 방향 바이트 스트림. 경계 없음 | 2회 (쓰기 · 읽기) | 셸 `a \\| b`, 부모 → 자식 로그 |\n| **Unix 도메인 소켓** | 양방향 스트림 또는 데이터그램. **fd 를 넘길 수 있다** (SCM_RIGHTS) | 2회 | 데몬 ↔ 클라이언트의 기본. 같은 기계 안에서만 |\n| **공유 메모리** | 같은 물리 페이지를 둘 다 매핑 | **0** (매핑할 때만 개입) | 영상 프레임, 큰 버퍼. 동기화는 별도 |\n| **시그널** | 번호 하나. 데이터 없음 | 없음 | 종료 요청 (TERM), 자식 종료 알림 (CHLD), 타이머 |\n| **메시지 큐** | 경계 있는 메시지, 우선순위 | 2회 | POSIX mq. 실무에선 드묾 |\n| **Binder** | 동기 호출 (RPC). 객체 참조 · fd 전달 | 1회 (커널이 수신자 버퍼에 직접) | Android 의 모든 서비스 호출 |\n| **Mach 메시지** | 경계 있는 메시지. **포트 권한 자체를 담아 보낸다** | 1회 (큰 건 vm 매핑으로 0) | XNU 의 원시 IPC. 커널 객체도 포트로 다룬다 |\n| **XPC** | Mach 위의 직렬화 (dictionary) + 서비스 이름 해석 | Mach 와 같음 | Darwin 데몬 ↔ 앱의 표준. 요청 오면 launchd 가 그때 데몬을 띄움 |\n\n```c\n/* 기본 셋. 전부 POSIX, Darwin·Linux 둘 다 */\nint pfd[2]; pipe(pfd);                                   /* 파이프 */\nint sv[2];  socketpair(AF_UNIX, SOCK_STREAM, 0, sv);     /* Unix 소켓 */\nint shm = shm_open(\"/buf\", O_CREAT | O_RDWR, 0600);      /* 공유 메모리 */\nvoid *m = mmap(NULL, len, PROT_READ|PROT_WRITE, MAP_SHARED, shm, 0);\nkill(pid, SIGTERM);                                      /* 시그널 */\n```\n\n**Android ↔ Darwin 대응** (Core OS 면접이면 이 줄을 붙인다)\n\n| 자리 | Android | Darwin |\n|---|---|---|\n| 서비스 RPC | Binder. 이름 해석은 servicemanager | Mach 메시지 + XPC. 이름 해석은 launchd (bootstrap) |\n| 공유 메모리 | ashmem → memfd, Parcel 의 큰 blob | Mach `vm_remap`, IOSurface (GPU 버퍼) |\n| 로컬 소켓 | zygote 소켓, logd, adbd | syslogd, 많은 데몬의 로컬 포트 |\n| 시그널 | 같음 | 같음. launchd 가 TERM → KILL |\n\n---\n\n## Q3: 뭘 쓸지 어떻게 고르나?\n\n기준은 둘이다. **모양** 과 **양**.\n\n```\n모양   바이트 스트림이면 파이프·소켓\n       경계 있는 메시지면 mq·Binder·Mach\n       그냥 알림이면 시그널\n양     많으면 복사를 피해야 하니 공유 메모리.  IPC 로는 \"준비됐다\" 만 보낸다\n```\n\n큰 데이터를 소켓으로 보내면 복사 두 번(보내는 쪽 → 커널 → 받는 쪽)이 병목이다.\n그래서 Android 의 SurfaceFlinger 버퍼 큐, Darwin 의 IOSurface 는 프레임은 공유 메모리에 두고 핸들만 IPC 로 넘긴다.\n\n---\n\n## Q4: fd 를 다른 프로세스에 넘길 수 있는 건 뭔가?\n\n**Unix 소켓 (SCM_RIGHTS) · Binder · Mach 포트** 셋이다.\n파이프·시그널·mq 는 못 한다.\n\n\"열린 파일·소켓·공유 메모리 핸들을 다른 프로세스에 건네는\" 능력이 서비스 설계의 핵심이다.\n서비스가 클라이언트에 공유 메모리 fd 를 주는 패턴이 이걸로 된다.\n\nBinder 와 Mach 는 공통점이 하나 더 있다.\n**커널이 객체 참조를 센다.** 상대가 죽으면 커널이 알려준다 (Binder 의 death notification, Mach 의 dead-name notification).\n소켓은 EOF 로만 안다.\n\n```c\n/* Unix 소켓으로 fd 넘기기. 커널이 받는 쪽 fd 테이블에 새 번호로 복제해준다 */\nstruct msghdr mh = {0}; struct iovec io = { \"x\", 1 };\nchar cbuf[CMSG_SPACE(sizeof(int))];\nmh.msg_iov = &io; mh.msg_iovlen = 1; mh.msg_control = cbuf; mh.msg_controllen = sizeof cbuf;\nstruct cmsghdr *c = CMSG_FIRSTHDR(&mh);\nc->cmsg_level = SOL_SOCKET; c->cmsg_type = SCM_RIGHTS; c->cmsg_len = CMSG_LEN(sizeof(int));\nmemcpy(CMSG_DATA(c), &shm_fd, sizeof(int));\nsendmsg(sock, &mh, 0);\n```\n\n---\n\n## Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?\n\n**동기화가 공짜가 아니다.**\n한쪽이 쓰는 중에 다른 쪽이 읽으면 깨진 데이터를 본다.\n프로세스 간 뮤텍스 (`PTHREAD_PROCESS_SHARED`), 세마포어, 또는 원자 연산 + 메모리 배리어가 따로 필요하다.\n\"공유 메모리로 빠르게\" 라고만 답하면 반쪽이다.\n\n### 틀리기 쉬운 것\n\n```\nX  파이프는 양방향          -> 한 방향. 양방향이면 파이프 두 개거나 socketpair\nX  시그널로 데이터를 보낸다   -> 번호만 간다 (sigqueue 로 int 하나). \"확인해봐\" 신호로만 쓰고 내용은 다른 채널로\nX  Mach 메시지 = 소켓 비슷   -> 핵심은 포트 권한(send right)이 capability 라는 것. 가진 프로세스만 말을 걸 수 있고, 샌드박스가 이걸로 제한한다\n```\n",
+   "md": "> 2026-10-27 작성. 10/26 Apple Core OS 스크린에서 \"Binder 외에 뭐가 있나\" 에 Binder 만 답했다.\n> 아래 Q2 표의 **첫 열을 순서대로 소리 내 읽을 수 있으면** 그 질문은 끝난다.\n\n---\n\n## Q1: IPC 가 뭐고, 왜 커널을 거쳐야 하나?\n\n주소 공간이 분리된 프로세스끼리 데이터나 신호를 주고받는 방법.\n스레드는 같은 주소 공간이라 IPC 가 필요 없다 (`process_vs_thread.md`).\n\n분리돼 있으니 한쪽이 쓴 메모리를 다른 쪽이 직접 못 본다.\n그래서 **커널이 중간에서 복사해주거나, 같은 물리 페이지를 양쪽에 매핑해준다.**\n전자가 파이프·소켓·메시지, 후자가 공유 메모리다.\n공유 메모리는 매핑을 만들 때만 커널이 끼고 그 뒤 읽고 쓰는 건 그냥 메모리 접근이다.\n\n---\n\n## Q2: IPC 종류를 말해보라\n\n**\"Binder 외에 뭐가 있나\" 의 답.** 첫 열을 위에서 아래로 읽는다. ⭐️\n\n| 종류 | 모양 | 커널 복사 | 쓰는 자리 |\n|---|---|---|---|\n| **파이프** | 한 방향 바이트 스트림. 경계 없음 | 2회 (쓰기 · 읽기) | 셸 `a \\| b`, 부모 → 자식 로그 |\n| **Unix 도메인 소켓** | 양방향 스트림 또는 데이터그램. **fd 를 넘길 수 있다** (SCM_RIGHTS) | 2회 | 데몬 ↔ 클라이언트의 기본. 같은 기계 안에서만 |\n| **공유 메모리** | 같은 물리 페이지를 둘 다 매핑 | **0** (매핑할 때만 개입) | 영상 프레임, 큰 버퍼. 동기화는 별도 |\n| **시그널** | 번호 하나. 데이터 없음 | 없음 | 종료 요청 (TERM), 자식 종료 알림 (CHLD), 타이머 |\n| **메시지 큐** | 경계 있는 메시지, 우선순위 | 2회 | POSIX mq. 실무에선 드묾 |\n| **Binder** | 동기 호출 (RPC). 객체 참조 · fd 전달 | 1회 (커널이 수신자 버퍼에 직접) | Android 의 모든 서비스 호출 |\n| **Mach 메시지** | 경계 있는 메시지. **포트 권한 자체를 담아 보낸다** | 1회 (큰 건 vm 매핑으로 0) | XNU 의 원시 IPC. 커널 객체도 포트로 다룬다 |\n| **XPC** | Mach 위의 직렬화 (dictionary) + 서비스 이름 해석 | Mach 와 같음 | Darwin 데몬 ↔ 앱의 표준. 요청 오면 launchd 가 그때 데몬을 띄움 |\n\n```c\n/* 기본 셋. 전부 POSIX, Darwin·Linux 둘 다 */\nint pfd[2]; pipe(pfd);                                   /* 파이프 */\nint sv[2];  socketpair(AF_UNIX, SOCK_STREAM, 0, sv);     /* Unix 소켓 */\nint shm = shm_open(\"/buf\", O_CREAT | O_RDWR, 0600);      /* 공유 메모리 */\nvoid *m = mmap(NULL, len, PROT_READ|PROT_WRITE, MAP_SHARED, shm, 0);\nkill(pid, SIGTERM);                                      /* 시그널 */\n```\n\n### Q2 코드 1: 파이프 (부모 ← 자식, 한 방향)\n\n> 2026-11-14 추가. 실제로 컴파일해 돌린 코드와 출력.\n\n자식이 `dup2` 로 fd 1 을 파이프 쓰는 쪽으로 바꾸면, 평범한 `printf` 가 화면 대신 부모에게 간다.\n셸의 `ls | grep` 이 이 구조에 `exec` 를 더한 것이다.\n\n```c\nint main() {\n    int p[2];\n    pipe(p);                    // p[0] = 3 (파이프 읽는 쪽), p[1] = 4 (파이프 쓰는 쪽)\n                                //   fd 0 키보드 | fd 1 화면 | fd 3 파이프 읽기 | fd 4 파이프 쓰기\n\n    if (fork() == 0) {          // 자식. fd 표가 그대로 복사됨\n        dup2(p[1], 1);          // dup2(4, 1). fd 1 칸을 fd 4 내용으로 덮어씀\n                                //   fd 0 키보드 | fd 1 파이프 쓰기 | fd 3 파이프 읽기 | fd 4 파이프 쓰기\n        close(p[0]);            // fd 3 닫음. 자식은 읽지 않음\n        close(p[1]);            // fd 4 닫음. 같은 입구가 fd 1 에 있으니 남는 복사본\n                                //   fd 0 키보드 | fd 1 파이프 쓰기\n        printf(\"사과\\n\");        // printf 는 fd 1 에 씀 → 파이프로 들어감\n        printf(\"바나나\\n\");\n        return 0;               // 자식 끝. fd 1 도 닫힘 → 쓰는 쪽이 0개\n    }\n\n    close(p[1]);                // 부모. fd 4 닫음. 부모는 읽기만\n                                //   fd 0 키보드 | fd 1 화면 | fd 3 파이프 읽기\n    char buf[64] = {0};\n    int n, total = 0;\n    while ((n = read(p[0], buf + total, sizeof buf - 1 - total)) > 0)\n        total += n;             // fd 3 에서 읽음. 쓰는 쪽이 0개가 되면 read 가 0 → 반복 끝\n    wait(NULL);\n    printf(\"부모가 파이프에서 받은 것:\\n%s\", buf);   // 부모 fd 1 은 화면 그대로\n}\n/* 출력:\n   부모가 파이프에서 받은 것:\n   사과\n   바나나 */\n```\n\n- `dup2(A, B)` 는 B 번호도 A 가 가리키는 곳에 연결한다. 왼쪽 인자에서 오른쪽 칸으로 덮어쓴다.\n- 비어 있는 파이프를 `read` 하면 데이터가 올 때까지 멈춘다 (블로킹). 부모·자식 관계와 상관없이 파이프 fd 의 성질이다.\n- 안 쓰는 끝은 닫는다. 쓰는 쪽이 하나라도 열려 있으면 읽는 쪽이 EOF 를 못 받고 계속 기다린다.\n\n### Q2 코드 2: Unix 도메인 소켓 (부모 ↔ 자식, 양방향)\n\n> 2026-11-14 추가. 실제로 컴파일해 돌린 코드와 출력.\n\n같은 컴퓨터 안에서만 쓰는 소켓이다.\n코드 1 의 `pipe` 를 `socketpair` 로 바꾸면, 양쪽 끝 모두 읽고 쓸 수 있다.\n\n```c\nint main() {\n    setvbuf(stdout, NULL, _IONBF, 0);\n    int s[2];\n    socketpair(AF_UNIX, SOCK_STREAM, 0, s);    // 소켓 한 쌍. s[0] 과 s[1] 둘 다 읽기·쓰기 가능\n\n    if (fork() == 0) {                         // 자식은 s[1] 만 씀\n        close(s[0]);\n        char buf[16] = {0};\n        read(s[1], buf, sizeof buf);           // 부모가 보낸 것 읽기\n        printf(\"자식이 받음: %s\\n\", buf);\n        write(s[1], \"pong\", 4);                // 같은 s[1] 로 답장 보내기\n        return 0;\n    }\n\n    close(s[1]);                               // 부모는 s[0] 만 씀\n    write(s[0], \"ping\", 4);                    // 보내기\n    char buf[16] = {0};\n    read(s[0], buf, sizeof buf);               // 같은 s[0] 으로 답장 받기\n    printf(\"부모가 받음: %s\\n\", buf);\n    wait(NULL);\n}\n/* 출력:\n   자식이 받음: ping\n   부모가 받음: pong */\n```\n\n| | 파이프 | Unix 도메인 소켓 |\n|---|---|---|\n| 방향 | 한 방향. `p[0]` 은 읽기만, `p[1]` 은 쓰기만 | 양방향. `s[0]`, `s[1]` 둘 다 읽고 씀 |\n| 각자 가지는 끝 | 부모는 쓰는 끝, 자식은 읽는 끝 | 부모는 `s[0]`, 자식은 `s[1]` |\n| 답장하려면 | 파이프를 하나 더 만들어야 함 | 같은 fd 로 바로 답장 |\n\n### Q2 정리: Android ↔ Darwin 대응\n\nCore OS 면접이면 이 줄을 붙인다.\n\n| 자리 | Android | Darwin |\n|---|---|---|\n| 서비스 RPC | Binder. 이름 해석은 servicemanager | Mach 메시지 + XPC. 이름 해석은 launchd (bootstrap) |\n| 공유 메모리 | ashmem → memfd, Parcel 의 큰 blob | Mach `vm_remap`, IOSurface (GPU 버퍼) |\n| 로컬 소켓 | zygote 소켓, logd, adbd | syslogd, 많은 데몬의 로컬 포트 |\n| 시그널 | 같음 | 같음. launchd 가 TERM → KILL |\n\n---\n\n## Q3: 뭘 쓸지 어떻게 고르나?\n\n기준은 둘이다. **모양** 과 **양**.\n\n```\n모양   바이트 스트림이면 파이프·소켓\n       경계 있는 메시지면 mq·Binder·Mach\n       그냥 알림이면 시그널\n양     많으면 복사를 피해야 하니 공유 메모리.  IPC 로는 \"준비됐다\" 만 보낸다\n```\n\n큰 데이터를 소켓으로 보내면 복사 두 번(보내는 쪽 → 커널 → 받는 쪽)이 병목이다.\n그래서 Android 의 SurfaceFlinger 버퍼 큐, Darwin 의 IOSurface 는 프레임은 공유 메모리에 두고 핸들만 IPC 로 넘긴다.\n\n---\n\n## Q4: fd 를 다른 프로세스에 넘길 수 있는 건 뭔가?\n\n**Unix 소켓 (SCM_RIGHTS) · Binder · Mach 포트** 셋이다.\n파이프·시그널·mq 는 못 한다.\n\n\"열린 파일·소켓·공유 메모리 핸들을 다른 프로세스에 건네는\" 능력이 서비스 설계의 핵심이다.\n서비스가 클라이언트에 공유 메모리 fd 를 주는 패턴이 이걸로 된다.\n\nBinder 와 Mach 는 공통점이 하나 더 있다.\n**커널이 객체 참조를 센다.** 상대가 죽으면 커널이 알려준다 (Binder 의 death notification, Mach 의 dead-name notification).\n소켓은 EOF 로만 안다.\n\n```c\n/* Unix 소켓으로 fd 넘기기. 커널이 받는 쪽 fd 테이블에 새 번호로 복제해준다 */\nstruct msghdr mh = {0}; struct iovec io = { \"x\", 1 };\nchar cbuf[CMSG_SPACE(sizeof(int))];\nmh.msg_iov = &io; mh.msg_iovlen = 1; mh.msg_control = cbuf; mh.msg_controllen = sizeof cbuf;\nstruct cmsghdr *c = CMSG_FIRSTHDR(&mh);\nc->cmsg_level = SOL_SOCKET; c->cmsg_type = SCM_RIGHTS; c->cmsg_len = CMSG_LEN(sizeof(int));\nmemcpy(CMSG_DATA(c), &shm_fd, sizeof(int));\nsendmsg(sock, &mh, 0);\n```\n\n---\n\n## Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?\n\n**동기화가 공짜가 아니다.**\n한쪽이 쓰는 중에 다른 쪽이 읽으면 깨진 데이터를 본다.\n프로세스 간 뮤텍스 (`PTHREAD_PROCESS_SHARED`), 세마포어, 또는 원자 연산 + 메모리 배리어가 따로 필요하다.\n\"공유 메모리로 빠르게\" 라고만 답하면 반쪽이다.\n\n### 틀리기 쉬운 것\n\n```\nX  파이프는 양방향          -> 한 방향. 양방향이면 파이프 두 개거나 socketpair\nX  시그널로 데이터를 보낸다   -> 번호만 간다 (sigqueue 로 int 하나). \"확인해봐\" 신호로만 쓰고 내용은 다른 채널로\nX  Mach 메시지 = 소켓 비슷   -> 핵심은 포트 권한(send right)이 capability 라는 것. 가진 프로세스만 말을 걸 수 있고, 샌드박스가 이걸로 제한한다\n```\n",
    "file": "os/ipc.md",
    "solved": false,
    "review": 0,
@@ -871,6 +898,7 @@ body{
    "followups": [
     "Follow-up: 공유 메모리가 제일 빠른데 왜 다 그걸로 안 하나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -904,6 +932,7 @@ body{
    "followups": [
     "Follow-up: Spinlock이란?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -938,6 +967,7 @@ body{
    "followups": [
     "Follow-up: 스레드가 있는 프로세스에서 fork 하면?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -971,6 +1001,7 @@ body{
    "followups": [
     "Follow-up: Starvation과 Aging이란?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -1005,6 +1036,7 @@ body{
    "followups": [
     "Follow-up: 왜 이렇게 분리해놨나?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -1038,6 +1070,7 @@ body{
    "followups": [
     "Follow-up: TLB란?"
    ],
+   "fuAns": [],
    "approaches": []
   },
   {
@@ -1072,6 +1105,14 @@ body{
     "고정 크기 풀 대신 가변 크기를 지원하면 생기는 문제 (단편화) 와, 임베디드에서 동적 할당을 금지하는 이유는?",
     "double free 와 풀 밖 포인터 free 를 감지하려면 무엇을 추가하나? 비용은?",
     "캐시 라인 (64B) 정렬이 왜 필요할 때가 있나? DMA 버퍼라면?"
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -1108,6 +1149,14 @@ body{
     "블록 크기가 2 의 거듭제곱이 아니면 나눗셈·나머지 비용은? 임베디드에서 신경 쓰는 이유.",
     "플래시 (지우기 단위가 쓰기 단위보다 큼) 라면 이 모델이 어떻게 달라지나?"
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1143,6 +1192,14 @@ body{
     "락 없이 (lock-free) 바꾸려면 SPSC 와 MPMC 의 난이도 차이는? E01 링버퍼와 뭐가 다른가?",
     "구글 임베디드 폰스크린 1차 보고: \"스레드 간 데이터 전달 방법과 제약을 코딩\" (Reddit 1slod2k). 임베디드 제약 (동적 할당 금지, ISR 생산자) 이 붙으면 설계가 어떻게 바뀌나?"
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1177,6 +1234,14 @@ body{
     "버튼이 16개면 비트마스크로 한 번에 처리할 수 있나? 어떻게?",
     "디바운스 시간 (예: 20ms) 은 무엇으로 정하나? 너무 길면·짧으면?",
     "구글 HR 임베디드 준비 목록 \"Debounce a hardware button\" (Blind ce3lsrpe)."
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -1214,6 +1279,15 @@ body{
     "메시지 객체를 매번 new 하지 않고 풀에서 재사용하는 이유는 (obtain/recycle)?",
     "구글 HR 임베디드 준비 목록에 \"Write a simple version of Android Handler class\" 가 있다 (Blind ce3lsrpe). 15분 버전과 45분 버전을 구분해 보라."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1248,6 +1322,14 @@ body{
     "목적지가 메모리맵 레지스터 (volatile) 이면 이 구현을 그대로 써도 되나?",
     "수 MB 를 복사해야 하면 CPU 복사 대신 무엇을 쓰고, 그때 캐시는 어떻게 되나?",
     "컴파일러가 이 루프를 memcpy 호출로 바꿔 버리는 (재귀) 문제를 아는가? 어떻게 막나?"
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -1284,6 +1366,14 @@ body{
     "구조체 비트필드 (struct { uint32_t en:1; ... }) 로 레지스터를 매핑하지 않는 이유는?",
     "64비트 레지스터를 32비트 버스에서 두 번 읽으면 무엇이 깨지나?"
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1301,13 +1391,13 @@ body{
    "link": "",
    "desc": "고정 크기 바이트 링버퍼를 구현하라. 생산자 하나 (인터럽트 핸들러), 소비자 하나 (메인 루프) 가 동시에 접근한다. 동적 할당 금지. 블로킹 금지 (ISR 에서 호출된다).",
    "qs": [],
-   "md": "",
+   "md": "## 앵커: 이 네 줄이 전부다\n\n```cpp\n// 생산자 (ISR)\nbuf_[5] = 99;      // 데이터를 쓴다\ntail_ = 6;         // \"5번 칸 채웠다\" 는 신호\n\n// 소비자 (메인 루프)\nif (tail_ == 6)    // 신호를 본다\n    x = buf_[5];   // 데이터를 읽는다\n```\n\n소비자가 `tail_ == 6` 은 봤는데 `buf_[5]` 에서 **이전 바퀴에 쓰였던 값** 이 나올 수 있다.\n생산자가 두 줄을 다 실행했는데도 그렇다.\n\n아래 내용은 전부 이 네 줄을 고치는 이야기다.\n\n---\n\n## 1. 빌드 옵션만 바꿔 재현됐다\n\n| | 20만 바이트 SPSC 테스트 |\n|---|---|\n| `-O0` | 통과 |\n| `-O2` | 2회 연속 실패 (개수 불일치 · 순서 깨짐) |\n\n`-O0` 은 소스를 그대로 기계어로 옮기니 재배치도 캐싱도 없다.\n**우연히 돌아간 것이지 올바른 코드라서가 아니다.**\n\n실무 증상으로는 이렇게 나타난다.\n\n```\n디버그 빌드    잘 돌아감\n릴리즈 빌드    가끔 멈추거나 값이 이상함\n```\n\n-> 검증은 반드시 `-O2` 와 ThreadSanitizer 로 한다. `-O0` 통과는 증거가 아니다.\n\n---\n\n## 2. 컴파일러 잘못이 아니다\n\n최적화는 **\"한 스레드만 있다고 치고\"** 판단한다.\n\n평범한 `size_t head_` 는 다른 스레드가 건드린다는 정보를 담고 있지 않다.\n그래서 컴파일러는 \"이 루프 안에서 `head_` 를 바꾸는 코드가 없네\" 라고 보고 레지스터에 올려둔다.\n\nC++ 표준 규칙이다.\n\n> 두 스레드가 같은 변수에 접근하고 하나라도 쓰기면 -> **데이터 레이스**\n> 데이터 레이스가 있으면 -> **미정의 동작**\n\n미정의 동작이면 컴파일러는 뭘 해도 된다.\n**코드의 결함이지 컴파일러의 결함이 아니다.**\n\n---\n\n## 3. 적이 둘이다\n\n| | 증상 | 범인 |\n|---|---|---|\n| ① 캐싱 | 갱신이 **안 보임** | 컴파일러가 레지스터에 담아두고 재사용 |\n| ② 재배치 | 순서가 **뒤바뀜** | 컴파일러·CPU 가 명령 순서를 바꿈 |\n\n②가 앵커의 그 상황이다.\n`buf_[5] = 99` 보다 `tail_ = 6` 이 먼저 전달되면 소비자가 쓰레기를 읽는다.\n\n---\n\n## 4. volatile 로는 절반만 해결된다\n\n| | ① 캐싱 | ② 재배치 |\n|---|---|---|\n| `volatile` | 막음 | **못 막음** |\n| `atomic` | 막음 | 막음 |\n\n`volatile` = \"매번 메모리에서 읽고 써라\". **컴파일러에게만** 하는 말이다.\n\n두 가지가 남는다.\n\n- `volatile` 은 **volatile 끼리의 순서** 만 지킨다. `buf_[5] = 99` 는 평범한 쓰기라 울타리 밖이다\n- **CPU 에게는 아무 말도 안 한다.** 멀티코어에서 하드웨어가 순서를 바꾸면 그대로 당한다\n\n⚠️ C++ 의 `volatile` 은 **동기화 도구가 아니다.**\nJava 의 `volatile` 은 순서까지 보장해서 뜻이 다르다. 헷갈리기 쉬운 지점.\n\n---\n\n## 5. 왜 락을 못 쓰나\n\n문제 제약이 이렇다.\n\n```\npush 는 ISR 에서, pop 은 스레드에서 동시에 불릴 수 있다. 서로 기다리지 않는다\n블로킹 금지 (ISR 에서 호출된다)\n```\n\n**ISR** = Interrupt Service Routine. 하드웨어 신호가 오면 CPU 가 하던 일을 멈추고 뛰어가 실행하는 함수.\n여기서는 생산자가 ISR, 소비자가 메인 루프다.\n\nISR 안에서 뮤텍스를 잡으면 안 된다.\n\n```\n메인이 뮤텍스를 쥔 채 인터럽트에 가로채임\n   -> ISR 이 그 뮤텍스를 기다림\n   -> 뮤텍스를 쥔 메인은 ISR 때문에 진행 못 함\n   -> 영구 정지\n```\n\n그래서 이 문제는 **lock-free** 다.\n`#pragma` 도 답이 아니다. 컴파일러에게만 말하는 거라 `volatile` 과 같은 한계를 갖는다.\n\n---\n\n## 6. 답은 atomic + release/acquire\n\n`atomic` 만이 **컴파일러와 CPU 양쪽에** 동시에 말한다.\n\n```cpp\natomic<size_t> tail_{0};\n\ntail_.store(6, memory_order_release);   // 생산자\ntail_.load(memory_order_acquire)        // 소비자\n```\n\n각 줄의 뜻.\n\n```\nstore(6, release)   tail_ 에 6 을 쓴다.\n                    이 줄 위에서 쓴 값들을 먼저 전달하고 6 을 전달하라.\n\nload(acquire)       tail_ 을 읽는다.\n                    읽은 값이 6 이면, 상대가 6 을 쓰기 전에 쓴 값들도 전부 읽을 수 있게 하라.\n```\n\n**짝으로만 작동한다.**\n\n| | 결과 |\n|---|---|\n| 생산자만 release | 소비자 코어가 순서를 바꿈 |\n| 소비자만 acquire | 생산자 코어가 순서를 바꿈 |\n| 둘 다, **같은 변수** 에 | 보장됨 |\n\n변수가 다르면 연결되지 않는다.\n생산자가 `tail_` 에 release 로 쓰고 소비자가 `head_` 를 acquire 로 읽으면 아무 관계도 안 생긴다.\n\n링버퍼에는 쌍이 두 개 생긴다.\n\n| 변수 | 쓰는 쪽 | 읽는 쪽 | 전달하는 것 |\n|---|---|---|---|\n| `tail_` | 생산자 release | 소비자 acquire | \"데이터 넣었다\" |\n| `head_` | 소비자 release | 생산자 acquire | \"자리 비웠다\" |\n\n생산자도 `full()` 을 판단하려면 소비자가 얼마나 꺼냈는지 알아야 하므로 양방향이다.\n\n---\n\n## 7. 왜 기본값을 안 쓰나\n\n`atomic` 의 기본은 `seq_cst` (순차 일관성) 로 가장 강하고 가장 느리다.\n\n```\nseq_cst            모든 코어가 같은 순서로 봄.   무거운 배리어\nrelease/acquire    한 방향만 보장.             충분하고 빠름\nrelaxed            순서 보장 없음.             카운터 증가 같은 데만\n```\n\n링버퍼에 필요한 건 \"데이터 -> 인덱스\" 한 방향뿐이다.\n**ISR 은 빨리 끝나야 하므로 필요한 만큼만 쓴다.**\n\n---\n\n## 막혔던 자리 (중간 실패 기록)\n\n| 증상 | 원인 |\n|---|---|\n| `push(1)` 뒤 `size()` 가 4 | `%` 대신 `/` 를 씀 |\n| `pop` 이 `4` 를 먼저 반환 | 꺼내는 위치가 틀림 |\n| `size()` 가 `18446744073709551615` | `size_t` 는 부호 없음. 음수가 되면 큰 수로 돌아옴 |\n| `-O0` 통과 후 `-O2` 실패 | 위 1~6 번 내용 |",
    "file": "19_embedded/ring_buffer.cpp",
-   "solved": false,
-   "review": 0,
-   "time": "",
-   "space": "",
-   "note": "",
+   "solved": true,
+   "review": 2,
+   "time": "push · pop · size 전부 O(1)",
+   "space": "O(N)",
+   "note": "구조: head·tail 을 되돌리지 않고 올리기만 하는 atomic<size_t>. 칸은 & (N-1) ⭐️\n  - 비었다 tail == head, 꽉 참 tail - head == N. 플래그 없이 N 칸 전부 씀\n쓰기 주체 하나: tail 은 push 만, head 는 pop 만 쓴다 → 락 없이 됨 (SPSC 전제)\n순서: buf 에 쓴 뒤 tail 을 release, 상대 인덱스는 acquire 로 읽는다\n실수: magnet 플래그를 push·pop 양쪽이 씀 → 규칙 위반. -O0 통과 · -O2 실패 ⭐️\n상세: ring_buffer-review.md",
    "date": "2026-11-12",
    "pri": "★",
    "role": "구현",
@@ -1318,6 +1408,14 @@ body{
     "멀티코어에서 생산자·소비자가 다른 코어에 있으면 무엇을 추가해야 하나 (메모리 순서)?",
     "생산자가 둘이 되면 (MPSC) 어디가 깨지고 어떻게 고치나?",
     "크기를 2의 거듭제곱으로 제한한 이유와, 아닐 때의 구현은?"
+   ],
+   "fuAns": [
+    "**안전 조건.** 생산자 하나, 소비자 하나 (SPSC).\n이 전제를 벗어나 부르면 바이트가 사라지거나 순서가 꼬인다.\n\n**락 없이 되는 이유.** 변수마다 쓰는 쪽이 한 명뿐이다.\n\n| | 쓰는 변수 | 읽기만 |\n|---|---|---|\n| `push` | `tail` | `head` |\n| `pop` | `head` | `tail` |\n\n- 버퍼 칸도 같다. 빈 칸은 생산자만 쓰고 찬 칸은 소비자만 읽는다. `tail` 을 올리는 순간 그 칸이 소비자 쪽으로 넘어간다\n- 락은 같은 자리에 쓰는 사람이 둘일 때 필요하다. 여기는 없다\n- 남는 건 가시성과 순서뿐 → 6절 release/acquire. 락은 필요 없지만 atomic 은 필요하다\n\n**ISR 에서 뮤텍스를 못 쓰는 이유.** ISR 이 도는 동안 메인 루프는 멈춰 있다 (5절).\n\n**걸린 곳.**\n- \"싱글톤으로 들고 있어야\" → 세는 대상은 버퍼 개수가 아니라 생산자·소비자 수\n- \"push 와 pop 이 실제로 동시에 불리진 않는다\" → 불린다. 멀티코어는 같은 순간에, ISR 은 pop 중간에 끼어든다\n- 내 코드의 `magnet` 은 push·pop 양쪽이 쓴다. 이 규칙 위반",
+    "| 정책 | 맞는 상황 | 예시 |\n|---|---|---|\n| 새것 버림 | 중간이 빠지면 전체가 망가지는 데이터 | UART 명령 패킷 |\n| 옛것 덮어씀 | 최신 값만 의미 있는 데이터 | 센서 값, logcat 버퍼 |\n\n**구현 차이가 핵심.** 덮어쓰려면 `push` 가 `head` 를 올려야 한다.\n- `head` 에 쓰는 쪽이 둘이 된다 → 1번의 쓰기 주체 하나 규칙이 깨짐\n- 소비자가 읽는 칸을 생산자가 덮어쓸 수 있다\n- 그래서 lock-free 가 어렵다. 싱글코어면 `pop` 에서 인터럽트를 잠깐 끄고, 아니면 `head` 를 CAS 로",
+    "8비트 CPU 는 16비트 값을 두 번에 나눠 읽는다.\nISR 은 아무 때나 끼어든다.\n\n```\ntail = 0x00FF\n  메인: 하위 바이트 → 0xFF\n  (ISR: push. tail = 0x0100)\n  메인: 상위 바이트 → 0x01\n  읽은 값 = 0x01FF (511). 옛 값 255 도 새 값 256 도 아님\n```\n\n**torn read** 라고 부른다.\n이 값으로 `size()` 를 구하면 256개가 더 있다고 착각한다.\n\n**volatile 로는 안 된다.** \"매번 메모리에서 읽어라\" 일 뿐, 두 바이트를 한 번에 읽게 해주지 못한다.\n\n| 고치는 법 | 내용 |\n|---|---|\n| 인터럽트 끄고 읽기 | 가장 흔한 답 |\n| 인덱스를 8비트로 | 버퍼 256 이하면 한 번에 읽힘 |\n| 두 번 읽어 비교 | 상위·하위·다시 상위. 상위가 같을 때만 채택 |",
+    "2026-11-12 정리. 풀이 노트 6·7절 (이 파일 위쪽 6·7절).",
+    "**깨지는 곳.** `tail`.\n둘 다 `tail` 을 5 로 읽으면 같은 칸에 쓰고, 둘 다 6 으로 올려서 한 바이트가 사라진다.\n\n**스레드 생산자면.** 칸 쓰기 + `tail` 올리기를 뮤텍스로 감싼다. `pop` 은 그대로.\n\n**ISR 생산자면.** 뮤텍스 불가 → CAS (Compare-And-Swap).\n\n```\nCAS(tail, 5, 6)\n  tail 이 아직 5 면 → 6 으로 바꾸고 성공\n  누가 바꿨으면    → 아무것도 안 하고 실패. 다시 읽고 재시도\n```\n\n비교와 교체가 CPU 명령 하나다 (x86 `lock cmpxchg`, ARM `ldxr`/`stxr`).\nC++ 은 `compare_exchange_weak`.\n\n**함정. 칸 확보와 공개를 분리해야 한다.**\nCAS 는 변수 하나만 다룬다.\n순서가 \"CAS 로 칸 확보 → 칸에 쓰기\" 가 되고, 그 사이에 틈이 생긴다.\n틈에서 소비자가 `tail` 을 보면 아직 안 쓴 칸의 옛 값을 꺼낸다.\n→ 칸마다 `ready_` 플래그. 생산자는 쓰고 나서 release 로 켜고, 소비자는 `tail` 이 아니라 `ready_[head]` 를 acquire 로 본다.\n\n```cpp\nbool push(uint8_t v) {\n    size_t t = tail_.load(memory_order_relaxed);\n    do {\n        if (t - head_.load(memory_order_acquire) == N) return false;\n    } while (!tail_.compare_exchange_weak(t, t + 1));   // 칸 확보\n    buf_[t & (N - 1)] = v;\n    ready_[t & (N - 1)].store(true, memory_order_release); // 공개\n    return true;\n}\nbool pop(uint8_t& out) {\n    size_t h = head_.load(memory_order_relaxed);\n    if (!ready_[h & (N - 1)].load(memory_order_acquire)) return false;\n    out = buf_[h & (N - 1)];\n    ready_[h & (N - 1)].store(false, memory_order_relaxed);\n    head_.store(h + 1, memory_order_release);\n    return true;\n}\n// atomic<size_t> tail_, head_;  atomic<bool> ready_[N];\n```\n\n`-O2`, 생산자 둘 × 20만 바이트 × 20회 통과 (2026-11-14).\nThreadSanitizer 는 이 맥에서 시작 즉시 죽어 미확인.\n싱글코어 임베디드면 `push` 동안 인터럽트를 끄는 게 더 간단하다.\n\n**걸린 곳.**\n- \"store/release 는 O2 때만\" → 항상 필요. O2 에서 드러났을 뿐 (1절)\n- CAS 가 buf 쓰기까지 하는 줄 알았다 → 변수 하나만. 먼저 쓰고 CAS 하면 다른 생산자가 같은 칸을 덮어쓴다\n- 칸 확보만 하고 공개를 안 하면 소비자가 옛 값을 읽는다",
+    "**이유 1. 속도.** `x % N` → `x & (N - 1)`.\n- `%` 는 나눗셈. x86 수십 사이클, 나눗셈 회로 없는 MCU (Cortex-M0, AVR) 는 소프트웨어로 수십-수백 사이클. `&` 는 1 사이클\n- 마스크는 N - 1. N = 128 이면 `0x7F` (`0xFF` 는 256 용)\n\n**이유 2. 계속 올리기 인덱스.**\n`tail`·`head` 를 되돌리지 않고 올리기만 하고, 칸은 쓸 때 `& (N - 1)` 로 구한다.\n\n```\n비었다   tail == head\n꽉 찼다  tail - head == N\n개수     tail - head\n```\n\n플래그 없이 N 칸을 전부 쓴다.\n`tail` 이 타입 끝에서 넘쳐도 부호 없는 뺄셈은 맞게 나오는데, 칸 위치까지 맞으려면 N 이 2³² 를 나눠야 한다 → 2의 거듭제곱.\n\n**아닐 때.** `if (++tail == N) tail = 0;` 로 되돌린다.\n그러면 `tail == head` 가 빈 것과 꽉 찬 것 둘 다라서\n- 플래그를 하나 두거나 (내 `magnet`)\n- 한 칸을 비워두고 N - 1 칸만 쓴다. 문제 제약의 \"N - 1 개만 쓰는 구현\" 이 이것\n\n**걸린 곳.**\n- `%` 를 곱셈으로 기억 → 나눗셈. 상수 N 이면 컴파일러가 곱셈+시프트로 바꿔줄 뿐\n- 계속 올리면 `tail` 이 N 을 넘어서 체크가 필요하다고 생각 → 칸은 항상 `& (N - 1)` 로 구하니 불필요"
    ],
    "approaches": []
   },
@@ -1354,6 +1452,14 @@ body{
     "콜백 안에서 add 나 cancel 을 부르면 (재진입) 어디가 깨질 수 있나?",
     "구글 HR 목록의 \"Kernel function to schedule a callback at a specific time\" 과 리눅스 hrtimer 의 자료구조는?"
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1389,6 +1495,14 @@ body{
     "공정성 (먼저 기다린 쪽이 먼저 잡기) 을 보장하려면 어떻게 바꾸나 (ticket lock)?",
     "대기 중에 pause / wfe 를 넣는 이유는?"
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1422,6 +1536,13 @@ body{
     "입력이 const 문자열 (수정 불가) 이면 어떻게 하나?",
     "구분자 집합이 크면 (수백 개) 매 문자마다 strchr 하는 비용을 어떻게 줄이나?",
     "실제 면접 사례: 25분에 완성했는데 \"2번째 문제를 못 받아\" 탈락 (1abqfx1). 15분 안에 끝내려면 무엇을 생략하고 무엇을 말로만 하나?"
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -1458,6 +1579,14 @@ body{
     "읽기 3회가 부담이면 (고빈도 호출) 어떻게 줄이나?",
     "구글 임베디드 폰스크린 1차 보고 (Jointaro 2023-12). 10분 안에 끝낼 수 있어야 한다."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -1488,6 +1617,9 @@ body{
    "role": "재복습",
    "followups": [
     "육지 셀 하나가 주어질 때 그 섬 안의 \"호수\" (물로 둘러싸인 0 영역) 를 전부 찾아라. 호수 안에 다시 육지가 있으면? 출처: LC discuss 8276966 (2026-05, L4 온사이트)"
+   ],
+   "fuAns": [
+    ""
    ],
    "approaches": [
     {
@@ -1526,6 +1658,9 @@ body{
    "followups": [
     "구글 L4 라운드 1 이 \"max area of island 의 변형 DP\" 였다 (Reddit 1wcqea2). 어떤 제약을 붙이면 DP 가 되나?"
    ],
+   "fuAns": [
+    ""
+   ],
    "approaches": [
     {
      "name": "DFS Flood Fill",
@@ -1562,6 +1697,7 @@ body{
    "pri": "★",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Multi-source BFS",
@@ -1598,6 +1734,7 @@ body{
    "pri": "★",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Multi-source BFS",
@@ -1639,6 +1776,7 @@ body{
    "pri": "★",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Dijkstra",
@@ -1677,6 +1815,9 @@ body{
    "followups": [
     "정렬된 두 목록의 합집합을 반환하라 (986 변형). K 개 목록이면? 메모리에 안 들어오는 스트리밍이면? 출처: Reddit 1vr9jk5 (2026-08)"
    ],
+   "fuAns": [
+    ""
+   ],
    "approaches": [
     {
      "name": "Sort + Merge",
@@ -1713,6 +1854,7 @@ body{
    "pri": "★",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Three-phase Linear",
@@ -1749,6 +1891,7 @@ body{
    "pri": "★",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Binary Search on Answer",
@@ -1789,6 +1932,11 @@ body{
     "스레드 안전하게 바꾸면 어디를 잠그나? 락 하나 vs 샤딩.",
     "LFU 변형: 값이 [content, score] 이고 접근마다 score +1, 퇴출은 score 최소. (LC discuss 8265899, 2026-05)"
    ],
+   "fuAns": [
+    "",
+    "",
+    ""
+   ],
    "approaches": [
     {
      "name": "HashMap + Doubly Linked List",
@@ -1824,6 +1972,7 @@ body{
    "pri": "",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Trie Node (children map + isEnd)",
@@ -1859,6 +2008,7 @@ body{
    "pri": "",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "DP (2D 또는 1D)",
@@ -1901,6 +2051,7 @@ body{
    "pri": "",
    "role": "재복습",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "DP Bottom-Up",
@@ -1940,6 +2091,11 @@ body{
     "정방이 아닌 m x n 이미지면 in-place 가 가능한가?",
     "이 C++ 코드를 GPU 로 옮기면 어디를 병렬화하나? (Reddit 1rm05al 의 임베디드 라운드 꼬리질문)"
    ],
+   "fuAns": [
+    "",
+    "",
+    ""
+   ],
    "approaches": [
     {
      "name": "Transpose + Reverse rows",
@@ -1975,6 +2131,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Greedy + Max-Heap",
@@ -2011,6 +2168,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Sort + Min-Heap (end times)",
@@ -2047,6 +2205,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Min-Heap",
@@ -2088,6 +2247,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "HashMap of point counts",
@@ -2124,6 +2284,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "DP (0/1 Knapsack)",
@@ -2159,6 +2320,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "DFS + Memoization",
@@ -2196,6 +2358,7 @@ body{
    "pri": "★",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "HashMap + Min-Heap",
@@ -2237,6 +2400,7 @@ body{
    "pri": "",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Boundary shrinking",
@@ -2272,6 +2436,7 @@ body{
    "pri": "",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "DP (1D)",
@@ -2307,6 +2472,7 @@ body{
    "pri": "",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Dijkstra-like (min-heap)",
@@ -2348,6 +2514,7 @@ body{
    "pri": "",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Brian Kernighan's Algorithm",
@@ -2383,6 +2550,7 @@ body{
    "pri": "",
    "role": "우선 A",
    "followups": [],
+   "fuAns": [],
    "approaches": [
     {
      "name": "Trie + DFS for wildcard",
@@ -2423,6 +2591,12 @@ body{
     "시간 복잡도의 로그 항이 입력 개수가 아니라 값의 범위에 의존하는 이유를 설명하라.",
     "출처: Google L5 코딩 1 (Reddit 1vr9jk5, 2026-08). 위 세 꼬리질문이 그대로 나왔다."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2457,6 +2631,13 @@ body{
     "\"각 목록 안의 구간은 서로 겹치지 않는다\" 는 가정을 빼면 무엇을 먼저 해야 하나?",
     "출처: Google L5 코딩 2 (Reddit 1vr9jk5, 2026-08) 는 합집합 변형으로 출제. 위 꼬리질문 순서 그대로."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2489,6 +2670,12 @@ body{
     "작업이 스트림으로 들어오고 (끝나는 시각 순 아님) 매번 현재까지의 최대 이익을 물으면?",
     "동시에 최대 2개까지 겹쳐도 된다면 (기계 2대) 어떻게 바뀌나?",
     "출처: Google 온사이트 2 (Reddit 1wtoc1o, 2026-09). 같은 라운드 두 번째 문제가 G05 (범위 유일성 질의)."
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -2523,6 +2710,12 @@ body{
     "nums 에 음수가 있으면 어느 풀이가 깨지나? 왜?",
     "출처: 구글 태그 빈도 30위 (Hard 중 최상위), 2026 출제 언급 (LC discuss 8546037), Google 50 목록."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2556,6 +2749,12 @@ body{
     "가중치를 반대로 (가장 깊은 것이 1) 주면 (364. Nested List Weight Sum II) 한 번의 순회로 되나?",
     "출처: Google L5 코딩 3 (Reddit 1vr9jk5, 2026-08). 문자열 입력 변형과 예시를 손으로 따라가 보라는 요구가 있었다."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2588,6 +2787,12 @@ body{
     "방 번호가 작은 것 우선이 아니라 \"가장 오래 비어 있던 방\" 우선이면 자료구조가 어떻게 바뀌나?",
     "방 대신 식당 테이블 (크기가 다름) 에 파티 (인원수) 를 배정하는 변형이라면? (Reddit 1vam78s · LC 7631077 추정)",
     "출처: Google 50 목록. L5 온사이트 \"tricky 변형\" 으로 이 한 라운드에서 탈락한 보고 (LC discuss 7631077, 2026-03)."
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -2623,6 +2828,13 @@ body{
     "여러 서버 인스턴스가 공유하는 분산 rate limiter 라면 저장소를 어디에 두나?",
     "출처: Google L5 BLR 출제 (LC discuss 7610148, 2026-02). rate limiter 설계 비교는 L5 FE (LC 7858030)."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2656,6 +2868,12 @@ body{
     "칸마다 통과 비용이 다르면 (가중치) 알고리즘이 무엇으로 바뀌나?",
     "출처: 구글 HR 임베디드 준비 목록 \"Shortest distance between two points on a map\" (Blind ce3lsrpe). 격자 최단 경로의 기본형."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2687,6 +2905,11 @@ body{
     "칸 하나의 방향을 아무 방향으로 바꿀 수 있다면 도달 가능하게 만들 수 있나? 브루트포스 (칸마다 4방향 시도) 의 복잡도는? 더 나은 방법은?",
     "변경 가능한 칸이 k 개라면?",
     "출처: Google L5 라운드 1 (Reddit 1xsop60, 2026-11). 기본 문제는 풀었지만 꼬리질문을 브루트포스로 내고 시간이 끝나 탈락. 댓글: \"앞으로 한 번, 뒤로 한 번 탐색해서 맞붙이면 된다\"."
+   ],
+   "fuAns": [
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -2721,6 +2944,12 @@ body{
     "출발이 \"첫 행의 어느 칸이든\" 일 때 다중 출발을 BFS 에 어떻게 넣나?",
     "출처: Google L5 온사이트 코딩 1 (Reddit 1vhkj5f) 과 prachub 2026-07 L5 코딩 2. 꼬리질문은 prachub 보고."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2753,6 +2982,12 @@ body{
     "고양이가 여러 마리면 각 칸의 \"가장 가까운 고양이까지 거리\" 를 어떻게 한 번에 구하나?",
     "거리를 맨해튼이 아니라 \"격자 위 실제 이동 거리 (물 우회 포함)\" 로 바꾸면 무엇이 달라지나?",
     "출처: Google 폰스크린 1 (Reddit 1wtoc1o, 2026-09) 과 prachub 2026-09. 두 번 보고된 문제."
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   },
@@ -2788,6 +3023,13 @@ body{
     "광고 변형: insertAd(content, score) / getAd() 는 최고 점수를 반환하고 점수를 1 깎으며 같은 광고를 연속 반환하지 않는다 (LC discuss 8276966, 2026-05). 같은 구조인가?",
     "출처: Google L5 라운드 1 코딩 (Reddit 1vhkj5f, 2026-08). 쿨다운 변형은 prachub 2026-07 L5."
    ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
    "approaches": []
   },
   {
@@ -2820,6 +3062,12 @@ body{
     "전처리의 시간·공간 복잡도는? 배열이 갱신되면 (원소 하나 변경) 전처리를 어떻게 유지하나?",
     "\"유일한가\" 대신 \"서로 다른 값의 개수\" 를 물으면 O(1) 이 여전히 가능한가?",
     "출처: Google 온사이트 2 두 번째 문제 (Reddit 1wtoc1o, 2026-09). 첫 문제는 #1235."
+   ],
+   "fuAns": [
+    "",
+    "",
+    "",
+    ""
    ],
    "approaches": []
   }
@@ -3045,10 +3293,11 @@ function noteHTML(s){
   return out;
 }
 var MDCACHE = {};
-function mdHTML(c){
-  if(MDCACHE[c.id]) return MDCACHE[c.id];
+function mdHTML(c){ return mdRender(c.md, c.id); }
+function mdRender(md, key){
+  if(MDCACHE[key]) return MDCACHE[key];
   var out, math = [];
-  var src = (c.md||"")
+  var src = (md||"")
     .replace(/\$\$([\s\S]+?)\$\$/g, function(_,m){ math.push("$$"+m+"$$"); return "QQMATH"+(math.length-1)+"QQ"; })
     .replace(/\$([^$\n]+?)\$/g, function(_,m){ math.push("$"+m+"$"); return "QQMATH"+(math.length-1)+"QQ"; });
   if(window.marked && marked.parse){
@@ -3057,12 +3306,18 @@ function mdHTML(c){
   if(!out) out = noteHTML(src);
   out = out.replace(/QQMATH(\d+)QQ/g, function(_,i){ return esc(math[+i]); });
   out = out.replace(/<table>/g,'<div class="tbl"><table>').replace(/<\/table>/g,'</table></div>');
-  MDCACHE[c.id] = out; return out;
+  MDCACHE[key] = out; return out;
 }
 function fuHTML(c){
   if(!c.followups || !c.followups.length) return "";
-  return '<p class="b-label fu">꼬리질문 <span class="mono">'+c.followups.length+'</span></p><ol class="fulist">'
-    + c.followups.map(function(q){ return '<li>'+esc(q)+'</li>'; }).join("") + '</ol>';
+  var ans = c.fuAns || [];
+  var nAns = ans.filter(function(a){ return a; }).length;
+  return '<p class="b-label fu">꼬리질문 <span class="mono">'+c.followups.length+'</span>'
+    + (nAns?'<span class="fu-sub">눌러서 답 보기</span>':'')+'</p><ol class="fulist">'
+    + c.followups.map(function(q,i){
+        if(!ans[i]) return '<li>'+esc(q)+'</li>';
+        return '<li><details class="fu-q"><summary>'+esc(q)+'</summary><div class="md fu-ans">'+mdRender(ans[i], c.id+":fu"+i)+'</div></details></li>';
+      }).join("") + '</ol>';
 }
 function barHTML(){
   return '<div class="s-bar"><button class="close" id="close2" aria-label="닫기">×</button><button id="prev"'+(pos===0?" disabled":"")+'>← 이전</button><button class="flip" id="flip">뒤집기</button><button id="next"'+(pos===queue.length-1?" disabled":"")+'>다음 →</button></div>';
@@ -3106,6 +3361,7 @@ function drawStudy(){
     + cx
     + '<div class="note">'+noteHTML(c.note||"")+'</div>'
     + fuHTML(c)
+    + (c.md?'<details class="appr rvnote"><summary>풀이 노트</summary><div class="md">'+mdRender(c.md, c.id+":rv")+'</div></details>':'')
     + ap
     + '</div></div>';
 
@@ -3113,6 +3369,7 @@ function drawStudy(){
     + '<div class="stage"><div class="card'+(flipped?" flipped":"")+'" data-r="'+r+'" id="card">'+front+back+'</div></div>'
     + barHTML();
   ui.last = c.id; save();
+  study.querySelectorAll(".md").forEach(renderMath);
 }
 function drawStudyMD(c){
   var r = c.solved ? c.review : 0;
@@ -3160,6 +3417,7 @@ study.addEventListener("click", function(e){
   if(t.closest("#next")){ go(1); return; }
   if(t.closest("#flip")){ flip(); return; }
   if(t.closest("summary")) return;
+  if(t.closest("details")) return;
   if(t.closest(".face")){ flip(); return; }
 });
 document.addEventListener("keydown", function(e){
