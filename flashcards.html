@@ -3372,11 +3372,11 @@ body{
     }
    ],
    "solved": true,
-   "review": 1,
-   "time": "",
-   "space": "",
-   "note": "직접 풀이 성공 (12분)\n접근법 상세 노트는 남기지 않음",
-   "date": "2026-03-11",
+   "review": 2,
+   "time": "O(N log N)",
+   "space": "O(N)",
+   "note": "end 가 큰 구간이 앞에 오게 정렬해 두고, 그 앞쪽 구간들을 하나씩 채워 간다.\n정렬 한 줄:\n  sort(intervals.begin(), intervals.end(), CMP);\n비교 함수는 클래스 안이라 static 으로 선언한다:\n  static bool CMP(vector<int>& A, vector<int>& B) {\n      if (A[1] != B[1]) return A[1] > B[1];\n      return A[0] > B[0];\n  }\n첫 풀이 2026-03-11 (12분). 재풀이 2026-11-15 통과",
+   "date": "2026-11-15",
    "pri": ""
   },
   {
@@ -3405,11 +3405,11 @@ body{
     }
    ],
    "solved": true,
-   "review": 1,
-   "time": "",
-   "space": "",
-   "note": "직접 풀이 성공 (22분)\n접근법 상세 노트는 남기지 않음",
-   "date": "2026-03-11",
+   "review": 2,
+   "time": "O(N)",
+   "space": "O(N)",
+   "note": "⚠️ 생각보다 케이스 분류가 많이 필요한 문제라 예외 처리를 확실히 하기가 어렵다.\n첫 풀이 2026-03-11 (22분)\n재풀이 2026-11-15 통과",
+   "date": "2026-11-15",
    "pri": ""
   },
   {
