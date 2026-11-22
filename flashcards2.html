@@ -234,6 +234,7 @@ body{
 /* ───────── desktop: list | card ───────── */
 .s-empty{flex:1;display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:40px}
 .s-empty kbd{font-family:"IBM Plex Mono",monospace;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--ink-2)}
+@media (max-width:899px){ .side-toggle{display:none} }
 @media (min-width:900px){
   body{display:grid;grid-template-columns:420px minmax(0,1fr);height:100vh;overflow:hidden}
   #root{overflow-y:auto;height:100vh;border-right:1px solid var(--line)}
@@ -244,6 +245,13 @@ body{
   .card{max-width:640px}
   .s-bar{max-width:640px;margin:0 auto;width:100%;padding-bottom:18px}
   .s-bar .close{display:none}
+  .side-toggle{display:grid;position:fixed;top:14px;left:406px;z-index:30;width:28px;height:28px;border-radius:8px;place-items:center;
+    border:1px solid var(--line);background:var(--card);color:var(--ink-2);font-size:13px;cursor:pointer}
+  .side-toggle:hover{color:var(--ink);background:var(--card-2)}
+  body.nolist{grid-template-columns:minmax(0,1fr)}
+  body.nolist #root{display:none}
+  body.nolist .side-toggle{left:10px}
+  body.nolist .study .s-top{padding-left:50px}
 }
 @media (max-width:480px){
   .f-body{padding:16px 18px 18px}
@@ -255,6 +263,7 @@ body{
 
 <div id="root"></div>
 <div id="study" class="study" aria-hidden="true"></div>
+<button id="sideToggle" class="side-toggle" type="button"></button>
 
 <script id="app-doc" type="text/plain">
 면접 1 카드 (Google L5 Android platform/OS + C++ 코딩, 60분) 데이터 규약
@@ -4013,6 +4022,15 @@ study.addEventListener("touchend", function(e){
   if(TRACKNAME[tr]){ ui.track = tr; ui.cat = "all"; if(want.indexOf(":")>=0) ui.hashOpen = want; }
 })();
 applyTheme();
+var sideBtn = document.getElementById("sideToggle");
+function applySide(){
+  document.body.classList.toggle("nolist", !!ui.hideList);
+  sideBtn.textContent = ui.hideList ? "▶" : "◀";
+  sideBtn.title = ui.hideList ? "목록 보이기" : "목록 숨기기";
+  sideBtn.setAttribute("aria-label", sideBtn.title);
+}
+sideBtn.addEventListener("click", function(){ ui.hideList = !ui.hideList; save(); applySide(); });
+applySide();
 render();
 if(DESK.matches) drawEmpty();
 if(ui.hashOpen){ var id = ui.hashOpen; delete ui.hashOpen; var fl = /!$/.test(location.hash); open(id); if(fl){ flipped=true; var cd=study.querySelector(".card"); if(cd) cd.classList.add("flipped"); } }
