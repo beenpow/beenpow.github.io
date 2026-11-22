@@ -180,6 +180,7 @@ body{
 .md .tbl{overflow-x:auto;margin:10px 0;-webkit-overflow-scrolling:touch}
 .md table{border-collapse:collapse;font-size:13px;min-width:100%}
 .md th,.md td{border:1px solid var(--line-soft);padding:6px 8px;text-align:left;vertical-align:top}
+.md td:first-child{word-break:keep-all;overflow-wrap:normal;min-width:4.5em}
 .md th{background:var(--card-2);font-weight:600;white-space:nowrap}
 .md hr{border:0;border-top:1px solid var(--line-soft);margin:16px 0}
 .md a{color:var(--accent)}
@@ -3165,9 +3166,9 @@ body{
     "Q4: Triton 은 CUDA 와 무엇이 다르고 왜 쓰나요?",
     "Follow-up: 작은 배치에서 GPU 가 놀고 있다면 어디를 의심하나요?"
    ],
-   "md": "> THEORY · gpu · T2  \n> 구현 → engine/vllm/cuda_graphs_torch_compile.md\n\n## Q1: kernel · grid · block 을 설명하고, 왜 launch 자체에 비용이 드나요?\n\n**30초.** kernel 은 GPU 에서 돌리는 함수, grid 는 그 kernel 의 block 들 전체, block 은 함께 SM 하나에 올라가 shared memory 를 공유하는 스레드 묶음이다.\nlaunch 는 CPU 가 드라이버를 거쳐 GPU 에 \"이 kernel 을 이 grid 로 돌려라\" 를 넘기는 것이라 5-10 μs 가 든다.\n\nkernel 하나가 1 μs 짜리면 launch 가 본체보다 길다.\ndecode 한 스텝은 kernel 수백 개(레이어마다 matmul·norm·attention·activation)라 launch 만 수 ms 가 된다.\n7B decode 스텝의 이론 하한이 4 ms 인데 launch 가 그만큼이면 GPU 는 절반을 논다.\n\n## Q2: kernel fusion 은 무엇을 없애나요? LayerNorm + residual 을 합치면 왜 빨라지나요?\n\n**30초.** 중간 결과를 HBM 에 쓰고 다시 읽는 왕복을 없앤다.\nLayerNorm 과 residual 을 합치면 x 를 한 번 읽어 x + f(x) 를 계산하고 바로 정규화해 한 번만 쓴다.\n\n따로 하면 residual 커널이 읽기 2 번·쓰기 1 번, LayerNorm 커널이 읽기 1 번·쓰기 1 번이다.\n합치면 읽기 2 번·쓰기 1 번이다.\nelementwise 연산은 전부 memory-bound 라 바이트가 그대로 시간이다.\nlaunch 횟수도 2 → 1 이다. ⭐️\nvLLM 의 `fused_add_rms_norm`, SwiGLU 의 `silu_and_mul` 이 이것이다.\n\n## Q3: CUDA graph 는 어떤 오버헤드를 없애나요? 왜 decode 에 특히 효과가 있나요?\n\n**30초.** kernel launch 열 전체를 한 번 녹화(capture)해두고 다음부터는 \"이 그래프 재생\" 한 번으로 수백 개 kernel 을 띄운다.\nCPU 의 launch 오버헤드가 스텝당 1 번으로 준다.\n\ndecode 는 매 스텝 같은 kernel 열을 같은 모양으로 돌린다(배치 크기만 다름).\n그래서 배치 크기별로 그래프를 미리 잡아두고 재생한다.\nprefill 은 시퀀스 길이가 매번 달라 모양이 바뀌어 잡기 어렵다.\n작은 배치 decode 에서 CPU 오버헤드가 GPU 시간보다 클 때 2-3 배 빨라진다.\n대가는 입력 텐서 주소가 고정이어야 해서 메모리를 미리 잡아두는 것이다.\n\n## Q4: Triton 은 CUDA 와 무엇이 다르고 왜 쓰나요?\n\n**30초.** Python 으로 kernel 을 쓰면 컴파일러가 CUDA 로 바꿔주는 언어다.\n스레드 하나가 아니라 블록 단위로 생각하게 해서 메모리 coalescing·shared memory 관리를 컴파일러가 대신한다.\n\nCUDA 는 스레드 하나의 코드를 쓰고 32 개가 어떻게 메모리를 치는지 사람이 맞춘다.\nTriton 은 \"이 블록이 이 타일을 처리한다\" 만 쓰면 된다.\nFlashAttention 급 성능은 CUDA 가 여전히 우세지만, fusion 커널·양자화 커널 같은 건 Triton 으로 하루에 짠다.\nvLLM 의 attention 백엔드 하나와 MoE 커널 일부가 Triton 이다.\n\n## Follow-up: 작은 배치에서 GPU 가 놀고 있다면 어디를 의심하나요?\n\n**30초.** CPU 오버헤드(launch · Python · 스케줄링)가 GPU 시간을 넘어서 GPU 가 다음 kernel 을 기다리는 상태다.\n프로파일에서 kernel 사이 빈 틈(gap)으로 보인다.\n\n배치 1 decode 는 kernel 하나가 수 μs 라 launch 5 μs 가 틈이 된다.\n처방은 CUDA graph, fusion, 그리고 CPU 쪽을 다른 프로세스로 빼는 것(vLLM V1 의 EngineCore 분리)이다.\nGPU 사용률 지표가 낮은데 느리면 거의 이것이다.\n\n",
+   "md": "> THEORY · gpu · T2  \n> 구현 → engine/vllm/cuda_graphs_torch_compile.md\n\n## Q1: kernel · grid · block 을 설명하고, 왜 launch 자체에 비용이 드나요?\n\n**30초 답**\n\n- kernel 은 GPU 에서 여러 스레드가 같이 실행하는 함수다.\n- block 은 SM 하나에 같이 올라가 shared memory 를 공유하는 스레드 묶음이고, grid 는 kernel 한 번 실행에 쓰이는 block 전체다.\n- launch 는 CPU 가 드라이버를 거쳐 GPU 에 실행을 요청하는 일이라 5-10 μs 가 든다.\n\n**용어**\n\n| 용어 | 뜻 |\n|---|---|\n| kernel | GPU 에서 실행하는 함수. 실행 주체가 아니고 OS 커널과도 다른 말 |\n| thread | kernel 코드를 실행하는 단위 하나 |\n| warp | 같은 block 안 스레드 32 개 묶음. 하드웨어가 실제로 실행하는 단위 |\n| block | 협업하는 스레드 묶음. shared memory 와 `__syncthreads()` 를 같이 씀 |\n| grid | kernel 한 번 실행의 block 전체 |\n\n**스레드가 맡을 칸은 코드가 정한다**\n\n```cpp\nint i = blockIdx.x * blockDim.x + threadIdx.x;  // block 1, 크기 4, thread 2 → 6\n```\n\n- 스레드 번호와 배열 인덱스는 자동으로 연결되지 않는다.\n- 보통 위 식으로 스레드마다 한 칸씩 맡긴다.\n\n**메모리 두 가지**\n\n| 종류 | 누가 보나 | 특징 |\n|---|---|---|\n| global memory | 모든 block | 크고 느림. block 끼리 주고받는 통로 |\n| shared memory | 같은 block 만 | 작고 빠름. 여러 번 쓰는 데이터를 올려두는 작업대 |\n\n- shared memory 에 나눠 쓴 뒤 서로 읽으려면 `__syncthreads()` 배리어로 기다린다.\n- 배리어는 \"모두 도착할 때까지 대기\", 뮤텍스는 \"한 번에 하나만 들어감\" 이다.\n- `__syncthreads()` 는 block 안에서만 기다린다. 일부 스레드만 들어가는 if 안에 두면 안 된다.\n\n**launch 비용이 문제인 이유**\n\n- kernel 하나가 1 μs 짜리면 launch 가 본체보다 길다.\n- decode 한 스텝은 kernel 수백 개다 (레이어마다 matmul · norm · attention · activation).\n- 그래서 launch 만 수 ms 가 된다.\n- 7B decode 스텝의 이론 하한이 4 ms 인데 launch 가 그만큼이면 GPU 는 절반을 논다.\n\n## Q2: kernel fusion 은 무엇을 없애나요? LayerNorm + residual 을 합치면 왜 빨라지나요?\n\n**30초 답**\n\n- 중간 결과를 HBM 에 쓰고 다시 읽는 왕복과 launch 횟수를 없앤다.\n- residual 과 norm 을 합치면 x + f(x) 를 계산한 값을 레지스터에 둔 채 바로 정규화하고 한 번만 쓴다.\n\n**바이트 계산**\n\n| | 읽기 | 쓰기 | launch |\n|---|---|---|---|\n| 따로 (residual 커널 + norm 커널) | 2 + 1 = 3 | 1 + 1 = 2 | 2 |\n| 합침 | 2 | 1 | 1 |\n\n- elementwise 연산은 전부 memory-bound 라 줄어든 바이트가 그대로 시간이다. ⭐️\n- 가장 쉬운 예: `x + 1` 커널과 `* 2` 커널을 `(x + 1) * 2` 한 커널로.\n- 합치는 주체는 개발자 또는 `torch.compile` 같은 도구다. nvcc 가 알아서 합치지는 않는다.\n\n**vLLM 예시**\n\n| 함수 | 합치는 것 |\n|---|---|\n| `fused_add_rms_norm` | residual 덧셈 + RMSNorm |\n| `silu_and_mul` | SiLU(a) * b (SwiGLU 의 앞부분) |\n\n- residual: `x + f(x)`. Transformer 블록마다 있다.\n- LayerNorm 은 평균을 빼고 분산으로 나눈다. RMSNorm 은 평균을 빼지 않고 제곱평균의 제곱근으로 나눈다.\n- SiLU(x) = x · sigmoid(x). ReLU 와 달리 음수를 조금 남기고 부드럽다.\n\n## Q3: CUDA graph 는 어떤 오버헤드를 없애나요? 왜 decode 에 특히 효과가 있나요?\n\n**30초 답**\n\n- kernel launch 열 전체를 한 번 녹화(capture)해두고, 다음부터는 \"이 그래프 재생\" 요청 한 번으로 수백 개 kernel 을 띄운다.\n- CPU launch 오버헤드가 스텝당 1 번으로 준다.\n- GPU 계산량 자체는 그대로다.\n\n**무엇인가**\n\n- GPU 작업과 의존관계를 미리 등록한 DAG 다. 예: A → B → C.\n- 의존 있는 작업은 순서대로, 독립 작업은 병렬로 돈다.\n- kernel 을 연속 호출한다고 저절로 그래프가 되지는 않는다. capture 해야 한다.\n\n**fusion 과의 차이**\n\n| | 하는 일 | 줄이는 것 |\n|---|---|---|\n| fusion | kernel 자체를 하나로 합침 | launch 횟수 + HBM 왕복 |\n| CUDA graph | 별도 kernel 들을 묶어 한 번에 요청 | launch 요청 비용만 |\n\n**왜 decode 인가**\n\n- decode 는 매 스텝 같은 kernel 열을 같은 모양으로 돌린다. 달라지는 건 배치 크기뿐이다.\n- 그래서 배치 크기별로 그래프를 미리 잡아두고 재생한다.\n- prefill 은 프롬프트 길이가 매번 달라 모양이 바뀌므로 잡기 어렵다.\n- 작은 배치 decode 에서 CPU 오버헤드가 GPU 시간보다 클 때 2-3 배 빨라진다.\n\n**배치 크기별 그래프** (헷갈렸던 부분)\n\n- 배치 크기 = 같이 처리하는 요청 수. 그래프 수나 kernel 수가 아니다.\n- \"8 용 그래프\" 는 요청 8 개분 데이터를 처리하도록 잡은 그래프 하나다.\n- 8 용과 16 용은 같은 모델 계산을 다른 크기로 잡은 별도 그래프다.\n\n```text\n요청 8 개분 입력 → [A → B → C] → 결과 8 개   (그래프 하나, 재생 한 번)\n```\n\n**대가: 입력 주소 고정**\n\n- 그래프는 읽을 메모리 주소까지 기억한다.\n- 그래서 입력 버퍼를 미리 할당해두고 주소는 그대로, 내용만 바꿔 넣는다.\n- 그 버퍼만큼 메모리를 계속 잡아둬야 한다.\n- CPU 의 pinned memory 와는 다른 얘기다.\n\n## Q4: Triton 은 CUDA 와 무엇이 다르고 왜 쓰나요?\n\n**30초 답**\n\n- GPU kernel 을 Python 기반 전용 문법으로 쓰는 언어 + 컴파일러다.\n- 스레드 하나가 아니라 타일(데이터 묶음) 단위로 연산을 쓰고, 스레드 배치 · coalescing · shared memory 관리는 컴파일러가 맡는다.\n\n**CUDA vs Triton**\n\n| | CUDA | Triton |\n|---|---|---|\n| 쓰는 단위 | 스레드 하나의 코드 | \"이 블록이 이 타일을 처리\" |\n| 메모리 접근 | 32 개가 어떻게 치는지 사람이 맞춤 | 컴파일러가 접근 코드 생성 |\n| 성능 | 세밀한 튜닝 가능. FlashAttention 급은 여전히 우세 | 높은 성능 가능, 작업 따라 다름 |\n| 개발 속도 | 느림 | fusion · 양자화 커널을 하루에 |\n\n- 일반 Python 코드가 GPU 에서 도는 게 아니다. 작성하는 건 여전히 GPU kernel 이다.\n- 개발자는 데이터 범위와 연산을 정한다. 접근 패턴은 여전히 성능에 중요하다.\n- vLLM 의 attention 백엔드 하나와 MoE 커널 일부가 Triton 이다.\n\n## Follow-up: 작은 배치에서 GPU 가 놀고 있다면 어디를 의심하나요?\n\n**30초 답**\n\n- CPU 쪽(launch · Python · 스케줄링)이 늦어서 GPU 가 다음 kernel 을 기다리는 상태를 의심한다.\n- 프로파일에서 kernel 사이 빈 틈(gap)으로 보인다.\n\n**확인**\n\n- 프로파일러에서 GPU kernel 사이 빈 구간과 같은 시점의 CPU 활동을 같이 본다.\n- 배치 1 decode 는 kernel 하나가 수 μs 라 launch 5 μs 가 그대로 틈이 된다.\n- GPU 사용률이 낮다는 것만으로 단정하지 않는다. 낮은데 느리면 거의 이것이지만 틈을 확인한다.\n\n**처방**\n\n| 처방 | 효과 |\n|---|---|\n| CUDA graph | kernel 마다 보내던 요청을 그래프 재생 한 번으로 |\n| kernel fusion | kernel 수 자체를 줄여 요청 횟수 + HBM 왕복 감소 |\n| CPU 작업 분리 | 준비 작업을 다른 프로세스로. 예: vLLM V1 의 EngineCore 분리 |\n\n- 분리해도 준비 작업은 없어지지 않는다. 다른 코어가 병렬로 맡을 뿐이다.\n- 준비가 끝나야 GPU 작업을 실행할 수 있다는 의존관계도 그대로다.\n",
    "file": "gpu/cuda_basics.md",
-   "solved": false,
+   "solved": true,
    "review": 0,
    "time": "",
    "space": "",
@@ -3271,9 +3272,10 @@ body{
     "Q2: nsys 와 ncu 는 각각 무엇을 보여주나요?",
     "Q3: torch profiler 트레이스에서 'GPU idle 구간' 을 보면 무엇을 의심하나요?",
     "Q4: Python 오버헤드가 GPU 를 굶기는 상황을 어떻게 확인하나요?",
+    "Q5: 커널 하나의 시간을 정확히 재려면 무엇을 조심하나요? 첫 호출은 왜 느린가요?",
     "Follow-up: 실측 없이 '아마 메모리 때문' 이라 말하면 왜 안 되나요?"
    ],
-   "md": "> THEORY · gpu · T2\n\n## Q1: 느린 추론 서버를 받았습니다. IO · CPU · GPU · 통신 중 어디가 병목인지 어떤 순서로 가르나요?\n\n**30초.** 먼저 GPU 사용률과 커널 사이 틈을 본다.\nGPU 가 꽉 차면 커널 안(연산 vs 메모리), GPU 가 비면 CPU·IO·통신 중 누가 GPU 를 굶기는지로 간다.\n\n```\nnvidia-smi / GPU util 지표\n  ├─ 높음(90%+) → 커널 내부: ncu 로 memory-bound vs compute-bound\n  └─ 낮음       → GPU 가 기다림\n        ├─ CPU: py-spy / torch profiler CPU 트랙 (Python 오버헤드, 토크나이즈)\n        ├─ 통신: NCCL 커널 시간 (all-reduce 가 길면 TP 과다 또는 느린 링크)\n        └─ IO: 디스크·네트워크 대기 (모델 로드, KV 전송)\n```\n\n한 번에 한 가설만 세우고 그 가설이 참이면 보일 숫자를 먼저 정한다.\n그 숫자가 안 나오면 다음 가설이다.\n\n## Q2: nsys 와 ncu 는 각각 무엇을 보여주나요?\n\n**30초.** nsys(Nsight Systems) 는 타임라인이다. 어느 커널이 언제 얼마나 돌았고 사이에 뭐가 있나.\nncu(Nsight Compute) 는 커널 하나의 내부다. 그 커널이 메모리 대역폭을 몇 % 썼고 연산 유닛을 몇 % 썼나.\n\nnsys 로 \"어느 커널이 시간을 먹나\" 와 \"틈이 있나\" 를 찾고, 그 커널을 ncu 로 열어 roofline 어디에 있나를 본다.\nncu 는 커널을 여러 번 재실행해 느리니 nsys 로 후보를 좁힌 뒤 쓴다.\ntorch profiler 는 둘 사이로, Python 호출과 CUDA 커널을 한 타임라인에 보여준다.\n\n## Q3: torch profiler 트레이스에서 'GPU idle 구간' 을 보면 무엇을 의심하나요?\n\n**30초.** CPU 가 다음 커널을 아직 안 넘겼다는 뜻이다.\nPython 오버헤드, launch 비용, 동기화(`.item()`, `.cpu()`) 셋 중 하나다.\n\nGPU 트랙에 커널이 띄엄띄엄 있고 CPU 트랙에 Python 함수가 길게 있으면 Python 이 범인이다.\nCPU 트랙도 비어 있으면 `cudaStreamSynchronize` 같은 동기화가 있는지 본다.\n`.item()` 하나가 스텝마다 GPU 를 CPU 에 맞춰 세운다.\n처방은 CUDA graph(launch 제거), 동기화 제거, 연산을 GPU 로 옮기기다.\n\n## Q4: Python 오버헤드가 GPU 를 굶기는 상황을 어떻게 확인하나요?\n\n**30초.** 같은 모델을 배치 1 과 배치 32 로 돌려 스텝 시간이 거의 같으면 CPU 바운드다.\nGPU 바운드면 배치에 비례해 늘어야 한다.\n\n더 직접적으로는 torch profiler 의 CPU 시간 합과 GPU 시간 합을 비교한다.\nCPU 합이 더 길면 GPU 는 그 차이만큼 놀았다.\npy-spy 로 Python 어디에 시간이 가는지 보면 토크나이즈·스케줄링·메타데이터 생성이 나온다.\nvLLM V1 이 EngineCore 를 분리하고 ModelRunner V2 가 입력 준비를 줄인 게 전부 이 측정에서 나왔다.\n\n## Follow-up: 실측 없이 '아마 메모리 때문' 이라 말하면 왜 안 되나요?\n\n**30초.** 메모리·연산·CPU·통신 중 어느 것이든 증상이 비슷하게 \"느리다\" 로 나와서, 가설만으로는 처방이 틀릴 확률이 높고 틀린 처방은 시간을 쓰고 효과가 없다.\n\nroadmap-19 에서 리뷰어가 \"메모리가 느는데 최악은?\" 을 물었을 때 추정 대신 실측으로 답했다.\n`.pth` 로 계측을 주입해 순간 메모리·호출 횟수·출력 동일성을 재서 \"512 tok 에서 8.0×, 8K 에서 1.4×, 절대 ≤ 10.5 MiB\" 를 냈다.\n그 숫자가 approve 를 받았다. ⭐️\n\"측정했다\" 와 \"그럴 것 같다\" 는 면접에서도 다르게 들린다.\n\n---\n\n### 손댄 곳\n\n- roadmap-19 실측 (9/22): .pth 로 계측 주입, 순간 메모리·호출 횟수·출력 동일성 측정, 리뷰어 질문에 데이터로 답함 · vllm-study/01-issues/roadmap-19-h2d-copy-coalescing/experiment/\n",
+   "md": "> THEORY · gpu · T2\n\n## Q1: 느린 추론 서버를 받았습니다. IO · CPU · GPU · 통신 중 어디가 병목인지 어떤 순서로 가르나요?\n\n**30초 답**\n\n- 먼저 GPU 사용률과 커널 사이 틈을 본다.\n- GPU 가 꽉 차면 커널 안(연산 vs 메모리), GPU 가 비면 CPU·IO·통신 중 누가 GPU 를 굶기는지로 간다.\n\n**자세히**\n\n```\nnvidia-smi / GPU util 지표\n  ├─ 높음(90%+) → 커널 내부: ncu 로 memory-bound vs compute-bound\n  └─ 낮음       → GPU 가 기다림\n        ├─ CPU: py-spy / torch profiler CPU 트랙 (Python 오버헤드, 토크나이즈)\n        ├─ 통신: NCCL 커널 시간 (all-reduce 가 길면 TP 과다 또는 느린 링크)\n        └─ IO: 디스크·네트워크 대기 (모델 로드, KV 전송)\n```\n\n- 한 번에 한 가설만 세우고 그 가설이 참이면 보일 숫자를 먼저 정한다.\n- 그 숫자가 안 나오면 다음 가설이다.\n\n## Q2: nsys 와 ncu 는 각각 무엇을 보여주나요?\n\n**30초 답**\n\n- nsys(Nsight Systems) 는 타임라인이다. 어느 커널이 언제 얼마나 돌았고 사이에 뭐가 있나.\n- ncu(Nsight Compute) 는 커널 하나의 내부다. 그 커널이 메모리 대역폭을 몇 % 썼고 연산 유닛을 몇 % 썼나.\n\n**자세히**\n\n- nsys 로 \"어느 커널이 시간을 먹나\" 와 \"틈이 있나\" 를 찾고, 그 커널을 ncu 로 열어 roofline 어디에 있나를 본다.\n- ncu 는 커널을 여러 번 재실행해 느리니 nsys 로 후보를 좁힌 뒤 쓴다.\n- torch profiler 는 둘 사이로, Python 호출과 CUDA 커널을 한 타임라인에 보여준다.\n\n## Q3: torch profiler 트레이스에서 'GPU idle 구간' 을 보면 무엇을 의심하나요?\n\n**30초 답**\n\n- CPU 가 다음 커널을 아직 안 넘겼다는 뜻이다.\n- Python 오버헤드, launch 비용, 동기화(`.item()`, `.cpu()`) 셋 중 하나다.\n\n**자세히**\n\n- GPU 트랙에 커널이 띄엄띄엄 있고 CPU 트랙에 Python 함수가 길게 있으면 Python 이 범인이다.\n- CPU 트랙도 비어 있으면 `cudaStreamSynchronize` 같은 동기화가 있는지 본다.\n- `.item()` 하나가 스텝마다 GPU 를 CPU 에 맞춰 세운다.\n- 처방은 CUDA graph(launch 제거), 동기화 제거, 연산을 GPU 로 옮기기다.\n\n## Q4: Python 오버헤드가 GPU 를 굶기는 상황을 어떻게 확인하나요?\n\n**30초 답**\n\n- 같은 모델을 배치 1 과 배치 32 로 돌려 스텝 시간이 거의 같으면 CPU 바운드다.\n- GPU 바운드면 배치에 비례해 늘어야 한다.\n\n**자세히**\n\n- 더 직접적으로는 torch profiler 의 CPU 시간 합과 GPU 시간 합을 비교한다.\n- CPU 합이 더 길면 GPU 는 그 차이만큼 놀았다.\n- py-spy 로 Python 어디에 시간이 가는지 보면 토크나이즈·스케줄링·메타데이터 생성이 나온다.\n- vLLM V1 이 EngineCore 를 분리하고 ModelRunner V2 가 입력 준비를 줄인 게 전부 이 측정에서 나왔다.\n\n## Q5: 커널 하나의 시간을 정확히 재려면 무엇을 조심하나요? 첫 호출은 왜 느린가요?\n\n**30초 답**\n\n- GPU 는 비동기라 CPU 타이머로 그냥 재면 launch 시간만 잰다.\n- 워밍업을 먼저 돌리고, CUDA event 나 동기화로 GPU 가 끝난 시점에서 잰다.\n- 여러 번 반복해 중앙값을 쓰고, 결과가 맞는지도 같이 확인한다.\n\n**자세히**\n\n| 함정 | 증상 | 처방 |\n|---|---|---|\n| 비동기 | `time.time()` 이 μs 단위로 비현실적으로 짧음 | 같은 스트림에 CUDA event 기록, 또는 전후 `torch.cuda.synchronize()` |\n| 첫 호출 | 첫 1 회만 수십 ms 에서 수 초 | 워밍업. 원인: JIT 컴파일 (Triton, torch.compile), cuBLAS autotune, CUDA graph 캡처, 메모리 할당 |\n| L2 캐시 | 반복 실행이 실제보다 빠름 | 반복 사이 L2 비우기 (`triton.testing.do_bench` 가 해 줌) |\n| 편차 | 회마다 시간이 다름 (클럭·발열) | 여러 번 돌려 중앙값·p90, 필요하면 클럭 고정 |\n| 정확성 | 일을 덜 한 커널이 가장 빠름 | 기준 구현과 출력 비교를 측정에 포함 |\n\n```python\nfor _ in range(10): f()                      # 워밍업\ns = torch.cuda.Event(enable_timing=True)\ne = torch.cuda.Event(enable_timing=True)\ns.record()\nfor _ in range(100): f()\ne.record(); torch.cuda.synchronize()\nms = s.elapsed_time(e) / 100\n```\n\n**CUDA event 대 Kineto (torch profiler)**\n\n| | CUDA event | Kineto |\n|---|---|---|\n| 재는 것 | 두 지점 사이 GPU 시간 하나 | 커널별 시간 + CPU 트랙 (CUPTI) |\n| 오버헤드 | 거의 없음 | 있음 |\n| 쓸 때 | 커널·구간 하나의 숫자 | 어디서 시간이 새는지 구조 파악 |\n\n## Follow-up: 실측 없이 '아마 메모리 때문' 이라 말하면 왜 안 되나요?\n\n**30초 답**\n\n- 메모리·연산·CPU·통신 중 어느 것이든 증상이 비슷하게 \"느리다\" 로 나와서, 가설만으로는 처방이 틀릴 확률이 높고 틀린 처방은 시간을 쓰고 효과가 없다.\n\n**자세히**\n\n- roadmap-19 에서 리뷰어가 \"메모리가 느는데 최악은?\" 을 물었을 때 추정 대신 실측으로 답했다.\n- `.pth` 로 계측을 주입해 순간 메모리·호출 횟수·출력 동일성을 재서 \"512 tok 에서 8.0×, 8K 에서 1.4×, 절대 ≤ 10.5 MiB\" 를 냈다.\n- 그 숫자가 approve 를 받았다. ⭐️\n- \"측정했다\" 와 \"그럴 것 같다\" 는 면접에서도 다르게 들린다.\n\n---\n\n### 손댄 곳\n\n- roadmap-19 실측 (9/22): .pth 로 계측 주입, 순간 메모리·호출 횟수·출력 동일성 측정, 리뷰어 질문에 데이터로 답함 · vllm-study/01-issues/roadmap-19-h2d-copy-coalescing/experiment/\n",
    "file": "gpu/profiling.md",
    "solved": false,
    "review": 0,
@@ -3379,9 +3381,10 @@ body{
     "Q2: 게이트웨이 → 라우터 → 엔진 풀 → 오토스케일러 구조를 그리고 각 층의 책임을 말해보세요.",
     "Q3: 병목이 어디서 생기는지 prefill·decode·KV 전송·네트워크 순으로 짚어보세요.",
     "Q4: 레이턴시 vs 처리량 vs 비용의 트레이드오프를 어떤 손잡이로 조절하나요?",
-    "Follow-up: 장애(GPU 한 대 죽음, 요청 폭주) 가 나면 어디서 무엇이 먼저 무너지나요?"
+    "Follow-up: 장애(GPU 한 대 죽음, 요청 폭주) 가 나면 어디서 무엇이 먼저 무너지나요?",
+    "Follow-up 2: 실시간 요청 (회의 자막) 과 배치 작업 (회의 요약) 이 같은 GPU 풀을 쓰면 우선순위를 어떻게 지키나요?"
    ],
-   "md": "> THEORY · inference · T1  \n> 구현 → engine/dynamo/architecture.md\n\n## Q1: 'LLM 서빙 시스템을 설계해보라' 는 질문에 첫 2분 동안 무엇을 물어야 하나요? (요구사항·지표)\n\n**30초.** 모델 크기, 트래픽(QPS·동시 요청), 입출력 길이 분포, 지켜야 할 지표(TTFT·TPOT p50/p99), 예산(GPU 수·종류)을 묻는다.\n\n이 다섯 개가 설계를 결정한다.\n모델 크기와 GPU 가 병렬화(TP 필요 여부)를 정하고, 입출력 길이가 P/D 분리 여부와 KV 예산을 정하고, 지표가 배치 상한을 정한다.\n\"어떤 모델을 몇 명이 어떻게 쓰나\" 를 숫자로 받아내는 게 첫 2분이다.\n\n## Q2: 게이트웨이 → 라우터 → 엔진 풀 → 오토스케일러 구조를 그리고 각 층의 책임을 말해보세요.\n\n**30초.** 게이트웨이는 인증·레이트리밋·큐잉, 라우터는 어느 엔진에 보낼지(캐시·부하), 엔진 풀은 실제 추론(vLLM 등), 오토스케일러는 풀 크기와 P/D 비율이다.\n\n```\n클라이언트 → [게이트웨이] → [라우터] → [엔진 풀 (P 풀 / D 풀)] → 응답 스트림\n                                ↑                 ↓ 지표\n                           [오토스케일러 / planner]\n```\n\n| 층 | 책임 | 실패하면 |\n|---|---|---|\n| 게이트웨이 | 인증, 요청 검증, 토큰 수 제한, 과부하 시 429 | 엔진이 쓰레기 요청·폭주를 직접 맞음 |\n| 라우터 | 프리픽스 캐시 히트 · 부하 · 모델/LoRA 매칭으로 엔진 선택 | 캐시 못 쓰고 한 엔진에 몰림 |\n| 엔진 풀 | continuous batching, KV 관리, 병렬화 | 여기가 비용의 전부 |\n| 오토스케일러 | SLA 보고 레플리카·P/D 비율 조정 | 피크에 TTFT 폭발, 야간에 GPU 낭비 |\n\n## Q3: 병목이 어디서 생기는지 prefill·decode·KV 전송·네트워크 순으로 짚어보세요.\n\n**30초.** prefill 은 연산(긴 입력이 몰리면 TTFT), decode 는 KV 메모리(동시 요청이 쌓이면 preemption), KV 전송은 네트워크(P/D 분리 시), 네트워크는 스트리밍 응답 처리다.\n\n| 병목 | 증상 | 손잡이 |\n|---|---|---|\n| prefill 연산 | TTFT p99 상승 | chunked prefill, P 풀 증설, 프리픽스 캐시 |\n| decode KV 메모리 | preemption 증가, 처리량 정체 | 배치 상한, KV 양자화, GQA 모델, offload |\n| KV 전송 | P/D 에서 TTFT 에 전송 시간이 더해짐 | NVLink 안에 P/D 두기, RDMA, 분리 포기 |\n| 네트워크·게이트웨이 | 토큰은 나오는데 클라이언트가 늦게 받음 | 스트리밍 경로 점검, 게이트웨이 수평 확장 |\n\nGPU 사용률이 높은데 토큰이 안 나오면 prefill 쪽, 사용률이 낮은데 느리면 decode·KV 쪽을 본다. ⭐️\n\n## Q4: 레이턴시 vs 처리량 vs 비용의 트레이드오프를 어떤 손잡이로 조절하나요?\n\n**30초.** 배치 크기 하나가 셋을 동시에 움직이고, 나머지는 양자화·병렬화·P/D 비율이다.\n\n| 손잡이 | 레이턴시 | 처리량 | 비용 |\n|---|---|---|---|\n| 배치 ↑ | TPOT ↑ | ↑ | GPU 당 ↓ |\n| TP ↑ | ↓ (레이어 연산 분산) | 통신 때문에 GPU 당 ↓ | ↑ |\n| 양자화 | ↓ | ↑ | ↓ |\n| P/D 분리 | ITL 안정 | ↑ | 조율·전송 비용 ↑ |\n| 모델 작게 / spec decode | ↓ | ↑ | ↓ / 품질 리스크 |\n\n면접에서는 \"TPOT 상한을 SLA 로 두고 그 안에서 배치를 최대화, 안 되면 양자화, 그래도 안 되면 GPU 추가\" 순서로 말하면 된다.\n\n## Follow-up: 장애(GPU 한 대 죽음, 요청 폭주) 가 나면 어디서 무엇이 먼저 무너지나요?\n\n**30초.** GPU 하나가 죽으면 그 위의 진행 중 요청이 전부 날아가고, 폭주하면 대기열이 먼저 쌓여 TTFT 가 무너진다.\n\nGPU 장애는 그 엔진의 KV 가 사라지는 것이라 요청을 다른 엔진에서 처음부터 다시 돈다(request migration 이 있으면 KV 를 옮겨 이어간다).\n폭주는 엔진이 아니라 게이트웨이에서 막아야 한다.\n엔진까지 들어오면 preemption 이 연쇄로 일어나 모든 요청이 느려진다.\n게이트웨이 429 와 대기열 상한이 첫 방어선이다.\n\n",
+   "md": "> THEORY · inference · T1  \n> 구현 → engine/dynamo/architecture.md\n\n## Q1: 'LLM 서빙 시스템을 설계해보라' 는 질문에 첫 2분 동안 무엇을 물어야 하나요? (요구사항·지표)\n\n**30초 답**\n\n- 모델 크기, 트래픽(QPS·동시 요청), 입출력 길이 분포, 지켜야 할 지표(TTFT·TPOT p50/p99), 예산(GPU 수·종류)을 묻는다.\n\n**자세히**\n\n- 이 다섯 개가 설계를 결정한다.\n- 모델 크기와 GPU 가 병렬화(TP 필요 여부)를 정하고, 입출력 길이가 P/D 분리 여부와 KV 예산을 정하고, 지표가 배치 상한을 정한다.\n- \"어떤 모델을 몇 명이 어떻게 쓰나\" 를 숫자로 받아내는 게 첫 2분이다.\n\n## Q2: 게이트웨이 → 라우터 → 엔진 풀 → 오토스케일러 구조를 그리고 각 층의 책임을 말해보세요.\n\n**30초 답**\n\n- 게이트웨이는 인증·레이트리밋·큐잉, 라우터는 어느 엔진에 보낼지(캐시·부하), 엔진 풀은 실제 추론(vLLM 등), 오토스케일러는 풀 크기와 P/D 비율이다.\n\n**자세히**\n\n```\n클라이언트 → [게이트웨이] → [라우터] → [엔진 풀 (P 풀 / D 풀)] → 응답 스트림\n                                ↑                 ↓ 지표\n                           [오토스케일러 / planner]\n```\n\n| 층 | 책임 | 실패하면 |\n|---|---|---|\n| 게이트웨이 | 인증, 요청 검증, 토큰 수 제한, 과부하 시 429 | 엔진이 쓰레기 요청·폭주를 직접 맞음 |\n| 라우터 | 프리픽스 캐시 히트 · 부하 · 모델/LoRA 매칭으로 엔진 선택 | 캐시 못 쓰고 한 엔진에 몰림 |\n| 엔진 풀 | continuous batching, KV 관리, 병렬화 | 여기가 비용의 전부 |\n| 오토스케일러 | SLA 보고 레플리카·P/D 비율 조정 | 피크에 TTFT 폭발, 야간에 GPU 낭비 |\n\n## Q3: 병목이 어디서 생기는지 prefill·decode·KV 전송·네트워크 순으로 짚어보세요.\n\n**30초 답**\n\n- prefill 은 연산(긴 입력이 몰리면 TTFT), decode 는 KV 메모리(동시 요청이 쌓이면 preemption), KV 전송은 네트워크(P/D 분리 시), 네트워크는 스트리밍 응답 처리다.\n\n**자세히**\n\n| 병목 | 증상 | 손잡이 |\n|---|---|---|\n| prefill 연산 | TTFT p99 상승 | chunked prefill, P 풀 증설, 프리픽스 캐시 |\n| decode KV 메모리 | preemption 증가, 처리량 정체 | 배치 상한, KV 양자화, GQA 모델, offload |\n| KV 전송 | P/D 에서 TTFT 에 전송 시간이 더해짐 | NVLink 안에 P/D 두기, RDMA, 분리 포기 |\n| 네트워크·게이트웨이 | 토큰은 나오는데 클라이언트가 늦게 받음 | 스트리밍 경로 점검, 게이트웨이 수평 확장 |\n\n- GPU 사용률이 높은데 토큰이 안 나오면 prefill 쪽, 사용률이 낮은데 느리면 decode·KV 쪽을 본다. ⭐️\n\n## Q4: 레이턴시 vs 처리량 vs 비용의 트레이드오프를 어떤 손잡이로 조절하나요?\n\n**30초 답**\n\n- 배치 크기 하나가 셋을 동시에 움직이고, 나머지는 양자화·병렬화·P/D 비율이다.\n\n**자세히**\n\n| 손잡이 | 레이턴시 | 처리량 | 비용 |\n|---|---|---|---|\n| 배치 ↑ | TPOT ↑ | ↑ | GPU 당 ↓ |\n| TP ↑ | ↓ (레이어 연산 분산) | 통신 때문에 GPU 당 ↓ | ↑ |\n| 양자화 | ↓ | ↑ | ↓ |\n| P/D 분리 | ITL 안정 | ↑ | 조율·전송 비용 ↑ |\n| 모델 작게 / spec decode | ↓ | ↑ | ↓ / 품질 리스크 |\n\n- 면접에서는 \"TPOT 상한을 SLA 로 두고 그 안에서 배치를 최대화, 안 되면 양자화, 그래도 안 되면 GPU 추가\" 순서로 말하면 된다.\n\n## Follow-up: 장애(GPU 한 대 죽음, 요청 폭주) 가 나면 어디서 무엇이 먼저 무너지나요?\n\n**30초 답**\n\n- GPU 하나가 죽으면 그 위의 진행 중 요청이 전부 날아가고, 폭주하면 대기열이 먼저 쌓여 TTFT 가 무너진다.\n\n**자세히**\n\n- GPU 장애는 그 엔진의 KV 가 사라지는 것이라 요청을 다른 엔진에서 처음부터 다시 돈다(request migration 이 있으면 KV 를 옮겨 이어간다).\n- 폭주는 엔진이 아니라 게이트웨이에서 막아야 한다.\n- 엔진까지 들어오면 preemption 이 연쇄로 일어나 모든 요청이 느려진다.\n- 게이트웨이 429 와 대기열 상한이 첫 방어선이다.\n\n\n## Follow-up 2: 실시간 요청 (회의 자막) 과 배치 작업 (회의 요약) 이 같은 GPU 풀을 쓰면 우선순위를 어떻게 지키나요?\n\n**30초 답**\n\n- 요청 종류마다 SLO 를 따로 정한다. 실시간은 TTFT·TPOT p99, 배치는 완료 시각과 비용이다.\n- 실시간은 높은 우선순위 큐와 예약 용량을 주고, 배치는 남는 용량에서 돌린다.\n- 실시간이 밀리면 배치부터 미루거나 preempt 한다.\n\n**자세히**\n\n| 손잡이 | 하는 일 | 대가 |\n|---|---|---|\n| 우선순위 스케줄링 | 대기열에서 실시간 먼저. 필요하면 배치 요청 preempt (vLLM `--scheduling-policy priority`) | 밀린 배치의 재계산 비용 |\n| 용량 예약 · 풀 분리 | 실시간 전용 레플리카 확보 | 한가할 때 GPU 유휴 |\n| 배치 상한 · chunked prefill 크기 | 긴 배치 prefill 이 실시간 decode 를 막지 않게 | 처리량 ↓ |\n| 시간 이동 | 배치를 한가한 시간대 큐로 | 결과 지연을 허용해야 함 |\n| 어드미션 컨트롤 | 실시간 SLO 가 위험하면 배치 접수를 늦춤 | 배치 대기 증가 |\n\n- 말하는 순서: 클래스별 SLO 정의 → 우선순위 큐 → 용량 예약 → 넘치면 배치부터 밀기 → 클래스별 지표 모니터링.\n- 실시간 쪽은 스트리밍이 끊기는지 (토큰 간 간격 p99) 도 본다.\n",
    "file": "inference/serving_system_design.md",
    "solved": false,
    "review": 0,
@@ -3392,7 +3395,8 @@ body{
    "pri": "★",
    "role": "",
    "followups": [
-    "Follow-up: 장애(GPU 한 대 죽음, 요청 폭주) 가 나면 어디서 무엇이 먼저 무너지나요?"
+    "Follow-up: 장애(GPU 한 대 죽음, 요청 폭주) 가 나면 어디서 무엇이 먼저 무너지나요?",
+    "Follow-up 2: 실시간 요청 (회의 자막) 과 배치 작업 (회의 요약) 이 같은 GPU 풀을 쓰면 우선순위를 어떻게 지키나요?"
    ],
    "fuAns": [],
    "approaches": [],
@@ -3453,7 +3457,7 @@ body{
     "Q4: draft 모델 없이 하는 방법(n-gram, EAGLE, Medusa, MTP)은 각각 draft 를 어디서 가져오나요?",
     "Follow-up: 출력 분포가 target 모델과 정확히 같다는 걸 어떻게 보장하나요? (rejection sampling)"
    ],
-   "md": "> THEORY · inference · T1  \n> 구현 → engine/vllm/spec_decode_impl.md\n\n## Q1: draft 모델이 k 개를 제안하고 target 모델이 한 번에 검증한다는 게 왜 빨라지나요?\n\n**30초.** target 모델 forward 한 번에 토큰 1 개가 아니라 k 개를 확정할 수 있어서다.\n\n작은 draft 가 k 개를 빠르게 제안한다.\ntarget 은 그 k 개를 prefill 처럼 한 번에 넣어 각 위치의 확률을 얻는다.\n앞에서부터 맞는 만큼 받아들이고 첫 틀린 자리에서 target 의 토큰으로 교체한다.\n한 번의 target forward 에 1 개 이상, 최대 k+1 개가 나온다.\n\n## Q2: 검증이 '공짜' 에 가까운 이유는? decode 가 memory-bound 라는 사실과 어떻게 연결되나요?\n\n**30초.** decode 의 target forward 는 가중치 읽기가 병목이라, 토큰 1 개를 넣든 k 개를 넣든 시간이 거의 같다.\n\ndecode 는 memory-bound 다.\n14 GB 가중치를 읽는 4 ms 동안 토큰 1 개 분량의 연산만 하고 있다.\n그 자리에 토큰 k 개를 넣어도 읽기는 그대로고 연산만 조금 늘어 시간이 거의 안 변한다.\n남는 연산 여유를 검증에 쓰는 것이다. ⭐️\n배치가 커서 이미 compute-bound 면 이 여유가 없어 이득이 줄어든다.\n\n## Q3: acceptance rate 가 낮으면 어떻게 되나요? 손익분기는 어디인가요?\n\n**30초.** acceptance rate α 가 낮으면 draft 비용만 쓰고 토큰은 거의 안 늘어서 오히려 느려진다.\n\n스텝당 기대 토큰 수는 (1 - α^(k+1)) / (1 - α) 다.\nα=0.8, k=5 면 약 3.7 개, α=0.3 이면 약 1.4 개다.\ndraft 를 k 번 돌리는 비용 + target 한 번이 target 만 1 번 돈 것보다 싸야 이득이다.\nα 가 0.5 밑이면 대개 손해다.\nα 는 모델 쌍과 도메인에 따라 달라 실측해야 한다.\n\n## Q4: draft 모델 없이 하는 방법(n-gram, EAGLE, Medusa, MTP)은 각각 draft 를 어디서 가져오나요?\n\n**30초.** n-gram 은 프롬프트에서, EAGLE·Medusa 는 target 의 hidden state 에 붙인 작은 head 에서, MTP 는 target 모델 안에 학습된 다음-토큰 head 에서 가져온다.\n\n| 방식 | draft 출처 | 특징 |\n|---|---|---|\n| n-gram | 프롬프트·출력에 이미 나온 패턴 매칭 | 모델 없음, 요약·코드처럼 반복 많은 입력에 좋음 |\n| Medusa | target 마지막 hidden 에 head 여러 개 | 별도 모델 없음, 위치마다 독립 예측 |\n| EAGLE / EAGLE3 | hidden state 받는 작은 트랜스포머 | 앞 토큰 정보를 써서 Medusa 보다 정확 |\n| MTP (DeepSeek) | 학습 때부터 넣은 multi-token head | 모델과 함께 나옴, 가장 높은 α |\n\n별도 draft 모델이 없으니 메모리를 안 먹고 배포가 단순하다.\n\n## Follow-up: 출력 분포가 target 모델과 정확히 같다는 걸 어떻게 보장하나요? (rejection sampling)\n\n**30초.** rejection sampling 으로, draft 가 제안한 토큰을 target 확률 대비로 확률적으로 받아들이거나 거절하면 최종 분포가 target 과 수학적으로 같아진다.\n\ndraft 확률 q, target 확률 p 일 때 토큰을 min(1, p/q) 확률로 받는다.\n거절되면 (p - q)⁺ 를 정규화한 분포에서 다시 뽑는다.\n이렇게 하면 어떤 draft 를 써도 출력 분포는 target 그대로다.\n속도만 바뀌고 품질은 안 바뀐다는 보장이 여기서 나온다.\n\n",
+   "md": "> THEORY · inference · T1  \n> 구현 → engine/vllm/spec_decode_impl.md\n\n## Q1: draft 모델이 k 개를 제안하고 target 모델이 한 번에 검증한다는 게 왜 빨라지나요?\n\n**30초 답**\n\n- target 모델 forward 한 번에 토큰 1 개가 아니라 k 개를 확정할 수 있어서다.\n\n**자세히**\n\n- 작은 draft 가 k 개를 빠르게 제안한다.\n- target 은 그 k 개를 prefill 처럼 한 번에 넣어 각 위치의 확률을 얻는다.\n- 앞에서부터 맞는 만큼 받아들이고 첫 틀린 자리에서 target 의 토큰으로 교체한다.\n- 한 번의 target forward 에 1 개 이상, 최대 k+1 개가 나온다.\n\n## Q2: 검증이 '공짜' 에 가까운 이유는? decode 가 memory-bound 라는 사실과 어떻게 연결되나요?\n\n**30초 답**\n\n- decode 의 target forward 는 가중치 읽기가 병목이라, 토큰 1 개를 넣든 k 개를 넣든 시간이 거의 같다.\n\n**자세히**\n\n- decode 는 memory-bound 다.\n- 14 GB 가중치를 읽는 4 ms 동안 토큰 1 개 분량의 연산만 하고 있다.\n- 그 자리에 토큰 k 개를 넣어도 읽기는 그대로고 연산만 조금 늘어 시간이 거의 안 변한다.\n- 남는 연산 여유를 검증에 쓰는 것이다. ⭐️\n- 배치가 커서 이미 compute-bound 면 이 여유가 없어 이득이 줄어든다.\n\n## Q3: acceptance rate 가 낮으면 어떻게 되나요? 손익분기는 어디인가요?\n\n**30초 답**\n\n- acceptance rate α 가 낮으면 draft 비용만 쓰고 토큰은 거의 안 늘어서 오히려 느려진다.\n\n**자세히**\n\n- 스텝당 기대 토큰 수는 (1 - α^(k+1)) / (1 - α) 다.\n- α=0.8, k=5 면 약 3.7 개, α=0.3 이면 약 1.4 개다.\n- draft 를 k 번 돌리는 비용 + target 한 번이 target 만 1 번 돈 것보다 싸야 이득이다.\n- α 가 0.5 밑이면 대개 손해다.\n- α 는 모델 쌍과 도메인에 따라 달라 실측해야 한다.\n\n## Q4: draft 모델 없이 하는 방법(n-gram, EAGLE, Medusa, MTP)은 각각 draft 를 어디서 가져오나요?\n\n**30초 답**\n\n- n-gram 은 프롬프트에서, EAGLE·Medusa 는 target 의 hidden state 에 붙인 작은 head 에서, MTP 는 target 모델 안에 학습된 다음-토큰 head 에서 가져온다.\n\n**자세히**\n\n| 방식 | draft 출처 | 특징 |\n|---|---|---|\n| n-gram | 프롬프트·출력에 이미 나온 패턴 매칭 | 모델 없음, 요약·코드처럼 반복 많은 입력에 좋음 |\n| Medusa | target 마지막 hidden 에 head 여러 개 | 별도 모델 없음, 위치마다 독립 예측 |\n| EAGLE / EAGLE3 | hidden state 받는 작은 트랜스포머 | 앞 토큰 정보를 써서 Medusa 보다 정확 |\n| MTP (DeepSeek) | 학습 때부터 넣은 multi-token head | 모델과 함께 나옴, 가장 높은 α |\n\n- 별도 draft 모델이 없으니 메모리를 안 먹고 배포가 단순하다.\n\n## Follow-up: 출력 분포가 target 모델과 정확히 같다는 걸 어떻게 보장하나요? (rejection sampling)\n\n**30초 답**\n\n- rejection sampling 으로, draft 가 제안한 토큰을 target 확률 대비로 확률적으로 받아들이거나 거절하면 최종 분포가 target 과 수학적으로 같아진다.\n\n**자세히**\n\n- draft 확률 q, target 확률 p 일 때 토큰을 min(1, p/q) 확률로 받는다.\n- 거절되면 (p - q)⁺ 를 정규화한 분포에서 다시 뽑는다.\n- 이렇게 하면 어떤 draft 를 써도 출력 분포는 target 그대로다.\n- 속도만 바뀌고 품질은 안 바뀐다는 보장이 여기서 나온다.\n\n",
    "file": "inference/speculative_decoding.md",
    "solved": false,
    "review": 0,
@@ -3461,7 +3465,7 @@ body{
    "space": "",
    "note": "",
    "date": "",
-   "pri": "",
+   "pri": "★",
    "role": "",
    "followups": [
     "Follow-up: 출력 분포가 target 모델과 정확히 같다는 걸 어떻게 보장하나요? (rejection sampling)"
@@ -3501,6 +3505,78 @@ body{
    "role": "",
    "followups": [
     "Follow-up: 캐시 히트율을 높이려다 한 엔진에 몰리면 어떤 지표가 나빠지나요?"
+   ],
+   "fuAns": [],
+   "approaches": [],
+   "redo": false
+  },
+  {
+   "track": "c",
+   "kind": "md",
+   "id": "c:gpu/kernel_optimization.md",
+   "num": "",
+   "title": "Kernel Optimization Steps",
+   "diff": "",
+   "cat": "kernel",
+   "catName": "커널",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: naive matmul 커널을 어떤 순서로 빠르게 만드나요?",
+    "Q2: 배열 합 (reduction) 커널은 어떻게 최적화하나요?",
+    "Q3: softmax 는 왜 여러 번 읽어야 하고, 어떻게 한 번으로 줄이나요?",
+    "Q4: Hopper 에서 matmul 을 \"비동기로 만든다\" 는 건 무슨 뜻인가요? (cp.async → TMA · WGMMA)",
+    "Follow-up: 커널이 \"빨라졌다\" 는 걸 어떻게 증명하나요?"
+   ],
+   "md": "> THEORY · gpu · T1  \n> 원리 → theory/gpu/roofline.md, theory/transformer/flash_attention.md\n\n## Q1: naive matmul 커널을 어떤 순서로 빠르게 만드나요?\n\n**30초 답**\n\n- 핵심은 HBM 에서 같은 값을 여러 번 읽지 않게 하는 것이다.\n- 순서: coalescing → shared memory 타일링 → 레지스터 타일링 → 벡터화 로드 → tensor core → 비동기 복사로 로드와 계산 겹치기.\n- 단계마다 roofline 에서 위로 올라간다 (arithmetic intensity ↑).\n\n**자세히**\n\n| 단계 | 바꾸는 것 | 줄이는 것 |\n|---|---|---|\n| 0 naive | 스레드 하나가 C 한 칸. A 의 행, B 의 열을 HBM 에서 매번 읽음 | (기준) FLOP 2 개에 8 바이트, 완전 memory-bound |\n| 1 coalescing | 워프의 32 스레드가 인접 주소를 읽도록 인덱스 배치 | 메모리 전송 횟수 |\n| 2 shared memory 타일링 | 블록이 A·B 타일을 SRAM 에 올리고 블록 안에서 재사용 | HBM 읽기 약 1/타일 크기 |\n| 3 레지스터 타일링 | 스레드 하나가 C 여러 칸 (예 8×8) 을 레지스터에 누적 | shared memory 읽기 |\n| 4 벡터화 로드 | `float4` 같은 128-bit 로드 | 로드 명령 수 |\n| 5 tensor core | MMA 명령으로 작은 행렬곱 통째로, BF16·FP8 | 연산 시간 (compute-bound 쪽) |\n| 6 비동기 복사 | 다음 타일을 가져오는 동안 현재 타일 계산 (double buffering) | 로드 대기 시간 |\n\n- 실제로는 단계마다 ncu 로 memory-bound 인지 compute-bound 인지 확인하고 다음 단계를 고른다.\n- 목표선은 cuBLAS 대비 몇 % 인가다.\n\n## Q2: 배열 합 (reduction) 커널은 어떻게 최적화하나요?\n\n**30초 답**\n\n- 블록 안에서 트리 모양으로 절반씩 더한다.\n- 마지막 32 개는 shared memory 대신 warp shuffle 로 레지스터끼리 더한다.\n- 블록 결과는 atomic 하나 또는 두 번째 커널로 합친다.\n\n**자세히**\n\n| 단계 | 문제 | 처방 |\n|---|---|---|\n| 트리 (interleaved) | `tid % 2 == 0` 같은 조건이라 워프 안이 갈림 (divergence) | 연속 스레드가 일하도록 sequential addressing |\n| shared memory 트리 | 단계마다 `__syncthreads()` | 마지막 워프는 shuffle 로 동기화 없이 |\n| 로드 | 첫 단계에서 스레드 절반이 놂 | 읽으면서 바로 2 개씩 (또는 여러 개) 더함 |\n| 블록 간 합 | 블록끼리는 `__syncthreads()` 불가 | `atomicAdd` 한 번, 또는 2-pass |\n\n```cpp\n// 워프 32 개 값의 합: 레지스터끼리 직접 교환\nfor (int off = 16; off > 0; off >>= 1)\n    v += __shfl_down_sync(0xffffffff, v, off);\n```\n\n## Q3: softmax 는 왜 여러 번 읽어야 하고, 어떻게 한 번으로 줄이나요?\n\n**30초 답**\n\n- 안전한 softmax 는 최댓값 → 합 → 정규화로 데이터를 3 번 읽는다.\n- online softmax 는 최댓값과 합을 한 번에 들고 가며, 최댓값이 바뀌면 지금까지의 합을 다시 스케일한다.\n- FlashAttention 은 여기에 V 곱까지 합쳐 n×n 행렬을 HBM 에 쓰지 않는다.\n\n**자세히**\n\n- 3 번 읽기 → 2 번 읽기 (online softmax) → attention 전체 1 번 (FlashAttention).\n- 보정 식과 타일링은 flash_attention.md Q2, Q3 에 있다.\n- 같은 아이디어가 LayerNorm·RMSNorm 의 평균·분산 계산에도 쓰인다 (Welford).\n\n## Q4: Hopper 에서 matmul 을 \"비동기로 만든다\" 는 건 무슨 뜻인가요? (cp.async → TMA · WGMMA)\n\n**30초 답**\n\n- 로드와 행렬곱을 서로 기다리지 않게 하는 것이다.\n- Ampere 의 cp.async 는 HBM → shared memory 복사를 레지스터를 거치지 않고 비동기로 한다.\n- Hopper 의 TMA 는 타일 복사를 전용 하드웨어가 주소 계산까지 맡고, WGMMA 는 tensor core 행렬곱을 비동기로 발행한다.\n\n**자세히**\n\n| 기능 | 세대 | 하는 일 | 효과 |\n|---|---|---|---|\n| cp.async | Ampere | global → shared 비동기 복사 | 로드 중에도 스레드가 계산 가능 |\n| TMA | Hopper | 다차원 타일 복사를 하드웨어가 수행, 스레드 하나가 발행 | 주소 계산·로드 명령에 쓰던 레지스터·스레드 해방 |\n| WGMMA | Hopper | 워프 4 개 (128 스레드) 단위 비동기 MMA, 피연산자를 shared memory 에서 직접 읽음 | 행렬곱 중에 다음 일을 발행 |\n\n- 이걸 묶는 구조가 warp specialization 이다.\n- producer 워프는 TMA 로 다음 타일을 가져오고, consumer 워프그룹은 WGMMA 로 계산한다.\n- FA3 와 최신 GEMM (CUTLASS, DeepGEMM) 이 이 구조다.\n\n## Follow-up: 커널이 \"빨라졌다\" 는 걸 어떻게 증명하나요?\n\n**30초 답**\n\n- 먼저 정확성: 기준 구현 (PyTorch, cuBLAS) 과 허용 오차 안에서 같은지 본다.\n- 그다음 제대로 잰 시간: 워밍업, GPU 동기화, 여러 번 반복한 중앙값.\n- 마지막으로 위치: cuBLAS 대비 %, roofline 에서 대역폭·FLOPS 몇 % 를 썼나.\n\n**자세히**\n\n- 정확성 검사 없이 시간만 보면 일을 덜 하는 커널이 1 등이 된다.\n- 측정 함정은 profiling.md Q5 에 정리했다.\n- 입력 크기를 여러 개로 잰다. 작은 크기에서 빠른 커널이 큰 크기에서 느릴 수 있다.\n",
+   "file": "gpu/kernel_optimization.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: 커널이 \"빨라졌다\" 는 걸 어떻게 증명하나요?"
+   ],
+   "fuAns": [],
+   "approaches": [],
+   "redo": false
+  },
+  {
+   "track": "c",
+   "kind": "md",
+   "id": "c:transformer/flash_attention.md",
+   "num": "",
+   "title": "FlashAttention",
+   "diff": "",
+   "cat": "kernel",
+   "catName": "커널",
+   "tags": [],
+   "link": "",
+   "desc": "",
+   "qs": [
+    "Q1: 표준 attention 이 느린 진짜 이유는 FLOPs 인가요 메모리인가요?",
+    "Q2: FlashAttention 이 '한 번도 n×n 행렬을 HBM 에 쓰지 않는' 방법을 설명해보세요 (tiling).",
+    "Q3: online softmax 는 어떻게 블록 단위로 softmax 를 맞추나요?",
+    "Q4: FA2 → FA3 에서 무엇이 달라졌나요?",
+    "Follow-up: backward 에서 dS 를 BF16 으로 라운딩하면 왜 행합이 0 에서 깨지나요?"
+   ],
+   "md": "> THEORY · transformer · T2  \n> 구현 → engine/vllm/attention_backends.md\n\n## Q1: 표준 attention 이 느린 진짜 이유는 FLOPs 인가요 메모리인가요?\n\n**30초 답**\n\n- 메모리다.\n- 표준 attention 은 n×n 점수 행렬을 HBM 에 쓰고 softmax 하고 다시 읽는데, 이 왕복이 FLOP 보다 훨씬 비싸다.\n\n**자세히**\n\n- QK^T 2n²d FLOP 은 H100 이 금방 한다.\n- n² 행렬을 HBM 에 쓰고 읽는 바이트가 n² × 2 × 2(write + read) 이고, n=8K 면 256 MB 를 세 번(QK^T, softmax, PV) 왕복한다.\n- arithmetic intensity 가 d 수준(128)에 머물러 ridge point(295) 아래, 즉 memory-bound 다.\n- 빠르게 하려면 바이트를 줄여야 한다. ⭐️\n\n## Q2: FlashAttention 이 '한 번도 n×n 행렬을 HBM 에 쓰지 않는' 방법을 설명해보세요 (tiling).\n\n**30초 답**\n\n- Q·K·V 를 SRAM 에 들어가는 블록으로 잘라, 블록 쌍마다 점수 → softmax → V 곱까지 SRAM 안에서 끝내고 결과만 누적한다.\n- n×n 행렬이 통째로 존재하는 순간이 없다.\n\n**자세히**\n\n```\nfor Q 블록 i:\n    acc = 0, running max/sum 초기화\n    for K,V 블록 j:\n        S_ij = Q_i · K_j^T        (SRAM)\n        P_ij = exp(S_ij - max)    (SRAM, online softmax 로 보정)\n        acc += P_ij · V_j         (SRAM)\n    O_i = acc / sum               (HBM 에 한 번 쓰기)\n```\n\n- HBM 왕복이 n² 에서 n·d 로 줄고, 긴 시퀀스에서 compute-bound 로 넘어간다.\n- backward 는 n² 행렬을 저장하지 않고 다시 계산한다(recompute).\n\n## Q3: online softmax 는 어떻게 블록 단위로 softmax 를 맞추나요?\n\n**30초 답**\n\n- softmax 는 전체 최댓값과 전체 합을 알아야 하는데 블록 단위로는 모른다.\n- 그래서 \"지금까지의 최댓값 m 과 합 l\" 을 들고 가다 새 블록에서 더 큰 값이 나오면 이전 누적을 e^{m_old - m_new} 로 다시 스케일한다.\n\n**자세히**\n\n- 블록 j 까지의 결과를 exp(S - m_j) 기준으로 모았다고 하자.\n- 블록 j+1 에서 m_{j+1} > m_j 가 나오면, 이전 누적 acc 와 합 l 에 exp(m_j - m_{j+1}) 을 곱해 새 기준으로 맞추고 더한다.\n- 수학적으로 끝에 가면 전체를 한 번에 한 것과 같다.\n- 이 보정 덕에 한 패스로 끝난다.\n\n## Q4: FA2 → FA3 에서 무엇이 달라졌나요?\n\n**30초 답**\n\n- FA2 는 스레드 블록 간 일 나누기와 비행렬 연산을 줄여 GPU 활용률을 올렸고, FA3 는 Hopper 전용으로 TMA·비동기 WGMMA 로 메모리 이동과 행렬곱을 겹치고 FP8 을 지원한다.\n\n**자세히**\n\n- FA1 → FA2: 2배 (A100 에서 50-73% 활용률).\n- FA2 → FA3: H100 에서 1.5-2배 (75% 활용률, FP8 은 1.2 PFLOPS).\n- FA3 는 producer/consumer warp 를 나눠 한쪽이 다음 블록을 가져오는 동안 다른 쪽이 계산한다.\n- Blackwell 은 또 다른 구현(FA4·CuTeDSL) 이다.\n\n## Follow-up: backward 에서 dS 를 BF16 으로 라운딩하면 왜 행합이 0 에서 깨지나요?\n\n**30초 답**\n\n- dS 의 각 행은 softmax gradient 라 정확히는 합이 0 인데, BF16 으로 라운딩하면 각 원소에 반올림 오차가 붙어 합이 0 에서 벗어나고, 그게 K 와 곱해져 dQ·dK 에 편향으로 들어간다.\n\n**자세히**\n\n- BF16 은 가수 7 비트라 상대 오차가 약 0.4% 다.\n- 행 원소가 수천 개면 오차가 상쇄되지 않고 누적될 수 있다.\n- GProj 논문(arXiv 2609.34272)이 이 증상을 분석했고 Dao-AILab PR #2893/#2908 이 Blackwell sparse-MLA 경로를 FP32 로 고쳤다.\n- Hopper dense 경로는 미수정으로 추정되어 Shicheng 과의 접점으로 보고 있다(Study/3.md).\n\n---\n\n### 손댄 곳\n\n- Shicheng Wen 협업 학습 · USC/Research-Opportunity/Shicheng-Wen/Study/1.md 2.md 3.md (FA3 역전파 BF16 행합 문제, GProj 논문)\n",
+   "file": "transformer/flash_attention.md",
+   "solved": false,
+   "review": 0,
+   "time": "",
+   "space": "",
+   "note": "",
+   "date": "",
+   "pri": "★",
+   "role": "",
+   "followups": [
+    "Follow-up: backward 에서 dS 를 BF16 으로 라운딩하면 왜 행합이 0 에서 깨지나요?"
    ],
    "fuAns": [],
    "approaches": [],
@@ -3562,6 +3638,11 @@ body{
    "track": "c",
    "key": "inference",
    "name": "추론 서빙"
+  },
+  {
+   "track": "c",
+   "key": "kernel",
+   "name": "커널"
   }
  ],
  "interviews": [
